@@ -16,20 +16,22 @@ My contributions can be found on [GitHub](https://github.com/nrennie/tidytuesday
 all_weeks <- readxl::read_xlsx("data/all_weeks.xlsx")
 all_titles <- all_weeks$title
 all_pkgs <- all_weeks |>
-  dplyr::select(dplyr:utils) |>
+  dplyr::select(-c(year, week, title, pkgs, code_fpath, img_fpath)) |>
   colnames()
 ```
 
 ```{r}
 hr()
 # packages
-radioButtons("pkg_select",
-  "Only show plots that use:",
-  choices = c("Any package", all_pkgs),
-  selected = NULL,
-  inline = TRUE
+htmltools::tags$details(
+  htmltools::tags$summary("Filter R packages (click to expand):"),
+  radioButtons("pkg_select",
+    "Only show plots that use:",
+    choices = c("Any package", all_pkgs),
+    selected = NULL,
+    inline = TRUE
+  )
 )
-br()
 # choose a plot
 selectInput("plot_title",
   "Select a plot:",
@@ -94,7 +96,8 @@ output$code_link <- renderText({
 ### R4DS link
 r4ds_path <- reactive({
   glue::glue(
-    "https://github.com/rfordatascience/tidytuesday/blob/master/data/{week_data()$year}/{week_data()$week}/readme.md")
+    "https://github.com/rfordatascience/tidytuesday/blob/master/data/{week_data()$year}/{week_data()$week}/readme.md"
+  )
 })
 
 output$r4ds_link <- renderText({
