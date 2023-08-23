@@ -1,0 +1,84 @@
+library(NCmisc)
+library(tidyverse)
+
+# get list of all #tidytuesday folders
+setwd("../tidytuesday")
+all_folders <- tibble::tibble(
+  folders = list.dirs(path = ".", recursive = TRUE)
+) 
+
+# get list of all weeks
+all_weeks <- all_folders |> 
+  mutate(folders = str_remove(folders, "./")) |> 
+  separate_wider_delim(
+    folders,
+    delim = "/",
+    names = c("year", "week"),
+    too_few = "align_start",
+    too_many = "drop"
+    ) |> 
+  filter(year %in% c(2022, 2023)) |> 
+  drop_na(week) |> 
+  mutate(title = NA_character_,
+         pkgs = NA_character_,
+         code_fpath = NA_character_,
+         img_fpath = NA_character_)
+
+# list file for each week
+for (i in seq_len(nrow(all_weeks))) {
+  # get week folder
+  tt_week = all_weeks[i, ]
+  
+  # get readme file and parse title
+  tt_readme <- list.files(file.path(tt_week$year, tt_week$week, "/"),
+                          pattern = "\\.md", full.names = TRUE)
+  readme_txt <- readLines(tt_readme, warn=FALSE)[1]
+  readme_title <- usefunc::str_extract_between(
+    readme_txt, start = ">", end = "<"
+  ) |> 
+    stringr::str_trim("both")
+  all_weeks[i, "title"] <- readme_title
+  
+  # get image file path
+  tt_imgs <- list.files(file.path(tt_week$year, tt_week$week, "/"),
+                        pattern = ".png|.PNG|.jpg|.JPG|.jpeg|.JPEG", full.names = TRUE)
+  
+  tt_imgs <- tt_imgs |> 
+    subset(stringr::str_detect(tt_imgs, stringr::str_remove_all(tt_week$week, "-")))
+  all_weeks[i, "img_fpath"] <- tt_imgs[1]
+  
+  # get all packages used
+  tt_file <- list.files(file.path(tt_week$year, tt_week$week, "/"),
+                        pattern = ".R", full.names = TRUE)[1]
+  all_weeks[i, "code_fpath"] <- tt_file
+  tt_funcs <- list.functions.in.file(tt_file)
+  tt_pkgs <- names(tt_funcs) |> 
+    subset(!(names(tt_funcs) %in% c("character(0)", "package:base"))) |> 
+    stringr::str_remove("package:")
+  tt_pkgs <- tt_pkgs |> 
+    subset(!stringr::str_detect(tt_pkgs, "c\\(")) |> 
+    stringr::str_flatten_comma()
+  all_weeks[i, "pkgs"] <- tt_pkgs
+  
+  # report progress
+  print(paste0(i, "/", nrow(all_weeks)))
+}
+
+# packages to binary variables
+binary_pkgs <- all_weeks |> 
+  select(week, pkgs) |> 
+  separate_longer_delim(pkgs, delim = ", ") |> 
+  mutate(value = 1) |> 
+  complete(week, pkgs) |> 
+  mutate(value = replace_na(value, 0)) |> 
+  unique() |> 
+  pivot_wider(names_from = pkgs, values_from = value)
+
+# join
+all_weeks <- all_weeks |> 
+  left_join(binary_pkgs, by = "week") |> 
+  distinct()
+
+# save file
+setwd("../tidytuesday-shiny-app")
+writexl::write_xlsx(all_weeks, "data/all_weeks.xlsx")
