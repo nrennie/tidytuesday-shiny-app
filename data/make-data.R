@@ -1,4 +1,4 @@
-library(NCmisc)
+library(attachment)
 library(tidyverse)
 
 # get list of all #tidytuesday folders
@@ -51,12 +51,7 @@ for (i in seq_len(nrow(all_weeks))) {
   tt_file <- list.files(file.path(tt_week$year, tt_week$week, "/"),
                         pattern = ".R", full.names = TRUE)[1]
   all_weeks[i, "code_fpath"] <- tt_file
-  tt_funcs <- list.functions.in.file(tt_file)
-  tt_pkgs <- names(tt_funcs) |> 
-    subset(!(names(tt_funcs) %in% c("character(0)", "package:base"))) |> 
-    stringr::str_remove("package:")
-  tt_pkgs <- tt_pkgs |> 
-    subset(!stringr::str_detect(tt_pkgs, "c\\(")) |> 
+  tt_pkgs <- att_from_rscript(tt_file) |> 
     stringr::str_flatten_comma()
   all_weeks[i, "pkgs"] <- tt_pkgs
   
