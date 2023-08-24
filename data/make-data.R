@@ -1,5 +1,12 @@
 library(attachment)
-library(tidyverse)
+library(dplyr)
+library(tidyr)
+
+# utils function
+str_extract_between <- function(x, start, end) {
+  pattern <- paste0("(?<=", start, ")(.*?)(?=", end, ")")
+  return(stringr::str_extract(x, pattern = pattern))
+}
 
 # get list of all #tidytuesday folders
 setwd("../tidytuesday")
@@ -33,7 +40,7 @@ for (i in seq_len(nrow(all_weeks))) {
   tt_readme <- list.files(file.path(tt_week$year, tt_week$week, "/"),
                           pattern = "\\.md", full.names = TRUE)
   readme_txt <- readLines(tt_readme, warn=FALSE)[1]
-  readme_title <- usefunc::str_extract_between(
+  readme_title <- str_extract_between(
     readme_txt, start = ">", end = "<"
   ) |> 
     stringr::str_trim("both")
