@@ -6,3 +6,4 @@
 *.html
 *_files/
 .Renviron
+rsconnect/
