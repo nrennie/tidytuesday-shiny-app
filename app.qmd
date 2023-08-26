@@ -13,7 +13,7 @@ My contributions can be found on [GitHub](https://github.com/nrennie/tidytuesday
 
 ```{r}
 #| context: setup
-all_weeks <- readxl::read_xlsx("../data/all_weeks.xlsx")
+all_weeks <- readxl::read_xlsx("data/all_weeks.xlsx")
 all_titles <- all_weeks$title
 all_pkgs <- all_weeks |>
   dplyr::select(-c(year, week, title, pkgs, code_fpath, img_fpath)) |>
