@@ -1,6 +1,7 @@
 library(attachment)
 library(dplyr)
 library(tidyr)
+library(stringr)
 
 # utils function
 str_extract_between <- function(x, start, end) {
@@ -61,9 +62,6 @@ for (i in seq_len(nrow(all_weeks))) {
   tt_pkgs <- att_from_rscript(tt_file) |> 
     stringr::str_flatten_comma()
   all_weeks[i, "pkgs"] <- tt_pkgs
-  
-  # report progress
-  print(paste0(i, "/", nrow(all_weeks)))
 }
 
 # packages to binary variables
