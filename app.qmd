@@ -35,7 +35,7 @@ htmltools::tags$details(
 # choose a plot
 selectInput("plot_title",
   "Select a plot:",
-  choices = all_titles,
+  choices = rev(all_titles),
   width = "100%"
 )
 # display information
@@ -66,7 +66,7 @@ observe({
 
   updateSelectInput(session, "plot_title",
     label = "Select a plot:",
-    choices = all_titles
+    choices = rev(all_titles)
   )
 })
 
