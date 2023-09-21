@@ -7,3 +7,4 @@
 *_files/
 .Renviron
 rsconnect/
+/.quarto/
