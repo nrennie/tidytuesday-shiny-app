@@ -1,0 +1,23 @@
+project:
+  type: website
+  resources: 
+  - shinylive-sw.js
+
+website:  
+  repo-url: https://github.com/nrennie/tidytuesday-shiny-app
+  repo-actions: [edit, issue]
+  title: "#TidyTuesday Shiny App"
+  navbar:
+    search: false
+    left:
+      - text: "Home"
+        file: index.qmd
+
+format:
+  html:
+    grid: 
+      body-width: 1350px
+      sidebar-width: 200px
+      margin-width: 200px
+    toc: true
+
