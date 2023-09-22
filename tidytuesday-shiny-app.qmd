@@ -1,6 +1,4 @@
 ---
-title: "#TidyTuesday"
-author: "Nicola Rennie"
 format:
   html:
     theme: solar
@@ -26,7 +24,7 @@ all_pkgs <- all_weeks |>
   dplyr::select(-c(year, week, title, pkgs, code_fpath, img_fpath)) |>
   colnames()
 
-# Define UI for app that draws a histogram ----
+# Define UI
 ui <- shiny::fluidPage(
   hr(),
   # packages
