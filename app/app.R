@@ -7,6 +7,7 @@ all_pkgs <- all_weeks |>
 
 # Define UI
 ui <- shiny::bootstrapPage(
+  title = "#TidyTuesday",
   theme = shinythemes::shinytheme("superhero"),
   htmltools::div(
     class = "container-fluid",
