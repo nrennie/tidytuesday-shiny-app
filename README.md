@@ -7,7 +7,7 @@ My contributions can be found on [GitHub](https://github.com/nrennie/tidytuesday
 This Shiny app allows you to display and explore my #TidyTuesday plots, and allows a you to see examples that use specific packages. Links to the original #TidyTuesday data alongside links to code scripts on GitHub are provided. A list of packages found in each script is provided. 
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/nrennie/tidytuesday-shiny-app/main/tidytuesday-shiny-app.png" width = "60%" alt="Screenshot of shiny app showing scatter plot">
+<img src="https://raw.githubusercontent.com/nrennie/tidytuesday-shiny-app/main/tidytuesday-shiny-app.png" width = "90%" alt="Screenshot of shiny app showing scatter plot">
 </p>
 
 ## Deployment
