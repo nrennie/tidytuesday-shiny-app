@@ -21,4 +21,4 @@ A couple of small gotchas:
 * When viewing the app with some of these bugs in it, it simply returned a `404 Not found` error. Using the [shinylive editor mode](https://shinylive.io/r/editor/) was really helpful.
 
 Find a bug? [Report as a GitHub issue](https://github.com/nrennie/tidytuesday-shiny-app/issues).
-`
+
