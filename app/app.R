@@ -1,22 +1,3 @@
----
-format:
-  html:
-    theme: solar
-    grid: 
-      body-width: 1300px
-    resources: 
-      - shinylive-sw.js
-filters:
-  - shinylive
----
-
-#TidyTuesday is a weekly data challenge aimed at the R community. Every week a new dataset is posted alongside a chart or article related to that dataset, and ask participants explore the data. You can access the data and find out more on [GitHub](https://github.com/rfordatascience/tidytuesday/blob/master/README.md).
-
-My contributions can be found on [GitHub](https://github.com/nrennie/tidytuesday), and you can use this Shiny app to explore my visualisations with links to code for each individual plot. You can also follow my attempts on Mastodon at [fosstodon.org/@nrennie](https://fosstodon.org/@nrennie).
-
-```{shinylive-r}
-#| standalone: true
-#| viewerHeight: 600
 library(shiny)
 all_weeks <- openxlsx::read.xlsx("https://github.com/nrennie/tidytuesday-shiny-app/raw/main/data/all_weeks.xlsx")
 all_titles <- all_weeks$title
@@ -26,6 +7,8 @@ all_pkgs <- all_weeks |>
 
 # Define UI
 ui <- shiny::fluidPage(
+  theme = shinythemes::shinytheme("superhero"),
+  htmltools::includeMarkdown("intro.md"),
   hr(),
   # packages
   htmltools::tags$details(
@@ -49,17 +32,18 @@ ui <- shiny::fluidPage(
   htmlOutput("r4ds_link"),
   br(),
   # show plot
-  htmlOutput("plot_img")
+  htmlOutput("plot_img"),
+  br()
 )
 
 server <- function(input, output, session) {
   
   # Get data
   week_data <- reactive({
-  all_weeks |>
-    dplyr::filter(title == input$plot_title)
+    all_weeks |>
+      dplyr::filter(title == input$plot_title)
   })
-
+  
   observe({
     if (input$pkg_select == "Any package") {
       all_titles <- all_weeks$title
@@ -74,7 +58,7 @@ server <- function(input, output, session) {
                       choices = rev(all_titles)
     )
   })
-
+  
   ### Image display
   img_path <- reactive({
     glue::glue("https://raw.githubusercontent.com/nrennie/tidytuesday/main/{week_data()$img_fpath}")
@@ -112,5 +96,3 @@ server <- function(input, output, session) {
 
 # Create Shiny app ----
 shinyApp(ui = ui, server = server)
-```
-
