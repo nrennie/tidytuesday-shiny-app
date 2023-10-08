@@ -1,8 +1,8 @@
-webr::install("dplyr")
-webr::install("htmltools")
-webr::install("glue")
-webr::install("rlang")
-webr::install("bslib")
+# webr::install("dplyr")
+# webr::install("htmltools")
+# webr::install("glue")
+# webr::install("rlang")
+# webr::install("bslib")
 
 library(dplyr)
 
@@ -17,6 +17,7 @@ ui <- bootstrapPage(
   theme = bslib::bs_theme(version = 5, bootswatch = "morph"),
   htmltools::div(
     class = "container-fluid",
+    htmltools::br(),
     titlePanel("#TidyTuesday"),
     htmltools::div(
       class = "row",
@@ -46,22 +47,22 @@ My contributions can be found on [GitHub](https://github.com/nrennie/tidytuesday
         htmltools::br(),
         shiny::htmlOutput("code_link"),
         htmltools::br(),
-        shiny::htmlOutput("r4ds_link")
+        shiny::htmlOutput("r4ds_link"),
+        htmltools::br()
       ),
       htmltools::div(
         class = "col-lg-6",
         # show plot
-        htmltools::br(),
-        shiny::htmlOutput("plot_img"),
-        htmltools::br()
+        shiny::htmlOutput("plot_img")
       )
     )
   )
 )
 
 server <- function(input, output) {
-  # Update options
-  shiny::observe({
+  # Get data
+  all_titles <- reactive({
+    req(input$pkg_select)
     if (input$pkg_select == "Any package") {
       all_titles <- all_weeks$title
     } else {
@@ -75,7 +76,7 @@ server <- function(input, output) {
   output$select_img <- renderUI({
     shiny::selectInput("plot_title",
       "Select a plot:",
-      choices = rev(all_titles),
+      choices = rev(all_titles()),
       width = "90%"
     )
   })
