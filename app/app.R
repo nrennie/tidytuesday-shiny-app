@@ -1,8 +1,8 @@
-# webr::install("dplyr")
-# webr::install("htmltools")
-# webr::install("glue")
-# webr::install("rlang")
-# webr::install("bslib")
+webr::install("dplyr")
+webr::install("htmltools")
+webr::install("glue")
+webr::install("rlang")
+webr::install("bslib")
 
 library(dplyr)
 
