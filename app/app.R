@@ -1,5 +1,5 @@
 # Data
-all_weeks <- openxlsx::read.xlsx("https://github.com/nrennie/tidytuesday-shiny-app/raw/main/data/all_weeks.xlsx")
+load(url("https://raw.githubusercontent.com/nrennie/tidytuesday-shiny-app/main/data/all_weeks.RData"))
 all_titles <- all_weeks$title
 all_pkgs <- all_weeks |>
   dplyr::select(-c(year, week, title, pkgs, code_fpath, img_fpath)) |>
