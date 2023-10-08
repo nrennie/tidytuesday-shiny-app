@@ -3,7 +3,6 @@
 .RData
 .Ruserdata
 *.Rproj
-*.html
 *_files/
 .Renviron
 rsconnect/
