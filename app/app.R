@@ -1,21 +1,31 @@
+webr::install("dplyr")
+webr::install("htmltools")
+webr::install("glue")
+webr::install("rlang")
+
+library(dplyr)
+
 # Data
 load(url("https://raw.githubusercontent.com/nrennie/tidytuesday-shiny-app/main/data/all_weeks.RData"))
 all_titles <- all_weeks$title
-all_pkgs <- all_weeks |>
-  dplyr::select(-c(year, week, title, pkgs, code_fpath, img_fpath)) |>
-  colnames()
+all_pkgs <- dplyr::select(all_weeks, -c(year, week, title, pkgs, code_fpath, img_fpath))
+all_pkgs <- colnames(all_pkgs)
 
 # Define UI
-ui <- shiny::bootstrapPage(
-  title = "#TidyTuesday",
-  theme = shinythemes::shinytheme("superhero"),
+ui <- bootstrapPage(
+  titlePanel("#TidyTuesday"),
   htmltools::div(
     class = "container-fluid",
     htmltools::div(
       class = "row",
       htmltools::div(
         class = "col-lg-6",
-        htmltools::includeMarkdown("intro.md"),
+        markdown("[Nicola Rennie](https://github.com/nrennie)
+
+#TidyTuesday is a weekly data challenge aimed at the R community. Every week a new dataset is posted alongside a chart or article related to that dataset, and ask participants explore the data. You can access the data and find out more on [GitHub](https://github.com/rfordatascience/tidytuesday/blob/master/README.md).
+
+My contributions can be found on [GitHub](https://github.com/nrennie/tidytuesday), and you can use this Shiny app to explore my visualisations with links to code for each individual plot. You can also follow my attempts on Mastodon at [fosstodon.org/@nrennie](https://fosstodon.org/@nrennie).
+"),
         htmltools::hr(),
         # packages
         htmltools::tags$details(
@@ -28,11 +38,7 @@ ui <- shiny::bootstrapPage(
           )
         ),
         # choose a plot
-        shiny::selectInput("plot_title",
-          "Select a plot:",
-          choices = rev(all_titles),
-          width = "90%"
-        ),
+        shiny::uiOutput("select_img"),
         # display information
         shiny::textOutput("pkgs_used"),
         shiny::htmlOutput("code_link"),
@@ -49,29 +55,35 @@ ui <- shiny::bootstrapPage(
   )
 )
 
-server <- function(input, output, session) {
-  # Get data
-  week_data <- reactive({
-    all_weeks |>
-      dplyr::filter(title == input$plot_title)
-  })
-
-  observe({
+server <- function(input, output) {
+  
+  # Update options
+  shiny::observe({
     if (input$pkg_select == "Any package") {
       all_titles <- all_weeks$title
     } else {
-      all_titles <- all_weeks |>
-        dplyr::filter(!!rlang::sym(input$pkg_select) == 1) |>
+      all_titles <- all_weeks %>%
+        dplyr::filter(!!rlang::sym(input$pkg_select) == 1) %>%
         dplyr::pull(title)
     }
-
-    shiny::updateSelectInput(session, "plot_title",
-      label = "Select a plot:",
-      choices = rev(all_titles)
+  })
+  
+  # Select title
+  output$select_img <- renderUI({
+    shiny::selectInput("plot_title",
+                       "Select a plot:",
+                       choices = rev(all_titles),
+                       width = "90%"
     )
   })
+  
+  # Get data
+  week_data <- reactive({
+    req(input$plot_title)
+    dplyr::filter(all_weeks, title == input$plot_title)
+  })
 
-  ### Image display
+  ## Image display
   img_path <- shiny::reactive({
     glue::glue("https://raw.githubusercontent.com/nrennie/tidytuesday/main/{week_data()$img_fpath}")
   })
@@ -83,18 +95,21 @@ server <- function(input, output, session) {
   ### List of packages
   output$pkgs_used <- shiny::renderText({
     glue::glue(
-      "This plot uses the following packages: {week_data()$pkgs}")
+      "This plot uses the following packages: {week_data()$pkgs}"
+    )
   })
 
   ### Code link
   code_path <- shiny::reactive({
     glue::glue(
-      "https://github.com/nrennie/tidytuesday/tree/main/{week_data()$code_fpath}")
+      "https://github.com/nrennie/tidytuesday/tree/main/{week_data()$code_fpath}"
+    )
   })
 
   output$code_link <- shiny::renderText({
     glue::glue(
-      '<b>Code is available at</b>: <a href="{code_path()}"  target="_blank">{code_path()}</a>.')
+      '<b>Code is available at</b>: <a href="{code_path()}"  target="_blank">{code_path()}</a>.'
+    )
   })
 
   ### R4DS link
@@ -109,5 +124,5 @@ server <- function(input, output, session) {
   })
 }
 
-# Create Shiny app ----
-shiny::shinyApp(ui = ui, server = server)
+# Create Shiny app 
+app <- shinyApp(ui = ui, server = server)
