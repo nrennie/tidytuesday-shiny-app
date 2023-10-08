@@ -1,4 +1,4 @@
-library(shiny)
+# Data
 all_weeks <- openxlsx::read.xlsx("https://github.com/nrennie/tidytuesday-shiny-app/raw/main/data/all_weeks.xlsx")
 all_titles <- all_weeks$title
 all_pkgs <- all_weeks |>
@@ -19,7 +19,7 @@ ui <- shiny::bootstrapPage(
         # packages
         htmltools::tags$details(
           htmltools::tags$summary("Filter R packages (click to expand):"),
-          radioButtons("pkg_select",
+          shiny::radioButtons("pkg_select",
             "Only show plots that use:",
             choices = c("Any package", all_pkgs),
             selected = NULL,
@@ -27,21 +27,21 @@ ui <- shiny::bootstrapPage(
           )
         ),
         # choose a plot
-        selectInput("plot_title",
+        shiny::selectInput("plot_title",
           "Select a plot:",
           choices = rev(all_titles),
           width = "90%"
         ),
         # display information
-        textOutput("pkgs_used"),
-        htmlOutput("code_link"),
-        htmlOutput("r4ds_link")
+        shiny::textOutput("pkgs_used"),
+        shiny::htmlOutput("code_link"),
+        shiny::htmlOutput("r4ds_link")
       ),
       htmltools::div(
         class = "col-lg-6",
         # show plot
         htmltools::br(),
-        htmlOutput("plot_img"),
+        shiny::htmlOutput("plot_img"),
         htmltools::br()
       )
     )
@@ -64,46 +64,49 @@ server <- function(input, output, session) {
         dplyr::pull(title)
     }
 
-    updateSelectInput(session, "plot_title",
+    shiny::updateSelectInput(session, "plot_title",
       label = "Select a plot:",
       choices = rev(all_titles)
     )
   })
 
   ### Image display
-  img_path <- reactive({
+  img_path <- shiny::reactive({
     glue::glue("https://raw.githubusercontent.com/nrennie/tidytuesday/main/{week_data()$img_fpath}")
   })
 
-  output$plot_img <- renderText({
+  output$plot_img <- shiny::renderText({
     c('<img src="', img_path(), '" width="100%">')
   })
 
   ### List of packages
-  output$pkgs_used <- renderText({
-    glue::glue("This plot uses the following packages: {week_data()$pkgs}")
+  output$pkgs_used <- shiny::renderText({
+    glue::glue(
+      "This plot uses the following packages: {week_data()$pkgs}")
   })
 
   ### Code link
-  code_path <- reactive({
-    glue::glue("https://github.com/nrennie/tidytuesday/tree/main/{week_data()$code_fpath}")
+  code_path <- shiny::reactive({
+    glue::glue(
+      "https://github.com/nrennie/tidytuesday/tree/main/{week_data()$code_fpath}")
   })
 
-  output$code_link <- renderText({
-    glue::glue('<b>Code is available at</b>: <a href="{code_path()}"  target="_blank">{code_path()}</a>.')
+  output$code_link <- shiny::renderText({
+    glue::glue(
+      '<b>Code is available at</b>: <a href="{code_path()}"  target="_blank">{code_path()}</a>.')
   })
 
   ### R4DS link
-  r4ds_path <- reactive({
+  r4ds_path <- shiny::reactive({
     glue::glue(
       "https://github.com/rfordatascience/tidytuesday/blob/master/data/{week_data()$year}/{week_data()$week}/readme.md"
     )
   })
 
-  output$r4ds_link <- renderText({
+  output$r4ds_link <- shiny::renderText({
     glue::glue('<b>R4DS GitHub link</b>: <a href="{r4ds_path()}"  target="_blank">{r4ds_path()}</a>.')
   })
 }
 
 # Create Shiny app ----
-shinyApp(ui = ui, server = server)
+shiny::shinyApp(ui = ui, server = server)
