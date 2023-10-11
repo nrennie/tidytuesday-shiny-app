@@ -118,9 +118,16 @@ server <- function(input, output) {
 
   ### R4DS link
   r4ds_path <- shiny::reactive({
-    glue::glue(
-      "https://github.com/rfordatascience/tidytuesday/blob/master/data/{week_data()$year}/{week_data()$week}/readme.md"
-    )
+    if (week_data()$year == "2021") {
+      reformat_week <- as.character(as.Date(week_data()$week, format = "%d-%m-%Y"))
+      glue::glue(
+        "https://github.com/rfordatascience/tidytuesday/blob/master/data/{week_data()$year}/{reformat_week}/readme.md"
+      )
+    } else {
+      glue::glue(
+        "https://github.com/rfordatascience/tidytuesday/blob/master/data/{week_data()$year}/{week_data()$week}/readme.md"
+      )
+    }
   })
 
   output$r4ds_link <- shiny::renderText({
