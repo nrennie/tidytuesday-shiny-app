@@ -16,7 +16,7 @@ This Shiny app is deployed via GitHub pages using [shinylive](https://posit-dev.
 
 A couple of small gotchas:
 
-* I had to load external data using `load(url("url_to_file/file.RData"))
+* I had to load external data using `load(url("url_to_file/file.RData"))`.
 * Not all packages (including `shinythemes`) are supported so not all parts of the original (non-shinylive) app could be directly transported over.
 * When viewing the app with some of these bugs in it, it simply returned a `404 Not found` error. Using the [shinylive editor mode](https://shinylive.io/r/editor/) was really helpful.
 
