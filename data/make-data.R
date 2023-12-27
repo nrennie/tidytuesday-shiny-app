@@ -51,7 +51,7 @@ for (i in seq_len(nrow(all_weeks))) {
     all_weeks[i, "title"] <- readme_title
   } else {
     tt_readme <- list.files(file.path(tt_week$year, tt_week$week, "/"),
-      pattern = "\\.md", full.names = TRUE
+      pattern = "\\.md|\\.MD", full.names = TRUE
     )
     readme_txt <- readLines(tt_readme, warn = FALSE)[1]
     readme_title <- str_extract_between(
