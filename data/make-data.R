@@ -42,7 +42,7 @@ for (i in seq_len(nrow(all_weeks))) {
   # get readme file and parse title
   if (tt_week$year == "2021") {
     tt_readme <- list.files(file.path(tt_week$year, tt_week$week, "/"),
-      pattern = "\\.md", full.names = TRUE
+      pattern = "\\.md|\\.MD", full.names = TRUE
     )
     readme_txt <- readLines(tt_readme, warn = FALSE)[2]
     readme_title <- readme_txt |>
