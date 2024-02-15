@@ -1,10 +1,9 @@
-webr::install("dplyr")
-webr::install("htmltools")
-webr::install("glue")
-webr::install("rlang")
-webr::install("bslib")
-
+library(shiny)
 library(dplyr)
+library(htmltools)
+library(glue)
+library(rlang)
+library(bslib)
 
 # Data
 load(url("https://raw.githubusercontent.com/nrennie/tidytuesday-shiny-app/main/data/all_weeks.RData"))
@@ -136,4 +135,4 @@ server <- function(input, output) {
 }
 
 # Create Shiny app
-app <- shinyApp(ui = ui, server = server)
+shinyApp(ui = ui, server = server)
