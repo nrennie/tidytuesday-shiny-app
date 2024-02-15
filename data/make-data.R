@@ -25,7 +25,7 @@ all_weeks <- all_folders |>
     too_few = "align_start",
     too_many = "drop"
   ) |>
-  filter(year %in% c(2020, 2021, 2022, 2023)) |>
+  filter(year %in% c(2020, 2021, 2022, 2023, 2024)) |>
   drop_na(week) |>
   mutate(
     title = NA_character_,
@@ -42,7 +42,7 @@ for (i in seq_len(nrow(all_weeks))) {
   # get readme file and parse title
   if (tt_week$year == "2021") {
     tt_readme <- list.files(file.path(tt_week$year, tt_week$week, "/"),
-      pattern = "\\.md", full.names = TRUE
+      pattern = "\\.md|\\.MD", full.names = TRUE
     )
     readme_txt <- readLines(tt_readme, warn = FALSE)[2]
     readme_title <- readme_txt |>
@@ -51,7 +51,7 @@ for (i in seq_len(nrow(all_weeks))) {
     all_weeks[i, "title"] <- readme_title
   } else {
     tt_readme <- list.files(file.path(tt_week$year, tt_week$week, "/"),
-      pattern = "\\.md", full.names = TRUE
+      pattern = "\\.md|\\.MD", full.names = TRUE
     )
     readme_txt <- readLines(tt_readme, warn = FALSE)[1]
     readme_title <- str_extract_between(
