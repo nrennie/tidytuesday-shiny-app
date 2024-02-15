@@ -3,7 +3,7 @@ library(dplyr)
 library(htmltools)
 library(glue)
 library(rlang)
-library(bslib)
+library(shinythemes)
 
 # Data
 load(url("https://raw.githubusercontent.com/nrennie/tidytuesday-shiny-app/main/data/all_weeks.RData"))
@@ -11,50 +11,49 @@ all_titles <- all_weeks$title
 all_pkgs <- dplyr::select(all_weeks, -c(year, week, title, pkgs, code_fpath, img_fpath))
 all_pkgs <- colnames(all_pkgs)
 
-# Define UI
-ui <- bootstrapPage(
-  theme = bslib::bs_theme(version = 5, bootswatch = "morph"),
-  htmltools::div(
-    class = "container-fluid",
-    htmltools::br(),
-    titlePanel("#TidyTuesday"),
-    htmltools::div(
-      class = "row",
-      htmltools::div(
-        class = "col-lg-6",
-        markdown("[Nicola Rennie](https://github.com/nrennie)
+# Define UI for app that draws a histogram ----
+ui <- fluidPage(
+
+  theme = shinytheme("superhero"),
+
+  titlePanel("#TidyTuesday"),
+
+  sidebarLayout(
+
+    sidebarPanel(
+      markdown("[Nicola Rennie](https://github.com/nrennie)
 
 #TidyTuesday is a weekly data challenge aimed at the R community. Every week a new dataset is posted alongside a chart or article related to that dataset, and ask participants explore the data. You can access the data and find out more on [GitHub](https://github.com/rfordatascience/tidytuesday/blob/master/README.md).
 
 My contributions can be found on [GitHub](https://github.com/nrennie/tidytuesday), and you can use this Shiny app to explore my visualisations with links to code for each individual plot. You can also follow my attempts on Mastodon at [fosstodon.org/@nrennie](https://fosstodon.org/@nrennie).
 "),
-        htmltools::hr(),
-        # packages
-        htmltools::tags$details(
-          htmltools::tags$summary("Filter R packages (click to expand):"),
-          shiny::radioButtons("pkg_select",
-            "Only show plots that use:",
-            choices = c("Any package", all_pkgs),
-            selected = NULL,
-            inline = TRUE
-          )
-        ),
-        # choose a plot
-        shiny::uiOutput("select_img"),
-        # display information
-        shiny::textOutput("pkgs_used"),
-        htmltools::br(),
-        shiny::htmlOutput("code_link"),
-        htmltools::br(),
-        shiny::htmlOutput("r4ds_link"),
-        htmltools::br()
-      ),
-      htmltools::div(
-        class = "col-lg-6",
-        # show plot
-        shiny::htmlOutput("plot_img")
-      )
-    )
+htmltools::hr(),
+htmltools::tags$details(
+  htmltools::tags$summary("Filter R packages (click to expand):"),
+  shiny::radioButtons("pkg_select",
+                      "Only show plots that use:",
+                      choices = c("Any package", all_pkgs),
+                      selected = NULL,
+                      inline = TRUE
+  )
+),
+# choose a plot
+shiny::uiOutput("select_img"),
+# display information
+shiny::textOutput("pkgs_used"),
+htmltools::br(),
+shiny::htmlOutput("code_link"),
+htmltools::br(),
+shiny::htmlOutput("r4ds_link"),
+htmltools::br(),
+width = 6
+    ),
+
+mainPanel(
+  shiny::htmlOutput("plot_img"),
+  htmltools::br(),
+  width = 6
+)
   )
 )
 
@@ -74,9 +73,9 @@ server <- function(input, output) {
   # Select title
   output$select_img <- renderUI({
     shiny::selectInput("plot_title",
-      "Select a plot:",
-      choices = rev(all_titles()),
-      width = "90%"
+                       "Select a plot:",
+                       choices = rev(all_titles()),
+                       width = "90%"
     )
   })
 
@@ -134,5 +133,4 @@ server <- function(input, output) {
   })
 }
 
-# Create Shiny app
 shinyApp(ui = ui, server = server)
