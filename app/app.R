@@ -6,7 +6,7 @@ library(rlang)
 library(shinythemes)
 
 # Data
-load(url("https://raw.githubusercontent.com/nrennie/tidytuesday-shiny-app/main/data/all_weeks.RData"))
+load(url("https://raw.githubusercontent.com/nrennie/tidytuesday/main/data/all_weeks.RData"))
 all_titles <- all_weeks$title
 all_pkgs <- dplyr::select(all_weeks, -c(year, week, title, pkgs, code_fpath, img_fpath))
 all_pkgs <- colnames(all_pkgs)
