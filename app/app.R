@@ -12,7 +12,8 @@ all_titles <- all_weeks$title
 long_pkgs <- all_weeks |>
   dplyr::select(code_type, pkgs) |>
   tidyr::separate_longer_delim(pkgs, ", ") |>
-  dplyr::distinct()
+  dplyr::distinct() |>
+  dplyr::arrange(code_type, stringr::str_to_lower(pkgs))
 pkg_choices <- c(list("Any package" = list("Any package")), lapply(split(long_pkgs$pkgs, long_pkgs$code_type), as.list))
 
 # Define UI for app that draws a histogram ----
