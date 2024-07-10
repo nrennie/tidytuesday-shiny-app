@@ -4,17 +4,21 @@ library(htmltools)
 library(glue)
 library(rlang)
 library(shinythemes)
+library(shinyWidgets)
 
 # Data
 load(url("https://raw.githubusercontent.com/nrennie/tidytuesday/main/data/all_weeks.RData"))
 all_titles <- all_weeks$title
-all_pkgs <- dplyr::select(all_weeks, -c(year, week, title, pkgs, code_fpath, img_fpath))
-all_pkgs <- colnames(all_pkgs)
+long_pkgs <- all_weeks |>
+  dplyr::select(code_type, pkgs) |>
+  tidyr::separate_longer_delim(pkgs, ", ") |>
+  dplyr::distinct()
+pkg_choices <- c(list("Any package" = list("Any package")), lapply(split(long_pkgs$pkgs, long_pkgs$code_type), as.list))
 
 # Define UI for app that draws a histogram ----
 ui <- fluidPage(
 
-  theme = shinytheme("superhero"),
+  theme = shinytheme("darkly"),
 
   titlePanel("#TidyTuesday"),
 
@@ -23,19 +27,15 @@ ui <- fluidPage(
     sidebarPanel(
       markdown("[Nicola Rennie](https://github.com/nrennie)
 
-#TidyTuesday is a weekly data challenge aimed at the R community. Every week a new dataset is posted alongside a chart or article related to that dataset, and ask participants explore the data. You can access the data and find out more on [GitHub](https://github.com/rfordatascience/tidytuesday/blob/master/README.md).
+#TidyTuesday is a weekly data challenge where each week a new dataset is posted alongside a chart or article related to that dataset, and participants are asked to explore the data. You can access the data and find out more on [GitHub](https://github.com/rfordatascience/tidytuesday/blob/master/README.md).
 
 My contributions can be found on [GitHub](https://github.com/nrennie/tidytuesday), and you can use this Shiny app to explore my visualisations with links to code for each individual plot. You can also follow my attempts on Mastodon at [fosstodon.org/@nrennie](https://fosstodon.org/@nrennie).
 "),
 htmltools::hr(),
-htmltools::tags$details(
-  htmltools::tags$summary("Filter R packages (click to expand):"),
-  shiny::radioButtons("pkg_select",
-                      "Only show plots that use:",
-                      choices = c("Any package", all_pkgs),
-                      selected = NULL,
-                      inline = TRUE
-  )
+shinyWidgets::pickerInput(
+  inputId = "pkg_select",
+  "Only show plots that use:",
+  choices = pkg_choices
 ),
 # choose a plot
 shiny::uiOutput("select_img"),
@@ -72,10 +72,10 @@ server <- function(input, output) {
 
   # Select title
   output$select_img <- renderUI({
-    shiny::selectInput("plot_title",
-                       "Select a plot:",
-                       choices = rev(all_titles()),
-                       width = "90%"
+    shinyWidgets::pickerInput(
+      inputId = "plot_title",
+      "Select a plot:",
+      choices = rev(all_titles())
     )
   })
 
