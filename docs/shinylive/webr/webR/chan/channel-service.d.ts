@@ -5,6 +5,7 @@ export declare class ServiceWorkerChannelMain extends ChannelMain {
     #private;
     initialised: Promise<unknown>;
     resolve: (_?: unknown) => void;
+    reject: (message: string | Error) => void;
     close: () => void;
     constructor(config: Required<WebROptions>);
     activeRegistration(): ServiceWorker;

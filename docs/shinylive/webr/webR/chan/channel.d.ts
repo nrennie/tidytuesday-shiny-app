@@ -34,7 +34,7 @@ export interface ChannelWorker {
     onMessageFromMainThread: (msg: Message) => void;
 }
 /**
- * Handler functions dealing with setup and commmunication over a Service Worker.
+ * Handler functions dealing with setup and communication over a Service Worker.
  */
 export interface ServiceWorkerHandlers {
     handleActivate: (this: ServiceWorkerGlobalScope, ev: ExtendableEvent) => any;

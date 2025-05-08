@@ -21,6 +21,7 @@ export type RDouble = RProxy<RWorker.RDouble>;
 export type RComplex = RProxy<RWorker.RComplex>;
 export type RCharacter = RProxy<RWorker.RCharacter>;
 export type RList = RProxy<RWorker.RList>;
+export type RDataFrame = RProxy<RWorker.RDataFrame>;
 export type RRaw = RProxy<RWorker.RRaw>;
 export type RCall = RProxy<RWorker.RCall>;
 export type RFunction = RProxy<RWorker.RFunction> & ((...args: unknown[]) => Promise<unknown>);

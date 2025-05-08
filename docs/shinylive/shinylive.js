@@ -1,14 +1,9 @@
-// Shinylive 0.2.3
-// Copyright 2023 RStudio, PBC
+// Shinylive 0.9.1
+// Copyright 2024 Posit, PBC
 import {
   FCJSONtoFC,
   FCorFCJSONtoFC,
   Icon,
-  __commonJS,
-  __privateAdd,
-  __privateMethod,
-  __require,
-  __toESM,
   currentScriptDir,
   editorUrlPrefix,
   engineSwitch,
@@ -21,7 +16,14 @@ import {
   sleep,
   stringToUint8Array,
   uint8ArrayToString
-} from "./chunk-GWAOPURX.js";
+} from "./chunk-PHWSSKUM.js";
+import {
+  __commonJS,
+  __privateAdd,
+  __privateMethod,
+  __require,
+  __toESM
+} from "./chunk-O5P2LFOG.js";
 
 // node_modules/scheduler/cjs/scheduler.development.js
 var require_scheduler_development = __commonJS({
@@ -56,8 +58,8 @@ var require_scheduler_development = __commonJS({
           }
           return first;
         }
-        function siftUp(heap, node, i2) {
-          var index = i2;
+        function siftUp(heap, node, i) {
+          var index = i;
           while (index > 0) {
             var parentIndex = index - 1 >>> 1;
             var parent = heap[parentIndex];
@@ -70,8 +72,8 @@ var require_scheduler_development = __commonJS({
             }
           }
         }
-        function siftDown(heap, node, i2) {
-          var index = i2;
+        function siftDown(heap, node, i) {
+          var index = i;
           var length = heap.length;
           var halfLength = length >>> 1;
           while (index < halfLength) {
@@ -98,9 +100,9 @@ var require_scheduler_development = __commonJS({
             }
           }
         }
-        function compare(a, b2) {
-          var diff = a.sortIndex - b2.sortIndex;
-          return diff !== 0 ? diff : a.id - b2.id;
+        function compare(a2, b2) {
+          var diff = a2.sortIndex - b2.sortIndex;
+          return diff !== 0 ? diff : a2.id - b2.id;
         }
         var ImmediatePriority = 1;
         var UserBlockingPriority = 2;
@@ -475,12 +477,12 @@ var require_scheduler_development = __commonJS({
 
 // node_modules/scheduler/index.js
 var require_scheduler = __commonJS({
-  "node_modules/scheduler/index.js"(exports, module) {
+  "node_modules/scheduler/index.js"(exports, module2) {
     "use strict";
     if (false) {
-      module.exports = null;
+      module2.exports = null;
     } else {
-      module.exports = require_scheduler_development();
+      module2.exports = require_scheduler_development();
     }
   }
 });
@@ -495,9 +497,9 @@ var require_react_dom_development = __commonJS({
         if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart === "function") {
           __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
         }
-        var React10 = require_react();
+        var React11 = require_react();
         var Scheduler = require_scheduler();
-        var ReactSharedInternals = React10.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+        var ReactSharedInternals = React11.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
         var suppressWarning = false;
         function setSuppressWarning(newSuppressWarning) {
           {
@@ -596,8 +598,8 @@ var require_react_dom_development = __commonJS({
               possibleRegistrationNames.ondblclick = registrationName;
             }
           }
-          for (var i2 = 0; i2 < dependencies.length; i2++) {
-            allNativeEvents.add(dependencies[i2]);
+          for (var i = 0; i < dependencies.length; i++) {
+            allNativeEvents.add(dependencies[i]);
           }
         }
         var canUseDOM = !!(typeof window !== "undefined" && typeof window.document !== "undefined" && typeof window.document.createElement !== "undefined");
@@ -1405,8 +1407,8 @@ var require_react_dom_development = __commonJS({
             if (prefix === void 0) {
               try {
                 throw Error();
-              } catch (x2) {
-                var match = x2.stack.trim().match(/\n( *(at )?)/);
+              } catch (x3) {
+                var match = x3.stack.trim().match(/\n( *(at )?)/);
                 prefix = match && match[1] || "";
               }
             }
@@ -1452,23 +1454,23 @@ var require_react_dom_development = __commonJS({
               if (typeof Reflect === "object" && Reflect.construct) {
                 try {
                   Reflect.construct(Fake, []);
-                } catch (x2) {
-                  control = x2;
+                } catch (x3) {
+                  control = x3;
                 }
                 Reflect.construct(fn, [], Fake);
               } else {
                 try {
                   Fake.call();
-                } catch (x2) {
-                  control = x2;
+                } catch (x3) {
+                  control = x3;
                 }
                 fn.call(Fake.prototype);
               }
             } else {
               try {
                 throw Error();
-              } catch (x2) {
-                control = x2;
+              } catch (x3) {
+                control = x3;
               }
               fn();
             }
@@ -1477,17 +1479,17 @@ var require_react_dom_development = __commonJS({
               var sampleLines = sample.stack.split("\n");
               var controlLines = control.stack.split("\n");
               var s = sampleLines.length - 1;
-              var c = controlLines.length - 1;
-              while (s >= 1 && c >= 0 && sampleLines[s] !== controlLines[c]) {
-                c--;
+              var c3 = controlLines.length - 1;
+              while (s >= 1 && c3 >= 0 && sampleLines[s] !== controlLines[c3]) {
+                c3--;
               }
-              for (; s >= 1 && c >= 0; s--, c--) {
-                if (sampleLines[s] !== controlLines[c]) {
-                  if (s !== 1 || c !== 1) {
+              for (; s >= 1 && c3 >= 0; s--, c3--) {
+                if (sampleLines[s] !== controlLines[c3]) {
+                  if (s !== 1 || c3 !== 1) {
                     do {
                       s--;
-                      c--;
-                      if (c < 0 || sampleLines[s] !== controlLines[c]) {
+                      c3--;
+                      if (c3 < 0 || sampleLines[s] !== controlLines[c3]) {
                         var _frame = "\n" + sampleLines[s].replace(" at new ", " at ");
                         if (fn.displayName && _frame.includes("<anonymous>")) {
                           _frame = _frame.replace("<anonymous>", fn.displayName);
@@ -1499,7 +1501,7 @@ var require_react_dom_development = __commonJS({
                         }
                         return _frame;
                       }
-                    } while (s >= 1 && c >= 0);
+                    } while (s >= 1 && c3 >= 0);
                   }
                   break;
                 }
@@ -1566,7 +1568,7 @@ var require_react_dom_development = __commonJS({
                 var init = lazyComponent._init;
                 try {
                   return describeUnknownElementTypeFrameInDEV(init(payload), source, ownerFn);
-                } catch (x2) {
+                } catch (x3) {
                 }
               }
             }
@@ -1606,8 +1608,8 @@ var require_react_dom_development = __commonJS({
               node = node.return;
             } while (node);
             return info;
-          } catch (x2) {
-            return "\nError generating stack: " + x2.message + "\n" + x2.stack;
+          } catch (x3) {
+            return "\nError generating stack: " + x3.message + "\n" + x3.stack;
           }
         }
         function getWrappedName(outerType, innerType, wrapperName) {
@@ -1672,7 +1674,7 @@ var require_react_dom_development = __commonJS({
                 var init = lazyComponent._init;
                 try {
                   return getComponentNameFromType(init(payload));
-                } catch (x2) {
+                } catch (x3) {
                   return null;
                 }
               }
@@ -2069,8 +2071,8 @@ var require_react_dom_development = __commonJS({
               checkAttributeStringCoercion(name, "name");
             }
             var group = queryRoot.querySelectorAll("input[name=" + JSON.stringify("" + name) + '][type="radio"]');
-            for (var i2 = 0; i2 < group.length; i2++) {
-              var otherNode = group[i2];
+            for (var i = 0; i < group.length; i++) {
+              var otherNode = group[i];
               if (otherNode === rootNode || otherNode.form !== rootNode.form) {
                 continue;
               }
@@ -2102,7 +2104,7 @@ var require_react_dom_development = __commonJS({
           {
             if (props.value == null) {
               if (typeof props.children === "object" && props.children !== null) {
-                React10.Children.forEach(props.children, function(child) {
+                React11.Children.forEach(props.children, function(child) {
                   if (child == null) {
                     return;
                   }
@@ -2133,8 +2135,8 @@ var require_react_dom_development = __commonJS({
           }
         }
         var isArrayImpl = Array.isArray;
-        function isArray(a) {
-          return isArrayImpl(a);
+        function isArray(a2) {
+          return isArrayImpl(a2);
         }
         var didWarnValueDefaultValue$1;
         {
@@ -2151,8 +2153,8 @@ var require_react_dom_development = __commonJS({
         function checkSelectPropTypes(props) {
           {
             checkControlledValueProps("select", props);
-            for (var i2 = 0; i2 < valuePropNames.length; i2++) {
-              var propName = valuePropNames[i2];
+            for (var i = 0; i < valuePropNames.length; i++) {
+              var propName = valuePropNames[i];
               if (props[propName] == null) {
                 continue;
               }
@@ -2170,8 +2172,8 @@ var require_react_dom_development = __commonJS({
           if (multiple) {
             var selectedValues = propValue;
             var selectedValue = {};
-            for (var i2 = 0; i2 < selectedValues.length; i2++) {
-              selectedValue["$" + selectedValues[i2]] = true;
+            for (var i = 0; i < selectedValues.length; i++) {
+              selectedValue["$" + selectedValues[i]] = true;
             }
             for (var _i = 0; _i < options2.length; _i++) {
               var selected = selectedValue.hasOwnProperty("$" + options2[_i].value);
@@ -2647,8 +2649,8 @@ var require_react_dom_development = __commonJS({
           var expanded = {};
           for (var key in styles) {
             var longhands = shorthandToLonghand[key] || [key];
-            for (var i2 = 0; i2 < longhands.length; i2++) {
-              expanded[longhands[i2]] = key;
+            for (var i = 0; i < longhands.length; i++) {
+              expanded[longhands[i]] = key;
             }
           }
           return expanded;
@@ -3570,8 +3572,8 @@ var require_react_dom_development = __commonJS({
           restoreQueue = null;
           restoreStateOfTarget(target);
           if (queuedTargets) {
-            for (var i2 = 0; i2 < queuedTargets.length; i2++) {
-              restoreStateOfTarget(queuedTargets[i2]);
+            for (var i = 0; i < queuedTargets.length; i++) {
+              restoreStateOfTarget(queuedTargets[i]);
             }
           }
         }
@@ -3588,13 +3590,13 @@ var require_react_dom_development = __commonJS({
             restoreStateIfNeeded();
           }
         }
-        function batchedUpdates(fn, a, b2) {
+        function batchedUpdates(fn, a2, b2) {
           if (isInsideEventHandler) {
-            return fn(a, b2);
+            return fn(a2, b2);
           }
           isInsideEventHandler = true;
           try {
-            return batchedUpdatesImpl(fn, a, b2);
+            return batchedUpdatesImpl(fn, a2, b2);
           } finally {
             isInsideEventHandler = false;
             finishEventHandler();
@@ -3658,7 +3660,7 @@ var require_react_dom_development = __commonJS({
             passiveBrowserEventsSupported = false;
           }
         }
-        function invokeGuardedCallbackProd(name, func, context, a, b2, c, d2, e, f2) {
+        function invokeGuardedCallbackProd(name, func, context, a2, b2, c3, d2, e, f2) {
           var funcArgs = Array.prototype.slice.call(arguments, 3);
           try {
             func.apply(context, funcArgs);
@@ -3670,7 +3672,7 @@ var require_react_dom_development = __commonJS({
         {
           if (typeof window !== "undefined" && typeof window.dispatchEvent === "function" && typeof document !== "undefined" && typeof document.createEvent === "function") {
             var fakeNode = document.createElement("react");
-            invokeGuardedCallbackImpl = function invokeGuardedCallbackDev(name, func, context, a, b2, c, d2, e, f2) {
+            invokeGuardedCallbackImpl = function invokeGuardedCallbackDev(name, func, context, a2, b2, c3, d2, e, f2) {
               if (typeof document === "undefined" || document === null) {
                 throw new Error("The `document` global was defined when React was initialized, but is not defined anymore. This can happen in a test environment if a component schedules an update from an asynchronous callback, but the test has already finished running. To solve this, you can either unmount the component at the end of your test (and ensure that any asynchronous operations get canceled in `componentWillUnmount`), or you can change the test itself to be asynchronous.");
               }
@@ -3745,12 +3747,12 @@ var require_react_dom_development = __commonJS({
             caughtError = error2;
           }
         };
-        function invokeGuardedCallback(name, func, context, a, b2, c, d2, e, f2) {
+        function invokeGuardedCallback(name, func, context, a2, b2, c3, d2, e, f2) {
           hasError = false;
           caughtError = null;
           invokeGuardedCallbackImpl$1.apply(reporter, arguments);
         }
-        function invokeGuardedCallbackAndCatchFirstError(name, func, context, a, b2, c, d2, e, f2) {
+        function invokeGuardedCallbackAndCatchFirstError(name, func, context, a2, b2, c3, d2, e, f2) {
           invokeGuardedCallback.apply(this, arguments);
           if (hasError) {
             var error2 = clearCaughtError();
@@ -3979,10 +3981,10 @@ var require_react_dom_development = __commonJS({
             }
             return fiber;
           }
-          var a = fiber;
+          var a2 = fiber;
           var b2 = alternate;
           while (true) {
-            var parentA = a.return;
+            var parentA = a2.return;
             if (parentA === null) {
               break;
             }
@@ -3990,7 +3992,7 @@ var require_react_dom_development = __commonJS({
             if (parentB === null) {
               var nextParent = parentA.return;
               if (nextParent !== null) {
-                a = b2 = nextParent;
+                a2 = b2 = nextParent;
                 continue;
               }
               break;
@@ -3998,7 +4000,7 @@ var require_react_dom_development = __commonJS({
             if (parentA.child === parentB.child) {
               var child = parentA.child;
               while (child) {
-                if (child === a) {
+                if (child === a2) {
                   assertIsMounted(parentA);
                   return fiber;
                 }
@@ -4010,23 +4012,23 @@ var require_react_dom_development = __commonJS({
               }
               throw new Error("Unable to find node on an unmounted component.");
             }
-            if (a.return !== b2.return) {
-              a = parentA;
+            if (a2.return !== b2.return) {
+              a2 = parentA;
               b2 = parentB;
             } else {
               var didFindChild = false;
               var _child = parentA.child;
               while (_child) {
-                if (_child === a) {
+                if (_child === a2) {
                   didFindChild = true;
-                  a = parentA;
+                  a2 = parentA;
                   b2 = parentB;
                   break;
                 }
                 if (_child === b2) {
                   didFindChild = true;
                   b2 = parentA;
-                  a = parentB;
+                  a2 = parentB;
                   break;
                 }
                 _child = _child.sibling;
@@ -4034,16 +4036,16 @@ var require_react_dom_development = __commonJS({
               if (!didFindChild) {
                 _child = parentB.child;
                 while (_child) {
-                  if (_child === a) {
+                  if (_child === a2) {
                     didFindChild = true;
-                    a = parentB;
+                    a2 = parentB;
                     b2 = parentA;
                     break;
                   }
                   if (_child === b2) {
                     didFindChild = true;
                     b2 = parentB;
-                    a = parentA;
+                    a2 = parentA;
                     break;
                   }
                   _child = _child.sibling;
@@ -4053,14 +4055,14 @@ var require_react_dom_development = __commonJS({
                 }
               }
             }
-            if (a.alternate !== b2) {
+            if (a2.alternate !== b2) {
               throw new Error("Return fibers should always be each others' alternates. This error is likely caused by a bug in React. Please file an issue.");
             }
           }
-          if (a.tag !== HostRoot) {
+          if (a2.tag !== HostRoot) {
             throw new Error("Unable to find node on an unmounted component.");
           }
-          if (a.stateNode.current === a) {
+          if (a2.stateNode.current === a2) {
             return fiber;
           }
           return alternate;
@@ -4460,8 +4462,8 @@ var require_react_dom_development = __commonJS({
         var clz32 = Math.clz32 ? Math.clz32 : clz32Fallback;
         var log = Math.log;
         var LN2 = Math.LN2;
-        function clz32Fallback(x2) {
-          var asUint = x2 >>> 0;
+        function clz32Fallback(x3) {
+          var asUint = x3 >>> 0;
           if (asUint === 0) {
             return 32;
           }
@@ -4917,30 +4919,30 @@ var require_react_dom_development = __commonJS({
         function laneToIndex(lane) {
           return pickArbitraryLaneIndex(lane);
         }
-        function includesSomeLane(a, b2) {
-          return (a & b2) !== NoLanes;
+        function includesSomeLane(a2, b2) {
+          return (a2 & b2) !== NoLanes;
         }
         function isSubsetOfLanes(set2, subset) {
           return (set2 & subset) === subset;
         }
-        function mergeLanes(a, b2) {
-          return a | b2;
+        function mergeLanes(a2, b2) {
+          return a2 | b2;
         }
         function removeLanes(set2, subset) {
           return set2 & ~subset;
         }
-        function intersectLanes(a, b2) {
-          return a & b2;
+        function intersectLanes(a2, b2) {
+          return a2 & b2;
         }
         function laneToLanes(lane) {
           return lane;
         }
-        function higherPriorityLane(a, b2) {
-          return a !== NoLane && a < b2 ? a : b2;
+        function higherPriorityLane(a2, b2) {
+          return a2 !== NoLane && a2 < b2 ? a2 : b2;
         }
         function createLaneMap(initial) {
           var laneMap = [];
-          for (var i2 = 0; i2 < TotalLanes; i2++) {
+          for (var i = 0; i < TotalLanes; i++) {
             laneMap.push(initial);
           }
           return laneMap;
@@ -5113,14 +5115,14 @@ var require_react_dom_development = __commonJS({
             currentUpdatePriority = previousPriority;
           }
         }
-        function higherEventPriority(a, b2) {
-          return a !== 0 && a < b2 ? a : b2;
+        function higherEventPriority(a2, b2) {
+          return a2 !== 0 && a2 < b2 ? a2 : b2;
         }
-        function lowerEventPriority(a, b2) {
-          return a === 0 || a > b2 ? a : b2;
+        function lowerEventPriority(a2, b2) {
+          return a2 === 0 || a2 > b2 ? a2 : b2;
         }
-        function isHigherEventPriority(a, b2) {
-          return a !== 0 && a < b2;
+        function isHigherEventPriority(a2, b2) {
+          return a2 !== 0 && a2 < b2;
         }
         function lanesToEventPriority(lanes) {
           var lane = getHighestPriorityLane(lanes);
@@ -5324,14 +5326,14 @@ var require_react_dom_development = __commonJS({
             target,
             priority: updatePriority
           };
-          var i2 = 0;
-          for (; i2 < queuedExplicitHydrationTargets.length; i2++) {
-            if (!isHigherEventPriority(updatePriority, queuedExplicitHydrationTargets[i2].priority)) {
+          var i = 0;
+          for (; i < queuedExplicitHydrationTargets.length; i++) {
+            if (!isHigherEventPriority(updatePriority, queuedExplicitHydrationTargets[i].priority)) {
               break;
             }
           }
-          queuedExplicitHydrationTargets.splice(i2, 0, queuedTarget);
-          if (i2 === 0) {
+          queuedExplicitHydrationTargets.splice(i, 0, queuedTarget);
+          if (i === 0) {
             attemptExplicitHydrationTarget(queuedTarget);
           }
         }
@@ -5394,8 +5396,8 @@ var require_react_dom_development = __commonJS({
         function retryIfBlockedOn(unblocked) {
           if (queuedDiscreteEvents.length > 0) {
             scheduleCallbackIfUnblocked(queuedDiscreteEvents[0], unblocked);
-            for (var i2 = 1; i2 < queuedDiscreteEvents.length; i2++) {
-              var queuedEvent = queuedDiscreteEvents[i2];
+            for (var i = 1; i < queuedDiscreteEvents.length; i++) {
+              var queuedEvent = queuedDiscreteEvents[i];
               if (queuedEvent.blockedOn === unblocked) {
                 queuedEvent.blockedOn = null;
               }
@@ -6449,22 +6451,22 @@ var require_react_dom_development = __commonJS({
             }
           }
           var from;
-          var to2;
+          var to;
           if (isOutEvent) {
             var _related = nativeEvent.relatedTarget || nativeEvent.toElement;
             from = targetInst;
-            to2 = _related ? getClosestInstanceFromNode(_related) : null;
-            if (to2 !== null) {
-              var nearestMounted = getNearestMountedFiber(to2);
-              if (to2 !== nearestMounted || to2.tag !== HostComponent && to2.tag !== HostText) {
-                to2 = null;
+            to = _related ? getClosestInstanceFromNode(_related) : null;
+            if (to !== null) {
+              var nearestMounted = getNearestMountedFiber(to);
+              if (to !== nearestMounted || to.tag !== HostComponent && to.tag !== HostText) {
+                to = null;
               }
             }
           } else {
             from = null;
-            to2 = targetInst;
+            to = targetInst;
           }
-          if (from === to2) {
+          if (from === to) {
             return;
           }
           var SyntheticEventCtor = SyntheticMouseEvent;
@@ -6478,22 +6480,22 @@ var require_react_dom_development = __commonJS({
             eventTypePrefix = "pointer";
           }
           var fromNode = from == null ? win : getNodeFromInstance(from);
-          var toNode = to2 == null ? win : getNodeFromInstance(to2);
+          var toNode = to == null ? win : getNodeFromInstance(to);
           var leave = new SyntheticEventCtor(leaveEventType, eventTypePrefix + "leave", from, nativeEvent, nativeEventTarget);
           leave.target = fromNode;
           leave.relatedTarget = toNode;
           var enter = null;
           var nativeTargetInst = getClosestInstanceFromNode(nativeEventTarget);
           if (nativeTargetInst === targetInst) {
-            var enterEvent = new SyntheticEventCtor(enterEventType, eventTypePrefix + "enter", to2, nativeEvent, nativeEventTarget);
+            var enterEvent = new SyntheticEventCtor(enterEventType, eventTypePrefix + "enter", to, nativeEvent, nativeEventTarget);
             enterEvent.target = toNode;
             enterEvent.relatedTarget = fromNode;
             enter = enterEvent;
           }
-          accumulateEnterLeaveTwoPhaseListeners(dispatchQueue, leave, enter, from, to2);
+          accumulateEnterLeaveTwoPhaseListeners(dispatchQueue, leave, enter, from, to);
         }
-        function is2(x2, y2) {
-          return x2 === y2 && (x2 !== 0 || 1 / x2 === 1 / y2) || x2 !== x2 && y2 !== y2;
+        function is2(x3, y2) {
+          return x3 === y2 && (x3 !== 0 || 1 / x3 === 1 / y2) || x3 !== x3 && y2 !== y2;
         }
         var objectIs = typeof Object.is === "function" ? Object.is : is2;
         function shallowEqual(objA, objB) {
@@ -6508,8 +6510,8 @@ var require_react_dom_development = __commonJS({
           if (keysA.length !== keysB.length) {
             return false;
           }
-          for (var i2 = 0; i2 < keysA.length; i2++) {
-            var currentKey = keysA[i2];
+          for (var i = 0; i < keysA.length; i++) {
+            var currentKey = keysA[i];
             if (!hasOwnProperty.call(objB, currentKey) || !objectIs(objA[currentKey], objB[currentKey])) {
               return false;
             }
@@ -6726,8 +6728,8 @@ var require_react_dom_development = __commonJS({
             if (typeof priorFocusedElem.focus === "function") {
               priorFocusedElem.focus();
             }
-            for (var i2 = 0; i2 < ancestors.length; i2++) {
-              var info = ancestors[i2];
+            for (var i = 0; i < ancestors.length; i++) {
+              var info = ancestors[i];
               info.element.scrollLeft = info.left;
               info.element.scrollTop = info.top;
             }
@@ -6892,8 +6894,8 @@ var require_react_dom_development = __commonJS({
           registerTwoPhaseEvent(reactName, [domEventName]);
         }
         function registerSimpleEvents() {
-          for (var i2 = 0; i2 < simpleEventPluginEvents.length; i2++) {
-            var eventName = simpleEventPluginEvents[i2];
+          for (var i = 0; i < simpleEventPluginEvents.length; i++) {
+            var eventName = simpleEventPluginEvents[i];
             var domEventName = eventName.toLowerCase();
             var capitalizedEvent = eventName[0].toUpperCase() + eventName.slice(1);
             registerSimpleEvent(domEventName, "on" + capitalizedEvent);
@@ -7037,8 +7039,8 @@ var require_react_dom_development = __commonJS({
         function processDispatchQueueItemsInOrder(event, dispatchListeners, inCapturePhase) {
           var previousInstance;
           if (inCapturePhase) {
-            for (var i2 = dispatchListeners.length - 1; i2 >= 0; i2--) {
-              var _dispatchListeners$i = dispatchListeners[i2], instance = _dispatchListeners$i.instance, currentTarget = _dispatchListeners$i.currentTarget, listener = _dispatchListeners$i.listener;
+            for (var i = dispatchListeners.length - 1; i >= 0; i--) {
+              var _dispatchListeners$i = dispatchListeners[i], instance = _dispatchListeners$i.instance, currentTarget = _dispatchListeners$i.currentTarget, listener = _dispatchListeners$i.listener;
               if (instance !== previousInstance && event.isPropagationStopped()) {
                 return;
               }
@@ -7058,8 +7060,8 @@ var require_react_dom_development = __commonJS({
         }
         function processDispatchQueue(dispatchQueue, eventSystemFlags) {
           var inCapturePhase = (eventSystemFlags & IS_CAPTURE_PHASE) !== 0;
-          for (var i2 = 0; i2 < dispatchQueue.length; i2++) {
-            var _dispatchQueue$i = dispatchQueue[i2], event = _dispatchQueue$i.event, listeners = _dispatchQueue$i.listeners;
+          for (var i = 0; i < dispatchQueue.length; i++) {
+            var _dispatchQueue$i = dispatchQueue[i], event = _dispatchQueue$i.event, listeners = _dispatchQueue$i.listeners;
             processDispatchQueueItemsInOrder(event, listeners, inCapturePhase);
           }
           rethrowCaughtError();
@@ -7323,13 +7325,13 @@ var require_react_dom_development = __commonJS({
             });
           }
         }
-        function accumulateEnterLeaveTwoPhaseListeners(dispatchQueue, leaveEvent, enterEvent, from, to2) {
-          var common = from && to2 ? getLowestCommonAncestor(from, to2) : null;
+        function accumulateEnterLeaveTwoPhaseListeners(dispatchQueue, leaveEvent, enterEvent, from, to) {
+          var common = from && to ? getLowestCommonAncestor(from, to) : null;
           if (from !== null) {
             accumulateEnterLeaveListenersForEvent(dispatchQueue, leaveEvent, from, common, false);
           }
-          if (to2 !== null && enterEvent !== null) {
-            accumulateEnterLeaveListenersForEvent(dispatchQueue, enterEvent, to2, common, true);
+          if (to !== null && enterEvent !== null) {
+            accumulateEnterLeaveListenersForEvent(dispatchQueue, enterEvent, to, common, true);
           }
         }
         function getListenerSetKey(domEventName, capture) {
@@ -7487,9 +7489,9 @@ var require_react_dom_development = __commonJS({
           }
         }
         function updateDOMProperties(domElement, updatePayload, wasCustomComponentTag, isCustomComponentTag) {
-          for (var i2 = 0; i2 < updatePayload.length; i2 += 2) {
-            var propKey = updatePayload[i2];
-            var propValue = updatePayload[i2 + 1];
+          for (var i = 0; i < updatePayload.length; i += 2) {
+            var propKey = updatePayload[i];
+            var propValue = updatePayload[i + 1];
             if (propKey === STYLE) {
               setValueForStyles(domElement, propValue);
             } else if (propKey === DANGEROUSLY_SET_INNER_HTML) {
@@ -7572,8 +7574,8 @@ var require_react_dom_development = __commonJS({
               break;
             case "video":
             case "audio":
-              for (var i2 = 0; i2 < mediaEventTypes.length; i2++) {
-                listenToNonDelegatedEvent(mediaEventTypes[i2], domElement);
+              for (var i = 0; i < mediaEventTypes.length; i++) {
+                listenToNonDelegatedEvent(mediaEventTypes[i], domElement);
               }
               props = rawProps;
               break;
@@ -7824,8 +7826,8 @@ var require_react_dom_development = __commonJS({
               break;
             case "video":
             case "audio":
-              for (var i2 = 0; i2 < mediaEventTypes.length; i2++) {
-                listenToNonDelegatedEvent(mediaEventTypes[i2], domElement);
+              for (var i = 0; i < mediaEventTypes.length; i++) {
+                listenToNonDelegatedEvent(mediaEventTypes[i], domElement);
               }
               break;
             case "source":
@@ -9141,14 +9143,14 @@ var require_react_dom_development = __commonJS({
         function flushSyncCallbacks() {
           if (!isFlushingSyncQueue && syncQueue !== null) {
             isFlushingSyncQueue = true;
-            var i2 = 0;
+            var i = 0;
             var previousUpdatePriority = getCurrentUpdatePriority();
             try {
               var isSync = true;
               var queue = syncQueue;
               setCurrentUpdatePriority(DiscreteEventPriority);
-              for (; i2 < queue.length; i2++) {
-                var callback = queue[i2];
+              for (; i < queue.length; i++) {
+                var callback = queue[i];
                 do {
                   callback = callback(isSync);
                 } while (callback !== null);
@@ -9157,7 +9159,7 @@ var require_react_dom_development = __commonJS({
               includesLegacySyncCallbacks = false;
             } catch (error2) {
               if (syncQueue !== null) {
-                syncQueue = syncQueue.slice(i2 + 1);
+                syncQueue = syncQueue.slice(i + 1);
               }
               scheduleCallback(ImmediatePriority, flushSyncCallbacks);
               throw error2;
@@ -10095,8 +10097,8 @@ var require_react_dom_development = __commonJS({
         }
         function finishQueueingConcurrentUpdates() {
           if (concurrentQueues !== null) {
-            for (var i2 = 0; i2 < concurrentQueues.length; i2++) {
-              var queue = concurrentQueues[i2];
+            for (var i = 0; i < concurrentQueues.length; i++) {
+              var queue = concurrentQueues[i];
               var lastInterleavedUpdate = queue.interleaved;
               if (lastInterleavedUpdate !== null) {
                 queue.interleaved = null;
@@ -10538,8 +10540,8 @@ var require_react_dom_development = __commonJS({
           var effects = finishedQueue.effects;
           finishedQueue.effects = null;
           if (effects !== null) {
-            for (var i2 = 0; i2 < effects.length; i2++) {
-              var effect = effects[i2];
+            for (var i = 0; i < effects.length; i++) {
+              var effect = effects[i];
               var callback = effect.callback;
               if (callback !== null) {
                 effect.callback = null;
@@ -10549,7 +10551,7 @@ var require_react_dom_development = __commonJS({
           }
         }
         var fakeInternalInstance = {};
-        var emptyRefsObject = new React10.Component().refs;
+        var emptyRefsObject = new React11.Component().refs;
         var didWarnAboutStateAssignmentForComponent;
         var didWarnAboutUninitializedState;
         var didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate;
@@ -11536,8 +11538,8 @@ var require_react_dom_development = __commonJS({
           function reconcileChildrenArray(returnFiber, currentFirstChild, newChildren, lanes) {
             {
               var knownKeys = null;
-              for (var i2 = 0; i2 < newChildren.length; i2++) {
-                var child = newChildren[i2];
+              for (var i = 0; i < newChildren.length; i++) {
+                var child = newChildren[i];
                 knownKeys = warnOnInvalidKey(child, knownKeys, returnFiber);
               }
             }
@@ -11912,11 +11914,11 @@ var require_react_dom_development = __commonJS({
         var contextStackCursor$1 = createCursor(NO_CONTEXT);
         var contextFiberStackCursor = createCursor(NO_CONTEXT);
         var rootInstanceStackCursor = createCursor(NO_CONTEXT);
-        function requiredContext(c) {
-          if (c === NO_CONTEXT) {
+        function requiredContext(c3) {
+          if (c3 === NO_CONTEXT) {
             throw new Error("Expected host context to exist. This error is likely caused by a bug in React. Please file an issue.");
           }
-          return c;
+          return c3;
         }
         function getRootHostContainer() {
           var rootInstance = requiredContext(rootInstanceStackCursor.current);
@@ -12051,8 +12053,8 @@ var require_react_dom_development = __commonJS({
         );
         var workInProgressSources = [];
         function resetWorkInProgressVersions() {
-          for (var i2 = 0; i2 < workInProgressSources.length; i2++) {
-            var mutableSource = workInProgressSources[i2];
+          for (var i = 0; i < workInProgressSources.length; i++) {
+            var mutableSource = workInProgressSources[i];
             {
               mutableSource._workInProgressVersionPrimary = null;
             }
@@ -12123,10 +12125,10 @@ var require_react_dom_development = __commonJS({
               if (hookTypesDev !== null) {
                 var table = "";
                 var secondColumnStart = 30;
-                for (var i2 = 0; i2 <= hookTypesUpdateIndexDev; i2++) {
-                  var oldHookName = hookTypesDev[i2];
-                  var newHookName = i2 === hookTypesUpdateIndexDev ? currentHookName : oldHookName;
-                  var row = i2 + 1 + ". " + oldHookName;
+                for (var i = 0; i <= hookTypesUpdateIndexDev; i++) {
+                  var oldHookName = hookTypesDev[i];
+                  var newHookName = i === hookTypesUpdateIndexDev ? currentHookName : oldHookName;
+                  var row = i + 1 + ". " + oldHookName;
                   while (row.length < secondColumnStart) {
                     row += " ";
                   }
@@ -12158,8 +12160,8 @@ var require_react_dom_development = __commonJS({
               error("The final argument passed to %s changed size between renders. The order and size of this array must remain constant.\n\nPrevious: %s\nIncoming: %s", currentHookNameInDev, "[" + prevDeps.join(", ") + "]", "[" + nextDeps.join(", ") + "]");
             }
           }
-          for (var i2 = 0; i2 < prevDeps.length && i2 < nextDeps.length; i2++) {
-            if (objectIs(nextDeps[i2], prevDeps[i2])) {
+          for (var i = 0; i < prevDeps.length && i < nextDeps.length; i++) {
+            if (objectIs(nextDeps[i], prevDeps[i])) {
               continue;
             }
             return false;
@@ -14443,7 +14445,7 @@ var require_react_dom_development = __commonJS({
                 var init = lazyComponent._init;
                 try {
                   outerMemoType = init(payload);
-                } catch (x2) {
+                } catch (x3) {
                   outerMemoType = null;
                 }
                 var outerPropTypes = outerMemoType && outerMemoType.propTypes;
@@ -15487,8 +15489,8 @@ var require_react_dom_development = __commonJS({
           {
             if ((revealOrder === "forwards" || revealOrder === "backwards") && children !== void 0 && children !== null && children !== false) {
               if (isArray(children)) {
-                for (var i2 = 0; i2 < children.length; i2++) {
-                  if (!validateSuspenseListNestedChild(children[i2], i2)) {
+                for (var i = 0; i < children.length; i++) {
+                  if (!validateSuspenseListNestedChild(children[i], i)) {
                     return;
                   }
                 }
@@ -17682,8 +17684,8 @@ var require_react_dom_development = __commonJS({
         function recursivelyTraverseMutationEffects(root2, parentFiber, lanes) {
           var deletions = parentFiber.deletions;
           if (deletions !== null) {
-            for (var i2 = 0; i2 < deletions.length; i2++) {
-              var childToDelete = deletions[i2];
+            for (var i = 0; i < deletions.length; i++) {
+              var childToDelete = deletions[i];
               try {
                 commitDeletionEffects(root2, parentFiber, childToDelete);
               } catch (error2) {
@@ -18189,8 +18191,8 @@ var require_react_dom_development = __commonJS({
             if ((nextEffect.flags & ChildDeletion) !== NoFlags) {
               var deletions = fiber.deletions;
               if (deletions !== null) {
-                for (var i2 = 0; i2 < deletions.length; i2++) {
-                  var fiberToDelete = deletions[i2];
+                for (var i = 0; i < deletions.length; i++) {
+                  var fiberToDelete = deletions[i];
                   nextEffect = fiberToDelete;
                   commitPassiveUnmountEffectsInsideOfDeletedTree_begin(fiberToDelete, fiber);
                 }
@@ -18832,8 +18834,8 @@ var require_react_dom_development = __commonJS({
               if (updateQueue !== null) {
                 var checks = updateQueue.stores;
                 if (checks !== null) {
-                  for (var i2 = 0; i2 < checks.length; i2++) {
-                    var check = checks[i2];
+                  for (var i = 0; i < checks.length; i++) {
+                    var check = checks[i];
                     var getSnapshot = check.getSnapshot;
                     var renderedValue = check.value;
                     try {
@@ -18920,11 +18922,11 @@ var require_react_dom_development = __commonJS({
             }
           }
         }
-        function batchedUpdates$1(fn, a) {
+        function batchedUpdates$1(fn, a2) {
           var prevExecutionContext = executionContext;
           executionContext |= BatchedContext;
           try {
-            return fn(a);
+            return fn(a2);
           } finally {
             executionContext = prevExecutionContext;
             if (executionContext === NoContext && // Treat `act` as if it's inside `batchedUpdates`, even in legacy mode.
@@ -18934,13 +18936,13 @@ var require_react_dom_development = __commonJS({
             }
           }
         }
-        function discreteUpdates(fn, a, b2, c, d2) {
+        function discreteUpdates(fn, a2, b2, c3, d2) {
           var previousPriority = getCurrentUpdatePriority();
           var prevTransition = ReactCurrentBatchConfig$3.transition;
           try {
             ReactCurrentBatchConfig$3.transition = null;
             setCurrentUpdatePriority(DiscreteEventPriority);
-            return fn(a, b2, c, d2);
+            return fn(a2, b2, c3, d2);
           } finally {
             setCurrentUpdatePriority(previousPriority);
             ReactCurrentBatchConfig$3.transition = prevTransition;
@@ -19410,8 +19412,8 @@ var require_react_dom_development = __commonJS({
           ensureRootIsScheduled(root2, now());
           if (recoverableErrors !== null) {
             var onRecoverableError = root2.onRecoverableError;
-            for (var i2 = 0; i2 < recoverableErrors.length; i2++) {
-              var recoverableError = recoverableErrors[i2];
+            for (var i = 0; i < recoverableErrors.length; i++) {
+              var recoverableError = recoverableErrors[i];
               var componentStack = recoverableError.stack;
               var digest = recoverableError.digest;
               onRecoverableError(recoverableError.value, {
@@ -19505,8 +19507,8 @@ var require_react_dom_development = __commonJS({
           {
             var profilerEffects = pendingPassiveProfilerEffects;
             pendingPassiveProfilerEffects = [];
-            for (var i2 = 0; i2 < profilerEffects.length; i2++) {
-              var _fiber = profilerEffects[i2];
+            for (var i = 0; i < profilerEffects.length; i++) {
+              var _fiber = profilerEffects[i];
               commitPassiveEffectDurations(root2, _fiber);
             }
           }
@@ -20939,8 +20941,8 @@ var require_react_dom_development = __commonJS({
               warn("copyWithRename() expects paths of the same length");
               return;
             } else {
-              for (var i2 = 0; i2 < newPath.length - 1; i2++) {
-                if (oldPath[i2] !== newPath[i2]) {
+              for (var i = 0; i < newPath.length - 1; i++) {
+                if (oldPath[i] !== newPath[i]) {
                   warn("copyWithRename() expects paths to be the same except for the deepest key");
                   return;
                 }
@@ -21230,8 +21232,8 @@ var require_react_dom_development = __commonJS({
           markContainerAsRoot(root2.current, container);
           listenToAllSupportedEvents(container);
           if (mutableSources) {
-            for (var i2 = 0; i2 < mutableSources.length; i2++) {
-              var mutableSource = mutableSources[i2];
+            for (var i = 0; i < mutableSources.length; i++) {
+              var mutableSource = mutableSources[i];
               registerMutableSourceForHydration(root2, mutableSource);
             }
           }
@@ -21578,13 +21580,13 @@ var require_react_dom_development = __commonJS({
 
 // node_modules/react-dom/index.js
 var require_react_dom = __commonJS({
-  "node_modules/react-dom/index.js"(exports, module) {
+  "node_modules/react-dom/index.js"(exports, module2) {
     "use strict";
     if (false) {
       checkDCE();
-      module.exports = null;
+      module2.exports = null;
     } else {
-      module.exports = require_react_dom_development();
+      module2.exports = require_react_dom_development();
     }
   }
 });
@@ -21598,67 +21600,67 @@ var require_client = __commonJS({
       exports.createRoot = m2.createRoot;
       exports.hydrateRoot = m2.hydrateRoot;
     } else {
-      i2 = m2.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
-      exports.createRoot = function(c, o) {
-        i2.usingClientEntryPoint = true;
+      i = m2.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+      exports.createRoot = function(c3, o) {
+        i.usingClientEntryPoint = true;
         try {
-          return m2.createRoot(c, o);
+          return m2.createRoot(c3, o);
         } finally {
-          i2.usingClientEntryPoint = false;
+          i.usingClientEntryPoint = false;
         }
       };
-      exports.hydrateRoot = function(c, h, o) {
-        i2.usingClientEntryPoint = true;
+      exports.hydrateRoot = function(c3, h2, o) {
+        i.usingClientEntryPoint = true;
         try {
-          return m2.hydrateRoot(c, h, o);
+          return m2.hydrateRoot(c3, h2, o);
         } finally {
-          i2.usingClientEntryPoint = false;
+          i.usingClientEntryPoint = false;
         }
       };
     }
-    var i2;
+    var i;
   }
 });
 
 // node_modules/xterm/lib/xterm.js
 var require_xterm = __commonJS({
-  "node_modules/xterm/lib/xterm.js"(exports, module) {
+  "node_modules/xterm/lib/xterm.js"(exports, module2) {
     !function(e, t) {
-      if ("object" == typeof exports && "object" == typeof module)
-        module.exports = t();
+      if ("object" == typeof exports && "object" == typeof module2)
+        module2.exports = t();
       else if ("function" == typeof define && define.amd)
         define([], t);
       else {
-        var i2 = t();
-        for (var s in i2)
-          ("object" == typeof exports ? exports : e)[s] = i2[s];
+        var i = t();
+        for (var s in i)
+          ("object" == typeof exports ? exports : e)[s] = i[s];
       }
     }(self, () => (() => {
       "use strict";
-      var e = { 4567: function(e2, t2, i3) {
-        var s2 = this && this.__decorate || function(e3, t3, i4, s3) {
-          var r2, n2 = arguments.length, o2 = n2 < 3 ? t3 : null === s3 ? s3 = Object.getOwnPropertyDescriptor(t3, i4) : s3;
+      var e = { 4567: function(e2, t2, i2) {
+        var s2 = this && this.__decorate || function(e3, t3, i3, s3) {
+          var r2, n2 = arguments.length, o2 = n2 < 3 ? t3 : null === s3 ? s3 = Object.getOwnPropertyDescriptor(t3, i3) : s3;
           if ("object" == typeof Reflect && "function" == typeof Reflect.decorate)
-            o2 = Reflect.decorate(e3, t3, i4, s3);
+            o2 = Reflect.decorate(e3, t3, i3, s3);
           else
-            for (var a2 = e3.length - 1; a2 >= 0; a2--)
-              (r2 = e3[a2]) && (o2 = (n2 < 3 ? r2(o2) : n2 > 3 ? r2(t3, i4, o2) : r2(t3, i4)) || o2);
-          return n2 > 3 && o2 && Object.defineProperty(t3, i4, o2), o2;
+            for (var a3 = e3.length - 1; a3 >= 0; a3--)
+              (r2 = e3[a3]) && (o2 = (n2 < 3 ? r2(o2) : n2 > 3 ? r2(t3, i3, o2) : r2(t3, i3)) || o2);
+          return n2 > 3 && o2 && Object.defineProperty(t3, i3, o2), o2;
         }, r = this && this.__param || function(e3, t3) {
-          return function(i4, s3) {
-            t3(i4, s3, e3);
+          return function(i3, s3) {
+            t3(i3, s3, e3);
           };
         };
         Object.defineProperty(t2, "__esModule", { value: true }), t2.AccessibilityManager = void 0;
-        const n = i3(9042), o = i3(6114), a = i3(9924), h = i3(844), c = i3(5596), l2 = i3(4725), d2 = i3(3656);
-        let _2 = t2.AccessibilityManager = class extends h.Disposable {
+        const n = i2(9042), o = i2(6114), a2 = i2(9924), h2 = i2(844), c3 = i2(5596), l = i2(4725), d2 = i2(3656);
+        let _2 = t2.AccessibilityManager = class extends h2.Disposable {
           constructor(e3, t3) {
             super(), this._terminal = e3, this._renderService = t3, this._liveRegionLineCount = 0, this._charsToConsume = [], this._charsToAnnounce = "", this._accessibilityContainer = document.createElement("div"), this._accessibilityContainer.classList.add("xterm-accessibility"), this._rowContainer = document.createElement("div"), this._rowContainer.setAttribute("role", "list"), this._rowContainer.classList.add("xterm-accessibility-tree"), this._rowElements = [];
             for (let e4 = 0; e4 < this._terminal.rows; e4++)
               this._rowElements[e4] = this._createAccessibilityTreeNode(), this._rowContainer.appendChild(this._rowElements[e4]);
-            if (this._topBoundaryFocusListener = (e4) => this._handleBoundaryFocus(e4, 0), this._bottomBoundaryFocusListener = (e4) => this._handleBoundaryFocus(e4, 1), this._rowElements[0].addEventListener("focus", this._topBoundaryFocusListener), this._rowElements[this._rowElements.length - 1].addEventListener("focus", this._bottomBoundaryFocusListener), this._refreshRowsDimensions(), this._accessibilityContainer.appendChild(this._rowContainer), this._liveRegion = document.createElement("div"), this._liveRegion.classList.add("live-region"), this._liveRegion.setAttribute("aria-live", "assertive"), this._accessibilityContainer.appendChild(this._liveRegion), this._liveRegionDebouncer = this.register(new a.TimeBasedDebouncer(this._renderRows.bind(this))), !this._terminal.element)
+            if (this._topBoundaryFocusListener = (e4) => this._handleBoundaryFocus(e4, 0), this._bottomBoundaryFocusListener = (e4) => this._handleBoundaryFocus(e4, 1), this._rowElements[0].addEventListener("focus", this._topBoundaryFocusListener), this._rowElements[this._rowElements.length - 1].addEventListener("focus", this._bottomBoundaryFocusListener), this._refreshRowsDimensions(), this._accessibilityContainer.appendChild(this._rowContainer), this._liveRegion = document.createElement("div"), this._liveRegion.classList.add("live-region"), this._liveRegion.setAttribute("aria-live", "assertive"), this._accessibilityContainer.appendChild(this._liveRegion), this._liveRegionDebouncer = this.register(new a2.TimeBasedDebouncer(this._renderRows.bind(this))), !this._terminal.element)
               throw new Error("Cannot enable accessibility before Terminal.open");
-            this._terminal.element.insertAdjacentElement("afterbegin", this._accessibilityContainer), this.register(this._terminal.onResize((e4) => this._handleResize(e4.rows))), this.register(this._terminal.onRender((e4) => this._refreshRows(e4.start, e4.end))), this.register(this._terminal.onScroll(() => this._refreshRows())), this.register(this._terminal.onA11yChar((e4) => this._handleChar(e4))), this.register(this._terminal.onLineFeed(() => this._handleChar("\n"))), this.register(this._terminal.onA11yTab((e4) => this._handleTab(e4))), this.register(this._terminal.onKey((e4) => this._handleKey(e4.key))), this.register(this._terminal.onBlur(() => this._clearLiveRegion())), this.register(this._renderService.onDimensionsChange(() => this._refreshRowsDimensions())), this._screenDprMonitor = new c.ScreenDprMonitor(window), this.register(this._screenDprMonitor), this._screenDprMonitor.setListener(() => this._refreshRowsDimensions()), this.register((0, d2.addDisposableDomListener)(window, "resize", () => this._refreshRowsDimensions())), this._refreshRows(), this.register((0, h.toDisposable)(() => {
+            this._terminal.element.insertAdjacentElement("afterbegin", this._accessibilityContainer), this.register(this._terminal.onResize((e4) => this._handleResize(e4.rows))), this.register(this._terminal.onRender((e4) => this._refreshRows(e4.start, e4.end))), this.register(this._terminal.onScroll(() => this._refreshRows())), this.register(this._terminal.onA11yChar((e4) => this._handleChar(e4))), this.register(this._terminal.onLineFeed(() => this._handleChar("\n"))), this.register(this._terminal.onA11yTab((e4) => this._handleTab(e4))), this.register(this._terminal.onKey((e4) => this._handleKey(e4.key))), this.register(this._terminal.onBlur(() => this._clearLiveRegion())), this.register(this._renderService.onDimensionsChange(() => this._refreshRowsDimensions())), this._screenDprMonitor = new c3.ScreenDprMonitor(window), this.register(this._screenDprMonitor), this._screenDprMonitor.setListener(() => this._refreshRowsDimensions()), this.register((0, d2.addDisposableDomListener)(window, "resize", () => this._refreshRowsDimensions())), this._refreshRows(), this.register((0, h2.toDisposable)(() => {
               this._accessibilityContainer.remove(), this._rowElements.length = 0;
             }));
           }
@@ -21681,9 +21683,9 @@ var require_xterm = __commonJS({
             this._liveRegionDebouncer.refresh(e3, t3, this._terminal.rows);
           }
           _renderRows(e3, t3) {
-            const i4 = this._terminal.buffer, s3 = i4.lines.length.toString();
+            const i3 = this._terminal.buffer, s3 = i3.lines.length.toString();
             for (let r2 = e3; r2 <= t3; r2++) {
-              const e4 = i4.translateBufferLineToString(i4.ydisp + r2, true), t4 = (i4.ydisp + r2 + 1).toString(), n2 = this._rowElements[r2];
+              const e4 = i3.translateBufferLineToString(i3.ydisp + r2, true), t4 = (i3.ydisp + r2 + 1).toString(), n2 = this._rowElements[r2];
               n2 && (0 === e4.length ? n2.innerText = "\xA0" : n2.textContent = e4, n2.setAttribute("aria-posinset", t4), n2.setAttribute("aria-setsize", s3));
             }
             this._announceCharacters();
@@ -21692,13 +21694,13 @@ var require_xterm = __commonJS({
             0 !== this._charsToAnnounce.length && (this._liveRegion.textContent += this._charsToAnnounce, this._charsToAnnounce = "");
           }
           _handleBoundaryFocus(e3, t3) {
-            const i4 = e3.target, s3 = this._rowElements[0 === t3 ? 1 : this._rowElements.length - 2];
-            if (i4.getAttribute("aria-posinset") === (0 === t3 ? "1" : `${this._terminal.buffer.lines.length}`))
+            const i3 = e3.target, s3 = this._rowElements[0 === t3 ? 1 : this._rowElements.length - 2];
+            if (i3.getAttribute("aria-posinset") === (0 === t3 ? "1" : `${this._terminal.buffer.lines.length}`))
               return;
             if (e3.relatedTarget !== s3)
               return;
             let r2, n2;
-            if (0 === t3 ? (r2 = i4, n2 = this._rowElements.pop(), this._rowContainer.removeChild(n2)) : (r2 = this._rowElements.shift(), n2 = i4, this._rowContainer.removeChild(r2)), r2.removeEventListener("focus", this._topBoundaryFocusListener), n2.removeEventListener("focus", this._bottomBoundaryFocusListener), 0 === t3) {
+            if (0 === t3 ? (r2 = i3, n2 = this._rowElements.pop(), this._rowContainer.removeChild(n2)) : (r2 = this._rowElements.shift(), n2 = i3, this._rowContainer.removeChild(r2)), r2.removeEventListener("focus", this._topBoundaryFocusListener), n2.removeEventListener("focus", this._bottomBoundaryFocusListener), 0 === t3) {
               const e4 = this._createAccessibilityTreeNode();
               this._rowElements.unshift(e4), this._rowContainer.insertAdjacentElement("afterbegin", e4);
             } else {
@@ -21730,43 +21732,43 @@ var require_xterm = __commonJS({
             e3.style.height = `${this._renderService.dimensions.css.cell.height}px`;
           }
         };
-        t2.AccessibilityManager = _2 = s2([r(1, l2.IRenderService)], _2);
+        t2.AccessibilityManager = _2 = s2([r(1, l.IRenderService)], _2);
       }, 3614: (e2, t2) => {
-        function i3(e3) {
+        function i2(e3) {
           return e3.replace(/\r?\n/g, "\r");
         }
         function s2(e3, t3) {
           return t3 ? "\x1B[200~" + e3 + "\x1B[201~" : e3;
         }
         function r(e3, t3, r2, n2) {
-          e3 = s2(e3 = i3(e3), r2.decPrivateModes.bracketedPasteMode && true !== n2.rawOptions.ignoreBracketedPasteMode), r2.triggerDataEvent(e3, true), t3.value = "";
+          e3 = s2(e3 = i2(e3), r2.decPrivateModes.bracketedPasteMode && true !== n2.rawOptions.ignoreBracketedPasteMode), r2.triggerDataEvent(e3, true), t3.value = "";
         }
-        function n(e3, t3, i4) {
-          const s3 = i4.getBoundingClientRect(), r2 = e3.clientX - s3.left - 10, n2 = e3.clientY - s3.top - 10;
+        function n(e3, t3, i3) {
+          const s3 = i3.getBoundingClientRect(), r2 = e3.clientX - s3.left - 10, n2 = e3.clientY - s3.top - 10;
           t3.style.width = "20px", t3.style.height = "20px", t3.style.left = `${r2}px`, t3.style.top = `${n2}px`, t3.style.zIndex = "1000", t3.focus();
         }
-        Object.defineProperty(t2, "__esModule", { value: true }), t2.rightClickHandler = t2.moveTextAreaUnderMouseCursor = t2.paste = t2.handlePasteEvent = t2.copyHandler = t2.bracketTextForPaste = t2.prepareTextForTerminal = void 0, t2.prepareTextForTerminal = i3, t2.bracketTextForPaste = s2, t2.copyHandler = function(e3, t3) {
+        Object.defineProperty(t2, "__esModule", { value: true }), t2.rightClickHandler = t2.moveTextAreaUnderMouseCursor = t2.paste = t2.handlePasteEvent = t2.copyHandler = t2.bracketTextForPaste = t2.prepareTextForTerminal = void 0, t2.prepareTextForTerminal = i2, t2.bracketTextForPaste = s2, t2.copyHandler = function(e3, t3) {
           e3.clipboardData && e3.clipboardData.setData("text/plain", t3.selectionText), e3.preventDefault();
-        }, t2.handlePasteEvent = function(e3, t3, i4, s3) {
-          e3.stopPropagation(), e3.clipboardData && r(e3.clipboardData.getData("text/plain"), t3, i4, s3);
-        }, t2.paste = r, t2.moveTextAreaUnderMouseCursor = n, t2.rightClickHandler = function(e3, t3, i4, s3, r2) {
-          n(e3, t3, i4), r2 && s3.rightClickSelect(e3), t3.value = s3.selectionText, t3.select();
+        }, t2.handlePasteEvent = function(e3, t3, i3, s3) {
+          e3.stopPropagation(), e3.clipboardData && r(e3.clipboardData.getData("text/plain"), t3, i3, s3);
+        }, t2.paste = r, t2.moveTextAreaUnderMouseCursor = n, t2.rightClickHandler = function(e3, t3, i3, s3, r2) {
+          n(e3, t3, i3), r2 && s3.rightClickSelect(e3), t3.value = s3.selectionText, t3.select();
         };
-      }, 7239: (e2, t2, i3) => {
+      }, 7239: (e2, t2, i2) => {
         Object.defineProperty(t2, "__esModule", { value: true }), t2.ColorContrastCache = void 0;
-        const s2 = i3(1505);
+        const s2 = i2(1505);
         t2.ColorContrastCache = class {
           constructor() {
             this._color = new s2.TwoKeyMap(), this._css = new s2.TwoKeyMap();
           }
-          setCss(e3, t3, i4) {
-            this._css.set(e3, t3, i4);
+          setCss(e3, t3, i3) {
+            this._css.set(e3, t3, i3);
           }
           getCss(e3, t3) {
             return this._css.get(e3, t3);
           }
-          setColor(e3, t3, i4) {
-            this._color.set(e3, t3, i4);
+          setColor(e3, t3, i3) {
+            this._color.set(e3, t3, i3);
           }
           getColor(e3, t3) {
             return this._color.get(e3, t3);
@@ -21776,35 +21778,35 @@ var require_xterm = __commonJS({
           }
         };
       }, 3656: (e2, t2) => {
-        Object.defineProperty(t2, "__esModule", { value: true }), t2.addDisposableDomListener = void 0, t2.addDisposableDomListener = function(e3, t3, i3, s2) {
-          e3.addEventListener(t3, i3, s2);
+        Object.defineProperty(t2, "__esModule", { value: true }), t2.addDisposableDomListener = void 0, t2.addDisposableDomListener = function(e3, t3, i2, s2) {
+          e3.addEventListener(t3, i2, s2);
           let r = false;
           return { dispose: () => {
-            r || (r = true, e3.removeEventListener(t3, i3, s2));
+            r || (r = true, e3.removeEventListener(t3, i2, s2));
           } };
         };
-      }, 6465: function(e2, t2, i3) {
-        var s2 = this && this.__decorate || function(e3, t3, i4, s3) {
-          var r2, n2 = arguments.length, o2 = n2 < 3 ? t3 : null === s3 ? s3 = Object.getOwnPropertyDescriptor(t3, i4) : s3;
+      }, 6465: function(e2, t2, i2) {
+        var s2 = this && this.__decorate || function(e3, t3, i3, s3) {
+          var r2, n2 = arguments.length, o2 = n2 < 3 ? t3 : null === s3 ? s3 = Object.getOwnPropertyDescriptor(t3, i3) : s3;
           if ("object" == typeof Reflect && "function" == typeof Reflect.decorate)
-            o2 = Reflect.decorate(e3, t3, i4, s3);
+            o2 = Reflect.decorate(e3, t3, i3, s3);
           else
-            for (var a2 = e3.length - 1; a2 >= 0; a2--)
-              (r2 = e3[a2]) && (o2 = (n2 < 3 ? r2(o2) : n2 > 3 ? r2(t3, i4, o2) : r2(t3, i4)) || o2);
-          return n2 > 3 && o2 && Object.defineProperty(t3, i4, o2), o2;
+            for (var a3 = e3.length - 1; a3 >= 0; a3--)
+              (r2 = e3[a3]) && (o2 = (n2 < 3 ? r2(o2) : n2 > 3 ? r2(t3, i3, o2) : r2(t3, i3)) || o2);
+          return n2 > 3 && o2 && Object.defineProperty(t3, i3, o2), o2;
         }, r = this && this.__param || function(e3, t3) {
-          return function(i4, s3) {
-            t3(i4, s3, e3);
+          return function(i3, s3) {
+            t3(i3, s3, e3);
           };
         };
         Object.defineProperty(t2, "__esModule", { value: true }), t2.Linkifier2 = void 0;
-        const n = i3(3656), o = i3(8460), a = i3(844), h = i3(2585);
-        let c = t2.Linkifier2 = class extends a.Disposable {
+        const n = i2(3656), o = i2(8460), a2 = i2(844), h2 = i2(2585);
+        let c3 = t2.Linkifier2 = class extends a2.Disposable {
           get currentLink() {
             return this._currentLink;
           }
           constructor(e3) {
-            super(), this._bufferService = e3, this._linkProviders = [], this._linkCacheDisposables = [], this._isMouseOut = true, this._wasResized = false, this._activeLine = -1, this._onShowLinkUnderline = this.register(new o.EventEmitter()), this.onShowLinkUnderline = this._onShowLinkUnderline.event, this._onHideLinkUnderline = this.register(new o.EventEmitter()), this.onHideLinkUnderline = this._onHideLinkUnderline.event, this.register((0, a.getDisposeArrayDisposable)(this._linkCacheDisposables)), this.register((0, a.toDisposable)(() => {
+            super(), this._bufferService = e3, this._linkProviders = [], this._linkCacheDisposables = [], this._isMouseOut = true, this._wasResized = false, this._activeLine = -1, this._onShowLinkUnderline = this.register(new o.EventEmitter()), this.onShowLinkUnderline = this._onShowLinkUnderline.event, this._onHideLinkUnderline = this.register(new o.EventEmitter()), this.onHideLinkUnderline = this._onHideLinkUnderline.event, this.register((0, a2.getDisposeArrayDisposable)(this._linkCacheDisposables)), this.register((0, a2.toDisposable)(() => {
               this._lastMouseEvent = void 0;
             })), this.register(this._bufferService.onResize(() => {
               this._clearCurrentLink(), this._wasResized = true;
@@ -21816,8 +21818,8 @@ var require_xterm = __commonJS({
               -1 !== t3 && this._linkProviders.splice(t3, 1);
             } };
           }
-          attachToDom(e3, t3, i4) {
-            this._element = e3, this._mouseService = t3, this._renderService = i4, this.register((0, n.addDisposableDomListener)(this._element, "mouseleave", () => {
+          attachToDom(e3, t3, i3) {
+            this._element = e3, this._mouseService = t3, this._renderService = i3, this.register((0, n.addDisposableDomListener)(this._element, "mouseleave", () => {
               this._isMouseOut = true, this._clearCurrentLink();
             })), this.register((0, n.addDisposableDomListener)(this._element, "mousemove", this._handleMouseMove.bind(this))), this.register((0, n.addDisposableDomListener)(this._element, "mousedown", this._handleMouseDown.bind(this))), this.register((0, n.addDisposableDomListener)(this._element, "mouseup", this._handleMouseUp.bind(this)));
           }
@@ -21828,9 +21830,9 @@ var require_xterm = __commonJS({
             if (!t3)
               return;
             this._isMouseOut = false;
-            const i4 = e3.composedPath();
-            for (let e4 = 0; e4 < i4.length; e4++) {
-              const t4 = i4[e4];
+            const i3 = e3.composedPath();
+            for (let e4 = 0; e4 < i3.length; e4++) {
+              const t4 = i3[e4];
               if (t4.classList.contains("xterm"))
                 break;
               if (t4.classList.contains("xterm-hover"))
@@ -21844,60 +21846,60 @@ var require_xterm = __commonJS({
             this._currentLink && this._linkAtPosition(this._currentLink.link, e3) || (this._clearCurrentLink(), this._askForLink(e3, true));
           }
           _askForLink(e3, t3) {
-            var i4, s3;
-            this._activeProviderReplies && t3 || (null === (i4 = this._activeProviderReplies) || void 0 === i4 || i4.forEach((e4) => {
+            var i3, s3;
+            this._activeProviderReplies && t3 || (null === (i3 = this._activeProviderReplies) || void 0 === i3 || i3.forEach((e4) => {
               null == e4 || e4.forEach((e5) => {
                 e5.link.dispose && e5.link.dispose();
               });
             }), this._activeProviderReplies = /* @__PURE__ */ new Map(), this._activeLine = e3.y);
             let r2 = false;
-            for (const [i5, n2] of this._linkProviders.entries())
-              t3 ? (null === (s3 = this._activeProviderReplies) || void 0 === s3 ? void 0 : s3.get(i5)) && (r2 = this._checkLinkProviderResult(i5, e3, r2)) : n2.provideLinks(e3.y, (t4) => {
+            for (const [i4, n2] of this._linkProviders.entries())
+              t3 ? (null === (s3 = this._activeProviderReplies) || void 0 === s3 ? void 0 : s3.get(i4)) && (r2 = this._checkLinkProviderResult(i4, e3, r2)) : n2.provideLinks(e3.y, (t4) => {
                 var s4, n3;
                 if (this._isMouseOut)
                   return;
                 const o2 = null == t4 ? void 0 : t4.map((e4) => ({ link: e4 }));
-                null === (s4 = this._activeProviderReplies) || void 0 === s4 || s4.set(i5, o2), r2 = this._checkLinkProviderResult(i5, e3, r2), (null === (n3 = this._activeProviderReplies) || void 0 === n3 ? void 0 : n3.size) === this._linkProviders.length && this._removeIntersectingLinks(e3.y, this._activeProviderReplies);
+                null === (s4 = this._activeProviderReplies) || void 0 === s4 || s4.set(i4, o2), r2 = this._checkLinkProviderResult(i4, e3, r2), (null === (n3 = this._activeProviderReplies) || void 0 === n3 ? void 0 : n3.size) === this._linkProviders.length && this._removeIntersectingLinks(e3.y, this._activeProviderReplies);
               });
           }
           _removeIntersectingLinks(e3, t3) {
-            const i4 = /* @__PURE__ */ new Set();
+            const i3 = /* @__PURE__ */ new Set();
             for (let s3 = 0; s3 < t3.size; s3++) {
               const r2 = t3.get(s3);
               if (r2)
                 for (let t4 = 0; t4 < r2.length; t4++) {
                   const s4 = r2[t4], n2 = s4.link.range.start.y < e3 ? 0 : s4.link.range.start.x, o2 = s4.link.range.end.y > e3 ? this._bufferService.cols : s4.link.range.end.x;
                   for (let e4 = n2; e4 <= o2; e4++) {
-                    if (i4.has(e4)) {
+                    if (i3.has(e4)) {
                       r2.splice(t4--, 1);
                       break;
                     }
-                    i4.add(e4);
+                    i3.add(e4);
                   }
                 }
             }
           }
-          _checkLinkProviderResult(e3, t3, i4) {
+          _checkLinkProviderResult(e3, t3, i3) {
             var s3;
             if (!this._activeProviderReplies)
-              return i4;
+              return i3;
             const r2 = this._activeProviderReplies.get(e3);
             let n2 = false;
             for (let t4 = 0; t4 < e3; t4++)
               this._activeProviderReplies.has(t4) && !this._activeProviderReplies.get(t4) || (n2 = true);
             if (!n2 && r2) {
               const e4 = r2.find((e5) => this._linkAtPosition(e5.link, t3));
-              e4 && (i4 = true, this._handleNewLink(e4));
+              e4 && (i3 = true, this._handleNewLink(e4));
             }
-            if (this._activeProviderReplies.size === this._linkProviders.length && !i4)
+            if (this._activeProviderReplies.size === this._linkProviders.length && !i3)
               for (let e4 = 0; e4 < this._activeProviderReplies.size; e4++) {
                 const r3 = null === (s3 = this._activeProviderReplies.get(e4)) || void 0 === s3 ? void 0 : s3.find((e5) => this._linkAtPosition(e5.link, t3));
                 if (r3) {
-                  i4 = true, this._handleNewLink(r3);
+                  i3 = true, this._handleNewLink(r3);
                   break;
                 }
               }
-            return i4;
+            return i3;
           }
           _handleMouseDown() {
             this._mouseDownLink = this._currentLink;
@@ -21909,7 +21911,7 @@ var require_xterm = __commonJS({
             t3 && this._mouseDownLink === this._currentLink && this._linkAtPosition(this._currentLink.link, t3) && this._currentLink.link.activate(e3, this._currentLink.link.text);
           }
           _clearCurrentLink(e3, t3) {
-            this._element && this._currentLink && this._lastMouseEvent && (!e3 || !t3 || this._currentLink.link.range.start.y >= e3 && this._currentLink.link.range.end.y <= t3) && (this._linkLeave(this._element, this._currentLink.link, this._lastMouseEvent), this._currentLink = void 0, (0, a.disposeArray)(this._linkCacheDisposables));
+            this._element && this._currentLink && this._lastMouseEvent && (!e3 || !t3 || this._currentLink.link.range.start.y >= e3 && this._currentLink.link.range.end.y <= t3) && (this._linkLeave(this._element, this._currentLink.link, this._lastMouseEvent), this._currentLink = void 0, (0, a2.disposeArray)(this._linkCacheDisposables));
           }
           _handleNewLink(e3) {
             if (!this._element || !this._lastMouseEvent || !this._mouseService)
@@ -21919,93 +21921,93 @@ var require_xterm = __commonJS({
               var e4, t4;
               return null === (t4 = null === (e4 = this._currentLink) || void 0 === e4 ? void 0 : e4.state) || void 0 === t4 ? void 0 : t4.decorations.pointerCursor;
             }, set: (e4) => {
-              var t4, i4;
-              (null === (t4 = this._currentLink) || void 0 === t4 ? void 0 : t4.state) && this._currentLink.state.decorations.pointerCursor !== e4 && (this._currentLink.state.decorations.pointerCursor = e4, this._currentLink.state.isHovered && (null === (i4 = this._element) || void 0 === i4 || i4.classList.toggle("xterm-cursor-pointer", e4)));
+              var t4, i3;
+              (null === (t4 = this._currentLink) || void 0 === t4 ? void 0 : t4.state) && this._currentLink.state.decorations.pointerCursor !== e4 && (this._currentLink.state.decorations.pointerCursor = e4, this._currentLink.state.isHovered && (null === (i3 = this._element) || void 0 === i3 || i3.classList.toggle("xterm-cursor-pointer", e4)));
             } }, underline: { get: () => {
               var e4, t4;
               return null === (t4 = null === (e4 = this._currentLink) || void 0 === e4 ? void 0 : e4.state) || void 0 === t4 ? void 0 : t4.decorations.underline;
             }, set: (t4) => {
-              var i4, s3, r2;
-              (null === (i4 = this._currentLink) || void 0 === i4 ? void 0 : i4.state) && (null === (r2 = null === (s3 = this._currentLink) || void 0 === s3 ? void 0 : s3.state) || void 0 === r2 ? void 0 : r2.decorations.underline) !== t4 && (this._currentLink.state.decorations.underline = t4, this._currentLink.state.isHovered && this._fireUnderlineEvent(e3.link, t4));
+              var i3, s3, r2;
+              (null === (i3 = this._currentLink) || void 0 === i3 ? void 0 : i3.state) && (null === (r2 = null === (s3 = this._currentLink) || void 0 === s3 ? void 0 : s3.state) || void 0 === r2 ? void 0 : r2.decorations.underline) !== t4 && (this._currentLink.state.decorations.underline = t4, this._currentLink.state.isHovered && this._fireUnderlineEvent(e3.link, t4));
             } } }), this._renderService && this._linkCacheDisposables.push(this._renderService.onRenderedViewportChange((e4) => {
               if (!this._currentLink)
                 return;
-              const t4 = 0 === e4.start ? 0 : e4.start + 1 + this._bufferService.buffer.ydisp, i4 = this._bufferService.buffer.ydisp + 1 + e4.end;
-              if (this._currentLink.link.range.start.y >= t4 && this._currentLink.link.range.end.y <= i4 && (this._clearCurrentLink(t4, i4), this._lastMouseEvent && this._element)) {
+              const t4 = 0 === e4.start ? 0 : e4.start + 1 + this._bufferService.buffer.ydisp, i3 = this._bufferService.buffer.ydisp + 1 + e4.end;
+              if (this._currentLink.link.range.start.y >= t4 && this._currentLink.link.range.end.y <= i3 && (this._clearCurrentLink(t4, i3), this._lastMouseEvent && this._element)) {
                 const e5 = this._positionFromMouseEvent(this._lastMouseEvent, this._element, this._mouseService);
                 e5 && this._askForLink(e5, false);
               }
             })));
           }
-          _linkHover(e3, t3, i4) {
+          _linkHover(e3, t3, i3) {
             var s3;
-            (null === (s3 = this._currentLink) || void 0 === s3 ? void 0 : s3.state) && (this._currentLink.state.isHovered = true, this._currentLink.state.decorations.underline && this._fireUnderlineEvent(t3, true), this._currentLink.state.decorations.pointerCursor && e3.classList.add("xterm-cursor-pointer")), t3.hover && t3.hover(i4, t3.text);
+            (null === (s3 = this._currentLink) || void 0 === s3 ? void 0 : s3.state) && (this._currentLink.state.isHovered = true, this._currentLink.state.decorations.underline && this._fireUnderlineEvent(t3, true), this._currentLink.state.decorations.pointerCursor && e3.classList.add("xterm-cursor-pointer")), t3.hover && t3.hover(i3, t3.text);
           }
           _fireUnderlineEvent(e3, t3) {
-            const i4 = e3.range, s3 = this._bufferService.buffer.ydisp, r2 = this._createLinkUnderlineEvent(i4.start.x - 1, i4.start.y - s3 - 1, i4.end.x, i4.end.y - s3 - 1, void 0);
+            const i3 = e3.range, s3 = this._bufferService.buffer.ydisp, r2 = this._createLinkUnderlineEvent(i3.start.x - 1, i3.start.y - s3 - 1, i3.end.x, i3.end.y - s3 - 1, void 0);
             (t3 ? this._onShowLinkUnderline : this._onHideLinkUnderline).fire(r2);
           }
-          _linkLeave(e3, t3, i4) {
+          _linkLeave(e3, t3, i3) {
             var s3;
-            (null === (s3 = this._currentLink) || void 0 === s3 ? void 0 : s3.state) && (this._currentLink.state.isHovered = false, this._currentLink.state.decorations.underline && this._fireUnderlineEvent(t3, false), this._currentLink.state.decorations.pointerCursor && e3.classList.remove("xterm-cursor-pointer")), t3.leave && t3.leave(i4, t3.text);
+            (null === (s3 = this._currentLink) || void 0 === s3 ? void 0 : s3.state) && (this._currentLink.state.isHovered = false, this._currentLink.state.decorations.underline && this._fireUnderlineEvent(t3, false), this._currentLink.state.decorations.pointerCursor && e3.classList.remove("xterm-cursor-pointer")), t3.leave && t3.leave(i3, t3.text);
           }
           _linkAtPosition(e3, t3) {
-            const i4 = e3.range.start.y * this._bufferService.cols + e3.range.start.x, s3 = e3.range.end.y * this._bufferService.cols + e3.range.end.x, r2 = t3.y * this._bufferService.cols + t3.x;
-            return i4 <= r2 && r2 <= s3;
+            const i3 = e3.range.start.y * this._bufferService.cols + e3.range.start.x, s3 = e3.range.end.y * this._bufferService.cols + e3.range.end.x, r2 = t3.y * this._bufferService.cols + t3.x;
+            return i3 <= r2 && r2 <= s3;
           }
-          _positionFromMouseEvent(e3, t3, i4) {
-            const s3 = i4.getCoords(e3, t3, this._bufferService.cols, this._bufferService.rows);
+          _positionFromMouseEvent(e3, t3, i3) {
+            const s3 = i3.getCoords(e3, t3, this._bufferService.cols, this._bufferService.rows);
             if (s3)
               return { x: s3[0], y: s3[1] + this._bufferService.buffer.ydisp };
           }
-          _createLinkUnderlineEvent(e3, t3, i4, s3, r2) {
-            return { x1: e3, y1: t3, x2: i4, y2: s3, cols: this._bufferService.cols, fg: r2 };
+          _createLinkUnderlineEvent(e3, t3, i3, s3, r2) {
+            return { x1: e3, y1: t3, x2: i3, y2: s3, cols: this._bufferService.cols, fg: r2 };
           }
         };
-        t2.Linkifier2 = c = s2([r(0, h.IBufferService)], c);
+        t2.Linkifier2 = c3 = s2([r(0, h2.IBufferService)], c3);
       }, 9042: (e2, t2) => {
         Object.defineProperty(t2, "__esModule", { value: true }), t2.tooMuchOutput = t2.promptLabel = void 0, t2.promptLabel = "Terminal input", t2.tooMuchOutput = "Too much output to announce, navigate to rows manually to read";
-      }, 3730: function(e2, t2, i3) {
-        var s2 = this && this.__decorate || function(e3, t3, i4, s3) {
-          var r2, n2 = arguments.length, o2 = n2 < 3 ? t3 : null === s3 ? s3 = Object.getOwnPropertyDescriptor(t3, i4) : s3;
+      }, 3730: function(e2, t2, i2) {
+        var s2 = this && this.__decorate || function(e3, t3, i3, s3) {
+          var r2, n2 = arguments.length, o2 = n2 < 3 ? t3 : null === s3 ? s3 = Object.getOwnPropertyDescriptor(t3, i3) : s3;
           if ("object" == typeof Reflect && "function" == typeof Reflect.decorate)
-            o2 = Reflect.decorate(e3, t3, i4, s3);
+            o2 = Reflect.decorate(e3, t3, i3, s3);
           else
-            for (var a2 = e3.length - 1; a2 >= 0; a2--)
-              (r2 = e3[a2]) && (o2 = (n2 < 3 ? r2(o2) : n2 > 3 ? r2(t3, i4, o2) : r2(t3, i4)) || o2);
-          return n2 > 3 && o2 && Object.defineProperty(t3, i4, o2), o2;
+            for (var a3 = e3.length - 1; a3 >= 0; a3--)
+              (r2 = e3[a3]) && (o2 = (n2 < 3 ? r2(o2) : n2 > 3 ? r2(t3, i3, o2) : r2(t3, i3)) || o2);
+          return n2 > 3 && o2 && Object.defineProperty(t3, i3, o2), o2;
         }, r = this && this.__param || function(e3, t3) {
-          return function(i4, s3) {
-            t3(i4, s3, e3);
+          return function(i3, s3) {
+            t3(i3, s3, e3);
           };
         };
         Object.defineProperty(t2, "__esModule", { value: true }), t2.OscLinkProvider = void 0;
-        const n = i3(511), o = i3(2585);
-        let a = t2.OscLinkProvider = class {
-          constructor(e3, t3, i4) {
-            this._bufferService = e3, this._optionsService = t3, this._oscLinkService = i4;
+        const n = i2(511), o = i2(2585);
+        let a2 = t2.OscLinkProvider = class {
+          constructor(e3, t3, i3) {
+            this._bufferService = e3, this._optionsService = t3, this._oscLinkService = i3;
           }
           provideLinks(e3, t3) {
-            var i4;
+            var i3;
             const s3 = this._bufferService.buffer.lines.get(e3 - 1);
             if (!s3)
               return void t3(void 0);
-            const r2 = [], o2 = this._optionsService.rawOptions.linkHandler, a2 = new n.CellData(), c = s3.getTrimmedLength();
-            let l2 = -1, d2 = -1, _2 = false;
-            for (let t4 = 0; t4 < c; t4++)
+            const r2 = [], o2 = this._optionsService.rawOptions.linkHandler, a3 = new n.CellData(), c3 = s3.getTrimmedLength();
+            let l = -1, d2 = -1, _2 = false;
+            for (let t4 = 0; t4 < c3; t4++)
               if (-1 !== d2 || s3.hasContent(t4)) {
-                if (s3.loadCell(t4, a2), a2.hasExtendedAttrs() && a2.extended.urlId) {
+                if (s3.loadCell(t4, a3), a3.hasExtendedAttrs() && a3.extended.urlId) {
                   if (-1 === d2) {
-                    d2 = t4, l2 = a2.extended.urlId;
+                    d2 = t4, l = a3.extended.urlId;
                     continue;
                   }
-                  _2 = a2.extended.urlId !== l2;
+                  _2 = a3.extended.urlId !== l;
                 } else
                   -1 !== d2 && (_2 = true);
-                if (_2 || -1 !== d2 && t4 === c - 1) {
-                  const s4 = null === (i4 = this._oscLinkService.getLinkData(l2)) || void 0 === i4 ? void 0 : i4.uri;
+                if (_2 || -1 !== d2 && t4 === c3 - 1) {
+                  const s4 = null === (i3 = this._oscLinkService.getLinkData(l)) || void 0 === i3 ? void 0 : i3.uri;
                   if (s4) {
-                    const i5 = { start: { x: d2 + 1, y: e3 }, end: { x: t4 + (_2 || t4 !== c - 1 ? 0 : 1), y: e3 } };
+                    const i4 = { start: { x: d2 + 1, y: e3 }, end: { x: t4 + (_2 || t4 !== c3 - 1 ? 0 : 1), y: e3 } };
                     let n2 = false;
                     if (!(null == o2 ? void 0 : o2.allowNonHttpProtocols))
                       try {
@@ -22014,21 +22016,21 @@ var require_xterm = __commonJS({
                       } catch (e4) {
                         n2 = true;
                       }
-                    n2 || r2.push({ text: s4, range: i5, activate: (e4, t5) => o2 ? o2.activate(e4, t5, i5) : h(0, t5), hover: (e4, t5) => {
+                    n2 || r2.push({ text: s4, range: i4, activate: (e4, t5) => o2 ? o2.activate(e4, t5, i4) : h2(0, t5), hover: (e4, t5) => {
                       var s5;
-                      return null === (s5 = null == o2 ? void 0 : o2.hover) || void 0 === s5 ? void 0 : s5.call(o2, e4, t5, i5);
+                      return null === (s5 = null == o2 ? void 0 : o2.hover) || void 0 === s5 ? void 0 : s5.call(o2, e4, t5, i4);
                     }, leave: (e4, t5) => {
                       var s5;
-                      return null === (s5 = null == o2 ? void 0 : o2.leave) || void 0 === s5 ? void 0 : s5.call(o2, e4, t5, i5);
+                      return null === (s5 = null == o2 ? void 0 : o2.leave) || void 0 === s5 ? void 0 : s5.call(o2, e4, t5, i4);
                     } });
                   }
-                  _2 = false, a2.hasExtendedAttrs() && a2.extended.urlId ? (d2 = t4, l2 = a2.extended.urlId) : (d2 = -1, l2 = -1);
+                  _2 = false, a3.hasExtendedAttrs() && a3.extended.urlId ? (d2 = t4, l = a3.extended.urlId) : (d2 = -1, l = -1);
                 }
               }
             t3(r2);
           }
         };
-        function h(e3, t3) {
+        function h2(e3, t3) {
           if (confirm(`Do you want to navigate to ${t3}?
 
 WARNING: This link could potentially be dangerous`)) {
@@ -22043,7 +22045,7 @@ WARNING: This link could potentially be dangerous`)) {
               console.warn("Opening link blocked as opener could not be cleared");
           }
         }
-        t2.OscLinkProvider = a = s2([r(0, o.IBufferService), r(1, o.IOptionsService), r(2, o.IOscLinkService)], a);
+        t2.OscLinkProvider = a2 = s2([r(0, o.IBufferService), r(1, o.IOptionsService), r(2, o.IOscLinkService)], a2);
       }, 6193: (e2, t2) => {
         Object.defineProperty(t2, "__esModule", { value: true }), t2.RenderDebouncer = void 0, t2.RenderDebouncer = class {
           constructor(e3, t3) {
@@ -22055,8 +22057,8 @@ WARNING: This link could potentially be dangerous`)) {
           addRefreshCallback(e3) {
             return this._refreshCallbacks.push(e3), this._animationFrame || (this._animationFrame = this._parentWindow.requestAnimationFrame(() => this._innerRefresh())), this._animationFrame;
           }
-          refresh(e3, t3, i3) {
-            this._rowCount = i3, e3 = void 0 !== e3 ? e3 : 0, t3 = void 0 !== t3 ? t3 : this._rowCount - 1, this._rowStart = void 0 !== this._rowStart ? Math.min(this._rowStart, e3) : e3, this._rowEnd = void 0 !== this._rowEnd ? Math.max(this._rowEnd, t3) : t3, this._animationFrame || (this._animationFrame = this._parentWindow.requestAnimationFrame(() => this._innerRefresh()));
+          refresh(e3, t3, i2) {
+            this._rowCount = i2, e3 = void 0 !== e3 ? e3 : 0, t3 = void 0 !== t3 ? t3 : this._rowCount - 1, this._rowStart = void 0 !== this._rowStart ? Math.min(this._rowStart, e3) : e3, this._rowEnd = void 0 !== this._rowEnd ? Math.max(this._rowEnd, t3) : t3, this._animationFrame || (this._animationFrame = this._parentWindow.requestAnimationFrame(() => this._innerRefresh()));
           }
           _innerRefresh() {
             if (this._animationFrame = void 0, void 0 === this._rowStart || void 0 === this._rowEnd || void 0 === this._rowCount)
@@ -22070,9 +22072,9 @@ WARNING: This link could potentially be dangerous`)) {
             this._refreshCallbacks = [];
           }
         };
-      }, 5596: (e2, t2, i3) => {
+      }, 5596: (e2, t2, i2) => {
         Object.defineProperty(t2, "__esModule", { value: true }), t2.ScreenDprMonitor = void 0;
-        const s2 = i3(844);
+        const s2 = i2(844);
         class r extends s2.Disposable {
           constructor(e3) {
             super(), this._parentWindow = e3, this._currentDevicePixelRatio = this._parentWindow.devicePixelRatio, this.register((0, s2.toDisposable)(() => {
@@ -22093,10 +22095,10 @@ WARNING: This link could potentially be dangerous`)) {
           }
         }
         t2.ScreenDprMonitor = r;
-      }, 3236: (e2, t2, i3) => {
+      }, 3236: (e2, t2, i2) => {
         Object.defineProperty(t2, "__esModule", { value: true }), t2.Terminal = void 0;
-        const s2 = i3(3614), r = i3(3656), n = i3(6465), o = i3(9042), a = i3(3730), h = i3(1680), c = i3(3107), l2 = i3(5744), d2 = i3(2950), _2 = i3(1296), u2 = i3(428), f2 = i3(4269), v = i3(5114), p = i3(8934), g2 = i3(3230), m2 = i3(9312), S = i3(4725), C2 = i3(6731), b2 = i3(8055), y2 = i3(8969), w2 = i3(8460), E2 = i3(844), k2 = i3(6114), L = i3(8437), D2 = i3(2584), R2 = i3(7399), x2 = i3(5941), A2 = i3(9074), B2 = i3(2585), T = i3(5435), M2 = i3(4567), O2 = "undefined" != typeof window ? window.document : null;
-        class P2 extends y2.CoreTerminal {
+        const s2 = i2(3614), r = i2(3656), n = i2(6465), o = i2(9042), a2 = i2(3730), h2 = i2(1680), c3 = i2(3107), l = i2(5744), d2 = i2(2950), _2 = i2(1296), u2 = i2(428), f2 = i2(4269), v3 = i2(5114), p2 = i2(8934), g3 = i2(3230), m2 = i2(9312), S2 = i2(4725), C2 = i2(6731), b2 = i2(8055), y2 = i2(8969), w3 = i2(8460), E3 = i2(844), k3 = i2(6114), L3 = i2(8437), D2 = i2(2584), R3 = i2(7399), x3 = i2(5941), A3 = i2(9074), B3 = i2(2585), T3 = i2(5435), M2 = i2(4567), O3 = "undefined" != typeof window ? window.document : null;
+        class P3 extends y2.CoreTerminal {
           get onFocus() {
             return this._onFocus.event;
           }
@@ -22113,7 +22115,7 @@ WARNING: This link could potentially be dangerous`)) {
             return this._onWillOpen.event;
           }
           constructor(e3 = {}) {
-            super(e3), this.browser = k2, this._keyDownHandled = false, this._keyDownSeen = false, this._keyPressHandled = false, this._unprocessedDeadKey = false, this._accessibilityManager = this.register(new E2.MutableDisposable()), this._onCursorMove = this.register(new w2.EventEmitter()), this.onCursorMove = this._onCursorMove.event, this._onKey = this.register(new w2.EventEmitter()), this.onKey = this._onKey.event, this._onRender = this.register(new w2.EventEmitter()), this.onRender = this._onRender.event, this._onSelectionChange = this.register(new w2.EventEmitter()), this.onSelectionChange = this._onSelectionChange.event, this._onTitleChange = this.register(new w2.EventEmitter()), this.onTitleChange = this._onTitleChange.event, this._onBell = this.register(new w2.EventEmitter()), this.onBell = this._onBell.event, this._onFocus = this.register(new w2.EventEmitter()), this._onBlur = this.register(new w2.EventEmitter()), this._onA11yCharEmitter = this.register(new w2.EventEmitter()), this._onA11yTabEmitter = this.register(new w2.EventEmitter()), this._onWillOpen = this.register(new w2.EventEmitter()), this._setup(), this.linkifier2 = this.register(this._instantiationService.createInstance(n.Linkifier2)), this.linkifier2.registerLinkProvider(this._instantiationService.createInstance(a.OscLinkProvider)), this._decorationService = this._instantiationService.createInstance(A2.DecorationService), this._instantiationService.setService(B2.IDecorationService, this._decorationService), this.register(this._inputHandler.onRequestBell(() => this._onBell.fire())), this.register(this._inputHandler.onRequestRefreshRows((e4, t3) => this.refresh(e4, t3))), this.register(this._inputHandler.onRequestSendFocus(() => this._reportFocus())), this.register(this._inputHandler.onRequestReset(() => this.reset())), this.register(this._inputHandler.onRequestWindowsOptionsReport((e4) => this._reportWindowsOptions(e4))), this.register(this._inputHandler.onColor((e4) => this._handleColorEvent(e4))), this.register((0, w2.forwardEvent)(this._inputHandler.onCursorMove, this._onCursorMove)), this.register((0, w2.forwardEvent)(this._inputHandler.onTitleChange, this._onTitleChange)), this.register((0, w2.forwardEvent)(this._inputHandler.onA11yChar, this._onA11yCharEmitter)), this.register((0, w2.forwardEvent)(this._inputHandler.onA11yTab, this._onA11yTabEmitter)), this.register(this._bufferService.onResize((e4) => this._afterResize(e4.cols, e4.rows))), this.register((0, E2.toDisposable)(() => {
+            super(e3), this.browser = k3, this._keyDownHandled = false, this._keyDownSeen = false, this._keyPressHandled = false, this._unprocessedDeadKey = false, this._accessibilityManager = this.register(new E3.MutableDisposable()), this._onCursorMove = this.register(new w3.EventEmitter()), this.onCursorMove = this._onCursorMove.event, this._onKey = this.register(new w3.EventEmitter()), this.onKey = this._onKey.event, this._onRender = this.register(new w3.EventEmitter()), this.onRender = this._onRender.event, this._onSelectionChange = this.register(new w3.EventEmitter()), this.onSelectionChange = this._onSelectionChange.event, this._onTitleChange = this.register(new w3.EventEmitter()), this.onTitleChange = this._onTitleChange.event, this._onBell = this.register(new w3.EventEmitter()), this.onBell = this._onBell.event, this._onFocus = this.register(new w3.EventEmitter()), this._onBlur = this.register(new w3.EventEmitter()), this._onA11yCharEmitter = this.register(new w3.EventEmitter()), this._onA11yTabEmitter = this.register(new w3.EventEmitter()), this._onWillOpen = this.register(new w3.EventEmitter()), this._setup(), this.linkifier2 = this.register(this._instantiationService.createInstance(n.Linkifier2)), this.linkifier2.registerLinkProvider(this._instantiationService.createInstance(a2.OscLinkProvider)), this._decorationService = this._instantiationService.createInstance(A3.DecorationService), this._instantiationService.setService(B3.IDecorationService, this._decorationService), this.register(this._inputHandler.onRequestBell(() => this._onBell.fire())), this.register(this._inputHandler.onRequestRefreshRows((e4, t3) => this.refresh(e4, t3))), this.register(this._inputHandler.onRequestSendFocus(() => this._reportFocus())), this.register(this._inputHandler.onRequestReset(() => this.reset())), this.register(this._inputHandler.onRequestWindowsOptionsReport((e4) => this._reportWindowsOptions(e4))), this.register(this._inputHandler.onColor((e4) => this._handleColorEvent(e4))), this.register((0, w3.forwardEvent)(this._inputHandler.onCursorMove, this._onCursorMove)), this.register((0, w3.forwardEvent)(this._inputHandler.onTitleChange, this._onTitleChange)), this.register((0, w3.forwardEvent)(this._inputHandler.onA11yChar, this._onA11yCharEmitter)), this.register((0, w3.forwardEvent)(this._inputHandler.onA11yTab, this._onA11yTabEmitter)), this.register(this._bufferService.onResize((e4) => this._afterResize(e4.cols, e4.rows))), this.register((0, E3.toDisposable)(() => {
               var e4, t3;
               this._customKeyEventHandler = void 0, null === (t3 = null === (e4 = this.element) || void 0 === e4 ? void 0 : e4.parentNode) || void 0 === t3 || t3.removeChild(this.element);
             }));
@@ -22121,31 +22123,31 @@ WARNING: This link could potentially be dangerous`)) {
           _handleColorEvent(e3) {
             if (this._themeService)
               for (const t3 of e3) {
-                let e4, i4 = "";
+                let e4, i3 = "";
                 switch (t3.index) {
                   case 256:
-                    e4 = "foreground", i4 = "10";
+                    e4 = "foreground", i3 = "10";
                     break;
                   case 257:
-                    e4 = "background", i4 = "11";
+                    e4 = "background", i3 = "11";
                     break;
                   case 258:
-                    e4 = "cursor", i4 = "12";
+                    e4 = "cursor", i3 = "12";
                     break;
                   default:
-                    e4 = "ansi", i4 = "4;" + t3.index;
+                    e4 = "ansi", i3 = "4;" + t3.index;
                 }
                 switch (t3.type) {
                   case 0:
                     const s3 = b2.color.toColorRGB("ansi" === e4 ? this._themeService.colors.ansi[t3.index] : this._themeService.colors[e4]);
-                    this.coreService.triggerDataEvent(`${D2.C0.ESC}]${i4};${(0, x2.toRgbString)(s3)}${D2.C1_ESCAPED.ST}`);
+                    this.coreService.triggerDataEvent(`${D2.C0.ESC}]${i3};${(0, x3.toRgbString)(s3)}${D2.C1_ESCAPED.ST}`);
                     break;
                   case 1:
                     if ("ansi" === e4)
                       this._themeService.modifyColors((e5) => e5.ansi[t3.index] = b2.rgba.toColor(...t3.color));
                     else {
-                      const i5 = e4;
-                      this._themeService.modifyColors((e5) => e5[i5] = b2.rgba.toColor(...t3.color));
+                      const i4 = e4;
+                      this._themeService.modifyColors((e5) => e5[i4] = b2.rgba.toColor(...t3.color));
                     }
                     break;
                   case 2:
@@ -22181,19 +22183,19 @@ WARNING: This link could potentially be dangerous`)) {
             const e3 = this.buffer.ybase + this.buffer.y, t3 = this.buffer.lines.get(e3);
             if (!t3)
               return;
-            const i4 = Math.min(this.buffer.x, this.cols - 1), s3 = this._renderService.dimensions.css.cell.height, r2 = t3.getWidth(i4), n2 = this._renderService.dimensions.css.cell.width * r2, o2 = this.buffer.y * this._renderService.dimensions.css.cell.height, a2 = i4 * this._renderService.dimensions.css.cell.width;
-            this.textarea.style.left = a2 + "px", this.textarea.style.top = o2 + "px", this.textarea.style.width = n2 + "px", this.textarea.style.height = s3 + "px", this.textarea.style.lineHeight = s3 + "px", this.textarea.style.zIndex = "-5";
+            const i3 = Math.min(this.buffer.x, this.cols - 1), s3 = this._renderService.dimensions.css.cell.height, r2 = t3.getWidth(i3), n2 = this._renderService.dimensions.css.cell.width * r2, o2 = this.buffer.y * this._renderService.dimensions.css.cell.height, a3 = i3 * this._renderService.dimensions.css.cell.width;
+            this.textarea.style.left = a3 + "px", this.textarea.style.top = o2 + "px", this.textarea.style.width = n2 + "px", this.textarea.style.height = s3 + "px", this.textarea.style.lineHeight = s3 + "px", this.textarea.style.zIndex = "-5";
           }
           _initGlobal() {
             this._bindKeys(), this.register((0, r.addDisposableDomListener)(this.element, "copy", (e4) => {
               this.hasSelection() && (0, s2.copyHandler)(e4, this._selectionService);
             }));
             const e3 = (e4) => (0, s2.handlePasteEvent)(e4, this.textarea, this.coreService, this.optionsService);
-            this.register((0, r.addDisposableDomListener)(this.textarea, "paste", e3)), this.register((0, r.addDisposableDomListener)(this.element, "paste", e3)), k2.isFirefox ? this.register((0, r.addDisposableDomListener)(this.element, "mousedown", (e4) => {
+            this.register((0, r.addDisposableDomListener)(this.textarea, "paste", e3)), this.register((0, r.addDisposableDomListener)(this.element, "paste", e3)), k3.isFirefox ? this.register((0, r.addDisposableDomListener)(this.element, "mousedown", (e4) => {
               2 === e4.button && (0, s2.rightClickHandler)(e4, this.textarea, this.screenElement, this._selectionService, this.options.rightClickSelectsWord);
             })) : this.register((0, r.addDisposableDomListener)(this.element, "contextmenu", (e4) => {
               (0, s2.rightClickHandler)(e4, this.textarea, this.screenElement, this._selectionService, this.options.rightClickSelectsWord);
-            })), k2.isLinux && this.register((0, r.addDisposableDomListener)(this.element, "auxclick", (e4) => {
+            })), k3.isLinux && this.register((0, r.addDisposableDomListener)(this.element, "auxclick", (e4) => {
               1 === e4.button && (0, s2.moveTextAreaUnderMouseCursor)(e4, this.textarea, this.screenElement);
             }));
           }
@@ -22205,20 +22207,20 @@ WARNING: This link could potentially be dangerous`)) {
             if (!e3)
               throw new Error("Terminal requires a parent element.");
             e3.isConnected || this._logService.debug("Terminal.open was called on an element that was not attached to the DOM"), this._document = e3.ownerDocument, this.element = this._document.createElement("div"), this.element.dir = "ltr", this.element.classList.add("terminal"), this.element.classList.add("xterm"), e3.appendChild(this.element);
-            const i4 = O2.createDocumentFragment();
-            this._viewportElement = O2.createElement("div"), this._viewportElement.classList.add("xterm-viewport"), i4.appendChild(this._viewportElement), this._viewportScrollArea = O2.createElement("div"), this._viewportScrollArea.classList.add("xterm-scroll-area"), this._viewportElement.appendChild(this._viewportScrollArea), this.screenElement = O2.createElement("div"), this.screenElement.classList.add("xterm-screen"), this._helperContainer = O2.createElement("div"), this._helperContainer.classList.add("xterm-helpers"), this.screenElement.appendChild(this._helperContainer), i4.appendChild(this.screenElement), this.textarea = O2.createElement("textarea"), this.textarea.classList.add("xterm-helper-textarea"), this.textarea.setAttribute("aria-label", o.promptLabel), k2.isChromeOS || this.textarea.setAttribute("aria-multiline", "false"), this.textarea.setAttribute("autocorrect", "off"), this.textarea.setAttribute("autocapitalize", "off"), this.textarea.setAttribute("spellcheck", "false"), this.textarea.tabIndex = 0, this._coreBrowserService = this._instantiationService.createInstance(v.CoreBrowserService, this.textarea, null !== (t3 = this._document.defaultView) && void 0 !== t3 ? t3 : window), this._instantiationService.setService(S.ICoreBrowserService, this._coreBrowserService), this.register((0, r.addDisposableDomListener)(this.textarea, "focus", (e4) => this._handleTextAreaFocus(e4))), this.register((0, r.addDisposableDomListener)(this.textarea, "blur", () => this._handleTextAreaBlur())), this._helperContainer.appendChild(this.textarea), this._charSizeService = this._instantiationService.createInstance(u2.CharSizeService, this._document, this._helperContainer), this._instantiationService.setService(S.ICharSizeService, this._charSizeService), this._themeService = this._instantiationService.createInstance(C2.ThemeService), this._instantiationService.setService(S.IThemeService, this._themeService), this._characterJoinerService = this._instantiationService.createInstance(f2.CharacterJoinerService), this._instantiationService.setService(S.ICharacterJoinerService, this._characterJoinerService), this._renderService = this.register(this._instantiationService.createInstance(g2.RenderService, this.rows, this.screenElement)), this._instantiationService.setService(S.IRenderService, this._renderService), this.register(this._renderService.onRenderedViewportChange((e4) => this._onRender.fire(e4))), this.onResize((e4) => this._renderService.resize(e4.cols, e4.rows)), this._compositionView = O2.createElement("div"), this._compositionView.classList.add("composition-view"), this._compositionHelper = this._instantiationService.createInstance(d2.CompositionHelper, this.textarea, this._compositionView), this._helperContainer.appendChild(this._compositionView), this.element.appendChild(i4);
+            const i3 = O3.createDocumentFragment();
+            this._viewportElement = O3.createElement("div"), this._viewportElement.classList.add("xterm-viewport"), i3.appendChild(this._viewportElement), this._viewportScrollArea = O3.createElement("div"), this._viewportScrollArea.classList.add("xterm-scroll-area"), this._viewportElement.appendChild(this._viewportScrollArea), this.screenElement = O3.createElement("div"), this.screenElement.classList.add("xterm-screen"), this._helperContainer = O3.createElement("div"), this._helperContainer.classList.add("xterm-helpers"), this.screenElement.appendChild(this._helperContainer), i3.appendChild(this.screenElement), this.textarea = O3.createElement("textarea"), this.textarea.classList.add("xterm-helper-textarea"), this.textarea.setAttribute("aria-label", o.promptLabel), k3.isChromeOS || this.textarea.setAttribute("aria-multiline", "false"), this.textarea.setAttribute("autocorrect", "off"), this.textarea.setAttribute("autocapitalize", "off"), this.textarea.setAttribute("spellcheck", "false"), this.textarea.tabIndex = 0, this._coreBrowserService = this._instantiationService.createInstance(v3.CoreBrowserService, this.textarea, null !== (t3 = this._document.defaultView) && void 0 !== t3 ? t3 : window), this._instantiationService.setService(S2.ICoreBrowserService, this._coreBrowserService), this.register((0, r.addDisposableDomListener)(this.textarea, "focus", (e4) => this._handleTextAreaFocus(e4))), this.register((0, r.addDisposableDomListener)(this.textarea, "blur", () => this._handleTextAreaBlur())), this._helperContainer.appendChild(this.textarea), this._charSizeService = this._instantiationService.createInstance(u2.CharSizeService, this._document, this._helperContainer), this._instantiationService.setService(S2.ICharSizeService, this._charSizeService), this._themeService = this._instantiationService.createInstance(C2.ThemeService), this._instantiationService.setService(S2.IThemeService, this._themeService), this._characterJoinerService = this._instantiationService.createInstance(f2.CharacterJoinerService), this._instantiationService.setService(S2.ICharacterJoinerService, this._characterJoinerService), this._renderService = this.register(this._instantiationService.createInstance(g3.RenderService, this.rows, this.screenElement)), this._instantiationService.setService(S2.IRenderService, this._renderService), this.register(this._renderService.onRenderedViewportChange((e4) => this._onRender.fire(e4))), this.onResize((e4) => this._renderService.resize(e4.cols, e4.rows)), this._compositionView = O3.createElement("div"), this._compositionView.classList.add("composition-view"), this._compositionHelper = this._instantiationService.createInstance(d2.CompositionHelper, this.textarea, this._compositionView), this._helperContainer.appendChild(this._compositionView), this.element.appendChild(i3);
             try {
               this._onWillOpen.fire(this.element);
             } catch (e4) {
             }
-            this._renderService.hasRenderer() || this._renderService.setRenderer(this._createRenderer()), this._mouseService = this._instantiationService.createInstance(p.MouseService), this._instantiationService.setService(S.IMouseService, this._mouseService), this.viewport = this._instantiationService.createInstance(h.Viewport, this._viewportElement, this._viewportScrollArea), this.viewport.onRequestScrollLines((e4) => this.scrollLines(e4.amount, e4.suppressScrollEvent, 1)), this.register(this._inputHandler.onRequestSyncScrollBar(() => this.viewport.syncScrollArea())), this.register(this.viewport), this.register(this.onCursorMove(() => {
+            this._renderService.hasRenderer() || this._renderService.setRenderer(this._createRenderer()), this._mouseService = this._instantiationService.createInstance(p2.MouseService), this._instantiationService.setService(S2.IMouseService, this._mouseService), this.viewport = this._instantiationService.createInstance(h2.Viewport, this._viewportElement, this._viewportScrollArea), this.viewport.onRequestScrollLines((e4) => this.scrollLines(e4.amount, e4.suppressScrollEvent, 1)), this.register(this._inputHandler.onRequestSyncScrollBar(() => this.viewport.syncScrollArea())), this.register(this.viewport), this.register(this.onCursorMove(() => {
               this._renderService.handleCursorMove(), this._syncTextArea();
-            })), this.register(this.onResize(() => this._renderService.handleResize(this.cols, this.rows))), this.register(this.onBlur(() => this._renderService.handleBlur())), this.register(this.onFocus(() => this._renderService.handleFocus())), this.register(this._renderService.onDimensionsChange(() => this.viewport.syncScrollArea())), this._selectionService = this.register(this._instantiationService.createInstance(m2.SelectionService, this.element, this.screenElement, this.linkifier2)), this._instantiationService.setService(S.ISelectionService, this._selectionService), this.register(this._selectionService.onRequestScrollLines((e4) => this.scrollLines(e4.amount, e4.suppressScrollEvent))), this.register(this._selectionService.onSelectionChange(() => this._onSelectionChange.fire())), this.register(this._selectionService.onRequestRedraw((e4) => this._renderService.handleSelectionChanged(e4.start, e4.end, e4.columnSelectMode))), this.register(this._selectionService.onLinuxMouseSelection((e4) => {
+            })), this.register(this.onResize(() => this._renderService.handleResize(this.cols, this.rows))), this.register(this.onBlur(() => this._renderService.handleBlur())), this.register(this.onFocus(() => this._renderService.handleFocus())), this.register(this._renderService.onDimensionsChange(() => this.viewport.syncScrollArea())), this._selectionService = this.register(this._instantiationService.createInstance(m2.SelectionService, this.element, this.screenElement, this.linkifier2)), this._instantiationService.setService(S2.ISelectionService, this._selectionService), this.register(this._selectionService.onRequestScrollLines((e4) => this.scrollLines(e4.amount, e4.suppressScrollEvent))), this.register(this._selectionService.onSelectionChange(() => this._onSelectionChange.fire())), this.register(this._selectionService.onRequestRedraw((e4) => this._renderService.handleSelectionChanged(e4.start, e4.end, e4.columnSelectMode))), this.register(this._selectionService.onLinuxMouseSelection((e4) => {
               this.textarea.value = e4, this.textarea.focus(), this.textarea.select();
             })), this.register(this._onScroll.event((e4) => {
               this.viewport.syncScrollArea(), this._selectionService.refresh();
-            })), this.register((0, r.addDisposableDomListener)(this._viewportElement, "scroll", () => this._selectionService.refresh())), this.linkifier2.attachToDom(this.screenElement, this._mouseService, this._renderService), this.register(this._instantiationService.createInstance(c.BufferDecorationRenderer, this.screenElement)), this.register((0, r.addDisposableDomListener)(this.element, "mousedown", (e4) => this._selectionService.handleMouseDown(e4))), this.coreMouseService.areMouseEventsActive ? (this._selectionService.disable(), this.element.classList.add("enable-mouse-events")) : this._selectionService.enable(), this.options.screenReaderMode && (this._accessibilityManager.value = this._instantiationService.createInstance(M2.AccessibilityManager, this)), this.register(this.optionsService.onSpecificOptionChange("screenReaderMode", (e4) => this._handleScreenReaderModeOptionChange(e4))), this.options.overviewRulerWidth && (this._overviewRulerRenderer = this.register(this._instantiationService.createInstance(l2.OverviewRulerRenderer, this._viewportElement, this.screenElement))), this.optionsService.onSpecificOptionChange("overviewRulerWidth", (e4) => {
-              !this._overviewRulerRenderer && e4 && this._viewportElement && this.screenElement && (this._overviewRulerRenderer = this.register(this._instantiationService.createInstance(l2.OverviewRulerRenderer, this._viewportElement, this.screenElement)));
+            })), this.register((0, r.addDisposableDomListener)(this._viewportElement, "scroll", () => this._selectionService.refresh())), this.linkifier2.attachToDom(this.screenElement, this._mouseService, this._renderService), this.register(this._instantiationService.createInstance(c3.BufferDecorationRenderer, this.screenElement)), this.register((0, r.addDisposableDomListener)(this.element, "mousedown", (e4) => this._selectionService.handleMouseDown(e4))), this.coreMouseService.areMouseEventsActive ? (this._selectionService.disable(), this.element.classList.add("enable-mouse-events")) : this._selectionService.enable(), this.options.screenReaderMode && (this._accessibilityManager.value = this._instantiationService.createInstance(M2.AccessibilityManager, this)), this.register(this.optionsService.onSpecificOptionChange("screenReaderMode", (e4) => this._handleScreenReaderModeOptionChange(e4))), this.options.overviewRulerWidth && (this._overviewRulerRenderer = this.register(this._instantiationService.createInstance(l.OverviewRulerRenderer, this._viewportElement, this.screenElement))), this.optionsService.onSpecificOptionChange("overviewRulerWidth", (e4) => {
+              !this._overviewRulerRenderer && e4 && this._viewportElement && this.screenElement && (this._overviewRulerRenderer = this.register(this._instantiationService.createInstance(l.OverviewRulerRenderer, this._viewportElement, this.screenElement)));
             }), this._charSizeService.measure(), this.refresh(0, this.rows - 1), this._initGlobal(), this.bindMouse();
           }
           _createRenderer() {
@@ -22226,9 +22228,9 @@ WARNING: This link could potentially be dangerous`)) {
           }
           bindMouse() {
             const e3 = this, t3 = this.element;
-            function i4(t4) {
-              const i5 = e3._mouseService.getMouseReportCoords(t4, e3.screenElement);
-              if (!i5)
+            function i3(t4) {
+              const i4 = e3._mouseService.getMouseReportCoords(t4, e3.screenElement);
+              if (!i4)
                 return false;
               let s4, r2;
               switch (t4.overrideType || t4.type) {
@@ -22249,28 +22251,28 @@ WARNING: This link could potentially be dangerous`)) {
                 default:
                   return false;
               }
-              return !(void 0 === r2 || void 0 === s4 || s4 > 4) && e3.coreMouseService.triggerMouseEvent({ col: i5.col, row: i5.row, x: i5.x, y: i5.y, button: s4, action: r2, ctrl: t4.ctrlKey, alt: t4.altKey, shift: t4.shiftKey });
+              return !(void 0 === r2 || void 0 === s4 || s4 > 4) && e3.coreMouseService.triggerMouseEvent({ col: i4.col, row: i4.row, x: i4.x, y: i4.y, button: s4, action: r2, ctrl: t4.ctrlKey, alt: t4.altKey, shift: t4.shiftKey });
             }
-            const s3 = { mouseup: null, wheel: null, mousedrag: null, mousemove: null }, n2 = { mouseup: (e4) => (i4(e4), e4.buttons || (this._document.removeEventListener("mouseup", s3.mouseup), s3.mousedrag && this._document.removeEventListener("mousemove", s3.mousedrag)), this.cancel(e4)), wheel: (e4) => (i4(e4), this.cancel(e4, true)), mousedrag: (e4) => {
-              e4.buttons && i4(e4);
+            const s3 = { mouseup: null, wheel: null, mousedrag: null, mousemove: null }, n2 = { mouseup: (e4) => (i3(e4), e4.buttons || (this._document.removeEventListener("mouseup", s3.mouseup), s3.mousedrag && this._document.removeEventListener("mousemove", s3.mousedrag)), this.cancel(e4)), wheel: (e4) => (i3(e4), this.cancel(e4, true)), mousedrag: (e4) => {
+              e4.buttons && i3(e4);
             }, mousemove: (e4) => {
-              e4.buttons || i4(e4);
+              e4.buttons || i3(e4);
             } };
             this.register(this.coreMouseService.onProtocolChange((e4) => {
               e4 ? ("debug" === this.optionsService.rawOptions.logLevel && this._logService.debug("Binding to mouse events:", this.coreMouseService.explainEvents(e4)), this.element.classList.add("enable-mouse-events"), this._selectionService.disable()) : (this._logService.debug("Unbinding from mouse events."), this.element.classList.remove("enable-mouse-events"), this._selectionService.enable()), 8 & e4 ? s3.mousemove || (t3.addEventListener("mousemove", n2.mousemove), s3.mousemove = n2.mousemove) : (t3.removeEventListener("mousemove", s3.mousemove), s3.mousemove = null), 16 & e4 ? s3.wheel || (t3.addEventListener("wheel", n2.wheel, { passive: false }), s3.wheel = n2.wheel) : (t3.removeEventListener("wheel", s3.wheel), s3.wheel = null), 2 & e4 ? s3.mouseup || (t3.addEventListener("mouseup", n2.mouseup), s3.mouseup = n2.mouseup) : (this._document.removeEventListener("mouseup", s3.mouseup), t3.removeEventListener("mouseup", s3.mouseup), s3.mouseup = null), 4 & e4 ? s3.mousedrag || (s3.mousedrag = n2.mousedrag) : (this._document.removeEventListener("mousemove", s3.mousedrag), s3.mousedrag = null);
             })), this.coreMouseService.activeProtocol = this.coreMouseService.activeProtocol, this.register((0, r.addDisposableDomListener)(t3, "mousedown", (e4) => {
               if (e4.preventDefault(), this.focus(), this.coreMouseService.areMouseEventsActive && !this._selectionService.shouldForceSelection(e4))
-                return i4(e4), s3.mouseup && this._document.addEventListener("mouseup", s3.mouseup), s3.mousedrag && this._document.addEventListener("mousemove", s3.mousedrag), this.cancel(e4);
+                return i3(e4), s3.mouseup && this._document.addEventListener("mouseup", s3.mouseup), s3.mousedrag && this._document.addEventListener("mousemove", s3.mousedrag), this.cancel(e4);
             })), this.register((0, r.addDisposableDomListener)(t3, "wheel", (e4) => {
               if (!s3.wheel) {
                 if (!this.buffer.hasScrollback) {
                   const t4 = this.viewport.getLinesScrolled(e4);
                   if (0 === t4)
                     return;
-                  const i5 = D2.C0.ESC + (this.coreService.decPrivateModes.applicationCursorKeys ? "O" : "[") + (e4.deltaY < 0 ? "A" : "B");
+                  const i4 = D2.C0.ESC + (this.coreService.decPrivateModes.applicationCursorKeys ? "O" : "[") + (e4.deltaY < 0 ? "A" : "B");
                   let s4 = "";
                   for (let e5 = 0; e5 < Math.abs(t4); e5++)
-                    s4 += i5;
+                    s4 += i4;
                   return this.coreService.triggerDataEvent(s4, true), this.cancel(e4, true);
                 }
                 return this.viewport.handleWheel(e4) ? this.cancel(e4) : void 0;
@@ -22284,8 +22286,8 @@ WARNING: This link could potentially be dangerous`)) {
             }, { passive: false }));
           }
           refresh(e3, t3) {
-            var i4;
-            null === (i4 = this._renderService) || void 0 === i4 || i4.refreshRows(e3, t3);
+            var i3;
+            null === (i3 = this._renderService) || void 0 === i3 || i3.refreshRows(e3, t3);
           }
           updateCursorStyle(e3) {
             var t3;
@@ -22294,9 +22296,9 @@ WARNING: This link could potentially be dangerous`)) {
           _showCursor() {
             this.coreService.isCursorInitialized || (this.coreService.isCursorInitialized = true, this.refresh(this.buffer.y, this.buffer.y));
           }
-          scrollLines(e3, t3, i4 = 0) {
+          scrollLines(e3, t3, i3 = 0) {
             var s3;
-            1 === i4 ? (super.scrollLines(e3, t3, i4), this.refresh(0, this.rows - 1)) : null === (s3 = this.viewport) || void 0 === s3 || s3.scrollLines(e3);
+            1 === i3 ? (super.scrollLines(e3, t3, i3), this.refresh(0, this.rows - 1)) : null === (s3 = this.viewport) || void 0 === s3 || s3.scrollLines(e3);
           }
           paste(e3) {
             (0, s2.paste)(e3, this.textarea, this.coreService, this.optionsService);
@@ -22330,8 +22332,8 @@ WARNING: This link could potentially be dangerous`)) {
           hasSelection() {
             return !!this._selectionService && this._selectionService.hasSelection;
           }
-          select(e3, t3, i4) {
-            this._selectionService.setSelection(e3, t3, i4);
+          select(e3, t3, i3) {
+            this._selectionService.setSelection(e3, t3, i3);
           }
           getSelection() {
             return this._selectionService ? this._selectionService.selectionText : "";
@@ -22349,8 +22351,8 @@ WARNING: This link could potentially be dangerous`)) {
             null === (e3 = this._selectionService) || void 0 === e3 || e3.selectAll();
           }
           selectLines(e3, t3) {
-            var i4;
-            null === (i4 = this._selectionService) || void 0 === i4 || i4.selectLines(e3, t3);
+            var i3;
+            null === (i3 = this._selectionService) || void 0 === i3 || i3.selectLines(e3, t3);
           }
           _keyDown(e3) {
             if (this._keyDownHandled = false, this._keyDownSeen = true, this._customKeyEventHandler && false === this._customKeyEventHandler(e3))
@@ -22359,16 +22361,16 @@ WARNING: This link could potentially be dangerous`)) {
             if (!t3 && !this._compositionHelper.keydown(e3))
               return this.options.scrollOnUserInput && this.buffer.ybase !== this.buffer.ydisp && this.scrollToBottom(), false;
             t3 || "Dead" !== e3.key && "AltGraph" !== e3.key || (this._unprocessedDeadKey = true);
-            const i4 = (0, R2.evaluateKeyboardEvent)(e3, this.coreService.decPrivateModes.applicationCursorKeys, this.browser.isMac, this.options.macOptionIsMeta);
-            if (this.updateCursorStyle(e3), 3 === i4.type || 2 === i4.type) {
+            const i3 = (0, R3.evaluateKeyboardEvent)(e3, this.coreService.decPrivateModes.applicationCursorKeys, this.browser.isMac, this.options.macOptionIsMeta);
+            if (this.updateCursorStyle(e3), 3 === i3.type || 2 === i3.type) {
               const t4 = this.rows - 1;
-              return this.scrollLines(2 === i4.type ? -t4 : t4), this.cancel(e3, true);
+              return this.scrollLines(2 === i3.type ? -t4 : t4), this.cancel(e3, true);
             }
-            return 1 === i4.type && this.selectAll(), !!this._isThirdLevelShift(this.browser, e3) || (i4.cancel && this.cancel(e3, true), !i4.key || !!(e3.key && !e3.ctrlKey && !e3.altKey && !e3.metaKey && 1 === e3.key.length && e3.key.charCodeAt(0) >= 65 && e3.key.charCodeAt(0) <= 90) || (this._unprocessedDeadKey ? (this._unprocessedDeadKey = false, true) : (i4.key !== D2.C0.ETX && i4.key !== D2.C0.CR || (this.textarea.value = ""), this._onKey.fire({ key: i4.key, domEvent: e3 }), this._showCursor(), this.coreService.triggerDataEvent(i4.key, true), !this.optionsService.rawOptions.screenReaderMode || e3.altKey || e3.ctrlKey ? this.cancel(e3, true) : void (this._keyDownHandled = true))));
+            return 1 === i3.type && this.selectAll(), !!this._isThirdLevelShift(this.browser, e3) || (i3.cancel && this.cancel(e3, true), !i3.key || !!(e3.key && !e3.ctrlKey && !e3.altKey && !e3.metaKey && 1 === e3.key.length && e3.key.charCodeAt(0) >= 65 && e3.key.charCodeAt(0) <= 90) || (this._unprocessedDeadKey ? (this._unprocessedDeadKey = false, true) : (i3.key !== D2.C0.ETX && i3.key !== D2.C0.CR || (this.textarea.value = ""), this._onKey.fire({ key: i3.key, domEvent: e3 }), this._showCursor(), this.coreService.triggerDataEvent(i3.key, true), !this.optionsService.rawOptions.screenReaderMode || e3.altKey || e3.ctrlKey ? this.cancel(e3, true) : void (this._keyDownHandled = true))));
           }
           _isThirdLevelShift(e3, t3) {
-            const i4 = e3.isMac && !this.options.macOptionIsMeta && t3.altKey && !t3.ctrlKey && !t3.metaKey || e3.isWindows && t3.altKey && t3.ctrlKey && !t3.metaKey || e3.isWindows && t3.getModifierState("AltGraph");
-            return "keypress" === t3.type ? i4 : i4 && (!t3.keyCode || t3.keyCode > 47);
+            const i3 = e3.isMac && !this.options.macOptionIsMeta && t3.altKey && !t3.ctrlKey && !t3.metaKey || e3.isWindows && t3.altKey && t3.ctrlKey && !t3.metaKey || e3.isWindows && t3.getModifierState("AltGraph");
+            return "keypress" === t3.type ? i3 : i3 && (!t3.keyCode || t3.keyCode > 47);
           }
           _keyUp(e3) {
             this._keyDownSeen = false, this._customKeyEventHandler && false === this._customKeyEventHandler(e3) || (function(e4) {
@@ -22406,23 +22408,23 @@ WARNING: This link could potentially be dangerous`)) {
             e3 !== this.cols || t3 !== this.rows ? super.resize(e3, t3) : this._charSizeService && !this._charSizeService.hasValidSize && this._charSizeService.measure();
           }
           _afterResize(e3, t3) {
-            var i4, s3;
-            null === (i4 = this._charSizeService) || void 0 === i4 || i4.measure(), null === (s3 = this.viewport) || void 0 === s3 || s3.syncScrollArea(true);
+            var i3, s3;
+            null === (i3 = this._charSizeService) || void 0 === i3 || i3.measure(), null === (s3 = this.viewport) || void 0 === s3 || s3.syncScrollArea(true);
           }
           clear() {
             var e3;
             if (0 !== this.buffer.ybase || 0 !== this.buffer.y) {
               this.buffer.clearAllMarkers(), this.buffer.lines.set(0, this.buffer.lines.get(this.buffer.ybase + this.buffer.y)), this.buffer.lines.length = 1, this.buffer.ydisp = 0, this.buffer.ybase = 0, this.buffer.y = 0;
               for (let e4 = 1; e4 < this.rows; e4++)
-                this.buffer.lines.push(this.buffer.getBlankLine(L.DEFAULT_ATTR_DATA));
+                this.buffer.lines.push(this.buffer.getBlankLine(L3.DEFAULT_ATTR_DATA));
               this._onScroll.fire({ position: this.buffer.ydisp, source: 0 }), null === (e3 = this.viewport) || void 0 === e3 || e3.reset(), this.refresh(0, this.rows - 1);
             }
           }
           reset() {
             var e3, t3;
             this.options.rows = this.rows, this.options.cols = this.cols;
-            const i4 = this._customKeyEventHandler;
-            this._setup(), super.reset(), null === (e3 = this._selectionService) || void 0 === e3 || e3.reset(), this._decorationService.reset(), null === (t3 = this.viewport) || void 0 === t3 || t3.reset(), this._customKeyEventHandler = i4, this.refresh(0, this.rows - 1);
+            const i3 = this._customKeyEventHandler;
+            this._setup(), super.reset(), null === (e3 = this._selectionService) || void 0 === e3 || e3.reset(), this._decorationService.reset(), null === (t3 = this.viewport) || void 0 === t3 || t3.reset(), this._customKeyEventHandler = i3, this.refresh(0, this.rows - 1);
           }
           clearTextureAtlas() {
             var e3;
@@ -22435,13 +22437,13 @@ WARNING: This link could potentially be dangerous`)) {
           _reportWindowsOptions(e3) {
             if (this._renderService)
               switch (e3) {
-                case T.WindowsOptionsReportType.GET_WIN_SIZE_PIXELS:
+                case T3.WindowsOptionsReportType.GET_WIN_SIZE_PIXELS:
                   const e4 = this._renderService.dimensions.css.canvas.width.toFixed(0), t3 = this._renderService.dimensions.css.canvas.height.toFixed(0);
                   this.coreService.triggerDataEvent(`${D2.C0.ESC}[4;${t3};${e4}t`);
                   break;
-                case T.WindowsOptionsReportType.GET_CELL_SIZE_PIXELS:
-                  const i4 = this._renderService.dimensions.css.cell.width.toFixed(0), s3 = this._renderService.dimensions.css.cell.height.toFixed(0);
-                  this.coreService.triggerDataEvent(`${D2.C0.ESC}[6;${s3};${i4}t`);
+                case T3.WindowsOptionsReportType.GET_CELL_SIZE_PIXELS:
+                  const i3 = this._renderService.dimensions.css.cell.width.toFixed(0), s3 = this._renderService.dimensions.css.cell.height.toFixed(0);
+                  this.coreService.triggerDataEvent(`${D2.C0.ESC}[6;${s3};${i3}t`);
               }
           }
           cancel(e3, t3) {
@@ -22449,7 +22451,7 @@ WARNING: This link could potentially be dangerous`)) {
               return e3.preventDefault(), e3.stopPropagation(), false;
           }
         }
-        t2.Terminal = P2;
+        t2.Terminal = P3;
       }, 9924: (e2, t2) => {
         Object.defineProperty(t2, "__esModule", { value: true }), t2.TimeBasedDebouncer = void 0, t2.TimeBasedDebouncer = class {
           constructor(e3, t3 = 1e3) {
@@ -22458,8 +22460,8 @@ WARNING: This link could potentially be dangerous`)) {
           dispose() {
             this._refreshTimeoutID && clearTimeout(this._refreshTimeoutID);
           }
-          refresh(e3, t3, i3) {
-            this._rowCount = i3, e3 = void 0 !== e3 ? e3 : 0, t3 = void 0 !== t3 ? t3 : this._rowCount - 1, this._rowStart = void 0 !== this._rowStart ? Math.min(this._rowStart, e3) : e3, this._rowEnd = void 0 !== this._rowEnd ? Math.max(this._rowEnd, t3) : t3;
+          refresh(e3, t3, i2) {
+            this._rowCount = i2, e3 = void 0 !== e3 ? e3 : 0, t3 = void 0 !== t3 ? t3 : this._rowCount - 1, this._rowStart = void 0 !== this._rowStart ? Math.min(this._rowStart, e3) : e3, this._rowEnd = void 0 !== this._rowEnd ? Math.max(this._rowEnd, t3) : t3;
             const s2 = Date.now();
             if (s2 - this._lastRefreshMs >= this._debounceThresholdMS)
               this._lastRefreshMs = s2, this._innerRefresh();
@@ -22477,25 +22479,25 @@ WARNING: This link could potentially be dangerous`)) {
             this._rowStart = void 0, this._rowEnd = void 0, this._renderCallback(e3, t3);
           }
         };
-      }, 1680: function(e2, t2, i3) {
-        var s2 = this && this.__decorate || function(e3, t3, i4, s3) {
-          var r2, n2 = arguments.length, o2 = n2 < 3 ? t3 : null === s3 ? s3 = Object.getOwnPropertyDescriptor(t3, i4) : s3;
+      }, 1680: function(e2, t2, i2) {
+        var s2 = this && this.__decorate || function(e3, t3, i3, s3) {
+          var r2, n2 = arguments.length, o2 = n2 < 3 ? t3 : null === s3 ? s3 = Object.getOwnPropertyDescriptor(t3, i3) : s3;
           if ("object" == typeof Reflect && "function" == typeof Reflect.decorate)
-            o2 = Reflect.decorate(e3, t3, i4, s3);
+            o2 = Reflect.decorate(e3, t3, i3, s3);
           else
-            for (var a2 = e3.length - 1; a2 >= 0; a2--)
-              (r2 = e3[a2]) && (o2 = (n2 < 3 ? r2(o2) : n2 > 3 ? r2(t3, i4, o2) : r2(t3, i4)) || o2);
-          return n2 > 3 && o2 && Object.defineProperty(t3, i4, o2), o2;
+            for (var a3 = e3.length - 1; a3 >= 0; a3--)
+              (r2 = e3[a3]) && (o2 = (n2 < 3 ? r2(o2) : n2 > 3 ? r2(t3, i3, o2) : r2(t3, i3)) || o2);
+          return n2 > 3 && o2 && Object.defineProperty(t3, i3, o2), o2;
         }, r = this && this.__param || function(e3, t3) {
-          return function(i4, s3) {
-            t3(i4, s3, e3);
+          return function(i3, s3) {
+            t3(i3, s3, e3);
           };
         };
         Object.defineProperty(t2, "__esModule", { value: true }), t2.Viewport = void 0;
-        const n = i3(3656), o = i3(4725), a = i3(8460), h = i3(844), c = i3(2585);
-        let l2 = t2.Viewport = class extends h.Disposable {
-          constructor(e3, t3, i4, s3, r2, o2, h2, c2) {
-            super(), this._viewportElement = e3, this._scrollArea = t3, this._bufferService = i4, this._optionsService = s3, this._charSizeService = r2, this._renderService = o2, this._coreBrowserService = h2, this.scrollBarWidth = 0, this._currentRowHeight = 0, this._currentDeviceCellHeight = 0, this._lastRecordedBufferLength = 0, this._lastRecordedViewportHeight = 0, this._lastRecordedBufferHeight = 0, this._lastTouchY = 0, this._lastScrollTop = 0, this._wheelPartialScroll = 0, this._refreshAnimationFrame = null, this._ignoreNextScrollEvent = false, this._smoothScrollState = { startTime: 0, origin: -1, target: -1 }, this._onRequestScrollLines = this.register(new a.EventEmitter()), this.onRequestScrollLines = this._onRequestScrollLines.event, this.scrollBarWidth = this._viewportElement.offsetWidth - this._scrollArea.offsetWidth || 15, this.register((0, n.addDisposableDomListener)(this._viewportElement, "scroll", this._handleScroll.bind(this))), this._activeBuffer = this._bufferService.buffer, this.register(this._bufferService.buffers.onBufferActivate((e4) => this._activeBuffer = e4.activeBuffer)), this._renderDimensions = this._renderService.dimensions, this.register(this._renderService.onDimensionsChange((e4) => this._renderDimensions = e4)), this._handleThemeChange(c2.colors), this.register(c2.onChangeColors((e4) => this._handleThemeChange(e4))), this.register(this._optionsService.onSpecificOptionChange("scrollback", () => this.syncScrollArea())), setTimeout(() => this.syncScrollArea());
+        const n = i2(3656), o = i2(4725), a2 = i2(8460), h2 = i2(844), c3 = i2(2585);
+        let l = t2.Viewport = class extends h2.Disposable {
+          constructor(e3, t3, i3, s3, r2, o2, h3, c4) {
+            super(), this._viewportElement = e3, this._scrollArea = t3, this._bufferService = i3, this._optionsService = s3, this._charSizeService = r2, this._renderService = o2, this._coreBrowserService = h3, this.scrollBarWidth = 0, this._currentRowHeight = 0, this._currentDeviceCellHeight = 0, this._lastRecordedBufferLength = 0, this._lastRecordedViewportHeight = 0, this._lastRecordedBufferHeight = 0, this._lastTouchY = 0, this._lastScrollTop = 0, this._wheelPartialScroll = 0, this._refreshAnimationFrame = null, this._ignoreNextScrollEvent = false, this._smoothScrollState = { startTime: 0, origin: -1, target: -1 }, this._onRequestScrollLines = this.register(new a2.EventEmitter()), this.onRequestScrollLines = this._onRequestScrollLines.event, this.scrollBarWidth = this._viewportElement.offsetWidth - this._scrollArea.offsetWidth || 15, this.register((0, n.addDisposableDomListener)(this._viewportElement, "scroll", this._handleScroll.bind(this))), this._activeBuffer = this._bufferService.buffer, this.register(this._bufferService.buffers.onBufferActivate((e4) => this._activeBuffer = e4.activeBuffer)), this._renderDimensions = this._renderService.dimensions, this.register(this._renderService.onDimensionsChange((e4) => this._renderDimensions = e4)), this._handleThemeChange(c4.colors), this.register(c4.onChangeColors((e4) => this._handleThemeChange(e4))), this.register(this._optionsService.onSpecificOptionChange("scrollback", () => this.syncScrollArea())), setTimeout(() => this.syncScrollArea());
           }
           _handleThemeChange(e3) {
             this._viewportElement.style.backgroundColor = e3.background.css;
@@ -22543,8 +22545,8 @@ WARNING: This link could potentially be dangerous`)) {
             this._smoothScrollState.startTime = 0, this._smoothScrollState.origin = -1, this._smoothScrollState.target = -1;
           }
           _bubbleScroll(e3, t3) {
-            const i4 = this._viewportElement.scrollTop + this._lastRecordedViewportHeight;
-            return !(t3 < 0 && 0 !== this._viewportElement.scrollTop || t3 > 0 && i4 < this._lastRecordedBufferHeight) || (e3.cancelable && e3.preventDefault(), false);
+            const i3 = this._viewportElement.scrollTop + this._lastRecordedViewportHeight;
+            return !(t3 < 0 && 0 !== this._viewportElement.scrollTop || t3 > 0 && i3 < this._lastRecordedBufferHeight) || (e3.cancelable && e3.preventDefault(), false);
           }
           handleWheel(e3) {
             const t3 = this._getPixelsScrolled(e3);
@@ -22565,15 +22567,15 @@ WARNING: This link could potentially be dangerous`)) {
             return e3.deltaMode === WheelEvent.DOM_DELTA_LINE ? t3 *= this._currentRowHeight : e3.deltaMode === WheelEvent.DOM_DELTA_PAGE && (t3 *= this._currentRowHeight * this._bufferService.rows), t3;
           }
           getBufferElements(e3, t3) {
-            var i4;
+            var i3;
             let s3, r2 = "";
-            const n2 = [], o2 = null != t3 ? t3 : this._bufferService.buffer.lines.length, a2 = this._bufferService.buffer.lines;
+            const n2 = [], o2 = null != t3 ? t3 : this._bufferService.buffer.lines.length, a3 = this._bufferService.buffer.lines;
             for (let t4 = e3; t4 < o2; t4++) {
-              const e4 = a2.get(t4);
+              const e4 = a3.get(t4);
               if (!e4)
                 continue;
-              const o3 = null === (i4 = a2.get(t4 + 1)) || void 0 === i4 ? void 0 : i4.isWrapped;
-              if (r2 += e4.translateToString(!o3), !o3 || t4 === a2.length - 1) {
+              const o3 = null === (i3 = a3.get(t4 + 1)) || void 0 === i3 ? void 0 : i3.isWrapped;
+              if (r2 += e4.translateToString(!o3), !o3 || t4 === a3.length - 1) {
                 const e5 = document.createElement("div");
                 e5.textContent = r2, n2.push(e5), r2.length > 0 && (s3 = e5), r2 = "";
               }
@@ -22587,8 +22589,8 @@ WARNING: This link could potentially be dangerous`)) {
             return e3.deltaMode === WheelEvent.DOM_DELTA_PIXEL ? (t3 /= this._currentRowHeight + 0, this._wheelPartialScroll += t3, t3 = Math.floor(Math.abs(this._wheelPartialScroll)) * (this._wheelPartialScroll > 0 ? 1 : -1), this._wheelPartialScroll %= 1) : e3.deltaMode === WheelEvent.DOM_DELTA_PAGE && (t3 *= this._bufferService.rows), t3;
           }
           _applyScrollModifier(e3, t3) {
-            const i4 = this._optionsService.rawOptions.fastScrollModifier;
-            return "alt" === i4 && t3.altKey || "ctrl" === i4 && t3.ctrlKey || "shift" === i4 && t3.shiftKey ? e3 * this._optionsService.rawOptions.fastScrollSensitivity * this._optionsService.rawOptions.scrollSensitivity : e3 * this._optionsService.rawOptions.scrollSensitivity;
+            const i3 = this._optionsService.rawOptions.fastScrollModifier;
+            return "alt" === i3 && t3.altKey || "ctrl" === i3 && t3.ctrlKey || "shift" === i3 && t3.shiftKey ? e3 * this._optionsService.rawOptions.fastScrollSensitivity * this._optionsService.rawOptions.scrollSensitivity : e3 * this._optionsService.rawOptions.scrollSensitivity;
           }
           handleTouchStart(e3) {
             this._lastTouchY = e3.touches[0].pageY;
@@ -22598,30 +22600,30 @@ WARNING: This link could potentially be dangerous`)) {
             return this._lastTouchY = e3.touches[0].pageY, 0 !== t3 && (this._viewportElement.scrollTop += t3, this._bubbleScroll(e3, t3));
           }
         };
-        t2.Viewport = l2 = s2([r(2, c.IBufferService), r(3, c.IOptionsService), r(4, o.ICharSizeService), r(5, o.IRenderService), r(6, o.ICoreBrowserService), r(7, o.IThemeService)], l2);
-      }, 3107: function(e2, t2, i3) {
-        var s2 = this && this.__decorate || function(e3, t3, i4, s3) {
-          var r2, n2 = arguments.length, o2 = n2 < 3 ? t3 : null === s3 ? s3 = Object.getOwnPropertyDescriptor(t3, i4) : s3;
+        t2.Viewport = l = s2([r(2, c3.IBufferService), r(3, c3.IOptionsService), r(4, o.ICharSizeService), r(5, o.IRenderService), r(6, o.ICoreBrowserService), r(7, o.IThemeService)], l);
+      }, 3107: function(e2, t2, i2) {
+        var s2 = this && this.__decorate || function(e3, t3, i3, s3) {
+          var r2, n2 = arguments.length, o2 = n2 < 3 ? t3 : null === s3 ? s3 = Object.getOwnPropertyDescriptor(t3, i3) : s3;
           if ("object" == typeof Reflect && "function" == typeof Reflect.decorate)
-            o2 = Reflect.decorate(e3, t3, i4, s3);
+            o2 = Reflect.decorate(e3, t3, i3, s3);
           else
-            for (var a2 = e3.length - 1; a2 >= 0; a2--)
-              (r2 = e3[a2]) && (o2 = (n2 < 3 ? r2(o2) : n2 > 3 ? r2(t3, i4, o2) : r2(t3, i4)) || o2);
-          return n2 > 3 && o2 && Object.defineProperty(t3, i4, o2), o2;
+            for (var a3 = e3.length - 1; a3 >= 0; a3--)
+              (r2 = e3[a3]) && (o2 = (n2 < 3 ? r2(o2) : n2 > 3 ? r2(t3, i3, o2) : r2(t3, i3)) || o2);
+          return n2 > 3 && o2 && Object.defineProperty(t3, i3, o2), o2;
         }, r = this && this.__param || function(e3, t3) {
-          return function(i4, s3) {
-            t3(i4, s3, e3);
+          return function(i3, s3) {
+            t3(i3, s3, e3);
           };
         };
         Object.defineProperty(t2, "__esModule", { value: true }), t2.BufferDecorationRenderer = void 0;
-        const n = i3(3656), o = i3(4725), a = i3(844), h = i3(2585);
-        let c = t2.BufferDecorationRenderer = class extends a.Disposable {
-          constructor(e3, t3, i4, s3) {
-            super(), this._screenElement = e3, this._bufferService = t3, this._decorationService = i4, this._renderService = s3, this._decorationElements = /* @__PURE__ */ new Map(), this._altBufferIsActive = false, this._dimensionsChanged = false, this._container = document.createElement("div"), this._container.classList.add("xterm-decoration-container"), this._screenElement.appendChild(this._container), this.register(this._renderService.onRenderedViewportChange(() => this._doRefreshDecorations())), this.register(this._renderService.onDimensionsChange(() => {
+        const n = i2(3656), o = i2(4725), a2 = i2(844), h2 = i2(2585);
+        let c3 = t2.BufferDecorationRenderer = class extends a2.Disposable {
+          constructor(e3, t3, i3, s3) {
+            super(), this._screenElement = e3, this._bufferService = t3, this._decorationService = i3, this._renderService = s3, this._decorationElements = /* @__PURE__ */ new Map(), this._altBufferIsActive = false, this._dimensionsChanged = false, this._container = document.createElement("div"), this._container.classList.add("xterm-decoration-container"), this._screenElement.appendChild(this._container), this.register(this._renderService.onRenderedViewportChange(() => this._doRefreshDecorations())), this.register(this._renderService.onDimensionsChange(() => {
               this._dimensionsChanged = true, this._queueRefresh();
             })), this.register((0, n.addDisposableDomListener)(window, "resize", () => this._queueRefresh())), this.register(this._bufferService.buffers.onBufferActivate(() => {
               this._altBufferIsActive = this._bufferService.buffer === this._bufferService.buffers.alt;
-            })), this.register(this._decorationService.onDecorationRegistered(() => this._queueRefresh())), this.register(this._decorationService.onDecorationRemoved((e4) => this._removeDecoration(e4))), this.register((0, a.toDisposable)(() => {
+            })), this.register(this._decorationService.onDecorationRegistered(() => this._queueRefresh())), this.register(this._decorationService.onDecorationRemoved((e4) => this._removeDecoration(e4))), this.register((0, a2.toDisposable)(() => {
               this._container.remove(), this._decorationElements.clear();
             }));
           }
@@ -22639,10 +22641,10 @@ WARNING: This link could potentially be dangerous`)) {
             this._refreshStyle(e3), this._dimensionsChanged && this._refreshXPosition(e3);
           }
           _createElement(e3) {
-            var t3, i4;
+            var t3, i3;
             const s3 = document.createElement("div");
             s3.classList.add("xterm-decoration"), s3.classList.toggle("xterm-decoration-top-layer", "top" === (null === (t3 = null == e3 ? void 0 : e3.options) || void 0 === t3 ? void 0 : t3.layer)), s3.style.width = `${Math.round((e3.options.width || 1) * this._renderService.dimensions.css.cell.width)}px`, s3.style.height = (e3.options.height || 1) * this._renderService.dimensions.css.cell.height + "px", s3.style.top = (e3.marker.line - this._bufferService.buffers.active.ydisp) * this._renderService.dimensions.css.cell.height + "px", s3.style.lineHeight = `${this._renderService.dimensions.css.cell.height}px`;
-            const r2 = null !== (i4 = e3.options.x) && void 0 !== i4 ? i4 : 0;
+            const r2 = null !== (i3 = e3.options.x) && void 0 !== i3 ? i3 : 0;
             return r2 && r2 > this._bufferService.cols && (s3.style.display = "none"), this._refreshXPosition(e3, s3), s3;
           }
           _refreshStyle(e3) {
@@ -22650,17 +22652,17 @@ WARNING: This link could potentially be dangerous`)) {
             if (t3 < 0 || t3 >= this._bufferService.rows)
               e3.element && (e3.element.style.display = "none", e3.onRenderEmitter.fire(e3.element));
             else {
-              let i4 = this._decorationElements.get(e3);
-              i4 || (i4 = this._createElement(e3), e3.element = i4, this._decorationElements.set(e3, i4), this._container.appendChild(i4), e3.onDispose(() => {
-                this._decorationElements.delete(e3), i4.remove();
-              })), i4.style.top = t3 * this._renderService.dimensions.css.cell.height + "px", i4.style.display = this._altBufferIsActive ? "none" : "block", e3.onRenderEmitter.fire(i4);
+              let i3 = this._decorationElements.get(e3);
+              i3 || (i3 = this._createElement(e3), e3.element = i3, this._decorationElements.set(e3, i3), this._container.appendChild(i3), e3.onDispose(() => {
+                this._decorationElements.delete(e3), i3.remove();
+              })), i3.style.top = t3 * this._renderService.dimensions.css.cell.height + "px", i3.style.display = this._altBufferIsActive ? "none" : "block", e3.onRenderEmitter.fire(i3);
             }
           }
           _refreshXPosition(e3, t3 = e3.element) {
-            var i4;
+            var i3;
             if (!t3)
               return;
-            const s3 = null !== (i4 = e3.options.x) && void 0 !== i4 ? i4 : 0;
+            const s3 = null !== (i3 = e3.options.x) && void 0 !== i3 ? i3 : 0;
             "right" === (e3.options.anchor || "left") ? t3.style.right = s3 ? s3 * this._renderService.dimensions.css.cell.width + "px" : "" : t3.style.left = s3 ? s3 * this._renderService.dimensions.css.cell.width + "px" : "";
           }
           _removeDecoration(e3) {
@@ -22668,7 +22670,7 @@ WARNING: This link could potentially be dangerous`)) {
             null === (t3 = this._decorationElements.get(e3)) || void 0 === t3 || t3.remove(), this._decorationElements.delete(e3), e3.dispose();
           }
         };
-        t2.BufferDecorationRenderer = c = s2([r(1, h.IBufferService), r(2, h.IDecorationService), r(3, o.IRenderService)], c);
+        t2.BufferDecorationRenderer = c3 = s2([r(1, h2.IBufferService), r(2, h2.IDecorationService), r(3, o.IRenderService)], c3);
       }, 5871: (e2, t2) => {
         Object.defineProperty(t2, "__esModule", { value: true }), t2.ColorZoneStore = void 0, t2.ColorZoneStore = class {
           constructor() {
@@ -22700,40 +22702,40 @@ WARNING: This link could potentially be dangerous`)) {
           _lineIntersectsZone(e3, t3) {
             return t3 >= e3.startBufferLine && t3 <= e3.endBufferLine;
           }
-          _lineAdjacentToZone(e3, t3, i3) {
-            return t3 >= e3.startBufferLine - this._linePadding[i3 || "full"] && t3 <= e3.endBufferLine + this._linePadding[i3 || "full"];
+          _lineAdjacentToZone(e3, t3, i2) {
+            return t3 >= e3.startBufferLine - this._linePadding[i2 || "full"] && t3 <= e3.endBufferLine + this._linePadding[i2 || "full"];
           }
           _addLineToZone(e3, t3) {
             e3.startBufferLine = Math.min(e3.startBufferLine, t3), e3.endBufferLine = Math.max(e3.endBufferLine, t3);
           }
         };
-      }, 5744: function(e2, t2, i3) {
-        var s2 = this && this.__decorate || function(e3, t3, i4, s3) {
-          var r2, n2 = arguments.length, o2 = n2 < 3 ? t3 : null === s3 ? s3 = Object.getOwnPropertyDescriptor(t3, i4) : s3;
+      }, 5744: function(e2, t2, i2) {
+        var s2 = this && this.__decorate || function(e3, t3, i3, s3) {
+          var r2, n2 = arguments.length, o2 = n2 < 3 ? t3 : null === s3 ? s3 = Object.getOwnPropertyDescriptor(t3, i3) : s3;
           if ("object" == typeof Reflect && "function" == typeof Reflect.decorate)
-            o2 = Reflect.decorate(e3, t3, i4, s3);
+            o2 = Reflect.decorate(e3, t3, i3, s3);
           else
-            for (var a2 = e3.length - 1; a2 >= 0; a2--)
-              (r2 = e3[a2]) && (o2 = (n2 < 3 ? r2(o2) : n2 > 3 ? r2(t3, i4, o2) : r2(t3, i4)) || o2);
-          return n2 > 3 && o2 && Object.defineProperty(t3, i4, o2), o2;
+            for (var a3 = e3.length - 1; a3 >= 0; a3--)
+              (r2 = e3[a3]) && (o2 = (n2 < 3 ? r2(o2) : n2 > 3 ? r2(t3, i3, o2) : r2(t3, i3)) || o2);
+          return n2 > 3 && o2 && Object.defineProperty(t3, i3, o2), o2;
         }, r = this && this.__param || function(e3, t3) {
-          return function(i4, s3) {
-            t3(i4, s3, e3);
+          return function(i3, s3) {
+            t3(i3, s3, e3);
           };
         };
         Object.defineProperty(t2, "__esModule", { value: true }), t2.OverviewRulerRenderer = void 0;
-        const n = i3(5871), o = i3(3656), a = i3(4725), h = i3(844), c = i3(2585), l2 = { full: 0, left: 0, center: 0, right: 0 }, d2 = { full: 0, left: 0, center: 0, right: 0 }, _2 = { full: 0, left: 0, center: 0, right: 0 };
-        let u2 = t2.OverviewRulerRenderer = class extends h.Disposable {
+        const n = i2(5871), o = i2(3656), a2 = i2(4725), h2 = i2(844), c3 = i2(2585), l = { full: 0, left: 0, center: 0, right: 0 }, d2 = { full: 0, left: 0, center: 0, right: 0 }, _2 = { full: 0, left: 0, center: 0, right: 0 };
+        let u2 = t2.OverviewRulerRenderer = class extends h2.Disposable {
           get _width() {
             return this._optionsService.options.overviewRulerWidth || 0;
           }
-          constructor(e3, t3, i4, s3, r2, o2, a2) {
-            var c2;
-            super(), this._viewportElement = e3, this._screenElement = t3, this._bufferService = i4, this._decorationService = s3, this._renderService = r2, this._optionsService = o2, this._coreBrowseService = a2, this._colorZoneStore = new n.ColorZoneStore(), this._shouldUpdateDimensions = true, this._shouldUpdateAnchor = true, this._lastKnownBufferLength = 0, this._canvas = document.createElement("canvas"), this._canvas.classList.add("xterm-decoration-overview-ruler"), this._refreshCanvasDimensions(), null === (c2 = this._viewportElement.parentElement) || void 0 === c2 || c2.insertBefore(this._canvas, this._viewportElement);
-            const l3 = this._canvas.getContext("2d");
-            if (!l3)
+          constructor(e3, t3, i3, s3, r2, o2, a3) {
+            var c4;
+            super(), this._viewportElement = e3, this._screenElement = t3, this._bufferService = i3, this._decorationService = s3, this._renderService = r2, this._optionsService = o2, this._coreBrowseService = a3, this._colorZoneStore = new n.ColorZoneStore(), this._shouldUpdateDimensions = true, this._shouldUpdateAnchor = true, this._lastKnownBufferLength = 0, this._canvas = document.createElement("canvas"), this._canvas.classList.add("xterm-decoration-overview-ruler"), this._refreshCanvasDimensions(), null === (c4 = this._viewportElement.parentElement) || void 0 === c4 || c4.insertBefore(this._canvas, this._viewportElement);
+            const l2 = this._canvas.getContext("2d");
+            if (!l2)
               throw new Error("Ctx cannot be null");
-            this._ctx = l3, this._registerDecorationListeners(), this._registerBufferChangeListeners(), this._registerDimensionChangeListeners(), this.register((0, h.toDisposable)(() => {
+            this._ctx = l2, this._registerDecorationListeners(), this._registerBufferChangeListeners(), this._registerDimensionChangeListeners(), this.register((0, h2.toDisposable)(() => {
               var e4;
               null === (e4 = this._canvas) || void 0 === e4 || e4.remove();
             }));
@@ -22758,12 +22760,12 @@ WARNING: This link could potentially be dangerous`)) {
             d2.full = this._canvas.width, d2.left = e3, d2.center = t3, d2.right = e3, this._refreshDrawHeightConstants(), _2.full = 0, _2.left = 0, _2.center = d2.left, _2.right = d2.left + d2.center;
           }
           _refreshDrawHeightConstants() {
-            l2.full = Math.round(2 * this._coreBrowseService.dpr);
+            l.full = Math.round(2 * this._coreBrowseService.dpr);
             const e3 = this._canvas.height / this._bufferService.buffer.lines.length, t3 = Math.round(Math.max(Math.min(e3, 12), 6) * this._coreBrowseService.dpr);
-            l2.left = t3, l2.center = t3, l2.right = t3;
+            l.left = t3, l.center = t3, l.right = t3;
           }
           _refreshColorZonePadding() {
-            this._colorZoneStore.setPadding({ full: Math.floor(this._bufferService.buffers.active.lines.length / (this._canvas.height - 1) * l2.full), left: Math.floor(this._bufferService.buffers.active.lines.length / (this._canvas.height - 1) * l2.left), center: Math.floor(this._bufferService.buffers.active.lines.length / (this._canvas.height - 1) * l2.center), right: Math.floor(this._bufferService.buffers.active.lines.length / (this._canvas.height - 1) * l2.right) }), this._lastKnownBufferLength = this._bufferService.buffers.normal.lines.length;
+            this._colorZoneStore.setPadding({ full: Math.floor(this._bufferService.buffers.active.lines.length / (this._canvas.height - 1) * l.full), left: Math.floor(this._bufferService.buffers.active.lines.length / (this._canvas.height - 1) * l.left), center: Math.floor(this._bufferService.buffers.active.lines.length / (this._canvas.height - 1) * l.center), right: Math.floor(this._bufferService.buffers.active.lines.length / (this._canvas.height - 1) * l.right) }), this._lastKnownBufferLength = this._bufferService.buffers.normal.lines.length;
           }
           _refreshCanvasDimensions() {
             this._canvas.style.width = `${this._width}px`, this._canvas.width = Math.round(this._width * this._coreBrowseService.dpr), this._canvas.style.height = `${this._screenElement.clientHeight}px`, this._canvas.height = Math.round(this._screenElement.clientHeight * this._coreBrowseService.dpr), this._refreshDrawConstants(), this._refreshColorZonePadding();
@@ -22781,7 +22783,7 @@ WARNING: This link could potentially be dangerous`)) {
             this._shouldUpdateDimensions = false, this._shouldUpdateAnchor = false;
           }
           _renderColorZone(e3) {
-            this._ctx.fillStyle = e3.color, this._ctx.fillRect(_2[e3.position || "full"], Math.round((this._canvas.height - 1) * (e3.startBufferLine / this._bufferService.buffers.active.lines.length) - l2[e3.position || "full"] / 2), d2[e3.position || "full"], Math.round((this._canvas.height - 1) * ((e3.endBufferLine - e3.startBufferLine) / this._bufferService.buffers.active.lines.length) + l2[e3.position || "full"]));
+            this._ctx.fillStyle = e3.color, this._ctx.fillRect(_2[e3.position || "full"], Math.round((this._canvas.height - 1) * (e3.startBufferLine / this._bufferService.buffers.active.lines.length) - l[e3.position || "full"] / 2), d2[e3.position || "full"], Math.round((this._canvas.height - 1) * ((e3.endBufferLine - e3.startBufferLine) / this._bufferService.buffers.active.lines.length) + l[e3.position || "full"]));
           }
           _queueRefresh(e3, t3) {
             this._shouldUpdateDimensions = e3 || this._shouldUpdateDimensions, this._shouldUpdateAnchor = t3 || this._shouldUpdateAnchor, void 0 === this._animationFrame && (this._animationFrame = this._coreBrowseService.window.requestAnimationFrame(() => {
@@ -22789,29 +22791,29 @@ WARNING: This link could potentially be dangerous`)) {
             }));
           }
         };
-        t2.OverviewRulerRenderer = u2 = s2([r(2, c.IBufferService), r(3, c.IDecorationService), r(4, a.IRenderService), r(5, c.IOptionsService), r(6, a.ICoreBrowserService)], u2);
-      }, 2950: function(e2, t2, i3) {
-        var s2 = this && this.__decorate || function(e3, t3, i4, s3) {
-          var r2, n2 = arguments.length, o2 = n2 < 3 ? t3 : null === s3 ? s3 = Object.getOwnPropertyDescriptor(t3, i4) : s3;
+        t2.OverviewRulerRenderer = u2 = s2([r(2, c3.IBufferService), r(3, c3.IDecorationService), r(4, a2.IRenderService), r(5, c3.IOptionsService), r(6, a2.ICoreBrowserService)], u2);
+      }, 2950: function(e2, t2, i2) {
+        var s2 = this && this.__decorate || function(e3, t3, i3, s3) {
+          var r2, n2 = arguments.length, o2 = n2 < 3 ? t3 : null === s3 ? s3 = Object.getOwnPropertyDescriptor(t3, i3) : s3;
           if ("object" == typeof Reflect && "function" == typeof Reflect.decorate)
-            o2 = Reflect.decorate(e3, t3, i4, s3);
+            o2 = Reflect.decorate(e3, t3, i3, s3);
           else
-            for (var a2 = e3.length - 1; a2 >= 0; a2--)
-              (r2 = e3[a2]) && (o2 = (n2 < 3 ? r2(o2) : n2 > 3 ? r2(t3, i4, o2) : r2(t3, i4)) || o2);
-          return n2 > 3 && o2 && Object.defineProperty(t3, i4, o2), o2;
+            for (var a3 = e3.length - 1; a3 >= 0; a3--)
+              (r2 = e3[a3]) && (o2 = (n2 < 3 ? r2(o2) : n2 > 3 ? r2(t3, i3, o2) : r2(t3, i3)) || o2);
+          return n2 > 3 && o2 && Object.defineProperty(t3, i3, o2), o2;
         }, r = this && this.__param || function(e3, t3) {
-          return function(i4, s3) {
-            t3(i4, s3, e3);
+          return function(i3, s3) {
+            t3(i3, s3, e3);
           };
         };
         Object.defineProperty(t2, "__esModule", { value: true }), t2.CompositionHelper = void 0;
-        const n = i3(4725), o = i3(2585), a = i3(2584);
-        let h = t2.CompositionHelper = class {
+        const n = i2(4725), o = i2(2585), a2 = i2(2584);
+        let h2 = t2.CompositionHelper = class {
           get isComposing() {
             return this._isComposing;
           }
-          constructor(e3, t3, i4, s3, r2, n2) {
-            this._textarea = e3, this._compositionView = t3, this._bufferService = i4, this._optionsService = s3, this._coreService = r2, this._renderService = n2, this._isComposing = false, this._isSendingComposition = false, this._compositionPosition = { start: 0, end: 0 }, this._dataAlreadySent = "";
+          constructor(e3, t3, i3, s3, r2, n2) {
+            this._textarea = e3, this._compositionView = t3, this._bufferService = i3, this._optionsService = s3, this._coreService = r2, this._renderService = n2, this._isComposing = false, this._isSendingComposition = false, this._compositionPosition = { start: 0, end: 0 }, this._dataAlreadySent = "";
           }
           compositionstart() {
             this._isComposing = true, this._compositionPosition.start = this._textarea.value.length, this._compositionView.textContent = "", this._dataAlreadySent = "", this._compositionView.classList.add("active");
@@ -22853,118 +22855,118 @@ WARNING: This link could potentially be dangerous`)) {
             const e3 = this._textarea.value;
             setTimeout(() => {
               if (!this._isComposing) {
-                const t3 = this._textarea.value, i4 = t3.replace(e3, "");
-                this._dataAlreadySent = i4, t3.length > e3.length ? this._coreService.triggerDataEvent(i4, true) : t3.length < e3.length ? this._coreService.triggerDataEvent(`${a.C0.DEL}`, true) : t3.length === e3.length && t3 !== e3 && this._coreService.triggerDataEvent(t3, true);
+                const t3 = this._textarea.value, i3 = t3.replace(e3, "");
+                this._dataAlreadySent = i3, t3.length > e3.length ? this._coreService.triggerDataEvent(i3, true) : t3.length < e3.length ? this._coreService.triggerDataEvent(`${a2.C0.DEL}`, true) : t3.length === e3.length && t3 !== e3 && this._coreService.triggerDataEvent(t3, true);
               }
             }, 0);
           }
           updateCompositionElements(e3) {
             if (this._isComposing) {
               if (this._bufferService.buffer.isCursorInViewport) {
-                const e4 = Math.min(this._bufferService.buffer.x, this._bufferService.cols - 1), t3 = this._renderService.dimensions.css.cell.height, i4 = this._bufferService.buffer.y * this._renderService.dimensions.css.cell.height, s3 = e4 * this._renderService.dimensions.css.cell.width;
-                this._compositionView.style.left = s3 + "px", this._compositionView.style.top = i4 + "px", this._compositionView.style.height = t3 + "px", this._compositionView.style.lineHeight = t3 + "px", this._compositionView.style.fontFamily = this._optionsService.rawOptions.fontFamily, this._compositionView.style.fontSize = this._optionsService.rawOptions.fontSize + "px";
+                const e4 = Math.min(this._bufferService.buffer.x, this._bufferService.cols - 1), t3 = this._renderService.dimensions.css.cell.height, i3 = this._bufferService.buffer.y * this._renderService.dimensions.css.cell.height, s3 = e4 * this._renderService.dimensions.css.cell.width;
+                this._compositionView.style.left = s3 + "px", this._compositionView.style.top = i3 + "px", this._compositionView.style.height = t3 + "px", this._compositionView.style.lineHeight = t3 + "px", this._compositionView.style.fontFamily = this._optionsService.rawOptions.fontFamily, this._compositionView.style.fontSize = this._optionsService.rawOptions.fontSize + "px";
                 const r2 = this._compositionView.getBoundingClientRect();
-                this._textarea.style.left = s3 + "px", this._textarea.style.top = i4 + "px", this._textarea.style.width = Math.max(r2.width, 1) + "px", this._textarea.style.height = Math.max(r2.height, 1) + "px", this._textarea.style.lineHeight = r2.height + "px";
+                this._textarea.style.left = s3 + "px", this._textarea.style.top = i3 + "px", this._textarea.style.width = Math.max(r2.width, 1) + "px", this._textarea.style.height = Math.max(r2.height, 1) + "px", this._textarea.style.lineHeight = r2.height + "px";
               }
               e3 || setTimeout(() => this.updateCompositionElements(true), 0);
             }
           }
         };
-        t2.CompositionHelper = h = s2([r(2, o.IBufferService), r(3, o.IOptionsService), r(4, o.ICoreService), r(5, n.IRenderService)], h);
+        t2.CompositionHelper = h2 = s2([r(2, o.IBufferService), r(3, o.IOptionsService), r(4, o.ICoreService), r(5, n.IRenderService)], h2);
       }, 9806: (e2, t2) => {
-        function i3(e3, t3, i4) {
-          const s2 = i4.getBoundingClientRect(), r = e3.getComputedStyle(i4), n = parseInt(r.getPropertyValue("padding-left")), o = parseInt(r.getPropertyValue("padding-top"));
+        function i2(e3, t3, i3) {
+          const s2 = i3.getBoundingClientRect(), r = e3.getComputedStyle(i3), n = parseInt(r.getPropertyValue("padding-left")), o = parseInt(r.getPropertyValue("padding-top"));
           return [t3.clientX - s2.left - n, t3.clientY - s2.top - o];
         }
-        Object.defineProperty(t2, "__esModule", { value: true }), t2.getCoords = t2.getCoordsRelativeToElement = void 0, t2.getCoordsRelativeToElement = i3, t2.getCoords = function(e3, t3, s2, r, n, o, a, h, c) {
+        Object.defineProperty(t2, "__esModule", { value: true }), t2.getCoords = t2.getCoordsRelativeToElement = void 0, t2.getCoordsRelativeToElement = i2, t2.getCoords = function(e3, t3, s2, r, n, o, a2, h2, c3) {
           if (!o)
             return;
-          const l2 = i3(e3, t3, s2);
-          return l2 ? (l2[0] = Math.ceil((l2[0] + (c ? a / 2 : 0)) / a), l2[1] = Math.ceil(l2[1] / h), l2[0] = Math.min(Math.max(l2[0], 1), r + (c ? 1 : 0)), l2[1] = Math.min(Math.max(l2[1], 1), n), l2) : void 0;
+          const l = i2(e3, t3, s2);
+          return l ? (l[0] = Math.ceil((l[0] + (c3 ? a2 / 2 : 0)) / a2), l[1] = Math.ceil(l[1] / h2), l[0] = Math.min(Math.max(l[0], 1), r + (c3 ? 1 : 0)), l[1] = Math.min(Math.max(l[1], 1), n), l) : void 0;
         };
-      }, 9504: (e2, t2, i3) => {
+      }, 9504: (e2, t2, i2) => {
         Object.defineProperty(t2, "__esModule", { value: true }), t2.moveToCellSequence = void 0;
-        const s2 = i3(2584);
-        function r(e3, t3, i4, s3) {
-          const r2 = e3 - n(e3, i4), a2 = t3 - n(t3, i4), l2 = Math.abs(r2 - a2) - function(e4, t4, i5) {
+        const s2 = i2(2584);
+        function r(e3, t3, i3, s3) {
+          const r2 = e3 - n(e3, i3), a3 = t3 - n(t3, i3), l = Math.abs(r2 - a3) - function(e4, t4, i4) {
             let s4 = 0;
-            const r3 = e4 - n(e4, i5), a3 = t4 - n(t4, i5);
-            for (let n2 = 0; n2 < Math.abs(r3 - a3); n2++) {
-              const a4 = "A" === o(e4, t4) ? -1 : 1, h2 = i5.buffer.lines.get(r3 + a4 * n2);
-              (null == h2 ? void 0 : h2.isWrapped) && s4++;
+            const r3 = e4 - n(e4, i4), a4 = t4 - n(t4, i4);
+            for (let n2 = 0; n2 < Math.abs(r3 - a4); n2++) {
+              const a5 = "A" === o(e4, t4) ? -1 : 1, h3 = i4.buffer.lines.get(r3 + a5 * n2);
+              (null == h3 ? void 0 : h3.isWrapped) && s4++;
             }
             return s4;
-          }(e3, t3, i4);
-          return c(l2, h(o(e3, t3), s3));
+          }(e3, t3, i3);
+          return c3(l, h2(o(e3, t3), s3));
         }
         function n(e3, t3) {
-          let i4 = 0, s3 = t3.buffer.lines.get(e3), r2 = null == s3 ? void 0 : s3.isWrapped;
+          let i3 = 0, s3 = t3.buffer.lines.get(e3), r2 = null == s3 ? void 0 : s3.isWrapped;
           for (; r2 && e3 >= 0 && e3 < t3.rows; )
-            i4++, s3 = t3.buffer.lines.get(--e3), r2 = null == s3 ? void 0 : s3.isWrapped;
-          return i4;
+            i3++, s3 = t3.buffer.lines.get(--e3), r2 = null == s3 ? void 0 : s3.isWrapped;
+          return i3;
         }
         function o(e3, t3) {
           return e3 > t3 ? "A" : "B";
         }
-        function a(e3, t3, i4, s3, r2, n2) {
-          let o2 = e3, a2 = t3, h2 = "";
-          for (; o2 !== i4 || a2 !== s3; )
-            o2 += r2 ? 1 : -1, r2 && o2 > n2.cols - 1 ? (h2 += n2.buffer.translateBufferLineToString(a2, false, e3, o2), o2 = 0, e3 = 0, a2++) : !r2 && o2 < 0 && (h2 += n2.buffer.translateBufferLineToString(a2, false, 0, e3 + 1), o2 = n2.cols - 1, e3 = o2, a2--);
-          return h2 + n2.buffer.translateBufferLineToString(a2, false, e3, o2);
+        function a2(e3, t3, i3, s3, r2, n2) {
+          let o2 = e3, a3 = t3, h3 = "";
+          for (; o2 !== i3 || a3 !== s3; )
+            o2 += r2 ? 1 : -1, r2 && o2 > n2.cols - 1 ? (h3 += n2.buffer.translateBufferLineToString(a3, false, e3, o2), o2 = 0, e3 = 0, a3++) : !r2 && o2 < 0 && (h3 += n2.buffer.translateBufferLineToString(a3, false, 0, e3 + 1), o2 = n2.cols - 1, e3 = o2, a3--);
+          return h3 + n2.buffer.translateBufferLineToString(a3, false, e3, o2);
         }
-        function h(e3, t3) {
-          const i4 = t3 ? "O" : "[";
-          return s2.C0.ESC + i4 + e3;
+        function h2(e3, t3) {
+          const i3 = t3 ? "O" : "[";
+          return s2.C0.ESC + i3 + e3;
         }
-        function c(e3, t3) {
+        function c3(e3, t3) {
           e3 = Math.floor(e3);
-          let i4 = "";
+          let i3 = "";
           for (let s3 = 0; s3 < e3; s3++)
-            i4 += t3;
-          return i4;
+            i3 += t3;
+          return i3;
         }
-        t2.moveToCellSequence = function(e3, t3, i4, s3) {
-          const o2 = i4.buffer.x, l2 = i4.buffer.y;
-          if (!i4.buffer.hasScrollback)
-            return function(e4, t4, i5, s4, o3, l3) {
-              return 0 === r(t4, s4, o3, l3).length ? "" : c(a(e4, t4, e4, t4 - n(t4, o3), false, o3).length, h("D", l3));
-            }(o2, l2, 0, t3, i4, s3) + r(l2, t3, i4, s3) + function(e4, t4, i5, s4, o3, l3) {
+        t2.moveToCellSequence = function(e3, t3, i3, s3) {
+          const o2 = i3.buffer.x, l = i3.buffer.y;
+          if (!i3.buffer.hasScrollback)
+            return function(e4, t4, i4, s4, o3, l2) {
+              return 0 === r(t4, s4, o3, l2).length ? "" : c3(a2(e4, t4, e4, t4 - n(t4, o3), false, o3).length, h2("D", l2));
+            }(o2, l, 0, t3, i3, s3) + r(l, t3, i3, s3) + function(e4, t4, i4, s4, o3, l2) {
               let d3;
-              d3 = r(t4, s4, o3, l3).length > 0 ? s4 - n(s4, o3) : t4;
-              const _3 = s4, u2 = function(e5, t5, i6, s5, o4, a2) {
-                let h2;
-                return h2 = r(i6, s5, o4, a2).length > 0 ? s5 - n(s5, o4) : t5, e5 < i6 && h2 <= s5 || e5 >= i6 && h2 < s5 ? "C" : "D";
-              }(e4, t4, i5, s4, o3, l3);
-              return c(a(e4, d3, i5, _3, "C" === u2, o3).length, h(u2, l3));
-            }(o2, l2, e3, t3, i4, s3);
+              d3 = r(t4, s4, o3, l2).length > 0 ? s4 - n(s4, o3) : t4;
+              const _3 = s4, u2 = function(e5, t5, i5, s5, o4, a3) {
+                let h3;
+                return h3 = r(i5, s5, o4, a3).length > 0 ? s5 - n(s5, o4) : t5, e5 < i5 && h3 <= s5 || e5 >= i5 && h3 < s5 ? "C" : "D";
+              }(e4, t4, i4, s4, o3, l2);
+              return c3(a2(e4, d3, i4, _3, "C" === u2, o3).length, h2(u2, l2));
+            }(o2, l, e3, t3, i3, s3);
           let d2;
-          if (l2 === t3)
-            return d2 = o2 > e3 ? "D" : "C", c(Math.abs(o2 - e3), h(d2, s3));
-          d2 = l2 > t3 ? "D" : "C";
-          const _2 = Math.abs(l2 - t3);
-          return c(function(e4, t4) {
+          if (l === t3)
+            return d2 = o2 > e3 ? "D" : "C", c3(Math.abs(o2 - e3), h2(d2, s3));
+          d2 = l > t3 ? "D" : "C";
+          const _2 = Math.abs(l - t3);
+          return c3(function(e4, t4) {
             return t4.cols - e4;
-          }(l2 > t3 ? e3 : o2, i4) + (_2 - 1) * i4.cols + 1 + ((l2 > t3 ? o2 : e3) - 1), h(d2, s3));
+          }(l > t3 ? e3 : o2, i3) + (_2 - 1) * i3.cols + 1 + ((l > t3 ? o2 : e3) - 1), h2(d2, s3));
         };
-      }, 1296: function(e2, t2, i3) {
-        var s2 = this && this.__decorate || function(e3, t3, i4, s3) {
-          var r2, n2 = arguments.length, o2 = n2 < 3 ? t3 : null === s3 ? s3 = Object.getOwnPropertyDescriptor(t3, i4) : s3;
+      }, 1296: function(e2, t2, i2) {
+        var s2 = this && this.__decorate || function(e3, t3, i3, s3) {
+          var r2, n2 = arguments.length, o2 = n2 < 3 ? t3 : null === s3 ? s3 = Object.getOwnPropertyDescriptor(t3, i3) : s3;
           if ("object" == typeof Reflect && "function" == typeof Reflect.decorate)
-            o2 = Reflect.decorate(e3, t3, i4, s3);
+            o2 = Reflect.decorate(e3, t3, i3, s3);
           else
-            for (var a2 = e3.length - 1; a2 >= 0; a2--)
-              (r2 = e3[a2]) && (o2 = (n2 < 3 ? r2(o2) : n2 > 3 ? r2(t3, i4, o2) : r2(t3, i4)) || o2);
-          return n2 > 3 && o2 && Object.defineProperty(t3, i4, o2), o2;
+            for (var a3 = e3.length - 1; a3 >= 0; a3--)
+              (r2 = e3[a3]) && (o2 = (n2 < 3 ? r2(o2) : n2 > 3 ? r2(t3, i3, o2) : r2(t3, i3)) || o2);
+          return n2 > 3 && o2 && Object.defineProperty(t3, i3, o2), o2;
         }, r = this && this.__param || function(e3, t3) {
-          return function(i4, s3) {
-            t3(i4, s3, e3);
+          return function(i3, s3) {
+            t3(i3, s3, e3);
           };
         };
         Object.defineProperty(t2, "__esModule", { value: true }), t2.DomRenderer = void 0;
-        const n = i3(3787), o = i3(2550), a = i3(2223), h = i3(6171), c = i3(4725), l2 = i3(8055), d2 = i3(8460), _2 = i3(844), u2 = i3(2585), f2 = "xterm-dom-renderer-owner-", v = "xterm-rows", p = "xterm-fg-", g2 = "xterm-bg-", m2 = "xterm-focus", S = "xterm-selection";
+        const n = i2(3787), o = i2(2550), a2 = i2(2223), h2 = i2(6171), c3 = i2(4725), l = i2(8055), d2 = i2(8460), _2 = i2(844), u2 = i2(2585), f2 = "xterm-dom-renderer-owner-", v3 = "xterm-rows", p2 = "xterm-fg-", g3 = "xterm-bg-", m2 = "xterm-focus", S2 = "xterm-selection";
         let C2 = 1, b2 = t2.DomRenderer = class extends _2.Disposable {
-          constructor(e3, t3, i4, s3, r2, a2, c2, l3, u3, p2) {
-            super(), this._element = e3, this._screenElement = t3, this._viewportElement = i4, this._linkifier2 = s3, this._charSizeService = a2, this._optionsService = c2, this._bufferService = l3, this._coreBrowserService = u3, this._themeService = p2, this._terminalClass = C2++, this._rowElements = [], this.onRequestRedraw = this.register(new d2.EventEmitter()).event, this._rowContainer = document.createElement("div"), this._rowContainer.classList.add(v), this._rowContainer.style.lineHeight = "normal", this._rowContainer.setAttribute("aria-hidden", "true"), this._refreshRowElements(this._bufferService.cols, this._bufferService.rows), this._selectionContainer = document.createElement("div"), this._selectionContainer.classList.add(S), this._selectionContainer.setAttribute("aria-hidden", "true"), this.dimensions = (0, h.createRenderDimensions)(), this._updateDimensions(), this.register(this._optionsService.onOptionChange(() => this._handleOptionsChanged())), this.register(this._themeService.onChangeColors((e4) => this._injectCss(e4))), this._injectCss(this._themeService.colors), this._rowFactory = r2.createInstance(n.DomRendererRowFactory, document), this._element.classList.add(f2 + this._terminalClass), this._screenElement.appendChild(this._rowContainer), this._screenElement.appendChild(this._selectionContainer), this.register(this._linkifier2.onShowLinkUnderline((e4) => this._handleLinkHover(e4))), this.register(this._linkifier2.onHideLinkUnderline((e4) => this._handleLinkLeave(e4))), this.register((0, _2.toDisposable)(() => {
+          constructor(e3, t3, i3, s3, r2, a3, c4, l2, u3, p3) {
+            super(), this._element = e3, this._screenElement = t3, this._viewportElement = i3, this._linkifier2 = s3, this._charSizeService = a3, this._optionsService = c4, this._bufferService = l2, this._coreBrowserService = u3, this._themeService = p3, this._terminalClass = C2++, this._rowElements = [], this.onRequestRedraw = this.register(new d2.EventEmitter()).event, this._rowContainer = document.createElement("div"), this._rowContainer.classList.add(v3), this._rowContainer.style.lineHeight = "normal", this._rowContainer.setAttribute("aria-hidden", "true"), this._refreshRowElements(this._bufferService.cols, this._bufferService.rows), this._selectionContainer = document.createElement("div"), this._selectionContainer.classList.add(S2), this._selectionContainer.setAttribute("aria-hidden", "true"), this.dimensions = (0, h2.createRenderDimensions)(), this._updateDimensions(), this.register(this._optionsService.onOptionChange(() => this._handleOptionsChanged())), this.register(this._themeService.onChangeColors((e4) => this._injectCss(e4))), this._injectCss(this._themeService.colors), this._rowFactory = r2.createInstance(n.DomRendererRowFactory, document), this._element.classList.add(f2 + this._terminalClass), this._screenElement.appendChild(this._rowContainer), this._screenElement.appendChild(this._selectionContainer), this.register(this._linkifier2.onShowLinkUnderline((e4) => this._handleLinkHover(e4))), this.register(this._linkifier2.onHideLinkUnderline((e4) => this._handleLinkLeave(e4))), this.register((0, _2.toDisposable)(() => {
               this._element.classList.remove(f2 + this._terminalClass), this._rowContainer.remove(), this._selectionContainer.remove(), this._widthCache.dispose(), this._themeStyleElement.remove(), this._dimensionsStyleElement.remove();
             })), this._widthCache = new o.WidthCache(document), this._widthCache.setFont(this._optionsService.rawOptions.fontFamily, this._optionsService.rawOptions.fontSize, this._optionsService.rawOptions.fontWeight, this._optionsService.rawOptions.fontWeightBold), this._setDefaultSpacing();
           }
@@ -22974,16 +22976,16 @@ WARNING: This link could potentially be dangerous`)) {
             for (const e4 of this._rowElements)
               e4.style.width = `${this.dimensions.css.canvas.width}px`, e4.style.height = `${this.dimensions.css.cell.height}px`, e4.style.lineHeight = `${this.dimensions.css.cell.height}px`, e4.style.overflow = "hidden";
             this._dimensionsStyleElement || (this._dimensionsStyleElement = document.createElement("style"), this._screenElement.appendChild(this._dimensionsStyleElement));
-            const t3 = `${this._terminalSelector} .${v} span { display: inline-block; height: 100%; vertical-align: top;}`;
+            const t3 = `${this._terminalSelector} .${v3} span { display: inline-block; height: 100%; vertical-align: top;}`;
             this._dimensionsStyleElement.textContent = t3, this._selectionContainer.style.height = this._viewportElement.style.height, this._screenElement.style.width = `${this.dimensions.css.canvas.width}px`, this._screenElement.style.height = `${this.dimensions.css.canvas.height}px`;
           }
           _injectCss(e3) {
             this._themeStyleElement || (this._themeStyleElement = document.createElement("style"), this._screenElement.appendChild(this._themeStyleElement));
-            let t3 = `${this._terminalSelector} .${v} { color: ${e3.foreground.css}; font-family: ${this._optionsService.rawOptions.fontFamily}; font-size: ${this._optionsService.rawOptions.fontSize}px; font-kerning: none; white-space: pre}`;
-            t3 += `${this._terminalSelector} .${v} .xterm-dim { color: ${l2.color.multiplyOpacity(e3.foreground, 0.5).css};}`, t3 += `${this._terminalSelector} span:not(.xterm-bold) { font-weight: ${this._optionsService.rawOptions.fontWeight};}${this._terminalSelector} span.xterm-bold { font-weight: ${this._optionsService.rawOptions.fontWeightBold};}${this._terminalSelector} span.xterm-italic { font-style: italic;}`, t3 += "@keyframes blink_box_shadow_" + this._terminalClass + " { 50% {  border-bottom-style: hidden; }}", t3 += "@keyframes blink_block_" + this._terminalClass + ` { 0% {  background-color: ${e3.cursor.css};  color: ${e3.cursorAccent.css}; } 50% {  background-color: inherit;  color: ${e3.cursor.css}; }}`, t3 += `${this._terminalSelector} .${v}.${m2} .xterm-cursor.xterm-cursor-blink:not(.xterm-cursor-block) { animation: blink_box_shadow_` + this._terminalClass + ` 1s step-end infinite;}${this._terminalSelector} .${v}.${m2} .xterm-cursor.xterm-cursor-blink.xterm-cursor-block { animation: blink_block_` + this._terminalClass + ` 1s step-end infinite;}${this._terminalSelector} .${v} .xterm-cursor.xterm-cursor-block { background-color: ${e3.cursor.css}; color: ${e3.cursorAccent.css};}${this._terminalSelector} .${v} .xterm-cursor.xterm-cursor-outline { outline: 1px solid ${e3.cursor.css}; outline-offset: -1px;}${this._terminalSelector} .${v} .xterm-cursor.xterm-cursor-bar { box-shadow: ${this._optionsService.rawOptions.cursorWidth}px 0 0 ${e3.cursor.css} inset;}${this._terminalSelector} .${v} .xterm-cursor.xterm-cursor-underline { border-bottom: 1px ${e3.cursor.css}; border-bottom-style: solid; height: calc(100% - 1px);}`, t3 += `${this._terminalSelector} .${S} { position: absolute; top: 0; left: 0; z-index: 1; pointer-events: none;}${this._terminalSelector}.focus .${S} div { position: absolute; background-color: ${e3.selectionBackgroundOpaque.css};}${this._terminalSelector} .${S} div { position: absolute; background-color: ${e3.selectionInactiveBackgroundOpaque.css};}`;
-            for (const [i4, s3] of e3.ansi.entries())
-              t3 += `${this._terminalSelector} .${p}${i4} { color: ${s3.css}; }${this._terminalSelector} .${p}${i4}.xterm-dim { color: ${l2.color.multiplyOpacity(s3, 0.5).css}; }${this._terminalSelector} .${g2}${i4} { background-color: ${s3.css}; }`;
-            t3 += `${this._terminalSelector} .${p}${a.INVERTED_DEFAULT_COLOR} { color: ${l2.color.opaque(e3.background).css}; }${this._terminalSelector} .${p}${a.INVERTED_DEFAULT_COLOR}.xterm-dim { color: ${l2.color.multiplyOpacity(l2.color.opaque(e3.background), 0.5).css}; }${this._terminalSelector} .${g2}${a.INVERTED_DEFAULT_COLOR} { background-color: ${e3.foreground.css}; }`, this._themeStyleElement.textContent = t3;
+            let t3 = `${this._terminalSelector} .${v3} { color: ${e3.foreground.css}; font-family: ${this._optionsService.rawOptions.fontFamily}; font-size: ${this._optionsService.rawOptions.fontSize}px; font-kerning: none; white-space: pre}`;
+            t3 += `${this._terminalSelector} .${v3} .xterm-dim { color: ${l.color.multiplyOpacity(e3.foreground, 0.5).css};}`, t3 += `${this._terminalSelector} span:not(.xterm-bold) { font-weight: ${this._optionsService.rawOptions.fontWeight};}${this._terminalSelector} span.xterm-bold { font-weight: ${this._optionsService.rawOptions.fontWeightBold};}${this._terminalSelector} span.xterm-italic { font-style: italic;}`, t3 += "@keyframes blink_box_shadow_" + this._terminalClass + " { 50% {  border-bottom-style: hidden; }}", t3 += "@keyframes blink_block_" + this._terminalClass + ` { 0% {  background-color: ${e3.cursor.css};  color: ${e3.cursorAccent.css}; } 50% {  background-color: inherit;  color: ${e3.cursor.css}; }}`, t3 += `${this._terminalSelector} .${v3}.${m2} .xterm-cursor.xterm-cursor-blink:not(.xterm-cursor-block) { animation: blink_box_shadow_` + this._terminalClass + ` 1s step-end infinite;}${this._terminalSelector} .${v3}.${m2} .xterm-cursor.xterm-cursor-blink.xterm-cursor-block { animation: blink_block_` + this._terminalClass + ` 1s step-end infinite;}${this._terminalSelector} .${v3} .xterm-cursor.xterm-cursor-block { background-color: ${e3.cursor.css}; color: ${e3.cursorAccent.css};}${this._terminalSelector} .${v3} .xterm-cursor.xterm-cursor-outline { outline: 1px solid ${e3.cursor.css}; outline-offset: -1px;}${this._terminalSelector} .${v3} .xterm-cursor.xterm-cursor-bar { box-shadow: ${this._optionsService.rawOptions.cursorWidth}px 0 0 ${e3.cursor.css} inset;}${this._terminalSelector} .${v3} .xterm-cursor.xterm-cursor-underline { border-bottom: 1px ${e3.cursor.css}; border-bottom-style: solid; height: calc(100% - 1px);}`, t3 += `${this._terminalSelector} .${S2} { position: absolute; top: 0; left: 0; z-index: 1; pointer-events: none;}${this._terminalSelector}.focus .${S2} div { position: absolute; background-color: ${e3.selectionBackgroundOpaque.css};}${this._terminalSelector} .${S2} div { position: absolute; background-color: ${e3.selectionInactiveBackgroundOpaque.css};}`;
+            for (const [i3, s3] of e3.ansi.entries())
+              t3 += `${this._terminalSelector} .${p2}${i3} { color: ${s3.css}; }${this._terminalSelector} .${p2}${i3}.xterm-dim { color: ${l.color.multiplyOpacity(s3, 0.5).css}; }${this._terminalSelector} .${g3}${i3} { background-color: ${s3.css}; }`;
+            t3 += `${this._terminalSelector} .${p2}${a2.INVERTED_DEFAULT_COLOR} { color: ${l.color.opaque(e3.background).css}; }${this._terminalSelector} .${p2}${a2.INVERTED_DEFAULT_COLOR}.xterm-dim { color: ${l.color.multiplyOpacity(l.color.opaque(e3.background), 0.5).css}; }${this._terminalSelector} .${g3}${a2.INVERTED_DEFAULT_COLOR} { background-color: ${e3.foreground.css}; }`, this._themeStyleElement.textContent = t3;
           }
           _setDefaultSpacing() {
             const e3 = this.dimensions.css.cell.width - this._widthCache.get("W", false, false);
@@ -23012,30 +23014,30 @@ WARNING: This link could potentially be dangerous`)) {
           handleFocus() {
             this._rowContainer.classList.add(m2), this.renderRows(this._bufferService.buffer.y, this._bufferService.buffer.y);
           }
-          handleSelectionChanged(e3, t3, i4) {
-            if (this._selectionContainer.replaceChildren(), this._rowFactory.handleSelectionChanged(e3, t3, i4), this.renderRows(0, this._bufferService.rows - 1), !e3 || !t3)
+          handleSelectionChanged(e3, t3, i3) {
+            if (this._selectionContainer.replaceChildren(), this._rowFactory.handleSelectionChanged(e3, t3, i3), this.renderRows(0, this._bufferService.rows - 1), !e3 || !t3)
               return;
             const s3 = e3[1] - this._bufferService.buffer.ydisp, r2 = t3[1] - this._bufferService.buffer.ydisp, n2 = Math.max(s3, 0), o2 = Math.min(r2, this._bufferService.rows - 1);
             if (n2 >= this._bufferService.rows || o2 < 0)
               return;
-            const a2 = document.createDocumentFragment();
-            if (i4) {
-              const i5 = e3[0] > t3[0];
-              a2.appendChild(this._createSelectionElement(n2, i5 ? t3[0] : e3[0], i5 ? e3[0] : t3[0], o2 - n2 + 1));
+            const a3 = document.createDocumentFragment();
+            if (i3) {
+              const i4 = e3[0] > t3[0];
+              a3.appendChild(this._createSelectionElement(n2, i4 ? t3[0] : e3[0], i4 ? e3[0] : t3[0], o2 - n2 + 1));
             } else {
-              const i5 = s3 === n2 ? e3[0] : 0, h2 = n2 === r2 ? t3[0] : this._bufferService.cols;
-              a2.appendChild(this._createSelectionElement(n2, i5, h2));
-              const c2 = o2 - n2 - 1;
-              if (a2.appendChild(this._createSelectionElement(n2 + 1, 0, this._bufferService.cols, c2)), n2 !== o2) {
+              const i4 = s3 === n2 ? e3[0] : 0, h3 = n2 === r2 ? t3[0] : this._bufferService.cols;
+              a3.appendChild(this._createSelectionElement(n2, i4, h3));
+              const c4 = o2 - n2 - 1;
+              if (a3.appendChild(this._createSelectionElement(n2 + 1, 0, this._bufferService.cols, c4)), n2 !== o2) {
                 const e4 = r2 === o2 ? t3[0] : this._bufferService.cols;
-                a2.appendChild(this._createSelectionElement(o2, 0, e4));
+                a3.appendChild(this._createSelectionElement(o2, 0, e4));
               }
             }
-            this._selectionContainer.appendChild(a2);
+            this._selectionContainer.appendChild(a3);
           }
-          _createSelectionElement(e3, t3, i4, s3 = 1) {
+          _createSelectionElement(e3, t3, i3, s3 = 1) {
             const r2 = document.createElement("div");
-            return r2.style.height = s3 * this.dimensions.css.cell.height + "px", r2.style.top = e3 * this.dimensions.css.cell.height + "px", r2.style.left = t3 * this.dimensions.css.cell.width + "px", r2.style.width = this.dimensions.css.cell.width * (i4 - t3) + "px", r2;
+            return r2.style.height = s3 * this.dimensions.css.cell.height + "px", r2.style.top = e3 * this.dimensions.css.cell.height + "px", r2.style.left = t3 * this.dimensions.css.cell.width + "px", r2.style.width = this.dimensions.css.cell.width * (i3 - t3) + "px", r2;
           }
           handleCursorMove() {
           }
@@ -23047,12 +23049,12 @@ WARNING: This link could potentially be dangerous`)) {
               e3.replaceChildren();
           }
           renderRows(e3, t3) {
-            const i4 = this._bufferService.buffer, s3 = i4.ybase + i4.y, r2 = Math.min(i4.x, this._bufferService.cols - 1), n2 = this._optionsService.rawOptions.cursorBlink, o2 = this._optionsService.rawOptions.cursorStyle, a2 = this._optionsService.rawOptions.cursorInactiveStyle;
-            for (let h2 = e3; h2 <= t3; h2++) {
-              const e4 = h2 + i4.ydisp, t4 = this._rowElements[h2], c2 = i4.lines.get(e4);
-              if (!t4 || !c2)
+            const i3 = this._bufferService.buffer, s3 = i3.ybase + i3.y, r2 = Math.min(i3.x, this._bufferService.cols - 1), n2 = this._optionsService.rawOptions.cursorBlink, o2 = this._optionsService.rawOptions.cursorStyle, a3 = this._optionsService.rawOptions.cursorInactiveStyle;
+            for (let h3 = e3; h3 <= t3; h3++) {
+              const e4 = h3 + i3.ydisp, t4 = this._rowElements[h3], c4 = i3.lines.get(e4);
+              if (!t4 || !c4)
                 break;
-              t4.replaceChildren(...this._rowFactory.createRow(c2, e4, e4 === s3, o2, a2, r2, n2, this.dimensions.css.cell.width, this._widthCache, -1, -1));
+              t4.replaceChildren(...this._rowFactory.createRow(c4, e4, e4 === s3, o2, a3, r2, n2, this.dimensions.css.cell.width, this._widthCache, -1, -1));
             }
           }
           get _terminalSelector() {
@@ -23064,148 +23066,148 @@ WARNING: This link could potentially be dangerous`)) {
           _handleLinkLeave(e3) {
             this._setCellUnderline(e3.x1, e3.x2, e3.y1, e3.y2, e3.cols, false);
           }
-          _setCellUnderline(e3, t3, i4, s3, r2, n2) {
-            i4 < 0 && (e3 = 0), s3 < 0 && (t3 = 0);
+          _setCellUnderline(e3, t3, i3, s3, r2, n2) {
+            i3 < 0 && (e3 = 0), s3 < 0 && (t3 = 0);
             const o2 = this._bufferService.rows - 1;
-            i4 = Math.max(Math.min(i4, o2), 0), s3 = Math.max(Math.min(s3, o2), 0), r2 = Math.min(r2, this._bufferService.cols);
-            const a2 = this._bufferService.buffer, h2 = a2.ybase + a2.y, c2 = Math.min(a2.x, r2 - 1), l3 = this._optionsService.rawOptions.cursorBlink, d3 = this._optionsService.rawOptions.cursorStyle, _3 = this._optionsService.rawOptions.cursorInactiveStyle;
-            for (let o3 = i4; o3 <= s3; ++o3) {
-              const u3 = o3 + a2.ydisp, f3 = this._rowElements[o3], v2 = a2.lines.get(u3);
-              if (!f3 || !v2)
+            i3 = Math.max(Math.min(i3, o2), 0), s3 = Math.max(Math.min(s3, o2), 0), r2 = Math.min(r2, this._bufferService.cols);
+            const a3 = this._bufferService.buffer, h3 = a3.ybase + a3.y, c4 = Math.min(a3.x, r2 - 1), l2 = this._optionsService.rawOptions.cursorBlink, d3 = this._optionsService.rawOptions.cursorStyle, _3 = this._optionsService.rawOptions.cursorInactiveStyle;
+            for (let o3 = i3; o3 <= s3; ++o3) {
+              const u3 = o3 + a3.ydisp, f3 = this._rowElements[o3], v4 = a3.lines.get(u3);
+              if (!f3 || !v4)
                 break;
-              f3.replaceChildren(...this._rowFactory.createRow(v2, u3, u3 === h2, d3, _3, c2, l3, this.dimensions.css.cell.width, this._widthCache, n2 ? o3 === i4 ? e3 : 0 : -1, n2 ? (o3 === s3 ? t3 : r2) - 1 : -1));
+              f3.replaceChildren(...this._rowFactory.createRow(v4, u3, u3 === h3, d3, _3, c4, l2, this.dimensions.css.cell.width, this._widthCache, n2 ? o3 === i3 ? e3 : 0 : -1, n2 ? (o3 === s3 ? t3 : r2) - 1 : -1));
             }
           }
         };
-        t2.DomRenderer = b2 = s2([r(4, u2.IInstantiationService), r(5, c.ICharSizeService), r(6, u2.IOptionsService), r(7, u2.IBufferService), r(8, c.ICoreBrowserService), r(9, c.IThemeService)], b2);
-      }, 3787: function(e2, t2, i3) {
-        var s2 = this && this.__decorate || function(e3, t3, i4, s3) {
-          var r2, n2 = arguments.length, o2 = n2 < 3 ? t3 : null === s3 ? s3 = Object.getOwnPropertyDescriptor(t3, i4) : s3;
+        t2.DomRenderer = b2 = s2([r(4, u2.IInstantiationService), r(5, c3.ICharSizeService), r(6, u2.IOptionsService), r(7, u2.IBufferService), r(8, c3.ICoreBrowserService), r(9, c3.IThemeService)], b2);
+      }, 3787: function(e2, t2, i2) {
+        var s2 = this && this.__decorate || function(e3, t3, i3, s3) {
+          var r2, n2 = arguments.length, o2 = n2 < 3 ? t3 : null === s3 ? s3 = Object.getOwnPropertyDescriptor(t3, i3) : s3;
           if ("object" == typeof Reflect && "function" == typeof Reflect.decorate)
-            o2 = Reflect.decorate(e3, t3, i4, s3);
+            o2 = Reflect.decorate(e3, t3, i3, s3);
           else
-            for (var a2 = e3.length - 1; a2 >= 0; a2--)
-              (r2 = e3[a2]) && (o2 = (n2 < 3 ? r2(o2) : n2 > 3 ? r2(t3, i4, o2) : r2(t3, i4)) || o2);
-          return n2 > 3 && o2 && Object.defineProperty(t3, i4, o2), o2;
+            for (var a3 = e3.length - 1; a3 >= 0; a3--)
+              (r2 = e3[a3]) && (o2 = (n2 < 3 ? r2(o2) : n2 > 3 ? r2(t3, i3, o2) : r2(t3, i3)) || o2);
+          return n2 > 3 && o2 && Object.defineProperty(t3, i3, o2), o2;
         }, r = this && this.__param || function(e3, t3) {
-          return function(i4, s3) {
-            t3(i4, s3, e3);
+          return function(i3, s3) {
+            t3(i3, s3, e3);
           };
         };
         Object.defineProperty(t2, "__esModule", { value: true }), t2.DomRendererRowFactory = void 0;
-        const n = i3(2223), o = i3(643), a = i3(511), h = i3(2585), c = i3(8055), l2 = i3(4725), d2 = i3(4269), _2 = i3(6171), u2 = i3(3734);
+        const n = i2(2223), o = i2(643), a2 = i2(511), h2 = i2(2585), c3 = i2(8055), l = i2(4725), d2 = i2(4269), _2 = i2(6171), u2 = i2(3734);
         let f2 = t2.DomRendererRowFactory = class {
-          constructor(e3, t3, i4, s3, r2, n2, o2) {
-            this._document = e3, this._characterJoinerService = t3, this._optionsService = i4, this._coreBrowserService = s3, this._coreService = r2, this._decorationService = n2, this._themeService = o2, this._workCell = new a.CellData(), this._columnSelectMode = false, this.defaultSpacing = 0;
+          constructor(e3, t3, i3, s3, r2, n2, o2) {
+            this._document = e3, this._characterJoinerService = t3, this._optionsService = i3, this._coreBrowserService = s3, this._coreService = r2, this._decorationService = n2, this._themeService = o2, this._workCell = new a2.CellData(), this._columnSelectMode = false, this.defaultSpacing = 0;
           }
-          handleSelectionChanged(e3, t3, i4) {
-            this._selectionStart = e3, this._selectionEnd = t3, this._columnSelectMode = i4;
+          handleSelectionChanged(e3, t3, i3) {
+            this._selectionStart = e3, this._selectionEnd = t3, this._columnSelectMode = i3;
           }
-          createRow(e3, t3, i4, s3, r2, a2, h2, l3, _3, f3, p) {
-            const g2 = [], m2 = this._characterJoinerService.getJoinedCharacters(t3), S = this._themeService.colors;
+          createRow(e3, t3, i3, s3, r2, a3, h3, l2, _3, f3, p2) {
+            const g3 = [], m2 = this._characterJoinerService.getJoinedCharacters(t3), S2 = this._themeService.colors;
             let C2, b2 = e3.getNoBgTrimmedLength();
-            i4 && b2 < a2 + 1 && (b2 = a2 + 1);
-            let y2 = 0, w2 = "", E2 = 0, k2 = 0, L = 0, D2 = false, R2 = 0, x2 = false, A2 = 0;
-            const B2 = [], T = -1 !== f3 && -1 !== p;
+            i3 && b2 < a3 + 1 && (b2 = a3 + 1);
+            let y2 = 0, w3 = "", E3 = 0, k3 = 0, L3 = 0, D2 = false, R3 = 0, x3 = false, A3 = 0;
+            const B3 = [], T3 = -1 !== f3 && -1 !== p2;
             for (let M2 = 0; M2 < b2; M2++) {
               e3.loadCell(M2, this._workCell);
               let b3 = this._workCell.getWidth();
               if (0 === b3)
                 continue;
-              let O2 = false, P2 = M2, I = this._workCell;
+              let O3 = false, P3 = M2, I3 = this._workCell;
               if (m2.length > 0 && M2 === m2[0][0]) {
-                O2 = true;
+                O3 = true;
                 const t4 = m2.shift();
-                I = new d2.JoinedCellData(this._workCell, e3.translateToString(true, t4[0], t4[1]), t4[1] - t4[0]), P2 = t4[1] - 1, b3 = I.getWidth();
+                I3 = new d2.JoinedCellData(this._workCell, e3.translateToString(true, t4[0], t4[1]), t4[1] - t4[0]), P3 = t4[1] - 1, b3 = I3.getWidth();
               }
-              const H = this._isCellInSelection(M2, t3), F2 = i4 && M2 === a2, W2 = T && M2 >= f3 && M2 <= p;
-              let U2 = false;
+              const H2 = this._isCellInSelection(M2, t3), F3 = i3 && M2 === a3, W3 = T3 && M2 >= f3 && M2 <= p2;
+              let U3 = false;
               this._decorationService.forEachDecorationAtCell(M2, t3, void 0, (e4) => {
-                U2 = true;
+                U3 = true;
               });
-              let N = I.getChars() || o.WHITESPACE_CELL_CHAR;
-              if (" " === N && (I.isUnderline() || I.isOverline()) && (N = "\xA0"), A2 = b3 * l3 - _3.get(N, I.isBold(), I.isItalic()), C2) {
-                if (y2 && (H && x2 || !H && !x2 && I.bg === E2) && (H && x2 && S.selectionForeground || I.fg === k2) && I.extended.ext === L && W2 === D2 && A2 === R2 && !F2 && !O2 && !U2) {
-                  w2 += N, y2++;
+              let N3 = I3.getChars() || o.WHITESPACE_CELL_CHAR;
+              if (" " === N3 && (I3.isUnderline() || I3.isOverline()) && (N3 = "\xA0"), A3 = b3 * l2 - _3.get(N3, I3.isBold(), I3.isItalic()), C2) {
+                if (y2 && (H2 && x3 || !H2 && !x3 && I3.bg === E3) && (H2 && x3 && S2.selectionForeground || I3.fg === k3) && I3.extended.ext === L3 && W3 === D2 && A3 === R3 && !F3 && !O3 && !U3) {
+                  w3 += N3, y2++;
                   continue;
                 }
-                y2 && (C2.textContent = w2), C2 = this._document.createElement("span"), y2 = 0, w2 = "";
+                y2 && (C2.textContent = w3), C2 = this._document.createElement("span"), y2 = 0, w3 = "";
               } else
                 C2 = this._document.createElement("span");
-              if (E2 = I.bg, k2 = I.fg, L = I.extended.ext, D2 = W2, R2 = A2, x2 = H, O2 && a2 >= M2 && a2 <= P2 && (a2 = M2), !this._coreService.isCursorHidden && F2) {
-                if (B2.push("xterm-cursor"), this._coreBrowserService.isFocused)
-                  h2 && B2.push("xterm-cursor-blink"), B2.push("bar" === s3 ? "xterm-cursor-bar" : "underline" === s3 ? "xterm-cursor-underline" : "xterm-cursor-block");
+              if (E3 = I3.bg, k3 = I3.fg, L3 = I3.extended.ext, D2 = W3, R3 = A3, x3 = H2, O3 && a3 >= M2 && a3 <= P3 && (a3 = M2), !this._coreService.isCursorHidden && F3) {
+                if (B3.push("xterm-cursor"), this._coreBrowserService.isFocused)
+                  h3 && B3.push("xterm-cursor-blink"), B3.push("bar" === s3 ? "xterm-cursor-bar" : "underline" === s3 ? "xterm-cursor-underline" : "xterm-cursor-block");
                 else if (r2)
                   switch (r2) {
                     case "outline":
-                      B2.push("xterm-cursor-outline");
+                      B3.push("xterm-cursor-outline");
                       break;
                     case "block":
-                      B2.push("xterm-cursor-block");
+                      B3.push("xterm-cursor-block");
                       break;
                     case "bar":
-                      B2.push("xterm-cursor-bar");
+                      B3.push("xterm-cursor-bar");
                       break;
                     case "underline":
-                      B2.push("xterm-cursor-underline");
+                      B3.push("xterm-cursor-underline");
                   }
               }
-              if (I.isBold() && B2.push("xterm-bold"), I.isItalic() && B2.push("xterm-italic"), I.isDim() && B2.push("xterm-dim"), w2 = I.isInvisible() ? o.WHITESPACE_CELL_CHAR : I.getChars() || o.WHITESPACE_CELL_CHAR, I.isUnderline() && (B2.push(`xterm-underline-${I.extended.underlineStyle}`), " " === w2 && (w2 = "\xA0"), !I.isUnderlineColorDefault()))
-                if (I.isUnderlineColorRGB())
-                  C2.style.textDecorationColor = `rgb(${u2.AttributeData.toColorRGB(I.getUnderlineColor()).join(",")})`;
+              if (I3.isBold() && B3.push("xterm-bold"), I3.isItalic() && B3.push("xterm-italic"), I3.isDim() && B3.push("xterm-dim"), w3 = I3.isInvisible() ? o.WHITESPACE_CELL_CHAR : I3.getChars() || o.WHITESPACE_CELL_CHAR, I3.isUnderline() && (B3.push(`xterm-underline-${I3.extended.underlineStyle}`), " " === w3 && (w3 = "\xA0"), !I3.isUnderlineColorDefault()))
+                if (I3.isUnderlineColorRGB())
+                  C2.style.textDecorationColor = `rgb(${u2.AttributeData.toColorRGB(I3.getUnderlineColor()).join(",")})`;
                 else {
-                  let e4 = I.getUnderlineColor();
-                  this._optionsService.rawOptions.drawBoldTextInBrightColors && I.isBold() && e4 < 8 && (e4 += 8), C2.style.textDecorationColor = S.ansi[e4].css;
+                  let e4 = I3.getUnderlineColor();
+                  this._optionsService.rawOptions.drawBoldTextInBrightColors && I3.isBold() && e4 < 8 && (e4 += 8), C2.style.textDecorationColor = S2.ansi[e4].css;
                 }
-              I.isOverline() && (B2.push("xterm-overline"), " " === w2 && (w2 = "\xA0")), I.isStrikethrough() && B2.push("xterm-strikethrough"), W2 && (C2.style.textDecoration = "underline");
-              let $ = I.getFgColor(), j = I.getFgColorMode(), z = I.getBgColor(), K2 = I.getBgColorMode();
-              const q2 = !!I.isInverse();
-              if (q2) {
-                const e4 = $;
-                $ = z, z = e4;
-                const t4 = j;
-                j = K2, K2 = t4;
+              I3.isOverline() && (B3.push("xterm-overline"), " " === w3 && (w3 = "\xA0")), I3.isStrikethrough() && B3.push("xterm-strikethrough"), W3 && (C2.style.textDecoration = "underline");
+              let $3 = I3.getFgColor(), j2 = I3.getFgColorMode(), z2 = I3.getBgColor(), K2 = I3.getBgColorMode();
+              const q3 = !!I3.isInverse();
+              if (q3) {
+                const e4 = $3;
+                $3 = z2, z2 = e4;
+                const t4 = j2;
+                j2 = K2, K2 = t4;
               }
-              let V2, G2, X2, J = false;
+              let V3, G3, X2, J2 = false;
               switch (this._decorationService.forEachDecorationAtCell(M2, t3, void 0, (e4) => {
-                "top" !== e4.options.layer && J || (e4.backgroundColorRGB && (K2 = 50331648, z = e4.backgroundColorRGB.rgba >> 8 & 16777215, V2 = e4.backgroundColorRGB), e4.foregroundColorRGB && (j = 50331648, $ = e4.foregroundColorRGB.rgba >> 8 & 16777215, G2 = e4.foregroundColorRGB), J = "top" === e4.options.layer);
-              }), !J && H && (V2 = this._coreBrowserService.isFocused ? S.selectionBackgroundOpaque : S.selectionInactiveBackgroundOpaque, z = V2.rgba >> 8 & 16777215, K2 = 50331648, J = true, S.selectionForeground && (j = 50331648, $ = S.selectionForeground.rgba >> 8 & 16777215, G2 = S.selectionForeground)), J && B2.push("xterm-decoration-top"), K2) {
+                "top" !== e4.options.layer && J2 || (e4.backgroundColorRGB && (K2 = 50331648, z2 = e4.backgroundColorRGB.rgba >> 8 & 16777215, V3 = e4.backgroundColorRGB), e4.foregroundColorRGB && (j2 = 50331648, $3 = e4.foregroundColorRGB.rgba >> 8 & 16777215, G3 = e4.foregroundColorRGB), J2 = "top" === e4.options.layer);
+              }), !J2 && H2 && (V3 = this._coreBrowserService.isFocused ? S2.selectionBackgroundOpaque : S2.selectionInactiveBackgroundOpaque, z2 = V3.rgba >> 8 & 16777215, K2 = 50331648, J2 = true, S2.selectionForeground && (j2 = 50331648, $3 = S2.selectionForeground.rgba >> 8 & 16777215, G3 = S2.selectionForeground)), J2 && B3.push("xterm-decoration-top"), K2) {
                 case 16777216:
                 case 33554432:
-                  X2 = S.ansi[z], B2.push(`xterm-bg-${z}`);
+                  X2 = S2.ansi[z2], B3.push(`xterm-bg-${z2}`);
                   break;
                 case 50331648:
-                  X2 = c.rgba.toColor(z >> 16, z >> 8 & 255, 255 & z), this._addStyle(C2, `background-color:#${v((z >>> 0).toString(16), "0", 6)}`);
+                  X2 = c3.rgba.toColor(z2 >> 16, z2 >> 8 & 255, 255 & z2), this._addStyle(C2, `background-color:#${v3((z2 >>> 0).toString(16), "0", 6)}`);
                   break;
                 default:
-                  q2 ? (X2 = S.foreground, B2.push(`xterm-bg-${n.INVERTED_DEFAULT_COLOR}`)) : X2 = S.background;
+                  q3 ? (X2 = S2.foreground, B3.push(`xterm-bg-${n.INVERTED_DEFAULT_COLOR}`)) : X2 = S2.background;
               }
-              switch (V2 || I.isDim() && (V2 = c.color.multiplyOpacity(X2, 0.5)), j) {
+              switch (V3 || I3.isDim() && (V3 = c3.color.multiplyOpacity(X2, 0.5)), j2) {
                 case 16777216:
                 case 33554432:
-                  I.isBold() && $ < 8 && this._optionsService.rawOptions.drawBoldTextInBrightColors && ($ += 8), this._applyMinimumContrast(C2, X2, S.ansi[$], I, V2, void 0) || B2.push(`xterm-fg-${$}`);
+                  I3.isBold() && $3 < 8 && this._optionsService.rawOptions.drawBoldTextInBrightColors && ($3 += 8), this._applyMinimumContrast(C2, X2, S2.ansi[$3], I3, V3, void 0) || B3.push(`xterm-fg-${$3}`);
                   break;
                 case 50331648:
-                  const e4 = c.rgba.toColor($ >> 16 & 255, $ >> 8 & 255, 255 & $);
-                  this._applyMinimumContrast(C2, X2, e4, I, V2, G2) || this._addStyle(C2, `color:#${v($.toString(16), "0", 6)}`);
+                  const e4 = c3.rgba.toColor($3 >> 16 & 255, $3 >> 8 & 255, 255 & $3);
+                  this._applyMinimumContrast(C2, X2, e4, I3, V3, G3) || this._addStyle(C2, `color:#${v3($3.toString(16), "0", 6)}`);
                   break;
                 default:
-                  this._applyMinimumContrast(C2, X2, S.foreground, I, V2, void 0) || q2 && B2.push(`xterm-fg-${n.INVERTED_DEFAULT_COLOR}`);
+                  this._applyMinimumContrast(C2, X2, S2.foreground, I3, V3, void 0) || q3 && B3.push(`xterm-fg-${n.INVERTED_DEFAULT_COLOR}`);
               }
-              B2.length && (C2.className = B2.join(" "), B2.length = 0), F2 || O2 || U2 ? C2.textContent = w2 : y2++, A2 !== this.defaultSpacing && (C2.style.letterSpacing = `${A2}px`), g2.push(C2), M2 = P2;
+              B3.length && (C2.className = B3.join(" "), B3.length = 0), F3 || O3 || U3 ? C2.textContent = w3 : y2++, A3 !== this.defaultSpacing && (C2.style.letterSpacing = `${A3}px`), g3.push(C2), M2 = P3;
             }
-            return C2 && y2 && (C2.textContent = w2), g2;
+            return C2 && y2 && (C2.textContent = w3), g3;
           }
-          _applyMinimumContrast(e3, t3, i4, s3, r2, n2) {
+          _applyMinimumContrast(e3, t3, i3, s3, r2, n2) {
             if (1 === this._optionsService.rawOptions.minimumContrastRatio || (0, _2.excludeFromContrastRatioDemands)(s3.getCode()))
               return false;
             const o2 = this._getContrastCache(s3);
-            let a2;
-            if (r2 || n2 || (a2 = o2.getColor(t3.rgba, i4.rgba)), void 0 === a2) {
+            let a3;
+            if (r2 || n2 || (a3 = o2.getColor(t3.rgba, i3.rgba)), void 0 === a3) {
               const e4 = this._optionsService.rawOptions.minimumContrastRatio / (s3.isDim() ? 2 : 1);
-              a2 = c.color.ensureContrastRatio(r2 || t3, n2 || i4, e4), o2.setColor((r2 || t3).rgba, (n2 || i4).rgba, null != a2 ? a2 : null);
+              a3 = c3.color.ensureContrastRatio(r2 || t3, n2 || i3, e4), o2.setColor((r2 || t3).rgba, (n2 || i3).rgba, null != a3 ? a3 : null);
             }
-            return !!a2 && (this._addStyle(e3, `color:${a2.css}`), true);
+            return !!a3 && (this._addStyle(e3, `color:${a3.css}`), true);
           }
           _getContrastCache(e3) {
             return e3.isDim() ? this._themeService.colors.halfContrastCache : this._themeService.colors.contrastCache;
@@ -23214,26 +23216,26 @@ WARNING: This link could potentially be dangerous`)) {
             e3.setAttribute("style", `${e3.getAttribute("style") || ""}${t3};`);
           }
           _isCellInSelection(e3, t3) {
-            const i4 = this._selectionStart, s3 = this._selectionEnd;
-            return !(!i4 || !s3) && (this._columnSelectMode ? i4[0] <= s3[0] ? e3 >= i4[0] && t3 >= i4[1] && e3 < s3[0] && t3 <= s3[1] : e3 < i4[0] && t3 >= i4[1] && e3 >= s3[0] && t3 <= s3[1] : t3 > i4[1] && t3 < s3[1] || i4[1] === s3[1] && t3 === i4[1] && e3 >= i4[0] && e3 < s3[0] || i4[1] < s3[1] && t3 === s3[1] && e3 < s3[0] || i4[1] < s3[1] && t3 === i4[1] && e3 >= i4[0]);
+            const i3 = this._selectionStart, s3 = this._selectionEnd;
+            return !(!i3 || !s3) && (this._columnSelectMode ? i3[0] <= s3[0] ? e3 >= i3[0] && t3 >= i3[1] && e3 < s3[0] && t3 <= s3[1] : e3 < i3[0] && t3 >= i3[1] && e3 >= s3[0] && t3 <= s3[1] : t3 > i3[1] && t3 < s3[1] || i3[1] === s3[1] && t3 === i3[1] && e3 >= i3[0] && e3 < s3[0] || i3[1] < s3[1] && t3 === s3[1] && e3 < s3[0] || i3[1] < s3[1] && t3 === i3[1] && e3 >= i3[0]);
           }
         };
-        function v(e3, t3, i4) {
-          for (; e3.length < i4; )
+        function v3(e3, t3, i3) {
+          for (; e3.length < i3; )
             e3 = t3 + e3;
           return e3;
         }
-        t2.DomRendererRowFactory = f2 = s2([r(1, l2.ICharacterJoinerService), r(2, h.IOptionsService), r(3, l2.ICoreBrowserService), r(4, h.ICoreService), r(5, h.IDecorationService), r(6, l2.IThemeService)], f2);
+        t2.DomRendererRowFactory = f2 = s2([r(1, l.ICharacterJoinerService), r(2, h2.IOptionsService), r(3, l.ICoreBrowserService), r(4, h2.ICoreService), r(5, h2.IDecorationService), r(6, l.IThemeService)], f2);
       }, 2550: (e2, t2) => {
         Object.defineProperty(t2, "__esModule", { value: true }), t2.WidthCache = void 0, t2.WidthCache = class {
           constructor(e3) {
             this._flat = new Float32Array(256), this._font = "", this._fontSize = 0, this._weight = "normal", this._weightBold = "bold", this._measureElements = [], this._container = e3.createElement("div"), this._container.style.position = "absolute", this._container.style.top = "-50000px", this._container.style.width = "50000px", this._container.style.whiteSpace = "pre", this._container.style.fontKerning = "none";
-            const t3 = e3.createElement("span"), i3 = e3.createElement("span");
-            i3.style.fontWeight = "bold";
+            const t3 = e3.createElement("span"), i2 = e3.createElement("span");
+            i2.style.fontWeight = "bold";
             const s2 = e3.createElement("span");
             s2.style.fontStyle = "italic";
             const r = e3.createElement("span");
-            r.style.fontWeight = "bold", r.style.fontStyle = "italic", this._measureElements = [t3, i3, s2, r], this._container.appendChild(t3), this._container.appendChild(i3), this._container.appendChild(s2), this._container.appendChild(r), e3.body.appendChild(this._container), this.clear();
+            r.style.fontWeight = "bold", r.style.fontStyle = "italic", this._measureElements = [t3, i2, s2, r], this._container.appendChild(t3), this._container.appendChild(i2), this._container.appendChild(s2), this._container.appendChild(r), e3.body.appendChild(this._container), this.clear();
           }
           dispose() {
             this._container.remove(), this._measureElements.length = 0, this._holey = void 0;
@@ -23241,43 +23243,43 @@ WARNING: This link could potentially be dangerous`)) {
           clear() {
             this._flat.fill(-9999), this._holey = /* @__PURE__ */ new Map();
           }
-          setFont(e3, t3, i3, s2) {
-            e3 === this._font && t3 === this._fontSize && i3 === this._weight && s2 === this._weightBold || (this._font = e3, this._fontSize = t3, this._weight = i3, this._weightBold = s2, this._container.style.fontFamily = this._font, this._container.style.fontSize = `${this._fontSize}px`, this._measureElements[0].style.fontWeight = `${i3}`, this._measureElements[1].style.fontWeight = `${s2}`, this._measureElements[2].style.fontWeight = `${i3}`, this._measureElements[3].style.fontWeight = `${s2}`, this.clear());
+          setFont(e3, t3, i2, s2) {
+            e3 === this._font && t3 === this._fontSize && i2 === this._weight && s2 === this._weightBold || (this._font = e3, this._fontSize = t3, this._weight = i2, this._weightBold = s2, this._container.style.fontFamily = this._font, this._container.style.fontSize = `${this._fontSize}px`, this._measureElements[0].style.fontWeight = `${i2}`, this._measureElements[1].style.fontWeight = `${s2}`, this._measureElements[2].style.fontWeight = `${i2}`, this._measureElements[3].style.fontWeight = `${s2}`, this.clear());
           }
-          get(e3, t3, i3) {
+          get(e3, t3, i2) {
             let s2 = 0;
-            if (!t3 && !i3 && 1 === e3.length && (s2 = e3.charCodeAt(0)) < 256)
+            if (!t3 && !i2 && 1 === e3.length && (s2 = e3.charCodeAt(0)) < 256)
               return -9999 !== this._flat[s2] ? this._flat[s2] : this._flat[s2] = this._measure(e3, 0);
             let r = e3;
-            t3 && (r += "B"), i3 && (r += "I");
+            t3 && (r += "B"), i2 && (r += "I");
             let n = this._holey.get(r);
             if (void 0 === n) {
               let s3 = 0;
-              t3 && (s3 |= 1), i3 && (s3 |= 2), n = this._measure(e3, s3), this._holey.set(r, n);
+              t3 && (s3 |= 1), i2 && (s3 |= 2), n = this._measure(e3, s3), this._holey.set(r, n);
             }
             return n;
           }
           _measure(e3, t3) {
-            const i3 = this._measureElements[t3];
-            return i3.textContent = e3.repeat(32), i3.offsetWidth / 32;
+            const i2 = this._measureElements[t3];
+            return i2.textContent = e3.repeat(32), i2.offsetWidth / 32;
           }
         };
-      }, 2223: (e2, t2, i3) => {
+      }, 2223: (e2, t2, i2) => {
         Object.defineProperty(t2, "__esModule", { value: true }), t2.TEXT_BASELINE = t2.DIM_OPACITY = t2.INVERTED_DEFAULT_COLOR = void 0;
-        const s2 = i3(6114);
+        const s2 = i2(6114);
         t2.INVERTED_DEFAULT_COLOR = 257, t2.DIM_OPACITY = 0.5, t2.TEXT_BASELINE = s2.isFirefox || s2.isLegacyEdge ? "bottom" : "ideographic";
       }, 6171: (e2, t2) => {
-        function i3(e3) {
+        function i2(e3) {
           return 57508 <= e3 && e3 <= 57558;
         }
         Object.defineProperty(t2, "__esModule", { value: true }), t2.createRenderDimensions = t2.excludeFromContrastRatioDemands = t2.isRestrictedPowerlineGlyph = t2.isPowerlineGlyph = t2.throwIfFalsy = void 0, t2.throwIfFalsy = function(e3) {
           if (!e3)
             throw new Error("value must not be falsy");
           return e3;
-        }, t2.isPowerlineGlyph = i3, t2.isRestrictedPowerlineGlyph = function(e3) {
+        }, t2.isPowerlineGlyph = i2, t2.isRestrictedPowerlineGlyph = function(e3) {
           return 57520 <= e3 && e3 <= 57527;
         }, t2.excludeFromContrastRatioDemands = function(e3) {
-          return i3(e3) || function(e4) {
+          return i2(e3) || function(e4) {
             return 9472 <= e4 && e4 <= 9631;
           }(e3);
         }, t2.createRenderDimensions = function() {
@@ -23317,38 +23319,38 @@ WARNING: This link could potentially be dangerous`)) {
             return this.selectionStart && (this.selectionStart[1] -= e3), this.selectionEnd && (this.selectionEnd[1] -= e3), this.selectionEnd && this.selectionEnd[1] < 0 ? (this.clearSelection(), true) : (this.selectionStart && this.selectionStart[1] < 0 && (this.selectionStart[1] = 0), false);
           }
         };
-      }, 428: function(e2, t2, i3) {
-        var s2 = this && this.__decorate || function(e3, t3, i4, s3) {
-          var r2, n2 = arguments.length, o2 = n2 < 3 ? t3 : null === s3 ? s3 = Object.getOwnPropertyDescriptor(t3, i4) : s3;
+      }, 428: function(e2, t2, i2) {
+        var s2 = this && this.__decorate || function(e3, t3, i3, s3) {
+          var r2, n2 = arguments.length, o2 = n2 < 3 ? t3 : null === s3 ? s3 = Object.getOwnPropertyDescriptor(t3, i3) : s3;
           if ("object" == typeof Reflect && "function" == typeof Reflect.decorate)
-            o2 = Reflect.decorate(e3, t3, i4, s3);
+            o2 = Reflect.decorate(e3, t3, i3, s3);
           else
-            for (var a2 = e3.length - 1; a2 >= 0; a2--)
-              (r2 = e3[a2]) && (o2 = (n2 < 3 ? r2(o2) : n2 > 3 ? r2(t3, i4, o2) : r2(t3, i4)) || o2);
-          return n2 > 3 && o2 && Object.defineProperty(t3, i4, o2), o2;
+            for (var a3 = e3.length - 1; a3 >= 0; a3--)
+              (r2 = e3[a3]) && (o2 = (n2 < 3 ? r2(o2) : n2 > 3 ? r2(t3, i3, o2) : r2(t3, i3)) || o2);
+          return n2 > 3 && o2 && Object.defineProperty(t3, i3, o2), o2;
         }, r = this && this.__param || function(e3, t3) {
-          return function(i4, s3) {
-            t3(i4, s3, e3);
+          return function(i3, s3) {
+            t3(i3, s3, e3);
           };
         };
         Object.defineProperty(t2, "__esModule", { value: true }), t2.CharSizeService = void 0;
-        const n = i3(2585), o = i3(8460), a = i3(844);
-        let h = t2.CharSizeService = class extends a.Disposable {
+        const n = i2(2585), o = i2(8460), a2 = i2(844);
+        let h2 = t2.CharSizeService = class extends a2.Disposable {
           get hasValidSize() {
             return this.width > 0 && this.height > 0;
           }
-          constructor(e3, t3, i4) {
-            super(), this._optionsService = i4, this.width = 0, this.height = 0, this._onCharSizeChange = this.register(new o.EventEmitter()), this.onCharSizeChange = this._onCharSizeChange.event, this._measureStrategy = new c(e3, t3, this._optionsService), this.register(this._optionsService.onMultipleOptionChange(["fontFamily", "fontSize"], () => this.measure()));
+          constructor(e3, t3, i3) {
+            super(), this._optionsService = i3, this.width = 0, this.height = 0, this._onCharSizeChange = this.register(new o.EventEmitter()), this.onCharSizeChange = this._onCharSizeChange.event, this._measureStrategy = new c3(e3, t3, this._optionsService), this.register(this._optionsService.onMultipleOptionChange(["fontFamily", "fontSize"], () => this.measure()));
           }
           measure() {
             const e3 = this._measureStrategy.measure();
             e3.width === this.width && e3.height === this.height || (this.width = e3.width, this.height = e3.height, this._onCharSizeChange.fire());
           }
         };
-        t2.CharSizeService = h = s2([r(2, n.IOptionsService)], h);
-        class c {
-          constructor(e3, t3, i4) {
-            this._document = e3, this._parentElement = t3, this._optionsService = i4, this._result = { width: 0, height: 0 }, this._measureElement = this._document.createElement("span"), this._measureElement.classList.add("xterm-char-measure-element"), this._measureElement.textContent = "W".repeat(32), this._measureElement.setAttribute("aria-hidden", "true"), this._measureElement.style.whiteSpace = "pre", this._measureElement.style.fontKerning = "none", this._parentElement.appendChild(this._measureElement);
+        t2.CharSizeService = h2 = s2([r(2, n.IOptionsService)], h2);
+        class c3 {
+          constructor(e3, t3, i3) {
+            this._document = e3, this._parentElement = t3, this._optionsService = i3, this._result = { width: 0, height: 0 }, this._measureElement = this._document.createElement("span"), this._measureElement.classList.add("xterm-char-measure-element"), this._measureElement.textContent = "W".repeat(32), this._measureElement.setAttribute("aria-hidden", "true"), this._measureElement.style.whiteSpace = "pre", this._measureElement.style.fontKerning = "none", this._parentElement.appendChild(this._measureElement);
           }
           measure() {
             this._measureElement.style.fontFamily = this._optionsService.rawOptions.fontFamily, this._measureElement.style.fontSize = `${this._optionsService.rawOptions.fontSize}px`;
@@ -23356,25 +23358,25 @@ WARNING: This link could potentially be dangerous`)) {
             return 0 !== e3.width && 0 !== e3.height && (this._result.width = e3.width / 32, this._result.height = Math.ceil(e3.height)), this._result;
           }
         }
-      }, 4269: function(e2, t2, i3) {
-        var s2 = this && this.__decorate || function(e3, t3, i4, s3) {
-          var r2, n2 = arguments.length, o2 = n2 < 3 ? t3 : null === s3 ? s3 = Object.getOwnPropertyDescriptor(t3, i4) : s3;
+      }, 4269: function(e2, t2, i2) {
+        var s2 = this && this.__decorate || function(e3, t3, i3, s3) {
+          var r2, n2 = arguments.length, o2 = n2 < 3 ? t3 : null === s3 ? s3 = Object.getOwnPropertyDescriptor(t3, i3) : s3;
           if ("object" == typeof Reflect && "function" == typeof Reflect.decorate)
-            o2 = Reflect.decorate(e3, t3, i4, s3);
+            o2 = Reflect.decorate(e3, t3, i3, s3);
           else
-            for (var a2 = e3.length - 1; a2 >= 0; a2--)
-              (r2 = e3[a2]) && (o2 = (n2 < 3 ? r2(o2) : n2 > 3 ? r2(t3, i4, o2) : r2(t3, i4)) || o2);
-          return n2 > 3 && o2 && Object.defineProperty(t3, i4, o2), o2;
+            for (var a3 = e3.length - 1; a3 >= 0; a3--)
+              (r2 = e3[a3]) && (o2 = (n2 < 3 ? r2(o2) : n2 > 3 ? r2(t3, i3, o2) : r2(t3, i3)) || o2);
+          return n2 > 3 && o2 && Object.defineProperty(t3, i3, o2), o2;
         }, r = this && this.__param || function(e3, t3) {
-          return function(i4, s3) {
-            t3(i4, s3, e3);
+          return function(i3, s3) {
+            t3(i3, s3, e3);
           };
         };
         Object.defineProperty(t2, "__esModule", { value: true }), t2.CharacterJoinerService = t2.JoinedCellData = void 0;
-        const n = i3(3734), o = i3(643), a = i3(511), h = i3(2585);
-        class c extends n.AttributeData {
-          constructor(e3, t3, i4) {
-            super(), this.content = 0, this.combinedData = "", this.fg = e3.fg, this.bg = e3.bg, this.combinedData = t3, this._width = i4;
+        const n = i2(3734), o = i2(643), a2 = i2(511), h2 = i2(2585);
+        class c3 extends n.AttributeData {
+          constructor(e3, t3, i3) {
+            super(), this.content = 0, this.combinedData = "", this.fg = e3.fg, this.bg = e3.bg, this.combinedData = t3, this._width = i3;
           }
           isCombined() {
             return 2097152;
@@ -23395,10 +23397,10 @@ WARNING: This link could potentially be dangerous`)) {
             return [this.fg, this.getChars(), this.getWidth(), this.getCode()];
           }
         }
-        t2.JoinedCellData = c;
-        let l2 = t2.CharacterJoinerService = class e3 {
+        t2.JoinedCellData = c3;
+        let l = t2.CharacterJoinerService = class e3 {
           constructor(e4) {
-            this._bufferService = e4, this._characterJoiners = [], this._nextCharacterJoinerId = 0, this._workCell = new a.CellData();
+            this._bufferService = e4, this._characterJoiners = [], this._nextCharacterJoinerId = 0, this._workCell = new a2.CellData();
           }
           register(e4) {
             const t3 = { id: this._nextCharacterJoinerId++, handler: e4 };
@@ -23416,67 +23418,67 @@ WARNING: This link could potentially be dangerous`)) {
             const t3 = this._bufferService.buffer.lines.get(e4);
             if (!t3 || 0 === t3.length)
               return [];
-            const i4 = [], s3 = t3.translateToString(true);
-            let r2 = 0, n2 = 0, a2 = 0, h2 = t3.getFg(0), c2 = t3.getBg(0);
+            const i3 = [], s3 = t3.translateToString(true);
+            let r2 = 0, n2 = 0, a3 = 0, h3 = t3.getFg(0), c4 = t3.getBg(0);
             for (let e5 = 0; e5 < t3.getTrimmedLength(); e5++)
               if (t3.loadCell(e5, this._workCell), 0 !== this._workCell.getWidth()) {
-                if (this._workCell.fg !== h2 || this._workCell.bg !== c2) {
+                if (this._workCell.fg !== h3 || this._workCell.bg !== c4) {
                   if (e5 - r2 > 1) {
-                    const e6 = this._getJoinedRanges(s3, a2, n2, t3, r2);
+                    const e6 = this._getJoinedRanges(s3, a3, n2, t3, r2);
                     for (let t4 = 0; t4 < e6.length; t4++)
-                      i4.push(e6[t4]);
+                      i3.push(e6[t4]);
                   }
-                  r2 = e5, a2 = n2, h2 = this._workCell.fg, c2 = this._workCell.bg;
+                  r2 = e5, a3 = n2, h3 = this._workCell.fg, c4 = this._workCell.bg;
                 }
                 n2 += this._workCell.getChars().length || o.WHITESPACE_CELL_CHAR.length;
               }
             if (this._bufferService.cols - r2 > 1) {
-              const e5 = this._getJoinedRanges(s3, a2, n2, t3, r2);
+              const e5 = this._getJoinedRanges(s3, a3, n2, t3, r2);
               for (let t4 = 0; t4 < e5.length; t4++)
-                i4.push(e5[t4]);
+                i3.push(e5[t4]);
             }
-            return i4;
+            return i3;
           }
-          _getJoinedRanges(t3, i4, s3, r2, n2) {
-            const o2 = t3.substring(i4, s3);
-            let a2 = [];
+          _getJoinedRanges(t3, i3, s3, r2, n2) {
+            const o2 = t3.substring(i3, s3);
+            let a3 = [];
             try {
-              a2 = this._characterJoiners[0].handler(o2);
+              a3 = this._characterJoiners[0].handler(o2);
             } catch (e4) {
               console.error(e4);
             }
             for (let t4 = 1; t4 < this._characterJoiners.length; t4++)
               try {
-                const i5 = this._characterJoiners[t4].handler(o2);
-                for (let t5 = 0; t5 < i5.length; t5++)
-                  e3._mergeRanges(a2, i5[t5]);
+                const i4 = this._characterJoiners[t4].handler(o2);
+                for (let t5 = 0; t5 < i4.length; t5++)
+                  e3._mergeRanges(a3, i4[t5]);
               } catch (e4) {
                 console.error(e4);
               }
-            return this._stringRangesToCellRanges(a2, r2, n2), a2;
+            return this._stringRangesToCellRanges(a3, r2, n2), a3;
           }
-          _stringRangesToCellRanges(e4, t3, i4) {
-            let s3 = 0, r2 = false, n2 = 0, a2 = e4[s3];
-            if (a2) {
-              for (let h2 = i4; h2 < this._bufferService.cols; h2++) {
-                const i5 = t3.getWidth(h2), c2 = t3.getString(h2).length || o.WHITESPACE_CELL_CHAR.length;
-                if (0 !== i5) {
-                  if (!r2 && a2[0] <= n2 && (a2[0] = h2, r2 = true), a2[1] <= n2) {
-                    if (a2[1] = h2, a2 = e4[++s3], !a2)
+          _stringRangesToCellRanges(e4, t3, i3) {
+            let s3 = 0, r2 = false, n2 = 0, a3 = e4[s3];
+            if (a3) {
+              for (let h3 = i3; h3 < this._bufferService.cols; h3++) {
+                const i4 = t3.getWidth(h3), c4 = t3.getString(h3).length || o.WHITESPACE_CELL_CHAR.length;
+                if (0 !== i4) {
+                  if (!r2 && a3[0] <= n2 && (a3[0] = h3, r2 = true), a3[1] <= n2) {
+                    if (a3[1] = h3, a3 = e4[++s3], !a3)
                       break;
-                    a2[0] <= n2 ? (a2[0] = h2, r2 = true) : r2 = false;
+                    a3[0] <= n2 ? (a3[0] = h3, r2 = true) : r2 = false;
                   }
-                  n2 += c2;
+                  n2 += c4;
                 }
               }
-              a2 && (a2[1] = this._bufferService.cols);
+              a3 && (a3[1] = this._bufferService.cols);
             }
           }
           static _mergeRanges(e4, t3) {
-            let i4 = false;
+            let i3 = false;
             for (let s3 = 0; s3 < e4.length; s3++) {
               const r2 = e4[s3];
-              if (i4) {
+              if (i3) {
                 if (t3[1] <= r2[0])
                   return e4[s3 - 1][1] = t3[1], e4;
                 if (t3[1] <= r2[1])
@@ -23487,13 +23489,13 @@ WARNING: This link could potentially be dangerous`)) {
                   return e4.splice(s3, 0, t3), e4;
                 if (t3[1] <= r2[1])
                   return r2[0] = Math.min(t3[0], r2[0]), e4;
-                t3[0] < r2[1] && (r2[0] = Math.min(t3[0], r2[0]), i4 = true);
+                t3[0] < r2[1] && (r2[0] = Math.min(t3[0], r2[0]), i3 = true);
               }
             }
-            return i4 ? e4[e4.length - 1][1] = t3[1] : e4.push(t3), e4;
+            return i3 ? e4[e4.length - 1][1] = t3[1] : e4.push(t3), e4;
           }
         };
-        t2.CharacterJoinerService = l2 = s2([r(0, h.IBufferService)], l2);
+        t2.CharacterJoinerService = l = s2([r(0, h2.IBufferService)], l);
       }, 5114: (e2, t2) => {
         Object.defineProperty(t2, "__esModule", { value: true }), t2.CoreBrowserService = void 0, t2.CoreBrowserService = class {
           constructor(e3, t3) {
@@ -23506,63 +23508,63 @@ WARNING: This link could potentially be dangerous`)) {
             return void 0 === this._cachedIsFocused && (this._cachedIsFocused = this._isFocused && this._textarea.ownerDocument.hasFocus(), queueMicrotask(() => this._cachedIsFocused = void 0)), this._cachedIsFocused;
           }
         };
-      }, 8934: function(e2, t2, i3) {
-        var s2 = this && this.__decorate || function(e3, t3, i4, s3) {
-          var r2, n2 = arguments.length, o2 = n2 < 3 ? t3 : null === s3 ? s3 = Object.getOwnPropertyDescriptor(t3, i4) : s3;
+      }, 8934: function(e2, t2, i2) {
+        var s2 = this && this.__decorate || function(e3, t3, i3, s3) {
+          var r2, n2 = arguments.length, o2 = n2 < 3 ? t3 : null === s3 ? s3 = Object.getOwnPropertyDescriptor(t3, i3) : s3;
           if ("object" == typeof Reflect && "function" == typeof Reflect.decorate)
-            o2 = Reflect.decorate(e3, t3, i4, s3);
+            o2 = Reflect.decorate(e3, t3, i3, s3);
           else
-            for (var a2 = e3.length - 1; a2 >= 0; a2--)
-              (r2 = e3[a2]) && (o2 = (n2 < 3 ? r2(o2) : n2 > 3 ? r2(t3, i4, o2) : r2(t3, i4)) || o2);
-          return n2 > 3 && o2 && Object.defineProperty(t3, i4, o2), o2;
+            for (var a3 = e3.length - 1; a3 >= 0; a3--)
+              (r2 = e3[a3]) && (o2 = (n2 < 3 ? r2(o2) : n2 > 3 ? r2(t3, i3, o2) : r2(t3, i3)) || o2);
+          return n2 > 3 && o2 && Object.defineProperty(t3, i3, o2), o2;
         }, r = this && this.__param || function(e3, t3) {
-          return function(i4, s3) {
-            t3(i4, s3, e3);
+          return function(i3, s3) {
+            t3(i3, s3, e3);
           };
         };
         Object.defineProperty(t2, "__esModule", { value: true }), t2.MouseService = void 0;
-        const n = i3(4725), o = i3(9806);
-        let a = t2.MouseService = class {
+        const n = i2(4725), o = i2(9806);
+        let a2 = t2.MouseService = class {
           constructor(e3, t3) {
             this._renderService = e3, this._charSizeService = t3;
           }
-          getCoords(e3, t3, i4, s3, r2) {
-            return (0, o.getCoords)(window, e3, t3, i4, s3, this._charSizeService.hasValidSize, this._renderService.dimensions.css.cell.width, this._renderService.dimensions.css.cell.height, r2);
+          getCoords(e3, t3, i3, s3, r2) {
+            return (0, o.getCoords)(window, e3, t3, i3, s3, this._charSizeService.hasValidSize, this._renderService.dimensions.css.cell.width, this._renderService.dimensions.css.cell.height, r2);
           }
           getMouseReportCoords(e3, t3) {
-            const i4 = (0, o.getCoordsRelativeToElement)(window, e3, t3);
+            const i3 = (0, o.getCoordsRelativeToElement)(window, e3, t3);
             if (this._charSizeService.hasValidSize)
-              return i4[0] = Math.min(Math.max(i4[0], 0), this._renderService.dimensions.css.canvas.width - 1), i4[1] = Math.min(Math.max(i4[1], 0), this._renderService.dimensions.css.canvas.height - 1), { col: Math.floor(i4[0] / this._renderService.dimensions.css.cell.width), row: Math.floor(i4[1] / this._renderService.dimensions.css.cell.height), x: Math.floor(i4[0]), y: Math.floor(i4[1]) };
+              return i3[0] = Math.min(Math.max(i3[0], 0), this._renderService.dimensions.css.canvas.width - 1), i3[1] = Math.min(Math.max(i3[1], 0), this._renderService.dimensions.css.canvas.height - 1), { col: Math.floor(i3[0] / this._renderService.dimensions.css.cell.width), row: Math.floor(i3[1] / this._renderService.dimensions.css.cell.height), x: Math.floor(i3[0]), y: Math.floor(i3[1]) };
           }
         };
-        t2.MouseService = a = s2([r(0, n.IRenderService), r(1, n.ICharSizeService)], a);
-      }, 3230: function(e2, t2, i3) {
-        var s2 = this && this.__decorate || function(e3, t3, i4, s3) {
-          var r2, n2 = arguments.length, o2 = n2 < 3 ? t3 : null === s3 ? s3 = Object.getOwnPropertyDescriptor(t3, i4) : s3;
+        t2.MouseService = a2 = s2([r(0, n.IRenderService), r(1, n.ICharSizeService)], a2);
+      }, 3230: function(e2, t2, i2) {
+        var s2 = this && this.__decorate || function(e3, t3, i3, s3) {
+          var r2, n2 = arguments.length, o2 = n2 < 3 ? t3 : null === s3 ? s3 = Object.getOwnPropertyDescriptor(t3, i3) : s3;
           if ("object" == typeof Reflect && "function" == typeof Reflect.decorate)
-            o2 = Reflect.decorate(e3, t3, i4, s3);
+            o2 = Reflect.decorate(e3, t3, i3, s3);
           else
-            for (var a2 = e3.length - 1; a2 >= 0; a2--)
-              (r2 = e3[a2]) && (o2 = (n2 < 3 ? r2(o2) : n2 > 3 ? r2(t3, i4, o2) : r2(t3, i4)) || o2);
-          return n2 > 3 && o2 && Object.defineProperty(t3, i4, o2), o2;
+            for (var a3 = e3.length - 1; a3 >= 0; a3--)
+              (r2 = e3[a3]) && (o2 = (n2 < 3 ? r2(o2) : n2 > 3 ? r2(t3, i3, o2) : r2(t3, i3)) || o2);
+          return n2 > 3 && o2 && Object.defineProperty(t3, i3, o2), o2;
         }, r = this && this.__param || function(e3, t3) {
-          return function(i4, s3) {
-            t3(i4, s3, e3);
+          return function(i3, s3) {
+            t3(i3, s3, e3);
           };
         };
         Object.defineProperty(t2, "__esModule", { value: true }), t2.RenderService = void 0;
-        const n = i3(3656), o = i3(6193), a = i3(5596), h = i3(4725), c = i3(8460), l2 = i3(844), d2 = i3(7226), _2 = i3(2585);
-        let u2 = t2.RenderService = class extends l2.Disposable {
+        const n = i2(3656), o = i2(6193), a2 = i2(5596), h2 = i2(4725), c3 = i2(8460), l = i2(844), d2 = i2(7226), _2 = i2(2585);
+        let u2 = t2.RenderService = class extends l.Disposable {
           get dimensions() {
             return this._renderer.value.dimensions;
           }
-          constructor(e3, t3, i4, s3, r2, h2, _3, u3) {
-            if (super(), this._rowCount = e3, this._charSizeService = s3, this._renderer = this.register(new l2.MutableDisposable()), this._pausedResizeTask = new d2.DebouncedIdleTask(), this._isPaused = false, this._needsFullRefresh = false, this._isNextRenderRedrawOnly = true, this._needsSelectionRefresh = false, this._canvasWidth = 0, this._canvasHeight = 0, this._selectionState = { start: void 0, end: void 0, columnSelectMode: false }, this._onDimensionsChange = this.register(new c.EventEmitter()), this.onDimensionsChange = this._onDimensionsChange.event, this._onRenderedViewportChange = this.register(new c.EventEmitter()), this.onRenderedViewportChange = this._onRenderedViewportChange.event, this._onRender = this.register(new c.EventEmitter()), this.onRender = this._onRender.event, this._onRefreshRequest = this.register(new c.EventEmitter()), this.onRefreshRequest = this._onRefreshRequest.event, this._renderDebouncer = new o.RenderDebouncer(_3.window, (e4, t4) => this._renderRows(e4, t4)), this.register(this._renderDebouncer), this._screenDprMonitor = new a.ScreenDprMonitor(_3.window), this._screenDprMonitor.setListener(() => this.handleDevicePixelRatioChange()), this.register(this._screenDprMonitor), this.register(h2.onResize(() => this._fullRefresh())), this.register(h2.buffers.onBufferActivate(() => {
+          constructor(e3, t3, i3, s3, r2, h3, _3, u3) {
+            if (super(), this._rowCount = e3, this._charSizeService = s3, this._renderer = this.register(new l.MutableDisposable()), this._pausedResizeTask = new d2.DebouncedIdleTask(), this._isPaused = false, this._needsFullRefresh = false, this._isNextRenderRedrawOnly = true, this._needsSelectionRefresh = false, this._canvasWidth = 0, this._canvasHeight = 0, this._selectionState = { start: void 0, end: void 0, columnSelectMode: false }, this._onDimensionsChange = this.register(new c3.EventEmitter()), this.onDimensionsChange = this._onDimensionsChange.event, this._onRenderedViewportChange = this.register(new c3.EventEmitter()), this.onRenderedViewportChange = this._onRenderedViewportChange.event, this._onRender = this.register(new c3.EventEmitter()), this.onRender = this._onRender.event, this._onRefreshRequest = this.register(new c3.EventEmitter()), this.onRefreshRequest = this._onRefreshRequest.event, this._renderDebouncer = new o.RenderDebouncer(_3.window, (e4, t4) => this._renderRows(e4, t4)), this.register(this._renderDebouncer), this._screenDprMonitor = new a2.ScreenDprMonitor(_3.window), this._screenDprMonitor.setListener(() => this.handleDevicePixelRatioChange()), this.register(this._screenDprMonitor), this.register(h3.onResize(() => this._fullRefresh())), this.register(h3.buffers.onBufferActivate(() => {
               var e4;
               return null === (e4 = this._renderer.value) || void 0 === e4 ? void 0 : e4.clear();
-            })), this.register(i4.onOptionChange(() => this._handleOptionsChanged())), this.register(this._charSizeService.onCharSizeChange(() => this.handleCharSizeChanged())), this.register(r2.onDecorationRegistered(() => this._fullRefresh())), this.register(r2.onDecorationRemoved(() => this._fullRefresh())), this.register(i4.onMultipleOptionChange(["customGlyphs", "drawBoldTextInBrightColors", "letterSpacing", "lineHeight", "fontFamily", "fontSize", "fontWeight", "fontWeightBold", "minimumContrastRatio"], () => {
-              this.clear(), this.handleResize(h2.cols, h2.rows), this._fullRefresh();
-            })), this.register(i4.onMultipleOptionChange(["cursorBlink", "cursorStyle"], () => this.refreshRows(h2.buffer.y, h2.buffer.y, true))), this.register((0, n.addDisposableDomListener)(_3.window, "resize", () => this.handleDevicePixelRatioChange())), this.register(u3.onChangeColors(() => this._fullRefresh())), "IntersectionObserver" in _3.window) {
+            })), this.register(i3.onOptionChange(() => this._handleOptionsChanged())), this.register(this._charSizeService.onCharSizeChange(() => this.handleCharSizeChanged())), this.register(r2.onDecorationRegistered(() => this._fullRefresh())), this.register(r2.onDecorationRemoved(() => this._fullRefresh())), this.register(i3.onMultipleOptionChange(["customGlyphs", "drawBoldTextInBrightColors", "letterSpacing", "lineHeight", "fontFamily", "fontSize", "fontWeight", "fontWeightBold", "minimumContrastRatio"], () => {
+              this.clear(), this.handleResize(h3.cols, h3.rows), this._fullRefresh();
+            })), this.register(i3.onMultipleOptionChange(["cursorBlink", "cursorStyle"], () => this.refreshRows(h3.buffer.y, h3.buffer.y, true))), this.register((0, n.addDisposableDomListener)(_3.window, "resize", () => this.handleDevicePixelRatioChange())), this.register(u3.onChangeColors(() => this._fullRefresh())), "IntersectionObserver" in _3.window) {
               const e4 = new _3.window.IntersectionObserver((e5) => this._handleIntersectionChange(e5[e5.length - 1]), { threshold: 0 });
               e4.observe(t3), this.register({ dispose: () => e4.disconnect() });
             }
@@ -23570,8 +23572,8 @@ WARNING: This link could potentially be dangerous`)) {
           _handleIntersectionChange(e3) {
             this._isPaused = void 0 === e3.isIntersecting ? 0 === e3.intersectionRatio : !e3.isIntersecting, this._isPaused || this._charSizeService.hasValidSize || this._charSizeService.measure(), !this._isPaused && this._needsFullRefresh && (this._pausedResizeTask.flush(), this.refreshRows(0, this._rowCount - 1), this._needsFullRefresh = false);
           }
-          refreshRows(e3, t3, i4 = false) {
-            this._isPaused ? this._needsFullRefresh = true : (i4 || (this._isNextRenderRedrawOnly = false), this._renderDebouncer.refresh(e3, t3, this._rowCount));
+          refreshRows(e3, t3, i3 = false) {
+            this._isPaused ? this._needsFullRefresh = true : (i3 || (this._isNextRenderRedrawOnly = false), this._renderDebouncer.refresh(e3, t3, this._rowCount));
           }
           _renderRows(e3, t3) {
             this._renderer.value && (e3 = Math.min(e3, this._rowCount - 1), t3 = Math.min(t3, this._rowCount - 1), this._renderer.value.renderRows(e3, t3), this._needsSelectionRefresh && (this._renderer.value.handleSelectionChanged(this._selectionState.start, this._selectionState.end, this._selectionState.columnSelectMode), this._needsSelectionRefresh = false), this._isNextRenderRedrawOnly || this._onRenderedViewportChange.fire({ start: e3, end: t3 }), this._onRender.fire({ start: e3, end: t3 }), this._isNextRenderRedrawOnly = true);
@@ -23619,9 +23621,9 @@ WARNING: This link could potentially be dangerous`)) {
             var e3;
             null === (e3 = this._renderer.value) || void 0 === e3 || e3.handleFocus();
           }
-          handleSelectionChanged(e3, t3, i4) {
+          handleSelectionChanged(e3, t3, i3) {
             var s3;
-            this._selectionState.start = e3, this._selectionState.end = t3, this._selectionState.columnSelectMode = i4, null === (s3 = this._renderer.value) || void 0 === s3 || s3.handleSelectionChanged(e3, t3, i4);
+            this._selectionState.start = e3, this._selectionState.end = t3, this._selectionState.columnSelectMode = i3, null === (s3 = this._renderer.value) || void 0 === s3 || s3.handleSelectionChanged(e3, t3, i3);
           }
           handleCursorMove() {
             var e3;
@@ -23632,28 +23634,28 @@ WARNING: This link could potentially be dangerous`)) {
             null === (e3 = this._renderer.value) || void 0 === e3 || e3.clear();
           }
         };
-        t2.RenderService = u2 = s2([r(2, _2.IOptionsService), r(3, h.ICharSizeService), r(4, _2.IDecorationService), r(5, _2.IBufferService), r(6, h.ICoreBrowserService), r(7, h.IThemeService)], u2);
-      }, 9312: function(e2, t2, i3) {
-        var s2 = this && this.__decorate || function(e3, t3, i4, s3) {
-          var r2, n2 = arguments.length, o2 = n2 < 3 ? t3 : null === s3 ? s3 = Object.getOwnPropertyDescriptor(t3, i4) : s3;
+        t2.RenderService = u2 = s2([r(2, _2.IOptionsService), r(3, h2.ICharSizeService), r(4, _2.IDecorationService), r(5, _2.IBufferService), r(6, h2.ICoreBrowserService), r(7, h2.IThemeService)], u2);
+      }, 9312: function(e2, t2, i2) {
+        var s2 = this && this.__decorate || function(e3, t3, i3, s3) {
+          var r2, n2 = arguments.length, o2 = n2 < 3 ? t3 : null === s3 ? s3 = Object.getOwnPropertyDescriptor(t3, i3) : s3;
           if ("object" == typeof Reflect && "function" == typeof Reflect.decorate)
-            o2 = Reflect.decorate(e3, t3, i4, s3);
+            o2 = Reflect.decorate(e3, t3, i3, s3);
           else
-            for (var a2 = e3.length - 1; a2 >= 0; a2--)
-              (r2 = e3[a2]) && (o2 = (n2 < 3 ? r2(o2) : n2 > 3 ? r2(t3, i4, o2) : r2(t3, i4)) || o2);
-          return n2 > 3 && o2 && Object.defineProperty(t3, i4, o2), o2;
+            for (var a3 = e3.length - 1; a3 >= 0; a3--)
+              (r2 = e3[a3]) && (o2 = (n2 < 3 ? r2(o2) : n2 > 3 ? r2(t3, i3, o2) : r2(t3, i3)) || o2);
+          return n2 > 3 && o2 && Object.defineProperty(t3, i3, o2), o2;
         }, r = this && this.__param || function(e3, t3) {
-          return function(i4, s3) {
-            t3(i4, s3, e3);
+          return function(i3, s3) {
+            t3(i3, s3, e3);
           };
         };
         Object.defineProperty(t2, "__esModule", { value: true }), t2.SelectionService = void 0;
-        const n = i3(9806), o = i3(9504), a = i3(456), h = i3(4725), c = i3(8460), l2 = i3(844), d2 = i3(6114), _2 = i3(4841), u2 = i3(511), f2 = i3(2585), v = String.fromCharCode(160), p = new RegExp(v, "g");
-        let g2 = t2.SelectionService = class extends l2.Disposable {
-          constructor(e3, t3, i4, s3, r2, n2, o2, h2, d3) {
-            super(), this._element = e3, this._screenElement = t3, this._linkifier = i4, this._bufferService = s3, this._coreService = r2, this._mouseService = n2, this._optionsService = o2, this._renderService = h2, this._coreBrowserService = d3, this._dragScrollAmount = 0, this._enabled = true, this._workCell = new u2.CellData(), this._mouseDownTimeStamp = 0, this._oldHasSelection = false, this._oldSelectionStart = void 0, this._oldSelectionEnd = void 0, this._onLinuxMouseSelection = this.register(new c.EventEmitter()), this.onLinuxMouseSelection = this._onLinuxMouseSelection.event, this._onRedrawRequest = this.register(new c.EventEmitter()), this.onRequestRedraw = this._onRedrawRequest.event, this._onSelectionChange = this.register(new c.EventEmitter()), this.onSelectionChange = this._onSelectionChange.event, this._onRequestScrollLines = this.register(new c.EventEmitter()), this.onRequestScrollLines = this._onRequestScrollLines.event, this._mouseMoveListener = (e4) => this._handleMouseMove(e4), this._mouseUpListener = (e4) => this._handleMouseUp(e4), this._coreService.onUserInput(() => {
+        const n = i2(9806), o = i2(9504), a2 = i2(456), h2 = i2(4725), c3 = i2(8460), l = i2(844), d2 = i2(6114), _2 = i2(4841), u2 = i2(511), f2 = i2(2585), v3 = String.fromCharCode(160), p2 = new RegExp(v3, "g");
+        let g3 = t2.SelectionService = class extends l.Disposable {
+          constructor(e3, t3, i3, s3, r2, n2, o2, h3, d3) {
+            super(), this._element = e3, this._screenElement = t3, this._linkifier = i3, this._bufferService = s3, this._coreService = r2, this._mouseService = n2, this._optionsService = o2, this._renderService = h3, this._coreBrowserService = d3, this._dragScrollAmount = 0, this._enabled = true, this._workCell = new u2.CellData(), this._mouseDownTimeStamp = 0, this._oldHasSelection = false, this._oldSelectionStart = void 0, this._oldSelectionEnd = void 0, this._onLinuxMouseSelection = this.register(new c3.EventEmitter()), this.onLinuxMouseSelection = this._onLinuxMouseSelection.event, this._onRedrawRequest = this.register(new c3.EventEmitter()), this.onRequestRedraw = this._onRedrawRequest.event, this._onSelectionChange = this.register(new c3.EventEmitter()), this.onSelectionChange = this._onSelectionChange.event, this._onRequestScrollLines = this.register(new c3.EventEmitter()), this.onRequestScrollLines = this._onRequestScrollLines.event, this._mouseMoveListener = (e4) => this._handleMouseMove(e4), this._mouseUpListener = (e4) => this._handleMouseUp(e4), this._coreService.onUserInput(() => {
               this.hasSelection && this.clearSelection();
-            }), this._trimListener = this._bufferService.buffer.lines.onTrim((e4) => this._handleTrim(e4)), this.register(this._bufferService.buffers.onBufferActivate((e4) => this._handleBufferActivate(e4))), this.enable(), this._model = new a.SelectionModel(this._bufferService), this._activeSelectionMode = 0, this.register((0, l2.toDisposable)(() => {
+            }), this._trimListener = this._bufferService.buffer.lines.onTrim((e4) => this._handleTrim(e4)), this.register(this._bufferService.buffers.onBufferActivate((e4) => this._handleBufferActivate(e4))), this.enable(), this._model = new a2.SelectionModel(this._bufferService), this._activeSelectionMode = 0, this.register((0, l.toDisposable)(() => {
               this._removeMouseDownListeners();
             }));
           }
@@ -23680,28 +23682,28 @@ WARNING: This link could potentially be dangerous`)) {
             const e3 = this._model.finalSelectionStart, t3 = this._model.finalSelectionEnd;
             if (!e3 || !t3)
               return "";
-            const i4 = this._bufferService.buffer, s3 = [];
+            const i3 = this._bufferService.buffer, s3 = [];
             if (3 === this._activeSelectionMode) {
               if (e3[0] === t3[0])
                 return "";
               const r2 = e3[0] < t3[0] ? e3[0] : t3[0], n2 = e3[0] < t3[0] ? t3[0] : e3[0];
               for (let o2 = e3[1]; o2 <= t3[1]; o2++) {
-                const e4 = i4.translateBufferLineToString(o2, true, r2, n2);
+                const e4 = i3.translateBufferLineToString(o2, true, r2, n2);
                 s3.push(e4);
               }
             } else {
               const r2 = e3[1] === t3[1] ? t3[0] : void 0;
-              s3.push(i4.translateBufferLineToString(e3[1], true, e3[0], r2));
+              s3.push(i3.translateBufferLineToString(e3[1], true, e3[0], r2));
               for (let r3 = e3[1] + 1; r3 <= t3[1] - 1; r3++) {
-                const e4 = i4.lines.get(r3), t4 = i4.translateBufferLineToString(r3, true);
+                const e4 = i3.lines.get(r3), t4 = i3.translateBufferLineToString(r3, true);
                 (null == e4 ? void 0 : e4.isWrapped) ? s3[s3.length - 1] += t4 : s3.push(t4);
               }
               if (e3[1] !== t3[1]) {
-                const e4 = i4.lines.get(t3[1]), r3 = i4.translateBufferLineToString(t3[1], true, 0, t3[0]);
+                const e4 = i3.lines.get(t3[1]), r3 = i3.translateBufferLineToString(t3[1], true, 0, t3[0]);
                 e4 && e4.isWrapped ? s3[s3.length - 1] += r3 : s3.push(r3);
               }
             }
-            return s3.map((e4) => e4.replace(p, " ")).join(d2.isWindows ? "\r\n" : "\n");
+            return s3.map((e4) => e4.replace(p2, " ")).join(d2.isWindows ? "\r\n" : "\n");
           }
           clearSelection() {
             this._model.clearSelection(), this._removeMouseDownListeners(), this.refresh(), this._onSelectionChange.fire();
@@ -23713,19 +23715,19 @@ WARNING: This link could potentially be dangerous`)) {
             this._refreshAnimationFrame = void 0, this._onRedrawRequest.fire({ start: this._model.finalSelectionStart, end: this._model.finalSelectionEnd, columnSelectMode: 3 === this._activeSelectionMode });
           }
           _isClickInSelection(e3) {
-            const t3 = this._getMouseBufferCoords(e3), i4 = this._model.finalSelectionStart, s3 = this._model.finalSelectionEnd;
-            return !!(i4 && s3 && t3) && this._areCoordsInSelection(t3, i4, s3);
+            const t3 = this._getMouseBufferCoords(e3), i3 = this._model.finalSelectionStart, s3 = this._model.finalSelectionEnd;
+            return !!(i3 && s3 && t3) && this._areCoordsInSelection(t3, i3, s3);
           }
           isCellInSelection(e3, t3) {
-            const i4 = this._model.finalSelectionStart, s3 = this._model.finalSelectionEnd;
-            return !(!i4 || !s3) && this._areCoordsInSelection([e3, t3], i4, s3);
+            const i3 = this._model.finalSelectionStart, s3 = this._model.finalSelectionEnd;
+            return !(!i3 || !s3) && this._areCoordsInSelection([e3, t3], i3, s3);
           }
-          _areCoordsInSelection(e3, t3, i4) {
-            return e3[1] > t3[1] && e3[1] < i4[1] || t3[1] === i4[1] && e3[1] === t3[1] && e3[0] >= t3[0] && e3[0] < i4[0] || t3[1] < i4[1] && e3[1] === i4[1] && e3[0] < i4[0] || t3[1] < i4[1] && e3[1] === t3[1] && e3[0] >= t3[0];
+          _areCoordsInSelection(e3, t3, i3) {
+            return e3[1] > t3[1] && e3[1] < i3[1] || t3[1] === i3[1] && e3[1] === t3[1] && e3[0] >= t3[0] && e3[0] < i3[0] || t3[1] < i3[1] && e3[1] === i3[1] && e3[0] < i3[0] || t3[1] < i3[1] && e3[1] === t3[1] && e3[0] >= t3[0];
           }
           _selectWordAtCursor(e3, t3) {
-            var i4, s3;
-            const r2 = null === (s3 = null === (i4 = this._linkifier.currentLink) || void 0 === i4 ? void 0 : i4.link) || void 0 === s3 ? void 0 : s3.range;
+            var i3, s3;
+            const r2 = null === (s3 = null === (i3 = this._linkifier.currentLink) || void 0 === i3 ? void 0 : i3.link) || void 0 === s3 ? void 0 : s3.range;
             if (r2)
               return this._model.selectionStart = [r2.start.x - 1, r2.start.y - 1], this._model.selectionStartLength = (0, _2.getRangeLength)(r2, this._bufferService.cols), this._model.selectionEnd = void 0, true;
             const n2 = this._getMouseBufferCoords(e3);
@@ -23747,8 +23749,8 @@ WARNING: This link could potentially be dangerous`)) {
           }
           _getMouseEventScrollAmount(e3) {
             let t3 = (0, n.getCoordsRelativeToElement)(this._coreBrowserService.window, e3, this._screenElement)[1];
-            const i4 = this._renderService.dimensions.css.canvas.height;
-            return t3 >= 0 && t3 <= i4 ? 0 : (t3 > i4 && (t3 -= i4), t3 = Math.min(Math.max(t3, -50), 50), t3 /= 50, t3 / Math.abs(t3) + Math.round(14 * t3));
+            const i3 = this._renderService.dimensions.css.canvas.height;
+            return t3 >= 0 && t3 <= i3 ? 0 : (t3 > i3 && (t3 -= i3), t3 = Math.min(Math.max(t3, -50), 50), t3 /= 50, t3 / Math.abs(t3) + Math.round(14 * t3));
           }
           shouldForceSelection(e3) {
             return d2.isMac ? e3.altKey && this._optionsService.rawOptions.macOptionClickForcesSelection : e3.shiftKey;
@@ -23796,9 +23798,9 @@ WARNING: This link could potentially be dangerous`)) {
             if (this._model.selectionEnd = this._getMouseBufferCoords(e3), !this._model.selectionEnd)
               return void this.refresh(true);
             2 === this._activeSelectionMode ? this._model.selectionEnd[1] < this._model.selectionStart[1] ? this._model.selectionEnd[0] = 0 : this._model.selectionEnd[0] = this._bufferService.cols : 1 === this._activeSelectionMode && this._selectToWordAt(this._model.selectionEnd), this._dragScrollAmount = this._getMouseEventScrollAmount(e3), 3 !== this._activeSelectionMode && (this._dragScrollAmount > 0 ? this._model.selectionEnd[0] = this._bufferService.cols : this._dragScrollAmount < 0 && (this._model.selectionEnd[0] = 0));
-            const i4 = this._bufferService.buffer;
-            if (this._model.selectionEnd[1] < i4.lines.length) {
-              const e4 = i4.lines.get(this._model.selectionEnd[1]);
+            const i3 = this._bufferService.buffer;
+            if (this._model.selectionEnd[1] < i3.lines.length) {
+              const e4 = i3.lines.get(this._model.selectionEnd[1]);
               e4 && 0 === e4.hasWidth(this._model.selectionEnd[0]) && this._model.selectionEnd[0]++;
             }
             t3 && t3[0] === this._model.selectionEnd[0] && t3[1] === this._model.selectionEnd[1] || this.refresh(true);
@@ -23824,164 +23826,164 @@ WARNING: This link could potentially be dangerous`)) {
               this._fireEventIfSelectionChanged();
           }
           _fireEventIfSelectionChanged() {
-            const e3 = this._model.finalSelectionStart, t3 = this._model.finalSelectionEnd, i4 = !(!e3 || !t3 || e3[0] === t3[0] && e3[1] === t3[1]);
-            i4 ? e3 && t3 && (this._oldSelectionStart && this._oldSelectionEnd && e3[0] === this._oldSelectionStart[0] && e3[1] === this._oldSelectionStart[1] && t3[0] === this._oldSelectionEnd[0] && t3[1] === this._oldSelectionEnd[1] || this._fireOnSelectionChange(e3, t3, i4)) : this._oldHasSelection && this._fireOnSelectionChange(e3, t3, i4);
+            const e3 = this._model.finalSelectionStart, t3 = this._model.finalSelectionEnd, i3 = !(!e3 || !t3 || e3[0] === t3[0] && e3[1] === t3[1]);
+            i3 ? e3 && t3 && (this._oldSelectionStart && this._oldSelectionEnd && e3[0] === this._oldSelectionStart[0] && e3[1] === this._oldSelectionStart[1] && t3[0] === this._oldSelectionEnd[0] && t3[1] === this._oldSelectionEnd[1] || this._fireOnSelectionChange(e3, t3, i3)) : this._oldHasSelection && this._fireOnSelectionChange(e3, t3, i3);
           }
-          _fireOnSelectionChange(e3, t3, i4) {
-            this._oldSelectionStart = e3, this._oldSelectionEnd = t3, this._oldHasSelection = i4, this._onSelectionChange.fire();
+          _fireOnSelectionChange(e3, t3, i3) {
+            this._oldSelectionStart = e3, this._oldSelectionEnd = t3, this._oldHasSelection = i3, this._onSelectionChange.fire();
           }
           _handleBufferActivate(e3) {
             this.clearSelection(), this._trimListener.dispose(), this._trimListener = e3.activeBuffer.lines.onTrim((e4) => this._handleTrim(e4));
           }
           _convertViewportColToCharacterIndex(e3, t3) {
-            let i4 = t3;
+            let i3 = t3;
             for (let s3 = 0; t3 >= s3; s3++) {
               const r2 = e3.loadCell(s3, this._workCell).getChars().length;
-              0 === this._workCell.getWidth() ? i4-- : r2 > 1 && t3 !== s3 && (i4 += r2 - 1);
+              0 === this._workCell.getWidth() ? i3-- : r2 > 1 && t3 !== s3 && (i3 += r2 - 1);
             }
-            return i4;
+            return i3;
           }
-          setSelection(e3, t3, i4) {
-            this._model.clearSelection(), this._removeMouseDownListeners(), this._model.selectionStart = [e3, t3], this._model.selectionStartLength = i4, this.refresh(), this._fireEventIfSelectionChanged();
+          setSelection(e3, t3, i3) {
+            this._model.clearSelection(), this._removeMouseDownListeners(), this._model.selectionStart = [e3, t3], this._model.selectionStartLength = i3, this.refresh(), this._fireEventIfSelectionChanged();
           }
           rightClickSelect(e3) {
             this._isClickInSelection(e3) || (this._selectWordAtCursor(e3, false) && this.refresh(true), this._fireEventIfSelectionChanged());
           }
-          _getWordAt(e3, t3, i4 = true, s3 = true) {
+          _getWordAt(e3, t3, i3 = true, s3 = true) {
             if (e3[0] >= this._bufferService.cols)
               return;
             const r2 = this._bufferService.buffer, n2 = r2.lines.get(e3[1]);
             if (!n2)
               return;
             const o2 = r2.translateBufferLineToString(e3[1], false);
-            let a2 = this._convertViewportColToCharacterIndex(n2, e3[0]), h2 = a2;
-            const c2 = e3[0] - a2;
-            let l3 = 0, d3 = 0, _3 = 0, u3 = 0;
-            if (" " === o2.charAt(a2)) {
-              for (; a2 > 0 && " " === o2.charAt(a2 - 1); )
-                a2--;
-              for (; h2 < o2.length && " " === o2.charAt(h2 + 1); )
-                h2++;
+            let a3 = this._convertViewportColToCharacterIndex(n2, e3[0]), h3 = a3;
+            const c4 = e3[0] - a3;
+            let l2 = 0, d3 = 0, _3 = 0, u3 = 0;
+            if (" " === o2.charAt(a3)) {
+              for (; a3 > 0 && " " === o2.charAt(a3 - 1); )
+                a3--;
+              for (; h3 < o2.length && " " === o2.charAt(h3 + 1); )
+                h3++;
             } else {
-              let t4 = e3[0], i5 = e3[0];
-              0 === n2.getWidth(t4) && (l3++, t4--), 2 === n2.getWidth(i5) && (d3++, i5++);
-              const s4 = n2.getString(i5).length;
-              for (s4 > 1 && (u3 += s4 - 1, h2 += s4 - 1); t4 > 0 && a2 > 0 && !this._isCharWordSeparator(n2.loadCell(t4 - 1, this._workCell)); ) {
+              let t4 = e3[0], i4 = e3[0];
+              0 === n2.getWidth(t4) && (l2++, t4--), 2 === n2.getWidth(i4) && (d3++, i4++);
+              const s4 = n2.getString(i4).length;
+              for (s4 > 1 && (u3 += s4 - 1, h3 += s4 - 1); t4 > 0 && a3 > 0 && !this._isCharWordSeparator(n2.loadCell(t4 - 1, this._workCell)); ) {
                 n2.loadCell(t4 - 1, this._workCell);
                 const e4 = this._workCell.getChars().length;
-                0 === this._workCell.getWidth() ? (l3++, t4--) : e4 > 1 && (_3 += e4 - 1, a2 -= e4 - 1), a2--, t4--;
+                0 === this._workCell.getWidth() ? (l2++, t4--) : e4 > 1 && (_3 += e4 - 1, a3 -= e4 - 1), a3--, t4--;
               }
-              for (; i5 < n2.length && h2 + 1 < o2.length && !this._isCharWordSeparator(n2.loadCell(i5 + 1, this._workCell)); ) {
-                n2.loadCell(i5 + 1, this._workCell);
+              for (; i4 < n2.length && h3 + 1 < o2.length && !this._isCharWordSeparator(n2.loadCell(i4 + 1, this._workCell)); ) {
+                n2.loadCell(i4 + 1, this._workCell);
                 const e4 = this._workCell.getChars().length;
-                2 === this._workCell.getWidth() ? (d3++, i5++) : e4 > 1 && (u3 += e4 - 1, h2 += e4 - 1), h2++, i5++;
+                2 === this._workCell.getWidth() ? (d3++, i4++) : e4 > 1 && (u3 += e4 - 1, h3 += e4 - 1), h3++, i4++;
               }
             }
-            h2++;
-            let f3 = a2 + c2 - l3 + _3, v2 = Math.min(this._bufferService.cols, h2 - a2 + l3 + d3 - _3 - u3);
-            if (t3 || "" !== o2.slice(a2, h2).trim()) {
-              if (i4 && 0 === f3 && 32 !== n2.getCodePoint(0)) {
+            h3++;
+            let f3 = a3 + c4 - l2 + _3, v4 = Math.min(this._bufferService.cols, h3 - a3 + l2 + d3 - _3 - u3);
+            if (t3 || "" !== o2.slice(a3, h3).trim()) {
+              if (i3 && 0 === f3 && 32 !== n2.getCodePoint(0)) {
                 const t4 = r2.lines.get(e3[1] - 1);
                 if (t4 && n2.isWrapped && 32 !== t4.getCodePoint(this._bufferService.cols - 1)) {
                   const t5 = this._getWordAt([this._bufferService.cols - 1, e3[1] - 1], false, true, false);
                   if (t5) {
                     const e4 = this._bufferService.cols - t5.start;
-                    f3 -= e4, v2 += e4;
+                    f3 -= e4, v4 += e4;
                   }
                 }
               }
-              if (s3 && f3 + v2 === this._bufferService.cols && 32 !== n2.getCodePoint(this._bufferService.cols - 1)) {
+              if (s3 && f3 + v4 === this._bufferService.cols && 32 !== n2.getCodePoint(this._bufferService.cols - 1)) {
                 const t4 = r2.lines.get(e3[1] + 1);
                 if ((null == t4 ? void 0 : t4.isWrapped) && 32 !== t4.getCodePoint(0)) {
                   const t5 = this._getWordAt([0, e3[1] + 1], false, false, true);
-                  t5 && (v2 += t5.length);
+                  t5 && (v4 += t5.length);
                 }
               }
-              return { start: f3, length: v2 };
+              return { start: f3, length: v4 };
             }
           }
           _selectWordAt(e3, t3) {
-            const i4 = this._getWordAt(e3, t3);
-            if (i4) {
-              for (; i4.start < 0; )
-                i4.start += this._bufferService.cols, e3[1]--;
-              this._model.selectionStart = [i4.start, e3[1]], this._model.selectionStartLength = i4.length;
+            const i3 = this._getWordAt(e3, t3);
+            if (i3) {
+              for (; i3.start < 0; )
+                i3.start += this._bufferService.cols, e3[1]--;
+              this._model.selectionStart = [i3.start, e3[1]], this._model.selectionStartLength = i3.length;
             }
           }
           _selectToWordAt(e3) {
             const t3 = this._getWordAt(e3, true);
             if (t3) {
-              let i4 = e3[1];
+              let i3 = e3[1];
               for (; t3.start < 0; )
-                t3.start += this._bufferService.cols, i4--;
+                t3.start += this._bufferService.cols, i3--;
               if (!this._model.areSelectionValuesReversed())
                 for (; t3.start + t3.length > this._bufferService.cols; )
-                  t3.length -= this._bufferService.cols, i4++;
-              this._model.selectionEnd = [this._model.areSelectionValuesReversed() ? t3.start : t3.start + t3.length, i4];
+                  t3.length -= this._bufferService.cols, i3++;
+              this._model.selectionEnd = [this._model.areSelectionValuesReversed() ? t3.start : t3.start + t3.length, i3];
             }
           }
           _isCharWordSeparator(e3) {
             return 0 !== e3.getWidth() && this._optionsService.rawOptions.wordSeparator.indexOf(e3.getChars()) >= 0;
           }
           _selectLineAt(e3) {
-            const t3 = this._bufferService.buffer.getWrappedRangeForLine(e3), i4 = { start: { x: 0, y: t3.first }, end: { x: this._bufferService.cols - 1, y: t3.last } };
-            this._model.selectionStart = [0, t3.first], this._model.selectionEnd = void 0, this._model.selectionStartLength = (0, _2.getRangeLength)(i4, this._bufferService.cols);
+            const t3 = this._bufferService.buffer.getWrappedRangeForLine(e3), i3 = { start: { x: 0, y: t3.first }, end: { x: this._bufferService.cols - 1, y: t3.last } };
+            this._model.selectionStart = [0, t3.first], this._model.selectionEnd = void 0, this._model.selectionStartLength = (0, _2.getRangeLength)(i3, this._bufferService.cols);
           }
         };
-        t2.SelectionService = g2 = s2([r(3, f2.IBufferService), r(4, f2.ICoreService), r(5, h.IMouseService), r(6, f2.IOptionsService), r(7, h.IRenderService), r(8, h.ICoreBrowserService)], g2);
-      }, 4725: (e2, t2, i3) => {
+        t2.SelectionService = g3 = s2([r(3, f2.IBufferService), r(4, f2.ICoreService), r(5, h2.IMouseService), r(6, f2.IOptionsService), r(7, h2.IRenderService), r(8, h2.ICoreBrowserService)], g3);
+      }, 4725: (e2, t2, i2) => {
         Object.defineProperty(t2, "__esModule", { value: true }), t2.IThemeService = t2.ICharacterJoinerService = t2.ISelectionService = t2.IRenderService = t2.IMouseService = t2.ICoreBrowserService = t2.ICharSizeService = void 0;
-        const s2 = i3(8343);
+        const s2 = i2(8343);
         t2.ICharSizeService = (0, s2.createDecorator)("CharSizeService"), t2.ICoreBrowserService = (0, s2.createDecorator)("CoreBrowserService"), t2.IMouseService = (0, s2.createDecorator)("MouseService"), t2.IRenderService = (0, s2.createDecorator)("RenderService"), t2.ISelectionService = (0, s2.createDecorator)("SelectionService"), t2.ICharacterJoinerService = (0, s2.createDecorator)("CharacterJoinerService"), t2.IThemeService = (0, s2.createDecorator)("ThemeService");
-      }, 6731: function(e2, t2, i3) {
-        var s2 = this && this.__decorate || function(e3, t3, i4, s3) {
-          var r2, n2 = arguments.length, o2 = n2 < 3 ? t3 : null === s3 ? s3 = Object.getOwnPropertyDescriptor(t3, i4) : s3;
+      }, 6731: function(e2, t2, i2) {
+        var s2 = this && this.__decorate || function(e3, t3, i3, s3) {
+          var r2, n2 = arguments.length, o2 = n2 < 3 ? t3 : null === s3 ? s3 = Object.getOwnPropertyDescriptor(t3, i3) : s3;
           if ("object" == typeof Reflect && "function" == typeof Reflect.decorate)
-            o2 = Reflect.decorate(e3, t3, i4, s3);
+            o2 = Reflect.decorate(e3, t3, i3, s3);
           else
-            for (var a2 = e3.length - 1; a2 >= 0; a2--)
-              (r2 = e3[a2]) && (o2 = (n2 < 3 ? r2(o2) : n2 > 3 ? r2(t3, i4, o2) : r2(t3, i4)) || o2);
-          return n2 > 3 && o2 && Object.defineProperty(t3, i4, o2), o2;
+            for (var a3 = e3.length - 1; a3 >= 0; a3--)
+              (r2 = e3[a3]) && (o2 = (n2 < 3 ? r2(o2) : n2 > 3 ? r2(t3, i3, o2) : r2(t3, i3)) || o2);
+          return n2 > 3 && o2 && Object.defineProperty(t3, i3, o2), o2;
         }, r = this && this.__param || function(e3, t3) {
-          return function(i4, s3) {
-            t3(i4, s3, e3);
+          return function(i3, s3) {
+            t3(i3, s3, e3);
           };
         };
         Object.defineProperty(t2, "__esModule", { value: true }), t2.ThemeService = t2.DEFAULT_ANSI_COLORS = void 0;
-        const n = i3(7239), o = i3(8055), a = i3(8460), h = i3(844), c = i3(2585), l2 = o.css.toColor("#ffffff"), d2 = o.css.toColor("#000000"), _2 = o.css.toColor("#ffffff"), u2 = o.css.toColor("#000000"), f2 = { css: "rgba(255, 255, 255, 0.3)", rgba: 4294967117 };
+        const n = i2(7239), o = i2(8055), a2 = i2(8460), h2 = i2(844), c3 = i2(2585), l = o.css.toColor("#ffffff"), d2 = o.css.toColor("#000000"), _2 = o.css.toColor("#ffffff"), u2 = o.css.toColor("#000000"), f2 = { css: "rgba(255, 255, 255, 0.3)", rgba: 4294967117 };
         t2.DEFAULT_ANSI_COLORS = Object.freeze((() => {
           const e3 = [o.css.toColor("#2e3436"), o.css.toColor("#cc0000"), o.css.toColor("#4e9a06"), o.css.toColor("#c4a000"), o.css.toColor("#3465a4"), o.css.toColor("#75507b"), o.css.toColor("#06989a"), o.css.toColor("#d3d7cf"), o.css.toColor("#555753"), o.css.toColor("#ef2929"), o.css.toColor("#8ae234"), o.css.toColor("#fce94f"), o.css.toColor("#729fcf"), o.css.toColor("#ad7fa8"), o.css.toColor("#34e2e2"), o.css.toColor("#eeeeec")], t3 = [0, 95, 135, 175, 215, 255];
-          for (let i4 = 0; i4 < 216; i4++) {
-            const s3 = t3[i4 / 36 % 6 | 0], r2 = t3[i4 / 6 % 6 | 0], n2 = t3[i4 % 6];
+          for (let i3 = 0; i3 < 216; i3++) {
+            const s3 = t3[i3 / 36 % 6 | 0], r2 = t3[i3 / 6 % 6 | 0], n2 = t3[i3 % 6];
             e3.push({ css: o.channels.toCss(s3, r2, n2), rgba: o.channels.toRgba(s3, r2, n2) });
           }
           for (let t4 = 0; t4 < 24; t4++) {
-            const i4 = 8 + 10 * t4;
-            e3.push({ css: o.channels.toCss(i4, i4, i4), rgba: o.channels.toRgba(i4, i4, i4) });
+            const i3 = 8 + 10 * t4;
+            e3.push({ css: o.channels.toCss(i3, i3, i3), rgba: o.channels.toRgba(i3, i3, i3) });
           }
           return e3;
         })());
-        let v = t2.ThemeService = class extends h.Disposable {
+        let v3 = t2.ThemeService = class extends h2.Disposable {
           get colors() {
             return this._colors;
           }
           constructor(e3) {
-            super(), this._optionsService = e3, this._contrastCache = new n.ColorContrastCache(), this._halfContrastCache = new n.ColorContrastCache(), this._onChangeColors = this.register(new a.EventEmitter()), this.onChangeColors = this._onChangeColors.event, this._colors = { foreground: l2, background: d2, cursor: _2, cursorAccent: u2, selectionForeground: void 0, selectionBackgroundTransparent: f2, selectionBackgroundOpaque: o.color.blend(d2, f2), selectionInactiveBackgroundTransparent: f2, selectionInactiveBackgroundOpaque: o.color.blend(d2, f2), ansi: t2.DEFAULT_ANSI_COLORS.slice(), contrastCache: this._contrastCache, halfContrastCache: this._halfContrastCache }, this._updateRestoreColors(), this._setTheme(this._optionsService.rawOptions.theme), this.register(this._optionsService.onSpecificOptionChange("minimumContrastRatio", () => this._contrastCache.clear())), this.register(this._optionsService.onSpecificOptionChange("theme", () => this._setTheme(this._optionsService.rawOptions.theme)));
+            super(), this._optionsService = e3, this._contrastCache = new n.ColorContrastCache(), this._halfContrastCache = new n.ColorContrastCache(), this._onChangeColors = this.register(new a2.EventEmitter()), this.onChangeColors = this._onChangeColors.event, this._colors = { foreground: l, background: d2, cursor: _2, cursorAccent: u2, selectionForeground: void 0, selectionBackgroundTransparent: f2, selectionBackgroundOpaque: o.color.blend(d2, f2), selectionInactiveBackgroundTransparent: f2, selectionInactiveBackgroundOpaque: o.color.blend(d2, f2), ansi: t2.DEFAULT_ANSI_COLORS.slice(), contrastCache: this._contrastCache, halfContrastCache: this._halfContrastCache }, this._updateRestoreColors(), this._setTheme(this._optionsService.rawOptions.theme), this.register(this._optionsService.onSpecificOptionChange("minimumContrastRatio", () => this._contrastCache.clear())), this.register(this._optionsService.onSpecificOptionChange("theme", () => this._setTheme(this._optionsService.rawOptions.theme)));
           }
           _setTheme(e3 = {}) {
-            const i4 = this._colors;
-            if (i4.foreground = p(e3.foreground, l2), i4.background = p(e3.background, d2), i4.cursor = p(e3.cursor, _2), i4.cursorAccent = p(e3.cursorAccent, u2), i4.selectionBackgroundTransparent = p(e3.selectionBackground, f2), i4.selectionBackgroundOpaque = o.color.blend(i4.background, i4.selectionBackgroundTransparent), i4.selectionInactiveBackgroundTransparent = p(e3.selectionInactiveBackground, i4.selectionBackgroundTransparent), i4.selectionInactiveBackgroundOpaque = o.color.blend(i4.background, i4.selectionInactiveBackgroundTransparent), i4.selectionForeground = e3.selectionForeground ? p(e3.selectionForeground, o.NULL_COLOR) : void 0, i4.selectionForeground === o.NULL_COLOR && (i4.selectionForeground = void 0), o.color.isOpaque(i4.selectionBackgroundTransparent)) {
+            const i3 = this._colors;
+            if (i3.foreground = p2(e3.foreground, l), i3.background = p2(e3.background, d2), i3.cursor = p2(e3.cursor, _2), i3.cursorAccent = p2(e3.cursorAccent, u2), i3.selectionBackgroundTransparent = p2(e3.selectionBackground, f2), i3.selectionBackgroundOpaque = o.color.blend(i3.background, i3.selectionBackgroundTransparent), i3.selectionInactiveBackgroundTransparent = p2(e3.selectionInactiveBackground, i3.selectionBackgroundTransparent), i3.selectionInactiveBackgroundOpaque = o.color.blend(i3.background, i3.selectionInactiveBackgroundTransparent), i3.selectionForeground = e3.selectionForeground ? p2(e3.selectionForeground, o.NULL_COLOR) : void 0, i3.selectionForeground === o.NULL_COLOR && (i3.selectionForeground = void 0), o.color.isOpaque(i3.selectionBackgroundTransparent)) {
               const e4 = 0.3;
-              i4.selectionBackgroundTransparent = o.color.opacity(i4.selectionBackgroundTransparent, e4);
+              i3.selectionBackgroundTransparent = o.color.opacity(i3.selectionBackgroundTransparent, e4);
             }
-            if (o.color.isOpaque(i4.selectionInactiveBackgroundTransparent)) {
+            if (o.color.isOpaque(i3.selectionInactiveBackgroundTransparent)) {
               const e4 = 0.3;
-              i4.selectionInactiveBackgroundTransparent = o.color.opacity(i4.selectionInactiveBackgroundTransparent, e4);
+              i3.selectionInactiveBackgroundTransparent = o.color.opacity(i3.selectionInactiveBackgroundTransparent, e4);
             }
-            if (i4.ansi = t2.DEFAULT_ANSI_COLORS.slice(), i4.ansi[0] = p(e3.black, t2.DEFAULT_ANSI_COLORS[0]), i4.ansi[1] = p(e3.red, t2.DEFAULT_ANSI_COLORS[1]), i4.ansi[2] = p(e3.green, t2.DEFAULT_ANSI_COLORS[2]), i4.ansi[3] = p(e3.yellow, t2.DEFAULT_ANSI_COLORS[3]), i4.ansi[4] = p(e3.blue, t2.DEFAULT_ANSI_COLORS[4]), i4.ansi[5] = p(e3.magenta, t2.DEFAULT_ANSI_COLORS[5]), i4.ansi[6] = p(e3.cyan, t2.DEFAULT_ANSI_COLORS[6]), i4.ansi[7] = p(e3.white, t2.DEFAULT_ANSI_COLORS[7]), i4.ansi[8] = p(e3.brightBlack, t2.DEFAULT_ANSI_COLORS[8]), i4.ansi[9] = p(e3.brightRed, t2.DEFAULT_ANSI_COLORS[9]), i4.ansi[10] = p(e3.brightGreen, t2.DEFAULT_ANSI_COLORS[10]), i4.ansi[11] = p(e3.brightYellow, t2.DEFAULT_ANSI_COLORS[11]), i4.ansi[12] = p(e3.brightBlue, t2.DEFAULT_ANSI_COLORS[12]), i4.ansi[13] = p(e3.brightMagenta, t2.DEFAULT_ANSI_COLORS[13]), i4.ansi[14] = p(e3.brightCyan, t2.DEFAULT_ANSI_COLORS[14]), i4.ansi[15] = p(e3.brightWhite, t2.DEFAULT_ANSI_COLORS[15]), e3.extendedAnsi) {
-              const s3 = Math.min(i4.ansi.length - 16, e3.extendedAnsi.length);
+            if (i3.ansi = t2.DEFAULT_ANSI_COLORS.slice(), i3.ansi[0] = p2(e3.black, t2.DEFAULT_ANSI_COLORS[0]), i3.ansi[1] = p2(e3.red, t2.DEFAULT_ANSI_COLORS[1]), i3.ansi[2] = p2(e3.green, t2.DEFAULT_ANSI_COLORS[2]), i3.ansi[3] = p2(e3.yellow, t2.DEFAULT_ANSI_COLORS[3]), i3.ansi[4] = p2(e3.blue, t2.DEFAULT_ANSI_COLORS[4]), i3.ansi[5] = p2(e3.magenta, t2.DEFAULT_ANSI_COLORS[5]), i3.ansi[6] = p2(e3.cyan, t2.DEFAULT_ANSI_COLORS[6]), i3.ansi[7] = p2(e3.white, t2.DEFAULT_ANSI_COLORS[7]), i3.ansi[8] = p2(e3.brightBlack, t2.DEFAULT_ANSI_COLORS[8]), i3.ansi[9] = p2(e3.brightRed, t2.DEFAULT_ANSI_COLORS[9]), i3.ansi[10] = p2(e3.brightGreen, t2.DEFAULT_ANSI_COLORS[10]), i3.ansi[11] = p2(e3.brightYellow, t2.DEFAULT_ANSI_COLORS[11]), i3.ansi[12] = p2(e3.brightBlue, t2.DEFAULT_ANSI_COLORS[12]), i3.ansi[13] = p2(e3.brightMagenta, t2.DEFAULT_ANSI_COLORS[13]), i3.ansi[14] = p2(e3.brightCyan, t2.DEFAULT_ANSI_COLORS[14]), i3.ansi[15] = p2(e3.brightWhite, t2.DEFAULT_ANSI_COLORS[15]), e3.extendedAnsi) {
+              const s3 = Math.min(i3.ansi.length - 16, e3.extendedAnsi.length);
               for (let r2 = 0; r2 < s3; r2++)
-                i4.ansi[r2 + 16] = p(e3.extendedAnsi[r2], t2.DEFAULT_ANSI_COLORS[r2 + 16]);
+                i3.ansi[r2 + 16] = p2(e3.extendedAnsi[r2], t2.DEFAULT_ANSI_COLORS[r2 + 16]);
             }
             this._contrastCache.clear(), this._halfContrastCache.clear(), this._updateRestoreColors(), this._onChangeColors.fire(this.colors);
           }
@@ -24014,7 +24016,7 @@ WARNING: This link could potentially be dangerous`)) {
             this._restoreColors = { foreground: this._colors.foreground, background: this._colors.background, cursor: this._colors.cursor, ansi: this._colors.ansi.slice() };
           }
         };
-        function p(e3, t3) {
+        function p2(e3, t3) {
           if (void 0 !== e3)
             try {
               return o.css.toColor(e3);
@@ -24022,10 +24024,10 @@ WARNING: This link could potentially be dangerous`)) {
             }
           return t3;
         }
-        t2.ThemeService = v = s2([r(0, c.IOptionsService)], v);
-      }, 6349: (e2, t2, i3) => {
+        t2.ThemeService = v3 = s2([r(0, c3.IOptionsService)], v3);
+      }, 6349: (e2, t2, i2) => {
         Object.defineProperty(t2, "__esModule", { value: true }), t2.CircularList = void 0;
-        const s2 = i3(8460), r = i3(844);
+        const s2 = i2(8460), r = i2(844);
         class n extends r.Disposable {
           constructor(e3) {
             super(), this._maxLength = e3, this.onDeleteEmitter = this.register(new s2.EventEmitter()), this.onDelete = this.onDeleteEmitter.event, this.onInsertEmitter = this.register(new s2.EventEmitter()), this.onInsert = this.onInsertEmitter.event, this.onTrimEmitter = this.register(new s2.EventEmitter()), this.onTrim = this.onTrimEmitter.event, this._array = new Array(this._maxLength), this._startIndex = 0, this._length = 0;
@@ -24037,8 +24039,8 @@ WARNING: This link could potentially be dangerous`)) {
             if (this._maxLength === e3)
               return;
             const t3 = new Array(e3);
-            for (let i4 = 0; i4 < Math.min(e3, this.length); i4++)
-              t3[i4] = this._array[this._getCyclicIndex(i4)];
+            for (let i3 = 0; i3 < Math.min(e3, this.length); i3++)
+              t3[i3] = this._array[this._getCyclicIndex(i3)];
             this._array = t3, this._maxLength = e3, this._startIndex = 0;
           }
           get length() {
@@ -24070,41 +24072,41 @@ WARNING: This link could potentially be dangerous`)) {
           pop() {
             return this._array[this._getCyclicIndex(this._length-- - 1)];
           }
-          splice(e3, t3, ...i4) {
+          splice(e3, t3, ...i3) {
             if (t3) {
-              for (let i5 = e3; i5 < this._length - t3; i5++)
-                this._array[this._getCyclicIndex(i5)] = this._array[this._getCyclicIndex(i5 + t3)];
+              for (let i4 = e3; i4 < this._length - t3; i4++)
+                this._array[this._getCyclicIndex(i4)] = this._array[this._getCyclicIndex(i4 + t3)];
               this._length -= t3, this.onDeleteEmitter.fire({ index: e3, amount: t3 });
             }
             for (let t4 = this._length - 1; t4 >= e3; t4--)
-              this._array[this._getCyclicIndex(t4 + i4.length)] = this._array[this._getCyclicIndex(t4)];
-            for (let t4 = 0; t4 < i4.length; t4++)
-              this._array[this._getCyclicIndex(e3 + t4)] = i4[t4];
-            if (i4.length && this.onInsertEmitter.fire({ index: e3, amount: i4.length }), this._length + i4.length > this._maxLength) {
-              const e4 = this._length + i4.length - this._maxLength;
+              this._array[this._getCyclicIndex(t4 + i3.length)] = this._array[this._getCyclicIndex(t4)];
+            for (let t4 = 0; t4 < i3.length; t4++)
+              this._array[this._getCyclicIndex(e3 + t4)] = i3[t4];
+            if (i3.length && this.onInsertEmitter.fire({ index: e3, amount: i3.length }), this._length + i3.length > this._maxLength) {
+              const e4 = this._length + i3.length - this._maxLength;
               this._startIndex += e4, this._length = this._maxLength, this.onTrimEmitter.fire(e4);
             } else
-              this._length += i4.length;
+              this._length += i3.length;
           }
           trimStart(e3) {
             e3 > this._length && (e3 = this._length), this._startIndex += e3, this._length -= e3, this.onTrimEmitter.fire(e3);
           }
-          shiftElements(e3, t3, i4) {
+          shiftElements(e3, t3, i3) {
             if (!(t3 <= 0)) {
               if (e3 < 0 || e3 >= this._length)
                 throw new Error("start argument out of range");
-              if (e3 + i4 < 0)
+              if (e3 + i3 < 0)
                 throw new Error("Cannot shift elements in list beyond index 0");
-              if (i4 > 0) {
+              if (i3 > 0) {
                 for (let s4 = t3 - 1; s4 >= 0; s4--)
-                  this.set(e3 + s4 + i4, this.get(e3 + s4));
-                const s3 = e3 + t3 + i4 - this._length;
+                  this.set(e3 + s4 + i3, this.get(e3 + s4));
+                const s3 = e3 + t3 + i3 - this._length;
                 if (s3 > 0)
                   for (this._length += s3; this._length > this._maxLength; )
                     this._length--, this._startIndex++, this.onTrimEmitter.fire(1);
               } else
                 for (let s3 = 0; s3 < t3; s3++)
-                  this.set(e3 + s3 + i4, this.get(e3 + s3));
+                  this.set(e3 + s3 + i3, this.get(e3 + s3));
             }
           }
           _getCyclicIndex(e3) {
@@ -24113,19 +24115,19 @@ WARNING: This link could potentially be dangerous`)) {
         }
         t2.CircularList = n;
       }, 1439: (e2, t2) => {
-        Object.defineProperty(t2, "__esModule", { value: true }), t2.clone = void 0, t2.clone = function e3(t3, i3 = 5) {
+        Object.defineProperty(t2, "__esModule", { value: true }), t2.clone = void 0, t2.clone = function e3(t3, i2 = 5) {
           if ("object" != typeof t3)
             return t3;
           const s2 = Array.isArray(t3) ? [] : {};
           for (const r in t3)
-            s2[r] = i3 <= 1 ? t3[r] : t3[r] && e3(t3[r], i3 - 1);
+            s2[r] = i2 <= 1 ? t3[r] : t3[r] && e3(t3[r], i2 - 1);
           return s2;
         };
-      }, 8055: (e2, t2, i3) => {
+      }, 8055: (e2, t2, i2) => {
         Object.defineProperty(t2, "__esModule", { value: true }), t2.contrastRatio = t2.toPaddedHex = t2.rgba = t2.rgb = t2.css = t2.color = t2.channels = t2.NULL_COLOR = void 0;
-        const s2 = i3(6114);
-        let r = 0, n = 0, o = 0, a = 0;
-        var h, c, l2, d2, _2;
+        const s2 = i2(6114);
+        let r = 0, n = 0, o = 0, a2 = 0;
+        var h2, c3, l, d2, _2;
         function u2(e3) {
           const t3 = e3.toString(16);
           return t3.length < 2 ? "0" + t3 : t3;
@@ -24134,41 +24136,41 @@ WARNING: This link could potentially be dangerous`)) {
           return e3 < t3 ? (t3 + 0.05) / (e3 + 0.05) : (e3 + 0.05) / (t3 + 0.05);
         }
         t2.NULL_COLOR = { css: "#00000000", rgba: 0 }, function(e3) {
-          e3.toCss = function(e4, t3, i4, s3) {
-            return void 0 !== s3 ? `#${u2(e4)}${u2(t3)}${u2(i4)}${u2(s3)}` : `#${u2(e4)}${u2(t3)}${u2(i4)}`;
-          }, e3.toRgba = function(e4, t3, i4, s3 = 255) {
-            return (e4 << 24 | t3 << 16 | i4 << 8 | s3) >>> 0;
+          e3.toCss = function(e4, t3, i3, s3) {
+            return void 0 !== s3 ? `#${u2(e4)}${u2(t3)}${u2(i3)}${u2(s3)}` : `#${u2(e4)}${u2(t3)}${u2(i3)}`;
+          }, e3.toRgba = function(e4, t3, i3, s3 = 255) {
+            return (e4 << 24 | t3 << 16 | i3 << 8 | s3) >>> 0;
           };
-        }(h || (t2.channels = h = {})), function(e3) {
+        }(h2 || (t2.channels = h2 = {})), function(e3) {
           function t3(e4, t4) {
-            return a = Math.round(255 * t4), [r, n, o] = _2.toChannels(e4.rgba), { css: h.toCss(r, n, o, a), rgba: h.toRgba(r, n, o, a) };
+            return a2 = Math.round(255 * t4), [r, n, o] = _2.toChannels(e4.rgba), { css: h2.toCss(r, n, o, a2), rgba: h2.toRgba(r, n, o, a2) };
           }
           e3.blend = function(e4, t4) {
-            if (a = (255 & t4.rgba) / 255, 1 === a)
+            if (a2 = (255 & t4.rgba) / 255, 1 === a2)
               return { css: t4.css, rgba: t4.rgba };
-            const i4 = t4.rgba >> 24 & 255, s3 = t4.rgba >> 16 & 255, c2 = t4.rgba >> 8 & 255, l3 = e4.rgba >> 24 & 255, d3 = e4.rgba >> 16 & 255, _3 = e4.rgba >> 8 & 255;
-            return r = l3 + Math.round((i4 - l3) * a), n = d3 + Math.round((s3 - d3) * a), o = _3 + Math.round((c2 - _3) * a), { css: h.toCss(r, n, o), rgba: h.toRgba(r, n, o) };
+            const i3 = t4.rgba >> 24 & 255, s3 = t4.rgba >> 16 & 255, c4 = t4.rgba >> 8 & 255, l2 = e4.rgba >> 24 & 255, d3 = e4.rgba >> 16 & 255, _3 = e4.rgba >> 8 & 255;
+            return r = l2 + Math.round((i3 - l2) * a2), n = d3 + Math.round((s3 - d3) * a2), o = _3 + Math.round((c4 - _3) * a2), { css: h2.toCss(r, n, o), rgba: h2.toRgba(r, n, o) };
           }, e3.isOpaque = function(e4) {
             return 255 == (255 & e4.rgba);
-          }, e3.ensureContrastRatio = function(e4, t4, i4) {
-            const s3 = _2.ensureContrastRatio(e4.rgba, t4.rgba, i4);
+          }, e3.ensureContrastRatio = function(e4, t4, i3) {
+            const s3 = _2.ensureContrastRatio(e4.rgba, t4.rgba, i3);
             if (s3)
               return _2.toColor(s3 >> 24 & 255, s3 >> 16 & 255, s3 >> 8 & 255);
           }, e3.opaque = function(e4) {
             const t4 = (255 | e4.rgba) >>> 0;
-            return [r, n, o] = _2.toChannels(t4), { css: h.toCss(r, n, o), rgba: t4 };
-          }, e3.opacity = t3, e3.multiplyOpacity = function(e4, i4) {
-            return a = 255 & e4.rgba, t3(e4, a * i4 / 255);
+            return [r, n, o] = _2.toChannels(t4), { css: h2.toCss(r, n, o), rgba: t4 };
+          }, e3.opacity = t3, e3.multiplyOpacity = function(e4, i3) {
+            return a2 = 255 & e4.rgba, t3(e4, a2 * i3 / 255);
           }, e3.toColorRGB = function(e4) {
             return [e4.rgba >> 24 & 255, e4.rgba >> 16 & 255, e4.rgba >> 8 & 255];
           };
-        }(c || (t2.color = c = {})), function(e3) {
-          let t3, i4;
+        }(c3 || (t2.color = c3 = {})), function(e3) {
+          let t3, i3;
           if (!s2.isNode) {
             const e4 = document.createElement("canvas");
             e4.width = 1, e4.height = 1;
             const s3 = e4.getContext("2d", { willReadFrequently: true });
-            s3 && (t3 = s3, t3.globalCompositeOperation = "copy", i4 = t3.createLinearGradient(0, 0, 1, 1));
+            s3 && (t3 = s3, t3.globalCompositeOperation = "copy", i3 = t3.createLinearGradient(0, 0, 1, 1));
           }
           e3.toColor = function(e4) {
             if (e4.match(/#[\da-f]{3,8}/i))
@@ -24176,7 +24178,7 @@ WARNING: This link could potentially be dangerous`)) {
                 case 4:
                   return r = parseInt(e4.slice(1, 2).repeat(2), 16), n = parseInt(e4.slice(2, 3).repeat(2), 16), o = parseInt(e4.slice(3, 4).repeat(2), 16), _2.toColor(r, n, o);
                 case 5:
-                  return r = parseInt(e4.slice(1, 2).repeat(2), 16), n = parseInt(e4.slice(2, 3).repeat(2), 16), o = parseInt(e4.slice(3, 4).repeat(2), 16), a = parseInt(e4.slice(4, 5).repeat(2), 16), _2.toColor(r, n, o, a);
+                  return r = parseInt(e4.slice(1, 2).repeat(2), 16), n = parseInt(e4.slice(2, 3).repeat(2), 16), o = parseInt(e4.slice(3, 4).repeat(2), 16), a2 = parseInt(e4.slice(4, 5).repeat(2), 16), _2.toColor(r, n, o, a2);
                 case 7:
                   return { css: e4, rgba: (parseInt(e4.slice(1), 16) << 8 | 255) >>> 0 };
                 case 9:
@@ -24184,69 +24186,69 @@ WARNING: This link could potentially be dangerous`)) {
               }
             const s3 = e4.match(/rgba?\(\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})\s*(,\s*(0|1|\d?\.(\d+))\s*)?\)/);
             if (s3)
-              return r = parseInt(s3[1]), n = parseInt(s3[2]), o = parseInt(s3[3]), a = Math.round(255 * (void 0 === s3[5] ? 1 : parseFloat(s3[5]))), _2.toColor(r, n, o, a);
-            if (!t3 || !i4)
+              return r = parseInt(s3[1]), n = parseInt(s3[2]), o = parseInt(s3[3]), a2 = Math.round(255 * (void 0 === s3[5] ? 1 : parseFloat(s3[5]))), _2.toColor(r, n, o, a2);
+            if (!t3 || !i3)
               throw new Error("css.toColor: Unsupported css format");
-            if (t3.fillStyle = i4, t3.fillStyle = e4, "string" != typeof t3.fillStyle)
+            if (t3.fillStyle = i3, t3.fillStyle = e4, "string" != typeof t3.fillStyle)
               throw new Error("css.toColor: Unsupported css format");
-            if (t3.fillRect(0, 0, 1, 1), [r, n, o, a] = t3.getImageData(0, 0, 1, 1).data, 255 !== a)
+            if (t3.fillRect(0, 0, 1, 1), [r, n, o, a2] = t3.getImageData(0, 0, 1, 1).data, 255 !== a2)
               throw new Error("css.toColor: Unsupported css format");
-            return { rgba: h.toRgba(r, n, o, a), css: e4 };
+            return { rgba: h2.toRgba(r, n, o, a2), css: e4 };
           };
-        }(l2 || (t2.css = l2 = {})), function(e3) {
-          function t3(e4, t4, i4) {
-            const s3 = e4 / 255, r2 = t4 / 255, n2 = i4 / 255;
+        }(l || (t2.css = l = {})), function(e3) {
+          function t3(e4, t4, i3) {
+            const s3 = e4 / 255, r2 = t4 / 255, n2 = i3 / 255;
             return 0.2126 * (s3 <= 0.03928 ? s3 / 12.92 : Math.pow((s3 + 0.055) / 1.055, 2.4)) + 0.7152 * (r2 <= 0.03928 ? r2 / 12.92 : Math.pow((r2 + 0.055) / 1.055, 2.4)) + 0.0722 * (n2 <= 0.03928 ? n2 / 12.92 : Math.pow((n2 + 0.055) / 1.055, 2.4));
           }
           e3.relativeLuminance = function(e4) {
             return t3(e4 >> 16 & 255, e4 >> 8 & 255, 255 & e4);
           }, e3.relativeLuminance2 = t3;
         }(d2 || (t2.rgb = d2 = {})), function(e3) {
-          function t3(e4, t4, i5) {
+          function t3(e4, t4, i4) {
             const s3 = e4 >> 24 & 255, r2 = e4 >> 16 & 255, n2 = e4 >> 8 & 255;
-            let o2 = t4 >> 24 & 255, a2 = t4 >> 16 & 255, h2 = t4 >> 8 & 255, c2 = f2(d2.relativeLuminance2(o2, a2, h2), d2.relativeLuminance2(s3, r2, n2));
-            for (; c2 < i5 && (o2 > 0 || a2 > 0 || h2 > 0); )
-              o2 -= Math.max(0, Math.ceil(0.1 * o2)), a2 -= Math.max(0, Math.ceil(0.1 * a2)), h2 -= Math.max(0, Math.ceil(0.1 * h2)), c2 = f2(d2.relativeLuminance2(o2, a2, h2), d2.relativeLuminance2(s3, r2, n2));
-            return (o2 << 24 | a2 << 16 | h2 << 8 | 255) >>> 0;
+            let o2 = t4 >> 24 & 255, a3 = t4 >> 16 & 255, h3 = t4 >> 8 & 255, c4 = f2(d2.relativeLuminance2(o2, a3, h3), d2.relativeLuminance2(s3, r2, n2));
+            for (; c4 < i4 && (o2 > 0 || a3 > 0 || h3 > 0); )
+              o2 -= Math.max(0, Math.ceil(0.1 * o2)), a3 -= Math.max(0, Math.ceil(0.1 * a3)), h3 -= Math.max(0, Math.ceil(0.1 * h3)), c4 = f2(d2.relativeLuminance2(o2, a3, h3), d2.relativeLuminance2(s3, r2, n2));
+            return (o2 << 24 | a3 << 16 | h3 << 8 | 255) >>> 0;
           }
-          function i4(e4, t4, i5) {
+          function i3(e4, t4, i4) {
             const s3 = e4 >> 24 & 255, r2 = e4 >> 16 & 255, n2 = e4 >> 8 & 255;
-            let o2 = t4 >> 24 & 255, a2 = t4 >> 16 & 255, h2 = t4 >> 8 & 255, c2 = f2(d2.relativeLuminance2(o2, a2, h2), d2.relativeLuminance2(s3, r2, n2));
-            for (; c2 < i5 && (o2 < 255 || a2 < 255 || h2 < 255); )
-              o2 = Math.min(255, o2 + Math.ceil(0.1 * (255 - o2))), a2 = Math.min(255, a2 + Math.ceil(0.1 * (255 - a2))), h2 = Math.min(255, h2 + Math.ceil(0.1 * (255 - h2))), c2 = f2(d2.relativeLuminance2(o2, a2, h2), d2.relativeLuminance2(s3, r2, n2));
-            return (o2 << 24 | a2 << 16 | h2 << 8 | 255) >>> 0;
+            let o2 = t4 >> 24 & 255, a3 = t4 >> 16 & 255, h3 = t4 >> 8 & 255, c4 = f2(d2.relativeLuminance2(o2, a3, h3), d2.relativeLuminance2(s3, r2, n2));
+            for (; c4 < i4 && (o2 < 255 || a3 < 255 || h3 < 255); )
+              o2 = Math.min(255, o2 + Math.ceil(0.1 * (255 - o2))), a3 = Math.min(255, a3 + Math.ceil(0.1 * (255 - a3))), h3 = Math.min(255, h3 + Math.ceil(0.1 * (255 - h3))), c4 = f2(d2.relativeLuminance2(o2, a3, h3), d2.relativeLuminance2(s3, r2, n2));
+            return (o2 << 24 | a3 << 16 | h3 << 8 | 255) >>> 0;
           }
           e3.ensureContrastRatio = function(e4, s3, r2) {
             const n2 = d2.relativeLuminance(e4 >> 8), o2 = d2.relativeLuminance(s3 >> 8);
             if (f2(n2, o2) < r2) {
               if (o2 < n2) {
-                const o3 = t3(e4, s3, r2), a3 = f2(n2, d2.relativeLuminance(o3 >> 8));
-                if (a3 < r2) {
-                  const t4 = i4(e4, s3, r2);
-                  return a3 > f2(n2, d2.relativeLuminance(t4 >> 8)) ? o3 : t4;
+                const o3 = t3(e4, s3, r2), a4 = f2(n2, d2.relativeLuminance(o3 >> 8));
+                if (a4 < r2) {
+                  const t4 = i3(e4, s3, r2);
+                  return a4 > f2(n2, d2.relativeLuminance(t4 >> 8)) ? o3 : t4;
                 }
                 return o3;
               }
-              const a2 = i4(e4, s3, r2), h2 = f2(n2, d2.relativeLuminance(a2 >> 8));
-              if (h2 < r2) {
-                const i5 = t3(e4, s3, r2);
-                return h2 > f2(n2, d2.relativeLuminance(i5 >> 8)) ? a2 : i5;
+              const a3 = i3(e4, s3, r2), h3 = f2(n2, d2.relativeLuminance(a3 >> 8));
+              if (h3 < r2) {
+                const i4 = t3(e4, s3, r2);
+                return h3 > f2(n2, d2.relativeLuminance(i4 >> 8)) ? a3 : i4;
               }
-              return a2;
+              return a3;
             }
-          }, e3.reduceLuminance = t3, e3.increaseLuminance = i4, e3.toChannels = function(e4) {
+          }, e3.reduceLuminance = t3, e3.increaseLuminance = i3, e3.toChannels = function(e4) {
             return [e4 >> 24 & 255, e4 >> 16 & 255, e4 >> 8 & 255, 255 & e4];
-          }, e3.toColor = function(e4, t4, i5, s3) {
-            return { css: h.toCss(e4, t4, i5, s3), rgba: h.toRgba(e4, t4, i5, s3) };
+          }, e3.toColor = function(e4, t4, i4, s3) {
+            return { css: h2.toCss(e4, t4, i4, s3), rgba: h2.toRgba(e4, t4, i4, s3) };
           };
         }(_2 || (t2.rgba = _2 = {})), t2.toPaddedHex = u2, t2.contrastRatio = f2;
-      }, 8969: (e2, t2, i3) => {
+      }, 8969: (e2, t2, i2) => {
         Object.defineProperty(t2, "__esModule", { value: true }), t2.CoreTerminal = void 0;
-        const s2 = i3(844), r = i3(2585), n = i3(4348), o = i3(7866), a = i3(744), h = i3(7302), c = i3(6975), l2 = i3(8460), d2 = i3(1753), _2 = i3(1480), u2 = i3(7994), f2 = i3(9282), v = i3(5435), p = i3(5981), g2 = i3(2660);
+        const s2 = i2(844), r = i2(2585), n = i2(4348), o = i2(7866), a2 = i2(744), h2 = i2(7302), c3 = i2(6975), l = i2(8460), d2 = i2(1753), _2 = i2(1480), u2 = i2(7994), f2 = i2(9282), v3 = i2(5435), p2 = i2(5981), g3 = i2(2660);
         let m2 = false;
-        class S extends s2.Disposable {
+        class S2 extends s2.Disposable {
           get onScroll() {
-            return this._onScrollApi || (this._onScrollApi = this.register(new l2.EventEmitter()), this._onScroll.event((e3) => {
+            return this._onScrollApi || (this._onScrollApi = this.register(new l.EventEmitter()), this._onScroll.event((e3) => {
               var t3;
               null === (t3 = this._onScrollApi) || void 0 === t3 || t3.fire(e3.position);
             })), this._onScrollApi.event;
@@ -24268,11 +24270,11 @@ WARNING: This link could potentially be dangerous`)) {
               this.optionsService.options[t3] = e3[t3];
           }
           constructor(e3) {
-            super(), this._windowsWrappingHeuristics = this.register(new s2.MutableDisposable()), this._onBinary = this.register(new l2.EventEmitter()), this.onBinary = this._onBinary.event, this._onData = this.register(new l2.EventEmitter()), this.onData = this._onData.event, this._onLineFeed = this.register(new l2.EventEmitter()), this.onLineFeed = this._onLineFeed.event, this._onResize = this.register(new l2.EventEmitter()), this.onResize = this._onResize.event, this._onWriteParsed = this.register(new l2.EventEmitter()), this.onWriteParsed = this._onWriteParsed.event, this._onScroll = this.register(new l2.EventEmitter()), this._instantiationService = new n.InstantiationService(), this.optionsService = this.register(new h.OptionsService(e3)), this._instantiationService.setService(r.IOptionsService, this.optionsService), this._bufferService = this.register(this._instantiationService.createInstance(a.BufferService)), this._instantiationService.setService(r.IBufferService, this._bufferService), this._logService = this.register(this._instantiationService.createInstance(o.LogService)), this._instantiationService.setService(r.ILogService, this._logService), this.coreService = this.register(this._instantiationService.createInstance(c.CoreService)), this._instantiationService.setService(r.ICoreService, this.coreService), this.coreMouseService = this.register(this._instantiationService.createInstance(d2.CoreMouseService)), this._instantiationService.setService(r.ICoreMouseService, this.coreMouseService), this.unicodeService = this.register(this._instantiationService.createInstance(_2.UnicodeService)), this._instantiationService.setService(r.IUnicodeService, this.unicodeService), this._charsetService = this._instantiationService.createInstance(u2.CharsetService), this._instantiationService.setService(r.ICharsetService, this._charsetService), this._oscLinkService = this._instantiationService.createInstance(g2.OscLinkService), this._instantiationService.setService(r.IOscLinkService, this._oscLinkService), this._inputHandler = this.register(new v.InputHandler(this._bufferService, this._charsetService, this.coreService, this._logService, this.optionsService, this._oscLinkService, this.coreMouseService, this.unicodeService)), this.register((0, l2.forwardEvent)(this._inputHandler.onLineFeed, this._onLineFeed)), this.register(this._inputHandler), this.register((0, l2.forwardEvent)(this._bufferService.onResize, this._onResize)), this.register((0, l2.forwardEvent)(this.coreService.onData, this._onData)), this.register((0, l2.forwardEvent)(this.coreService.onBinary, this._onBinary)), this.register(this.coreService.onRequestScrollToBottom(() => this.scrollToBottom())), this.register(this.coreService.onUserInput(() => this._writeBuffer.handleUserInput())), this.register(this.optionsService.onMultipleOptionChange(["windowsMode", "windowsPty"], () => this._handleWindowsPtyOptionChange())), this.register(this._bufferService.onScroll((e4) => {
+            super(), this._windowsWrappingHeuristics = this.register(new s2.MutableDisposable()), this._onBinary = this.register(new l.EventEmitter()), this.onBinary = this._onBinary.event, this._onData = this.register(new l.EventEmitter()), this.onData = this._onData.event, this._onLineFeed = this.register(new l.EventEmitter()), this.onLineFeed = this._onLineFeed.event, this._onResize = this.register(new l.EventEmitter()), this.onResize = this._onResize.event, this._onWriteParsed = this.register(new l.EventEmitter()), this.onWriteParsed = this._onWriteParsed.event, this._onScroll = this.register(new l.EventEmitter()), this._instantiationService = new n.InstantiationService(), this.optionsService = this.register(new h2.OptionsService(e3)), this._instantiationService.setService(r.IOptionsService, this.optionsService), this._bufferService = this.register(this._instantiationService.createInstance(a2.BufferService)), this._instantiationService.setService(r.IBufferService, this._bufferService), this._logService = this.register(this._instantiationService.createInstance(o.LogService)), this._instantiationService.setService(r.ILogService, this._logService), this.coreService = this.register(this._instantiationService.createInstance(c3.CoreService)), this._instantiationService.setService(r.ICoreService, this.coreService), this.coreMouseService = this.register(this._instantiationService.createInstance(d2.CoreMouseService)), this._instantiationService.setService(r.ICoreMouseService, this.coreMouseService), this.unicodeService = this.register(this._instantiationService.createInstance(_2.UnicodeService)), this._instantiationService.setService(r.IUnicodeService, this.unicodeService), this._charsetService = this._instantiationService.createInstance(u2.CharsetService), this._instantiationService.setService(r.ICharsetService, this._charsetService), this._oscLinkService = this._instantiationService.createInstance(g3.OscLinkService), this._instantiationService.setService(r.IOscLinkService, this._oscLinkService), this._inputHandler = this.register(new v3.InputHandler(this._bufferService, this._charsetService, this.coreService, this._logService, this.optionsService, this._oscLinkService, this.coreMouseService, this.unicodeService)), this.register((0, l.forwardEvent)(this._inputHandler.onLineFeed, this._onLineFeed)), this.register(this._inputHandler), this.register((0, l.forwardEvent)(this._bufferService.onResize, this._onResize)), this.register((0, l.forwardEvent)(this.coreService.onData, this._onData)), this.register((0, l.forwardEvent)(this.coreService.onBinary, this._onBinary)), this.register(this.coreService.onRequestScrollToBottom(() => this.scrollToBottom())), this.register(this.coreService.onUserInput(() => this._writeBuffer.handleUserInput())), this.register(this.optionsService.onMultipleOptionChange(["windowsMode", "windowsPty"], () => this._handleWindowsPtyOptionChange())), this.register(this._bufferService.onScroll((e4) => {
               this._onScroll.fire({ position: this._bufferService.buffer.ydisp, source: 0 }), this._inputHandler.markRangeDirty(this._bufferService.buffer.scrollTop, this._bufferService.buffer.scrollBottom);
             })), this.register(this._inputHandler.onScroll((e4) => {
               this._onScroll.fire({ position: this._bufferService.buffer.ydisp, source: 0 }), this._inputHandler.markRangeDirty(this._bufferService.buffer.scrollTop, this._bufferService.buffer.scrollBottom);
-            })), this._writeBuffer = this.register(new p.WriteBuffer((e4, t3) => this._inputHandler.parse(e4, t3))), this.register((0, l2.forwardEvent)(this._writeBuffer.onWriteParsed, this._onWriteParsed));
+            })), this._writeBuffer = this.register(new p2.WriteBuffer((e4, t3) => this._inputHandler.parse(e4, t3))), this.register((0, l.forwardEvent)(this._writeBuffer.onWriteParsed, this._onWriteParsed));
           }
           write(e3, t3) {
             this._writeBuffer.write(e3, t3);
@@ -24281,13 +24283,13 @@ WARNING: This link could potentially be dangerous`)) {
             this._logService.logLevel <= r.LogLevelEnum.WARN && !m2 && (this._logService.warn("writeSync is unreliable and will be removed soon."), m2 = true), this._writeBuffer.writeSync(e3, t3);
           }
           resize(e3, t3) {
-            isNaN(e3) || isNaN(t3) || (e3 = Math.max(e3, a.MINIMUM_COLS), t3 = Math.max(t3, a.MINIMUM_ROWS), this._bufferService.resize(e3, t3));
+            isNaN(e3) || isNaN(t3) || (e3 = Math.max(e3, a2.MINIMUM_COLS), t3 = Math.max(t3, a2.MINIMUM_ROWS), this._bufferService.resize(e3, t3));
           }
           scroll(e3, t3 = false) {
             this._bufferService.scroll(e3, t3);
           }
-          scrollLines(e3, t3, i4) {
-            this._bufferService.scrollLines(e3, t3, i4);
+          scrollLines(e3, t3, i3) {
+            this._bufferService.scrollLines(e3, t3, i3);
           }
           scrollPages(e3) {
             this.scrollLines(e3 * (this.rows - 1));
@@ -24335,7 +24337,7 @@ WARNING: This link could potentially be dangerous`)) {
             }
           }
         }
-        t2.CoreTerminal = S;
+        t2.CoreTerminal = S2;
       }, 8460: (e2, t2) => {
         Object.defineProperty(t2, "__esModule", { value: true }), t2.forwardEvent = t2.EventEmitter = void 0, t2.EventEmitter = class {
           constructor() {
@@ -24351,11 +24353,11 @@ WARNING: This link could potentially be dangerous`)) {
             } })), this._event;
           }
           fire(e3, t3) {
-            const i3 = [];
+            const i2 = [];
             for (let e4 = 0; e4 < this._listeners.length; e4++)
-              i3.push(this._listeners[e4]);
-            for (let s2 = 0; s2 < i3.length; s2++)
-              i3[s2].call(void 0, e3, t3);
+              i2.push(this._listeners[e4]);
+            for (let s2 = 0; s2 < i2.length; s2++)
+              i2[s2].call(void 0, e3, t3);
           }
           dispose() {
             this.clearListeners(), this._disposed = true;
@@ -24366,22 +24368,22 @@ WARNING: This link could potentially be dangerous`)) {
         }, t2.forwardEvent = function(e3, t3) {
           return e3((e4) => t3.fire(e4));
         };
-      }, 5435: function(e2, t2, i3) {
-        var s2 = this && this.__decorate || function(e3, t3, i4, s3) {
-          var r2, n2 = arguments.length, o2 = n2 < 3 ? t3 : null === s3 ? s3 = Object.getOwnPropertyDescriptor(t3, i4) : s3;
+      }, 5435: function(e2, t2, i2) {
+        var s2 = this && this.__decorate || function(e3, t3, i3, s3) {
+          var r2, n2 = arguments.length, o2 = n2 < 3 ? t3 : null === s3 ? s3 = Object.getOwnPropertyDescriptor(t3, i3) : s3;
           if ("object" == typeof Reflect && "function" == typeof Reflect.decorate)
-            o2 = Reflect.decorate(e3, t3, i4, s3);
+            o2 = Reflect.decorate(e3, t3, i3, s3);
           else
-            for (var a2 = e3.length - 1; a2 >= 0; a2--)
-              (r2 = e3[a2]) && (o2 = (n2 < 3 ? r2(o2) : n2 > 3 ? r2(t3, i4, o2) : r2(t3, i4)) || o2);
-          return n2 > 3 && o2 && Object.defineProperty(t3, i4, o2), o2;
+            for (var a3 = e3.length - 1; a3 >= 0; a3--)
+              (r2 = e3[a3]) && (o2 = (n2 < 3 ? r2(o2) : n2 > 3 ? r2(t3, i3, o2) : r2(t3, i3)) || o2);
+          return n2 > 3 && o2 && Object.defineProperty(t3, i3, o2), o2;
         }, r = this && this.__param || function(e3, t3) {
-          return function(i4, s3) {
-            t3(i4, s3, e3);
+          return function(i3, s3) {
+            t3(i3, s3, e3);
           };
         };
         Object.defineProperty(t2, "__esModule", { value: true }), t2.InputHandler = t2.WindowsOptionsReportType = void 0;
-        const n = i3(2584), o = i3(7116), a = i3(2015), h = i3(844), c = i3(482), l2 = i3(8437), d2 = i3(8460), _2 = i3(643), u2 = i3(511), f2 = i3(3734), v = i3(2585), p = i3(6242), g2 = i3(6351), m2 = i3(5941), S = { "(": 0, ")": 1, "*": 2, "+": 3, "-": 1, ".": 2 }, C2 = 131072;
+        const n = i2(2584), o = i2(7116), a2 = i2(2015), h2 = i2(844), c3 = i2(482), l = i2(8437), d2 = i2(8460), _2 = i2(643), u2 = i2(511), f2 = i2(3734), v3 = i2(2585), p2 = i2(6242), g3 = i2(6351), m2 = i2(5941), S2 = { "(": 0, ")": 1, "*": 2, "+": 3, "-": 1, ".": 2 }, C2 = 131072;
         function b2(e3, t3) {
           if (e3 > 24)
             return t3.setWinLines || false;
@@ -24437,32 +24439,32 @@ WARNING: This link could potentially be dangerous`)) {
         !function(e3) {
           e3[e3.GET_WIN_SIZE_PIXELS = 0] = "GET_WIN_SIZE_PIXELS", e3[e3.GET_CELL_SIZE_PIXELS = 1] = "GET_CELL_SIZE_PIXELS";
         }(y2 || (t2.WindowsOptionsReportType = y2 = {}));
-        let w2 = 0;
-        class E2 extends h.Disposable {
+        let w3 = 0;
+        class E3 extends h2.Disposable {
           getAttrData() {
             return this._curAttrData;
           }
-          constructor(e3, t3, i4, s3, r2, h2, _3, f3, v2 = new a.EscapeSequenceParser()) {
-            super(), this._bufferService = e3, this._charsetService = t3, this._coreService = i4, this._logService = s3, this._optionsService = r2, this._oscLinkService = h2, this._coreMouseService = _3, this._unicodeService = f3, this._parser = v2, this._parseBuffer = new Uint32Array(4096), this._stringDecoder = new c.StringToUtf32(), this._utf8Decoder = new c.Utf8ToUtf32(), this._workCell = new u2.CellData(), this._windowTitle = "", this._iconName = "", this._windowTitleStack = [], this._iconNameStack = [], this._curAttrData = l2.DEFAULT_ATTR_DATA.clone(), this._eraseAttrDataInternal = l2.DEFAULT_ATTR_DATA.clone(), this._onRequestBell = this.register(new d2.EventEmitter()), this.onRequestBell = this._onRequestBell.event, this._onRequestRefreshRows = this.register(new d2.EventEmitter()), this.onRequestRefreshRows = this._onRequestRefreshRows.event, this._onRequestReset = this.register(new d2.EventEmitter()), this.onRequestReset = this._onRequestReset.event, this._onRequestSendFocus = this.register(new d2.EventEmitter()), this.onRequestSendFocus = this._onRequestSendFocus.event, this._onRequestSyncScrollBar = this.register(new d2.EventEmitter()), this.onRequestSyncScrollBar = this._onRequestSyncScrollBar.event, this._onRequestWindowsOptionsReport = this.register(new d2.EventEmitter()), this.onRequestWindowsOptionsReport = this._onRequestWindowsOptionsReport.event, this._onA11yChar = this.register(new d2.EventEmitter()), this.onA11yChar = this._onA11yChar.event, this._onA11yTab = this.register(new d2.EventEmitter()), this.onA11yTab = this._onA11yTab.event, this._onCursorMove = this.register(new d2.EventEmitter()), this.onCursorMove = this._onCursorMove.event, this._onLineFeed = this.register(new d2.EventEmitter()), this.onLineFeed = this._onLineFeed.event, this._onScroll = this.register(new d2.EventEmitter()), this.onScroll = this._onScroll.event, this._onTitleChange = this.register(new d2.EventEmitter()), this.onTitleChange = this._onTitleChange.event, this._onColor = this.register(new d2.EventEmitter()), this.onColor = this._onColor.event, this._parseStack = { paused: false, cursorStartX: 0, cursorStartY: 0, decodedLength: 0, position: 0 }, this._specialColors = [256, 257, 258], this.register(this._parser), this._dirtyRowTracker = new k2(this._bufferService), this._activeBuffer = this._bufferService.buffer, this.register(this._bufferService.buffers.onBufferActivate((e4) => this._activeBuffer = e4.activeBuffer)), this._parser.setCsiHandlerFallback((e4, t4) => {
+          constructor(e3, t3, i3, s3, r2, h3, _3, f3, v4 = new a2.EscapeSequenceParser()) {
+            super(), this._bufferService = e3, this._charsetService = t3, this._coreService = i3, this._logService = s3, this._optionsService = r2, this._oscLinkService = h3, this._coreMouseService = _3, this._unicodeService = f3, this._parser = v4, this._parseBuffer = new Uint32Array(4096), this._stringDecoder = new c3.StringToUtf32(), this._utf8Decoder = new c3.Utf8ToUtf32(), this._workCell = new u2.CellData(), this._windowTitle = "", this._iconName = "", this._windowTitleStack = [], this._iconNameStack = [], this._curAttrData = l.DEFAULT_ATTR_DATA.clone(), this._eraseAttrDataInternal = l.DEFAULT_ATTR_DATA.clone(), this._onRequestBell = this.register(new d2.EventEmitter()), this.onRequestBell = this._onRequestBell.event, this._onRequestRefreshRows = this.register(new d2.EventEmitter()), this.onRequestRefreshRows = this._onRequestRefreshRows.event, this._onRequestReset = this.register(new d2.EventEmitter()), this.onRequestReset = this._onRequestReset.event, this._onRequestSendFocus = this.register(new d2.EventEmitter()), this.onRequestSendFocus = this._onRequestSendFocus.event, this._onRequestSyncScrollBar = this.register(new d2.EventEmitter()), this.onRequestSyncScrollBar = this._onRequestSyncScrollBar.event, this._onRequestWindowsOptionsReport = this.register(new d2.EventEmitter()), this.onRequestWindowsOptionsReport = this._onRequestWindowsOptionsReport.event, this._onA11yChar = this.register(new d2.EventEmitter()), this.onA11yChar = this._onA11yChar.event, this._onA11yTab = this.register(new d2.EventEmitter()), this.onA11yTab = this._onA11yTab.event, this._onCursorMove = this.register(new d2.EventEmitter()), this.onCursorMove = this._onCursorMove.event, this._onLineFeed = this.register(new d2.EventEmitter()), this.onLineFeed = this._onLineFeed.event, this._onScroll = this.register(new d2.EventEmitter()), this.onScroll = this._onScroll.event, this._onTitleChange = this.register(new d2.EventEmitter()), this.onTitleChange = this._onTitleChange.event, this._onColor = this.register(new d2.EventEmitter()), this.onColor = this._onColor.event, this._parseStack = { paused: false, cursorStartX: 0, cursorStartY: 0, decodedLength: 0, position: 0 }, this._specialColors = [256, 257, 258], this.register(this._parser), this._dirtyRowTracker = new k3(this._bufferService), this._activeBuffer = this._bufferService.buffer, this.register(this._bufferService.buffers.onBufferActivate((e4) => this._activeBuffer = e4.activeBuffer)), this._parser.setCsiHandlerFallback((e4, t4) => {
               this._logService.debug("Unknown CSI code: ", { identifier: this._parser.identToString(e4), params: t4.toArray() });
             }), this._parser.setEscHandlerFallback((e4) => {
               this._logService.debug("Unknown ESC code: ", { identifier: this._parser.identToString(e4) });
             }), this._parser.setExecuteHandlerFallback((e4) => {
               this._logService.debug("Unknown EXECUTE code: ", { code: e4 });
-            }), this._parser.setOscHandlerFallback((e4, t4, i5) => {
-              this._logService.debug("Unknown OSC code: ", { identifier: e4, action: t4, data: i5 });
-            }), this._parser.setDcsHandlerFallback((e4, t4, i5) => {
-              "HOOK" === t4 && (i5 = i5.toArray()), this._logService.debug("Unknown DCS code: ", { identifier: this._parser.identToString(e4), action: t4, payload: i5 });
-            }), this._parser.setPrintHandler((e4, t4, i5) => this.print(e4, t4, i5)), this._parser.registerCsiHandler({ final: "@" }, (e4) => this.insertChars(e4)), this._parser.registerCsiHandler({ intermediates: " ", final: "@" }, (e4) => this.scrollLeft(e4)), this._parser.registerCsiHandler({ final: "A" }, (e4) => this.cursorUp(e4)), this._parser.registerCsiHandler({ intermediates: " ", final: "A" }, (e4) => this.scrollRight(e4)), this._parser.registerCsiHandler({ final: "B" }, (e4) => this.cursorDown(e4)), this._parser.registerCsiHandler({ final: "C" }, (e4) => this.cursorForward(e4)), this._parser.registerCsiHandler({ final: "D" }, (e4) => this.cursorBackward(e4)), this._parser.registerCsiHandler({ final: "E" }, (e4) => this.cursorNextLine(e4)), this._parser.registerCsiHandler({ final: "F" }, (e4) => this.cursorPrecedingLine(e4)), this._parser.registerCsiHandler({ final: "G" }, (e4) => this.cursorCharAbsolute(e4)), this._parser.registerCsiHandler({ final: "H" }, (e4) => this.cursorPosition(e4)), this._parser.registerCsiHandler({ final: "I" }, (e4) => this.cursorForwardTab(e4)), this._parser.registerCsiHandler({ final: "J" }, (e4) => this.eraseInDisplay(e4, false)), this._parser.registerCsiHandler({ prefix: "?", final: "J" }, (e4) => this.eraseInDisplay(e4, true)), this._parser.registerCsiHandler({ final: "K" }, (e4) => this.eraseInLine(e4, false)), this._parser.registerCsiHandler({ prefix: "?", final: "K" }, (e4) => this.eraseInLine(e4, true)), this._parser.registerCsiHandler({ final: "L" }, (e4) => this.insertLines(e4)), this._parser.registerCsiHandler({ final: "M" }, (e4) => this.deleteLines(e4)), this._parser.registerCsiHandler({ final: "P" }, (e4) => this.deleteChars(e4)), this._parser.registerCsiHandler({ final: "S" }, (e4) => this.scrollUp(e4)), this._parser.registerCsiHandler({ final: "T" }, (e4) => this.scrollDown(e4)), this._parser.registerCsiHandler({ final: "X" }, (e4) => this.eraseChars(e4)), this._parser.registerCsiHandler({ final: "Z" }, (e4) => this.cursorBackwardTab(e4)), this._parser.registerCsiHandler({ final: "`" }, (e4) => this.charPosAbsolute(e4)), this._parser.registerCsiHandler({ final: "a" }, (e4) => this.hPositionRelative(e4)), this._parser.registerCsiHandler({ final: "b" }, (e4) => this.repeatPrecedingCharacter(e4)), this._parser.registerCsiHandler({ final: "c" }, (e4) => this.sendDeviceAttributesPrimary(e4)), this._parser.registerCsiHandler({ prefix: ">", final: "c" }, (e4) => this.sendDeviceAttributesSecondary(e4)), this._parser.registerCsiHandler({ final: "d" }, (e4) => this.linePosAbsolute(e4)), this._parser.registerCsiHandler({ final: "e" }, (e4) => this.vPositionRelative(e4)), this._parser.registerCsiHandler({ final: "f" }, (e4) => this.hVPosition(e4)), this._parser.registerCsiHandler({ final: "g" }, (e4) => this.tabClear(e4)), this._parser.registerCsiHandler({ final: "h" }, (e4) => this.setMode(e4)), this._parser.registerCsiHandler({ prefix: "?", final: "h" }, (e4) => this.setModePrivate(e4)), this._parser.registerCsiHandler({ final: "l" }, (e4) => this.resetMode(e4)), this._parser.registerCsiHandler({ prefix: "?", final: "l" }, (e4) => this.resetModePrivate(e4)), this._parser.registerCsiHandler({ final: "m" }, (e4) => this.charAttributes(e4)), this._parser.registerCsiHandler({ final: "n" }, (e4) => this.deviceStatus(e4)), this._parser.registerCsiHandler({ prefix: "?", final: "n" }, (e4) => this.deviceStatusPrivate(e4)), this._parser.registerCsiHandler({ intermediates: "!", final: "p" }, (e4) => this.softReset(e4)), this._parser.registerCsiHandler({ intermediates: " ", final: "q" }, (e4) => this.setCursorStyle(e4)), this._parser.registerCsiHandler({ final: "r" }, (e4) => this.setScrollRegion(e4)), this._parser.registerCsiHandler({ final: "s" }, (e4) => this.saveCursor(e4)), this._parser.registerCsiHandler({ final: "t" }, (e4) => this.windowOptions(e4)), this._parser.registerCsiHandler({ final: "u" }, (e4) => this.restoreCursor(e4)), this._parser.registerCsiHandler({ intermediates: "'", final: "}" }, (e4) => this.insertColumns(e4)), this._parser.registerCsiHandler({ intermediates: "'", final: "~" }, (e4) => this.deleteColumns(e4)), this._parser.registerCsiHandler({ intermediates: '"', final: "q" }, (e4) => this.selectProtected(e4)), this._parser.registerCsiHandler({ intermediates: "$", final: "p" }, (e4) => this.requestMode(e4, true)), this._parser.registerCsiHandler({ prefix: "?", intermediates: "$", final: "p" }, (e4) => this.requestMode(e4, false)), this._parser.setExecuteHandler(n.C0.BEL, () => this.bell()), this._parser.setExecuteHandler(n.C0.LF, () => this.lineFeed()), this._parser.setExecuteHandler(n.C0.VT, () => this.lineFeed()), this._parser.setExecuteHandler(n.C0.FF, () => this.lineFeed()), this._parser.setExecuteHandler(n.C0.CR, () => this.carriageReturn()), this._parser.setExecuteHandler(n.C0.BS, () => this.backspace()), this._parser.setExecuteHandler(n.C0.HT, () => this.tab()), this._parser.setExecuteHandler(n.C0.SO, () => this.shiftOut()), this._parser.setExecuteHandler(n.C0.SI, () => this.shiftIn()), this._parser.setExecuteHandler(n.C1.IND, () => this.index()), this._parser.setExecuteHandler(n.C1.NEL, () => this.nextLine()), this._parser.setExecuteHandler(n.C1.HTS, () => this.tabSet()), this._parser.registerOscHandler(0, new p.OscHandler((e4) => (this.setTitle(e4), this.setIconName(e4), true))), this._parser.registerOscHandler(1, new p.OscHandler((e4) => this.setIconName(e4))), this._parser.registerOscHandler(2, new p.OscHandler((e4) => this.setTitle(e4))), this._parser.registerOscHandler(4, new p.OscHandler((e4) => this.setOrReportIndexedColor(e4))), this._parser.registerOscHandler(8, new p.OscHandler((e4) => this.setHyperlink(e4))), this._parser.registerOscHandler(10, new p.OscHandler((e4) => this.setOrReportFgColor(e4))), this._parser.registerOscHandler(11, new p.OscHandler((e4) => this.setOrReportBgColor(e4))), this._parser.registerOscHandler(12, new p.OscHandler((e4) => this.setOrReportCursorColor(e4))), this._parser.registerOscHandler(104, new p.OscHandler((e4) => this.restoreIndexedColor(e4))), this._parser.registerOscHandler(110, new p.OscHandler((e4) => this.restoreFgColor(e4))), this._parser.registerOscHandler(111, new p.OscHandler((e4) => this.restoreBgColor(e4))), this._parser.registerOscHandler(112, new p.OscHandler((e4) => this.restoreCursorColor(e4))), this._parser.registerEscHandler({ final: "7" }, () => this.saveCursor()), this._parser.registerEscHandler({ final: "8" }, () => this.restoreCursor()), this._parser.registerEscHandler({ final: "D" }, () => this.index()), this._parser.registerEscHandler({ final: "E" }, () => this.nextLine()), this._parser.registerEscHandler({ final: "H" }, () => this.tabSet()), this._parser.registerEscHandler({ final: "M" }, () => this.reverseIndex()), this._parser.registerEscHandler({ final: "=" }, () => this.keypadApplicationMode()), this._parser.registerEscHandler({ final: ">" }, () => this.keypadNumericMode()), this._parser.registerEscHandler({ final: "c" }, () => this.fullReset()), this._parser.registerEscHandler({ final: "n" }, () => this.setgLevel(2)), this._parser.registerEscHandler({ final: "o" }, () => this.setgLevel(3)), this._parser.registerEscHandler({ final: "|" }, () => this.setgLevel(3)), this._parser.registerEscHandler({ final: "}" }, () => this.setgLevel(2)), this._parser.registerEscHandler({ final: "~" }, () => this.setgLevel(1)), this._parser.registerEscHandler({ intermediates: "%", final: "@" }, () => this.selectDefaultCharset()), this._parser.registerEscHandler({ intermediates: "%", final: "G" }, () => this.selectDefaultCharset());
+            }), this._parser.setOscHandlerFallback((e4, t4, i4) => {
+              this._logService.debug("Unknown OSC code: ", { identifier: e4, action: t4, data: i4 });
+            }), this._parser.setDcsHandlerFallback((e4, t4, i4) => {
+              "HOOK" === t4 && (i4 = i4.toArray()), this._logService.debug("Unknown DCS code: ", { identifier: this._parser.identToString(e4), action: t4, payload: i4 });
+            }), this._parser.setPrintHandler((e4, t4, i4) => this.print(e4, t4, i4)), this._parser.registerCsiHandler({ final: "@" }, (e4) => this.insertChars(e4)), this._parser.registerCsiHandler({ intermediates: " ", final: "@" }, (e4) => this.scrollLeft(e4)), this._parser.registerCsiHandler({ final: "A" }, (e4) => this.cursorUp(e4)), this._parser.registerCsiHandler({ intermediates: " ", final: "A" }, (e4) => this.scrollRight(e4)), this._parser.registerCsiHandler({ final: "B" }, (e4) => this.cursorDown(e4)), this._parser.registerCsiHandler({ final: "C" }, (e4) => this.cursorForward(e4)), this._parser.registerCsiHandler({ final: "D" }, (e4) => this.cursorBackward(e4)), this._parser.registerCsiHandler({ final: "E" }, (e4) => this.cursorNextLine(e4)), this._parser.registerCsiHandler({ final: "F" }, (e4) => this.cursorPrecedingLine(e4)), this._parser.registerCsiHandler({ final: "G" }, (e4) => this.cursorCharAbsolute(e4)), this._parser.registerCsiHandler({ final: "H" }, (e4) => this.cursorPosition(e4)), this._parser.registerCsiHandler({ final: "I" }, (e4) => this.cursorForwardTab(e4)), this._parser.registerCsiHandler({ final: "J" }, (e4) => this.eraseInDisplay(e4, false)), this._parser.registerCsiHandler({ prefix: "?", final: "J" }, (e4) => this.eraseInDisplay(e4, true)), this._parser.registerCsiHandler({ final: "K" }, (e4) => this.eraseInLine(e4, false)), this._parser.registerCsiHandler({ prefix: "?", final: "K" }, (e4) => this.eraseInLine(e4, true)), this._parser.registerCsiHandler({ final: "L" }, (e4) => this.insertLines(e4)), this._parser.registerCsiHandler({ final: "M" }, (e4) => this.deleteLines(e4)), this._parser.registerCsiHandler({ final: "P" }, (e4) => this.deleteChars(e4)), this._parser.registerCsiHandler({ final: "S" }, (e4) => this.scrollUp(e4)), this._parser.registerCsiHandler({ final: "T" }, (e4) => this.scrollDown(e4)), this._parser.registerCsiHandler({ final: "X" }, (e4) => this.eraseChars(e4)), this._parser.registerCsiHandler({ final: "Z" }, (e4) => this.cursorBackwardTab(e4)), this._parser.registerCsiHandler({ final: "`" }, (e4) => this.charPosAbsolute(e4)), this._parser.registerCsiHandler({ final: "a" }, (e4) => this.hPositionRelative(e4)), this._parser.registerCsiHandler({ final: "b" }, (e4) => this.repeatPrecedingCharacter(e4)), this._parser.registerCsiHandler({ final: "c" }, (e4) => this.sendDeviceAttributesPrimary(e4)), this._parser.registerCsiHandler({ prefix: ">", final: "c" }, (e4) => this.sendDeviceAttributesSecondary(e4)), this._parser.registerCsiHandler({ final: "d" }, (e4) => this.linePosAbsolute(e4)), this._parser.registerCsiHandler({ final: "e" }, (e4) => this.vPositionRelative(e4)), this._parser.registerCsiHandler({ final: "f" }, (e4) => this.hVPosition(e4)), this._parser.registerCsiHandler({ final: "g" }, (e4) => this.tabClear(e4)), this._parser.registerCsiHandler({ final: "h" }, (e4) => this.setMode(e4)), this._parser.registerCsiHandler({ prefix: "?", final: "h" }, (e4) => this.setModePrivate(e4)), this._parser.registerCsiHandler({ final: "l" }, (e4) => this.resetMode(e4)), this._parser.registerCsiHandler({ prefix: "?", final: "l" }, (e4) => this.resetModePrivate(e4)), this._parser.registerCsiHandler({ final: "m" }, (e4) => this.charAttributes(e4)), this._parser.registerCsiHandler({ final: "n" }, (e4) => this.deviceStatus(e4)), this._parser.registerCsiHandler({ prefix: "?", final: "n" }, (e4) => this.deviceStatusPrivate(e4)), this._parser.registerCsiHandler({ intermediates: "!", final: "p" }, (e4) => this.softReset(e4)), this._parser.registerCsiHandler({ intermediates: " ", final: "q" }, (e4) => this.setCursorStyle(e4)), this._parser.registerCsiHandler({ final: "r" }, (e4) => this.setScrollRegion(e4)), this._parser.registerCsiHandler({ final: "s" }, (e4) => this.saveCursor(e4)), this._parser.registerCsiHandler({ final: "t" }, (e4) => this.windowOptions(e4)), this._parser.registerCsiHandler({ final: "u" }, (e4) => this.restoreCursor(e4)), this._parser.registerCsiHandler({ intermediates: "'", final: "}" }, (e4) => this.insertColumns(e4)), this._parser.registerCsiHandler({ intermediates: "'", final: "~" }, (e4) => this.deleteColumns(e4)), this._parser.registerCsiHandler({ intermediates: '"', final: "q" }, (e4) => this.selectProtected(e4)), this._parser.registerCsiHandler({ intermediates: "$", final: "p" }, (e4) => this.requestMode(e4, true)), this._parser.registerCsiHandler({ prefix: "?", intermediates: "$", final: "p" }, (e4) => this.requestMode(e4, false)), this._parser.setExecuteHandler(n.C0.BEL, () => this.bell()), this._parser.setExecuteHandler(n.C0.LF, () => this.lineFeed()), this._parser.setExecuteHandler(n.C0.VT, () => this.lineFeed()), this._parser.setExecuteHandler(n.C0.FF, () => this.lineFeed()), this._parser.setExecuteHandler(n.C0.CR, () => this.carriageReturn()), this._parser.setExecuteHandler(n.C0.BS, () => this.backspace()), this._parser.setExecuteHandler(n.C0.HT, () => this.tab()), this._parser.setExecuteHandler(n.C0.SO, () => this.shiftOut()), this._parser.setExecuteHandler(n.C0.SI, () => this.shiftIn()), this._parser.setExecuteHandler(n.C1.IND, () => this.index()), this._parser.setExecuteHandler(n.C1.NEL, () => this.nextLine()), this._parser.setExecuteHandler(n.C1.HTS, () => this.tabSet()), this._parser.registerOscHandler(0, new p2.OscHandler((e4) => (this.setTitle(e4), this.setIconName(e4), true))), this._parser.registerOscHandler(1, new p2.OscHandler((e4) => this.setIconName(e4))), this._parser.registerOscHandler(2, new p2.OscHandler((e4) => this.setTitle(e4))), this._parser.registerOscHandler(4, new p2.OscHandler((e4) => this.setOrReportIndexedColor(e4))), this._parser.registerOscHandler(8, new p2.OscHandler((e4) => this.setHyperlink(e4))), this._parser.registerOscHandler(10, new p2.OscHandler((e4) => this.setOrReportFgColor(e4))), this._parser.registerOscHandler(11, new p2.OscHandler((e4) => this.setOrReportBgColor(e4))), this._parser.registerOscHandler(12, new p2.OscHandler((e4) => this.setOrReportCursorColor(e4))), this._parser.registerOscHandler(104, new p2.OscHandler((e4) => this.restoreIndexedColor(e4))), this._parser.registerOscHandler(110, new p2.OscHandler((e4) => this.restoreFgColor(e4))), this._parser.registerOscHandler(111, new p2.OscHandler((e4) => this.restoreBgColor(e4))), this._parser.registerOscHandler(112, new p2.OscHandler((e4) => this.restoreCursorColor(e4))), this._parser.registerEscHandler({ final: "7" }, () => this.saveCursor()), this._parser.registerEscHandler({ final: "8" }, () => this.restoreCursor()), this._parser.registerEscHandler({ final: "D" }, () => this.index()), this._parser.registerEscHandler({ final: "E" }, () => this.nextLine()), this._parser.registerEscHandler({ final: "H" }, () => this.tabSet()), this._parser.registerEscHandler({ final: "M" }, () => this.reverseIndex()), this._parser.registerEscHandler({ final: "=" }, () => this.keypadApplicationMode()), this._parser.registerEscHandler({ final: ">" }, () => this.keypadNumericMode()), this._parser.registerEscHandler({ final: "c" }, () => this.fullReset()), this._parser.registerEscHandler({ final: "n" }, () => this.setgLevel(2)), this._parser.registerEscHandler({ final: "o" }, () => this.setgLevel(3)), this._parser.registerEscHandler({ final: "|" }, () => this.setgLevel(3)), this._parser.registerEscHandler({ final: "}" }, () => this.setgLevel(2)), this._parser.registerEscHandler({ final: "~" }, () => this.setgLevel(1)), this._parser.registerEscHandler({ intermediates: "%", final: "@" }, () => this.selectDefaultCharset()), this._parser.registerEscHandler({ intermediates: "%", final: "G" }, () => this.selectDefaultCharset());
             for (const e4 in o.CHARSETS)
               this._parser.registerEscHandler({ intermediates: "(", final: e4 }, () => this.selectCharset("(" + e4)), this._parser.registerEscHandler({ intermediates: ")", final: e4 }, () => this.selectCharset(")" + e4)), this._parser.registerEscHandler({ intermediates: "*", final: e4 }, () => this.selectCharset("*" + e4)), this._parser.registerEscHandler({ intermediates: "+", final: e4 }, () => this.selectCharset("+" + e4)), this._parser.registerEscHandler({ intermediates: "-", final: e4 }, () => this.selectCharset("-" + e4)), this._parser.registerEscHandler({ intermediates: ".", final: e4 }, () => this.selectCharset("." + e4)), this._parser.registerEscHandler({ intermediates: "/", final: e4 }, () => this.selectCharset("/" + e4));
-            this._parser.registerEscHandler({ intermediates: "#", final: "8" }, () => this.screenAlignmentPattern()), this._parser.setErrorHandler((e4) => (this._logService.error("Parsing error: ", e4), e4)), this._parser.registerDcsHandler({ intermediates: "$", final: "q" }, new g2.DcsHandler((e4, t4) => this.requestStatusString(e4, t4)));
+            this._parser.registerEscHandler({ intermediates: "#", final: "8" }, () => this.screenAlignmentPattern()), this._parser.setErrorHandler((e4) => (this._logService.error("Parsing error: ", e4), e4)), this._parser.registerDcsHandler({ intermediates: "$", final: "q" }, new g3.DcsHandler((e4, t4) => this.requestStatusString(e4, t4)));
           }
-          _preserveStack(e3, t3, i4, s3) {
-            this._parseStack.paused = true, this._parseStack.cursorStartX = e3, this._parseStack.cursorStartY = t3, this._parseStack.decodedLength = i4, this._parseStack.position = s3;
+          _preserveStack(e3, t3, i3, s3) {
+            this._parseStack.paused = true, this._parseStack.cursorStartX = e3, this._parseStack.cursorStartY = t3, this._parseStack.decodedLength = i3, this._parseStack.position = s3;
           }
           _logSlowResolvingAsync(e3) {
-            this._logService.logLevel <= v.LogLevelEnum.WARN && Promise.race([e3, new Promise((e4, t3) => setTimeout(() => t3("#SLOW_TIMEOUT"), 5e3))]).catch((e4) => {
+            this._logService.logLevel <= v3.LogLevelEnum.WARN && Promise.race([e3, new Promise((e4, t3) => setTimeout(() => t3("#SLOW_TIMEOUT"), 5e3))]).catch((e4) => {
               if ("#SLOW_TIMEOUT" !== e4)
                 throw e4;
               console.warn("async parser handler taking longer than 5000 ms");
@@ -24472,64 +24474,64 @@ WARNING: This link could potentially be dangerous`)) {
             return this._curAttrData.extended.urlId;
           }
           parse(e3, t3) {
-            let i4, s3 = this._activeBuffer.x, r2 = this._activeBuffer.y, n2 = 0;
+            let i3, s3 = this._activeBuffer.x, r2 = this._activeBuffer.y, n2 = 0;
             const o2 = this._parseStack.paused;
             if (o2) {
-              if (i4 = this._parser.parse(this._parseBuffer, this._parseStack.decodedLength, t3))
-                return this._logSlowResolvingAsync(i4), i4;
+              if (i3 = this._parser.parse(this._parseBuffer, this._parseStack.decodedLength, t3))
+                return this._logSlowResolvingAsync(i3), i3;
               s3 = this._parseStack.cursorStartX, r2 = this._parseStack.cursorStartY, this._parseStack.paused = false, e3.length > C2 && (n2 = this._parseStack.position + C2);
             }
-            if (this._logService.logLevel <= v.LogLevelEnum.DEBUG && this._logService.debug("parsing data" + ("string" == typeof e3 ? ` "${e3}"` : ` "${Array.prototype.map.call(e3, (e4) => String.fromCharCode(e4)).join("")}"`), "string" == typeof e3 ? e3.split("").map((e4) => e4.charCodeAt(0)) : e3), this._parseBuffer.length < e3.length && this._parseBuffer.length < C2 && (this._parseBuffer = new Uint32Array(Math.min(e3.length, C2))), o2 || this._dirtyRowTracker.clearRange(), e3.length > C2)
+            if (this._logService.logLevel <= v3.LogLevelEnum.DEBUG && this._logService.debug("parsing data" + ("string" == typeof e3 ? ` "${e3}"` : ` "${Array.prototype.map.call(e3, (e4) => String.fromCharCode(e4)).join("")}"`), "string" == typeof e3 ? e3.split("").map((e4) => e4.charCodeAt(0)) : e3), this._parseBuffer.length < e3.length && this._parseBuffer.length < C2 && (this._parseBuffer = new Uint32Array(Math.min(e3.length, C2))), o2 || this._dirtyRowTracker.clearRange(), e3.length > C2)
               for (let t4 = n2; t4 < e3.length; t4 += C2) {
                 const n3 = t4 + C2 < e3.length ? t4 + C2 : e3.length, o3 = "string" == typeof e3 ? this._stringDecoder.decode(e3.substring(t4, n3), this._parseBuffer) : this._utf8Decoder.decode(e3.subarray(t4, n3), this._parseBuffer);
-                if (i4 = this._parser.parse(this._parseBuffer, o3))
-                  return this._preserveStack(s3, r2, o3, t4), this._logSlowResolvingAsync(i4), i4;
+                if (i3 = this._parser.parse(this._parseBuffer, o3))
+                  return this._preserveStack(s3, r2, o3, t4), this._logSlowResolvingAsync(i3), i3;
               }
             else if (!o2) {
               const t4 = "string" == typeof e3 ? this._stringDecoder.decode(e3, this._parseBuffer) : this._utf8Decoder.decode(e3, this._parseBuffer);
-              if (i4 = this._parser.parse(this._parseBuffer, t4))
-                return this._preserveStack(s3, r2, t4, 0), this._logSlowResolvingAsync(i4), i4;
+              if (i3 = this._parser.parse(this._parseBuffer, t4))
+                return this._preserveStack(s3, r2, t4, 0), this._logSlowResolvingAsync(i3), i3;
             }
             this._activeBuffer.x === s3 && this._activeBuffer.y === r2 || this._onCursorMove.fire(), this._onRequestRefreshRows.fire(this._dirtyRowTracker.start, this._dirtyRowTracker.end);
           }
-          print(e3, t3, i4) {
+          print(e3, t3, i3) {
             let s3, r2;
-            const n2 = this._charsetService.charset, o2 = this._optionsService.rawOptions.screenReaderMode, a2 = this._bufferService.cols, h2 = this._coreService.decPrivateModes.wraparound, l3 = this._coreService.modes.insertMode, d3 = this._curAttrData;
+            const n2 = this._charsetService.charset, o2 = this._optionsService.rawOptions.screenReaderMode, a3 = this._bufferService.cols, h3 = this._coreService.decPrivateModes.wraparound, l2 = this._coreService.modes.insertMode, d3 = this._curAttrData;
             let u3 = this._activeBuffer.lines.get(this._activeBuffer.ybase + this._activeBuffer.y);
-            this._dirtyRowTracker.markDirty(this._activeBuffer.y), this._activeBuffer.x && i4 - t3 > 0 && 2 === u3.getWidth(this._activeBuffer.x - 1) && u3.setCellFromCodePoint(this._activeBuffer.x - 1, 0, 1, d3.fg, d3.bg, d3.extended);
-            for (let f3 = t3; f3 < i4; ++f3) {
+            this._dirtyRowTracker.markDirty(this._activeBuffer.y), this._activeBuffer.x && i3 - t3 > 0 && 2 === u3.getWidth(this._activeBuffer.x - 1) && u3.setCellFromCodePoint(this._activeBuffer.x - 1, 0, 1, d3.fg, d3.bg, d3.extended);
+            for (let f3 = t3; f3 < i3; ++f3) {
               if (s3 = e3[f3], r2 = this._unicodeService.wcwidth(s3), s3 < 127 && n2) {
                 const e4 = n2[String.fromCharCode(s3)];
                 e4 && (s3 = e4.charCodeAt(0));
               }
-              if (o2 && this._onA11yChar.fire((0, c.stringFromCodePoint)(s3)), this._getCurrentLinkId() && this._oscLinkService.addLineToLink(this._getCurrentLinkId(), this._activeBuffer.ybase + this._activeBuffer.y), r2 || !this._activeBuffer.x) {
-                if (this._activeBuffer.x + r2 - 1 >= a2) {
-                  if (h2) {
-                    for (; this._activeBuffer.x < a2; )
+              if (o2 && this._onA11yChar.fire((0, c3.stringFromCodePoint)(s3)), this._getCurrentLinkId() && this._oscLinkService.addLineToLink(this._getCurrentLinkId(), this._activeBuffer.ybase + this._activeBuffer.y), r2 || !this._activeBuffer.x) {
+                if (this._activeBuffer.x + r2 - 1 >= a3) {
+                  if (h3) {
+                    for (; this._activeBuffer.x < a3; )
                       u3.setCellFromCodePoint(this._activeBuffer.x++, 0, 1, d3.fg, d3.bg, d3.extended);
                     this._activeBuffer.x = 0, this._activeBuffer.y++, this._activeBuffer.y === this._activeBuffer.scrollBottom + 1 ? (this._activeBuffer.y--, this._bufferService.scroll(this._eraseAttrData(), true)) : (this._activeBuffer.y >= this._bufferService.rows && (this._activeBuffer.y = this._bufferService.rows - 1), this._activeBuffer.lines.get(this._activeBuffer.ybase + this._activeBuffer.y).isWrapped = true), u3 = this._activeBuffer.lines.get(this._activeBuffer.ybase + this._activeBuffer.y);
-                  } else if (this._activeBuffer.x = a2 - 1, 2 === r2)
+                  } else if (this._activeBuffer.x = a3 - 1, 2 === r2)
                     continue;
                 }
-                if (l3 && (u3.insertCells(this._activeBuffer.x, r2, this._activeBuffer.getNullCell(d3), d3), 2 === u3.getWidth(a2 - 1) && u3.setCellFromCodePoint(a2 - 1, _2.NULL_CELL_CODE, _2.NULL_CELL_WIDTH, d3.fg, d3.bg, d3.extended)), u3.setCellFromCodePoint(this._activeBuffer.x++, s3, r2, d3.fg, d3.bg, d3.extended), r2 > 0)
+                if (l2 && (u3.insertCells(this._activeBuffer.x, r2, this._activeBuffer.getNullCell(d3), d3), 2 === u3.getWidth(a3 - 1) && u3.setCellFromCodePoint(a3 - 1, _2.NULL_CELL_CODE, _2.NULL_CELL_WIDTH, d3.fg, d3.bg, d3.extended)), u3.setCellFromCodePoint(this._activeBuffer.x++, s3, r2, d3.fg, d3.bg, d3.extended), r2 > 0)
                   for (; --r2; )
                     u3.setCellFromCodePoint(this._activeBuffer.x++, 0, 0, d3.fg, d3.bg, d3.extended);
               } else
                 u3.getWidth(this._activeBuffer.x - 1) ? u3.addCodepointToCell(this._activeBuffer.x - 1, s3) : u3.addCodepointToCell(this._activeBuffer.x - 2, s3);
             }
-            i4 - t3 > 0 && (u3.loadCell(this._activeBuffer.x - 1, this._workCell), 2 === this._workCell.getWidth() || this._workCell.getCode() > 65535 ? this._parser.precedingCodepoint = 0 : this._workCell.isCombined() ? this._parser.precedingCodepoint = this._workCell.getChars().charCodeAt(0) : this._parser.precedingCodepoint = this._workCell.content), this._activeBuffer.x < a2 && i4 - t3 > 0 && 0 === u3.getWidth(this._activeBuffer.x) && !u3.hasContent(this._activeBuffer.x) && u3.setCellFromCodePoint(this._activeBuffer.x, 0, 1, d3.fg, d3.bg, d3.extended), this._dirtyRowTracker.markDirty(this._activeBuffer.y);
+            i3 - t3 > 0 && (u3.loadCell(this._activeBuffer.x - 1, this._workCell), 2 === this._workCell.getWidth() || this._workCell.getCode() > 65535 ? this._parser.precedingCodepoint = 0 : this._workCell.isCombined() ? this._parser.precedingCodepoint = this._workCell.getChars().charCodeAt(0) : this._parser.precedingCodepoint = this._workCell.content), this._activeBuffer.x < a3 && i3 - t3 > 0 && 0 === u3.getWidth(this._activeBuffer.x) && !u3.hasContent(this._activeBuffer.x) && u3.setCellFromCodePoint(this._activeBuffer.x, 0, 1, d3.fg, d3.bg, d3.extended), this._dirtyRowTracker.markDirty(this._activeBuffer.y);
           }
           registerCsiHandler(e3, t3) {
             return "t" !== e3.final || e3.prefix || e3.intermediates ? this._parser.registerCsiHandler(e3, t3) : this._parser.registerCsiHandler(e3, (e4) => !b2(e4.params[0], this._optionsService.rawOptions.windowOptions) || t3(e4));
           }
           registerDcsHandler(e3, t3) {
-            return this._parser.registerDcsHandler(e3, new g2.DcsHandler(t3));
+            return this._parser.registerDcsHandler(e3, new g3.DcsHandler(t3));
           }
           registerEscHandler(e3, t3) {
             return this._parser.registerEscHandler(e3, t3);
           }
           registerOscHandler(e3, t3) {
-            return this._parser.registerOscHandler(e3, new p.OscHandler(t3));
+            return this._parser.registerOscHandler(e3, new p2.OscHandler(t3));
           }
           bell() {
             return this._onRequestBell.fire(), true;
@@ -24639,30 +24641,30 @@ WARNING: This link could potentially be dangerous`)) {
             const t3 = e3.params[0];
             return 1 === t3 && (this._curAttrData.bg |= 536870912), 2 !== t3 && 0 !== t3 || (this._curAttrData.bg &= -536870913), true;
           }
-          _eraseInBufferLine(e3, t3, i4, s3 = false, r2 = false) {
+          _eraseInBufferLine(e3, t3, i3, s3 = false, r2 = false) {
             const n2 = this._activeBuffer.lines.get(this._activeBuffer.ybase + e3);
-            n2.replaceCells(t3, i4, this._activeBuffer.getNullCell(this._eraseAttrData()), this._eraseAttrData(), r2), s3 && (n2.isWrapped = false);
+            n2.replaceCells(t3, i3, this._activeBuffer.getNullCell(this._eraseAttrData()), this._eraseAttrData(), r2), s3 && (n2.isWrapped = false);
           }
           _resetBufferLine(e3, t3 = false) {
-            const i4 = this._activeBuffer.lines.get(this._activeBuffer.ybase + e3);
-            i4 && (i4.fill(this._activeBuffer.getNullCell(this._eraseAttrData()), t3), this._bufferService.buffer.clearMarkers(this._activeBuffer.ybase + e3), i4.isWrapped = false);
+            const i3 = this._activeBuffer.lines.get(this._activeBuffer.ybase + e3);
+            i3 && (i3.fill(this._activeBuffer.getNullCell(this._eraseAttrData()), t3), this._bufferService.buffer.clearMarkers(this._activeBuffer.ybase + e3), i3.isWrapped = false);
           }
           eraseInDisplay(e3, t3 = false) {
-            let i4;
+            let i3;
             switch (this._restrictCursor(this._bufferService.cols), e3.params[0]) {
               case 0:
-                for (i4 = this._activeBuffer.y, this._dirtyRowTracker.markDirty(i4), this._eraseInBufferLine(i4++, this._activeBuffer.x, this._bufferService.cols, 0 === this._activeBuffer.x, t3); i4 < this._bufferService.rows; i4++)
-                  this._resetBufferLine(i4, t3);
-                this._dirtyRowTracker.markDirty(i4);
+                for (i3 = this._activeBuffer.y, this._dirtyRowTracker.markDirty(i3), this._eraseInBufferLine(i3++, this._activeBuffer.x, this._bufferService.cols, 0 === this._activeBuffer.x, t3); i3 < this._bufferService.rows; i3++)
+                  this._resetBufferLine(i3, t3);
+                this._dirtyRowTracker.markDirty(i3);
                 break;
               case 1:
-                for (i4 = this._activeBuffer.y, this._dirtyRowTracker.markDirty(i4), this._eraseInBufferLine(i4, 0, this._activeBuffer.x + 1, true, t3), this._activeBuffer.x + 1 >= this._bufferService.cols && (this._activeBuffer.lines.get(i4 + 1).isWrapped = false); i4--; )
-                  this._resetBufferLine(i4, t3);
+                for (i3 = this._activeBuffer.y, this._dirtyRowTracker.markDirty(i3), this._eraseInBufferLine(i3, 0, this._activeBuffer.x + 1, true, t3), this._activeBuffer.x + 1 >= this._bufferService.cols && (this._activeBuffer.lines.get(i3 + 1).isWrapped = false); i3--; )
+                  this._resetBufferLine(i3, t3);
                 this._dirtyRowTracker.markDirty(0);
                 break;
               case 2:
-                for (i4 = this._bufferService.rows, this._dirtyRowTracker.markDirty(i4 - 1); i4--; )
-                  this._resetBufferLine(i4, t3);
+                for (i3 = this._bufferService.rows, this._dirtyRowTracker.markDirty(i3 - 1); i3--; )
+                  this._resetBufferLine(i3, t3);
                 this._dirtyRowTracker.markDirty(0);
                 break;
               case 3:
@@ -24689,9 +24691,9 @@ WARNING: This link could potentially be dangerous`)) {
             let t3 = e3.params[0] || 1;
             if (this._activeBuffer.y > this._activeBuffer.scrollBottom || this._activeBuffer.y < this._activeBuffer.scrollTop)
               return true;
-            const i4 = this._activeBuffer.ybase + this._activeBuffer.y, s3 = this._bufferService.rows - 1 - this._activeBuffer.scrollBottom, r2 = this._bufferService.rows - 1 + this._activeBuffer.ybase - s3 + 1;
+            const i3 = this._activeBuffer.ybase + this._activeBuffer.y, s3 = this._bufferService.rows - 1 - this._activeBuffer.scrollBottom, r2 = this._bufferService.rows - 1 + this._activeBuffer.ybase - s3 + 1;
             for (; t3--; )
-              this._activeBuffer.lines.splice(r2 - 1, 1), this._activeBuffer.lines.splice(i4, 0, this._activeBuffer.getBlankLine(this._eraseAttrData()));
+              this._activeBuffer.lines.splice(r2 - 1, 1), this._activeBuffer.lines.splice(i3, 0, this._activeBuffer.getBlankLine(this._eraseAttrData()));
             return this._dirtyRowTracker.markRangeDirty(this._activeBuffer.y, this._activeBuffer.scrollBottom), this._activeBuffer.x = 0, true;
           }
           deleteLines(e3) {
@@ -24699,10 +24701,10 @@ WARNING: This link could potentially be dangerous`)) {
             let t3 = e3.params[0] || 1;
             if (this._activeBuffer.y > this._activeBuffer.scrollBottom || this._activeBuffer.y < this._activeBuffer.scrollTop)
               return true;
-            const i4 = this._activeBuffer.ybase + this._activeBuffer.y;
+            const i3 = this._activeBuffer.ybase + this._activeBuffer.y;
             let s3;
             for (s3 = this._bufferService.rows - 1 - this._activeBuffer.scrollBottom, s3 = this._bufferService.rows - 1 + this._activeBuffer.ybase - s3; t3--; )
-              this._activeBuffer.lines.splice(i4, 1), this._activeBuffer.lines.splice(s3, 0, this._activeBuffer.getBlankLine(this._eraseAttrData()));
+              this._activeBuffer.lines.splice(i3, 1), this._activeBuffer.lines.splice(s3, 0, this._activeBuffer.getBlankLine(this._eraseAttrData()));
             return this._dirtyRowTracker.markRangeDirty(this._activeBuffer.y, this._activeBuffer.scrollBottom), this._activeBuffer.x = 0, true;
           }
           insertChars(e3) {
@@ -24724,7 +24726,7 @@ WARNING: This link could potentially be dangerous`)) {
           scrollDown(e3) {
             let t3 = e3.params[0] || 1;
             for (; t3--; )
-              this._activeBuffer.lines.splice(this._activeBuffer.ybase + this._activeBuffer.scrollBottom, 1), this._activeBuffer.lines.splice(this._activeBuffer.ybase + this._activeBuffer.scrollTop, 0, this._activeBuffer.getBlankLine(l2.DEFAULT_ATTR_DATA));
+              this._activeBuffer.lines.splice(this._activeBuffer.ybase + this._activeBuffer.scrollBottom, 1), this._activeBuffer.lines.splice(this._activeBuffer.ybase + this._activeBuffer.scrollTop, 0, this._activeBuffer.getBlankLine(l.DEFAULT_ATTR_DATA));
             return this._dirtyRowTracker.markRangeDirty(this._activeBuffer.scrollTop, this._activeBuffer.scrollBottom), true;
           }
           scrollLeft(e3) {
@@ -24732,8 +24734,8 @@ WARNING: This link could potentially be dangerous`)) {
               return true;
             const t3 = e3.params[0] || 1;
             for (let e4 = this._activeBuffer.scrollTop; e4 <= this._activeBuffer.scrollBottom; ++e4) {
-              const i4 = this._activeBuffer.lines.get(this._activeBuffer.ybase + e4);
-              i4.deleteCells(0, t3, this._activeBuffer.getNullCell(this._eraseAttrData()), this._eraseAttrData()), i4.isWrapped = false;
+              const i3 = this._activeBuffer.lines.get(this._activeBuffer.ybase + e4);
+              i3.deleteCells(0, t3, this._activeBuffer.getNullCell(this._eraseAttrData()), this._eraseAttrData()), i3.isWrapped = false;
             }
             return this._dirtyRowTracker.markRangeDirty(this._activeBuffer.scrollTop, this._activeBuffer.scrollBottom), true;
           }
@@ -24742,8 +24744,8 @@ WARNING: This link could potentially be dangerous`)) {
               return true;
             const t3 = e3.params[0] || 1;
             for (let e4 = this._activeBuffer.scrollTop; e4 <= this._activeBuffer.scrollBottom; ++e4) {
-              const i4 = this._activeBuffer.lines.get(this._activeBuffer.ybase + e4);
-              i4.insertCells(0, t3, this._activeBuffer.getNullCell(this._eraseAttrData()), this._eraseAttrData()), i4.isWrapped = false;
+              const i3 = this._activeBuffer.lines.get(this._activeBuffer.ybase + e4);
+              i3.insertCells(0, t3, this._activeBuffer.getNullCell(this._eraseAttrData()), this._eraseAttrData()), i3.isWrapped = false;
             }
             return this._dirtyRowTracker.markRangeDirty(this._activeBuffer.scrollTop, this._activeBuffer.scrollBottom), true;
           }
@@ -24752,8 +24754,8 @@ WARNING: This link could potentially be dangerous`)) {
               return true;
             const t3 = e3.params[0] || 1;
             for (let e4 = this._activeBuffer.scrollTop; e4 <= this._activeBuffer.scrollBottom; ++e4) {
-              const i4 = this._activeBuffer.lines.get(this._activeBuffer.ybase + e4);
-              i4.insertCells(this._activeBuffer.x, t3, this._activeBuffer.getNullCell(this._eraseAttrData()), this._eraseAttrData()), i4.isWrapped = false;
+              const i3 = this._activeBuffer.lines.get(this._activeBuffer.ybase + e4);
+              i3.insertCells(this._activeBuffer.x, t3, this._activeBuffer.getNullCell(this._eraseAttrData()), this._eraseAttrData()), i3.isWrapped = false;
             }
             return this._dirtyRowTracker.markRangeDirty(this._activeBuffer.scrollTop, this._activeBuffer.scrollBottom), true;
           }
@@ -24762,8 +24764,8 @@ WARNING: This link could potentially be dangerous`)) {
               return true;
             const t3 = e3.params[0] || 1;
             for (let e4 = this._activeBuffer.scrollTop; e4 <= this._activeBuffer.scrollBottom; ++e4) {
-              const i4 = this._activeBuffer.lines.get(this._activeBuffer.ybase + e4);
-              i4.deleteCells(this._activeBuffer.x, t3, this._activeBuffer.getNullCell(this._eraseAttrData()), this._eraseAttrData()), i4.isWrapped = false;
+              const i3 = this._activeBuffer.lines.get(this._activeBuffer.ybase + e4);
+              i3.deleteCells(this._activeBuffer.x, t3, this._activeBuffer.getNullCell(this._eraseAttrData()), this._eraseAttrData()), i3.isWrapped = false;
             }
             return this._dirtyRowTracker.markRangeDirty(this._activeBuffer.scrollTop, this._activeBuffer.scrollBottom), true;
           }
@@ -24775,10 +24777,10 @@ WARNING: This link could potentially be dangerous`)) {
           repeatPrecedingCharacter(e3) {
             if (!this._parser.precedingCodepoint)
               return true;
-            const t3 = e3.params[0] || 1, i4 = new Uint32Array(t3);
+            const t3 = e3.params[0] || 1, i3 = new Uint32Array(t3);
             for (let e4 = 0; e4 < t3; ++e4)
-              i4[e4] = this._parser.precedingCodepoint;
-            return this.print(i4, 0, i4.length), true;
+              i3[e4] = this._parser.precedingCodepoint;
+            return this.print(i3, 0, i3.length), true;
           }
           sendDeviceAttributesPrimary(e3) {
             return e3.params[0] > 0 || (this._is("xterm") || this._is("rxvt-unicode") || this._is("screen") ? this._coreService.triggerDataEvent(n.C0.ESC + "[?1;2c") : this._is("linux") && this._coreService.triggerDataEvent(n.C0.ESC + "[?6c")), true;
@@ -24942,23 +24944,23 @@ WARNING: This link could potentially be dangerous`)) {
             return true;
           }
           requestMode(e3, t3) {
-            const i4 = this._coreService.decPrivateModes, { activeProtocol: s3, activeEncoding: r2 } = this._coreMouseService, o2 = this._coreService, { buffers: a2, cols: h2 } = this._bufferService, { active: c2, alt: l3 } = a2, d3 = this._optionsService.rawOptions, _3 = (e4) => e4 ? 1 : 2, u3 = e3.params[0];
-            return f3 = u3, v2 = t3 ? 2 === u3 ? 4 : 4 === u3 ? _3(o2.modes.insertMode) : 12 === u3 ? 3 : 20 === u3 ? _3(d3.convertEol) : 0 : 1 === u3 ? _3(i4.applicationCursorKeys) : 3 === u3 ? d3.windowOptions.setWinLines ? 80 === h2 ? 2 : 132 === h2 ? 1 : 0 : 0 : 6 === u3 ? _3(i4.origin) : 7 === u3 ? _3(i4.wraparound) : 8 === u3 ? 3 : 9 === u3 ? _3("X10" === s3) : 12 === u3 ? _3(d3.cursorBlink) : 25 === u3 ? _3(!o2.isCursorHidden) : 45 === u3 ? _3(i4.reverseWraparound) : 66 === u3 ? _3(i4.applicationKeypad) : 67 === u3 ? 4 : 1e3 === u3 ? _3("VT200" === s3) : 1002 === u3 ? _3("DRAG" === s3) : 1003 === u3 ? _3("ANY" === s3) : 1004 === u3 ? _3(i4.sendFocus) : 1005 === u3 ? 4 : 1006 === u3 ? _3("SGR" === r2) : 1015 === u3 ? 4 : 1016 === u3 ? _3("SGR_PIXELS" === r2) : 1048 === u3 ? 1 : 47 === u3 || 1047 === u3 || 1049 === u3 ? _3(c2 === l3) : 2004 === u3 ? _3(i4.bracketedPasteMode) : 0, o2.triggerDataEvent(`${n.C0.ESC}[${t3 ? "" : "?"}${f3};${v2}$y`), true;
-            var f3, v2;
+            const i3 = this._coreService.decPrivateModes, { activeProtocol: s3, activeEncoding: r2 } = this._coreMouseService, o2 = this._coreService, { buffers: a3, cols: h3 } = this._bufferService, { active: c4, alt: l2 } = a3, d3 = this._optionsService.rawOptions, _3 = (e4) => e4 ? 1 : 2, u3 = e3.params[0];
+            return f3 = u3, v4 = t3 ? 2 === u3 ? 4 : 4 === u3 ? _3(o2.modes.insertMode) : 12 === u3 ? 3 : 20 === u3 ? _3(d3.convertEol) : 0 : 1 === u3 ? _3(i3.applicationCursorKeys) : 3 === u3 ? d3.windowOptions.setWinLines ? 80 === h3 ? 2 : 132 === h3 ? 1 : 0 : 0 : 6 === u3 ? _3(i3.origin) : 7 === u3 ? _3(i3.wraparound) : 8 === u3 ? 3 : 9 === u3 ? _3("X10" === s3) : 12 === u3 ? _3(d3.cursorBlink) : 25 === u3 ? _3(!o2.isCursorHidden) : 45 === u3 ? _3(i3.reverseWraparound) : 66 === u3 ? _3(i3.applicationKeypad) : 67 === u3 ? 4 : 1e3 === u3 ? _3("VT200" === s3) : 1002 === u3 ? _3("DRAG" === s3) : 1003 === u3 ? _3("ANY" === s3) : 1004 === u3 ? _3(i3.sendFocus) : 1005 === u3 ? 4 : 1006 === u3 ? _3("SGR" === r2) : 1015 === u3 ? 4 : 1016 === u3 ? _3("SGR_PIXELS" === r2) : 1048 === u3 ? 1 : 47 === u3 || 1047 === u3 || 1049 === u3 ? _3(c4 === l2) : 2004 === u3 ? _3(i3.bracketedPasteMode) : 0, o2.triggerDataEvent(`${n.C0.ESC}[${t3 ? "" : "?"}${f3};${v4}$y`), true;
+            var f3, v4;
           }
-          _updateAttrColor(e3, t3, i4, s3, r2) {
-            return 2 === t3 ? (e3 |= 50331648, e3 &= -16777216, e3 |= f2.AttributeData.fromColorRGB([i4, s3, r2])) : 5 === t3 && (e3 &= -50331904, e3 |= 33554432 | 255 & i4), e3;
+          _updateAttrColor(e3, t3, i3, s3, r2) {
+            return 2 === t3 ? (e3 |= 50331648, e3 &= -16777216, e3 |= f2.AttributeData.fromColorRGB([i3, s3, r2])) : 5 === t3 && (e3 &= -50331904, e3 |= 33554432 | 255 & i3), e3;
           }
-          _extractColor(e3, t3, i4) {
+          _extractColor(e3, t3, i3) {
             const s3 = [0, 0, -1, 0, 0, 0];
             let r2 = 0, n2 = 0;
             do {
               if (s3[n2 + r2] = e3.params[t3 + n2], e3.hasSubParams(t3 + n2)) {
-                const i5 = e3.getSubParams(t3 + n2);
+                const i4 = e3.getSubParams(t3 + n2);
                 let o2 = 0;
                 do {
-                  5 === s3[1] && (r2 = 1), s3[n2 + o2 + 1 + r2] = i5[o2];
-                } while (++o2 < i5.length && o2 + n2 + 1 + r2 < s3.length);
+                  5 === s3[1] && (r2 = 1), s3[n2 + o2 + 1 + r2] = i4[o2];
+                } while (++o2 < i4.length && o2 + n2 + 1 + r2 < s3.length);
                 break;
               }
               if (5 === s3[1] && n2 + r2 >= 2 || 2 === s3[1] && n2 + r2 >= 5)
@@ -24969,13 +24971,13 @@ WARNING: This link could potentially be dangerous`)) {
               -1 === s3[e4] && (s3[e4] = 0);
             switch (s3[0]) {
               case 38:
-                i4.fg = this._updateAttrColor(i4.fg, s3[1], s3[3], s3[4], s3[5]);
+                i3.fg = this._updateAttrColor(i3.fg, s3[1], s3[3], s3[4], s3[5]);
                 break;
               case 48:
-                i4.bg = this._updateAttrColor(i4.bg, s3[1], s3[3], s3[4], s3[5]);
+                i3.bg = this._updateAttrColor(i3.bg, s3[1], s3[3], s3[4], s3[5]);
                 break;
               case 58:
-                i4.extended = i4.extended.clone(), i4.extended.underlineColor = this._updateAttrColor(i4.extended.underlineColor, s3[1], s3[3], s3[4], s3[5]);
+                i3.extended = i3.extended.clone(), i3.extended.underlineColor = this._updateAttrColor(i3.extended.underlineColor, s3[1], s3[3], s3[4], s3[5]);
             }
             return n2;
           }
@@ -24983,16 +24985,16 @@ WARNING: This link could potentially be dangerous`)) {
             t3.extended = t3.extended.clone(), (!~e3 || e3 > 5) && (e3 = 1), t3.extended.underlineStyle = e3, t3.fg |= 268435456, 0 === e3 && (t3.fg &= -268435457), t3.updateExtended();
           }
           _processSGR0(e3) {
-            e3.fg = l2.DEFAULT_ATTR_DATA.fg, e3.bg = l2.DEFAULT_ATTR_DATA.bg, e3.extended = e3.extended.clone(), e3.extended.underlineStyle = 0, e3.extended.underlineColor &= -67108864, e3.updateExtended();
+            e3.fg = l.DEFAULT_ATTR_DATA.fg, e3.bg = l.DEFAULT_ATTR_DATA.bg, e3.extended = e3.extended.clone(), e3.extended.underlineStyle = 0, e3.extended.underlineColor &= -67108864, e3.updateExtended();
           }
           charAttributes(e3) {
             if (1 === e3.length && 0 === e3.params[0])
               return this._processSGR0(this._curAttrData), true;
             const t3 = e3.length;
-            let i4;
+            let i3;
             const s3 = this._curAttrData;
             for (let r2 = 0; r2 < t3; r2++)
-              i4 = e3.params[r2], i4 >= 30 && i4 <= 37 ? (s3.fg &= -50331904, s3.fg |= 16777216 | i4 - 30) : i4 >= 40 && i4 <= 47 ? (s3.bg &= -50331904, s3.bg |= 16777216 | i4 - 40) : i4 >= 90 && i4 <= 97 ? (s3.fg &= -50331904, s3.fg |= 16777224 | i4 - 90) : i4 >= 100 && i4 <= 107 ? (s3.bg &= -50331904, s3.bg |= 16777224 | i4 - 100) : 0 === i4 ? this._processSGR0(s3) : 1 === i4 ? s3.fg |= 134217728 : 3 === i4 ? s3.bg |= 67108864 : 4 === i4 ? (s3.fg |= 268435456, this._processUnderline(e3.hasSubParams(r2) ? e3.getSubParams(r2)[0] : 1, s3)) : 5 === i4 ? s3.fg |= 536870912 : 7 === i4 ? s3.fg |= 67108864 : 8 === i4 ? s3.fg |= 1073741824 : 9 === i4 ? s3.fg |= 2147483648 : 2 === i4 ? s3.bg |= 134217728 : 21 === i4 ? this._processUnderline(2, s3) : 22 === i4 ? (s3.fg &= -134217729, s3.bg &= -134217729) : 23 === i4 ? s3.bg &= -67108865 : 24 === i4 ? (s3.fg &= -268435457, this._processUnderline(0, s3)) : 25 === i4 ? s3.fg &= -536870913 : 27 === i4 ? s3.fg &= -67108865 : 28 === i4 ? s3.fg &= -1073741825 : 29 === i4 ? s3.fg &= 2147483647 : 39 === i4 ? (s3.fg &= -67108864, s3.fg |= 16777215 & l2.DEFAULT_ATTR_DATA.fg) : 49 === i4 ? (s3.bg &= -67108864, s3.bg |= 16777215 & l2.DEFAULT_ATTR_DATA.bg) : 38 === i4 || 48 === i4 || 58 === i4 ? r2 += this._extractColor(e3, r2, s3) : 53 === i4 ? s3.bg |= 1073741824 : 55 === i4 ? s3.bg &= -1073741825 : 59 === i4 ? (s3.extended = s3.extended.clone(), s3.extended.underlineColor = -1, s3.updateExtended()) : 100 === i4 ? (s3.fg &= -67108864, s3.fg |= 16777215 & l2.DEFAULT_ATTR_DATA.fg, s3.bg &= -67108864, s3.bg |= 16777215 & l2.DEFAULT_ATTR_DATA.bg) : this._logService.debug("Unknown SGR attribute: %d.", i4);
+              i3 = e3.params[r2], i3 >= 30 && i3 <= 37 ? (s3.fg &= -50331904, s3.fg |= 16777216 | i3 - 30) : i3 >= 40 && i3 <= 47 ? (s3.bg &= -50331904, s3.bg |= 16777216 | i3 - 40) : i3 >= 90 && i3 <= 97 ? (s3.fg &= -50331904, s3.fg |= 16777224 | i3 - 90) : i3 >= 100 && i3 <= 107 ? (s3.bg &= -50331904, s3.bg |= 16777224 | i3 - 100) : 0 === i3 ? this._processSGR0(s3) : 1 === i3 ? s3.fg |= 134217728 : 3 === i3 ? s3.bg |= 67108864 : 4 === i3 ? (s3.fg |= 268435456, this._processUnderline(e3.hasSubParams(r2) ? e3.getSubParams(r2)[0] : 1, s3)) : 5 === i3 ? s3.fg |= 536870912 : 7 === i3 ? s3.fg |= 67108864 : 8 === i3 ? s3.fg |= 1073741824 : 9 === i3 ? s3.fg |= 2147483648 : 2 === i3 ? s3.bg |= 134217728 : 21 === i3 ? this._processUnderline(2, s3) : 22 === i3 ? (s3.fg &= -134217729, s3.bg &= -134217729) : 23 === i3 ? s3.bg &= -67108865 : 24 === i3 ? (s3.fg &= -268435457, this._processUnderline(0, s3)) : 25 === i3 ? s3.fg &= -536870913 : 27 === i3 ? s3.fg &= -67108865 : 28 === i3 ? s3.fg &= -1073741825 : 29 === i3 ? s3.fg &= 2147483647 : 39 === i3 ? (s3.fg &= -67108864, s3.fg |= 16777215 & l.DEFAULT_ATTR_DATA.fg) : 49 === i3 ? (s3.bg &= -67108864, s3.bg |= 16777215 & l.DEFAULT_ATTR_DATA.bg) : 38 === i3 || 48 === i3 || 58 === i3 ? r2 += this._extractColor(e3, r2, s3) : 53 === i3 ? s3.bg |= 1073741824 : 55 === i3 ? s3.bg &= -1073741825 : 59 === i3 ? (s3.extended = s3.extended.clone(), s3.extended.underlineColor = -1, s3.updateExtended()) : 100 === i3 ? (s3.fg &= -67108864, s3.fg |= 16777215 & l.DEFAULT_ATTR_DATA.fg, s3.bg &= -67108864, s3.bg |= 16777215 & l.DEFAULT_ATTR_DATA.bg) : this._logService.debug("Unknown SGR attribute: %d.", i3);
             return true;
           }
           deviceStatus(e3) {
@@ -25014,7 +25016,7 @@ WARNING: This link could potentially be dangerous`)) {
             return true;
           }
           softReset(e3) {
-            return this._coreService.isCursorHidden = false, this._onRequestSyncScrollBar.fire(), this._activeBuffer.scrollTop = 0, this._activeBuffer.scrollBottom = this._bufferService.rows - 1, this._curAttrData = l2.DEFAULT_ATTR_DATA.clone(), this._coreService.reset(), this._charsetService.reset(), this._activeBuffer.savedX = 0, this._activeBuffer.savedY = this._activeBuffer.ybase, this._activeBuffer.savedCurAttrData.fg = this._curAttrData.fg, this._activeBuffer.savedCurAttrData.bg = this._curAttrData.bg, this._activeBuffer.savedCharset = this._charsetService.charset, this._coreService.decPrivateModes.origin = false, true;
+            return this._coreService.isCursorHidden = false, this._onRequestSyncScrollBar.fire(), this._activeBuffer.scrollTop = 0, this._activeBuffer.scrollBottom = this._bufferService.rows - 1, this._curAttrData = l.DEFAULT_ATTR_DATA.clone(), this._coreService.reset(), this._charsetService.reset(), this._activeBuffer.savedX = 0, this._activeBuffer.savedY = this._activeBuffer.ybase, this._activeBuffer.savedCurAttrData.fg = this._curAttrData.fg, this._activeBuffer.savedCurAttrData.bg = this._curAttrData.bg, this._activeBuffer.savedCharset = this._charsetService.charset, this._coreService.decPrivateModes.origin = false, true;
           }
           setCursorStyle(e3) {
             const t3 = e3.params[0] || 1;
@@ -25031,13 +25033,13 @@ WARNING: This link could potentially be dangerous`)) {
               case 6:
                 this._optionsService.options.cursorStyle = "bar";
             }
-            const i4 = t3 % 2 == 1;
-            return this._optionsService.options.cursorBlink = i4, true;
+            const i3 = t3 % 2 == 1;
+            return this._optionsService.options.cursorBlink = i3, true;
           }
           setScrollRegion(e3) {
             const t3 = e3.params[0] || 1;
-            let i4;
-            return (e3.length < 2 || (i4 = e3.params[1]) > this._bufferService.rows || 0 === i4) && (i4 = this._bufferService.rows), i4 > t3 && (this._activeBuffer.scrollTop = t3 - 1, this._activeBuffer.scrollBottom = i4 - 1, this._setCursor(0, 0)), true;
+            let i3;
+            return (e3.length < 2 || (i3 = e3.params[1]) > this._bufferService.rows || 0 === i3) && (i3 = this._bufferService.rows), i3 > t3 && (this._activeBuffer.scrollTop = t3 - 1, this._activeBuffer.scrollBottom = i3 - 1, this._setCursor(0, 0)), true;
           }
           windowOptions(e3) {
             if (!b2(e3.params[0], this._optionsService.rawOptions.windowOptions))
@@ -25074,17 +25076,17 @@ WARNING: This link could potentially be dangerous`)) {
             return this._iconName = e3, true;
           }
           setOrReportIndexedColor(e3) {
-            const t3 = [], i4 = e3.split(";");
-            for (; i4.length > 1; ) {
-              const e4 = i4.shift(), s3 = i4.shift();
+            const t3 = [], i3 = e3.split(";");
+            for (; i3.length > 1; ) {
+              const e4 = i3.shift(), s3 = i3.shift();
               if (/^\d+$/.exec(e4)) {
-                const i5 = parseInt(e4);
-                if (L(i5))
+                const i4 = parseInt(e4);
+                if (L3(i4))
                   if ("?" === s3)
-                    t3.push({ type: 0, index: i5 });
+                    t3.push({ type: 0, index: i4 });
                   else {
                     const e5 = (0, m2.parseColor)(s3);
-                    e5 && t3.push({ type: 1, index: i5, color: e5 });
+                    e5 && t3.push({ type: 1, index: i4, color: e5 });
                   }
               }
             }
@@ -25096,21 +25098,21 @@ WARNING: This link could potentially be dangerous`)) {
           }
           _createHyperlink(e3, t3) {
             this._getCurrentLinkId() && this._finishHyperlink();
-            const i4 = e3.split(":");
+            const i3 = e3.split(":");
             let s3;
-            const r2 = i4.findIndex((e4) => e4.startsWith("id="));
-            return -1 !== r2 && (s3 = i4[r2].slice(3) || void 0), this._curAttrData.extended = this._curAttrData.extended.clone(), this._curAttrData.extended.urlId = this._oscLinkService.registerLink({ id: s3, uri: t3 }), this._curAttrData.updateExtended(), true;
+            const r2 = i3.findIndex((e4) => e4.startsWith("id="));
+            return -1 !== r2 && (s3 = i3[r2].slice(3) || void 0), this._curAttrData.extended = this._curAttrData.extended.clone(), this._curAttrData.extended.urlId = this._oscLinkService.registerLink({ id: s3, uri: t3 }), this._curAttrData.updateExtended(), true;
           }
           _finishHyperlink() {
             return this._curAttrData.extended = this._curAttrData.extended.clone(), this._curAttrData.extended.urlId = 0, this._curAttrData.updateExtended(), true;
           }
           _setOrReportSpecialColor(e3, t3) {
-            const i4 = e3.split(";");
-            for (let e4 = 0; e4 < i4.length && !(t3 >= this._specialColors.length); ++e4, ++t3)
-              if ("?" === i4[e4])
+            const i3 = e3.split(";");
+            for (let e4 = 0; e4 < i3.length && !(t3 >= this._specialColors.length); ++e4, ++t3)
+              if ("?" === i3[e4])
                 this._onColor.fire([{ type: 0, index: this._specialColors[t3] }]);
               else {
-                const s3 = (0, m2.parseColor)(i4[e4]);
+                const s3 = (0, m2.parseColor)(i3[e4]);
                 s3 && this._onColor.fire([{ type: 1, index: this._specialColors[t3], color: s3 }]);
               }
             return true;
@@ -25127,11 +25129,11 @@ WARNING: This link could potentially be dangerous`)) {
           restoreIndexedColor(e3) {
             if (!e3)
               return this._onColor.fire([{ type: 2 }]), true;
-            const t3 = [], i4 = e3.split(";");
-            for (let e4 = 0; e4 < i4.length; ++e4)
-              if (/^\d+$/.exec(i4[e4])) {
-                const s3 = parseInt(i4[e4]);
-                L(s3) && t3.push({ type: 2, index: s3 });
+            const t3 = [], i3 = e3.split(";");
+            for (let e4 = 0; e4 < i3.length; ++e4)
+              if (/^\d+$/.exec(i3[e4])) {
+                const s3 = parseInt(i3[e4]);
+                L3(s3) && t3.push({ type: 2, index: s3 });
               }
             return t3.length && this._onColor.fire(t3), true;
           }
@@ -25157,7 +25159,7 @@ WARNING: This link could potentially be dangerous`)) {
             return this._charsetService.setgLevel(0), this._charsetService.setgCharset(0, o.DEFAULT_CHARSET), true;
           }
           selectCharset(e3) {
-            return 2 !== e3.length ? (this.selectDefaultCharset(), true) : ("/" === e3[0] || this._charsetService.setgCharset(S[e3[0]], o.CHARSETS[e3[1]] || o.DEFAULT_CHARSET), true);
+            return 2 !== e3.length ? (this.selectDefaultCharset(), true) : ("/" === e3[0] || this._charsetService.setgCharset(S2[e3[0]], o.CHARSETS[e3[1]] || o.DEFAULT_CHARSET), true);
           }
           index() {
             return this._restrictCursor(), this._activeBuffer.y++, this._activeBuffer.y === this._activeBuffer.scrollBottom + 1 ? (this._activeBuffer.y--, this._bufferService.scroll(this._eraseAttrData())) : this._activeBuffer.y >= this._bufferService.rows && (this._activeBuffer.y = this._bufferService.rows - 1), this._restrictCursor(), true;
@@ -25177,7 +25179,7 @@ WARNING: This link could potentially be dangerous`)) {
             return this._parser.reset(), this._onRequestReset.fire(), true;
           }
           reset() {
-            this._curAttrData = l2.DEFAULT_ATTR_DATA.clone(), this._eraseAttrDataInternal = l2.DEFAULT_ATTR_DATA.clone();
+            this._curAttrData = l.DEFAULT_ATTR_DATA.clone(), this._eraseAttrDataInternal = l.DEFAULT_ATTR_DATA.clone();
           }
           _eraseAttrData() {
             return this._eraseAttrDataInternal.bg &= -67108864, this._eraseAttrDataInternal.bg |= 67108863 & this._curAttrData.bg, this._eraseAttrDataInternal;
@@ -25189,21 +25191,21 @@ WARNING: This link could potentially be dangerous`)) {
             const e3 = new u2.CellData();
             e3.content = 1 << 22 | "E".charCodeAt(0), e3.fg = this._curAttrData.fg, e3.bg = this._curAttrData.bg, this._setCursor(0, 0);
             for (let t3 = 0; t3 < this._bufferService.rows; ++t3) {
-              const i4 = this._activeBuffer.ybase + this._activeBuffer.y + t3, s3 = this._activeBuffer.lines.get(i4);
+              const i3 = this._activeBuffer.ybase + this._activeBuffer.y + t3, s3 = this._activeBuffer.lines.get(i3);
               s3 && (s3.fill(e3), s3.isWrapped = false);
             }
             return this._dirtyRowTracker.markAllDirty(), this._setCursor(0, 0), true;
           }
           requestStatusString(e3, t3) {
-            const i4 = this._bufferService.buffer, s3 = this._optionsService.rawOptions;
-            return ((e4) => (this._coreService.triggerDataEvent(`${n.C0.ESC}${e4}${n.C0.ESC}\\`), true))('"q' === e3 ? `P1$r${this._curAttrData.isProtected() ? 1 : 0}"q` : '"p' === e3 ? 'P1$r61;1"p' : "r" === e3 ? `P1$r${i4.scrollTop + 1};${i4.scrollBottom + 1}r` : "m" === e3 ? "P1$r0m" : " q" === e3 ? `P1$r${{ block: 2, underline: 4, bar: 6 }[s3.cursorStyle] - (s3.cursorBlink ? 1 : 0)} q` : "P0$r");
+            const i3 = this._bufferService.buffer, s3 = this._optionsService.rawOptions;
+            return ((e4) => (this._coreService.triggerDataEvent(`${n.C0.ESC}${e4}${n.C0.ESC}\\`), true))('"q' === e3 ? `P1$r${this._curAttrData.isProtected() ? 1 : 0}"q` : '"p' === e3 ? 'P1$r61;1"p' : "r" === e3 ? `P1$r${i3.scrollTop + 1};${i3.scrollBottom + 1}r` : "m" === e3 ? "P1$r0m" : " q" === e3 ? `P1$r${{ block: 2, underline: 4, bar: 6 }[s3.cursorStyle] - (s3.cursorBlink ? 1 : 0)} q` : "P0$r");
           }
           markRangeDirty(e3, t3) {
             this._dirtyRowTracker.markRangeDirty(e3, t3);
           }
         }
-        t2.InputHandler = E2;
-        let k2 = class {
+        t2.InputHandler = E3;
+        let k3 = class {
           constructor(e3) {
             this._bufferService = e3, this.clearRange();
           }
@@ -25214,18 +25216,18 @@ WARNING: This link could potentially be dangerous`)) {
             e3 < this.start ? this.start = e3 : e3 > this.end && (this.end = e3);
           }
           markRangeDirty(e3, t3) {
-            e3 > t3 && (w2 = e3, e3 = t3, t3 = w2), e3 < this.start && (this.start = e3), t3 > this.end && (this.end = t3);
+            e3 > t3 && (w3 = e3, e3 = t3, t3 = w3), e3 < this.start && (this.start = e3), t3 > this.end && (this.end = t3);
           }
           markAllDirty() {
             this.markRangeDirty(0, this._bufferService.rows - 1);
           }
         };
-        function L(e3) {
+        function L3(e3) {
           return 0 <= e3 && e3 < 256;
         }
-        k2 = s2([r(0, v.IBufferService)], k2);
+        k3 = s2([r(0, v3.IBufferService)], k3);
       }, 844: (e2, t2) => {
-        function i3(e3) {
+        function i2(e3) {
           for (const t3 of e3)
             t3.dispose();
           e3.length = 0;
@@ -25267,17 +25269,17 @@ WARNING: This link could potentially be dangerous`)) {
           }
         }, t2.toDisposable = function(e3) {
           return { dispose: e3 };
-        }, t2.disposeArray = i3, t2.getDisposeArrayDisposable = function(e3) {
-          return { dispose: () => i3(e3) };
+        }, t2.disposeArray = i2, t2.getDisposeArrayDisposable = function(e3) {
+          return { dispose: () => i2(e3) };
         };
       }, 1505: (e2, t2) => {
         Object.defineProperty(t2, "__esModule", { value: true }), t2.FourKeyMap = t2.TwoKeyMap = void 0;
-        class i3 {
+        class i2 {
           constructor() {
             this._data = {};
           }
-          set(e3, t3, i4) {
-            this._data[e3] || (this._data[e3] = {}), this._data[e3][t3] = i4;
+          set(e3, t3, i3) {
+            this._data[e3] || (this._data[e3] = {}), this._data[e3][t3] = i3;
           }
           get(e3, t3) {
             return this._data[e3] ? this._data[e3][t3] : void 0;
@@ -25286,16 +25288,16 @@ WARNING: This link could potentially be dangerous`)) {
             this._data = {};
           }
         }
-        t2.TwoKeyMap = i3, t2.FourKeyMap = class {
+        t2.TwoKeyMap = i2, t2.FourKeyMap = class {
           constructor() {
-            this._data = new i3();
+            this._data = new i2();
           }
           set(e3, t3, s2, r, n) {
-            this._data.get(e3, t3) || this._data.set(e3, t3, new i3()), this._data.get(e3, t3).set(s2, r, n);
+            this._data.get(e3, t3) || this._data.set(e3, t3, new i2()), this._data.get(e3, t3).set(s2, r, n);
           }
-          get(e3, t3, i4, s2) {
+          get(e3, t3, i3, s2) {
             var r;
-            return null === (r = this._data.get(e3, t3)) || void 0 === r ? void 0 : r.get(i4, s2);
+            return null === (r = this._data.get(e3, t3)) || void 0 === r ? void 0 : r.get(i3, s2);
           }
           clear() {
             this._data.clear();
@@ -25303,16 +25305,16 @@ WARNING: This link could potentially be dangerous`)) {
         };
       }, 6114: (e2, t2) => {
         Object.defineProperty(t2, "__esModule", { value: true }), t2.isChromeOS = t2.isLinux = t2.isWindows = t2.isIphone = t2.isIpad = t2.isMac = t2.getSafariVersion = t2.isSafari = t2.isLegacyEdge = t2.isFirefox = t2.isNode = void 0, t2.isNode = "undefined" == typeof navigator;
-        const i3 = t2.isNode ? "node" : navigator.userAgent, s2 = t2.isNode ? "node" : navigator.platform;
-        t2.isFirefox = i3.includes("Firefox"), t2.isLegacyEdge = i3.includes("Edge"), t2.isSafari = /^((?!chrome|android).)*safari/i.test(i3), t2.getSafariVersion = function() {
+        const i2 = t2.isNode ? "node" : navigator.userAgent, s2 = t2.isNode ? "node" : navigator.platform;
+        t2.isFirefox = i2.includes("Firefox"), t2.isLegacyEdge = i2.includes("Edge"), t2.isSafari = /^((?!chrome|android).)*safari/i.test(i2), t2.getSafariVersion = function() {
           if (!t2.isSafari)
             return 0;
-          const e3 = i3.match(/Version\/(\d+)/);
+          const e3 = i2.match(/Version\/(\d+)/);
           return null === e3 || e3.length < 2 ? 0 : parseInt(e3[1]);
-        }, t2.isMac = ["Macintosh", "MacIntel", "MacPPC", "Mac68K"].includes(s2), t2.isIpad = "iPad" === s2, t2.isIphone = "iPhone" === s2, t2.isWindows = ["Windows", "Win16", "Win32", "WinCE"].includes(s2), t2.isLinux = s2.indexOf("Linux") >= 0, t2.isChromeOS = /\bCrOS\b/.test(i3);
+        }, t2.isMac = ["Macintosh", "MacIntel", "MacPPC", "Mac68K"].includes(s2), t2.isIpad = "iPad" === s2, t2.isIphone = "iPhone" === s2, t2.isWindows = ["Windows", "Win16", "Win32", "WinCE"].includes(s2), t2.isLinux = s2.indexOf("Linux") >= 0, t2.isChromeOS = /\bCrOS\b/.test(i2);
       }, 6106: (e2, t2) => {
         Object.defineProperty(t2, "__esModule", { value: true }), t2.SortedList = void 0;
-        let i3 = 0;
+        let i2 = 0;
         t2.SortedList = class {
           constructor(e3) {
             this._getKey = e3, this._array = [];
@@ -25321,7 +25323,7 @@ WARNING: This link could potentially be dangerous`)) {
             this._array.length = 0;
           }
           insert(e3) {
-            0 !== this._array.length ? (i3 = this._search(this._getKey(e3)), this._array.splice(i3, 0, e3)) : this._array.push(e3);
+            0 !== this._array.length ? (i2 = this._search(this._getKey(e3)), this._array.splice(i2, 0, e3)) : this._array.push(e3);
           }
           delete(e3) {
             if (0 === this._array.length)
@@ -25329,38 +25331,38 @@ WARNING: This link could potentially be dangerous`)) {
             const t3 = this._getKey(e3);
             if (void 0 === t3)
               return false;
-            if (i3 = this._search(t3), -1 === i3)
+            if (i2 = this._search(t3), -1 === i2)
               return false;
-            if (this._getKey(this._array[i3]) !== t3)
+            if (this._getKey(this._array[i2]) !== t3)
               return false;
             do {
-              if (this._array[i3] === e3)
-                return this._array.splice(i3, 1), true;
-            } while (++i3 < this._array.length && this._getKey(this._array[i3]) === t3);
+              if (this._array[i2] === e3)
+                return this._array.splice(i2, 1), true;
+            } while (++i2 < this._array.length && this._getKey(this._array[i2]) === t3);
             return false;
           }
           *getKeyIterator(e3) {
-            if (0 !== this._array.length && (i3 = this._search(e3), !(i3 < 0 || i3 >= this._array.length) && this._getKey(this._array[i3]) === e3))
+            if (0 !== this._array.length && (i2 = this._search(e3), !(i2 < 0 || i2 >= this._array.length) && this._getKey(this._array[i2]) === e3))
               do {
-                yield this._array[i3];
-              } while (++i3 < this._array.length && this._getKey(this._array[i3]) === e3);
+                yield this._array[i2];
+              } while (++i2 < this._array.length && this._getKey(this._array[i2]) === e3);
           }
           forEachByKey(e3, t3) {
-            if (0 !== this._array.length && (i3 = this._search(e3), !(i3 < 0 || i3 >= this._array.length) && this._getKey(this._array[i3]) === e3))
+            if (0 !== this._array.length && (i2 = this._search(e3), !(i2 < 0 || i2 >= this._array.length) && this._getKey(this._array[i2]) === e3))
               do {
-                t3(this._array[i3]);
-              } while (++i3 < this._array.length && this._getKey(this._array[i3]) === e3);
+                t3(this._array[i2]);
+              } while (++i2 < this._array.length && this._getKey(this._array[i2]) === e3);
           }
           values() {
             return [...this._array].values();
           }
           _search(e3) {
-            let t3 = 0, i4 = this._array.length - 1;
-            for (; i4 >= t3; ) {
-              let s2 = t3 + i4 >> 1;
+            let t3 = 0, i3 = this._array.length - 1;
+            for (; i3 >= t3; ) {
+              let s2 = t3 + i3 >> 1;
               const r = this._getKey(this._array[s2]);
               if (r > e3)
-                i4 = s2 - 1;
+                i3 = s2 - 1;
               else {
                 if (!(r < e3)) {
                   for (; s2 > 0 && this._getKey(this._array[s2 - 1]) === e3; )
@@ -25373,9 +25375,9 @@ WARNING: This link could potentially be dangerous`)) {
             return t3;
           }
         };
-      }, 7226: (e2, t2, i3) => {
+      }, 7226: (e2, t2, i2) => {
         Object.defineProperty(t2, "__esModule", { value: true }), t2.DebouncedIdleTask = t2.IdleTaskQueue = t2.PriorityTaskQueue = void 0;
-        const s2 = i3(6114);
+        const s2 = i2(6114);
         class r {
           constructor() {
             this._tasks = [], this._i = 0;
@@ -25396,9 +25398,9 @@ WARNING: This link could potentially be dangerous`)) {
           }
           _process(e3) {
             this._idleCallback = void 0;
-            let t3 = 0, i4 = 0, s3 = e3.timeRemaining(), r2 = 0;
+            let t3 = 0, i3 = 0, s3 = e3.timeRemaining(), r2 = 0;
             for (; this._i < this._tasks.length; ) {
-              if (t3 = Date.now(), this._tasks[this._i]() || this._i++, t3 = Math.max(1, Date.now() - t3), i4 = Math.max(t3, i4), r2 = e3.timeRemaining(), 1.5 * i4 > r2)
+              if (t3 = Date.now(), this._tasks[this._i]() || this._i++, t3 = Math.max(1, Date.now() - t3), i3 = Math.max(t3, i3), r2 = e3.timeRemaining(), 1.5 * i3 > r2)
                 return s3 - t3 < -20 && console.warn(`task queue exceeded allotted deadline by ${Math.abs(Math.round(s3 - t3))}ms`), void this._start();
               s3 = r2;
             }
@@ -25435,16 +25437,16 @@ WARNING: This link could potentially be dangerous`)) {
             this._queue.flush();
           }
         };
-      }, 9282: (e2, t2, i3) => {
+      }, 9282: (e2, t2, i2) => {
         Object.defineProperty(t2, "__esModule", { value: true }), t2.updateWindowsModeWrappedState = void 0;
-        const s2 = i3(643);
+        const s2 = i2(643);
         t2.updateWindowsModeWrappedState = function(e3) {
-          const t3 = e3.buffer.lines.get(e3.buffer.ybase + e3.buffer.y - 1), i4 = null == t3 ? void 0 : t3.get(e3.cols - 1), r = e3.buffer.lines.get(e3.buffer.ybase + e3.buffer.y);
-          r && i4 && (r.isWrapped = i4[s2.CHAR_DATA_CODE_INDEX] !== s2.NULL_CELL_CODE && i4[s2.CHAR_DATA_CODE_INDEX] !== s2.WHITESPACE_CELL_CODE);
+          const t3 = e3.buffer.lines.get(e3.buffer.ybase + e3.buffer.y - 1), i3 = null == t3 ? void 0 : t3.get(e3.cols - 1), r = e3.buffer.lines.get(e3.buffer.ybase + e3.buffer.y);
+          r && i3 && (r.isWrapped = i3[s2.CHAR_DATA_CODE_INDEX] !== s2.NULL_CELL_CODE && i3[s2.CHAR_DATA_CODE_INDEX] !== s2.WHITESPACE_CELL_CODE);
         };
       }, 3734: (e2, t2) => {
         Object.defineProperty(t2, "__esModule", { value: true }), t2.ExtendedAttrs = t2.AttributeData = void 0;
-        class i3 {
+        class i2 {
           constructor() {
             this.fg = 0, this.bg = 0, this.extended = new s2();
           }
@@ -25455,7 +25457,7 @@ WARNING: This link could potentially be dangerous`)) {
             return (255 & e3[0]) << 16 | (255 & e3[1]) << 8 | 255 & e3[2];
           }
           clone() {
-            const e3 = new i3();
+            const e3 = new i2();
             return e3.fg = this.fg, e3.bg = this.bg, e3.extended = this.extended.clone(), e3;
           }
           isInverse() {
@@ -25572,7 +25574,7 @@ WARNING: This link could potentially be dangerous`)) {
             return 268435456 & this.fg ? 268435456 & this.bg ? this.extended.underlineStyle : 1 : 0;
           }
         }
-        t2.AttributeData = i3;
+        t2.AttributeData = i2;
         class s2 {
           get ext() {
             return this._urlId ? -469762049 & this._ext | this.underlineStyle << 26 : this._ext;
@@ -25609,12 +25611,12 @@ WARNING: This link could potentially be dangerous`)) {
           }
         }
         t2.ExtendedAttrs = s2;
-      }, 9092: (e2, t2, i3) => {
+      }, 9092: (e2, t2, i2) => {
         Object.defineProperty(t2, "__esModule", { value: true }), t2.Buffer = t2.MAX_BUFFER_SIZE = void 0;
-        const s2 = i3(6349), r = i3(7226), n = i3(3734), o = i3(8437), a = i3(4634), h = i3(511), c = i3(643), l2 = i3(4863), d2 = i3(7116);
+        const s2 = i2(6349), r = i2(7226), n = i2(3734), o = i2(8437), a2 = i2(4634), h2 = i2(511), c3 = i2(643), l = i2(4863), d2 = i2(7116);
         t2.MAX_BUFFER_SIZE = 4294967295, t2.Buffer = class {
-          constructor(e3, t3, i4) {
-            this._hasScrollback = e3, this._optionsService = t3, this._bufferService = i4, this.ydisp = 0, this.ybase = 0, this.y = 0, this.x = 0, this.tabs = {}, this.savedY = 0, this.savedX = 0, this.savedCurAttrData = o.DEFAULT_ATTR_DATA.clone(), this.savedCharset = d2.DEFAULT_CHARSET, this.markers = [], this._nullCell = h.CellData.fromCharData([0, c.NULL_CELL_CHAR, c.NULL_CELL_WIDTH, c.NULL_CELL_CODE]), this._whitespaceCell = h.CellData.fromCharData([0, c.WHITESPACE_CELL_CHAR, c.WHITESPACE_CELL_WIDTH, c.WHITESPACE_CELL_CODE]), this._isClearing = false, this._memoryCleanupQueue = new r.IdleTaskQueue(), this._memoryCleanupPosition = 0, this._cols = this._bufferService.cols, this._rows = this._bufferService.rows, this.lines = new s2.CircularList(this._getCorrectBufferLength(this._rows)), this.scrollTop = 0, this.scrollBottom = this._rows - 1, this.setupTabStops();
+          constructor(e3, t3, i3) {
+            this._hasScrollback = e3, this._optionsService = t3, this._bufferService = i3, this.ydisp = 0, this.ybase = 0, this.y = 0, this.x = 0, this.tabs = {}, this.savedY = 0, this.savedX = 0, this.savedCurAttrData = o.DEFAULT_ATTR_DATA.clone(), this.savedCharset = d2.DEFAULT_CHARSET, this.markers = [], this._nullCell = h2.CellData.fromCharData([0, c3.NULL_CELL_CHAR, c3.NULL_CELL_WIDTH, c3.NULL_CELL_CODE]), this._whitespaceCell = h2.CellData.fromCharData([0, c3.WHITESPACE_CELL_CHAR, c3.WHITESPACE_CELL_WIDTH, c3.WHITESPACE_CELL_CODE]), this._isClearing = false, this._memoryCleanupQueue = new r.IdleTaskQueue(), this._memoryCleanupPosition = 0, this._cols = this._bufferService.cols, this._rows = this._bufferService.rows, this.lines = new s2.CircularList(this._getCorrectBufferLength(this._rows)), this.scrollTop = 0, this.scrollBottom = this._rows - 1, this.setupTabStops();
           }
           getNullCell(e3) {
             return e3 ? (this._nullCell.fg = e3.fg, this._nullCell.bg = e3.bg, this._nullCell.extended = e3.extended) : (this._nullCell.fg = 0, this._nullCell.bg = 0, this._nullCell.extended = new n.ExtendedAttrs()), this._nullCell;
@@ -25635,8 +25637,8 @@ WARNING: This link could potentially be dangerous`)) {
           _getCorrectBufferLength(e3) {
             if (!this._hasScrollback)
               return e3;
-            const i4 = e3 + this._optionsService.rawOptions.scrollback;
-            return i4 > t2.MAX_BUFFER_SIZE ? t2.MAX_BUFFER_SIZE : i4;
+            const i3 = e3 + this._optionsService.rawOptions.scrollback;
+            return i3 > t2.MAX_BUFFER_SIZE ? t2.MAX_BUFFER_SIZE : i3;
           }
           fillViewportRows(e3) {
             if (0 === this.lines.length) {
@@ -25650,17 +25652,17 @@ WARNING: This link could potentially be dangerous`)) {
             this.ydisp = 0, this.ybase = 0, this.y = 0, this.x = 0, this.lines = new s2.CircularList(this._getCorrectBufferLength(this._rows)), this.scrollTop = 0, this.scrollBottom = this._rows - 1, this.setupTabStops();
           }
           resize(e3, t3) {
-            const i4 = this.getNullCell(o.DEFAULT_ATTR_DATA);
+            const i3 = this.getNullCell(o.DEFAULT_ATTR_DATA);
             let s3 = 0;
             const r2 = this._getCorrectBufferLength(t3);
             if (r2 > this.lines.maxLength && (this.lines.maxLength = r2), this.lines.length > 0) {
               if (this._cols < e3)
                 for (let t4 = 0; t4 < this.lines.length; t4++)
-                  s3 += +this.lines.get(t4).resize(e3, i4);
+                  s3 += +this.lines.get(t4).resize(e3, i3);
               let n2 = 0;
               if (this._rows < t3)
                 for (let s4 = this._rows; s4 < t3; s4++)
-                  this.lines.length < t3 + this.ybase && (this._optionsService.rawOptions.windowsMode || void 0 !== this._optionsService.rawOptions.windowsPty.backend || void 0 !== this._optionsService.rawOptions.windowsPty.buildNumber ? this.lines.push(new o.BufferLine(e3, i4)) : this.ybase > 0 && this.lines.length <= this.ybase + this.y + n2 + 1 ? (this.ybase--, n2++, this.ydisp > 0 && this.ydisp--) : this.lines.push(new o.BufferLine(e3, i4)));
+                  this.lines.length < t3 + this.ybase && (this._optionsService.rawOptions.windowsMode || void 0 !== this._optionsService.rawOptions.windowsPty.backend || void 0 !== this._optionsService.rawOptions.windowsPty.buildNumber ? this.lines.push(new o.BufferLine(e3, i3)) : this.ybase > 0 && this.lines.length <= this.ybase + this.y + n2 + 1 ? (this.ybase--, n2++, this.ydisp > 0 && this.ydisp--) : this.lines.push(new o.BufferLine(e3, i3)));
               else
                 for (let e4 = this._rows; e4 > t3; e4--)
                   this.lines.length > t3 + this.ybase && (this.lines.length > this.ybase + this.y + 1 ? this.lines.pop() : (this.ybase++, this.ydisp++));
@@ -25672,7 +25674,7 @@ WARNING: This link could potentially be dangerous`)) {
             }
             if (this.scrollBottom = t3 - 1, this._isReflowEnabled && (this._reflow(e3, t3), this._cols > e3))
               for (let t4 = 0; t4 < this.lines.length; t4++)
-                s3 += +this.lines.get(t4).resize(e3, i4);
+                s3 += +this.lines.get(t4).resize(e3, i3);
             this._cols = e3, this._rows = t3, this._memoryCleanupQueue.clear(), s3 > 0.1 * this.lines.length && (this._memoryCleanupPosition = 0, this._memoryCleanupQueue.enqueue(() => this._batchedMemoryCleanup()));
           }
           _batchedMemoryCleanup() {
@@ -25692,56 +25694,56 @@ WARNING: This link could potentially be dangerous`)) {
             this._cols !== e3 && (e3 > this._cols ? this._reflowLarger(e3, t3) : this._reflowSmaller(e3, t3));
           }
           _reflowLarger(e3, t3) {
-            const i4 = (0, a.reflowLargerGetLinesToRemove)(this.lines, this._cols, e3, this.ybase + this.y, this.getNullCell(o.DEFAULT_ATTR_DATA));
-            if (i4.length > 0) {
-              const s3 = (0, a.reflowLargerCreateNewLayout)(this.lines, i4);
-              (0, a.reflowLargerApplyNewLayout)(this.lines, s3.layout), this._reflowLargerAdjustViewport(e3, t3, s3.countRemoved);
+            const i3 = (0, a2.reflowLargerGetLinesToRemove)(this.lines, this._cols, e3, this.ybase + this.y, this.getNullCell(o.DEFAULT_ATTR_DATA));
+            if (i3.length > 0) {
+              const s3 = (0, a2.reflowLargerCreateNewLayout)(this.lines, i3);
+              (0, a2.reflowLargerApplyNewLayout)(this.lines, s3.layout), this._reflowLargerAdjustViewport(e3, t3, s3.countRemoved);
             }
           }
-          _reflowLargerAdjustViewport(e3, t3, i4) {
+          _reflowLargerAdjustViewport(e3, t3, i3) {
             const s3 = this.getNullCell(o.DEFAULT_ATTR_DATA);
-            let r2 = i4;
+            let r2 = i3;
             for (; r2-- > 0; )
               0 === this.ybase ? (this.y > 0 && this.y--, this.lines.length < t3 && this.lines.push(new o.BufferLine(e3, s3))) : (this.ydisp === this.ybase && this.ydisp--, this.ybase--);
-            this.savedY = Math.max(this.savedY - i4, 0);
+            this.savedY = Math.max(this.savedY - i3, 0);
           }
           _reflowSmaller(e3, t3) {
-            const i4 = this.getNullCell(o.DEFAULT_ATTR_DATA), s3 = [];
+            const i3 = this.getNullCell(o.DEFAULT_ATTR_DATA), s3 = [];
             let r2 = 0;
             for (let n2 = this.lines.length - 1; n2 >= 0; n2--) {
-              let h2 = this.lines.get(n2);
-              if (!h2 || !h2.isWrapped && h2.getTrimmedLength() <= e3)
+              let h3 = this.lines.get(n2);
+              if (!h3 || !h3.isWrapped && h3.getTrimmedLength() <= e3)
                 continue;
-              const c2 = [h2];
-              for (; h2.isWrapped && n2 > 0; )
-                h2 = this.lines.get(--n2), c2.unshift(h2);
-              const l3 = this.ybase + this.y;
-              if (l3 >= n2 && l3 < n2 + c2.length)
+              const c4 = [h3];
+              for (; h3.isWrapped && n2 > 0; )
+                h3 = this.lines.get(--n2), c4.unshift(h3);
+              const l2 = this.ybase + this.y;
+              if (l2 >= n2 && l2 < n2 + c4.length)
                 continue;
-              const d3 = c2[c2.length - 1].getTrimmedLength(), _2 = (0, a.reflowSmallerGetNewLineLengths)(c2, this._cols, e3), u2 = _2.length - c2.length;
+              const d3 = c4[c4.length - 1].getTrimmedLength(), _2 = (0, a2.reflowSmallerGetNewLineLengths)(c4, this._cols, e3), u2 = _2.length - c4.length;
               let f2;
               f2 = 0 === this.ybase && this.y !== this.lines.length - 1 ? Math.max(0, this.y - this.lines.maxLength + u2) : Math.max(0, this.lines.length - this.lines.maxLength + u2);
-              const v = [];
+              const v3 = [];
               for (let e4 = 0; e4 < u2; e4++) {
                 const e5 = this.getBlankLine(o.DEFAULT_ATTR_DATA, true);
-                v.push(e5);
+                v3.push(e5);
               }
-              v.length > 0 && (s3.push({ start: n2 + c2.length + r2, newLines: v }), r2 += v.length), c2.push(...v);
-              let p = _2.length - 1, g2 = _2[p];
-              0 === g2 && (p--, g2 = _2[p]);
-              let m2 = c2.length - u2 - 1, S = d3;
+              v3.length > 0 && (s3.push({ start: n2 + c4.length + r2, newLines: v3 }), r2 += v3.length), c4.push(...v3);
+              let p2 = _2.length - 1, g3 = _2[p2];
+              0 === g3 && (p2--, g3 = _2[p2]);
+              let m2 = c4.length - u2 - 1, S2 = d3;
               for (; m2 >= 0; ) {
-                const e4 = Math.min(S, g2);
-                if (void 0 === c2[p])
+                const e4 = Math.min(S2, g3);
+                if (void 0 === c4[p2])
                   break;
-                if (c2[p].copyCellsFrom(c2[m2], S - e4, g2 - e4, e4, true), g2 -= e4, 0 === g2 && (p--, g2 = _2[p]), S -= e4, 0 === S) {
+                if (c4[p2].copyCellsFrom(c4[m2], S2 - e4, g3 - e4, e4, true), g3 -= e4, 0 === g3 && (p2--, g3 = _2[p2]), S2 -= e4, 0 === S2) {
                   m2--;
                   const e5 = Math.max(m2, 0);
-                  S = (0, a.getWrappedLineTrimmedLength)(c2, e5, this._cols);
+                  S2 = (0, a2.getWrappedLineTrimmedLength)(c4, e5, this._cols);
                 }
               }
-              for (let t4 = 0; t4 < c2.length; t4++)
-                _2[t4] < e3 && c2[t4].setCell(_2[t4], i4);
+              for (let t4 = 0; t4 < c4.length; t4++)
+                _2[t4] < e3 && c4[t4].setCell(_2[t4], i3);
               let C2 = u2 - f2;
               for (; C2-- > 0; )
                 0 === this.ybase ? this.y < t3 - 1 ? (this.y++, this.lines.pop()) : (this.ybase++, this.ydisp++) : this.ybase < Math.min(this.lines.maxLength, this.lines.length + r2) - t3 && (this.ybase === this.ydisp && this.ydisp++, this.ybase++);
@@ -25751,35 +25753,35 @@ WARNING: This link could potentially be dangerous`)) {
               const e4 = [], t4 = [];
               for (let e5 = 0; e5 < this.lines.length; e5++)
                 t4.push(this.lines.get(e5));
-              const i5 = this.lines.length;
-              let n2 = i5 - 1, o2 = 0, a2 = s3[o2];
+              const i4 = this.lines.length;
+              let n2 = i4 - 1, o2 = 0, a3 = s3[o2];
               this.lines.length = Math.min(this.lines.maxLength, this.lines.length + r2);
-              let h2 = 0;
-              for (let c3 = Math.min(this.lines.maxLength - 1, i5 + r2 - 1); c3 >= 0; c3--)
-                if (a2 && a2.start > n2 + h2) {
-                  for (let e5 = a2.newLines.length - 1; e5 >= 0; e5--)
-                    this.lines.set(c3--, a2.newLines[e5]);
-                  c3++, e4.push({ index: n2 + 1, amount: a2.newLines.length }), h2 += a2.newLines.length, a2 = s3[++o2];
+              let h3 = 0;
+              for (let c5 = Math.min(this.lines.maxLength - 1, i4 + r2 - 1); c5 >= 0; c5--)
+                if (a3 && a3.start > n2 + h3) {
+                  for (let e5 = a3.newLines.length - 1; e5 >= 0; e5--)
+                    this.lines.set(c5--, a3.newLines[e5]);
+                  c5++, e4.push({ index: n2 + 1, amount: a3.newLines.length }), h3 += a3.newLines.length, a3 = s3[++o2];
                 } else
-                  this.lines.set(c3, t4[n2--]);
-              let c2 = 0;
+                  this.lines.set(c5, t4[n2--]);
+              let c4 = 0;
               for (let t5 = e4.length - 1; t5 >= 0; t5--)
-                e4[t5].index += c2, this.lines.onInsertEmitter.fire(e4[t5]), c2 += e4[t5].amount;
-              const l3 = Math.max(0, i5 + r2 - this.lines.maxLength);
-              l3 > 0 && this.lines.onTrimEmitter.fire(l3);
+                e4[t5].index += c4, this.lines.onInsertEmitter.fire(e4[t5]), c4 += e4[t5].amount;
+              const l2 = Math.max(0, i4 + r2 - this.lines.maxLength);
+              l2 > 0 && this.lines.onTrimEmitter.fire(l2);
             }
           }
-          translateBufferLineToString(e3, t3, i4 = 0, s3) {
+          translateBufferLineToString(e3, t3, i3 = 0, s3) {
             const r2 = this.lines.get(e3);
-            return r2 ? r2.translateToString(t3, i4, s3) : "";
+            return r2 ? r2.translateToString(t3, i3, s3) : "";
           }
           getWrappedRangeForLine(e3) {
-            let t3 = e3, i4 = e3;
+            let t3 = e3, i3 = e3;
             for (; t3 > 0 && this.lines.get(t3).isWrapped; )
               t3--;
-            for (; i4 + 1 < this.lines.length && this.lines.get(i4 + 1).isWrapped; )
-              i4++;
-            return { first: t3, last: i4 };
+            for (; i3 + 1 < this.lines.length && this.lines.get(i3 + 1).isWrapped; )
+              i3++;
+            return { first: t3, last: i3 };
           }
           setupTabStops(e3) {
             for (null != e3 ? this.tabs[e3] || (e3 = this.prevStop(e3)) : (this.tabs = {}, e3 = 0); e3 < this._cols; e3 += this._optionsService.rawOptions.tabStopWidth)
@@ -25808,7 +25810,7 @@ WARNING: This link could potentially be dangerous`)) {
             this._isClearing = false;
           }
           addMarker(e3) {
-            const t3 = new l2.Marker(e3);
+            const t3 = new l.Marker(e3);
             return this.markers.push(t3), t3.register(this.lines.onTrim((e4) => {
               t3.line -= e4, t3.line < 0 && t3.dispose();
             })), t3.register(this.lines.onInsert((e4) => {
@@ -25821,22 +25823,22 @@ WARNING: This link could potentially be dangerous`)) {
             this._isClearing || this.markers.splice(this.markers.indexOf(e3), 1);
           }
         };
-      }, 8437: (e2, t2, i3) => {
+      }, 8437: (e2, t2, i2) => {
         Object.defineProperty(t2, "__esModule", { value: true }), t2.BufferLine = t2.DEFAULT_ATTR_DATA = void 0;
-        const s2 = i3(3734), r = i3(511), n = i3(643), o = i3(482);
+        const s2 = i2(3734), r = i2(511), n = i2(643), o = i2(482);
         t2.DEFAULT_ATTR_DATA = Object.freeze(new s2.AttributeData());
-        let a = 0;
-        class h {
-          constructor(e3, t3, i4 = false) {
-            this.isWrapped = i4, this._combined = {}, this._extendedAttrs = {}, this._data = new Uint32Array(3 * e3);
+        let a2 = 0;
+        class h2 {
+          constructor(e3, t3, i3 = false) {
+            this.isWrapped = i3, this._combined = {}, this._extendedAttrs = {}, this._data = new Uint32Array(3 * e3);
             const s3 = t3 || r.CellData.fromCharData([0, n.NULL_CELL_CHAR, n.NULL_CELL_WIDTH, n.NULL_CELL_CODE]);
             for (let t4 = 0; t4 < e3; ++t4)
               this.setCell(t4, s3);
             this.length = e3;
           }
           get(e3) {
-            const t3 = this._data[3 * e3 + 0], i4 = 2097151 & t3;
-            return [this._data[3 * e3 + 1], 2097152 & t3 ? this._combined[e3] : i4 ? (0, o.stringFromCodePoint)(i4) : "", t3 >> 22, 2097152 & t3 ? this._combined[e3].charCodeAt(this._combined[e3].length - 1) : i4];
+            const t3 = this._data[3 * e3 + 0], i3 = 2097151 & t3;
+            return [this._data[3 * e3 + 1], 2097152 & t3 ? this._combined[e3] : i3 ? (0, o.stringFromCodePoint)(i3) : "", t3 >> 22, 2097152 & t3 ? this._combined[e3].charCodeAt(this._combined[e3].length - 1) : i3];
           }
           set(e3, t3) {
             this._data[3 * e3 + 1] = t3[n.CHAR_DATA_ATTR_INDEX], t3[n.CHAR_DATA_CHAR_INDEX].length > 1 ? (this._combined[e3] = t3[1], this._data[3 * e3 + 0] = 2097152 | e3 | t3[n.CHAR_DATA_WIDTH_INDEX] << 22) : this._data[3 * e3 + 0] = t3[n.CHAR_DATA_CHAR_INDEX].charCodeAt(0) | t3[n.CHAR_DATA_WIDTH_INDEX] << 22;
@@ -25871,77 +25873,77 @@ WARNING: This link could potentially be dangerous`)) {
             return 536870912 & this._data[3 * e3 + 2];
           }
           loadCell(e3, t3) {
-            return a = 3 * e3, t3.content = this._data[a + 0], t3.fg = this._data[a + 1], t3.bg = this._data[a + 2], 2097152 & t3.content && (t3.combinedData = this._combined[e3]), 268435456 & t3.bg && (t3.extended = this._extendedAttrs[e3]), t3;
+            return a2 = 3 * e3, t3.content = this._data[a2 + 0], t3.fg = this._data[a2 + 1], t3.bg = this._data[a2 + 2], 2097152 & t3.content && (t3.combinedData = this._combined[e3]), 268435456 & t3.bg && (t3.extended = this._extendedAttrs[e3]), t3;
           }
           setCell(e3, t3) {
             2097152 & t3.content && (this._combined[e3] = t3.combinedData), 268435456 & t3.bg && (this._extendedAttrs[e3] = t3.extended), this._data[3 * e3 + 0] = t3.content, this._data[3 * e3 + 1] = t3.fg, this._data[3 * e3 + 2] = t3.bg;
           }
-          setCellFromCodePoint(e3, t3, i4, s3, r2, n2) {
-            268435456 & r2 && (this._extendedAttrs[e3] = n2), this._data[3 * e3 + 0] = t3 | i4 << 22, this._data[3 * e3 + 1] = s3, this._data[3 * e3 + 2] = r2;
+          setCellFromCodePoint(e3, t3, i3, s3, r2, n2) {
+            268435456 & r2 && (this._extendedAttrs[e3] = n2), this._data[3 * e3 + 0] = t3 | i3 << 22, this._data[3 * e3 + 1] = s3, this._data[3 * e3 + 2] = r2;
           }
           addCodepointToCell(e3, t3) {
-            let i4 = this._data[3 * e3 + 0];
-            2097152 & i4 ? this._combined[e3] += (0, o.stringFromCodePoint)(t3) : (2097151 & i4 ? (this._combined[e3] = (0, o.stringFromCodePoint)(2097151 & i4) + (0, o.stringFromCodePoint)(t3), i4 &= -2097152, i4 |= 2097152) : i4 = t3 | 1 << 22, this._data[3 * e3 + 0] = i4);
+            let i3 = this._data[3 * e3 + 0];
+            2097152 & i3 ? this._combined[e3] += (0, o.stringFromCodePoint)(t3) : (2097151 & i3 ? (this._combined[e3] = (0, o.stringFromCodePoint)(2097151 & i3) + (0, o.stringFromCodePoint)(t3), i3 &= -2097152, i3 |= 2097152) : i3 = t3 | 1 << 22, this._data[3 * e3 + 0] = i3);
           }
-          insertCells(e3, t3, i4, n2) {
+          insertCells(e3, t3, i3, n2) {
             if ((e3 %= this.length) && 2 === this.getWidth(e3 - 1) && this.setCellFromCodePoint(e3 - 1, 0, 1, (null == n2 ? void 0 : n2.fg) || 0, (null == n2 ? void 0 : n2.bg) || 0, (null == n2 ? void 0 : n2.extended) || new s2.ExtendedAttrs()), t3 < this.length - e3) {
               const s3 = new r.CellData();
-              for (let i5 = this.length - e3 - t3 - 1; i5 >= 0; --i5)
-                this.setCell(e3 + t3 + i5, this.loadCell(e3 + i5, s3));
+              for (let i4 = this.length - e3 - t3 - 1; i4 >= 0; --i4)
+                this.setCell(e3 + t3 + i4, this.loadCell(e3 + i4, s3));
               for (let s4 = 0; s4 < t3; ++s4)
-                this.setCell(e3 + s4, i4);
+                this.setCell(e3 + s4, i3);
             } else
               for (let t4 = e3; t4 < this.length; ++t4)
-                this.setCell(t4, i4);
+                this.setCell(t4, i3);
             2 === this.getWidth(this.length - 1) && this.setCellFromCodePoint(this.length - 1, 0, 1, (null == n2 ? void 0 : n2.fg) || 0, (null == n2 ? void 0 : n2.bg) || 0, (null == n2 ? void 0 : n2.extended) || new s2.ExtendedAttrs());
           }
-          deleteCells(e3, t3, i4, n2) {
+          deleteCells(e3, t3, i3, n2) {
             if (e3 %= this.length, t3 < this.length - e3) {
               const s3 = new r.CellData();
-              for (let i5 = 0; i5 < this.length - e3 - t3; ++i5)
-                this.setCell(e3 + i5, this.loadCell(e3 + t3 + i5, s3));
+              for (let i4 = 0; i4 < this.length - e3 - t3; ++i4)
+                this.setCell(e3 + i4, this.loadCell(e3 + t3 + i4, s3));
               for (let e4 = this.length - t3; e4 < this.length; ++e4)
-                this.setCell(e4, i4);
+                this.setCell(e4, i3);
             } else
               for (let t4 = e3; t4 < this.length; ++t4)
-                this.setCell(t4, i4);
+                this.setCell(t4, i3);
             e3 && 2 === this.getWidth(e3 - 1) && this.setCellFromCodePoint(e3 - 1, 0, 1, (null == n2 ? void 0 : n2.fg) || 0, (null == n2 ? void 0 : n2.bg) || 0, (null == n2 ? void 0 : n2.extended) || new s2.ExtendedAttrs()), 0 !== this.getWidth(e3) || this.hasContent(e3) || this.setCellFromCodePoint(e3, 0, 1, (null == n2 ? void 0 : n2.fg) || 0, (null == n2 ? void 0 : n2.bg) || 0, (null == n2 ? void 0 : n2.extended) || new s2.ExtendedAttrs());
           }
-          replaceCells(e3, t3, i4, r2, n2 = false) {
+          replaceCells(e3, t3, i3, r2, n2 = false) {
             if (n2)
               for (e3 && 2 === this.getWidth(e3 - 1) && !this.isProtected(e3 - 1) && this.setCellFromCodePoint(e3 - 1, 0, 1, (null == r2 ? void 0 : r2.fg) || 0, (null == r2 ? void 0 : r2.bg) || 0, (null == r2 ? void 0 : r2.extended) || new s2.ExtendedAttrs()), t3 < this.length && 2 === this.getWidth(t3 - 1) && !this.isProtected(t3) && this.setCellFromCodePoint(t3, 0, 1, (null == r2 ? void 0 : r2.fg) || 0, (null == r2 ? void 0 : r2.bg) || 0, (null == r2 ? void 0 : r2.extended) || new s2.ExtendedAttrs()); e3 < t3 && e3 < this.length; )
-                this.isProtected(e3) || this.setCell(e3, i4), e3++;
+                this.isProtected(e3) || this.setCell(e3, i3), e3++;
             else
               for (e3 && 2 === this.getWidth(e3 - 1) && this.setCellFromCodePoint(e3 - 1, 0, 1, (null == r2 ? void 0 : r2.fg) || 0, (null == r2 ? void 0 : r2.bg) || 0, (null == r2 ? void 0 : r2.extended) || new s2.ExtendedAttrs()), t3 < this.length && 2 === this.getWidth(t3 - 1) && this.setCellFromCodePoint(t3, 0, 1, (null == r2 ? void 0 : r2.fg) || 0, (null == r2 ? void 0 : r2.bg) || 0, (null == r2 ? void 0 : r2.extended) || new s2.ExtendedAttrs()); e3 < t3 && e3 < this.length; )
-                this.setCell(e3++, i4);
+                this.setCell(e3++, i3);
           }
           resize(e3, t3) {
             if (e3 === this.length)
               return 4 * this._data.length * 2 < this._data.buffer.byteLength;
-            const i4 = 3 * e3;
+            const i3 = 3 * e3;
             if (e3 > this.length) {
-              if (this._data.buffer.byteLength >= 4 * i4)
-                this._data = new Uint32Array(this._data.buffer, 0, i4);
+              if (this._data.buffer.byteLength >= 4 * i3)
+                this._data = new Uint32Array(this._data.buffer, 0, i3);
               else {
-                const e4 = new Uint32Array(i4);
+                const e4 = new Uint32Array(i3);
                 e4.set(this._data), this._data = e4;
               }
-              for (let i5 = this.length; i5 < e3; ++i5)
-                this.setCell(i5, t3);
+              for (let i4 = this.length; i4 < e3; ++i4)
+                this.setCell(i4, t3);
             } else {
-              this._data = this._data.subarray(0, i4);
+              this._data = this._data.subarray(0, i3);
               const t4 = Object.keys(this._combined);
-              for (let i5 = 0; i5 < t4.length; i5++) {
-                const s4 = parseInt(t4[i5], 10);
+              for (let i4 = 0; i4 < t4.length; i4++) {
+                const s4 = parseInt(t4[i4], 10);
                 s4 >= e3 && delete this._combined[s4];
               }
               const s3 = Object.keys(this._extendedAttrs);
               for (let t5 = 0; t5 < s3.length; t5++) {
-                const i5 = parseInt(s3[t5], 10);
-                i5 >= e3 && delete this._extendedAttrs[i5];
+                const i4 = parseInt(s3[t5], 10);
+                i4 >= e3 && delete this._extendedAttrs[i4];
               }
             }
-            return this.length = e3, 4 * i4 * 2 < this._data.buffer.byteLength;
+            return this.length = e3, 4 * i3 * 2 < this._data.buffer.byteLength;
           }
           cleanupMemory() {
             if (4 * this._data.length * 2 < this._data.buffer.byteLength) {
@@ -25970,7 +25972,7 @@ WARNING: This link could potentially be dangerous`)) {
             this.isWrapped = e3.isWrapped;
           }
           clone() {
-            const e3 = new h(0);
+            const e3 = new h2(0);
             e3._data = new Uint32Array(this._data), e3.length = this.length;
             for (const t3 in this._combined)
               e3._combined[t3] = this._combined[t3];
@@ -25990,37 +25992,37 @@ WARNING: This link could potentially be dangerous`)) {
                 return e3 + (this._data[3 * e3 + 0] >> 22);
             return 0;
           }
-          copyCellsFrom(e3, t3, i4, s3, r2) {
+          copyCellsFrom(e3, t3, i3, s3, r2) {
             const n2 = e3._data;
             if (r2)
               for (let r3 = s3 - 1; r3 >= 0; r3--) {
                 for (let e4 = 0; e4 < 3; e4++)
-                  this._data[3 * (i4 + r3) + e4] = n2[3 * (t3 + r3) + e4];
-                268435456 & n2[3 * (t3 + r3) + 2] && (this._extendedAttrs[i4 + r3] = e3._extendedAttrs[t3 + r3]);
+                  this._data[3 * (i3 + r3) + e4] = n2[3 * (t3 + r3) + e4];
+                268435456 & n2[3 * (t3 + r3) + 2] && (this._extendedAttrs[i3 + r3] = e3._extendedAttrs[t3 + r3]);
               }
             else
               for (let r3 = 0; r3 < s3; r3++) {
                 for (let e4 = 0; e4 < 3; e4++)
-                  this._data[3 * (i4 + r3) + e4] = n2[3 * (t3 + r3) + e4];
-                268435456 & n2[3 * (t3 + r3) + 2] && (this._extendedAttrs[i4 + r3] = e3._extendedAttrs[t3 + r3]);
+                  this._data[3 * (i3 + r3) + e4] = n2[3 * (t3 + r3) + e4];
+                268435456 & n2[3 * (t3 + r3) + 2] && (this._extendedAttrs[i3 + r3] = e3._extendedAttrs[t3 + r3]);
               }
             const o2 = Object.keys(e3._combined);
             for (let s4 = 0; s4 < o2.length; s4++) {
               const r3 = parseInt(o2[s4], 10);
-              r3 >= t3 && (this._combined[r3 - t3 + i4] = e3._combined[r3]);
+              r3 >= t3 && (this._combined[r3 - t3 + i3] = e3._combined[r3]);
             }
           }
-          translateToString(e3 = false, t3 = 0, i4 = this.length) {
-            e3 && (i4 = Math.min(i4, this.getTrimmedLength()));
+          translateToString(e3 = false, t3 = 0, i3 = this.length) {
+            e3 && (i3 = Math.min(i3, this.getTrimmedLength()));
             let s3 = "";
-            for (; t3 < i4; ) {
-              const e4 = this._data[3 * t3 + 0], i5 = 2097151 & e4;
-              s3 += 2097152 & e4 ? this._combined[t3] : i5 ? (0, o.stringFromCodePoint)(i5) : n.WHITESPACE_CELL_CHAR, t3 += e4 >> 22 || 1;
+            for (; t3 < i3; ) {
+              const e4 = this._data[3 * t3 + 0], i4 = 2097151 & e4;
+              s3 += 2097152 & e4 ? this._combined[t3] : i4 ? (0, o.stringFromCodePoint)(i4) : n.WHITESPACE_CELL_CHAR, t3 += e4 >> 22 || 1;
             }
             return s3;
           }
         }
-        t2.BufferLine = h;
+        t2.BufferLine = h2;
       }, 4841: (e2, t2) => {
         Object.defineProperty(t2, "__esModule", { value: true }), t2.getRangeLength = void 0, t2.getRangeLength = function(e3, t3) {
           if (e3.start.y > e3.end.y)
@@ -26028,75 +26030,75 @@ WARNING: This link could potentially be dangerous`)) {
           return t3 * (e3.end.y - e3.start.y) + (e3.end.x - e3.start.x + 1);
         };
       }, 4634: (e2, t2) => {
-        function i3(e3, t3, i4) {
+        function i2(e3, t3, i3) {
           if (t3 === e3.length - 1)
             return e3[t3].getTrimmedLength();
-          const s2 = !e3[t3].hasContent(i4 - 1) && 1 === e3[t3].getWidth(i4 - 1), r = 2 === e3[t3 + 1].getWidth(0);
-          return s2 && r ? i4 - 1 : i4;
+          const s2 = !e3[t3].hasContent(i3 - 1) && 1 === e3[t3].getWidth(i3 - 1), r = 2 === e3[t3 + 1].getWidth(0);
+          return s2 && r ? i3 - 1 : i3;
         }
         Object.defineProperty(t2, "__esModule", { value: true }), t2.getWrappedLineTrimmedLength = t2.reflowSmallerGetNewLineLengths = t2.reflowLargerApplyNewLayout = t2.reflowLargerCreateNewLayout = t2.reflowLargerGetLinesToRemove = void 0, t2.reflowLargerGetLinesToRemove = function(e3, t3, s2, r, n) {
           const o = [];
-          for (let a = 0; a < e3.length - 1; a++) {
-            let h = a, c = e3.get(++h);
-            if (!c.isWrapped)
+          for (let a2 = 0; a2 < e3.length - 1; a2++) {
+            let h2 = a2, c3 = e3.get(++h2);
+            if (!c3.isWrapped)
               continue;
-            const l2 = [e3.get(a)];
-            for (; h < e3.length && c.isWrapped; )
-              l2.push(c), c = e3.get(++h);
-            if (r >= a && r < h) {
-              a += l2.length - 1;
+            const l = [e3.get(a2)];
+            for (; h2 < e3.length && c3.isWrapped; )
+              l.push(c3), c3 = e3.get(++h2);
+            if (r >= a2 && r < h2) {
+              a2 += l.length - 1;
               continue;
             }
-            let d2 = 0, _2 = i3(l2, d2, t3), u2 = 1, f2 = 0;
-            for (; u2 < l2.length; ) {
-              const e4 = i3(l2, u2, t3), r2 = e4 - f2, o2 = s2 - _2, a2 = Math.min(r2, o2);
-              l2[d2].copyCellsFrom(l2[u2], f2, _2, a2, false), _2 += a2, _2 === s2 && (d2++, _2 = 0), f2 += a2, f2 === e4 && (u2++, f2 = 0), 0 === _2 && 0 !== d2 && 2 === l2[d2 - 1].getWidth(s2 - 1) && (l2[d2].copyCellsFrom(l2[d2 - 1], s2 - 1, _2++, 1, false), l2[d2 - 1].setCell(s2 - 1, n));
+            let d2 = 0, _2 = i2(l, d2, t3), u2 = 1, f2 = 0;
+            for (; u2 < l.length; ) {
+              const e4 = i2(l, u2, t3), r2 = e4 - f2, o2 = s2 - _2, a3 = Math.min(r2, o2);
+              l[d2].copyCellsFrom(l[u2], f2, _2, a3, false), _2 += a3, _2 === s2 && (d2++, _2 = 0), f2 += a3, f2 === e4 && (u2++, f2 = 0), 0 === _2 && 0 !== d2 && 2 === l[d2 - 1].getWidth(s2 - 1) && (l[d2].copyCellsFrom(l[d2 - 1], s2 - 1, _2++, 1, false), l[d2 - 1].setCell(s2 - 1, n));
             }
-            l2[d2].replaceCells(_2, s2, n);
-            let v = 0;
-            for (let e4 = l2.length - 1; e4 > 0 && (e4 > d2 || 0 === l2[e4].getTrimmedLength()); e4--)
-              v++;
-            v > 0 && (o.push(a + l2.length - v), o.push(v)), a += l2.length - 1;
+            l[d2].replaceCells(_2, s2, n);
+            let v3 = 0;
+            for (let e4 = l.length - 1; e4 > 0 && (e4 > d2 || 0 === l[e4].getTrimmedLength()); e4--)
+              v3++;
+            v3 > 0 && (o.push(a2 + l.length - v3), o.push(v3)), a2 += l.length - 1;
           }
           return o;
         }, t2.reflowLargerCreateNewLayout = function(e3, t3) {
-          const i4 = [];
+          const i3 = [];
           let s2 = 0, r = t3[s2], n = 0;
           for (let o = 0; o < e3.length; o++)
             if (r === o) {
-              const i5 = t3[++s2];
-              e3.onDeleteEmitter.fire({ index: o - n, amount: i5 }), o += i5 - 1, n += i5, r = t3[++s2];
+              const i4 = t3[++s2];
+              e3.onDeleteEmitter.fire({ index: o - n, amount: i4 }), o += i4 - 1, n += i4, r = t3[++s2];
             } else
-              i4.push(o);
-          return { layout: i4, countRemoved: n };
+              i3.push(o);
+          return { layout: i3, countRemoved: n };
         }, t2.reflowLargerApplyNewLayout = function(e3, t3) {
-          const i4 = [];
+          const i3 = [];
           for (let s2 = 0; s2 < t3.length; s2++)
-            i4.push(e3.get(t3[s2]));
-          for (let t4 = 0; t4 < i4.length; t4++)
-            e3.set(t4, i4[t4]);
+            i3.push(e3.get(t3[s2]));
+          for (let t4 = 0; t4 < i3.length; t4++)
+            e3.set(t4, i3[t4]);
           e3.length = t3.length;
         }, t2.reflowSmallerGetNewLineLengths = function(e3, t3, s2) {
-          const r = [], n = e3.map((s3, r2) => i3(e3, r2, t3)).reduce((e4, t4) => e4 + t4);
-          let o = 0, a = 0, h = 0;
-          for (; h < n; ) {
-            if (n - h < s2) {
-              r.push(n - h);
+          const r = [], n = e3.map((s3, r2) => i2(e3, r2, t3)).reduce((e4, t4) => e4 + t4);
+          let o = 0, a2 = 0, h2 = 0;
+          for (; h2 < n; ) {
+            if (n - h2 < s2) {
+              r.push(n - h2);
               break;
             }
             o += s2;
-            const c = i3(e3, a, t3);
-            o > c && (o -= c, a++);
-            const l2 = 2 === e3[a].getWidth(o - 1);
-            l2 && o--;
-            const d2 = l2 ? s2 - 1 : s2;
-            r.push(d2), h += d2;
+            const c3 = i2(e3, a2, t3);
+            o > c3 && (o -= c3, a2++);
+            const l = 2 === e3[a2].getWidth(o - 1);
+            l && o--;
+            const d2 = l ? s2 - 1 : s2;
+            r.push(d2), h2 += d2;
           }
           return r;
-        }, t2.getWrappedLineTrimmedLength = i3;
-      }, 5295: (e2, t2, i3) => {
+        }, t2.getWrappedLineTrimmedLength = i2;
+      }, 5295: (e2, t2, i2) => {
         Object.defineProperty(t2, "__esModule", { value: true }), t2.BufferSet = void 0;
-        const s2 = i3(8460), r = i3(844), n = i3(9092);
+        const s2 = i2(8460), r = i2(844), n = i2(9092);
         class o extends r.Disposable {
           constructor(e3, t3) {
             super(), this._optionsService = e3, this._bufferService = t3, this._onBufferActivate = this.register(new s2.EventEmitter()), this.onBufferActivate = this._onBufferActivate.event, this.reset(), this.register(this._optionsService.onSpecificOptionChange("scrollback", () => this.resize(this._bufferService.cols, this._bufferService.rows))), this.register(this._optionsService.onSpecificOptionChange("tabStopWidth", () => this.setupTabStops()));
@@ -26127,9 +26129,9 @@ WARNING: This link could potentially be dangerous`)) {
           }
         }
         t2.BufferSet = o;
-      }, 511: (e2, t2, i3) => {
+      }, 511: (e2, t2, i2) => {
         Object.defineProperty(t2, "__esModule", { value: true }), t2.CellData = void 0;
-        const s2 = i3(482), r = i3(643), n = i3(3734);
+        const s2 = i2(482), r = i2(643), n = i2(3734);
         class o extends n.AttributeData {
           constructor() {
             super(...arguments), this.content = 0, this.fg = 0, this.bg = 0, this.extended = new n.ExtendedAttrs(), this.combinedData = "";
@@ -26156,10 +26158,10 @@ WARNING: This link could potentially be dangerous`)) {
             if (e3[r.CHAR_DATA_CHAR_INDEX].length > 2)
               t3 = true;
             else if (2 === e3[r.CHAR_DATA_CHAR_INDEX].length) {
-              const i4 = e3[r.CHAR_DATA_CHAR_INDEX].charCodeAt(0);
-              if (55296 <= i4 && i4 <= 56319) {
+              const i3 = e3[r.CHAR_DATA_CHAR_INDEX].charCodeAt(0);
+              if (55296 <= i3 && i3 <= 56319) {
                 const s3 = e3[r.CHAR_DATA_CHAR_INDEX].charCodeAt(1);
-                56320 <= s3 && s3 <= 57343 ? this.content = 1024 * (i4 - 55296) + s3 - 56320 + 65536 | e3[r.CHAR_DATA_WIDTH_INDEX] << 22 : t3 = true;
+                56320 <= s3 && s3 <= 57343 ? this.content = 1024 * (i3 - 55296) + s3 - 56320 + 65536 | e3[r.CHAR_DATA_WIDTH_INDEX] << 22 : t3 = true;
               } else
                 t3 = true;
             } else
@@ -26173,9 +26175,9 @@ WARNING: This link could potentially be dangerous`)) {
         t2.CellData = o;
       }, 643: (e2, t2) => {
         Object.defineProperty(t2, "__esModule", { value: true }), t2.WHITESPACE_CELL_CODE = t2.WHITESPACE_CELL_WIDTH = t2.WHITESPACE_CELL_CHAR = t2.NULL_CELL_CODE = t2.NULL_CELL_WIDTH = t2.NULL_CELL_CHAR = t2.CHAR_DATA_CODE_INDEX = t2.CHAR_DATA_WIDTH_INDEX = t2.CHAR_DATA_CHAR_INDEX = t2.CHAR_DATA_ATTR_INDEX = t2.DEFAULT_EXT = t2.DEFAULT_ATTR = t2.DEFAULT_COLOR = void 0, t2.DEFAULT_COLOR = 0, t2.DEFAULT_ATTR = 256 | t2.DEFAULT_COLOR << 9, t2.DEFAULT_EXT = 0, t2.CHAR_DATA_ATTR_INDEX = 0, t2.CHAR_DATA_CHAR_INDEX = 1, t2.CHAR_DATA_WIDTH_INDEX = 2, t2.CHAR_DATA_CODE_INDEX = 3, t2.NULL_CELL_CHAR = "", t2.NULL_CELL_WIDTH = 1, t2.NULL_CELL_CODE = 0, t2.WHITESPACE_CELL_CHAR = " ", t2.WHITESPACE_CELL_WIDTH = 1, t2.WHITESPACE_CELL_CODE = 32;
-      }, 4863: (e2, t2, i3) => {
+      }, 4863: (e2, t2, i2) => {
         Object.defineProperty(t2, "__esModule", { value: true }), t2.Marker = void 0;
-        const s2 = i3(8460), r = i3(844);
+        const s2 = i2(8460), r = i2(844);
         class n {
           get id() {
             return this._id;
@@ -26194,19 +26196,19 @@ WARNING: This link could potentially be dangerous`)) {
       }, 7116: (e2, t2) => {
         Object.defineProperty(t2, "__esModule", { value: true }), t2.DEFAULT_CHARSET = t2.CHARSETS = void 0, t2.CHARSETS = {}, t2.DEFAULT_CHARSET = t2.CHARSETS.B, t2.CHARSETS[0] = { "`": "\u25C6", a: "\u2592", b: "\u2409", c: "\u240C", d: "\u240D", e: "\u240A", f: "\xB0", g: "\xB1", h: "\u2424", i: "\u240B", j: "\u2518", k: "\u2510", l: "\u250C", m: "\u2514", n: "\u253C", o: "\u23BA", p: "\u23BB", q: "\u2500", r: "\u23BC", s: "\u23BD", t: "\u251C", u: "\u2524", v: "\u2534", w: "\u252C", x: "\u2502", y: "\u2264", z: "\u2265", "{": "\u03C0", "|": "\u2260", "}": "\xA3", "~": "\xB7" }, t2.CHARSETS.A = { "#": "\xA3" }, t2.CHARSETS.B = void 0, t2.CHARSETS[4] = { "#": "\xA3", "@": "\xBE", "[": "ij", "\\": "\xBD", "]": "|", "{": "\xA8", "|": "f", "}": "\xBC", "~": "\xB4" }, t2.CHARSETS.C = t2.CHARSETS[5] = { "[": "\xC4", "\\": "\xD6", "]": "\xC5", "^": "\xDC", "`": "\xE9", "{": "\xE4", "|": "\xF6", "}": "\xE5", "~": "\xFC" }, t2.CHARSETS.R = { "#": "\xA3", "@": "\xE0", "[": "\xB0", "\\": "\xE7", "]": "\xA7", "{": "\xE9", "|": "\xF9", "}": "\xE8", "~": "\xA8" }, t2.CHARSETS.Q = { "@": "\xE0", "[": "\xE2", "\\": "\xE7", "]": "\xEA", "^": "\xEE", "`": "\xF4", "{": "\xE9", "|": "\xF9", "}": "\xE8", "~": "\xFB" }, t2.CHARSETS.K = { "@": "\xA7", "[": "\xC4", "\\": "\xD6", "]": "\xDC", "{": "\xE4", "|": "\xF6", "}": "\xFC", "~": "\xDF" }, t2.CHARSETS.Y = { "#": "\xA3", "@": "\xA7", "[": "\xB0", "\\": "\xE7", "]": "\xE9", "`": "\xF9", "{": "\xE0", "|": "\xF2", "}": "\xE8", "~": "\xEC" }, t2.CHARSETS.E = t2.CHARSETS[6] = { "@": "\xC4", "[": "\xC6", "\\": "\xD8", "]": "\xC5", "^": "\xDC", "`": "\xE4", "{": "\xE6", "|": "\xF8", "}": "\xE5", "~": "\xFC" }, t2.CHARSETS.Z = { "#": "\xA3", "@": "\xA7", "[": "\xA1", "\\": "\xD1", "]": "\xBF", "{": "\xB0", "|": "\xF1", "}": "\xE7" }, t2.CHARSETS.H = t2.CHARSETS[7] = { "@": "\xC9", "[": "\xC4", "\\": "\xD6", "]": "\xC5", "^": "\xDC", "`": "\xE9", "{": "\xE4", "|": "\xF6", "}": "\xE5", "~": "\xFC" }, t2.CHARSETS["="] = { "#": "\xF9", "@": "\xE0", "[": "\xE9", "\\": "\xE7", "]": "\xEA", "^": "\xEE", _: "\xE8", "`": "\xF4", "{": "\xE4", "|": "\xF6", "}": "\xFC", "~": "\xFB" };
       }, 2584: (e2, t2) => {
-        var i3, s2, r;
+        var i2, s2, r;
         Object.defineProperty(t2, "__esModule", { value: true }), t2.C1_ESCAPED = t2.C1 = t2.C0 = void 0, function(e3) {
           e3.NUL = "\0", e3.SOH = "", e3.STX = "", e3.ETX = "", e3.EOT = "", e3.ENQ = "", e3.ACK = "", e3.BEL = "\x07", e3.BS = "\b", e3.HT = "	", e3.LF = "\n", e3.VT = "\v", e3.FF = "\f", e3.CR = "\r", e3.SO = "", e3.SI = "", e3.DLE = "", e3.DC1 = "", e3.DC2 = "", e3.DC3 = "", e3.DC4 = "", e3.NAK = "", e3.SYN = "", e3.ETB = "", e3.CAN = "", e3.EM = "", e3.SUB = "", e3.ESC = "\x1B", e3.FS = "", e3.GS = "", e3.RS = "", e3.US = "", e3.SP = " ", e3.DEL = "\x7F";
-        }(i3 || (t2.C0 = i3 = {})), function(e3) {
+        }(i2 || (t2.C0 = i2 = {})), function(e3) {
           e3.PAD = "\x80", e3.HOP = "\x81", e3.BPH = "\x82", e3.NBH = "\x83", e3.IND = "\x84", e3.NEL = "\x85", e3.SSA = "\x86", e3.ESA = "\x87", e3.HTS = "\x88", e3.HTJ = "\x89", e3.VTS = "\x8A", e3.PLD = "\x8B", e3.PLU = "\x8C", e3.RI = "\x8D", e3.SS2 = "\x8E", e3.SS3 = "\x8F", e3.DCS = "\x90", e3.PU1 = "\x91", e3.PU2 = "\x92", e3.STS = "\x93", e3.CCH = "\x94", e3.MW = "\x95", e3.SPA = "\x96", e3.EPA = "\x97", e3.SOS = "\x98", e3.SGCI = "\x99", e3.SCI = "\x9A", e3.CSI = "\x9B", e3.ST = "\x9C", e3.OSC = "\x9D", e3.PM = "\x9E", e3.APC = "\x9F";
         }(s2 || (t2.C1 = s2 = {})), function(e3) {
-          e3.ST = `${i3.ESC}\\`;
+          e3.ST = `${i2.ESC}\\`;
         }(r || (t2.C1_ESCAPED = r = {}));
-      }, 7399: (e2, t2, i3) => {
+      }, 7399: (e2, t2, i2) => {
         Object.defineProperty(t2, "__esModule", { value: true }), t2.evaluateKeyboardEvent = void 0;
-        const s2 = i3(2584), r = { 48: ["0", ")"], 49: ["1", "!"], 50: ["2", "@"], 51: ["3", "#"], 52: ["4", "$"], 53: ["5", "%"], 54: ["6", "^"], 55: ["7", "&"], 56: ["8", "*"], 57: ["9", "("], 186: [";", ":"], 187: ["=", "+"], 188: [",", "<"], 189: ["-", "_"], 190: [".", ">"], 191: ["/", "?"], 192: ["`", "~"], 219: ["[", "{"], 220: ["\\", "|"], 221: ["]", "}"], 222: ["'", '"'] };
-        t2.evaluateKeyboardEvent = function(e3, t3, i4, n) {
-          const o = { type: 0, cancel: false, key: void 0 }, a = (e3.shiftKey ? 1 : 0) | (e3.altKey ? 2 : 0) | (e3.ctrlKey ? 4 : 0) | (e3.metaKey ? 8 : 0);
+        const s2 = i2(2584), r = { 48: ["0", ")"], 49: ["1", "!"], 50: ["2", "@"], 51: ["3", "#"], 52: ["4", "$"], 53: ["5", "%"], 54: ["6", "^"], 55: ["7", "&"], 56: ["8", "*"], 57: ["9", "("], 186: [";", ":"], 187: ["=", "+"], 188: [",", "<"], 189: ["-", "_"], 190: [".", ">"], 191: ["/", "?"], 192: ["`", "~"], 219: ["[", "{"], 220: ["\\", "|"], 221: ["]", "}"], 222: ["'", '"'] };
+        t2.evaluateKeyboardEvent = function(e3, t3, i3, n) {
+          const o = { type: 0, cancel: false, key: void 0 }, a2 = (e3.shiftKey ? 1 : 0) | (e3.altKey ? 2 : 0) | (e3.ctrlKey ? 4 : 0) | (e3.metaKey ? 8 : 0);
           switch (e3.keyCode) {
             case 0:
               "UIKeyInputUpArrow" === e3.key ? o.key = t3 ? s2.C0.ESC + "OA" : s2.C0.ESC + "[A" : "UIKeyInputLeftArrow" === e3.key ? o.key = t3 ? s2.C0.ESC + "OD" : s2.C0.ESC + "[D" : "UIKeyInputRightArrow" === e3.key ? o.key = t3 ? s2.C0.ESC + "OC" : s2.C0.ESC + "[C" : "UIKeyInputDownArrow" === e3.key && (o.key = t3 ? s2.C0.ESC + "OB" : s2.C0.ESC + "[B");
@@ -26234,89 +26236,89 @@ WARNING: This link could potentially be dangerous`)) {
             case 37:
               if (e3.metaKey)
                 break;
-              a ? (o.key = s2.C0.ESC + "[1;" + (a + 1) + "D", o.key === s2.C0.ESC + "[1;3D" && (o.key = s2.C0.ESC + (i4 ? "b" : "[1;5D"))) : o.key = t3 ? s2.C0.ESC + "OD" : s2.C0.ESC + "[D";
+              a2 ? (o.key = s2.C0.ESC + "[1;" + (a2 + 1) + "D", o.key === s2.C0.ESC + "[1;3D" && (o.key = s2.C0.ESC + (i3 ? "b" : "[1;5D"))) : o.key = t3 ? s2.C0.ESC + "OD" : s2.C0.ESC + "[D";
               break;
             case 39:
               if (e3.metaKey)
                 break;
-              a ? (o.key = s2.C0.ESC + "[1;" + (a + 1) + "C", o.key === s2.C0.ESC + "[1;3C" && (o.key = s2.C0.ESC + (i4 ? "f" : "[1;5C"))) : o.key = t3 ? s2.C0.ESC + "OC" : s2.C0.ESC + "[C";
+              a2 ? (o.key = s2.C0.ESC + "[1;" + (a2 + 1) + "C", o.key === s2.C0.ESC + "[1;3C" && (o.key = s2.C0.ESC + (i3 ? "f" : "[1;5C"))) : o.key = t3 ? s2.C0.ESC + "OC" : s2.C0.ESC + "[C";
               break;
             case 38:
               if (e3.metaKey)
                 break;
-              a ? (o.key = s2.C0.ESC + "[1;" + (a + 1) + "A", i4 || o.key !== s2.C0.ESC + "[1;3A" || (o.key = s2.C0.ESC + "[1;5A")) : o.key = t3 ? s2.C0.ESC + "OA" : s2.C0.ESC + "[A";
+              a2 ? (o.key = s2.C0.ESC + "[1;" + (a2 + 1) + "A", i3 || o.key !== s2.C0.ESC + "[1;3A" || (o.key = s2.C0.ESC + "[1;5A")) : o.key = t3 ? s2.C0.ESC + "OA" : s2.C0.ESC + "[A";
               break;
             case 40:
               if (e3.metaKey)
                 break;
-              a ? (o.key = s2.C0.ESC + "[1;" + (a + 1) + "B", i4 || o.key !== s2.C0.ESC + "[1;3B" || (o.key = s2.C0.ESC + "[1;5B")) : o.key = t3 ? s2.C0.ESC + "OB" : s2.C0.ESC + "[B";
+              a2 ? (o.key = s2.C0.ESC + "[1;" + (a2 + 1) + "B", i3 || o.key !== s2.C0.ESC + "[1;3B" || (o.key = s2.C0.ESC + "[1;5B")) : o.key = t3 ? s2.C0.ESC + "OB" : s2.C0.ESC + "[B";
               break;
             case 45:
               e3.shiftKey || e3.ctrlKey || (o.key = s2.C0.ESC + "[2~");
               break;
             case 46:
-              o.key = a ? s2.C0.ESC + "[3;" + (a + 1) + "~" : s2.C0.ESC + "[3~";
+              o.key = a2 ? s2.C0.ESC + "[3;" + (a2 + 1) + "~" : s2.C0.ESC + "[3~";
               break;
             case 36:
-              o.key = a ? s2.C0.ESC + "[1;" + (a + 1) + "H" : t3 ? s2.C0.ESC + "OH" : s2.C0.ESC + "[H";
+              o.key = a2 ? s2.C0.ESC + "[1;" + (a2 + 1) + "H" : t3 ? s2.C0.ESC + "OH" : s2.C0.ESC + "[H";
               break;
             case 35:
-              o.key = a ? s2.C0.ESC + "[1;" + (a + 1) + "F" : t3 ? s2.C0.ESC + "OF" : s2.C0.ESC + "[F";
+              o.key = a2 ? s2.C0.ESC + "[1;" + (a2 + 1) + "F" : t3 ? s2.C0.ESC + "OF" : s2.C0.ESC + "[F";
               break;
             case 33:
-              e3.shiftKey ? o.type = 2 : e3.ctrlKey ? o.key = s2.C0.ESC + "[5;" + (a + 1) + "~" : o.key = s2.C0.ESC + "[5~";
+              e3.shiftKey ? o.type = 2 : e3.ctrlKey ? o.key = s2.C0.ESC + "[5;" + (a2 + 1) + "~" : o.key = s2.C0.ESC + "[5~";
               break;
             case 34:
-              e3.shiftKey ? o.type = 3 : e3.ctrlKey ? o.key = s2.C0.ESC + "[6;" + (a + 1) + "~" : o.key = s2.C0.ESC + "[6~";
+              e3.shiftKey ? o.type = 3 : e3.ctrlKey ? o.key = s2.C0.ESC + "[6;" + (a2 + 1) + "~" : o.key = s2.C0.ESC + "[6~";
               break;
             case 112:
-              o.key = a ? s2.C0.ESC + "[1;" + (a + 1) + "P" : s2.C0.ESC + "OP";
+              o.key = a2 ? s2.C0.ESC + "[1;" + (a2 + 1) + "P" : s2.C0.ESC + "OP";
               break;
             case 113:
-              o.key = a ? s2.C0.ESC + "[1;" + (a + 1) + "Q" : s2.C0.ESC + "OQ";
+              o.key = a2 ? s2.C0.ESC + "[1;" + (a2 + 1) + "Q" : s2.C0.ESC + "OQ";
               break;
             case 114:
-              o.key = a ? s2.C0.ESC + "[1;" + (a + 1) + "R" : s2.C0.ESC + "OR";
+              o.key = a2 ? s2.C0.ESC + "[1;" + (a2 + 1) + "R" : s2.C0.ESC + "OR";
               break;
             case 115:
-              o.key = a ? s2.C0.ESC + "[1;" + (a + 1) + "S" : s2.C0.ESC + "OS";
+              o.key = a2 ? s2.C0.ESC + "[1;" + (a2 + 1) + "S" : s2.C0.ESC + "OS";
               break;
             case 116:
-              o.key = a ? s2.C0.ESC + "[15;" + (a + 1) + "~" : s2.C0.ESC + "[15~";
+              o.key = a2 ? s2.C0.ESC + "[15;" + (a2 + 1) + "~" : s2.C0.ESC + "[15~";
               break;
             case 117:
-              o.key = a ? s2.C0.ESC + "[17;" + (a + 1) + "~" : s2.C0.ESC + "[17~";
+              o.key = a2 ? s2.C0.ESC + "[17;" + (a2 + 1) + "~" : s2.C0.ESC + "[17~";
               break;
             case 118:
-              o.key = a ? s2.C0.ESC + "[18;" + (a + 1) + "~" : s2.C0.ESC + "[18~";
+              o.key = a2 ? s2.C0.ESC + "[18;" + (a2 + 1) + "~" : s2.C0.ESC + "[18~";
               break;
             case 119:
-              o.key = a ? s2.C0.ESC + "[19;" + (a + 1) + "~" : s2.C0.ESC + "[19~";
+              o.key = a2 ? s2.C0.ESC + "[19;" + (a2 + 1) + "~" : s2.C0.ESC + "[19~";
               break;
             case 120:
-              o.key = a ? s2.C0.ESC + "[20;" + (a + 1) + "~" : s2.C0.ESC + "[20~";
+              o.key = a2 ? s2.C0.ESC + "[20;" + (a2 + 1) + "~" : s2.C0.ESC + "[20~";
               break;
             case 121:
-              o.key = a ? s2.C0.ESC + "[21;" + (a + 1) + "~" : s2.C0.ESC + "[21~";
+              o.key = a2 ? s2.C0.ESC + "[21;" + (a2 + 1) + "~" : s2.C0.ESC + "[21~";
               break;
             case 122:
-              o.key = a ? s2.C0.ESC + "[23;" + (a + 1) + "~" : s2.C0.ESC + "[23~";
+              o.key = a2 ? s2.C0.ESC + "[23;" + (a2 + 1) + "~" : s2.C0.ESC + "[23~";
               break;
             case 123:
-              o.key = a ? s2.C0.ESC + "[24;" + (a + 1) + "~" : s2.C0.ESC + "[24~";
+              o.key = a2 ? s2.C0.ESC + "[24;" + (a2 + 1) + "~" : s2.C0.ESC + "[24~";
               break;
             default:
               if (!e3.ctrlKey || e3.shiftKey || e3.altKey || e3.metaKey)
-                if (i4 && !n || !e3.altKey || e3.metaKey)
-                  !i4 || e3.altKey || e3.ctrlKey || e3.shiftKey || !e3.metaKey ? e3.key && !e3.ctrlKey && !e3.altKey && !e3.metaKey && e3.keyCode >= 48 && 1 === e3.key.length ? o.key = e3.key : e3.key && e3.ctrlKey && ("_" === e3.key && (o.key = s2.C0.US), "@" === e3.key && (o.key = s2.C0.NUL)) : 65 === e3.keyCode && (o.type = 1);
+                if (i3 && !n || !e3.altKey || e3.metaKey)
+                  !i3 || e3.altKey || e3.ctrlKey || e3.shiftKey || !e3.metaKey ? e3.key && !e3.ctrlKey && !e3.altKey && !e3.metaKey && e3.keyCode >= 48 && 1 === e3.key.length ? o.key = e3.key : e3.key && e3.ctrlKey && ("_" === e3.key && (o.key = s2.C0.US), "@" === e3.key && (o.key = s2.C0.NUL)) : 65 === e3.keyCode && (o.type = 1);
                 else {
-                  const t4 = r[e3.keyCode], i5 = null == t4 ? void 0 : t4[e3.shiftKey ? 1 : 0];
-                  if (i5)
-                    o.key = s2.C0.ESC + i5;
+                  const t4 = r[e3.keyCode], i4 = null == t4 ? void 0 : t4[e3.shiftKey ? 1 : 0];
+                  if (i4)
+                    o.key = s2.C0.ESC + i4;
                   else if (e3.keyCode >= 65 && e3.keyCode <= 90) {
                     const t5 = e3.ctrlKey ? e3.keyCode - 64 : e3.keyCode + 32;
-                    let i6 = String.fromCharCode(t5);
-                    e3.shiftKey && (i6 = i6.toUpperCase()), o.key = s2.C0.ESC + i6;
+                    let i5 = String.fromCharCode(t5);
+                    e3.shiftKey && (i5 = i5.toUpperCase()), o.key = s2.C0.ESC + i5;
                   } else if (32 === e3.keyCode)
                     o.key = s2.C0.ESC + (e3.ctrlKey ? s2.C0.NUL : " ");
                   else if ("Dead" === e3.key && e3.code.startsWith("Key")) {
@@ -26332,9 +26334,9 @@ WARNING: This link could potentially be dangerous`)) {
       }, 482: (e2, t2) => {
         Object.defineProperty(t2, "__esModule", { value: true }), t2.Utf8ToUtf32 = t2.StringToUtf32 = t2.utf32ToString = t2.stringFromCodePoint = void 0, t2.stringFromCodePoint = function(e3) {
           return e3 > 65535 ? (e3 -= 65536, String.fromCharCode(55296 + (e3 >> 10)) + String.fromCharCode(e3 % 1024 + 56320)) : String.fromCharCode(e3);
-        }, t2.utf32ToString = function(e3, t3 = 0, i3 = e3.length) {
+        }, t2.utf32ToString = function(e3, t3 = 0, i2 = e3.length) {
           let s2 = "";
-          for (let r = t3; r < i3; ++r) {
+          for (let r = t3; r < i2; ++r) {
             let t4 = e3[r];
             t4 > 65535 ? (t4 -= 65536, s2 += String.fromCharCode(55296 + (t4 >> 10)) + String.fromCharCode(t4 % 1024 + 56320)) : s2 += String.fromCharCode(t4);
           }
@@ -26347,18 +26349,18 @@ WARNING: This link could potentially be dangerous`)) {
             this._interim = 0;
           }
           decode(e3, t3) {
-            const i3 = e3.length;
-            if (!i3)
+            const i2 = e3.length;
+            if (!i2)
               return 0;
             let s2 = 0, r = 0;
             if (this._interim) {
-              const i4 = e3.charCodeAt(r++);
-              56320 <= i4 && i4 <= 57343 ? t3[s2++] = 1024 * (this._interim - 55296) + i4 - 56320 + 65536 : (t3[s2++] = this._interim, t3[s2++] = i4), this._interim = 0;
+              const i3 = e3.charCodeAt(r++);
+              56320 <= i3 && i3 <= 57343 ? t3[s2++] = 1024 * (this._interim - 55296) + i3 - 56320 + 65536 : (t3[s2++] = this._interim, t3[s2++] = i3), this._interim = 0;
             }
-            for (let n = r; n < i3; ++n) {
+            for (let n = r; n < i2; ++n) {
               const r2 = e3.charCodeAt(n);
               if (55296 <= r2 && r2 <= 56319) {
-                if (++n >= i3)
+                if (++n >= i2)
                   return this._interim = r2, s2;
                 const o = e3.charCodeAt(n);
                 56320 <= o && o <= 57343 ? t3[s2++] = 1024 * (r2 - 55296) + o - 56320 + 65536 : (t3[s2++] = r2, t3[s2++] = o);
@@ -26375,122 +26377,122 @@ WARNING: This link could potentially be dangerous`)) {
             this.interim.fill(0);
           }
           decode(e3, t3) {
-            const i3 = e3.length;
-            if (!i3)
+            const i2 = e3.length;
+            if (!i2)
               return 0;
-            let s2, r, n, o, a = 0, h = 0, c = 0;
+            let s2, r, n, o, a2 = 0, h2 = 0, c3 = 0;
             if (this.interim[0]) {
               let s3 = false, r2 = this.interim[0];
               r2 &= 192 == (224 & r2) ? 31 : 224 == (240 & r2) ? 15 : 7;
               let n2, o2 = 0;
               for (; (n2 = 63 & this.interim[++o2]) && o2 < 4; )
                 r2 <<= 6, r2 |= n2;
-              const h2 = 192 == (224 & this.interim[0]) ? 2 : 224 == (240 & this.interim[0]) ? 3 : 4, l3 = h2 - o2;
-              for (; c < l3; ) {
-                if (c >= i3)
+              const h3 = 192 == (224 & this.interim[0]) ? 2 : 224 == (240 & this.interim[0]) ? 3 : 4, l2 = h3 - o2;
+              for (; c3 < l2; ) {
+                if (c3 >= i2)
                   return 0;
-                if (n2 = e3[c++], 128 != (192 & n2)) {
-                  c--, s3 = true;
+                if (n2 = e3[c3++], 128 != (192 & n2)) {
+                  c3--, s3 = true;
                   break;
                 }
                 this.interim[o2++] = n2, r2 <<= 6, r2 |= 63 & n2;
               }
-              s3 || (2 === h2 ? r2 < 128 ? c-- : t3[a++] = r2 : 3 === h2 ? r2 < 2048 || r2 >= 55296 && r2 <= 57343 || 65279 === r2 || (t3[a++] = r2) : r2 < 65536 || r2 > 1114111 || (t3[a++] = r2)), this.interim.fill(0);
+              s3 || (2 === h3 ? r2 < 128 ? c3-- : t3[a2++] = r2 : 3 === h3 ? r2 < 2048 || r2 >= 55296 && r2 <= 57343 || 65279 === r2 || (t3[a2++] = r2) : r2 < 65536 || r2 > 1114111 || (t3[a2++] = r2)), this.interim.fill(0);
             }
-            const l2 = i3 - 4;
-            let d2 = c;
-            for (; d2 < i3; ) {
-              for (; !(!(d2 < l2) || 128 & (s2 = e3[d2]) || 128 & (r = e3[d2 + 1]) || 128 & (n = e3[d2 + 2]) || 128 & (o = e3[d2 + 3])); )
-                t3[a++] = s2, t3[a++] = r, t3[a++] = n, t3[a++] = o, d2 += 4;
+            const l = i2 - 4;
+            let d2 = c3;
+            for (; d2 < i2; ) {
+              for (; !(!(d2 < l) || 128 & (s2 = e3[d2]) || 128 & (r = e3[d2 + 1]) || 128 & (n = e3[d2 + 2]) || 128 & (o = e3[d2 + 3])); )
+                t3[a2++] = s2, t3[a2++] = r, t3[a2++] = n, t3[a2++] = o, d2 += 4;
               if (s2 = e3[d2++], s2 < 128)
-                t3[a++] = s2;
+                t3[a2++] = s2;
               else if (192 == (224 & s2)) {
-                if (d2 >= i3)
-                  return this.interim[0] = s2, a;
+                if (d2 >= i2)
+                  return this.interim[0] = s2, a2;
                 if (r = e3[d2++], 128 != (192 & r)) {
                   d2--;
                   continue;
                 }
-                if (h = (31 & s2) << 6 | 63 & r, h < 128) {
+                if (h2 = (31 & s2) << 6 | 63 & r, h2 < 128) {
                   d2--;
                   continue;
                 }
-                t3[a++] = h;
+                t3[a2++] = h2;
               } else if (224 == (240 & s2)) {
-                if (d2 >= i3)
-                  return this.interim[0] = s2, a;
+                if (d2 >= i2)
+                  return this.interim[0] = s2, a2;
                 if (r = e3[d2++], 128 != (192 & r)) {
                   d2--;
                   continue;
                 }
-                if (d2 >= i3)
-                  return this.interim[0] = s2, this.interim[1] = r, a;
+                if (d2 >= i2)
+                  return this.interim[0] = s2, this.interim[1] = r, a2;
                 if (n = e3[d2++], 128 != (192 & n)) {
                   d2--;
                   continue;
                 }
-                if (h = (15 & s2) << 12 | (63 & r) << 6 | 63 & n, h < 2048 || h >= 55296 && h <= 57343 || 65279 === h)
+                if (h2 = (15 & s2) << 12 | (63 & r) << 6 | 63 & n, h2 < 2048 || h2 >= 55296 && h2 <= 57343 || 65279 === h2)
                   continue;
-                t3[a++] = h;
+                t3[a2++] = h2;
               } else if (240 == (248 & s2)) {
-                if (d2 >= i3)
-                  return this.interim[0] = s2, a;
+                if (d2 >= i2)
+                  return this.interim[0] = s2, a2;
                 if (r = e3[d2++], 128 != (192 & r)) {
                   d2--;
                   continue;
                 }
-                if (d2 >= i3)
-                  return this.interim[0] = s2, this.interim[1] = r, a;
+                if (d2 >= i2)
+                  return this.interim[0] = s2, this.interim[1] = r, a2;
                 if (n = e3[d2++], 128 != (192 & n)) {
                   d2--;
                   continue;
                 }
-                if (d2 >= i3)
-                  return this.interim[0] = s2, this.interim[1] = r, this.interim[2] = n, a;
+                if (d2 >= i2)
+                  return this.interim[0] = s2, this.interim[1] = r, this.interim[2] = n, a2;
                 if (o = e3[d2++], 128 != (192 & o)) {
                   d2--;
                   continue;
                 }
-                if (h = (7 & s2) << 18 | (63 & r) << 12 | (63 & n) << 6 | 63 & o, h < 65536 || h > 1114111)
+                if (h2 = (7 & s2) << 18 | (63 & r) << 12 | (63 & n) << 6 | 63 & o, h2 < 65536 || h2 > 1114111)
                   continue;
-                t3[a++] = h;
+                t3[a2++] = h2;
               }
             }
-            return a;
+            return a2;
           }
         };
       }, 225: (e2, t2) => {
         Object.defineProperty(t2, "__esModule", { value: true }), t2.UnicodeV6 = void 0;
-        const i3 = [[768, 879], [1155, 1158], [1160, 1161], [1425, 1469], [1471, 1471], [1473, 1474], [1476, 1477], [1479, 1479], [1536, 1539], [1552, 1557], [1611, 1630], [1648, 1648], [1750, 1764], [1767, 1768], [1770, 1773], [1807, 1807], [1809, 1809], [1840, 1866], [1958, 1968], [2027, 2035], [2305, 2306], [2364, 2364], [2369, 2376], [2381, 2381], [2385, 2388], [2402, 2403], [2433, 2433], [2492, 2492], [2497, 2500], [2509, 2509], [2530, 2531], [2561, 2562], [2620, 2620], [2625, 2626], [2631, 2632], [2635, 2637], [2672, 2673], [2689, 2690], [2748, 2748], [2753, 2757], [2759, 2760], [2765, 2765], [2786, 2787], [2817, 2817], [2876, 2876], [2879, 2879], [2881, 2883], [2893, 2893], [2902, 2902], [2946, 2946], [3008, 3008], [3021, 3021], [3134, 3136], [3142, 3144], [3146, 3149], [3157, 3158], [3260, 3260], [3263, 3263], [3270, 3270], [3276, 3277], [3298, 3299], [3393, 3395], [3405, 3405], [3530, 3530], [3538, 3540], [3542, 3542], [3633, 3633], [3636, 3642], [3655, 3662], [3761, 3761], [3764, 3769], [3771, 3772], [3784, 3789], [3864, 3865], [3893, 3893], [3895, 3895], [3897, 3897], [3953, 3966], [3968, 3972], [3974, 3975], [3984, 3991], [3993, 4028], [4038, 4038], [4141, 4144], [4146, 4146], [4150, 4151], [4153, 4153], [4184, 4185], [4448, 4607], [4959, 4959], [5906, 5908], [5938, 5940], [5970, 5971], [6002, 6003], [6068, 6069], [6071, 6077], [6086, 6086], [6089, 6099], [6109, 6109], [6155, 6157], [6313, 6313], [6432, 6434], [6439, 6440], [6450, 6450], [6457, 6459], [6679, 6680], [6912, 6915], [6964, 6964], [6966, 6970], [6972, 6972], [6978, 6978], [7019, 7027], [7616, 7626], [7678, 7679], [8203, 8207], [8234, 8238], [8288, 8291], [8298, 8303], [8400, 8431], [12330, 12335], [12441, 12442], [43014, 43014], [43019, 43019], [43045, 43046], [64286, 64286], [65024, 65039], [65056, 65059], [65279, 65279], [65529, 65531]], s2 = [[68097, 68099], [68101, 68102], [68108, 68111], [68152, 68154], [68159, 68159], [119143, 119145], [119155, 119170], [119173, 119179], [119210, 119213], [119362, 119364], [917505, 917505], [917536, 917631], [917760, 917999]];
+        const i2 = [[768, 879], [1155, 1158], [1160, 1161], [1425, 1469], [1471, 1471], [1473, 1474], [1476, 1477], [1479, 1479], [1536, 1539], [1552, 1557], [1611, 1630], [1648, 1648], [1750, 1764], [1767, 1768], [1770, 1773], [1807, 1807], [1809, 1809], [1840, 1866], [1958, 1968], [2027, 2035], [2305, 2306], [2364, 2364], [2369, 2376], [2381, 2381], [2385, 2388], [2402, 2403], [2433, 2433], [2492, 2492], [2497, 2500], [2509, 2509], [2530, 2531], [2561, 2562], [2620, 2620], [2625, 2626], [2631, 2632], [2635, 2637], [2672, 2673], [2689, 2690], [2748, 2748], [2753, 2757], [2759, 2760], [2765, 2765], [2786, 2787], [2817, 2817], [2876, 2876], [2879, 2879], [2881, 2883], [2893, 2893], [2902, 2902], [2946, 2946], [3008, 3008], [3021, 3021], [3134, 3136], [3142, 3144], [3146, 3149], [3157, 3158], [3260, 3260], [3263, 3263], [3270, 3270], [3276, 3277], [3298, 3299], [3393, 3395], [3405, 3405], [3530, 3530], [3538, 3540], [3542, 3542], [3633, 3633], [3636, 3642], [3655, 3662], [3761, 3761], [3764, 3769], [3771, 3772], [3784, 3789], [3864, 3865], [3893, 3893], [3895, 3895], [3897, 3897], [3953, 3966], [3968, 3972], [3974, 3975], [3984, 3991], [3993, 4028], [4038, 4038], [4141, 4144], [4146, 4146], [4150, 4151], [4153, 4153], [4184, 4185], [4448, 4607], [4959, 4959], [5906, 5908], [5938, 5940], [5970, 5971], [6002, 6003], [6068, 6069], [6071, 6077], [6086, 6086], [6089, 6099], [6109, 6109], [6155, 6157], [6313, 6313], [6432, 6434], [6439, 6440], [6450, 6450], [6457, 6459], [6679, 6680], [6912, 6915], [6964, 6964], [6966, 6970], [6972, 6972], [6978, 6978], [7019, 7027], [7616, 7626], [7678, 7679], [8203, 8207], [8234, 8238], [8288, 8291], [8298, 8303], [8400, 8431], [12330, 12335], [12441, 12442], [43014, 43014], [43019, 43019], [43045, 43046], [64286, 64286], [65024, 65039], [65056, 65059], [65279, 65279], [65529, 65531]], s2 = [[68097, 68099], [68101, 68102], [68108, 68111], [68152, 68154], [68159, 68159], [119143, 119145], [119155, 119170], [119173, 119179], [119210, 119213], [119362, 119364], [917505, 917505], [917536, 917631], [917760, 917999]];
         let r;
         t2.UnicodeV6 = class {
           constructor() {
             if (this.version = "6", !r) {
               r = new Uint8Array(65536), r.fill(1), r[0] = 0, r.fill(0, 1, 32), r.fill(0, 127, 160), r.fill(2, 4352, 4448), r[9001] = 2, r[9002] = 2, r.fill(2, 11904, 42192), r[12351] = 1, r.fill(2, 44032, 55204), r.fill(2, 63744, 64256), r.fill(2, 65040, 65050), r.fill(2, 65072, 65136), r.fill(2, 65280, 65377), r.fill(2, 65504, 65511);
-              for (let e3 = 0; e3 < i3.length; ++e3)
-                r.fill(0, i3[e3][0], i3[e3][1] + 1);
+              for (let e3 = 0; e3 < i2.length; ++e3)
+                r.fill(0, i2[e3][0], i2[e3][1] + 1);
             }
           }
           wcwidth(e3) {
             return e3 < 32 ? 0 : e3 < 127 ? 1 : e3 < 65536 ? r[e3] : function(e4, t3) {
-              let i4, s3 = 0, r2 = t3.length - 1;
+              let i3, s3 = 0, r2 = t3.length - 1;
               if (e4 < t3[0][0] || e4 > t3[r2][1])
                 return false;
               for (; r2 >= s3; )
-                if (i4 = s3 + r2 >> 1, e4 > t3[i4][1])
-                  s3 = i4 + 1;
+                if (i3 = s3 + r2 >> 1, e4 > t3[i3][1])
+                  s3 = i3 + 1;
                 else {
-                  if (!(e4 < t3[i4][0]))
+                  if (!(e4 < t3[i3][0]))
                     return true;
-                  r2 = i4 - 1;
+                  r2 = i3 - 1;
                 }
               return false;
             }(e3, s2) ? 0 : e3 >= 131072 && e3 <= 196605 || e3 >= 196608 && e3 <= 262141 ? 2 : 1;
           }
         };
-      }, 5981: (e2, t2, i3) => {
+      }, 5981: (e2, t2, i2) => {
         Object.defineProperty(t2, "__esModule", { value: true }), t2.WriteBuffer = void 0;
-        const s2 = i3(8460), r = i3(844);
+        const s2 = i2(8460), r = i2(844);
         class n extends r.Disposable {
           constructor(e3) {
             super(), this._action = e3, this._writeBuffer = [], this._callbacks = [], this._pendingData = 0, this._bufferOffset = 0, this._isSyncWriting = false, this._syncCalls = 0, this._didUserInput = false, this._onWriteParsed = this.register(new s2.EventEmitter()), this.onWriteParsed = this._onWriteParsed.event;
@@ -26503,9 +26505,9 @@ WARNING: This link could potentially be dangerous`)) {
               return void (this._syncCalls = 0);
             if (this._pendingData += e3.length, this._writeBuffer.push(e3), this._callbacks.push(void 0), this._syncCalls++, this._isSyncWriting)
               return;
-            let i4;
-            for (this._isSyncWriting = true; i4 = this._writeBuffer.shift(); ) {
-              this._action(i4);
+            let i3;
+            for (this._isSyncWriting = true; i3 = this._writeBuffer.shift(); ) {
+              this._action(i3);
               const e4 = this._callbacks.shift();
               e4 && e4();
             }
@@ -26522,17 +26524,17 @@ WARNING: This link could potentially be dangerous`)) {
             this._pendingData += e3.length, this._writeBuffer.push(e3), this._callbacks.push(t3);
           }
           _innerWrite(e3 = 0, t3 = true) {
-            const i4 = e3 || Date.now();
+            const i3 = e3 || Date.now();
             for (; this._writeBuffer.length > this._bufferOffset; ) {
               const e4 = this._writeBuffer[this._bufferOffset], s3 = this._action(e4, t3);
               if (s3) {
-                const e5 = (e6) => Date.now() - i4 >= 12 ? setTimeout(() => this._innerWrite(0, e6)) : this._innerWrite(i4, e6);
+                const e5 = (e6) => Date.now() - i3 >= 12 ? setTimeout(() => this._innerWrite(0, e6)) : this._innerWrite(i3, e6);
                 return void s3.catch((e6) => (queueMicrotask(() => {
                   throw e6;
                 }), Promise.resolve(false))).then(e5);
               }
               const r2 = this._callbacks[this._bufferOffset];
-              if (r2 && r2(), this._bufferOffset++, this._pendingData -= e4.length, Date.now() - i4 >= 12)
+              if (r2 && r2(), this._bufferOffset++, this._pendingData -= e4.length, Date.now() - i3 >= 12)
                 break;
             }
             this._writeBuffer.length > this._bufferOffset ? (this._bufferOffset > 50 && (this._writeBuffer = this._writeBuffer.slice(this._bufferOffset), this._callbacks = this._callbacks.slice(this._bufferOffset), this._bufferOffset = 0), setTimeout(() => this._innerWrite())) : (this._writeBuffer.length = 0, this._callbacks.length = 0, this._pendingData = 0, this._bufferOffset = 0), this._onWriteParsed.fire();
@@ -26541,12 +26543,12 @@ WARNING: This link could potentially be dangerous`)) {
         t2.WriteBuffer = n;
       }, 5941: (e2, t2) => {
         Object.defineProperty(t2, "__esModule", { value: true }), t2.toRgbString = t2.parseColor = void 0;
-        const i3 = /^([\da-f])\/([\da-f])\/([\da-f])$|^([\da-f]{2})\/([\da-f]{2})\/([\da-f]{2})$|^([\da-f]{3})\/([\da-f]{3})\/([\da-f]{3})$|^([\da-f]{4})\/([\da-f]{4})\/([\da-f]{4})$/, s2 = /^[\da-f]+$/;
+        const i2 = /^([\da-f])\/([\da-f])\/([\da-f])$|^([\da-f]{2})\/([\da-f]{2})\/([\da-f]{2})$|^([\da-f]{3})\/([\da-f]{3})\/([\da-f]{3})$|^([\da-f]{4})\/([\da-f]{4})\/([\da-f]{4})$/, s2 = /^[\da-f]+$/;
         function r(e3, t3) {
-          const i4 = e3.toString(16), s3 = i4.length < 2 ? "0" + i4 : i4;
+          const i3 = e3.toString(16), s3 = i3.length < 2 ? "0" + i3 : i3;
           switch (t3) {
             case 4:
-              return i4[0];
+              return i3[0];
             case 8:
               return s3;
             case 12:
@@ -26561,28 +26563,28 @@ WARNING: This link could potentially be dangerous`)) {
           let t3 = e3.toLowerCase();
           if (0 === t3.indexOf("rgb:")) {
             t3 = t3.slice(4);
-            const e4 = i3.exec(t3);
+            const e4 = i2.exec(t3);
             if (e4) {
               const t4 = e4[1] ? 15 : e4[4] ? 255 : e4[7] ? 4095 : 65535;
               return [Math.round(parseInt(e4[1] || e4[4] || e4[7] || e4[10], 16) / t4 * 255), Math.round(parseInt(e4[2] || e4[5] || e4[8] || e4[11], 16) / t4 * 255), Math.round(parseInt(e4[3] || e4[6] || e4[9] || e4[12], 16) / t4 * 255)];
             }
           } else if (0 === t3.indexOf("#") && (t3 = t3.slice(1), s2.exec(t3) && [3, 6, 9, 12].includes(t3.length))) {
-            const e4 = t3.length / 3, i4 = [0, 0, 0];
+            const e4 = t3.length / 3, i3 = [0, 0, 0];
             for (let s3 = 0; s3 < 3; ++s3) {
               const r2 = parseInt(t3.slice(e4 * s3, e4 * s3 + e4), 16);
-              i4[s3] = 1 === e4 ? r2 << 4 : 2 === e4 ? r2 : 3 === e4 ? r2 >> 4 : r2 >> 8;
+              i3[s3] = 1 === e4 ? r2 << 4 : 2 === e4 ? r2 : 3 === e4 ? r2 >> 4 : r2 >> 8;
             }
-            return i4;
+            return i3;
           }
         }, t2.toRgbString = function(e3, t3 = 16) {
-          const [i4, s3, n] = e3;
-          return `rgb:${r(i4, t3)}/${r(s3, t3)}/${r(n, t3)}`;
+          const [i3, s3, n] = e3;
+          return `rgb:${r(i3, t3)}/${r(s3, t3)}/${r(n, t3)}`;
         };
       }, 5770: (e2, t2) => {
         Object.defineProperty(t2, "__esModule", { value: true }), t2.PAYLOAD_LIMIT = void 0, t2.PAYLOAD_LIMIT = 1e7;
-      }, 6351: (e2, t2, i3) => {
+      }, 6351: (e2, t2, i2) => {
         Object.defineProperty(t2, "__esModule", { value: true }), t2.DcsHandler = t2.DcsParser = void 0;
-        const s2 = i3(482), r = i3(8742), n = i3(5770), o = [];
+        const s2 = i2(482), r = i2(8742), n = i2(5770), o = [];
         t2.DcsParser = class {
           constructor() {
             this._handlers = /* @__PURE__ */ Object.create(null), this._active = o, this._ident = 0, this._handlerFb = () => {
@@ -26594,10 +26596,10 @@ WARNING: This link could potentially be dangerous`)) {
           }
           registerHandler(e3, t3) {
             void 0 === this._handlers[e3] && (this._handlers[e3] = []);
-            const i4 = this._handlers[e3];
-            return i4.push(t3), { dispose: () => {
-              const e4 = i4.indexOf(t3);
-              -1 !== e4 && i4.splice(e4, 1);
+            const i3 = this._handlers[e3];
+            return i3.push(t3), { dispose: () => {
+              const e4 = i3.indexOf(t3);
+              -1 !== e4 && i3.splice(e4, 1);
             } };
           }
           clearHandler(e3) {
@@ -26619,82 +26621,82 @@ WARNING: This link could potentially be dangerous`)) {
             else
               this._handlerFb(this._ident, "HOOK", t3);
           }
-          put(e3, t3, i4) {
+          put(e3, t3, i3) {
             if (this._active.length)
               for (let s3 = this._active.length - 1; s3 >= 0; s3--)
-                this._active[s3].put(e3, t3, i4);
+                this._active[s3].put(e3, t3, i3);
             else
-              this._handlerFb(this._ident, "PUT", (0, s2.utf32ToString)(e3, t3, i4));
+              this._handlerFb(this._ident, "PUT", (0, s2.utf32ToString)(e3, t3, i3));
           }
           unhook(e3, t3 = true) {
             if (this._active.length) {
-              let i4 = false, s3 = this._active.length - 1, r2 = false;
-              if (this._stack.paused && (s3 = this._stack.loopPosition - 1, i4 = t3, r2 = this._stack.fallThrough, this._stack.paused = false), !r2 && false === i4) {
-                for (; s3 >= 0 && (i4 = this._active[s3].unhook(e3), true !== i4); s3--)
-                  if (i4 instanceof Promise)
-                    return this._stack.paused = true, this._stack.loopPosition = s3, this._stack.fallThrough = false, i4;
+              let i3 = false, s3 = this._active.length - 1, r2 = false;
+              if (this._stack.paused && (s3 = this._stack.loopPosition - 1, i3 = t3, r2 = this._stack.fallThrough, this._stack.paused = false), !r2 && false === i3) {
+                for (; s3 >= 0 && (i3 = this._active[s3].unhook(e3), true !== i3); s3--)
+                  if (i3 instanceof Promise)
+                    return this._stack.paused = true, this._stack.loopPosition = s3, this._stack.fallThrough = false, i3;
                 s3--;
               }
               for (; s3 >= 0; s3--)
-                if (i4 = this._active[s3].unhook(false), i4 instanceof Promise)
-                  return this._stack.paused = true, this._stack.loopPosition = s3, this._stack.fallThrough = true, i4;
+                if (i3 = this._active[s3].unhook(false), i3 instanceof Promise)
+                  return this._stack.paused = true, this._stack.loopPosition = s3, this._stack.fallThrough = true, i3;
             } else
               this._handlerFb(this._ident, "UNHOOK", e3);
             this._active = o, this._ident = 0;
           }
         };
-        const a = new r.Params();
-        a.addParam(0), t2.DcsHandler = class {
+        const a2 = new r.Params();
+        a2.addParam(0), t2.DcsHandler = class {
           constructor(e3) {
-            this._handler = e3, this._data = "", this._params = a, this._hitLimit = false;
+            this._handler = e3, this._data = "", this._params = a2, this._hitLimit = false;
           }
           hook(e3) {
-            this._params = e3.length > 1 || e3.params[0] ? e3.clone() : a, this._data = "", this._hitLimit = false;
+            this._params = e3.length > 1 || e3.params[0] ? e3.clone() : a2, this._data = "", this._hitLimit = false;
           }
-          put(e3, t3, i4) {
-            this._hitLimit || (this._data += (0, s2.utf32ToString)(e3, t3, i4), this._data.length > n.PAYLOAD_LIMIT && (this._data = "", this._hitLimit = true));
+          put(e3, t3, i3) {
+            this._hitLimit || (this._data += (0, s2.utf32ToString)(e3, t3, i3), this._data.length > n.PAYLOAD_LIMIT && (this._data = "", this._hitLimit = true));
           }
           unhook(e3) {
             let t3 = false;
             if (this._hitLimit)
               t3 = false;
             else if (e3 && (t3 = this._handler(this._data, this._params), t3 instanceof Promise))
-              return t3.then((e4) => (this._params = a, this._data = "", this._hitLimit = false, e4));
-            return this._params = a, this._data = "", this._hitLimit = false, t3;
+              return t3.then((e4) => (this._params = a2, this._data = "", this._hitLimit = false, e4));
+            return this._params = a2, this._data = "", this._hitLimit = false, t3;
           }
         };
-      }, 2015: (e2, t2, i3) => {
+      }, 2015: (e2, t2, i2) => {
         Object.defineProperty(t2, "__esModule", { value: true }), t2.EscapeSequenceParser = t2.VT500_TRANSITION_TABLE = t2.TransitionTable = void 0;
-        const s2 = i3(844), r = i3(8742), n = i3(6242), o = i3(6351);
-        class a {
+        const s2 = i2(844), r = i2(8742), n = i2(6242), o = i2(6351);
+        class a2 {
           constructor(e3) {
             this.table = new Uint8Array(e3);
           }
           setDefault(e3, t3) {
             this.table.fill(e3 << 4 | t3);
           }
-          add(e3, t3, i4, s3) {
-            this.table[t3 << 8 | e3] = i4 << 4 | s3;
+          add(e3, t3, i3, s3) {
+            this.table[t3 << 8 | e3] = i3 << 4 | s3;
           }
-          addMany(e3, t3, i4, s3) {
+          addMany(e3, t3, i3, s3) {
             for (let r2 = 0; r2 < e3.length; r2++)
-              this.table[t3 << 8 | e3[r2]] = i4 << 4 | s3;
+              this.table[t3 << 8 | e3[r2]] = i3 << 4 | s3;
           }
         }
-        t2.TransitionTable = a;
-        const h = 160;
+        t2.TransitionTable = a2;
+        const h2 = 160;
         t2.VT500_TRANSITION_TABLE = function() {
-          const e3 = new a(4095), t3 = Array.apply(null, Array(256)).map((e4, t4) => t4), i4 = (e4, i5) => t3.slice(e4, i5), s3 = i4(32, 127), r2 = i4(0, 24);
-          r2.push(25), r2.push.apply(r2, i4(28, 32));
-          const n2 = i4(0, 14);
+          const e3 = new a2(4095), t3 = Array.apply(null, Array(256)).map((e4, t4) => t4), i3 = (e4, i4) => t3.slice(e4, i4), s3 = i3(32, 127), r2 = i3(0, 24);
+          r2.push(25), r2.push.apply(r2, i3(28, 32));
+          const n2 = i3(0, 14);
           let o2;
           for (o2 in e3.setDefault(1, 0), e3.addMany(s3, 0, 2, 0), n2)
-            e3.addMany([24, 26, 153, 154], o2, 3, 0), e3.addMany(i4(128, 144), o2, 3, 0), e3.addMany(i4(144, 152), o2, 3, 0), e3.add(156, o2, 0, 0), e3.add(27, o2, 11, 1), e3.add(157, o2, 4, 8), e3.addMany([152, 158, 159], o2, 0, 7), e3.add(155, o2, 11, 3), e3.add(144, o2, 11, 9);
-          return e3.addMany(r2, 0, 3, 0), e3.addMany(r2, 1, 3, 1), e3.add(127, 1, 0, 1), e3.addMany(r2, 8, 0, 8), e3.addMany(r2, 3, 3, 3), e3.add(127, 3, 0, 3), e3.addMany(r2, 4, 3, 4), e3.add(127, 4, 0, 4), e3.addMany(r2, 6, 3, 6), e3.addMany(r2, 5, 3, 5), e3.add(127, 5, 0, 5), e3.addMany(r2, 2, 3, 2), e3.add(127, 2, 0, 2), e3.add(93, 1, 4, 8), e3.addMany(s3, 8, 5, 8), e3.add(127, 8, 5, 8), e3.addMany([156, 27, 24, 26, 7], 8, 6, 0), e3.addMany(i4(28, 32), 8, 0, 8), e3.addMany([88, 94, 95], 1, 0, 7), e3.addMany(s3, 7, 0, 7), e3.addMany(r2, 7, 0, 7), e3.add(156, 7, 0, 0), e3.add(127, 7, 0, 7), e3.add(91, 1, 11, 3), e3.addMany(i4(64, 127), 3, 7, 0), e3.addMany(i4(48, 60), 3, 8, 4), e3.addMany([60, 61, 62, 63], 3, 9, 4), e3.addMany(i4(48, 60), 4, 8, 4), e3.addMany(i4(64, 127), 4, 7, 0), e3.addMany([60, 61, 62, 63], 4, 0, 6), e3.addMany(i4(32, 64), 6, 0, 6), e3.add(127, 6, 0, 6), e3.addMany(i4(64, 127), 6, 0, 0), e3.addMany(i4(32, 48), 3, 9, 5), e3.addMany(i4(32, 48), 5, 9, 5), e3.addMany(i4(48, 64), 5, 0, 6), e3.addMany(i4(64, 127), 5, 7, 0), e3.addMany(i4(32, 48), 4, 9, 5), e3.addMany(i4(32, 48), 1, 9, 2), e3.addMany(i4(32, 48), 2, 9, 2), e3.addMany(i4(48, 127), 2, 10, 0), e3.addMany(i4(48, 80), 1, 10, 0), e3.addMany(i4(81, 88), 1, 10, 0), e3.addMany([89, 90, 92], 1, 10, 0), e3.addMany(i4(96, 127), 1, 10, 0), e3.add(80, 1, 11, 9), e3.addMany(r2, 9, 0, 9), e3.add(127, 9, 0, 9), e3.addMany(i4(28, 32), 9, 0, 9), e3.addMany(i4(32, 48), 9, 9, 12), e3.addMany(i4(48, 60), 9, 8, 10), e3.addMany([60, 61, 62, 63], 9, 9, 10), e3.addMany(r2, 11, 0, 11), e3.addMany(i4(32, 128), 11, 0, 11), e3.addMany(i4(28, 32), 11, 0, 11), e3.addMany(r2, 10, 0, 10), e3.add(127, 10, 0, 10), e3.addMany(i4(28, 32), 10, 0, 10), e3.addMany(i4(48, 60), 10, 8, 10), e3.addMany([60, 61, 62, 63], 10, 0, 11), e3.addMany(i4(32, 48), 10, 9, 12), e3.addMany(r2, 12, 0, 12), e3.add(127, 12, 0, 12), e3.addMany(i4(28, 32), 12, 0, 12), e3.addMany(i4(32, 48), 12, 9, 12), e3.addMany(i4(48, 64), 12, 0, 11), e3.addMany(i4(64, 127), 12, 12, 13), e3.addMany(i4(64, 127), 10, 12, 13), e3.addMany(i4(64, 127), 9, 12, 13), e3.addMany(r2, 13, 13, 13), e3.addMany(s3, 13, 13, 13), e3.add(127, 13, 0, 13), e3.addMany([27, 156, 24, 26], 13, 14, 0), e3.add(h, 0, 2, 0), e3.add(h, 8, 5, 8), e3.add(h, 6, 0, 6), e3.add(h, 11, 0, 11), e3.add(h, 13, 13, 13), e3;
+            e3.addMany([24, 26, 153, 154], o2, 3, 0), e3.addMany(i3(128, 144), o2, 3, 0), e3.addMany(i3(144, 152), o2, 3, 0), e3.add(156, o2, 0, 0), e3.add(27, o2, 11, 1), e3.add(157, o2, 4, 8), e3.addMany([152, 158, 159], o2, 0, 7), e3.add(155, o2, 11, 3), e3.add(144, o2, 11, 9);
+          return e3.addMany(r2, 0, 3, 0), e3.addMany(r2, 1, 3, 1), e3.add(127, 1, 0, 1), e3.addMany(r2, 8, 0, 8), e3.addMany(r2, 3, 3, 3), e3.add(127, 3, 0, 3), e3.addMany(r2, 4, 3, 4), e3.add(127, 4, 0, 4), e3.addMany(r2, 6, 3, 6), e3.addMany(r2, 5, 3, 5), e3.add(127, 5, 0, 5), e3.addMany(r2, 2, 3, 2), e3.add(127, 2, 0, 2), e3.add(93, 1, 4, 8), e3.addMany(s3, 8, 5, 8), e3.add(127, 8, 5, 8), e3.addMany([156, 27, 24, 26, 7], 8, 6, 0), e3.addMany(i3(28, 32), 8, 0, 8), e3.addMany([88, 94, 95], 1, 0, 7), e3.addMany(s3, 7, 0, 7), e3.addMany(r2, 7, 0, 7), e3.add(156, 7, 0, 0), e3.add(127, 7, 0, 7), e3.add(91, 1, 11, 3), e3.addMany(i3(64, 127), 3, 7, 0), e3.addMany(i3(48, 60), 3, 8, 4), e3.addMany([60, 61, 62, 63], 3, 9, 4), e3.addMany(i3(48, 60), 4, 8, 4), e3.addMany(i3(64, 127), 4, 7, 0), e3.addMany([60, 61, 62, 63], 4, 0, 6), e3.addMany(i3(32, 64), 6, 0, 6), e3.add(127, 6, 0, 6), e3.addMany(i3(64, 127), 6, 0, 0), e3.addMany(i3(32, 48), 3, 9, 5), e3.addMany(i3(32, 48), 5, 9, 5), e3.addMany(i3(48, 64), 5, 0, 6), e3.addMany(i3(64, 127), 5, 7, 0), e3.addMany(i3(32, 48), 4, 9, 5), e3.addMany(i3(32, 48), 1, 9, 2), e3.addMany(i3(32, 48), 2, 9, 2), e3.addMany(i3(48, 127), 2, 10, 0), e3.addMany(i3(48, 80), 1, 10, 0), e3.addMany(i3(81, 88), 1, 10, 0), e3.addMany([89, 90, 92], 1, 10, 0), e3.addMany(i3(96, 127), 1, 10, 0), e3.add(80, 1, 11, 9), e3.addMany(r2, 9, 0, 9), e3.add(127, 9, 0, 9), e3.addMany(i3(28, 32), 9, 0, 9), e3.addMany(i3(32, 48), 9, 9, 12), e3.addMany(i3(48, 60), 9, 8, 10), e3.addMany([60, 61, 62, 63], 9, 9, 10), e3.addMany(r2, 11, 0, 11), e3.addMany(i3(32, 128), 11, 0, 11), e3.addMany(i3(28, 32), 11, 0, 11), e3.addMany(r2, 10, 0, 10), e3.add(127, 10, 0, 10), e3.addMany(i3(28, 32), 10, 0, 10), e3.addMany(i3(48, 60), 10, 8, 10), e3.addMany([60, 61, 62, 63], 10, 0, 11), e3.addMany(i3(32, 48), 10, 9, 12), e3.addMany(r2, 12, 0, 12), e3.add(127, 12, 0, 12), e3.addMany(i3(28, 32), 12, 0, 12), e3.addMany(i3(32, 48), 12, 9, 12), e3.addMany(i3(48, 64), 12, 0, 11), e3.addMany(i3(64, 127), 12, 12, 13), e3.addMany(i3(64, 127), 10, 12, 13), e3.addMany(i3(64, 127), 9, 12, 13), e3.addMany(r2, 13, 13, 13), e3.addMany(s3, 13, 13, 13), e3.add(127, 13, 0, 13), e3.addMany([27, 156, 24, 26], 13, 14, 0), e3.add(h2, 0, 2, 0), e3.add(h2, 8, 5, 8), e3.add(h2, 6, 0, 6), e3.add(h2, 11, 0, 11), e3.add(h2, 13, 13, 13), e3;
         }();
-        class c extends s2.Disposable {
+        class c3 extends s2.Disposable {
           constructor(e3 = t2.VT500_TRANSITION_TABLE) {
-            super(), this._transitions = e3, this._parseStack = { state: 0, handlers: [], handlerPos: 0, transition: 0, chunkPos: 0 }, this.initialState = 0, this.currentState = this.initialState, this._params = new r.Params(), this._params.addParam(0), this._collect = 0, this.precedingCodepoint = 0, this._printHandlerFb = (e4, t3, i4) => {
+            super(), this._transitions = e3, this._parseStack = { state: 0, handlers: [], handlerPos: 0, transition: 0, chunkPos: 0 }, this.initialState = 0, this.currentState = this.initialState, this._params = new r.Params(), this._params.addParam(0), this._collect = 0, this.precedingCodepoint = 0, this._printHandlerFb = (e4, t3, i3) => {
             }, this._executeHandlerFb = (e4) => {
             }, this._csiHandlerFb = (e4, t3) => {
             }, this._escHandlerFb = (e4) => {
@@ -26703,11 +26705,11 @@ WARNING: This link could potentially be dangerous`)) {
             })), this._oscParser = this.register(new n.OscParser()), this._dcsParser = this.register(new o.DcsParser()), this._errorHandler = this._errorHandlerFb, this.registerEscHandler({ final: "\\" }, () => true);
           }
           _identifier(e3, t3 = [64, 126]) {
-            let i4 = 0;
+            let i3 = 0;
             if (e3.prefix) {
               if (e3.prefix.length > 1)
                 throw new Error("only one byte as prefix supported");
-              if (i4 = e3.prefix.charCodeAt(0), i4 && 60 > i4 || i4 > 63)
+              if (i3 = e3.prefix.charCodeAt(0), i3 && 60 > i3 || i3 > 63)
                 throw new Error("prefix must be in range 0x3c .. 0x3f");
             }
             if (e3.intermediates) {
@@ -26717,7 +26719,7 @@ WARNING: This link could potentially be dangerous`)) {
                 const s4 = e3.intermediates.charCodeAt(t4);
                 if (32 > s4 || s4 > 47)
                   throw new Error("intermediate must be in range 0x20 .. 0x2f");
-                i4 <<= 8, i4 |= s4;
+                i3 <<= 8, i3 |= s4;
               }
             }
             if (1 !== e3.final.length)
@@ -26725,7 +26727,7 @@ WARNING: This link could potentially be dangerous`)) {
             const s3 = e3.final.charCodeAt(0);
             if (t3[0] > s3 || s3 > t3[1])
               throw new Error(`final must be in range ${t3[0]} .. ${t3[1]}`);
-            return i4 <<= 8, i4 |= s3, i4;
+            return i3 <<= 8, i3 |= s3, i3;
           }
           identToString(e3) {
             const t3 = [];
@@ -26740,9 +26742,9 @@ WARNING: This link could potentially be dangerous`)) {
             this._printHandler = this._printHandlerFb;
           }
           registerEscHandler(e3, t3) {
-            const i4 = this._identifier(e3, [48, 126]);
-            void 0 === this._escHandlers[i4] && (this._escHandlers[i4] = []);
-            const s3 = this._escHandlers[i4];
+            const i3 = this._identifier(e3, [48, 126]);
+            void 0 === this._escHandlers[i3] && (this._escHandlers[i3] = []);
+            const s3 = this._escHandlers[i3];
             return s3.push(t3), { dispose: () => {
               const e4 = s3.indexOf(t3);
               -1 !== e4 && s3.splice(e4, 1);
@@ -26764,9 +26766,9 @@ WARNING: This link could potentially be dangerous`)) {
             this._executeHandlerFb = e3;
           }
           registerCsiHandler(e3, t3) {
-            const i4 = this._identifier(e3);
-            void 0 === this._csiHandlers[i4] && (this._csiHandlers[i4] = []);
-            const s3 = this._csiHandlers[i4];
+            const i3 = this._identifier(e3);
+            void 0 === this._csiHandlers[i3] && (this._csiHandlers[i3] = []);
+            const s3 = this._csiHandlers[i3];
             return s3.push(t3), { dispose: () => {
               const e4 = s3.indexOf(t3);
               -1 !== e4 && s3.splice(e4, 1);
@@ -26805,22 +26807,22 @@ WARNING: This link could potentially be dangerous`)) {
           reset() {
             this.currentState = this.initialState, this._oscParser.reset(), this._dcsParser.reset(), this._params.reset(), this._params.addParam(0), this._collect = 0, this.precedingCodepoint = 0, 0 !== this._parseStack.state && (this._parseStack.state = 2, this._parseStack.handlers = []);
           }
-          _preserveStack(e3, t3, i4, s3, r2) {
-            this._parseStack.state = e3, this._parseStack.handlers = t3, this._parseStack.handlerPos = i4, this._parseStack.transition = s3, this._parseStack.chunkPos = r2;
+          _preserveStack(e3, t3, i3, s3, r2) {
+            this._parseStack.state = e3, this._parseStack.handlers = t3, this._parseStack.handlerPos = i3, this._parseStack.transition = s3, this._parseStack.chunkPos = r2;
           }
-          parse(e3, t3, i4) {
+          parse(e3, t3, i3) {
             let s3, r2 = 0, n2 = 0, o2 = 0;
             if (this._parseStack.state)
               if (2 === this._parseStack.state)
                 this._parseStack.state = 0, o2 = this._parseStack.chunkPos + 1;
               else {
-                if (void 0 === i4 || 1 === this._parseStack.state)
+                if (void 0 === i3 || 1 === this._parseStack.state)
                   throw this._parseStack.state = 1, new Error("improper continuation due to previous async handler, giving up parsing");
                 const t4 = this._parseStack.handlers;
                 let n3 = this._parseStack.handlerPos - 1;
                 switch (this._parseStack.state) {
                   case 3:
-                    if (false === i4 && n3 > -1) {
+                    if (false === i3 && n3 > -1) {
                       for (; n3 >= 0 && (s3 = t4[n3](this._params), true !== s3); n3--)
                         if (s3 instanceof Promise)
                           return this._parseStack.handlerPos = n3, s3;
@@ -26828,7 +26830,7 @@ WARNING: This link could potentially be dangerous`)) {
                     this._parseStack.handlers = [];
                     break;
                   case 4:
-                    if (false === i4 && n3 > -1) {
+                    if (false === i3 && n3 > -1) {
                       for (; n3 >= 0 && (s3 = t4[n3](), true !== s3); n3--)
                         if (s3 instanceof Promise)
                           return this._parseStack.handlerPos = n3, s3;
@@ -26836,35 +26838,35 @@ WARNING: This link could potentially be dangerous`)) {
                     this._parseStack.handlers = [];
                     break;
                   case 6:
-                    if (r2 = e3[this._parseStack.chunkPos], s3 = this._dcsParser.unhook(24 !== r2 && 26 !== r2, i4), s3)
+                    if (r2 = e3[this._parseStack.chunkPos], s3 = this._dcsParser.unhook(24 !== r2 && 26 !== r2, i3), s3)
                       return s3;
                     27 === r2 && (this._parseStack.transition |= 1), this._params.reset(), this._params.addParam(0), this._collect = 0;
                     break;
                   case 5:
-                    if (r2 = e3[this._parseStack.chunkPos], s3 = this._oscParser.end(24 !== r2 && 26 !== r2, i4), s3)
+                    if (r2 = e3[this._parseStack.chunkPos], s3 = this._oscParser.end(24 !== r2 && 26 !== r2, i3), s3)
                       return s3;
                     27 === r2 && (this._parseStack.transition |= 1), this._params.reset(), this._params.addParam(0), this._collect = 0;
                 }
                 this._parseStack.state = 0, o2 = this._parseStack.chunkPos + 1, this.precedingCodepoint = 0, this.currentState = 15 & this._parseStack.transition;
               }
-            for (let i5 = o2; i5 < t3; ++i5) {
-              switch (r2 = e3[i5], n2 = this._transitions.table[this.currentState << 8 | (r2 < 160 ? r2 : h)], n2 >> 4) {
+            for (let i4 = o2; i4 < t3; ++i4) {
+              switch (r2 = e3[i4], n2 = this._transitions.table[this.currentState << 8 | (r2 < 160 ? r2 : h2)], n2 >> 4) {
                 case 2:
-                  for (let s4 = i5 + 1; ; ++s4) {
-                    if (s4 >= t3 || (r2 = e3[s4]) < 32 || r2 > 126 && r2 < h) {
-                      this._printHandler(e3, i5, s4), i5 = s4 - 1;
+                  for (let s4 = i4 + 1; ; ++s4) {
+                    if (s4 >= t3 || (r2 = e3[s4]) < 32 || r2 > 126 && r2 < h2) {
+                      this._printHandler(e3, i4, s4), i4 = s4 - 1;
                       break;
                     }
-                    if (++s4 >= t3 || (r2 = e3[s4]) < 32 || r2 > 126 && r2 < h) {
-                      this._printHandler(e3, i5, s4), i5 = s4 - 1;
+                    if (++s4 >= t3 || (r2 = e3[s4]) < 32 || r2 > 126 && r2 < h2) {
+                      this._printHandler(e3, i4, s4), i4 = s4 - 1;
                       break;
                     }
-                    if (++s4 >= t3 || (r2 = e3[s4]) < 32 || r2 > 126 && r2 < h) {
-                      this._printHandler(e3, i5, s4), i5 = s4 - 1;
+                    if (++s4 >= t3 || (r2 = e3[s4]) < 32 || r2 > 126 && r2 < h2) {
+                      this._printHandler(e3, i4, s4), i4 = s4 - 1;
                       break;
                     }
-                    if (++s4 >= t3 || (r2 = e3[s4]) < 32 || r2 > 126 && r2 < h) {
-                      this._printHandler(e3, i5, s4), i5 = s4 - 1;
+                    if (++s4 >= t3 || (r2 = e3[s4]) < 32 || r2 > 126 && r2 < h2) {
+                      this._printHandler(e3, i4, s4), i4 = s4 - 1;
                       break;
                     }
                   }
@@ -26875,16 +26877,16 @@ WARNING: This link could potentially be dangerous`)) {
                 case 0:
                   break;
                 case 1:
-                  if (this._errorHandler({ position: i5, code: r2, currentState: this.currentState, collect: this._collect, params: this._params, abort: false }).abort)
+                  if (this._errorHandler({ position: i4, code: r2, currentState: this.currentState, collect: this._collect, params: this._params, abort: false }).abort)
                     return;
                   break;
                 case 7:
                   const o3 = this._csiHandlers[this._collect << 8 | r2];
-                  let a2 = o3 ? o3.length - 1 : -1;
-                  for (; a2 >= 0 && (s3 = o3[a2](this._params), true !== s3); a2--)
+                  let a3 = o3 ? o3.length - 1 : -1;
+                  for (; a3 >= 0 && (s3 = o3[a3](this._params), true !== s3); a3--)
                     if (s3 instanceof Promise)
-                      return this._preserveStack(3, o3, a2, n2, i5), s3;
-                  a2 < 0 && this._csiHandlerFb(this._collect << 8 | r2, this._params), this.precedingCodepoint = 0;
+                      return this._preserveStack(3, o3, a3, n2, i4), s3;
+                  a3 < 0 && this._csiHandlerFb(this._collect << 8 | r2, this._params), this.precedingCodepoint = 0;
                   break;
                 case 8:
                   do {
@@ -26898,19 +26900,19 @@ WARNING: This link could potentially be dangerous`)) {
                       default:
                         this._params.addDigit(r2 - 48);
                     }
-                  } while (++i5 < t3 && (r2 = e3[i5]) > 47 && r2 < 60);
-                  i5--;
+                  } while (++i4 < t3 && (r2 = e3[i4]) > 47 && r2 < 60);
+                  i4--;
                   break;
                 case 9:
                   this._collect <<= 8, this._collect |= r2;
                   break;
                 case 10:
-                  const c2 = this._escHandlers[this._collect << 8 | r2];
-                  let l2 = c2 ? c2.length - 1 : -1;
-                  for (; l2 >= 0 && (s3 = c2[l2](), true !== s3); l2--)
+                  const c4 = this._escHandlers[this._collect << 8 | r2];
+                  let l = c4 ? c4.length - 1 : -1;
+                  for (; l >= 0 && (s3 = c4[l](), true !== s3); l--)
                     if (s3 instanceof Promise)
-                      return this._preserveStack(4, c2, l2, n2, i5), s3;
-                  l2 < 0 && this._escHandlerFb(this._collect << 8 | r2), this.precedingCodepoint = 0;
+                      return this._preserveStack(4, c4, l, n2, i4), s3;
+                  l < 0 && this._escHandlerFb(this._collect << 8 | r2), this.precedingCodepoint = 0;
                   break;
                 case 11:
                   this._params.reset(), this._params.addParam(0), this._collect = 0;
@@ -26919,40 +26921,40 @@ WARNING: This link could potentially be dangerous`)) {
                   this._dcsParser.hook(this._collect << 8 | r2, this._params);
                   break;
                 case 13:
-                  for (let s4 = i5 + 1; ; ++s4)
-                    if (s4 >= t3 || 24 === (r2 = e3[s4]) || 26 === r2 || 27 === r2 || r2 > 127 && r2 < h) {
-                      this._dcsParser.put(e3, i5, s4), i5 = s4 - 1;
+                  for (let s4 = i4 + 1; ; ++s4)
+                    if (s4 >= t3 || 24 === (r2 = e3[s4]) || 26 === r2 || 27 === r2 || r2 > 127 && r2 < h2) {
+                      this._dcsParser.put(e3, i4, s4), i4 = s4 - 1;
                       break;
                     }
                   break;
                 case 14:
                   if (s3 = this._dcsParser.unhook(24 !== r2 && 26 !== r2), s3)
-                    return this._preserveStack(6, [], 0, n2, i5), s3;
+                    return this._preserveStack(6, [], 0, n2, i4), s3;
                   27 === r2 && (n2 |= 1), this._params.reset(), this._params.addParam(0), this._collect = 0, this.precedingCodepoint = 0;
                   break;
                 case 4:
                   this._oscParser.start();
                   break;
                 case 5:
-                  for (let s4 = i5 + 1; ; s4++)
-                    if (s4 >= t3 || (r2 = e3[s4]) < 32 || r2 > 127 && r2 < h) {
-                      this._oscParser.put(e3, i5, s4), i5 = s4 - 1;
+                  for (let s4 = i4 + 1; ; s4++)
+                    if (s4 >= t3 || (r2 = e3[s4]) < 32 || r2 > 127 && r2 < h2) {
+                      this._oscParser.put(e3, i4, s4), i4 = s4 - 1;
                       break;
                     }
                   break;
                 case 6:
                   if (s3 = this._oscParser.end(24 !== r2 && 26 !== r2), s3)
-                    return this._preserveStack(5, [], 0, n2, i5), s3;
+                    return this._preserveStack(5, [], 0, n2, i4), s3;
                   27 === r2 && (n2 |= 1), this._params.reset(), this._params.addParam(0), this._collect = 0, this.precedingCodepoint = 0;
               }
               this.currentState = 15 & n2;
             }
           }
         }
-        t2.EscapeSequenceParser = c;
-      }, 6242: (e2, t2, i3) => {
+        t2.EscapeSequenceParser = c3;
+      }, 6242: (e2, t2, i2) => {
         Object.defineProperty(t2, "__esModule", { value: true }), t2.OscHandler = t2.OscParser = void 0;
-        const s2 = i3(5770), r = i3(482), n = [];
+        const s2 = i2(5770), r = i2(482), n = [];
         t2.OscParser = class {
           constructor() {
             this._state = 0, this._active = n, this._id = -1, this._handlers = /* @__PURE__ */ Object.create(null), this._handlerFb = () => {
@@ -26960,10 +26962,10 @@ WARNING: This link could potentially be dangerous`)) {
           }
           registerHandler(e3, t3) {
             void 0 === this._handlers[e3] && (this._handlers[e3] = []);
-            const i4 = this._handlers[e3];
-            return i4.push(t3), { dispose: () => {
-              const e4 = i4.indexOf(t3);
-              -1 !== e4 && i4.splice(e4, 1);
+            const i3 = this._handlers[e3];
+            return i3.push(t3), { dispose: () => {
+              const e4 = i3.indexOf(t3);
+              -1 !== e4 && i3.splice(e4, 1);
             } };
           }
           clearHandler(e3) {
@@ -26989,46 +26991,46 @@ WARNING: This link could potentially be dangerous`)) {
             else
               this._handlerFb(this._id, "START");
           }
-          _put(e3, t3, i4) {
+          _put(e3, t3, i3) {
             if (this._active.length)
               for (let s3 = this._active.length - 1; s3 >= 0; s3--)
-                this._active[s3].put(e3, t3, i4);
+                this._active[s3].put(e3, t3, i3);
             else
-              this._handlerFb(this._id, "PUT", (0, r.utf32ToString)(e3, t3, i4));
+              this._handlerFb(this._id, "PUT", (0, r.utf32ToString)(e3, t3, i3));
           }
           start() {
             this.reset(), this._state = 1;
           }
-          put(e3, t3, i4) {
+          put(e3, t3, i3) {
             if (3 !== this._state) {
               if (1 === this._state)
-                for (; t3 < i4; ) {
-                  const i5 = e3[t3++];
-                  if (59 === i5) {
+                for (; t3 < i3; ) {
+                  const i4 = e3[t3++];
+                  if (59 === i4) {
                     this._state = 2, this._start();
                     break;
                   }
-                  if (i5 < 48 || 57 < i5)
+                  if (i4 < 48 || 57 < i4)
                     return void (this._state = 3);
-                  -1 === this._id && (this._id = 0), this._id = 10 * this._id + i5 - 48;
+                  -1 === this._id && (this._id = 0), this._id = 10 * this._id + i4 - 48;
                 }
-              2 === this._state && i4 - t3 > 0 && this._put(e3, t3, i4);
+              2 === this._state && i3 - t3 > 0 && this._put(e3, t3, i3);
             }
           }
           end(e3, t3 = true) {
             if (0 !== this._state) {
               if (3 !== this._state)
                 if (1 === this._state && this._start(), this._active.length) {
-                  let i4 = false, s3 = this._active.length - 1, r2 = false;
-                  if (this._stack.paused && (s3 = this._stack.loopPosition - 1, i4 = t3, r2 = this._stack.fallThrough, this._stack.paused = false), !r2 && false === i4) {
-                    for (; s3 >= 0 && (i4 = this._active[s3].end(e3), true !== i4); s3--)
-                      if (i4 instanceof Promise)
-                        return this._stack.paused = true, this._stack.loopPosition = s3, this._stack.fallThrough = false, i4;
+                  let i3 = false, s3 = this._active.length - 1, r2 = false;
+                  if (this._stack.paused && (s3 = this._stack.loopPosition - 1, i3 = t3, r2 = this._stack.fallThrough, this._stack.paused = false), !r2 && false === i3) {
+                    for (; s3 >= 0 && (i3 = this._active[s3].end(e3), true !== i3); s3--)
+                      if (i3 instanceof Promise)
+                        return this._stack.paused = true, this._stack.loopPosition = s3, this._stack.fallThrough = false, i3;
                     s3--;
                   }
                   for (; s3 >= 0; s3--)
-                    if (i4 = this._active[s3].end(false), i4 instanceof Promise)
-                      return this._stack.paused = true, this._stack.loopPosition = s3, this._stack.fallThrough = true, i4;
+                    if (i3 = this._active[s3].end(false), i3 instanceof Promise)
+                      return this._stack.paused = true, this._stack.loopPosition = s3, this._stack.fallThrough = true, i3;
                 } else
                   this._handlerFb(this._id, "END", e3);
               this._active = n, this._id = -1, this._state = 0;
@@ -27041,8 +27043,8 @@ WARNING: This link could potentially be dangerous`)) {
           start() {
             this._data = "", this._hitLimit = false;
           }
-          put(e3, t3, i4) {
-            this._hitLimit || (this._data += (0, r.utf32ToString)(e3, t3, i4), this._data.length > s2.PAYLOAD_LIMIT && (this._data = "", this._hitLimit = true));
+          put(e3, t3, i3) {
+            this._hitLimit || (this._data += (0, r.utf32ToString)(e3, t3, i3), this._data.length > s2.PAYLOAD_LIMIT && (this._data = "", this._hitLimit = true));
           }
           end(e3) {
             let t3 = false;
@@ -27055,14 +27057,14 @@ WARNING: This link could potentially be dangerous`)) {
         };
       }, 8742: (e2, t2) => {
         Object.defineProperty(t2, "__esModule", { value: true }), t2.Params = void 0;
-        const i3 = 2147483647;
+        const i2 = 2147483647;
         class s2 {
           static fromArray(e3) {
             const t3 = new s2();
             if (!e3.length)
               return t3;
-            for (let i4 = Array.isArray(e3[0]) ? 1 : 0; i4 < e3.length; ++i4) {
-              const s3 = e3[i4];
+            for (let i3 = Array.isArray(e3[0]) ? 1 : 0; i3 < e3.length; ++i3) {
+              const s3 = e3[i3];
               if (Array.isArray(s3))
                 for (let e4 = 0; e4 < s3.length; ++e4)
                   t3.addSubParam(s3[e4]);
@@ -27084,8 +27086,8 @@ WARNING: This link could potentially be dangerous`)) {
             const e3 = [];
             for (let t3 = 0; t3 < this.length; ++t3) {
               e3.push(this.params[t3]);
-              const i4 = this._subParamsIdx[t3] >> 8, s3 = 255 & this._subParamsIdx[t3];
-              s3 - i4 > 0 && e3.push(Array.prototype.slice.call(this._subParams, i4, s3));
+              const i3 = this._subParamsIdx[t3] >> 8, s3 = 255 & this._subParamsIdx[t3];
+              s3 - i3 > 0 && e3.push(Array.prototype.slice.call(this._subParams, i3, s3));
             }
             return e3;
           }
@@ -27098,7 +27100,7 @@ WARNING: This link could potentially be dangerous`)) {
             else {
               if (e3 < -1)
                 throw new Error("values lesser than -1 are not allowed");
-              this._subParamsIdx[this.length] = this._subParamsLength << 8 | this._subParamsLength, this.params[this.length++] = e3 > i3 ? i3 : e3;
+              this._subParamsIdx[this.length] = this._subParamsLength << 8 | this._subParamsLength, this.params[this.length++] = e3 > i2 ? i2 : e3;
             }
           }
           addSubParam(e3) {
@@ -27108,21 +27110,21 @@ WARNING: This link could potentially be dangerous`)) {
               else {
                 if (e3 < -1)
                   throw new Error("values lesser than -1 are not allowed");
-                this._subParams[this._subParamsLength++] = e3 > i3 ? i3 : e3, this._subParamsIdx[this.length - 1]++;
+                this._subParams[this._subParamsLength++] = e3 > i2 ? i2 : e3, this._subParamsIdx[this.length - 1]++;
               }
           }
           hasSubParams(e3) {
             return (255 & this._subParamsIdx[e3]) - (this._subParamsIdx[e3] >> 8) > 0;
           }
           getSubParams(e3) {
-            const t3 = this._subParamsIdx[e3] >> 8, i4 = 255 & this._subParamsIdx[e3];
-            return i4 - t3 > 0 ? this._subParams.subarray(t3, i4) : null;
+            const t3 = this._subParamsIdx[e3] >> 8, i3 = 255 & this._subParamsIdx[e3];
+            return i3 - t3 > 0 ? this._subParams.subarray(t3, i3) : null;
           }
           getSubParamsAll() {
             const e3 = {};
             for (let t3 = 0; t3 < this.length; ++t3) {
-              const i4 = this._subParamsIdx[t3] >> 8, s3 = 255 & this._subParamsIdx[t3];
-              s3 - i4 > 0 && (e3[t3] = this._subParams.slice(i4, s3));
+              const i3 = this._subParamsIdx[t3] >> 8, s3 = 255 & this._subParamsIdx[t3];
+              s3 - i3 > 0 && (e3[t3] = this._subParams.slice(i3, s3));
             }
             return e3;
           }
@@ -27131,7 +27133,7 @@ WARNING: This link could potentially be dangerous`)) {
             if (this._rejectDigits || !(t3 = this._digitIsSub ? this._subParamsLength : this.length) || this._digitIsSub && this._rejectSubDigits)
               return;
             const s3 = this._digitIsSub ? this._subParams : this.params, r = s3[t3 - 1];
-            s3[t3 - 1] = ~r ? Math.min(10 * r + e3, i3) : e3;
+            s3[t3 - 1] = ~r ? Math.min(10 * r + e3, i2) : e3;
           }
         }
         t2.Params = s2;
@@ -27145,16 +27147,16 @@ WARNING: This link could potentially be dangerous`)) {
               this._addons[e3].instance.dispose();
           }
           loadAddon(e3, t3) {
-            const i3 = { instance: t3, dispose: t3.dispose, isDisposed: false };
-            this._addons.push(i3), t3.dispose = () => this._wrappedAddonDispose(i3), t3.activate(e3);
+            const i2 = { instance: t3, dispose: t3.dispose, isDisposed: false };
+            this._addons.push(i2), t3.dispose = () => this._wrappedAddonDispose(i2), t3.activate(e3);
           }
           _wrappedAddonDispose(e3) {
             if (e3.isDisposed)
               return;
             let t3 = -1;
-            for (let i3 = 0; i3 < this._addons.length; i3++)
-              if (this._addons[i3] === e3) {
-                t3 = i3;
+            for (let i2 = 0; i2 < this._addons.length; i2++)
+              if (this._addons[i2] === e3) {
+                t3 = i2;
                 break;
               }
             if (-1 === t3)
@@ -27162,9 +27164,9 @@ WARNING: This link could potentially be dangerous`)) {
             e3.isDisposed = true, e3.dispose.apply(e3.instance), this._addons.splice(t3, 1);
           }
         };
-      }, 8771: (e2, t2, i3) => {
+      }, 8771: (e2, t2, i2) => {
         Object.defineProperty(t2, "__esModule", { value: true }), t2.BufferApiView = void 0;
-        const s2 = i3(3785), r = i3(511);
+        const s2 = i2(3785), r = i2(511);
         t2.BufferApiView = class {
           constructor(e3, t3) {
             this._buffer = e3, this.type = t3;
@@ -27196,9 +27198,9 @@ WARNING: This link could potentially be dangerous`)) {
             return new r.CellData();
           }
         };
-      }, 3785: (e2, t2, i3) => {
+      }, 3785: (e2, t2, i2) => {
         Object.defineProperty(t2, "__esModule", { value: true }), t2.BufferLineApiView = void 0;
-        const s2 = i3(511);
+        const s2 = i2(511);
         t2.BufferLineApiView = class {
           constructor(e3) {
             this._line = e3;
@@ -27213,13 +27215,13 @@ WARNING: This link could potentially be dangerous`)) {
             if (!(e3 < 0 || e3 >= this._line.length))
               return t3 ? (this._line.loadCell(e3, t3), t3) : this._line.loadCell(e3, new s2.CellData());
           }
-          translateToString(e3, t3, i4) {
-            return this._line.translateToString(e3, t3, i4);
+          translateToString(e3, t3, i3) {
+            return this._line.translateToString(e3, t3, i3);
           }
         };
-      }, 8285: (e2, t2, i3) => {
+      }, 8285: (e2, t2, i2) => {
         Object.defineProperty(t2, "__esModule", { value: true }), t2.BufferNamespaceApi = void 0;
-        const s2 = i3(8771), r = i3(8460), n = i3(844);
+        const s2 = i2(8771), r = i2(8460), n = i2(844);
         class o extends n.Disposable {
           constructor(e3) {
             super(), this._core = e3, this._onBufferChange = this.register(new r.EventEmitter()), this.onBufferChange = this._onBufferChange.event, this._normal = new s2.BufferApiView(this._core.buffers.normal, "normal"), this._alternate = new s2.BufferApiView(this._core.buffers.alt, "alternate"), this._core.buffers.onBufferActivate(() => this._onBufferChange.fire(this.active));
@@ -27251,7 +27253,7 @@ WARNING: This link could potentially be dangerous`)) {
             return this.registerCsiHandler(e3, t3);
           }
           registerDcsHandler(e3, t3) {
-            return this._core.registerDcsHandler(e3, (e4, i3) => t3(e4, i3.toArray()));
+            return this._core.registerDcsHandler(e3, (e4, i2) => t3(e4, i2.toArray()));
           }
           addDcsHandler(e3, t3) {
             return this.registerDcsHandler(e3, t3);
@@ -27287,29 +27289,29 @@ WARNING: This link could potentially be dangerous`)) {
             this._core.unicodeService.activeVersion = e3;
           }
         };
-      }, 744: function(e2, t2, i3) {
-        var s2 = this && this.__decorate || function(e3, t3, i4, s3) {
-          var r2, n2 = arguments.length, o2 = n2 < 3 ? t3 : null === s3 ? s3 = Object.getOwnPropertyDescriptor(t3, i4) : s3;
+      }, 744: function(e2, t2, i2) {
+        var s2 = this && this.__decorate || function(e3, t3, i3, s3) {
+          var r2, n2 = arguments.length, o2 = n2 < 3 ? t3 : null === s3 ? s3 = Object.getOwnPropertyDescriptor(t3, i3) : s3;
           if ("object" == typeof Reflect && "function" == typeof Reflect.decorate)
-            o2 = Reflect.decorate(e3, t3, i4, s3);
+            o2 = Reflect.decorate(e3, t3, i3, s3);
           else
-            for (var a2 = e3.length - 1; a2 >= 0; a2--)
-              (r2 = e3[a2]) && (o2 = (n2 < 3 ? r2(o2) : n2 > 3 ? r2(t3, i4, o2) : r2(t3, i4)) || o2);
-          return n2 > 3 && o2 && Object.defineProperty(t3, i4, o2), o2;
+            for (var a3 = e3.length - 1; a3 >= 0; a3--)
+              (r2 = e3[a3]) && (o2 = (n2 < 3 ? r2(o2) : n2 > 3 ? r2(t3, i3, o2) : r2(t3, i3)) || o2);
+          return n2 > 3 && o2 && Object.defineProperty(t3, i3, o2), o2;
         }, r = this && this.__param || function(e3, t3) {
-          return function(i4, s3) {
-            t3(i4, s3, e3);
+          return function(i3, s3) {
+            t3(i3, s3, e3);
           };
         };
         Object.defineProperty(t2, "__esModule", { value: true }), t2.BufferService = t2.MINIMUM_ROWS = t2.MINIMUM_COLS = void 0;
-        const n = i3(8460), o = i3(844), a = i3(5295), h = i3(2585);
+        const n = i2(8460), o = i2(844), a2 = i2(5295), h2 = i2(2585);
         t2.MINIMUM_COLS = 2, t2.MINIMUM_ROWS = 1;
-        let c = t2.BufferService = class extends o.Disposable {
+        let c3 = t2.BufferService = class extends o.Disposable {
           get buffer() {
             return this.buffers.active;
           }
           constructor(e3) {
-            super(), this.isUserScrolling = false, this._onResize = this.register(new n.EventEmitter()), this.onResize = this._onResize.event, this._onScroll = this.register(new n.EventEmitter()), this.onScroll = this._onScroll.event, this.cols = Math.max(e3.rawOptions.cols || 0, t2.MINIMUM_COLS), this.rows = Math.max(e3.rawOptions.rows || 0, t2.MINIMUM_ROWS), this.buffers = this.register(new a.BufferSet(e3, this));
+            super(), this.isUserScrolling = false, this._onResize = this.register(new n.EventEmitter()), this.onResize = this._onResize.event, this._onScroll = this.register(new n.EventEmitter()), this.onScroll = this._onScroll.event, this.cols = Math.max(e3.rawOptions.cols || 0, t2.MINIMUM_COLS), this.rows = Math.max(e3.rawOptions.rows || 0, t2.MINIMUM_ROWS), this.buffers = this.register(new a2.BufferSet(e3, this));
           }
           resize(e3, t3) {
             this.cols = e3, this.rows = t3, this.buffers.resize(e3, t3), this._onResize.fire({ cols: e3, rows: t3 });
@@ -27318,20 +27320,20 @@ WARNING: This link could potentially be dangerous`)) {
             this.buffers.reset(), this.isUserScrolling = false;
           }
           scroll(e3, t3 = false) {
-            const i4 = this.buffer;
+            const i3 = this.buffer;
             let s3;
-            s3 = this._cachedBlankLine, s3 && s3.length === this.cols && s3.getFg(0) === e3.fg && s3.getBg(0) === e3.bg || (s3 = i4.getBlankLine(e3, t3), this._cachedBlankLine = s3), s3.isWrapped = t3;
-            const r2 = i4.ybase + i4.scrollTop, n2 = i4.ybase + i4.scrollBottom;
-            if (0 === i4.scrollTop) {
-              const e4 = i4.lines.isFull;
-              n2 === i4.lines.length - 1 ? e4 ? i4.lines.recycle().copyFrom(s3) : i4.lines.push(s3.clone()) : i4.lines.splice(n2 + 1, 0, s3.clone()), e4 ? this.isUserScrolling && (i4.ydisp = Math.max(i4.ydisp - 1, 0)) : (i4.ybase++, this.isUserScrolling || i4.ydisp++);
+            s3 = this._cachedBlankLine, s3 && s3.length === this.cols && s3.getFg(0) === e3.fg && s3.getBg(0) === e3.bg || (s3 = i3.getBlankLine(e3, t3), this._cachedBlankLine = s3), s3.isWrapped = t3;
+            const r2 = i3.ybase + i3.scrollTop, n2 = i3.ybase + i3.scrollBottom;
+            if (0 === i3.scrollTop) {
+              const e4 = i3.lines.isFull;
+              n2 === i3.lines.length - 1 ? e4 ? i3.lines.recycle().copyFrom(s3) : i3.lines.push(s3.clone()) : i3.lines.splice(n2 + 1, 0, s3.clone()), e4 ? this.isUserScrolling && (i3.ydisp = Math.max(i3.ydisp - 1, 0)) : (i3.ybase++, this.isUserScrolling || i3.ydisp++);
             } else {
               const e4 = n2 - r2 + 1;
-              i4.lines.shiftElements(r2 + 1, e4 - 1, -1), i4.lines.set(n2, s3.clone());
+              i3.lines.shiftElements(r2 + 1, e4 - 1, -1), i3.lines.set(n2, s3.clone());
             }
-            this.isUserScrolling || (i4.ydisp = i4.ybase), this._onScroll.fire(i4.ydisp);
+            this.isUserScrolling || (i3.ydisp = i3.ybase), this._onScroll.fire(i3.ydisp);
           }
-          scrollLines(e3, t3, i4) {
+          scrollLines(e3, t3, i3) {
             const s3 = this.buffer;
             if (e3 < 0) {
               if (0 === s3.ydisp)
@@ -27343,7 +27345,7 @@ WARNING: This link could potentially be dangerous`)) {
             s3.ydisp = Math.max(Math.min(s3.ydisp + e3, s3.ybase), 0), r2 !== s3.ydisp && (t3 || this._onScroll.fire(s3.ydisp));
           }
         };
-        t2.BufferService = c = s2([r(0, h.IOptionsService)], c);
+        t2.BufferService = c3 = s2([r(0, h2.IOptionsService)], c3);
       }, 7994: (e2, t2) => {
         Object.defineProperty(t2, "__esModule", { value: true }), t2.CharsetService = void 0, t2.CharsetService = class {
           constructor() {
@@ -27359,41 +27361,41 @@ WARNING: This link could potentially be dangerous`)) {
             this._charsets[e3] = t3, this.glevel === e3 && (this.charset = t3);
           }
         };
-      }, 1753: function(e2, t2, i3) {
-        var s2 = this && this.__decorate || function(e3, t3, i4, s3) {
-          var r2, n2 = arguments.length, o2 = n2 < 3 ? t3 : null === s3 ? s3 = Object.getOwnPropertyDescriptor(t3, i4) : s3;
+      }, 1753: function(e2, t2, i2) {
+        var s2 = this && this.__decorate || function(e3, t3, i3, s3) {
+          var r2, n2 = arguments.length, o2 = n2 < 3 ? t3 : null === s3 ? s3 = Object.getOwnPropertyDescriptor(t3, i3) : s3;
           if ("object" == typeof Reflect && "function" == typeof Reflect.decorate)
-            o2 = Reflect.decorate(e3, t3, i4, s3);
+            o2 = Reflect.decorate(e3, t3, i3, s3);
           else
-            for (var a2 = e3.length - 1; a2 >= 0; a2--)
-              (r2 = e3[a2]) && (o2 = (n2 < 3 ? r2(o2) : n2 > 3 ? r2(t3, i4, o2) : r2(t3, i4)) || o2);
-          return n2 > 3 && o2 && Object.defineProperty(t3, i4, o2), o2;
+            for (var a3 = e3.length - 1; a3 >= 0; a3--)
+              (r2 = e3[a3]) && (o2 = (n2 < 3 ? r2(o2) : n2 > 3 ? r2(t3, i3, o2) : r2(t3, i3)) || o2);
+          return n2 > 3 && o2 && Object.defineProperty(t3, i3, o2), o2;
         }, r = this && this.__param || function(e3, t3) {
-          return function(i4, s3) {
-            t3(i4, s3, e3);
+          return function(i3, s3) {
+            t3(i3, s3, e3);
           };
         };
         Object.defineProperty(t2, "__esModule", { value: true }), t2.CoreMouseService = void 0;
-        const n = i3(2585), o = i3(8460), a = i3(844), h = { NONE: { events: 0, restrict: () => false }, X10: { events: 1, restrict: (e3) => 4 !== e3.button && 1 === e3.action && (e3.ctrl = false, e3.alt = false, e3.shift = false, true) }, VT200: { events: 19, restrict: (e3) => 32 !== e3.action }, DRAG: { events: 23, restrict: (e3) => 32 !== e3.action || 3 !== e3.button }, ANY: { events: 31, restrict: (e3) => true } };
-        function c(e3, t3) {
-          let i4 = (e3.ctrl ? 16 : 0) | (e3.shift ? 4 : 0) | (e3.alt ? 8 : 0);
-          return 4 === e3.button ? (i4 |= 64, i4 |= e3.action) : (i4 |= 3 & e3.button, 4 & e3.button && (i4 |= 64), 8 & e3.button && (i4 |= 128), 32 === e3.action ? i4 |= 32 : 0 !== e3.action || t3 || (i4 |= 3)), i4;
+        const n = i2(2585), o = i2(8460), a2 = i2(844), h2 = { NONE: { events: 0, restrict: () => false }, X10: { events: 1, restrict: (e3) => 4 !== e3.button && 1 === e3.action && (e3.ctrl = false, e3.alt = false, e3.shift = false, true) }, VT200: { events: 19, restrict: (e3) => 32 !== e3.action }, DRAG: { events: 23, restrict: (e3) => 32 !== e3.action || 3 !== e3.button }, ANY: { events: 31, restrict: (e3) => true } };
+        function c3(e3, t3) {
+          let i3 = (e3.ctrl ? 16 : 0) | (e3.shift ? 4 : 0) | (e3.alt ? 8 : 0);
+          return 4 === e3.button ? (i3 |= 64, i3 |= e3.action) : (i3 |= 3 & e3.button, 4 & e3.button && (i3 |= 64), 8 & e3.button && (i3 |= 128), 32 === e3.action ? i3 |= 32 : 0 !== e3.action || t3 || (i3 |= 3)), i3;
         }
-        const l2 = String.fromCharCode, d2 = { DEFAULT: (e3) => {
-          const t3 = [c(e3, false) + 32, e3.col + 32, e3.row + 32];
-          return t3[0] > 255 || t3[1] > 255 || t3[2] > 255 ? "" : `\x1B[M${l2(t3[0])}${l2(t3[1])}${l2(t3[2])}`;
+        const l = String.fromCharCode, d2 = { DEFAULT: (e3) => {
+          const t3 = [c3(e3, false) + 32, e3.col + 32, e3.row + 32];
+          return t3[0] > 255 || t3[1] > 255 || t3[2] > 255 ? "" : `\x1B[M${l(t3[0])}${l(t3[1])}${l(t3[2])}`;
         }, SGR: (e3) => {
           const t3 = 0 === e3.action && 4 !== e3.button ? "m" : "M";
-          return `\x1B[<${c(e3, true)};${e3.col};${e3.row}${t3}`;
+          return `\x1B[<${c3(e3, true)};${e3.col};${e3.row}${t3}`;
         }, SGR_PIXELS: (e3) => {
           const t3 = 0 === e3.action && 4 !== e3.button ? "m" : "M";
-          return `\x1B[<${c(e3, true)};${e3.x};${e3.y}${t3}`;
+          return `\x1B[<${c3(e3, true)};${e3.x};${e3.y}${t3}`;
         } };
-        let _2 = t2.CoreMouseService = class extends a.Disposable {
+        let _2 = t2.CoreMouseService = class extends a2.Disposable {
           constructor(e3, t3) {
             super(), this._bufferService = e3, this._coreService = t3, this._protocols = {}, this._encodings = {}, this._activeProtocol = "", this._activeEncoding = "", this._lastEvent = null, this._onProtocolChange = this.register(new o.EventEmitter()), this.onProtocolChange = this._onProtocolChange.event;
-            for (const e4 of Object.keys(h))
-              this.addProtocol(e4, h[e4]);
+            for (const e4 of Object.keys(h2))
+              this.addProtocol(e4, h2[e4]);
             for (const e4 of Object.keys(d2))
               this.addEncoding(e4, d2[e4]);
             this.reset();
@@ -27445,8 +27447,8 @@ WARNING: This link could potentially be dangerous`)) {
           explainEvents(e3) {
             return { down: !!(1 & e3), up: !!(2 & e3), drag: !!(4 & e3), move: !!(8 & e3), wheel: !!(16 & e3) };
           }
-          _equalEvents(e3, t3, i4) {
-            if (i4) {
+          _equalEvents(e3, t3, i3) {
+            if (i3) {
               if (e3.x !== t3.x)
                 return false;
               if (e3.y !== t3.y)
@@ -27461,45 +27463,45 @@ WARNING: This link could potentially be dangerous`)) {
           }
         };
         t2.CoreMouseService = _2 = s2([r(0, n.IBufferService), r(1, n.ICoreService)], _2);
-      }, 6975: function(e2, t2, i3) {
-        var s2 = this && this.__decorate || function(e3, t3, i4, s3) {
-          var r2, n2 = arguments.length, o2 = n2 < 3 ? t3 : null === s3 ? s3 = Object.getOwnPropertyDescriptor(t3, i4) : s3;
+      }, 6975: function(e2, t2, i2) {
+        var s2 = this && this.__decorate || function(e3, t3, i3, s3) {
+          var r2, n2 = arguments.length, o2 = n2 < 3 ? t3 : null === s3 ? s3 = Object.getOwnPropertyDescriptor(t3, i3) : s3;
           if ("object" == typeof Reflect && "function" == typeof Reflect.decorate)
-            o2 = Reflect.decorate(e3, t3, i4, s3);
+            o2 = Reflect.decorate(e3, t3, i3, s3);
           else
-            for (var a2 = e3.length - 1; a2 >= 0; a2--)
-              (r2 = e3[a2]) && (o2 = (n2 < 3 ? r2(o2) : n2 > 3 ? r2(t3, i4, o2) : r2(t3, i4)) || o2);
-          return n2 > 3 && o2 && Object.defineProperty(t3, i4, o2), o2;
+            for (var a3 = e3.length - 1; a3 >= 0; a3--)
+              (r2 = e3[a3]) && (o2 = (n2 < 3 ? r2(o2) : n2 > 3 ? r2(t3, i3, o2) : r2(t3, i3)) || o2);
+          return n2 > 3 && o2 && Object.defineProperty(t3, i3, o2), o2;
         }, r = this && this.__param || function(e3, t3) {
-          return function(i4, s3) {
-            t3(i4, s3, e3);
+          return function(i3, s3) {
+            t3(i3, s3, e3);
           };
         };
         Object.defineProperty(t2, "__esModule", { value: true }), t2.CoreService = void 0;
-        const n = i3(1439), o = i3(8460), a = i3(844), h = i3(2585), c = Object.freeze({ insertMode: false }), l2 = Object.freeze({ applicationCursorKeys: false, applicationKeypad: false, bracketedPasteMode: false, origin: false, reverseWraparound: false, sendFocus: false, wraparound: true });
-        let d2 = t2.CoreService = class extends a.Disposable {
-          constructor(e3, t3, i4) {
-            super(), this._bufferService = e3, this._logService = t3, this._optionsService = i4, this.isCursorInitialized = false, this.isCursorHidden = false, this._onData = this.register(new o.EventEmitter()), this.onData = this._onData.event, this._onUserInput = this.register(new o.EventEmitter()), this.onUserInput = this._onUserInput.event, this._onBinary = this.register(new o.EventEmitter()), this.onBinary = this._onBinary.event, this._onRequestScrollToBottom = this.register(new o.EventEmitter()), this.onRequestScrollToBottom = this._onRequestScrollToBottom.event, this.modes = (0, n.clone)(c), this.decPrivateModes = (0, n.clone)(l2);
+        const n = i2(1439), o = i2(8460), a2 = i2(844), h2 = i2(2585), c3 = Object.freeze({ insertMode: false }), l = Object.freeze({ applicationCursorKeys: false, applicationKeypad: false, bracketedPasteMode: false, origin: false, reverseWraparound: false, sendFocus: false, wraparound: true });
+        let d2 = t2.CoreService = class extends a2.Disposable {
+          constructor(e3, t3, i3) {
+            super(), this._bufferService = e3, this._logService = t3, this._optionsService = i3, this.isCursorInitialized = false, this.isCursorHidden = false, this._onData = this.register(new o.EventEmitter()), this.onData = this._onData.event, this._onUserInput = this.register(new o.EventEmitter()), this.onUserInput = this._onUserInput.event, this._onBinary = this.register(new o.EventEmitter()), this.onBinary = this._onBinary.event, this._onRequestScrollToBottom = this.register(new o.EventEmitter()), this.onRequestScrollToBottom = this._onRequestScrollToBottom.event, this.modes = (0, n.clone)(c3), this.decPrivateModes = (0, n.clone)(l);
           }
           reset() {
-            this.modes = (0, n.clone)(c), this.decPrivateModes = (0, n.clone)(l2);
+            this.modes = (0, n.clone)(c3), this.decPrivateModes = (0, n.clone)(l);
           }
           triggerDataEvent(e3, t3 = false) {
             if (this._optionsService.rawOptions.disableStdin)
               return;
-            const i4 = this._bufferService.buffer;
-            t3 && this._optionsService.rawOptions.scrollOnUserInput && i4.ybase !== i4.ydisp && this._onRequestScrollToBottom.fire(), t3 && this._onUserInput.fire(), this._logService.debug(`sending data "${e3}"`, () => e3.split("").map((e4) => e4.charCodeAt(0))), this._onData.fire(e3);
+            const i3 = this._bufferService.buffer;
+            t3 && this._optionsService.rawOptions.scrollOnUserInput && i3.ybase !== i3.ydisp && this._onRequestScrollToBottom.fire(), t3 && this._onUserInput.fire(), this._logService.debug(`sending data "${e3}"`, () => e3.split("").map((e4) => e4.charCodeAt(0))), this._onData.fire(e3);
           }
           triggerBinaryEvent(e3) {
             this._optionsService.rawOptions.disableStdin || (this._logService.debug(`sending binary "${e3}"`, () => e3.split("").map((e4) => e4.charCodeAt(0))), this._onBinary.fire(e3));
           }
         };
-        t2.CoreService = d2 = s2([r(0, h.IBufferService), r(1, h.ILogService), r(2, h.IOptionsService)], d2);
-      }, 9074: (e2, t2, i3) => {
+        t2.CoreService = d2 = s2([r(0, h2.IBufferService), r(1, h2.ILogService), r(2, h2.IOptionsService)], d2);
+      }, 9074: (e2, t2, i2) => {
         Object.defineProperty(t2, "__esModule", { value: true }), t2.DecorationService = void 0;
-        const s2 = i3(8055), r = i3(8460), n = i3(844), o = i3(6106);
-        let a = 0, h = 0;
-        class c extends n.Disposable {
+        const s2 = i2(8055), r = i2(8460), n = i2(844), o = i2(6106);
+        let a2 = 0, h2 = 0;
+        class c3 extends n.Disposable {
           get decorations() {
             return this._decorations.values();
           }
@@ -27509,7 +27511,7 @@ WARNING: This link could potentially be dangerous`)) {
           registerDecoration(e3) {
             if (e3.marker.isDisposed)
               return;
-            const t3 = new l2(e3);
+            const t3 = new l(e3);
             if (t3) {
               const e4 = t3.marker.onDispose(() => t3.dispose());
               t3.onDispose(() => {
@@ -27523,21 +27525,21 @@ WARNING: This link could potentially be dangerous`)) {
               e3.dispose();
             this._decorations.clear();
           }
-          *getDecorationsAtCell(e3, t3, i4) {
+          *getDecorationsAtCell(e3, t3, i3) {
             var s3, r2, n2;
-            let o2 = 0, a2 = 0;
-            for (const h2 of this._decorations.getKeyIterator(t3))
-              o2 = null !== (s3 = h2.options.x) && void 0 !== s3 ? s3 : 0, a2 = o2 + (null !== (r2 = h2.options.width) && void 0 !== r2 ? r2 : 1), e3 >= o2 && e3 < a2 && (!i4 || (null !== (n2 = h2.options.layer) && void 0 !== n2 ? n2 : "bottom") === i4) && (yield h2);
+            let o2 = 0, a3 = 0;
+            for (const h3 of this._decorations.getKeyIterator(t3))
+              o2 = null !== (s3 = h3.options.x) && void 0 !== s3 ? s3 : 0, a3 = o2 + (null !== (r2 = h3.options.width) && void 0 !== r2 ? r2 : 1), e3 >= o2 && e3 < a3 && (!i3 || (null !== (n2 = h3.options.layer) && void 0 !== n2 ? n2 : "bottom") === i3) && (yield h3);
           }
-          forEachDecorationAtCell(e3, t3, i4, s3) {
+          forEachDecorationAtCell(e3, t3, i3, s3) {
             this._decorations.forEachByKey(t3, (t4) => {
               var r2, n2, o2;
-              a = null !== (r2 = t4.options.x) && void 0 !== r2 ? r2 : 0, h = a + (null !== (n2 = t4.options.width) && void 0 !== n2 ? n2 : 1), e3 >= a && e3 < h && (!i4 || (null !== (o2 = t4.options.layer) && void 0 !== o2 ? o2 : "bottom") === i4) && s3(t4);
+              a2 = null !== (r2 = t4.options.x) && void 0 !== r2 ? r2 : 0, h2 = a2 + (null !== (n2 = t4.options.width) && void 0 !== n2 ? n2 : 1), e3 >= a2 && e3 < h2 && (!i3 || (null !== (o2 = t4.options.layer) && void 0 !== o2 ? o2 : "bottom") === i3) && s3(t4);
             });
           }
         }
-        t2.DecorationService = c;
-        class l2 extends n.Disposable {
+        t2.DecorationService = c3;
+        class l extends n.Disposable {
           get isDisposed() {
             return this._isDisposed;
           }
@@ -27554,22 +27556,22 @@ WARNING: This link could potentially be dangerous`)) {
             this._onDispose.fire(), super.dispose();
           }
         }
-      }, 4348: (e2, t2, i3) => {
+      }, 4348: (e2, t2, i2) => {
         Object.defineProperty(t2, "__esModule", { value: true }), t2.InstantiationService = t2.ServiceCollection = void 0;
-        const s2 = i3(2585), r = i3(8343);
+        const s2 = i2(2585), r = i2(8343);
         class n {
           constructor(...e3) {
             this._entries = /* @__PURE__ */ new Map();
-            for (const [t3, i4] of e3)
-              this.set(t3, i4);
+            for (const [t3, i3] of e3)
+              this.set(t3, i3);
           }
           set(e3, t3) {
-            const i4 = this._entries.get(e3);
-            return this._entries.set(e3, t3), i4;
+            const i3 = this._entries.get(e3);
+            return this._entries.set(e3, t3), i3;
           }
           forEach(e3) {
-            for (const [t3, i4] of this._entries.entries())
-              e3(t3, i4);
+            for (const [t3, i3] of this._entries.entries())
+              e3(t3, i3);
           }
           has(e3) {
             return this._entries.has(e3);
@@ -27589,114 +27591,114 @@ WARNING: This link could potentially be dangerous`)) {
             return this._services.get(e3);
           }
           createInstance(e3, ...t3) {
-            const i4 = (0, r.getServiceDependencies)(e3).sort((e4, t4) => e4.index - t4.index), s3 = [];
-            for (const t4 of i4) {
-              const i5 = this._services.get(t4.id);
-              if (!i5)
+            const i3 = (0, r.getServiceDependencies)(e3).sort((e4, t4) => e4.index - t4.index), s3 = [];
+            for (const t4 of i3) {
+              const i4 = this._services.get(t4.id);
+              if (!i4)
                 throw new Error(`[createInstance] ${e3.name} depends on UNKNOWN service ${t4.id}.`);
-              s3.push(i5);
+              s3.push(i4);
             }
-            const n2 = i4.length > 0 ? i4[0].index : t3.length;
+            const n2 = i3.length > 0 ? i3[0].index : t3.length;
             if (t3.length !== n2)
               throw new Error(`[createInstance] First service dependency of ${e3.name} at position ${n2 + 1} conflicts with ${t3.length} static arguments`);
             return new e3(...[...t3, ...s3]);
           }
         };
-      }, 7866: function(e2, t2, i3) {
-        var s2 = this && this.__decorate || function(e3, t3, i4, s3) {
-          var r2, n2 = arguments.length, o2 = n2 < 3 ? t3 : null === s3 ? s3 = Object.getOwnPropertyDescriptor(t3, i4) : s3;
+      }, 7866: function(e2, t2, i2) {
+        var s2 = this && this.__decorate || function(e3, t3, i3, s3) {
+          var r2, n2 = arguments.length, o2 = n2 < 3 ? t3 : null === s3 ? s3 = Object.getOwnPropertyDescriptor(t3, i3) : s3;
           if ("object" == typeof Reflect && "function" == typeof Reflect.decorate)
-            o2 = Reflect.decorate(e3, t3, i4, s3);
+            o2 = Reflect.decorate(e3, t3, i3, s3);
           else
-            for (var a2 = e3.length - 1; a2 >= 0; a2--)
-              (r2 = e3[a2]) && (o2 = (n2 < 3 ? r2(o2) : n2 > 3 ? r2(t3, i4, o2) : r2(t3, i4)) || o2);
-          return n2 > 3 && o2 && Object.defineProperty(t3, i4, o2), o2;
+            for (var a3 = e3.length - 1; a3 >= 0; a3--)
+              (r2 = e3[a3]) && (o2 = (n2 < 3 ? r2(o2) : n2 > 3 ? r2(t3, i3, o2) : r2(t3, i3)) || o2);
+          return n2 > 3 && o2 && Object.defineProperty(t3, i3, o2), o2;
         }, r = this && this.__param || function(e3, t3) {
-          return function(i4, s3) {
-            t3(i4, s3, e3);
+          return function(i3, s3) {
+            t3(i3, s3, e3);
           };
         };
         Object.defineProperty(t2, "__esModule", { value: true }), t2.traceCall = t2.setTraceLogger = t2.LogService = void 0;
-        const n = i3(844), o = i3(2585), a = { trace: o.LogLevelEnum.TRACE, debug: o.LogLevelEnum.DEBUG, info: o.LogLevelEnum.INFO, warn: o.LogLevelEnum.WARN, error: o.LogLevelEnum.ERROR, off: o.LogLevelEnum.OFF };
-        let h, c = t2.LogService = class extends n.Disposable {
+        const n = i2(844), o = i2(2585), a2 = { trace: o.LogLevelEnum.TRACE, debug: o.LogLevelEnum.DEBUG, info: o.LogLevelEnum.INFO, warn: o.LogLevelEnum.WARN, error: o.LogLevelEnum.ERROR, off: o.LogLevelEnum.OFF };
+        let h2, c3 = t2.LogService = class extends n.Disposable {
           get logLevel() {
             return this._logLevel;
           }
           constructor(e3) {
-            super(), this._optionsService = e3, this._logLevel = o.LogLevelEnum.OFF, this._updateLogLevel(), this.register(this._optionsService.onSpecificOptionChange("logLevel", () => this._updateLogLevel())), h = this;
+            super(), this._optionsService = e3, this._logLevel = o.LogLevelEnum.OFF, this._updateLogLevel(), this.register(this._optionsService.onSpecificOptionChange("logLevel", () => this._updateLogLevel())), h2 = this;
           }
           _updateLogLevel() {
-            this._logLevel = a[this._optionsService.rawOptions.logLevel];
+            this._logLevel = a2[this._optionsService.rawOptions.logLevel];
           }
           _evalLazyOptionalParams(e3) {
             for (let t3 = 0; t3 < e3.length; t3++)
               "function" == typeof e3[t3] && (e3[t3] = e3[t3]());
           }
-          _log(e3, t3, i4) {
-            this._evalLazyOptionalParams(i4), e3.call(console, (this._optionsService.options.logger ? "" : "xterm.js: ") + t3, ...i4);
+          _log(e3, t3, i3) {
+            this._evalLazyOptionalParams(i3), e3.call(console, (this._optionsService.options.logger ? "" : "xterm.js: ") + t3, ...i3);
           }
           trace(e3, ...t3) {
-            var i4, s3;
-            this._logLevel <= o.LogLevelEnum.TRACE && this._log(null !== (s3 = null === (i4 = this._optionsService.options.logger) || void 0 === i4 ? void 0 : i4.trace.bind(this._optionsService.options.logger)) && void 0 !== s3 ? s3 : console.log, e3, t3);
+            var i3, s3;
+            this._logLevel <= o.LogLevelEnum.TRACE && this._log(null !== (s3 = null === (i3 = this._optionsService.options.logger) || void 0 === i3 ? void 0 : i3.trace.bind(this._optionsService.options.logger)) && void 0 !== s3 ? s3 : console.log, e3, t3);
           }
           debug(e3, ...t3) {
-            var i4, s3;
-            this._logLevel <= o.LogLevelEnum.DEBUG && this._log(null !== (s3 = null === (i4 = this._optionsService.options.logger) || void 0 === i4 ? void 0 : i4.debug.bind(this._optionsService.options.logger)) && void 0 !== s3 ? s3 : console.log, e3, t3);
+            var i3, s3;
+            this._logLevel <= o.LogLevelEnum.DEBUG && this._log(null !== (s3 = null === (i3 = this._optionsService.options.logger) || void 0 === i3 ? void 0 : i3.debug.bind(this._optionsService.options.logger)) && void 0 !== s3 ? s3 : console.log, e3, t3);
           }
           info(e3, ...t3) {
-            var i4, s3;
-            this._logLevel <= o.LogLevelEnum.INFO && this._log(null !== (s3 = null === (i4 = this._optionsService.options.logger) || void 0 === i4 ? void 0 : i4.info.bind(this._optionsService.options.logger)) && void 0 !== s3 ? s3 : console.info, e3, t3);
+            var i3, s3;
+            this._logLevel <= o.LogLevelEnum.INFO && this._log(null !== (s3 = null === (i3 = this._optionsService.options.logger) || void 0 === i3 ? void 0 : i3.info.bind(this._optionsService.options.logger)) && void 0 !== s3 ? s3 : console.info, e3, t3);
           }
           warn(e3, ...t3) {
-            var i4, s3;
-            this._logLevel <= o.LogLevelEnum.WARN && this._log(null !== (s3 = null === (i4 = this._optionsService.options.logger) || void 0 === i4 ? void 0 : i4.warn.bind(this._optionsService.options.logger)) && void 0 !== s3 ? s3 : console.warn, e3, t3);
+            var i3, s3;
+            this._logLevel <= o.LogLevelEnum.WARN && this._log(null !== (s3 = null === (i3 = this._optionsService.options.logger) || void 0 === i3 ? void 0 : i3.warn.bind(this._optionsService.options.logger)) && void 0 !== s3 ? s3 : console.warn, e3, t3);
           }
           error(e3, ...t3) {
-            var i4, s3;
-            this._logLevel <= o.LogLevelEnum.ERROR && this._log(null !== (s3 = null === (i4 = this._optionsService.options.logger) || void 0 === i4 ? void 0 : i4.error.bind(this._optionsService.options.logger)) && void 0 !== s3 ? s3 : console.error, e3, t3);
+            var i3, s3;
+            this._logLevel <= o.LogLevelEnum.ERROR && this._log(null !== (s3 = null === (i3 = this._optionsService.options.logger) || void 0 === i3 ? void 0 : i3.error.bind(this._optionsService.options.logger)) && void 0 !== s3 ? s3 : console.error, e3, t3);
           }
         };
-        t2.LogService = c = s2([r(0, o.IOptionsService)], c), t2.setTraceLogger = function(e3) {
-          h = e3;
-        }, t2.traceCall = function(e3, t3, i4) {
-          if ("function" != typeof i4.value)
+        t2.LogService = c3 = s2([r(0, o.IOptionsService)], c3), t2.setTraceLogger = function(e3) {
+          h2 = e3;
+        }, t2.traceCall = function(e3, t3, i3) {
+          if ("function" != typeof i3.value)
             throw new Error("not supported");
-          const s3 = i4.value;
-          i4.value = function(...e4) {
-            if (h.logLevel !== o.LogLevelEnum.TRACE)
+          const s3 = i3.value;
+          i3.value = function(...e4) {
+            if (h2.logLevel !== o.LogLevelEnum.TRACE)
               return s3.apply(this, e4);
-            h.trace(`GlyphRenderer#${s3.name}(${e4.map((e5) => JSON.stringify(e5)).join(", ")})`);
+            h2.trace(`GlyphRenderer#${s3.name}(${e4.map((e5) => JSON.stringify(e5)).join(", ")})`);
             const t4 = s3.apply(this, e4);
-            return h.trace(`GlyphRenderer#${s3.name} return`, t4), t4;
+            return h2.trace(`GlyphRenderer#${s3.name} return`, t4), t4;
           };
         };
-      }, 7302: (e2, t2, i3) => {
+      }, 7302: (e2, t2, i2) => {
         Object.defineProperty(t2, "__esModule", { value: true }), t2.OptionsService = t2.DEFAULT_OPTIONS = void 0;
-        const s2 = i3(8460), r = i3(844), n = i3(6114);
+        const s2 = i2(8460), r = i2(844), n = i2(6114);
         t2.DEFAULT_OPTIONS = { cols: 80, rows: 24, cursorBlink: false, cursorStyle: "block", cursorWidth: 1, cursorInactiveStyle: "outline", customGlyphs: true, drawBoldTextInBrightColors: true, fastScrollModifier: "alt", fastScrollSensitivity: 5, fontFamily: "courier-new, courier, monospace", fontSize: 15, fontWeight: "normal", fontWeightBold: "bold", ignoreBracketedPasteMode: false, lineHeight: 1, letterSpacing: 0, linkHandler: null, logLevel: "info", logger: null, scrollback: 1e3, scrollOnUserInput: true, scrollSensitivity: 1, screenReaderMode: false, smoothScrollDuration: 0, macOptionIsMeta: false, macOptionClickForcesSelection: false, minimumContrastRatio: 1, disableStdin: false, allowProposedApi: false, allowTransparency: false, tabStopWidth: 8, theme: {}, rightClickSelectsWord: n.isMac, windowOptions: {}, windowsMode: false, windowsPty: {}, wordSeparator: " ()[]{}',\"`", altClickMovesCursor: true, convertEol: false, termName: "xterm", cancelEvents: false, overviewRulerWidth: 0 };
         const o = ["normal", "bold", "100", "200", "300", "400", "500", "600", "700", "800", "900"];
-        class a extends r.Disposable {
+        class a2 extends r.Disposable {
           constructor(e3) {
             super(), this._onOptionChange = this.register(new s2.EventEmitter()), this.onOptionChange = this._onOptionChange.event;
-            const i4 = Object.assign({}, t2.DEFAULT_OPTIONS);
+            const i3 = Object.assign({}, t2.DEFAULT_OPTIONS);
             for (const t3 in e3)
-              if (t3 in i4)
+              if (t3 in i3)
                 try {
                   const s3 = e3[t3];
-                  i4[t3] = this._sanitizeAndValidateOption(t3, s3);
+                  i3[t3] = this._sanitizeAndValidateOption(t3, s3);
                 } catch (e4) {
                   console.error(e4);
                 }
-            this.rawOptions = i4, this.options = Object.assign({}, i4), this._setupOptions();
+            this.rawOptions = i3, this.options = Object.assign({}, i3), this._setupOptions();
           }
           onSpecificOptionChange(e3, t3) {
-            return this.onOptionChange((i4) => {
-              i4 === e3 && t3(this.rawOptions[e3]);
+            return this.onOptionChange((i3) => {
+              i3 === e3 && t3(this.rawOptions[e3]);
             });
           }
           onMultipleOptionChange(e3, t3) {
-            return this.onOptionChange((i4) => {
-              -1 !== e3.indexOf(i4) && t3();
+            return this.onOptionChange((i3) => {
+              -1 !== e3.indexOf(i3) && t3();
             });
           }
           _setupOptions() {
@@ -27704,80 +27706,80 @@ WARNING: This link could potentially be dangerous`)) {
               if (!(e4 in t2.DEFAULT_OPTIONS))
                 throw new Error(`No option with key "${e4}"`);
               return this.rawOptions[e4];
-            }, i4 = (e4, i5) => {
+            }, i3 = (e4, i4) => {
               if (!(e4 in t2.DEFAULT_OPTIONS))
                 throw new Error(`No option with key "${e4}"`);
-              i5 = this._sanitizeAndValidateOption(e4, i5), this.rawOptions[e4] !== i5 && (this.rawOptions[e4] = i5, this._onOptionChange.fire(e4));
+              i4 = this._sanitizeAndValidateOption(e4, i4), this.rawOptions[e4] !== i4 && (this.rawOptions[e4] = i4, this._onOptionChange.fire(e4));
             };
             for (const t3 in this.rawOptions) {
-              const s3 = { get: e3.bind(this, t3), set: i4.bind(this, t3) };
+              const s3 = { get: e3.bind(this, t3), set: i3.bind(this, t3) };
               Object.defineProperty(this.options, t3, s3);
             }
           }
-          _sanitizeAndValidateOption(e3, i4) {
+          _sanitizeAndValidateOption(e3, i3) {
             switch (e3) {
               case "cursorStyle":
-                if (i4 || (i4 = t2.DEFAULT_OPTIONS[e3]), !function(e4) {
+                if (i3 || (i3 = t2.DEFAULT_OPTIONS[e3]), !function(e4) {
                   return "block" === e4 || "underline" === e4 || "bar" === e4;
-                }(i4))
-                  throw new Error(`"${i4}" is not a valid value for ${e3}`);
+                }(i3))
+                  throw new Error(`"${i3}" is not a valid value for ${e3}`);
                 break;
               case "wordSeparator":
-                i4 || (i4 = t2.DEFAULT_OPTIONS[e3]);
+                i3 || (i3 = t2.DEFAULT_OPTIONS[e3]);
                 break;
               case "fontWeight":
               case "fontWeightBold":
-                if ("number" == typeof i4 && 1 <= i4 && i4 <= 1e3)
+                if ("number" == typeof i3 && 1 <= i3 && i3 <= 1e3)
                   break;
-                i4 = o.includes(i4) ? i4 : t2.DEFAULT_OPTIONS[e3];
+                i3 = o.includes(i3) ? i3 : t2.DEFAULT_OPTIONS[e3];
                 break;
               case "cursorWidth":
-                i4 = Math.floor(i4);
+                i3 = Math.floor(i3);
               case "lineHeight":
               case "tabStopWidth":
-                if (i4 < 1)
-                  throw new Error(`${e3} cannot be less than 1, value: ${i4}`);
+                if (i3 < 1)
+                  throw new Error(`${e3} cannot be less than 1, value: ${i3}`);
                 break;
               case "minimumContrastRatio":
-                i4 = Math.max(1, Math.min(21, Math.round(10 * i4) / 10));
+                i3 = Math.max(1, Math.min(21, Math.round(10 * i3) / 10));
                 break;
               case "scrollback":
-                if ((i4 = Math.min(i4, 4294967295)) < 0)
-                  throw new Error(`${e3} cannot be less than 0, value: ${i4}`);
+                if ((i3 = Math.min(i3, 4294967295)) < 0)
+                  throw new Error(`${e3} cannot be less than 0, value: ${i3}`);
                 break;
               case "fastScrollSensitivity":
               case "scrollSensitivity":
-                if (i4 <= 0)
-                  throw new Error(`${e3} cannot be less than or equal to 0, value: ${i4}`);
+                if (i3 <= 0)
+                  throw new Error(`${e3} cannot be less than or equal to 0, value: ${i3}`);
                 break;
               case "rows":
               case "cols":
-                if (!i4 && 0 !== i4)
-                  throw new Error(`${e3} must be numeric, value: ${i4}`);
+                if (!i3 && 0 !== i3)
+                  throw new Error(`${e3} must be numeric, value: ${i3}`);
                 break;
               case "windowsPty":
-                i4 = null != i4 ? i4 : {};
+                i3 = null != i3 ? i3 : {};
             }
-            return i4;
+            return i3;
           }
         }
-        t2.OptionsService = a;
-      }, 2660: function(e2, t2, i3) {
-        var s2 = this && this.__decorate || function(e3, t3, i4, s3) {
-          var r2, n2 = arguments.length, o2 = n2 < 3 ? t3 : null === s3 ? s3 = Object.getOwnPropertyDescriptor(t3, i4) : s3;
+        t2.OptionsService = a2;
+      }, 2660: function(e2, t2, i2) {
+        var s2 = this && this.__decorate || function(e3, t3, i3, s3) {
+          var r2, n2 = arguments.length, o2 = n2 < 3 ? t3 : null === s3 ? s3 = Object.getOwnPropertyDescriptor(t3, i3) : s3;
           if ("object" == typeof Reflect && "function" == typeof Reflect.decorate)
-            o2 = Reflect.decorate(e3, t3, i4, s3);
+            o2 = Reflect.decorate(e3, t3, i3, s3);
           else
-            for (var a = e3.length - 1; a >= 0; a--)
-              (r2 = e3[a]) && (o2 = (n2 < 3 ? r2(o2) : n2 > 3 ? r2(t3, i4, o2) : r2(t3, i4)) || o2);
-          return n2 > 3 && o2 && Object.defineProperty(t3, i4, o2), o2;
+            for (var a2 = e3.length - 1; a2 >= 0; a2--)
+              (r2 = e3[a2]) && (o2 = (n2 < 3 ? r2(o2) : n2 > 3 ? r2(t3, i3, o2) : r2(t3, i3)) || o2);
+          return n2 > 3 && o2 && Object.defineProperty(t3, i3, o2), o2;
         }, r = this && this.__param || function(e3, t3) {
-          return function(i4, s3) {
-            t3(i4, s3, e3);
+          return function(i3, s3) {
+            t3(i3, s3, e3);
           };
         };
         Object.defineProperty(t2, "__esModule", { value: true }), t2.OscLinkService = void 0;
-        const n = i3(2585);
+        const n = i2(2585);
         let o = t2.OscLinkService = class {
           constructor(e3) {
             this._bufferService = e3, this._nextId = 1, this._entriesWithId = /* @__PURE__ */ new Map(), this._dataByLinkId = /* @__PURE__ */ new Map();
@@ -27785,20 +27787,20 @@ WARNING: This link could potentially be dangerous`)) {
           registerLink(e3) {
             const t3 = this._bufferService.buffer;
             if (void 0 === e3.id) {
-              const i5 = t3.addMarker(t3.ybase + t3.y), s4 = { data: e3, id: this._nextId++, lines: [i5] };
-              return i5.onDispose(() => this._removeMarkerFromLink(s4, i5)), this._dataByLinkId.set(s4.id, s4), s4.id;
+              const i4 = t3.addMarker(t3.ybase + t3.y), s4 = { data: e3, id: this._nextId++, lines: [i4] };
+              return i4.onDispose(() => this._removeMarkerFromLink(s4, i4)), this._dataByLinkId.set(s4.id, s4), s4.id;
             }
-            const i4 = e3, s3 = this._getEntryIdKey(i4), r2 = this._entriesWithId.get(s3);
+            const i3 = e3, s3 = this._getEntryIdKey(i3), r2 = this._entriesWithId.get(s3);
             if (r2)
               return this.addLineToLink(r2.id, t3.ybase + t3.y), r2.id;
-            const n2 = t3.addMarker(t3.ybase + t3.y), o2 = { id: this._nextId++, key: this._getEntryIdKey(i4), data: i4, lines: [n2] };
+            const n2 = t3.addMarker(t3.ybase + t3.y), o2 = { id: this._nextId++, key: this._getEntryIdKey(i3), data: i3, lines: [n2] };
             return n2.onDispose(() => this._removeMarkerFromLink(o2, n2)), this._entriesWithId.set(o2.key, o2), this._dataByLinkId.set(o2.id, o2), o2.id;
           }
           addLineToLink(e3, t3) {
-            const i4 = this._dataByLinkId.get(e3);
-            if (i4 && i4.lines.every((e4) => e4.line !== t3)) {
+            const i3 = this._dataByLinkId.get(e3);
+            if (i3 && i3.lines.every((e4) => e4.line !== t3)) {
               const e4 = this._bufferService.buffer.addMarker(t3);
-              i4.lines.push(e4), e4.onDispose(() => this._removeMarkerFromLink(i4, e4));
+              i3.lines.push(e4), e4.onDispose(() => this._removeMarkerFromLink(i3, e4));
             }
           }
           getLinkData(e3) {
@@ -27809,14 +27811,14 @@ WARNING: This link could potentially be dangerous`)) {
             return `${e3.id};;${e3.uri}`;
           }
           _removeMarkerFromLink(e3, t3) {
-            const i4 = e3.lines.indexOf(t3);
-            -1 !== i4 && (e3.lines.splice(i4, 1), 0 === e3.lines.length && (void 0 !== e3.data.id && this._entriesWithId.delete(e3.key), this._dataByLinkId.delete(e3.id)));
+            const i3 = e3.lines.indexOf(t3);
+            -1 !== i3 && (e3.lines.splice(i3, 1), 0 === e3.lines.length && (void 0 !== e3.data.id && this._entriesWithId.delete(e3.key), this._dataByLinkId.delete(e3.id)));
           }
         };
         t2.OscLinkService = o = s2([r(0, n.IBufferService)], o);
       }, 8343: (e2, t2) => {
         Object.defineProperty(t2, "__esModule", { value: true }), t2.createDecorator = t2.getServiceDependencies = t2.serviceRegistry = void 0;
-        const i3 = "di$target", s2 = "di$dependencies";
+        const i2 = "di$target", s2 = "di$dependencies";
         t2.serviceRegistry = /* @__PURE__ */ new Map(), t2.getServiceDependencies = function(e3) {
           return e3[s2] || [];
         }, t2.createDecorator = function(e3) {
@@ -27826,21 +27828,21 @@ WARNING: This link could potentially be dangerous`)) {
             if (3 !== arguments.length)
               throw new Error("@IServiceName-decorator can only be used to decorate a parameter");
             !function(e5, t4, r2) {
-              t4[i3] === t4 ? t4[s2].push({ id: e5, index: r2 }) : (t4[s2] = [{ id: e5, index: r2 }], t4[i3] = t4);
+              t4[i2] === t4 ? t4[s2].push({ id: e5, index: r2 }) : (t4[s2] = [{ id: e5, index: r2 }], t4[i2] = t4);
             }(r, e4, n);
           };
           return r.toString = () => e3, t2.serviceRegistry.set(e3, r), r;
         };
-      }, 2585: (e2, t2, i3) => {
+      }, 2585: (e2, t2, i2) => {
         Object.defineProperty(t2, "__esModule", { value: true }), t2.IDecorationService = t2.IUnicodeService = t2.IOscLinkService = t2.IOptionsService = t2.ILogService = t2.LogLevelEnum = t2.IInstantiationService = t2.ICharsetService = t2.ICoreService = t2.ICoreMouseService = t2.IBufferService = void 0;
-        const s2 = i3(8343);
+        const s2 = i2(8343);
         var r;
         t2.IBufferService = (0, s2.createDecorator)("BufferService"), t2.ICoreMouseService = (0, s2.createDecorator)("CoreMouseService"), t2.ICoreService = (0, s2.createDecorator)("CoreService"), t2.ICharsetService = (0, s2.createDecorator)("CharsetService"), t2.IInstantiationService = (0, s2.createDecorator)("InstantiationService"), function(e3) {
           e3[e3.TRACE = 0] = "TRACE", e3[e3.DEBUG = 1] = "DEBUG", e3[e3.INFO = 2] = "INFO", e3[e3.WARN = 3] = "WARN", e3[e3.ERROR = 4] = "ERROR", e3[e3.OFF = 5] = "OFF";
         }(r || (t2.LogLevelEnum = r = {})), t2.ILogService = (0, s2.createDecorator)("LogService"), t2.IOptionsService = (0, s2.createDecorator)("OptionsService"), t2.IOscLinkService = (0, s2.createDecorator)("OscLinkService"), t2.IUnicodeService = (0, s2.createDecorator)("UnicodeService"), t2.IDecorationService = (0, s2.createDecorator)("DecorationService");
-      }, 1480: (e2, t2, i3) => {
+      }, 1480: (e2, t2, i2) => {
         Object.defineProperty(t2, "__esModule", { value: true }), t2.UnicodeService = void 0;
-        const s2 = i3(8460), r = i3(225);
+        const s2 = i2(8460), r = i2(225);
         t2.UnicodeService = class {
           constructor() {
             this._providers = /* @__PURE__ */ Object.create(null), this._active = "", this._onChange = new s2.EventEmitter(), this.onChange = this._onChange.event;
@@ -27869,11 +27871,11 @@ WARNING: This link could potentially be dangerous`)) {
           }
           getStringCellWidth(e3) {
             let t3 = 0;
-            const i4 = e3.length;
-            for (let s3 = 0; s3 < i4; ++s3) {
+            const i3 = e3.length;
+            for (let s3 = 0; s3 < i3; ++s3) {
               let r2 = e3.charCodeAt(s3);
               if (55296 <= r2 && r2 <= 56319) {
-                if (++s3 >= i4)
+                if (++s3 >= i3)
                   return t3 + this.wcwidth(r2);
                 const n = e3.charCodeAt(s3);
                 56320 <= n && n <= 57343 ? r2 = 1024 * (r2 - 55296) + n - 56320 + 65536 : t3 += this.wcwidth(n);
@@ -27884,31 +27886,31 @@ WARNING: This link could potentially be dangerous`)) {
           }
         };
       } }, t = {};
-      function i2(s2) {
+      function i(s2) {
         var r = t[s2];
         if (void 0 !== r)
           return r.exports;
         var n = t[s2] = { exports: {} };
-        return e[s2].call(n.exports, n, n.exports, i2), n.exports;
+        return e[s2].call(n.exports, n, n.exports, i), n.exports;
       }
       var s = {};
       return (() => {
         var e2 = s;
         Object.defineProperty(e2, "__esModule", { value: true }), e2.Terminal = void 0;
-        const t2 = i2(9042), r = i2(3236), n = i2(844), o = i2(5741), a = i2(8285), h = i2(7975), c = i2(7090), l2 = ["cols", "rows"];
+        const t2 = i(9042), r = i(3236), n = i(844), o = i(5741), a2 = i(8285), h2 = i(7975), c3 = i(7090), l = ["cols", "rows"];
         class d2 extends n.Disposable {
           constructor(e3) {
             super(), this._core = this.register(new r.Terminal(e3)), this._addonManager = this.register(new o.AddonManager()), this._publicOptions = Object.assign({}, this._core.options);
-            const t3 = (e4) => this._core.options[e4], i3 = (e4, t4) => {
+            const t3 = (e4) => this._core.options[e4], i2 = (e4, t4) => {
               this._checkReadonlyOptions(e4), this._core.options[e4] = t4;
             };
             for (const e4 in this._core.options) {
-              const s2 = { get: t3.bind(this, e4), set: i3.bind(this, e4) };
+              const s2 = { get: t3.bind(this, e4), set: i2.bind(this, e4) };
               Object.defineProperty(this._publicOptions, e4, s2);
             }
           }
           _checkReadonlyOptions(e3) {
-            if (l2.includes(e3))
+            if (l.includes(e3))
               throw new Error(`Option "${e3}" can only be set in the constructor`);
           }
           _checkProposedApi() {
@@ -27955,10 +27957,10 @@ WARNING: This link could potentially be dangerous`)) {
             return this._core.element;
           }
           get parser() {
-            return this._parser || (this._parser = new h.ParserApi(this._core)), this._parser;
+            return this._parser || (this._parser = new h2.ParserApi(this._core)), this._parser;
           }
           get unicode() {
-            return this._checkProposedApi(), new c.UnicodeApi(this._core);
+            return this._checkProposedApi(), new c3.UnicodeApi(this._core);
           }
           get textarea() {
             return this._core.textarea;
@@ -27970,7 +27972,7 @@ WARNING: This link could potentially be dangerous`)) {
             return this._core.cols;
           }
           get buffer() {
-            return this._buffer || (this._buffer = this.register(new a.BufferNamespaceApi(this._core))), this._buffer;
+            return this._buffer || (this._buffer = this.register(new a2.BufferNamespaceApi(this._core))), this._buffer;
           }
           get markers() {
             return this._checkProposedApi(), this._core.markers;
@@ -28028,14 +28030,14 @@ WARNING: This link could potentially be dangerous`)) {
             return this._verifyIntegers(e3), this._core.registerMarker(e3);
           }
           registerDecoration(e3) {
-            var t3, i3, s2;
-            return this._checkProposedApi(), this._verifyPositiveIntegers(null !== (t3 = e3.x) && void 0 !== t3 ? t3 : 0, null !== (i3 = e3.width) && void 0 !== i3 ? i3 : 0, null !== (s2 = e3.height) && void 0 !== s2 ? s2 : 0), this._core.registerDecoration(e3);
+            var t3, i2, s2;
+            return this._checkProposedApi(), this._verifyPositiveIntegers(null !== (t3 = e3.x) && void 0 !== t3 ? t3 : 0, null !== (i2 = e3.width) && void 0 !== i2 ? i2 : 0, null !== (s2 = e3.height) && void 0 !== s2 ? s2 : 0), this._core.registerDecoration(e3);
           }
           hasSelection() {
             return this._core.hasSelection();
           }
-          select(e3, t3, i3) {
-            this._verifyIntegers(e3, t3, i3), this._core.select(e3, t3, i3);
+          select(e3, t3, i2) {
+            this._verifyIntegers(e3, t3, i2), this._core.select(e3, t3, i2);
           }
           getSelection() {
             return this._core.getSelection();
@@ -28116,9 +28118,9 @@ WARNING: This link could potentially be dangerous`)) {
 
 // node_modules/xterm-addon-fit/lib/xterm-addon-fit.js
 var require_xterm_addon_fit = __commonJS({
-  "node_modules/xterm-addon-fit/lib/xterm-addon-fit.js"(exports, module) {
+  "node_modules/xterm-addon-fit/lib/xterm-addon-fit.js"(exports, module2) {
     !function(e, t) {
-      "object" == typeof exports && "object" == typeof module ? module.exports = t() : "function" == typeof define && define.amd ? define([], t) : "object" == typeof exports ? exports.FitAddon = t() : e.FitAddon = t();
+      "object" == typeof exports && "object" == typeof module2 ? module2.exports = t() : "function" == typeof define && define.amd ? define([], t) : "object" == typeof exports ? exports.FitAddon = t() : e.FitAddon = t();
     }(self, function() {
       return (() => {
         "use strict";
@@ -28148,8 +28150,8 @@ var require_xterm_addon_fit = __commonJS({
               const e2 = this._terminal._core, t2 = e2._renderService.dimensions;
               if (0 === t2.css.cell.width || 0 === t2.css.cell.height)
                 return;
-              const r = 0 === this._terminal.options.scrollback ? 0 : e2.viewport.scrollBarWidth, i2 = window.getComputedStyle(this._terminal.element.parentElement), o = parseInt(i2.getPropertyValue("height")), s = Math.max(0, parseInt(i2.getPropertyValue("width"))), n = window.getComputedStyle(this._terminal.element), l2 = o - (parseInt(n.getPropertyValue("padding-top")) + parseInt(n.getPropertyValue("padding-bottom"))), a = s - (parseInt(n.getPropertyValue("padding-right")) + parseInt(n.getPropertyValue("padding-left"))) - r;
-              return { cols: Math.max(2, Math.floor(a / t2.css.cell.width)), rows: Math.max(1, Math.floor(l2 / t2.css.cell.height)) };
+              const r = 0 === this._terminal.options.scrollback ? 0 : e2.viewport.scrollBarWidth, i = window.getComputedStyle(this._terminal.element.parentElement), o = parseInt(i.getPropertyValue("height")), s = Math.max(0, parseInt(i.getPropertyValue("width"))), n = window.getComputedStyle(this._terminal.element), l = o - (parseInt(n.getPropertyValue("padding-top")) + parseInt(n.getPropertyValue("padding-bottom"))), a2 = s - (parseInt(n.getPropertyValue("padding-right")) + parseInt(n.getPropertyValue("padding-left"))) - r;
+              return { cols: Math.max(2, Math.floor(a2 / t2.css.cell.width)), rows: Math.max(1, Math.floor(l / t2.css.cell.height)) };
             }
           };
         })(), e;
@@ -28198,12 +28200,12 @@ var require_keymap = __commonJS({
       let text = [];
       const it2 = data[Symbol.iterator]();
       for (let next = it2.next(); !next.done; next = it2.next()) {
-        const c = next.value;
-        if (c.length > 1) {
-          text.push(c);
+        const c3 = next.value;
+        if (c3.length > 1) {
+          text.push(c3);
           continue;
         }
-        const val = c.charCodeAt(0);
+        const val = c3.charCodeAt(0);
         if (text.length > 0 && (val < 32 || val === 127)) {
           yield {
             inputType: InputType.Text,
@@ -28324,11 +28326,11 @@ var require_keymap = __commonJS({
           }
           yield {
             inputType,
-            data: [c]
+            data: [c3]
           };
           continue;
         }
-        text.push(c);
+        text.push(c3);
       }
       if (text.length > 0) {
         yield {
@@ -28444,7 +28446,7 @@ var require_line = __commonJS({
           destStart = destStart + 1;
         }
         let destEnd = off;
-        for (let i2 = 1; i2 < n; i2++) {
+        for (let i = 1; i < n; i++) {
           if (destStart === 0) {
             break;
           }
@@ -28459,7 +28461,7 @@ var require_line = __commonJS({
         const slice = [...this.buf.slice(destStart, destEnd)].slice(0, column);
         let gIdx = off;
         if (slice.length > 0) {
-          gIdx = slice.map((c) => c.length).reduce((acc, m2) => acc + m2, 0);
+          gIdx = slice.map((c3) => c3.length).reduce((acc, m2) => acc + m2, 0);
           gIdx = destStart + gIdx;
         }
         this.pos = gIdx;
@@ -28484,7 +28486,7 @@ var require_line = __commonJS({
         } else {
           destEnd = destStart + destEnd;
         }
-        for (let i2 = 1; i2 < n; i2++) {
+        for (let i = 1; i < n; i++) {
           if (destEnd === this.buf.length) {
             break;
           }
@@ -28498,7 +28500,7 @@ var require_line = __commonJS({
         }
         const slice = [...this.buf.slice(destStart, destEnd)];
         if (column < slice.length) {
-          this.pos = slice.slice(0, column).map((c) => c.length).reduce((acc, m2) => acc + m2, 0) + destStart;
+          this.pos = slice.slice(0, column).map((c3) => c3.length).reduce((acc, m2) => acc + m2, 0) + destStart;
         } else {
           this.pos = destEnd;
         }
@@ -28515,7 +28517,7 @@ var require_line = __commonJS({
           return void 0;
         }
         const buf = this.buf.slice(0, this.pos);
-        return this.pos - [...buf].slice(-n).map((c) => c.length).reduce((acc, m2) => acc + m2, 0);
+        return this.pos - [...buf].slice(-n).map((c3) => c3.length).reduce((acc, m2) => acc + m2, 0);
       }
       // Return the position of the character following the
       // current pos
@@ -28524,7 +28526,7 @@ var require_line = __commonJS({
           return void 0;
         }
         const buf = this.buf.slice(this.pos);
-        return this.pos + [...buf].slice(0, n).map((c) => c.length).reduce((acc, m2) => acc + m2, 0);
+        return this.pos + [...buf].slice(0, n).map((c3) => c3.length).reduce((acc, m2) => acc + m2, 0);
       }
       backspace(n) {
         const newPos = this.prevPos(n);
@@ -28564,9 +28566,9 @@ var require_line = __commonJS({
 
 // node_modules/ansi-regex/index.js
 var require_ansi_regex = __commonJS({
-  "node_modules/ansi-regex/index.js"(exports, module) {
+  "node_modules/ansi-regex/index.js"(exports, module2) {
     "use strict";
-    module.exports = ({ onlyFirst = false } = {}) => {
+    module2.exports = ({ onlyFirst = false } = {}) => {
       const pattern = [
         "[\\u001B\\u009B][[\\]()#;?]*(?:(?:(?:(?:;[-a-zA-Z\\d\\/#&.:=?%@~_]+)*|[a-zA-Z\\d]+(?:;[-a-zA-Z\\d\\/#&.:=?%@~_]*)*)?\\u0007)",
         "(?:(?:\\d{1,4}(?:;\\d{0,4})*)?[\\dA-PR-TZcf-ntqry=><~]))"
@@ -28578,16 +28580,16 @@ var require_ansi_regex = __commonJS({
 
 // node_modules/strip-ansi/index.js
 var require_strip_ansi = __commonJS({
-  "node_modules/strip-ansi/index.js"(exports, module) {
+  "node_modules/strip-ansi/index.js"(exports, module2) {
     "use strict";
     var ansiRegex = require_ansi_regex();
-    module.exports = (string) => typeof string === "string" ? string.replace(ansiRegex(), "") : string;
+    module2.exports = (string) => typeof string === "string" ? string.replace(ansiRegex(), "") : string;
   }
 });
 
 // node_modules/is-fullwidth-code-point/index.js
 var require_is_fullwidth_code_point = __commonJS({
-  "node_modules/is-fullwidth-code-point/index.js"(exports, module) {
+  "node_modules/is-fullwidth-code-point/index.js"(exports, module2) {
     "use strict";
     var isFullwidthCodePoint = (codePoint) => {
       if (Number.isNaN(codePoint)) {
@@ -28613,24 +28615,24 @@ var require_is_fullwidth_code_point = __commonJS({
       }
       return false;
     };
-    module.exports = isFullwidthCodePoint;
-    module.exports.default = isFullwidthCodePoint;
+    module2.exports = isFullwidthCodePoint;
+    module2.exports.default = isFullwidthCodePoint;
   }
 });
 
-// node_modules/emoji-regex/index.js
+// node_modules/xterm-readline/node_modules/emoji-regex/index.js
 var require_emoji_regex = __commonJS({
-  "node_modules/emoji-regex/index.js"(exports, module) {
+  "node_modules/xterm-readline/node_modules/emoji-regex/index.js"(exports, module2) {
     "use strict";
-    module.exports = function() {
+    module2.exports = function() {
       return /\uD83C\uDFF4\uDB40\uDC67\uDB40\uDC62(?:\uDB40\uDC65\uDB40\uDC6E\uDB40\uDC67|\uDB40\uDC73\uDB40\uDC63\uDB40\uDC74|\uDB40\uDC77\uDB40\uDC6C\uDB40\uDC73)\uDB40\uDC7F|\uD83D\uDC68(?:\uD83C\uDFFC\u200D(?:\uD83E\uDD1D\u200D\uD83D\uDC68\uD83C\uDFFB|\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFF\u200D(?:\uD83E\uDD1D\u200D\uD83D\uDC68(?:\uD83C[\uDFFB-\uDFFE])|\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFE\u200D(?:\uD83E\uDD1D\u200D\uD83D\uDC68(?:\uD83C[\uDFFB-\uDFFD])|\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFD\u200D(?:\uD83E\uDD1D\u200D\uD83D\uDC68(?:\uD83C[\uDFFB\uDFFC])|\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\u200D(?:\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D)?\uD83D\uDC68|(?:\uD83D[\uDC68\uDC69])\u200D(?:\uD83D\uDC66\u200D\uD83D\uDC66|\uD83D\uDC67\u200D(?:\uD83D[\uDC66\uDC67]))|\uD83D\uDC66\u200D\uD83D\uDC66|\uD83D\uDC67\u200D(?:\uD83D[\uDC66\uDC67])|(?:\uD83D[\uDC68\uDC69])\u200D(?:\uD83D[\uDC66\uDC67])|[\u2695\u2696\u2708]\uFE0F|\uD83D[\uDC66\uDC67]|\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|(?:\uD83C\uDFFB\u200D[\u2695\u2696\u2708]|\uD83C\uDFFF\u200D[\u2695\u2696\u2708]|\uD83C\uDFFE\u200D[\u2695\u2696\u2708]|\uD83C\uDFFD\u200D[\u2695\u2696\u2708]|\uD83C\uDFFC\u200D[\u2695\u2696\u2708])\uFE0F|\uD83C\uDFFB\u200D(?:\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C[\uDFFB-\uDFFF])|(?:\uD83E\uDDD1\uD83C\uDFFB\u200D\uD83E\uDD1D\u200D\uD83E\uDDD1|\uD83D\uDC69\uD83C\uDFFC\u200D\uD83E\uDD1D\u200D\uD83D\uDC69)\uD83C\uDFFB|\uD83E\uDDD1(?:\uD83C\uDFFF\u200D\uD83E\uDD1D\u200D\uD83E\uDDD1(?:\uD83C[\uDFFB-\uDFFF])|\u200D\uD83E\uDD1D\u200D\uD83E\uDDD1)|(?:\uD83E\uDDD1\uD83C\uDFFE\u200D\uD83E\uDD1D\u200D\uD83E\uDDD1|\uD83D\uDC69\uD83C\uDFFF\u200D\uD83E\uDD1D\u200D(?:\uD83D[\uDC68\uDC69]))(?:\uD83C[\uDFFB-\uDFFE])|(?:\uD83E\uDDD1\uD83C\uDFFC\u200D\uD83E\uDD1D\u200D\uD83E\uDDD1|\uD83D\uDC69\uD83C\uDFFD\u200D\uD83E\uDD1D\u200D\uD83D\uDC69)(?:\uD83C[\uDFFB\uDFFC])|\uD83D\uDC69(?:\uD83C\uDFFE\u200D(?:\uD83E\uDD1D\u200D\uD83D\uDC68(?:\uD83C[\uDFFB-\uDFFD\uDFFF])|\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFC\u200D(?:\uD83E\uDD1D\u200D\uD83D\uDC68(?:\uD83C[\uDFFB\uDFFD-\uDFFF])|\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFB\u200D(?:\uD83E\uDD1D\u200D\uD83D\uDC68(?:\uD83C[\uDFFC-\uDFFF])|\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFD\u200D(?:\uD83E\uDD1D\u200D\uD83D\uDC68(?:\uD83C[\uDFFB\uDFFC\uDFFE\uDFFF])|\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\u200D(?:\u2764\uFE0F\u200D(?:\uD83D\uDC8B\u200D(?:\uD83D[\uDC68\uDC69])|\uD83D[\uDC68\uDC69])|\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD])|\uD83C\uDFFF\u200D(?:\uD83C[\uDF3E\uDF73\uDF93\uDFA4\uDFA8\uDFEB\uDFED]|\uD83D[\uDCBB\uDCBC\uDD27\uDD2C\uDE80\uDE92]|\uD83E[\uDDAF-\uDDB3\uDDBC\uDDBD]))|\uD83D\uDC69\u200D\uD83D\uDC69\u200D(?:\uD83D\uDC66\u200D\uD83D\uDC66|\uD83D\uDC67\u200D(?:\uD83D[\uDC66\uDC67]))|(?:\uD83E\uDDD1\uD83C\uDFFD\u200D\uD83E\uDD1D\u200D\uD83E\uDDD1|\uD83D\uDC69\uD83C\uDFFE\u200D\uD83E\uDD1D\u200D\uD83D\uDC69)(?:\uD83C[\uDFFB-\uDFFD])|\uD83D\uDC69\u200D\uD83D\uDC66\u200D\uD83D\uDC66|\uD83D\uDC69\u200D\uD83D\uDC69\u200D(?:\uD83D[\uDC66\uDC67])|(?:\uD83D\uDC41\uFE0F\u200D\uD83D\uDDE8|\uD83D\uDC69(?:\uD83C\uDFFF\u200D[\u2695\u2696\u2708]|\uD83C\uDFFE\u200D[\u2695\u2696\u2708]|\uD83C\uDFFC\u200D[\u2695\u2696\u2708]|\uD83C\uDFFB\u200D[\u2695\u2696\u2708]|\uD83C\uDFFD\u200D[\u2695\u2696\u2708]|\u200D[\u2695\u2696\u2708])|(?:(?:\u26F9|\uD83C[\uDFCB\uDFCC]|\uD83D\uDD75)\uFE0F|\uD83D\uDC6F|\uD83E[\uDD3C\uDDDE\uDDDF])\u200D[\u2640\u2642]|(?:\u26F9|\uD83C[\uDFCB\uDFCC]|\uD83D\uDD75)(?:\uD83C[\uDFFB-\uDFFF])\u200D[\u2640\u2642]|(?:\uD83C[\uDFC3\uDFC4\uDFCA]|\uD83D[\uDC6E\uDC71\uDC73\uDC77\uDC81\uDC82\uDC86\uDC87\uDE45-\uDE47\uDE4B\uDE4D\uDE4E\uDEA3\uDEB4-\uDEB6]|\uD83E[\uDD26\uDD37-\uDD39\uDD3D\uDD3E\uDDB8\uDDB9\uDDCD-\uDDCF\uDDD6-\uDDDD])(?:(?:\uD83C[\uDFFB-\uDFFF])\u200D[\u2640\u2642]|\u200D[\u2640\u2642])|\uD83C\uDFF4\u200D\u2620)\uFE0F|\uD83D\uDC69\u200D\uD83D\uDC67\u200D(?:\uD83D[\uDC66\uDC67])|\uD83C\uDFF3\uFE0F\u200D\uD83C\uDF08|\uD83D\uDC15\u200D\uD83E\uDDBA|\uD83D\uDC69\u200D\uD83D\uDC66|\uD83D\uDC69\u200D\uD83D\uDC67|\uD83C\uDDFD\uD83C\uDDF0|\uD83C\uDDF4\uD83C\uDDF2|\uD83C\uDDF6\uD83C\uDDE6|[#\*0-9]\uFE0F\u20E3|\uD83C\uDDE7(?:\uD83C[\uDDE6\uDDE7\uDDE9-\uDDEF\uDDF1-\uDDF4\uDDF6-\uDDF9\uDDFB\uDDFC\uDDFE\uDDFF])|\uD83C\uDDF9(?:\uD83C[\uDDE6\uDDE8\uDDE9\uDDEB-\uDDED\uDDEF-\uDDF4\uDDF7\uDDF9\uDDFB\uDDFC\uDDFF])|\uD83C\uDDEA(?:\uD83C[\uDDE6\uDDE8\uDDEA\uDDEC\uDDED\uDDF7-\uDDFA])|\uD83E\uDDD1(?:\uD83C[\uDFFB-\uDFFF])|\uD83C\uDDF7(?:\uD83C[\uDDEA\uDDF4\uDDF8\uDDFA\uDDFC])|\uD83D\uDC69(?:\uD83C[\uDFFB-\uDFFF])|\uD83C\uDDF2(?:\uD83C[\uDDE6\uDDE8-\uDDED\uDDF0-\uDDFF])|\uD83C\uDDE6(?:\uD83C[\uDDE8-\uDDEC\uDDEE\uDDF1\uDDF2\uDDF4\uDDF6-\uDDFA\uDDFC\uDDFD\uDDFF])|\uD83C\uDDF0(?:\uD83C[\uDDEA\uDDEC-\uDDEE\uDDF2\uDDF3\uDDF5\uDDF7\uDDFC\uDDFE\uDDFF])|\uD83C\uDDED(?:\uD83C[\uDDF0\uDDF2\uDDF3\uDDF7\uDDF9\uDDFA])|\uD83C\uDDE9(?:\uD83C[\uDDEA\uDDEC\uDDEF\uDDF0\uDDF2\uDDF4\uDDFF])|\uD83C\uDDFE(?:\uD83C[\uDDEA\uDDF9])|\uD83C\uDDEC(?:\uD83C[\uDDE6\uDDE7\uDDE9-\uDDEE\uDDF1-\uDDF3\uDDF5-\uDDFA\uDDFC\uDDFE])|\uD83C\uDDF8(?:\uD83C[\uDDE6-\uDDEA\uDDEC-\uDDF4\uDDF7-\uDDF9\uDDFB\uDDFD-\uDDFF])|\uD83C\uDDEB(?:\uD83C[\uDDEE-\uDDF0\uDDF2\uDDF4\uDDF7])|\uD83C\uDDF5(?:\uD83C[\uDDE6\uDDEA-\uDDED\uDDF0-\uDDF3\uDDF7-\uDDF9\uDDFC\uDDFE])|\uD83C\uDDFB(?:\uD83C[\uDDE6\uDDE8\uDDEA\uDDEC\uDDEE\uDDF3\uDDFA])|\uD83C\uDDF3(?:\uD83C[\uDDE6\uDDE8\uDDEA-\uDDEC\uDDEE\uDDF1\uDDF4\uDDF5\uDDF7\uDDFA\uDDFF])|\uD83C\uDDE8(?:\uD83C[\uDDE6\uDDE8\uDDE9\uDDEB-\uDDEE\uDDF0-\uDDF5\uDDF7\uDDFA-\uDDFF])|\uD83C\uDDF1(?:\uD83C[\uDDE6-\uDDE8\uDDEE\uDDF0\uDDF7-\uDDFB\uDDFE])|\uD83C\uDDFF(?:\uD83C[\uDDE6\uDDF2\uDDFC])|\uD83C\uDDFC(?:\uD83C[\uDDEB\uDDF8])|\uD83C\uDDFA(?:\uD83C[\uDDE6\uDDEC\uDDF2\uDDF3\uDDF8\uDDFE\uDDFF])|\uD83C\uDDEE(?:\uD83C[\uDDE8-\uDDEA\uDDF1-\uDDF4\uDDF6-\uDDF9])|\uD83C\uDDEF(?:\uD83C[\uDDEA\uDDF2\uDDF4\uDDF5])|(?:\uD83C[\uDFC3\uDFC4\uDFCA]|\uD83D[\uDC6E\uDC71\uDC73\uDC77\uDC81\uDC82\uDC86\uDC87\uDE45-\uDE47\uDE4B\uDE4D\uDE4E\uDEA3\uDEB4-\uDEB6]|\uD83E[\uDD26\uDD37-\uDD39\uDD3D\uDD3E\uDDB8\uDDB9\uDDCD-\uDDCF\uDDD6-\uDDDD])(?:\uD83C[\uDFFB-\uDFFF])|(?:\u26F9|\uD83C[\uDFCB\uDFCC]|\uD83D\uDD75)(?:\uD83C[\uDFFB-\uDFFF])|(?:[\u261D\u270A-\u270D]|\uD83C[\uDF85\uDFC2\uDFC7]|\uD83D[\uDC42\uDC43\uDC46-\uDC50\uDC66\uDC67\uDC6B-\uDC6D\uDC70\uDC72\uDC74-\uDC76\uDC78\uDC7C\uDC83\uDC85\uDCAA\uDD74\uDD7A\uDD90\uDD95\uDD96\uDE4C\uDE4F\uDEC0\uDECC]|\uD83E[\uDD0F\uDD18-\uDD1C\uDD1E\uDD1F\uDD30-\uDD36\uDDB5\uDDB6\uDDBB\uDDD2-\uDDD5])(?:\uD83C[\uDFFB-\uDFFF])|(?:[\u231A\u231B\u23E9-\u23EC\u23F0\u23F3\u25FD\u25FE\u2614\u2615\u2648-\u2653\u267F\u2693\u26A1\u26AA\u26AB\u26BD\u26BE\u26C4\u26C5\u26CE\u26D4\u26EA\u26F2\u26F3\u26F5\u26FA\u26FD\u2705\u270A\u270B\u2728\u274C\u274E\u2753-\u2755\u2757\u2795-\u2797\u27B0\u27BF\u2B1B\u2B1C\u2B50\u2B55]|\uD83C[\uDC04\uDCCF\uDD8E\uDD91-\uDD9A\uDDE6-\uDDFF\uDE01\uDE1A\uDE2F\uDE32-\uDE36\uDE38-\uDE3A\uDE50\uDE51\uDF00-\uDF20\uDF2D-\uDF35\uDF37-\uDF7C\uDF7E-\uDF93\uDFA0-\uDFCA\uDFCF-\uDFD3\uDFE0-\uDFF0\uDFF4\uDFF8-\uDFFF]|\uD83D[\uDC00-\uDC3E\uDC40\uDC42-\uDCFC\uDCFF-\uDD3D\uDD4B-\uDD4E\uDD50-\uDD67\uDD7A\uDD95\uDD96\uDDA4\uDDFB-\uDE4F\uDE80-\uDEC5\uDECC\uDED0-\uDED2\uDED5\uDEEB\uDEEC\uDEF4-\uDEFA\uDFE0-\uDFEB]|\uD83E[\uDD0D-\uDD3A\uDD3C-\uDD45\uDD47-\uDD71\uDD73-\uDD76\uDD7A-\uDDA2\uDDA5-\uDDAA\uDDAE-\uDDCA\uDDCD-\uDDFF\uDE70-\uDE73\uDE78-\uDE7A\uDE80-\uDE82\uDE90-\uDE95])|(?:[#\*0-9\xA9\xAE\u203C\u2049\u2122\u2139\u2194-\u2199\u21A9\u21AA\u231A\u231B\u2328\u23CF\u23E9-\u23F3\u23F8-\u23FA\u24C2\u25AA\u25AB\u25B6\u25C0\u25FB-\u25FE\u2600-\u2604\u260E\u2611\u2614\u2615\u2618\u261D\u2620\u2622\u2623\u2626\u262A\u262E\u262F\u2638-\u263A\u2640\u2642\u2648-\u2653\u265F\u2660\u2663\u2665\u2666\u2668\u267B\u267E\u267F\u2692-\u2697\u2699\u269B\u269C\u26A0\u26A1\u26AA\u26AB\u26B0\u26B1\u26BD\u26BE\u26C4\u26C5\u26C8\u26CE\u26CF\u26D1\u26D3\u26D4\u26E9\u26EA\u26F0-\u26F5\u26F7-\u26FA\u26FD\u2702\u2705\u2708-\u270D\u270F\u2712\u2714\u2716\u271D\u2721\u2728\u2733\u2734\u2744\u2747\u274C\u274E\u2753-\u2755\u2757\u2763\u2764\u2795-\u2797\u27A1\u27B0\u27BF\u2934\u2935\u2B05-\u2B07\u2B1B\u2B1C\u2B50\u2B55\u3030\u303D\u3297\u3299]|\uD83C[\uDC04\uDCCF\uDD70\uDD71\uDD7E\uDD7F\uDD8E\uDD91-\uDD9A\uDDE6-\uDDFF\uDE01\uDE02\uDE1A\uDE2F\uDE32-\uDE3A\uDE50\uDE51\uDF00-\uDF21\uDF24-\uDF93\uDF96\uDF97\uDF99-\uDF9B\uDF9E-\uDFF0\uDFF3-\uDFF5\uDFF7-\uDFFF]|\uD83D[\uDC00-\uDCFD\uDCFF-\uDD3D\uDD49-\uDD4E\uDD50-\uDD67\uDD6F\uDD70\uDD73-\uDD7A\uDD87\uDD8A-\uDD8D\uDD90\uDD95\uDD96\uDDA4\uDDA5\uDDA8\uDDB1\uDDB2\uDDBC\uDDC2-\uDDC4\uDDD1-\uDDD3\uDDDC-\uDDDE\uDDE1\uDDE3\uDDE8\uDDEF\uDDF3\uDDFA-\uDE4F\uDE80-\uDEC5\uDECB-\uDED2\uDED5\uDEE0-\uDEE5\uDEE9\uDEEB\uDEEC\uDEF0\uDEF3-\uDEFA\uDFE0-\uDFEB]|\uD83E[\uDD0D-\uDD3A\uDD3C-\uDD45\uDD47-\uDD71\uDD73-\uDD76\uDD7A-\uDDA2\uDDA5-\uDDAA\uDDAE-\uDDCA\uDDCD-\uDDFF\uDE70-\uDE73\uDE78-\uDE7A\uDE80-\uDE82\uDE90-\uDE95])\uFE0F|(?:[\u261D\u26F9\u270A-\u270D]|\uD83C[\uDF85\uDFC2-\uDFC4\uDFC7\uDFCA-\uDFCC]|\uD83D[\uDC42\uDC43\uDC46-\uDC50\uDC66-\uDC78\uDC7C\uDC81-\uDC83\uDC85-\uDC87\uDC8F\uDC91\uDCAA\uDD74\uDD75\uDD7A\uDD90\uDD95\uDD96\uDE45-\uDE47\uDE4B-\uDE4F\uDEA3\uDEB4-\uDEB6\uDEC0\uDECC]|\uD83E[\uDD0F\uDD18-\uDD1F\uDD26\uDD30-\uDD39\uDD3C-\uDD3E\uDDB5\uDDB6\uDDB8\uDDB9\uDDBB\uDDCD-\uDDCF\uDDD1-\uDDDD])/g;
     };
   }
 });
 
-// node_modules/string-width/index.js
+// node_modules/xterm-readline/node_modules/string-width/index.js
 var require_string_width = __commonJS({
-  "node_modules/string-width/index.js"(exports, module) {
+  "node_modules/xterm-readline/node_modules/string-width/index.js"(exports, module2) {
     "use strict";
     var stripAnsi = require_strip_ansi();
     var isFullwidthCodePoint = require_is_fullwidth_code_point();
@@ -28645,8 +28647,8 @@ var require_string_width = __commonJS({
       }
       string = string.replace(emojiRegex(), "  ");
       let width = 0;
-      for (let i2 = 0; i2 < string.length; i2++) {
-        const code = string.codePointAt(i2);
+      for (let i = 0; i < string.length; i++) {
+        const code = string.codePointAt(i);
         if (code <= 31 || code >= 127 && code <= 159) {
           continue;
         }
@@ -28654,14 +28656,14 @@ var require_string_width = __commonJS({
           continue;
         }
         if (code > 65535) {
-          i2++;
+          i++;
         }
         width += isFullwidthCodePoint(code) ? 2 : 1;
       }
       return width;
     };
-    module.exports = stringWidth;
-    module.exports.default = stringWidth;
+    module2.exports = stringWidth;
+    module2.exports.default = stringWidth;
   }
 });
 
@@ -28960,18 +28962,18 @@ var require_tty = __commonJS({
       calculatePosition(text, orig) {
         const pos = Object.assign({}, orig);
         let escSeq = 0;
-        [...text].forEach((c) => {
-          if (c === "\n") {
+        [...text].forEach((c3) => {
+          if (c3 === "\n") {
             pos.row += 1;
             pos.col = 0;
             return;
           }
           let cw = 0;
-          if (c === "	") {
+          if (c3 === "	") {
             cw = this.tabWidth - pos.col % this.tabWidth;
           } else {
             let size;
-            [size, escSeq] = width(c, escSeq);
+            [size, escSeq] = width(c3, escSeq);
             cw = size;
           }
           pos.col += cw;
@@ -29024,7 +29026,7 @@ var require_tty = __commonJS({
         if (cursorRowMovement > 0) {
           this.write(`\x1B[${cursorRowMovement}B`);
         }
-        for (let i2 = 0; i2 < oldRows; i2++) {
+        for (let i = 0; i < oldRows; i++) {
           this.write("\r\x1B[0K\x1B[A");
         }
         this.write("\r\x1B[0K");
@@ -29422,7 +29424,7 @@ var require_readline = __commonJS({
 
 // src/Components/App.tsx
 var import_lz_string = __toESM(require_lz_string());
-var React9 = __toESM(require_react());
+var React10 = __toESM(require_react());
 var import_client = __toESM(require_client());
 
 // src/examples.ts
@@ -29461,17 +29463,17 @@ function findExampleByTitle(title, exampleCategories2) {
 function sanitizeTitleForUrl(title) {
   return title.toLowerCase().replace(/[\s/]/g, "-").replace(/[^a-z0-9-]/g, "");
 }
-function exampleCategoryJsonToExampleCategory(x2) {
+function exampleCategoryJsonToExampleCategory(x3) {
   return {
-    category: x2.category,
-    apps: x2.apps.map(exampleItemJsonToExampleItem)
+    category: x3.category,
+    apps: x3.apps.map(exampleItemJsonToExampleItem)
   };
 }
-function exampleItemJsonToExampleItem(x2) {
+function exampleItemJsonToExampleItem(x3) {
   return {
-    title: x2.title,
-    about: x2.about || null,
-    files: x2.files.map(FCJSONtoFC)
+    title: x3.title,
+    about: x3.about || null,
+    files: x3.files.map(FCJSONtoFC)
   };
 }
 
@@ -29501,87 +29503,87 @@ var AwaitableQueue = class {
     }
     return this._buffer.shift();
   }
-  enqueue(x2) {
-    this._buffer.push(x2);
+  enqueue(x3) {
+    this._buffer.push(x3);
     this._notifyAll();
   }
 };
 
 // node_modules/webr/dist/webr.mjs
-var $s = Object.create;
-var Xr = Object.defineProperty;
-var Gs = Object.getOwnPropertyDescriptor;
-var Ks = Object.getOwnPropertyNames;
-var Qs = Object.getPrototypeOf;
-var Zs = Object.prototype.hasOwnProperty;
-var U = ((r) => typeof __require < "u" ? __require : typeof Proxy < "u" ? new Proxy(r, { get: (e, t) => (typeof __require < "u" ? __require : e)[t] }) : r)(function(r) {
+var sn = Object.create;
+var Zr = Object.defineProperty;
+var nn = Object.getOwnPropertyDescriptor;
+var on = Object.getOwnPropertyNames;
+var an = Object.getPrototypeOf;
+var ln = Object.prototype.hasOwnProperty;
+var B = ((s) => typeof __require < "u" ? __require : typeof Proxy < "u" ? new Proxy(s, { get: (e, t) => (typeof __require < "u" ? __require : e)[t] }) : s)(function(s) {
   if (typeof __require < "u")
     return __require.apply(this, arguments);
-  throw new Error('Dynamic require of "' + r + '" is not supported');
+  throw new Error('Dynamic require of "' + s + '" is not supported');
 });
-var _ = (r, e) => () => (e || r((e = { exports: {} }).exports, e), e.exports);
-var Ys = (r, e, t, s) => {
+var S = (s, e) => () => (e || s((e = { exports: {} }).exports, e), e.exports);
+var cn = (s, e, t, r) => {
   if (e && typeof e == "object" || typeof e == "function")
-    for (let n of Ks(e))
-      !Zs.call(r, n) && n !== t && Xr(r, n, { get: () => e[n], enumerable: !(s = Gs(e, n)) || s.enumerable });
-  return r;
+    for (let n of on(e))
+      !ln.call(s, n) && n !== t && Zr(s, n, { get: () => e[n], enumerable: !(r = nn(e, n)) || r.enumerable });
+  return s;
 };
-var te = (r, e, t) => (t = r != null ? $s(Qs(r)) : {}, Ys(e || !r || !r.__esModule ? Xr(t, "default", { value: r, enumerable: true }) : t, r));
-var ur = (r, e, t) => {
-  if (!e.has(r))
+var oe = (s, e, t) => (t = s != null ? sn(an(s)) : {}, cn(e || !s || !s.__esModule ? Zr(t, "default", { value: s, enumerable: true }) : t, s));
+var fr = (s, e, t) => {
+  if (!e.has(s))
     throw TypeError("Cannot " + t);
 };
-var i = (r, e, t) => (ur(r, e, "read from private field"), t ? t.call(r) : e.get(r));
-var u = (r, e, t) => {
-  if (e.has(r))
+var a = (s, e, t) => (fr(s, e, "read from private field"), t ? t.call(s) : e.get(s));
+var u = (s, e, t) => {
+  if (e.has(s))
     throw TypeError("Cannot add the same private member more than once");
-  e instanceof WeakSet ? e.add(r) : e.set(r, t);
+  e instanceof WeakSet ? e.add(s) : e.set(s, t);
 };
-var d = (r, e, t, s) => (ur(r, e, "write to private field"), s ? s.call(r, t) : e.set(r, t), t);
-var x = (r, e, t) => (ur(r, e, "access private method"), t);
-var Oe = _((I) => {
+var d = (s, e, t, r) => (fr(s, e, "write to private field"), r ? r.call(s, t) : e.set(s, t), t);
+var E = (s, e, t) => (fr(s, e, "access private method"), t);
+var He = S((C2) => {
   "use strict";
-  Object.defineProperty(I, "__esModule", { value: true });
-  I.getUint64 = I.getInt64 = I.setInt64 = I.setUint64 = I.UINT32_MAX = void 0;
-  I.UINT32_MAX = 4294967295;
-  function rn(r, e, t) {
-    let s = t / 4294967296, n = t;
-    r.setUint32(e, s), r.setUint32(e + 4, n);
+  Object.defineProperty(C2, "__esModule", { value: true });
+  C2.getUint64 = C2.getInt64 = C2.setInt64 = C2.setUint64 = C2.UINT32_MAX = void 0;
+  C2.UINT32_MAX = 4294967295;
+  function fn(s, e, t) {
+    let r = t / 4294967296, n = t;
+    s.setUint32(e, r), s.setUint32(e + 4, n);
   }
-  I.setUint64 = rn;
-  function sn(r, e, t) {
-    let s = Math.floor(t / 4294967296), n = t;
-    r.setUint32(e, s), r.setUint32(e + 4, n);
+  C2.setUint64 = fn;
+  function Rn(s, e, t) {
+    let r = Math.floor(t / 4294967296), n = t;
+    s.setUint32(e, r), s.setUint32(e + 4, n);
   }
-  I.setInt64 = sn;
-  function nn(r, e) {
-    let t = r.getInt32(e), s = r.getUint32(e + 4);
-    return t * 4294967296 + s;
+  C2.setInt64 = Rn;
+  function mn(s, e) {
+    let t = s.getInt32(e), r = s.getUint32(e + 4);
+    return t * 4294967296 + r;
   }
-  I.getInt64 = nn;
-  function on(r, e) {
-    let t = r.getUint32(e), s = r.getUint32(e + 4);
-    return t * 4294967296 + s;
+  C2.getInt64 = mn;
+  function gn(s, e) {
+    let t = s.getUint32(e), r = s.getUint32(e + 4);
+    return t * 4294967296 + r;
   }
-  I.getUint64 = on;
+  C2.getUint64 = gn;
 });
-var mt = _((S) => {
+var Ot = S((M2) => {
   "use strict";
-  var dr, hr, yr;
-  Object.defineProperty(S, "__esModule", { value: true });
-  S.utf8DecodeTD = S.TEXT_DECODER_THRESHOLD = S.utf8DecodeJs = S.utf8EncodeTE = S.TEXT_ENCODER_THRESHOLD = S.utf8EncodeJs = S.utf8Count = void 0;
-  var Qr = Oe(), Rt = (typeof process > "u" || ((dr = process == null ? void 0 : process.env) === null || dr === void 0 ? void 0 : dr.TEXT_ENCODING) !== "never") && typeof TextEncoder < "u" && typeof TextDecoder < "u";
-  function an(r) {
-    let e = r.length, t = 0, s = 0;
-    for (; s < e; ) {
-      let n = r.charCodeAt(s++);
+  var _r, Sr, kr;
+  Object.defineProperty(M2, "__esModule", { value: true });
+  M2.utf8DecodeTD = M2.TEXT_DECODER_THRESHOLD = M2.utf8DecodeJs = M2.utf8EncodeTE = M2.TEXT_ENCODER_THRESHOLD = M2.utf8EncodeJs = M2.utf8Count = void 0;
+  var ps = He(), At = (typeof process > "u" || ((_r = process == null ? void 0 : process.env) === null || _r === void 0 ? void 0 : _r.TEXT_ENCODING) !== "never") && typeof TextEncoder < "u" && typeof TextDecoder < "u";
+  function bn(s) {
+    let e = s.length, t = 0, r = 0;
+    for (; r < e; ) {
+      let n = s.charCodeAt(r++);
       if (n & 4294967168)
         if (!(n & 4294965248))
           t += 2;
         else {
-          if (n >= 55296 && n <= 56319 && s < e) {
-            let o = r.charCodeAt(s);
-            (o & 64512) === 56320 && (++s, n = ((n & 1023) << 10) + (o & 1023) + 65536);
+          if (n >= 55296 && n <= 56319 && r < e) {
+            let o = s.charCodeAt(r);
+            (o & 64512) === 56320 && (++r, n = ((n & 1023) << 10) + (o & 1023) + 65536);
           }
           n & 4294901760 ? t += 4 : t += 3;
         }
@@ -29592,226 +29594,226 @@ var mt = _((S) => {
     }
     return t;
   }
-  S.utf8Count = an;
-  function ln(r, e, t) {
-    let s = r.length, n = t, o = 0;
-    for (; o < s; ) {
-      let a = r.charCodeAt(o++);
-      if (a & 4294967168)
-        if (!(a & 4294965248))
-          e[n++] = a >> 6 & 31 | 192;
+  M2.utf8Count = bn;
+  function wn(s, e, t) {
+    let r = s.length, n = t, o = 0;
+    for (; o < r; ) {
+      let i = s.charCodeAt(o++);
+      if (i & 4294967168)
+        if (!(i & 4294965248))
+          e[n++] = i >> 6 & 31 | 192;
         else {
-          if (a >= 55296 && a <= 56319 && o < s) {
-            let c = r.charCodeAt(o);
-            (c & 64512) === 56320 && (++o, a = ((a & 1023) << 10) + (c & 1023) + 65536);
+          if (i >= 55296 && i <= 56319 && o < r) {
+            let l = s.charCodeAt(o);
+            (l & 64512) === 56320 && (++o, i = ((i & 1023) << 10) + (l & 1023) + 65536);
           }
-          a & 4294901760 ? (e[n++] = a >> 18 & 7 | 240, e[n++] = a >> 12 & 63 | 128, e[n++] = a >> 6 & 63 | 128) : (e[n++] = a >> 12 & 15 | 224, e[n++] = a >> 6 & 63 | 128);
+          i & 4294901760 ? (e[n++] = i >> 18 & 7 | 240, e[n++] = i >> 12 & 63 | 128, e[n++] = i >> 6 & 63 | 128) : (e[n++] = i >> 12 & 15 | 224, e[n++] = i >> 6 & 63 | 128);
         }
       else {
-        e[n++] = a;
+        e[n++] = i;
         continue;
       }
-      e[n++] = a & 63 | 128;
+      e[n++] = i & 63 | 128;
     }
   }
-  S.utf8EncodeJs = ln;
-  var Ae = Rt ? new TextEncoder() : void 0;
-  S.TEXT_ENCODER_THRESHOLD = Rt ? typeof process < "u" && ((hr = process == null ? void 0 : process.env) === null || hr === void 0 ? void 0 : hr.TEXT_ENCODING) !== "force" ? 200 : 0 : Qr.UINT32_MAX;
-  function cn(r, e, t) {
-    e.set(Ae.encode(r), t);
+  M2.utf8EncodeJs = wn;
+  var ze = At ? new TextEncoder() : void 0;
+  M2.TEXT_ENCODER_THRESHOLD = At ? typeof process < "u" && ((Sr = process == null ? void 0 : process.env) === null || Sr === void 0 ? void 0 : Sr.TEXT_ENCODING) !== "force" ? 200 : 0 : ps.UINT32_MAX;
+  function xn(s, e, t) {
+    e.set(ze.encode(s), t);
   }
-  function un(r, e, t) {
-    Ae.encodeInto(r, e.subarray(t));
+  function vn(s, e, t) {
+    ze.encodeInto(s, e.subarray(t));
   }
-  S.utf8EncodeTE = Ae != null && Ae.encodeInto ? un : cn;
-  var pn = 4096;
-  function dn(r, e, t) {
-    let s = e, n = s + t, o = [], a = "";
-    for (; s < n; ) {
-      let c = r[s++];
-      if (!(c & 128))
-        o.push(c);
-      else if ((c & 224) === 192) {
-        let p = r[s++] & 63;
-        o.push((c & 31) << 6 | p);
-      } else if ((c & 240) === 224) {
-        let p = r[s++] & 63, v = r[s++] & 63;
-        o.push((c & 31) << 12 | p << 6 | v);
-      } else if ((c & 248) === 240) {
-        let p = r[s++] & 63, v = r[s++] & 63, ee = r[s++] & 63, z = (c & 7) << 18 | p << 12 | v << 6 | ee;
-        z > 65535 && (z -= 65536, o.push(z >>> 10 & 1023 | 55296), z = 56320 | z & 1023), o.push(z);
+  M2.utf8EncodeTE = ze != null && ze.encodeInto ? vn : xn;
+  var En = 4096;
+  function Pn(s, e, t) {
+    let r = e, n = r + t, o = [], i = "";
+    for (; r < n; ) {
+      let l = s[r++];
+      if (!(l & 128))
+        o.push(l);
+      else if ((l & 224) === 192) {
+        let p2 = s[r++] & 63;
+        o.push((l & 31) << 6 | p2);
+      } else if ((l & 240) === 224) {
+        let p2 = s[r++] & 63, D2 = s[r++] & 63;
+        o.push((l & 31) << 12 | p2 << 6 | D2);
+      } else if ((l & 248) === 240) {
+        let p2 = s[r++] & 63, D2 = s[r++] & 63, b2 = s[r++] & 63, j2 = (l & 7) << 18 | p2 << 12 | D2 << 6 | b2;
+        j2 > 65535 && (j2 -= 65536, o.push(j2 >>> 10 & 1023 | 55296), j2 = 56320 | j2 & 1023), o.push(j2);
       } else
-        o.push(c);
-      o.length >= pn && (a += String.fromCharCode(...o), o.length = 0);
+        o.push(l);
+      o.length >= En && (i += String.fromCharCode(...o), o.length = 0);
     }
-    return o.length > 0 && (a += String.fromCharCode(...o)), a;
+    return o.length > 0 && (i += String.fromCharCode(...o)), i;
   }
-  S.utf8DecodeJs = dn;
-  var hn = Rt ? new TextDecoder() : null;
-  S.TEXT_DECODER_THRESHOLD = Rt ? typeof process < "u" && ((yr = process == null ? void 0 : process.env) === null || yr === void 0 ? void 0 : yr.TEXT_DECODER) !== "force" ? 200 : 0 : Qr.UINT32_MAX;
-  function yn(r, e, t) {
-    let s = r.subarray(e, e + t);
-    return hn.decode(s);
+  M2.utf8DecodeJs = Pn;
+  var Tn = At ? new TextDecoder() : null;
+  M2.TEXT_DECODER_THRESHOLD = At ? typeof process < "u" && ((kr = process == null ? void 0 : process.env) === null || kr === void 0 ? void 0 : kr.TEXT_DECODER) !== "force" ? 200 : 0 : ps.UINT32_MAX;
+  function _n(s, e, t) {
+    let r = s.subarray(e, e + t);
+    return Tn.decode(r);
   }
-  S.utf8DecodeTD = yn;
+  M2.utf8DecodeTD = _n;
 });
-var Rr = _((gt) => {
+var Dr = S((It) => {
   "use strict";
-  Object.defineProperty(gt, "__esModule", { value: true });
-  gt.ExtData = void 0;
-  var fr = class {
+  Object.defineProperty(It, "__esModule", { value: true });
+  It.ExtData = void 0;
+  var Mr = class {
     constructor(e, t) {
       this.type = e, this.data = t;
     }
   };
-  gt.ExtData = fr;
+  It.ExtData = Mr;
 });
-var wt = _((bt) => {
+var Ct = S((Ut) => {
   "use strict";
-  Object.defineProperty(bt, "__esModule", { value: true });
-  bt.DecodeError = void 0;
-  var he = class extends Error {
+  Object.defineProperty(Ut, "__esModule", { value: true });
+  Ut.DecodeError = void 0;
+  var we = class extends Error {
     constructor(e) {
       super(e);
-      let t = Object.create(he.prototype);
-      Object.setPrototypeOf(this, t), Object.defineProperty(this, "name", { configurable: true, enumerable: false, value: he.name });
+      let t = Object.create(we.prototype);
+      Object.setPrototypeOf(this, t), Object.defineProperty(this, "name", { configurable: true, enumerable: false, value: we.name });
     }
   };
-  bt.DecodeError = he;
+  Ut.DecodeError = we;
 });
-var mr = _((T) => {
+var Wr = S((_2) => {
   "use strict";
-  Object.defineProperty(T, "__esModule", { value: true });
-  T.timestampExtension = T.decodeTimestampExtension = T.decodeTimestampToTimeSpec = T.encodeTimestampExtension = T.encodeDateToTimeSpec = T.encodeTimeSpecToTimestamp = T.EXT_TIMESTAMP = void 0;
-  var fn = wt(), Zr = Oe();
-  T.EXT_TIMESTAMP = -1;
-  var Rn = 4294967296 - 1, mn = 17179869184 - 1;
-  function Yr({ sec: r, nsec: e }) {
-    if (r >= 0 && e >= 0 && r <= mn)
-      if (e === 0 && r <= Rn) {
+  Object.defineProperty(_2, "__esModule", { value: true });
+  _2.timestampExtension = _2.decodeTimestampExtension = _2.decodeTimestampToTimeSpec = _2.encodeTimestampExtension = _2.encodeDateToTimeSpec = _2.encodeTimeSpecToTimestamp = _2.EXT_TIMESTAMP = void 0;
+  var Sn = Ct(), ds = He();
+  _2.EXT_TIMESTAMP = -1;
+  var kn = 4294967296 - 1, Mn = 17179869184 - 1;
+  function hs({ sec: s, nsec: e }) {
+    if (s >= 0 && e >= 0 && s <= Mn)
+      if (e === 0 && s <= kn) {
         let t = new Uint8Array(4);
-        return new DataView(t.buffer).setUint32(0, r), t;
+        return new DataView(t.buffer).setUint32(0, s), t;
       } else {
-        let t = r / 4294967296, s = r & 4294967295, n = new Uint8Array(8), o = new DataView(n.buffer);
-        return o.setUint32(0, e << 2 | t & 3), o.setUint32(4, s), n;
+        let t = s / 4294967296, r = s & 4294967295, n = new Uint8Array(8), o = new DataView(n.buffer);
+        return o.setUint32(0, e << 2 | t & 3), o.setUint32(4, r), n;
       }
     else {
-      let t = new Uint8Array(12), s = new DataView(t.buffer);
-      return s.setUint32(0, e), (0, Zr.setInt64)(s, 4, r), t;
+      let t = new Uint8Array(12), r = new DataView(t.buffer);
+      return r.setUint32(0, e), (0, ds.setInt64)(r, 4, s), t;
     }
   }
-  T.encodeTimeSpecToTimestamp = Yr;
-  function es(r) {
-    let e = r.getTime(), t = Math.floor(e / 1e3), s = (e - t * 1e3) * 1e6, n = Math.floor(s / 1e9);
-    return { sec: t + n, nsec: s - n * 1e9 };
+  _2.encodeTimeSpecToTimestamp = hs;
+  function ys(s) {
+    let e = s.getTime(), t = Math.floor(e / 1e3), r = (e - t * 1e3) * 1e6, n = Math.floor(r / 1e9);
+    return { sec: t + n, nsec: r - n * 1e9 };
   }
-  T.encodeDateToTimeSpec = es;
-  function ts(r) {
-    if (r instanceof Date) {
-      let e = es(r);
-      return Yr(e);
+  _2.encodeDateToTimeSpec = ys;
+  function fs(s) {
+    if (s instanceof Date) {
+      let e = ys(s);
+      return hs(e);
     } else
       return null;
   }
-  T.encodeTimestampExtension = ts;
-  function rs(r) {
-    let e = new DataView(r.buffer, r.byteOffset, r.byteLength);
-    switch (r.byteLength) {
+  _2.encodeTimestampExtension = fs;
+  function Rs(s) {
+    let e = new DataView(s.buffer, s.byteOffset, s.byteLength);
+    switch (s.byteLength) {
       case 4:
         return { sec: e.getUint32(0), nsec: 0 };
       case 8: {
-        let t = e.getUint32(0), s = e.getUint32(4), n = (t & 3) * 4294967296 + s, o = t >>> 2;
+        let t = e.getUint32(0), r = e.getUint32(4), n = (t & 3) * 4294967296 + r, o = t >>> 2;
         return { sec: n, nsec: o };
       }
       case 12: {
-        let t = (0, Zr.getInt64)(e, 4), s = e.getUint32(0);
-        return { sec: t, nsec: s };
+        let t = (0, ds.getInt64)(e, 4), r = e.getUint32(0);
+        return { sec: t, nsec: r };
       }
       default:
-        throw new fn.DecodeError(`Unrecognized data size for timestamp (expected 4, 8, or 12): ${r.length}`);
+        throw new Sn.DecodeError(`Unrecognized data size for timestamp (expected 4, 8, or 12): ${s.length}`);
     }
   }
-  T.decodeTimestampToTimeSpec = rs;
-  function ss(r) {
-    let e = rs(r);
+  _2.decodeTimestampToTimeSpec = Rs;
+  function ms(s) {
+    let e = Rs(s);
     return new Date(e.sec * 1e3 + e.nsec / 1e6);
   }
-  T.decodeTimestampExtension = ss;
-  T.timestampExtension = { type: T.EXT_TIMESTAMP, encode: ts, decode: ss };
+  _2.decodeTimestampExtension = ms;
+  _2.timestampExtension = { type: _2.EXT_TIMESTAMP, encode: fs, decode: ms };
 });
-var Et = _((vt) => {
+var Bt = S((Nt) => {
   "use strict";
-  Object.defineProperty(vt, "__esModule", { value: true });
-  vt.ExtensionCodec = void 0;
-  var xt = Rr(), gn = mr(), Ie = class {
+  Object.defineProperty(Nt, "__esModule", { value: true });
+  Nt.ExtensionCodec = void 0;
+  var jt = Dr(), Dn = Wr(), Xe = class {
     constructor() {
-      this.builtInEncoders = [], this.builtInDecoders = [], this.encoders = [], this.decoders = [], this.register(gn.timestampExtension);
+      this.builtInEncoders = [], this.builtInDecoders = [], this.encoders = [], this.decoders = [], this.register(Dn.timestampExtension);
     }
-    register({ type: e, encode: t, decode: s }) {
+    register({ type: e, encode: t, decode: r }) {
       if (e >= 0)
-        this.encoders[e] = t, this.decoders[e] = s;
+        this.encoders[e] = t, this.decoders[e] = r;
       else {
         let n = 1 + e;
-        this.builtInEncoders[n] = t, this.builtInDecoders[n] = s;
+        this.builtInEncoders[n] = t, this.builtInDecoders[n] = r;
       }
     }
     tryToEncode(e, t) {
-      for (let s = 0; s < this.builtInEncoders.length; s++) {
-        let n = this.builtInEncoders[s];
+      for (let r = 0; r < this.builtInEncoders.length; r++) {
+        let n = this.builtInEncoders[r];
         if (n != null) {
           let o = n(e, t);
           if (o != null) {
-            let a = -1 - s;
-            return new xt.ExtData(a, o);
+            let i = -1 - r;
+            return new jt.ExtData(i, o);
           }
         }
       }
-      for (let s = 0; s < this.encoders.length; s++) {
-        let n = this.encoders[s];
+      for (let r = 0; r < this.encoders.length; r++) {
+        let n = this.encoders[r];
         if (n != null) {
           let o = n(e, t);
           if (o != null) {
-            let a = s;
-            return new xt.ExtData(a, o);
+            let i = r;
+            return new jt.ExtData(i, o);
           }
         }
       }
-      return e instanceof xt.ExtData ? e : null;
+      return e instanceof jt.ExtData ? e : null;
     }
-    decode(e, t, s) {
+    decode(e, t, r) {
       let n = t < 0 ? this.builtInDecoders[-1 - t] : this.decoders[t];
-      return n ? n(e, t, s) : new xt.ExtData(t, e);
+      return n ? n(e, t, r) : new jt.ExtData(t, e);
     }
   };
-  vt.ExtensionCodec = Ie;
-  Ie.defaultCodec = new Ie();
+  Nt.ExtensionCodec = Xe;
+  Xe.defaultCodec = new Xe();
 });
-var gr = _((ye) => {
+var Ar = S((xe) => {
   "use strict";
-  Object.defineProperty(ye, "__esModule", { value: true });
-  ye.createDataView = ye.ensureUint8Array = void 0;
-  function ns(r) {
-    return r instanceof Uint8Array ? r : ArrayBuffer.isView(r) ? new Uint8Array(r.buffer, r.byteOffset, r.byteLength) : r instanceof ArrayBuffer ? new Uint8Array(r) : Uint8Array.from(r);
+  Object.defineProperty(xe, "__esModule", { value: true });
+  xe.createDataView = xe.ensureUint8Array = void 0;
+  function gs(s) {
+    return s instanceof Uint8Array ? s : ArrayBuffer.isView(s) ? new Uint8Array(s.buffer, s.byteOffset, s.byteLength) : s instanceof ArrayBuffer ? new Uint8Array(s) : Uint8Array.from(s);
   }
-  ye.ensureUint8Array = ns;
-  function bn(r) {
-    if (r instanceof ArrayBuffer)
-      return new DataView(r);
-    let e = ns(r);
+  xe.ensureUint8Array = gs;
+  function Wn(s) {
+    if (s instanceof ArrayBuffer)
+      return new DataView(s);
+    let e = gs(s);
     return new DataView(e.buffer, e.byteOffset, e.byteLength);
   }
-  ye.createDataView = bn;
+  xe.createDataView = Wn;
 });
-var wr = _((N) => {
+var Ir = S((J2) => {
   "use strict";
-  Object.defineProperty(N, "__esModule", { value: true });
-  N.Encoder = N.DEFAULT_INITIAL_BUFFER_SIZE = N.DEFAULT_MAX_DEPTH = void 0;
-  var Ue = mt(), wn = Et(), os = Oe(), xn = gr();
-  N.DEFAULT_MAX_DEPTH = 100;
-  N.DEFAULT_INITIAL_BUFFER_SIZE = 2048;
-  var br = class {
-    constructor(e = wn.ExtensionCodec.defaultCodec, t = void 0, s = N.DEFAULT_MAX_DEPTH, n = N.DEFAULT_INITIAL_BUFFER_SIZE, o = false, a = false, c = false, p = false) {
-      this.extensionCodec = e, this.context = t, this.maxDepth = s, this.initialBufferSize = n, this.sortKeys = o, this.forceFloat32 = a, this.ignoreUndefined = c, this.forceIntegerToFloat = p, this.pos = 0, this.view = new DataView(new ArrayBuffer(this.initialBufferSize)), this.bytes = new Uint8Array(this.view.buffer);
+  Object.defineProperty(J2, "__esModule", { value: true });
+  J2.Encoder = J2.DEFAULT_INITIAL_BUFFER_SIZE = J2.DEFAULT_MAX_DEPTH = void 0;
+  var Ge = Ot(), An = Bt(), bs = He(), On = Ar();
+  J2.DEFAULT_MAX_DEPTH = 100;
+  J2.DEFAULT_INITIAL_BUFFER_SIZE = 2048;
+  var Or = class {
+    constructor(e = An.ExtensionCodec.defaultCodec, t = void 0, r = J2.DEFAULT_MAX_DEPTH, n = J2.DEFAULT_INITIAL_BUFFER_SIZE, o = false, i = false, l = false, p2 = false) {
+      this.extensionCodec = e, this.context = t, this.maxDepth = r, this.initialBufferSize = n, this.sortKeys = o, this.forceFloat32 = i, this.ignoreUndefined = l, this.forceIntegerToFloat = p2, this.pos = 0, this.view = new DataView(new ArrayBuffer(this.initialBufferSize)), this.bytes = new Uint8Array(this.view.buffer);
     }
     reinitializeState() {
       this.pos = 0;
@@ -29832,8 +29834,8 @@ var wr = _((N) => {
       this.view.byteLength < t && this.resizeBuffer(t * 2);
     }
     resizeBuffer(e) {
-      let t = new ArrayBuffer(e), s = new Uint8Array(t), n = new DataView(t);
-      s.set(this.bytes), this.view = n, this.bytes = s;
+      let t = new ArrayBuffer(e), r = new Uint8Array(t), n = new DataView(t);
+      r.set(this.bytes), this.view = n, this.bytes = r;
     }
     encodeNil() {
       this.writeU8(192);
@@ -29857,18 +29859,18 @@ var wr = _((N) => {
         throw new Error(`Too long string: ${e} bytes in UTF-8`);
     }
     encodeString(e) {
-      if (e.length > Ue.TEXT_ENCODER_THRESHOLD) {
-        let n = (0, Ue.utf8Count)(e);
-        this.ensureBufferSizeToWrite(5 + n), this.writeStringHeader(n), (0, Ue.utf8EncodeTE)(e, this.bytes, this.pos), this.pos += n;
+      if (e.length > Ge.TEXT_ENCODER_THRESHOLD) {
+        let n = (0, Ge.utf8Count)(e);
+        this.ensureBufferSizeToWrite(5 + n), this.writeStringHeader(n), (0, Ge.utf8EncodeTE)(e, this.bytes, this.pos), this.pos += n;
       } else {
-        let n = (0, Ue.utf8Count)(e);
-        this.ensureBufferSizeToWrite(5 + n), this.writeStringHeader(n), (0, Ue.utf8EncodeJs)(e, this.bytes, this.pos), this.pos += n;
+        let n = (0, Ge.utf8Count)(e);
+        this.ensureBufferSizeToWrite(5 + n), this.writeStringHeader(n), (0, Ge.utf8EncodeJs)(e, this.bytes, this.pos), this.pos += n;
       }
     }
     encodeObject(e, t) {
-      let s = this.extensionCodec.tryToEncode(e, this.context);
-      if (s != null)
-        this.encodeExtension(s);
+      let r = this.extensionCodec.tryToEncode(e, this.context);
+      if (r != null)
+        this.encodeExtension(r);
       else if (Array.isArray(e))
         this.encodeArray(e, t);
       else if (ArrayBuffer.isView(e))
@@ -29888,32 +29890,32 @@ var wr = _((N) => {
         this.writeU8(198), this.writeU32(t);
       else
         throw new Error(`Too large binary: ${t}`);
-      let s = (0, xn.ensureUint8Array)(e);
-      this.writeU8a(s);
+      let r = (0, On.ensureUint8Array)(e);
+      this.writeU8a(r);
     }
     encodeArray(e, t) {
-      let s = e.length;
-      if (s < 16)
-        this.writeU8(144 + s);
-      else if (s < 65536)
-        this.writeU8(220), this.writeU16(s);
-      else if (s < 4294967296)
-        this.writeU8(221), this.writeU32(s);
+      let r = e.length;
+      if (r < 16)
+        this.writeU8(144 + r);
+      else if (r < 65536)
+        this.writeU8(220), this.writeU16(r);
+      else if (r < 4294967296)
+        this.writeU8(221), this.writeU32(r);
       else
-        throw new Error(`Too large array: ${s}`);
+        throw new Error(`Too large array: ${r}`);
       for (let n of e)
         this.doEncode(n, t + 1);
     }
     countWithoutUndefined(e, t) {
-      let s = 0;
+      let r = 0;
       for (let n of t)
-        e[n] !== void 0 && s++;
-      return s;
+        e[n] !== void 0 && r++;
+      return r;
     }
     encodeMap(e, t) {
-      let s = Object.keys(e);
-      this.sortKeys && s.sort();
-      let n = this.ignoreUndefined ? this.countWithoutUndefined(e, s) : s.length;
+      let r = Object.keys(e);
+      this.sortKeys && r.sort();
+      let n = this.ignoreUndefined ? this.countWithoutUndefined(e, r) : r.length;
       if (n < 16)
         this.writeU8(128 + n);
       else if (n < 65536)
@@ -29922,9 +29924,9 @@ var wr = _((N) => {
         this.writeU8(223), this.writeU32(n);
       else
         throw new Error(`Too large map object: ${n}`);
-      for (let o of s) {
-        let a = e[o];
-        this.ignoreUndefined && a === void 0 || (this.encodeString(o), this.doEncode(a, t + 1));
+      for (let o of r) {
+        let i = e[o];
+        this.ignoreUndefined && i === void 0 || (this.encodeString(o), this.doEncode(i, t + 1));
       }
     }
     encodeExtension(e) {
@@ -29978,113 +29980,113 @@ var wr = _((N) => {
       this.ensureBufferSizeToWrite(8), this.view.setFloat64(this.pos, e), this.pos += 8;
     }
     writeU64(e) {
-      this.ensureBufferSizeToWrite(8), (0, os.setUint64)(this.view, this.pos, e), this.pos += 8;
+      this.ensureBufferSizeToWrite(8), (0, bs.setUint64)(this.view, this.pos, e), this.pos += 8;
     }
     writeI64(e) {
-      this.ensureBufferSizeToWrite(8), (0, os.setInt64)(this.view, this.pos, e), this.pos += 8;
+      this.ensureBufferSizeToWrite(8), (0, bs.setInt64)(this.view, this.pos, e), this.pos += 8;
     }
   };
-  N.Encoder = br;
+  J2.Encoder = Or;
 });
-var is = _((Pt) => {
+var ws = S((Lt) => {
   "use strict";
-  Object.defineProperty(Pt, "__esModule", { value: true });
-  Pt.encode = void 0;
-  var vn = wr(), En = {};
-  function Pn(r, e = En) {
-    return new vn.Encoder(e.extensionCodec, e.context, e.maxDepth, e.initialBufferSize, e.sortKeys, e.forceFloat32, e.ignoreUndefined, e.forceIntegerToFloat).encodeSharedRef(r);
+  Object.defineProperty(Lt, "__esModule", { value: true });
+  Lt.encode = void 0;
+  var In = Ir(), Un = {};
+  function Cn(s, e = Un) {
+    return new In.Encoder(e.extensionCodec, e.context, e.maxDepth, e.initialBufferSize, e.sortKeys, e.forceFloat32, e.ignoreUndefined, e.forceIntegerToFloat).encodeSharedRef(s);
   }
-  Pt.encode = Pn;
+  Lt.encode = Cn;
 });
-var as = _((Tt) => {
+var xs = S((Ft) => {
   "use strict";
-  Object.defineProperty(Tt, "__esModule", { value: true });
-  Tt.prettyByte = void 0;
-  function Tn(r) {
-    return `${r < 0 ? "-" : ""}0x${Math.abs(r).toString(16).padStart(2, "0")}`;
+  Object.defineProperty(Ft, "__esModule", { value: true });
+  Ft.prettyByte = void 0;
+  function jn(s) {
+    return `${s < 0 ? "-" : ""}0x${Math.abs(s).toString(16).padStart(2, "0")}`;
   }
-  Tt.prettyByte = Tn;
+  Ft.prettyByte = jn;
 });
-var ls = _((_t) => {
+var vs = S((qt) => {
   "use strict";
-  Object.defineProperty(_t, "__esModule", { value: true });
-  _t.CachedKeyDecoder = void 0;
-  var _n = mt(), Sn = 16, Mn = 16, xr = class {
-    constructor(e = Sn, t = Mn) {
+  Object.defineProperty(qt, "__esModule", { value: true });
+  qt.CachedKeyDecoder = void 0;
+  var Nn = Ot(), Bn = 16, Ln = 16, Ur = class {
+    constructor(e = Bn, t = Ln) {
       this.maxKeyLength = e, this.maxLengthPerKey = t, this.hit = 0, this.miss = 0, this.caches = [];
-      for (let s = 0; s < this.maxKeyLength; s++)
+      for (let r = 0; r < this.maxKeyLength; r++)
         this.caches.push([]);
     }
     canBeCached(e) {
       return e > 0 && e <= this.maxKeyLength;
     }
-    find(e, t, s) {
-      let n = this.caches[s - 1];
+    find(e, t, r) {
+      let n = this.caches[r - 1];
       e:
         for (let o of n) {
-          let a = o.bytes;
-          for (let c = 0; c < s; c++)
-            if (a[c] !== e[t + c])
+          let i = o.bytes;
+          for (let l = 0; l < r; l++)
+            if (i[l] !== e[t + l])
               continue e;
           return o.str;
         }
       return null;
     }
     store(e, t) {
-      let s = this.caches[e.length - 1], n = { bytes: e, str: t };
-      s.length >= this.maxLengthPerKey ? s[Math.random() * s.length | 0] = n : s.push(n);
+      let r = this.caches[e.length - 1], n = { bytes: e, str: t };
+      r.length >= this.maxLengthPerKey ? r[Math.random() * r.length | 0] = n : r.push(n);
     }
-    decode(e, t, s) {
-      let n = this.find(e, t, s);
+    decode(e, t, r) {
+      let n = this.find(e, t, r);
       if (n != null)
         return this.hit++, n;
       this.miss++;
-      let o = (0, _n.utf8DecodeJs)(e, t, s), a = Uint8Array.prototype.slice.call(e, t, t + s);
-      return this.store(a, o), o;
+      let o = (0, Nn.utf8DecodeJs)(e, t, r), i = Uint8Array.prototype.slice.call(e, t, t + r);
+      return this.store(i, o), o;
     }
   };
-  _t.CachedKeyDecoder = xr;
+  qt.CachedKeyDecoder = Ur;
 });
-var St = _((J) => {
+var Vt = S((Q2) => {
   "use strict";
-  Object.defineProperty(J, "__esModule", { value: true });
-  J.Decoder = J.DataViewIndexOutOfBoundsError = void 0;
-  var vr = as(), kn = Et(), re = Oe(), Er = mt(), Pr = gr(), Dn = ls(), H = wt(), Wn = (r) => {
-    let e = typeof r;
+  Object.defineProperty(Q2, "__esModule", { value: true });
+  Q2.Decoder = Q2.DataViewIndexOutOfBoundsError = void 0;
+  var Cr = xs(), Fn = Bt(), ce2 = He(), jr = Ot(), Nr = Ar(), qn = vs(), K2 = Ct(), Vn = (s) => {
+    let e = typeof s;
     return e === "string" || e === "number";
-  }, Ce = -1, _r = new DataView(new ArrayBuffer(0)), On = new Uint8Array(_r.buffer);
-  J.DataViewIndexOutOfBoundsError = (() => {
+  }, $e2 = -1, Lr = new DataView(new ArrayBuffer(0)), Jn = new Uint8Array(Lr.buffer);
+  Q2.DataViewIndexOutOfBoundsError = (() => {
     try {
-      _r.getInt8(0);
-    } catch (r) {
-      return r.constructor;
+      Lr.getInt8(0);
+    } catch (s) {
+      return s.constructor;
     }
     throw new Error("never reached");
   })();
-  var cs = new J.DataViewIndexOutOfBoundsError("Insufficient data"), An = new Dn.CachedKeyDecoder(), Tr = class {
-    constructor(e = kn.ExtensionCodec.defaultCodec, t = void 0, s = re.UINT32_MAX, n = re.UINT32_MAX, o = re.UINT32_MAX, a = re.UINT32_MAX, c = re.UINT32_MAX, p = An) {
-      this.extensionCodec = e, this.context = t, this.maxStrLength = s, this.maxBinLength = n, this.maxArrayLength = o, this.maxMapLength = a, this.maxExtLength = c, this.keyDecoder = p, this.totalPos = 0, this.pos = 0, this.view = _r, this.bytes = On, this.headByte = Ce, this.stack = [];
+  var Es = new Q2.DataViewIndexOutOfBoundsError("Insufficient data"), Hn = new qn.CachedKeyDecoder(), Br = class {
+    constructor(e = Fn.ExtensionCodec.defaultCodec, t = void 0, r = ce2.UINT32_MAX, n = ce2.UINT32_MAX, o = ce2.UINT32_MAX, i = ce2.UINT32_MAX, l = ce2.UINT32_MAX, p2 = Hn) {
+      this.extensionCodec = e, this.context = t, this.maxStrLength = r, this.maxBinLength = n, this.maxArrayLength = o, this.maxMapLength = i, this.maxExtLength = l, this.keyDecoder = p2, this.totalPos = 0, this.pos = 0, this.view = Lr, this.bytes = Jn, this.headByte = $e2, this.stack = [];
     }
     reinitializeState() {
-      this.totalPos = 0, this.headByte = Ce, this.stack.length = 0;
+      this.totalPos = 0, this.headByte = $e2, this.stack.length = 0;
     }
     setBuffer(e) {
-      this.bytes = (0, Pr.ensureUint8Array)(e), this.view = (0, Pr.createDataView)(this.bytes), this.pos = 0;
+      this.bytes = (0, Nr.ensureUint8Array)(e), this.view = (0, Nr.createDataView)(this.bytes), this.pos = 0;
     }
     appendBuffer(e) {
-      if (this.headByte === Ce && !this.hasRemaining(1))
+      if (this.headByte === $e2 && !this.hasRemaining(1))
         this.setBuffer(e);
       else {
-        let t = this.bytes.subarray(this.pos), s = (0, Pr.ensureUint8Array)(e), n = new Uint8Array(t.length + s.length);
-        n.set(t), n.set(s, t.length), this.setBuffer(n);
+        let t = this.bytes.subarray(this.pos), r = (0, Nr.ensureUint8Array)(e), n = new Uint8Array(t.length + r.length);
+        n.set(t), n.set(r, t.length), this.setBuffer(n);
       }
     }
     hasRemaining(e) {
       return this.view.byteLength - this.pos >= e;
     }
     createExtraByteError(e) {
-      let { view: t, pos: s } = this;
-      return new RangeError(`Extra ${t.byteLength - s} of ${t.byteLength} byte(s) found at buffer[${e}]`);
+      let { view: t, pos: r } = this;
+      return new RangeError(`Extra ${t.byteLength - r} of ${t.byteLength} byte(s) found at buffer[${e}]`);
     }
     decode(e) {
       this.reinitializeState(), this.setBuffer(e);
@@ -30098,26 +30100,26 @@ var St = _((J) => {
         yield this.doDecodeSync();
     }
     async decodeAsync(e) {
-      let t = false, s;
-      for await (let c of e) {
+      let t = false, r;
+      for await (let l of e) {
         if (t)
           throw this.createExtraByteError(this.totalPos);
-        this.appendBuffer(c);
+        this.appendBuffer(l);
         try {
-          s = this.doDecodeSync(), t = true;
-        } catch (p) {
-          if (!(p instanceof J.DataViewIndexOutOfBoundsError))
-            throw p;
+          r = this.doDecodeSync(), t = true;
+        } catch (p2) {
+          if (!(p2 instanceof Q2.DataViewIndexOutOfBoundsError))
+            throw p2;
         }
         this.totalPos += this.pos;
       }
       if (t) {
         if (this.hasRemaining(1))
           throw this.createExtraByteError(this.totalPos);
-        return s;
+        return r;
       }
-      let { headByte: n, pos: o, totalPos: a } = this;
-      throw new RangeError(`Insufficient data in parsing ${(0, vr.prettyByte)(n)} at ${a} (${o} in the current buffer)`);
+      let { headByte: n, pos: o, totalPos: i } = this;
+      throw new RangeError(`Insufficient data in parsing ${(0, Cr.prettyByte)(n)} at ${i} (${o} in the current buffer)`);
     }
     decodeArrayStream(e) {
       return this.decodeMultiAsync(e, true);
@@ -30126,17 +30128,17 @@ var St = _((J) => {
       return this.decodeMultiAsync(e, false);
     }
     async *decodeMultiAsync(e, t) {
-      let s = t, n = -1;
+      let r = t, n = -1;
       for await (let o of e) {
         if (t && n === 0)
           throw this.createExtraByteError(this.totalPos);
-        this.appendBuffer(o), s && (n = this.readArraySize(), s = false, this.complete());
+        this.appendBuffer(o), r && (n = this.readArraySize(), r = false, this.complete());
         try {
           for (; yield this.doDecodeSync(), --n !== 0; )
             ;
-        } catch (a) {
-          if (!(a instanceof J.DataViewIndexOutOfBoundsError))
-            throw a;
+        } catch (i) {
+          if (!(i instanceof Q2.DataViewIndexOutOfBoundsError))
+            throw i;
         }
         this.totalPos += this.pos;
       }
@@ -30260,25 +30262,25 @@ var St = _((J) => {
             let n = this.lookU32();
             t = this.decodeExtension(n, 4);
           } else
-            throw new H.DecodeError(`Unrecognized type byte: ${(0, vr.prettyByte)(e)}`);
+            throw new K2.DecodeError(`Unrecognized type byte: ${(0, Cr.prettyByte)(e)}`);
           this.complete();
-          let s = this.stack;
-          for (; s.length > 0; ) {
-            let n = s[s.length - 1];
+          let r = this.stack;
+          for (; r.length > 0; ) {
+            let n = r[r.length - 1];
             if (n.type === 0)
               if (n.array[n.position] = t, n.position++, n.position === n.size)
-                s.pop(), t = n.array;
+                r.pop(), t = n.array;
               else
                 continue e;
             else if (n.type === 1) {
-              if (!Wn(t))
-                throw new H.DecodeError("The type of key must be string or number but " + typeof t);
+              if (!Vn(t))
+                throw new K2.DecodeError("The type of key must be string or number but " + typeof t);
               if (t === "__proto__")
-                throw new H.DecodeError("The key __proto__ is not allowed");
+                throw new K2.DecodeError("The key __proto__ is not allowed");
               n.key = t, n.type = 2;
               continue e;
             } else if (n.map[n.key] = t, n.readCount++, n.readCount === n.size)
-              s.pop(), t = n.map;
+              r.pop(), t = n.map;
             else {
               n.key = null, n.type = 1;
               continue e;
@@ -30288,10 +30290,10 @@ var St = _((J) => {
         }
     }
     readHeadByte() {
-      return this.headByte === Ce && (this.headByte = this.readU8()), this.headByte;
+      return this.headByte === $e2 && (this.headByte = this.readU8()), this.headByte;
     }
     complete() {
-      this.headByte = Ce;
+      this.headByte = $e2;
     }
     readArraySize() {
       let e = this.readHeadByte();
@@ -30303,45 +30305,45 @@ var St = _((J) => {
         default: {
           if (e < 160)
             return e - 144;
-          throw new H.DecodeError(`Unrecognized array type byte: ${(0, vr.prettyByte)(e)}`);
+          throw new K2.DecodeError(`Unrecognized array type byte: ${(0, Cr.prettyByte)(e)}`);
         }
       }
     }
     pushMapState(e) {
       if (e > this.maxMapLength)
-        throw new H.DecodeError(`Max length exceeded: map length (${e}) > maxMapLengthLength (${this.maxMapLength})`);
+        throw new K2.DecodeError(`Max length exceeded: map length (${e}) > maxMapLengthLength (${this.maxMapLength})`);
       this.stack.push({ type: 1, size: e, key: null, readCount: 0, map: {} });
     }
     pushArrayState(e) {
       if (e > this.maxArrayLength)
-        throw new H.DecodeError(`Max length exceeded: array length (${e}) > maxArrayLength (${this.maxArrayLength})`);
+        throw new K2.DecodeError(`Max length exceeded: array length (${e}) > maxArrayLength (${this.maxArrayLength})`);
       this.stack.push({ type: 0, size: e, array: new Array(e), position: 0 });
     }
     decodeUtf8String(e, t) {
-      var s;
+      var r;
       if (e > this.maxStrLength)
-        throw new H.DecodeError(`Max length exceeded: UTF-8 byte length (${e}) > maxStrLength (${this.maxStrLength})`);
+        throw new K2.DecodeError(`Max length exceeded: UTF-8 byte length (${e}) > maxStrLength (${this.maxStrLength})`);
       if (this.bytes.byteLength < this.pos + t + e)
-        throw cs;
+        throw Es;
       let n = this.pos + t, o;
-      return this.stateIsMapKey() && (!((s = this.keyDecoder) === null || s === void 0) && s.canBeCached(e)) ? o = this.keyDecoder.decode(this.bytes, n, e) : e > Er.TEXT_DECODER_THRESHOLD ? o = (0, Er.utf8DecodeTD)(this.bytes, n, e) : o = (0, Er.utf8DecodeJs)(this.bytes, n, e), this.pos += t + e, o;
+      return this.stateIsMapKey() && (!((r = this.keyDecoder) === null || r === void 0) && r.canBeCached(e)) ? o = this.keyDecoder.decode(this.bytes, n, e) : e > jr.TEXT_DECODER_THRESHOLD ? o = (0, jr.utf8DecodeTD)(this.bytes, n, e) : o = (0, jr.utf8DecodeJs)(this.bytes, n, e), this.pos += t + e, o;
     }
     stateIsMapKey() {
       return this.stack.length > 0 ? this.stack[this.stack.length - 1].type === 1 : false;
     }
     decodeBinary(e, t) {
       if (e > this.maxBinLength)
-        throw new H.DecodeError(`Max length exceeded: bin length (${e}) > maxBinLength (${this.maxBinLength})`);
+        throw new K2.DecodeError(`Max length exceeded: bin length (${e}) > maxBinLength (${this.maxBinLength})`);
       if (!this.hasRemaining(e + t))
-        throw cs;
-      let s = this.pos + t, n = this.bytes.subarray(s, s + e);
+        throw Es;
+      let r = this.pos + t, n = this.bytes.subarray(r, r + e);
       return this.pos += t + e, n;
     }
     decodeExtension(e, t) {
       if (e > this.maxExtLength)
-        throw new H.DecodeError(`Max length exceeded: ext length (${e}) > maxExtLength (${this.maxExtLength})`);
-      let s = this.view.getInt8(this.pos + t), n = this.decodeBinary(e, t + 1);
-      return this.extensionCodec.decode(n, s, this.context);
+        throw new K2.DecodeError(`Max length exceeded: ext length (${e}) > maxExtLength (${this.maxExtLength})`);
+      let r = this.view.getInt8(this.pos + t), n = this.decodeBinary(e, t + 1);
+      return this.extensionCodec.decode(n, r, this.context);
     }
     lookU8() {
       return this.view.getUint8(this.pos);
@@ -30377,11 +30379,11 @@ var St = _((J) => {
       return this.pos += 4, e;
     }
     readU64() {
-      let e = (0, re.getUint64)(this.view, this.pos);
+      let e = (0, ce2.getUint64)(this.view, this.pos);
       return this.pos += 8, e;
     }
     readI64() {
-      let e = (0, re.getInt64)(this.view, this.pos);
+      let e = (0, ce2.getInt64)(this.view, this.pos);
       return this.pos += 8, e;
     }
     readF32() {
@@ -30393,319 +30395,1123 @@ var St = _((J) => {
       return this.pos += 8, e;
     }
   };
-  J.Decoder = Tr;
+  Q2.Decoder = Br;
 });
-var Sr = _((L) => {
+var Fr = S((H2) => {
   "use strict";
-  Object.defineProperty(L, "__esModule", { value: true });
-  L.decodeMulti = L.decode = L.defaultDecodeOptions = void 0;
-  var us = St();
-  L.defaultDecodeOptions = {};
-  function In(r, e = L.defaultDecodeOptions) {
-    return new us.Decoder(e.extensionCodec, e.context, e.maxStrLength, e.maxBinLength, e.maxArrayLength, e.maxMapLength, e.maxExtLength).decode(r);
+  Object.defineProperty(H2, "__esModule", { value: true });
+  H2.decodeMulti = H2.decode = H2.defaultDecodeOptions = void 0;
+  var Ps = Vt();
+  H2.defaultDecodeOptions = {};
+  function zn(s, e = H2.defaultDecodeOptions) {
+    return new Ps.Decoder(e.extensionCodec, e.context, e.maxStrLength, e.maxBinLength, e.maxArrayLength, e.maxMapLength, e.maxExtLength).decode(s);
   }
-  L.decode = In;
-  function Un(r, e = L.defaultDecodeOptions) {
-    return new us.Decoder(e.extensionCodec, e.context, e.maxStrLength, e.maxBinLength, e.maxArrayLength, e.maxMapLength, e.maxExtLength).decodeMulti(r);
+  H2.decode = zn;
+  function Xn(s, e = H2.defaultDecodeOptions) {
+    return new Ps.Decoder(e.extensionCodec, e.context, e.maxStrLength, e.maxBinLength, e.maxArrayLength, e.maxMapLength, e.maxExtLength).decodeMulti(s);
   }
-  L.decodeMulti = Un;
+  H2.decodeMulti = Xn;
 });
-var hs = _(($) => {
+var Ss = S((re2) => {
   "use strict";
-  Object.defineProperty($, "__esModule", { value: true });
-  $.ensureAsyncIterable = $.asyncIterableFromStream = $.isAsyncIterable = void 0;
-  function ps(r) {
-    return r[Symbol.asyncIterator] != null;
+  Object.defineProperty(re2, "__esModule", { value: true });
+  re2.ensureAsyncIterable = re2.asyncIterableFromStream = re2.isAsyncIterable = void 0;
+  function Ts(s) {
+    return s[Symbol.asyncIterator] != null;
   }
-  $.isAsyncIterable = ps;
-  function Cn(r) {
-    if (r == null)
+  re2.isAsyncIterable = Ts;
+  function Gn(s) {
+    if (s == null)
       throw new Error("Assertion Failure: value must not be null nor undefined");
   }
-  async function* ds(r) {
-    let e = r.getReader();
+  async function* _s(s) {
+    let e = s.getReader();
     try {
       for (; ; ) {
-        let { done: t, value: s } = await e.read();
+        let { done: t, value: r } = await e.read();
         if (t)
           return;
-        Cn(s), yield s;
+        Gn(r), yield r;
       }
     } finally {
       e.releaseLock();
     }
   }
-  $.asyncIterableFromStream = ds;
-  function Nn(r) {
-    return ps(r) ? r : ds(r);
+  re2.asyncIterableFromStream = _s;
+  function $n(s) {
+    return Ts(s) ? s : _s(s);
   }
-  $.ensureAsyncIterable = Nn;
+  re2.ensureAsyncIterable = $n;
 });
-var fs = _((j) => {
+var Ms = S((z2) => {
   "use strict";
-  Object.defineProperty(j, "__esModule", { value: true });
-  j.decodeStream = j.decodeMultiStream = j.decodeArrayStream = j.decodeAsync = void 0;
-  var Mr = St(), kr = hs(), Mt = Sr();
-  async function Ln(r, e = Mt.defaultDecodeOptions) {
-    let t = (0, kr.ensureAsyncIterable)(r);
-    return new Mr.Decoder(e.extensionCodec, e.context, e.maxStrLength, e.maxBinLength, e.maxArrayLength, e.maxMapLength, e.maxExtLength).decodeAsync(t);
+  Object.defineProperty(z2, "__esModule", { value: true });
+  z2.decodeStream = z2.decodeMultiStream = z2.decodeArrayStream = z2.decodeAsync = void 0;
+  var qr = Vt(), Vr = Ss(), Jt = Fr();
+  async function Kn(s, e = Jt.defaultDecodeOptions) {
+    let t = (0, Vr.ensureAsyncIterable)(s);
+    return new qr.Decoder(e.extensionCodec, e.context, e.maxStrLength, e.maxBinLength, e.maxArrayLength, e.maxMapLength, e.maxExtLength).decodeAsync(t);
   }
-  j.decodeAsync = Ln;
-  function jn(r, e = Mt.defaultDecodeOptions) {
-    let t = (0, kr.ensureAsyncIterable)(r);
-    return new Mr.Decoder(e.extensionCodec, e.context, e.maxStrLength, e.maxBinLength, e.maxArrayLength, e.maxMapLength, e.maxExtLength).decodeArrayStream(t);
+  z2.decodeAsync = Kn;
+  function Qn(s, e = Jt.defaultDecodeOptions) {
+    let t = (0, Vr.ensureAsyncIterable)(s);
+    return new qr.Decoder(e.extensionCodec, e.context, e.maxStrLength, e.maxBinLength, e.maxArrayLength, e.maxMapLength, e.maxExtLength).decodeArrayStream(t);
   }
-  j.decodeArrayStream = jn;
-  function ys(r, e = Mt.defaultDecodeOptions) {
-    let t = (0, kr.ensureAsyncIterable)(r);
-    return new Mr.Decoder(e.extensionCodec, e.context, e.maxStrLength, e.maxBinLength, e.maxArrayLength, e.maxMapLength, e.maxExtLength).decodeStream(t);
+  z2.decodeArrayStream = Qn;
+  function ks(s, e = Jt.defaultDecodeOptions) {
+    let t = (0, Vr.ensureAsyncIterable)(s);
+    return new qr.Decoder(e.extensionCodec, e.context, e.maxStrLength, e.maxBinLength, e.maxArrayLength, e.maxMapLength, e.maxExtLength).decodeStream(t);
   }
-  j.decodeMultiStream = ys;
-  function Fn(r, e = Mt.defaultDecodeOptions) {
-    return ys(r, e);
+  z2.decodeMultiStream = ks;
+  function Zn(s, e = Jt.defaultDecodeOptions) {
+    return ks(s, e);
   }
-  j.decodeStream = Fn;
+  z2.decodeStream = Zn;
 });
-var Dt = _((h) => {
+var zt = S((h2) => {
   "use strict";
-  Object.defineProperty(h, "__esModule", { value: true });
-  h.decodeTimestampExtension = h.encodeTimestampExtension = h.decodeTimestampToTimeSpec = h.encodeTimeSpecToTimestamp = h.encodeDateToTimeSpec = h.EXT_TIMESTAMP = h.ExtData = h.ExtensionCodec = h.Encoder = h.DataViewIndexOutOfBoundsError = h.DecodeError = h.Decoder = h.decodeStream = h.decodeMultiStream = h.decodeArrayStream = h.decodeAsync = h.decodeMulti = h.decode = h.encode = void 0;
-  var Bn = is();
-  Object.defineProperty(h, "encode", { enumerable: true, get: function() {
-    return Bn.encode;
+  Object.defineProperty(h2, "__esModule", { value: true });
+  h2.decodeTimestampExtension = h2.encodeTimestampExtension = h2.decodeTimestampToTimeSpec = h2.encodeTimeSpecToTimestamp = h2.encodeDateToTimeSpec = h2.EXT_TIMESTAMP = h2.ExtData = h2.ExtensionCodec = h2.Encoder = h2.DataViewIndexOutOfBoundsError = h2.DecodeError = h2.Decoder = h2.decodeStream = h2.decodeMultiStream = h2.decodeArrayStream = h2.decodeAsync = h2.decodeMulti = h2.decode = h2.encode = void 0;
+  var Yn = ws();
+  Object.defineProperty(h2, "encode", { enumerable: true, get: function() {
+    return Yn.encode;
   } });
-  var Rs = Sr();
-  Object.defineProperty(h, "decode", { enumerable: true, get: function() {
-    return Rs.decode;
+  var Ds = Fr();
+  Object.defineProperty(h2, "decode", { enumerable: true, get: function() {
+    return Ds.decode;
   } });
-  Object.defineProperty(h, "decodeMulti", { enumerable: true, get: function() {
-    return Rs.decodeMulti;
+  Object.defineProperty(h2, "decodeMulti", { enumerable: true, get: function() {
+    return Ds.decodeMulti;
   } });
-  var kt = fs();
-  Object.defineProperty(h, "decodeAsync", { enumerable: true, get: function() {
-    return kt.decodeAsync;
+  var Ht = Ms();
+  Object.defineProperty(h2, "decodeAsync", { enumerable: true, get: function() {
+    return Ht.decodeAsync;
   } });
-  Object.defineProperty(h, "decodeArrayStream", { enumerable: true, get: function() {
-    return kt.decodeArrayStream;
+  Object.defineProperty(h2, "decodeArrayStream", { enumerable: true, get: function() {
+    return Ht.decodeArrayStream;
   } });
-  Object.defineProperty(h, "decodeMultiStream", { enumerable: true, get: function() {
-    return kt.decodeMultiStream;
+  Object.defineProperty(h2, "decodeMultiStream", { enumerable: true, get: function() {
+    return Ht.decodeMultiStream;
   } });
-  Object.defineProperty(h, "decodeStream", { enumerable: true, get: function() {
-    return kt.decodeStream;
+  Object.defineProperty(h2, "decodeStream", { enumerable: true, get: function() {
+    return Ht.decodeStream;
   } });
-  var ms = St();
-  Object.defineProperty(h, "Decoder", { enumerable: true, get: function() {
-    return ms.Decoder;
+  var Ws = Vt();
+  Object.defineProperty(h2, "Decoder", { enumerable: true, get: function() {
+    return Ws.Decoder;
   } });
-  Object.defineProperty(h, "DataViewIndexOutOfBoundsError", { enumerable: true, get: function() {
-    return ms.DataViewIndexOutOfBoundsError;
+  Object.defineProperty(h2, "DataViewIndexOutOfBoundsError", { enumerable: true, get: function() {
+    return Ws.DataViewIndexOutOfBoundsError;
   } });
-  var qn = wt();
-  Object.defineProperty(h, "DecodeError", { enumerable: true, get: function() {
-    return qn.DecodeError;
+  var eo = Ct();
+  Object.defineProperty(h2, "DecodeError", { enumerable: true, get: function() {
+    return eo.DecodeError;
   } });
-  var Vn = wr();
-  Object.defineProperty(h, "Encoder", { enumerable: true, get: function() {
-    return Vn.Encoder;
+  var to = Ir();
+  Object.defineProperty(h2, "Encoder", { enumerable: true, get: function() {
+    return to.Encoder;
   } });
-  var Hn = Et();
-  Object.defineProperty(h, "ExtensionCodec", { enumerable: true, get: function() {
-    return Hn.ExtensionCodec;
+  var ro = Bt();
+  Object.defineProperty(h2, "ExtensionCodec", { enumerable: true, get: function() {
+    return ro.ExtensionCodec;
   } });
-  var Jn = Rr();
-  Object.defineProperty(h, "ExtData", { enumerable: true, get: function() {
-    return Jn.ExtData;
+  var so = Dr();
+  Object.defineProperty(h2, "ExtData", { enumerable: true, get: function() {
+    return so.ExtData;
   } });
-  var fe = mr();
-  Object.defineProperty(h, "EXT_TIMESTAMP", { enumerable: true, get: function() {
-    return fe.EXT_TIMESTAMP;
+  var ve = Wr();
+  Object.defineProperty(h2, "EXT_TIMESTAMP", { enumerable: true, get: function() {
+    return ve.EXT_TIMESTAMP;
   } });
-  Object.defineProperty(h, "encodeDateToTimeSpec", { enumerable: true, get: function() {
-    return fe.encodeDateToTimeSpec;
+  Object.defineProperty(h2, "encodeDateToTimeSpec", { enumerable: true, get: function() {
+    return ve.encodeDateToTimeSpec;
   } });
-  Object.defineProperty(h, "encodeTimeSpecToTimestamp", { enumerable: true, get: function() {
-    return fe.encodeTimeSpecToTimestamp;
+  Object.defineProperty(h2, "encodeTimeSpecToTimestamp", { enumerable: true, get: function() {
+    return ve.encodeTimeSpecToTimestamp;
   } });
-  Object.defineProperty(h, "decodeTimestampToTimeSpec", { enumerable: true, get: function() {
-    return fe.decodeTimestampToTimeSpec;
+  Object.defineProperty(h2, "decodeTimestampToTimeSpec", { enumerable: true, get: function() {
+    return ve.decodeTimestampToTimeSpec;
   } });
-  Object.defineProperty(h, "encodeTimestampExtension", { enumerable: true, get: function() {
-    return fe.encodeTimestampExtension;
+  Object.defineProperty(h2, "encodeTimestampExtension", { enumerable: true, get: function() {
+    return ve.encodeTimestampExtension;
   } });
-  Object.defineProperty(h, "decodeTimestampExtension", { enumerable: true, get: function() {
-    return fe.decodeTimestampExtension;
+  Object.defineProperty(h2, "decodeTimestampExtension", { enumerable: true, get: function() {
+    return ve.decodeTimestampExtension;
   } });
 });
-var A = class extends Error {
+var I = class extends Error {
   constructor(e) {
     super(e), this.name = this.constructor.name, Object.setPrototypeOf(this, new.target.prototype);
   }
 };
-var ht = class extends A {
+var A = class extends I {
 };
-var P = class extends A {
+var P = class extends I {
 };
-var X = class extends A {
+var Z = class extends I {
 };
 var m = typeof process < "u" && process.release && process.release.name === "node";
-var pr;
+var Rr;
 if (globalThis.document)
-  pr = (r) => new Promise((e, t) => {
-    let s = document.createElement("script");
-    s.src = r, s.onload = () => e(), s.onerror = t, document.head.appendChild(s);
+  Rr = (s) => new Promise((e, t) => {
+    let r = document.createElement("script");
+    r.src = s, r.onload = () => e(), r.onerror = t, document.head.appendChild(r);
   });
 else if (globalThis.importScripts)
-  pr = async (r) => {
+  Rr = async (s) => {
     try {
-      globalThis.importScripts(r);
+      globalThis.importScripts(s);
     } catch (e) {
       if (e instanceof TypeError)
-        await Promise.resolve().then(() => te(U(r)));
+        await Promise.resolve().then(() => oe(B(s)));
       else
         throw e;
     }
   };
 else if (m)
-  pr = async (r) => {
-    let e = (await Promise.resolve().then(() => te(U("path")))).default;
-    await Promise.resolve().then(() => te(U(e.resolve(r))));
+  Rr = async (s) => {
+    let e = (await Promise.resolve().then(() => oe(B("path")))).default;
+    await Promise.resolve().then(() => oe(B(e.resolve(s))));
   };
 else
-  throw new A("Cannot determine runtime environment");
-function V() {
-  let r = { resolve: (t) => {
-  }, reject: (t) => {
-  }, promise: null }, e = new Promise((t, s) => {
-    r.resolve = t, r.reject = s;
-  });
-  return r.promise = e, r;
+  throw new I("Cannot determine runtime environment");
+var c = {};
+function es(s) {
+  Object.keys(s).forEach((e) => c._free(s[e]));
 }
-function Gr(r) {
-  return new Promise((e) => setTimeout(e, r));
+var N = { null: 0, symbol: 1, pairlist: 2, closure: 3, environment: 4, promise: 5, call: 6, special: 7, builtin: 8, string: 9, logical: 10, integer: 13, double: 14, complex: 15, character: 16, dots: 17, any: 18, list: 19, expression: 20, bytecode: 21, pointer: 22, weakref: 23, raw: 24, s4: 25, new: 30, free: 31, function: 99 };
+function mr(s) {
+  return !!s && typeof s == "object" && Object.keys(N).includes(s.type);
 }
-function C(r, e, t, ...s) {
-  return r === null || typeof r != "object" ? r : e(r) ? t(r, ...s) : Array.isArray(r) || ArrayBuffer.isView(r) ? r.map((n) => C(n, e, t, ...s)) : Object.fromEntries(Object.entries(r).map(([n, o], a) => [n, C(o, e, t, ...s)]));
+function Ce(s) {
+  return !!s && typeof s == "object" && "re" in s && "im" in s;
 }
-function pe(r, e) {
-  let t = new XMLHttpRequest();
-  t.open("get", r, true), t.onload = () => {
-    let s = new Worker(URL.createObjectURL(new Blob([t.responseText])));
-    e(s);
-  }, t.send();
+function je(s) {
+  return c._Rf_protect(L(s)), s;
 }
-function de(r) {
-  if (m)
-    return false;
-  let e = new URL(location.href), t = new URL(r, location.origin);
-  return !(e.host === t.host && e.port === t.port && e.protocol === t.protocol);
+function w(s, e) {
+  return c._Rf_protect(L(s)), ++e.n, s;
 }
-var en = /* @__PURE__ */ new WeakMap();
-function Kr(r, e) {
-  return en.set(r, e), r;
+function ts(s) {
+  let e = c._malloc(4);
+  return c._R_ProtectWithIndex(L(s), e), { loc: c.getValue(e, "i32"), ptr: e };
 }
-var yt = 63;
-function ft() {
-  let r = Array.from({ length: 4 }, tn).join("-");
-  if (r.length !== yt)
-    throw new Error("comlink internal error: UUID has the wrong length");
-  return r;
+function rs(s) {
+  c._Rf_unprotect(1), c._free(s.ptr);
 }
-function tn() {
-  let r = Math.floor(Math.random() * Number.MAX_SAFE_INTEGER).toString(16), e = 15 - r.length;
-  return e > 0 && (r = Array.from({ length: e }, () => 0).join("") + r), r;
+function ss(s, e) {
+  return c._R_Reprotect(L(s), e.loc), s;
 }
-var bs = te(Dt());
-var zn = new TextEncoder();
-async function ws(r, e, t) {
+function T(s) {
+  c._Rf_unprotect(s);
+}
+function gr(s, e, t) {
+  c._Rf_defineVar(L(e), L(t), L(s));
+}
+function br(s, e) {
+  let t = {}, r = { n: 0 };
   try {
-    let { taskId: s, sizeBuffer: n, dataBuffer: o, signalBuffer: a } = e, c = (0, bs.encode)(t), p = c.length <= o.length;
-    if (Atomics.store(n, 0, c.length), Atomics.store(n, 1, +p), !p) {
-      let [v, ee] = Xn(r);
-      o.set(zn.encode(v)), await gs(a, s), o = (await ee).dataBuffer;
+    let n = new Be(e);
+    w(n, r), t.code = c.allocateUTF8(s);
+    let o = c._R_ParseEvalString(t.code, n.ptr);
+    return y.wrap(o);
+  } finally {
+    es(t), T(r.n);
+  }
+}
+function Ne(s, e) {
+  return c.getWasmTableEntry(c.GOT.ffi_safe_eval.value)(L(s), L(e));
+}
+var un = /* @__PURE__ */ new WeakMap();
+function ns(s, e) {
+  return un.set(s, e), s;
+}
+var Le = 63;
+function xt() {
+  let s = Array.from({ length: 4 }, pn).join("-");
+  if (s.length !== Le)
+    throw new Error("comlink internal error: UUID has the wrong length");
+  return s;
+}
+function pn() {
+  let s = Math.floor(Math.random() * Number.MAX_SAFE_INTEGER).toString(16), e = 15 - s.length;
+  return e > 0 && (s = Array.from({ length: e }, () => 0).join("") + s), s;
+}
+function L(s) {
+  return Tt(s) ? s.ptr : s;
+}
+function le(s, e) {
+  if (c._TYPEOF(s.ptr) !== N[e])
+    throw new Error(`Unexpected object type "${s.type()}" when expecting type "${e}"`);
+}
+function as(s) {
+  if (mr(s))
+    return new (is(s.type))(s);
+  if (s && typeof s == "object" && "type" in s && s.type === "null")
+    return new Pt();
+  if (s === null)
+    return new Y({ type: "logical", names: null, values: [null] });
+  if (typeof s == "boolean")
+    return new Y(s);
+  if (typeof s == "number")
+    return new fe(s);
+  if (typeof s == "string")
+    return new F(s);
+  if (Ce(s))
+    return new Fe(s);
+  if (ArrayBuffer.isView(s) || s instanceof ArrayBuffer)
+    return new qe(s);
+  if (Array.isArray(s))
+    return dn(s);
+  if (typeof s == "object")
+    return ee.fromObject(s);
+  throw new Error("Robj construction for this JS object is not yet supported");
+}
+function dn(s) {
+  let e = { n: 0 };
+  if (s.every((r) => r && typeof r == "object" && !Tt(r) && !Ce(r))) {
+    let r = s, n = r.every((i) => Object.keys(i).filter((l) => !Object.keys(r[0]).includes(l)).length === 0 && Object.keys(r[0]).filter((l) => !Object.keys(i).includes(l)).length === 0), o = r.every((i) => Object.values(i).every((l) => cs(l) || ls(l)));
+    if (n && o)
+      return ee.fromD3(r);
+  }
+  if (s.every((r) => typeof r == "boolean" || r === null))
+    return new Y(s);
+  if (s.every((r) => typeof r == "number" || r === null))
+    return new fe(s);
+  if (s.every((r) => typeof r == "string" || r === null))
+    return new F(s);
+  try {
+    let r = new q([new U("c"), ...s]);
+    return w(r, e), r.eval();
+  } finally {
+    T(e.n);
+  }
+}
+var x = class {
+  constructor(e) {
+    this.ptr = e;
+  }
+  type() {
+    let e = c._TYPEOF(this.ptr);
+    return Object.keys(N).find((r) => N[r] === e);
+  }
+};
+var Re;
+var vt;
+var ae = class extends x {
+  constructor(t) {
+    if (!(t instanceof x))
+      return as(t);
+    super(t.ptr);
+    u(this, Re);
+  }
+  static wrap(t) {
+    let r = c._TYPEOF(t), n = Object.keys(N)[Object.values(N).indexOf(r)];
+    return new (is(n))(new x(t));
+  }
+  get [Symbol.toStringTag]() {
+    return `RObject:${this.type()}`;
+  }
+  static getPersistentObject(t) {
+    return k[t];
+  }
+  getPropertyValue(t) {
+    return this[t];
+  }
+  inspect() {
+    br(".Internal(inspect(x))", { x: this });
+  }
+  isNull() {
+    return c._TYPEOF(this.ptr) === N.null;
+  }
+  isNa() {
+    try {
+      let t = br("is.na(x)", { x: this });
+      return je(t), t.toBoolean();
+    } finally {
+      T(1);
     }
-    o.set(c), Atomics.store(n, 1, 1), await gs(a, s);
-  } catch (s) {
-    console.warn(s);
   }
-}
-function Xn(r) {
-  let e = ft();
-  return [e, new Promise((t) => {
-    m ? r.once("message", (s) => {
-      !s.id || s.id !== e || t(s);
-    }) : r.addEventListener("message", function s(n) {
-      !n.data || !n.data.id || n.data.id !== e || (r.removeEventListener("message", s), t(n.data));
-    }), r.start && r.start();
-  })];
-}
-async function gs(r, e) {
-  let t = (e >> 1) % 32, s = 1;
-  for (; Atomics.compareExchange(r, t + 1, 0, e) !== 0; )
-    await Gr(s), s < 32 && (s *= 2);
-  Atomics.or(r, 0, 1 << t), Atomics.notify(r, 0);
-}
-var F;
-var B;
-var Ne;
-var Dr;
-var Re = class {
+  isUnbound() {
+    return this.ptr === k.unboundValue.ptr;
+  }
+  attrs() {
+    return ie.wrap(c._ATTRIB(this.ptr));
+  }
+  class() {
+    let t = { n: 0 }, r = new q([new U("class"), this]);
+    w(r, t);
+    try {
+      return r.eval();
+    } finally {
+      T(t.n);
+    }
+  }
+  setNames(t) {
+    let r;
+    if (t === null)
+      r = k.null;
+    else if (Array.isArray(t) && t.every((n) => typeof n == "string" || n === null))
+      r = new F(t);
+    else
+      throw new Error("Argument to setNames must be null or an Array of strings or null");
+    return c._Rf_setAttrib(this.ptr, k.namesSymbol.ptr, r.ptr), this;
+  }
+  names() {
+    let t = F.wrap(c._Rf_getAttrib(this.ptr, k.namesSymbol.ptr));
+    return t.isNull() ? null : t.toArray();
+  }
+  includes(t) {
+    let r = this.names();
+    return r && r.includes(t);
+  }
+  toJs(t = { depth: 0 }, r = 1) {
+    throw new Error("This R object cannot be converted to JS");
+  }
+  subset(t) {
+    return E(this, Re, vt).call(this, t, k.bracketSymbol.ptr);
+  }
+  get(t) {
+    return E(this, Re, vt).call(this, t, k.bracket2Symbol.ptr);
+  }
+  getDollar(t) {
+    return E(this, Re, vt).call(this, t, k.dollarSymbol.ptr);
+  }
+  pluck(...t) {
+    let r = ts(k.null);
+    try {
+      let n = (i, l) => {
+        let p2 = i.get(l);
+        return ss(p2, r);
+      }, o = t.reduce(n, this);
+      return o.isNull() ? void 0 : o;
+    } finally {
+      rs(r);
+    }
+  }
+  set(t, r) {
+    let n = { n: 0 };
+    try {
+      let o = new ae(t);
+      w(o, n);
+      let i = new ae(r);
+      w(i, n);
+      let l = new U("[[<-"), p2 = c._Rf_lang4(l.ptr, this.ptr, o.ptr, i.ptr);
+      return w(p2, n), ae.wrap(Ne(p2, k.baseEnv));
+    } finally {
+      T(n.n);
+    }
+  }
+  static getMethods(t) {
+    let r = /* @__PURE__ */ new Set(), n = t;
+    do
+      Object.getOwnPropertyNames(n).map((o) => r.add(o));
+    while (n = Object.getPrototypeOf(n));
+    return [...r.keys()].filter((o) => typeof t[o] == "function");
+  }
+};
+var y = ae;
+Re = /* @__PURE__ */ new WeakSet(), vt = function(t, r) {
+  let n = { n: 0 };
+  try {
+    let o = new ae(t);
+    w(o, n);
+    let i = c._Rf_lang3(r, this.ptr, o.ptr);
+    return w(i, n), ae.wrap(Ne(i, k.baseEnv));
+  } finally {
+    T(n.n);
+  }
+};
+var Pt = class extends y {
   constructor() {
-    u(this, Ne);
-    u(this, F, void 0);
-    u(this, B, void 0);
-    d(this, B, []), d(this, F, []);
+    return super(new x(c.getValue(c._R_NilValue, "*"))), this;
   }
-  reset() {
-    d(this, B, []), d(this, F, []);
+  toJs() {
+    return { type: "null" };
   }
-  put(e) {
-    i(this, B).length || x(this, Ne, Dr).call(this), i(this, B).shift()(e);
+};
+var U = class extends y {
+  constructor(e) {
+    if (e instanceof x) {
+      le(e, "symbol"), super(e);
+      return;
+    }
+    let t = c.allocateUTF8(e);
+    try {
+      super(new x(c._Rf_install(t)));
+    } finally {
+      c._free(t);
+    }
   }
-  async get() {
-    return i(this, F).length || x(this, Ne, Dr).call(this), i(this, F).shift();
+  toJs() {
+    let e = this.toObject();
+    return { type: "symbol", printname: e.printname, symvalue: e.symvalue, internal: e.internal };
   }
-  isEmpty() {
-    return !i(this, F).length;
+  toObject() {
+    return { printname: this.printname().isUnbound() ? null : this.printname().toString(), symvalue: this.symvalue().isUnbound() ? null : this.symvalue().ptr, internal: this.internal().isNull() ? null : this.internal().ptr };
   }
-  isBlocked() {
-    return !!i(this, B).length;
+  toString() {
+    return this.printname().toString();
+  }
+  printname() {
+    return Je.wrap(c._PRINTNAME(this.ptr));
+  }
+  symvalue() {
+    return y.wrap(c._SYMVALUE(this.ptr));
+  }
+  internal() {
+    return y.wrap(c._INTERNAL(this.ptr));
+  }
+};
+var ie = class extends y {
+  constructor(e) {
+    if (e instanceof x)
+      return le(e, "pairlist"), super(e), this;
+    let t = { n: 0 };
+    try {
+      let { names: r, values: n } = me(e), o = ie.wrap(c._Rf_allocList(n.length));
+      w(o, t);
+      for (let [i, l] = [0, o]; !l.isNull(); [i, l] = [i + 1, l.cdr()])
+        l.setcar(new y(n[i]));
+      o.setNames(r), super(o);
+    } finally {
+      T(t.n);
+    }
   }
   get length() {
-    return i(this, F).length - i(this, B).length;
+    return this.toArray().length;
+  }
+  toArray(e = { depth: 1 }) {
+    return this.toJs(e).values;
+  }
+  toObject({ allowDuplicateKey: e = true, allowEmptyKey: t = false, depth: r = -1 } = {}) {
+    let n = this.entries({ depth: r }), o = n.map(([i]) => i);
+    if (!e && new Set(o).size !== o.length)
+      throw new Error("Duplicate key when converting pairlist without allowDuplicateKey enabled");
+    if (!t && o.some((i) => !i))
+      throw new Error("Empty or null key when converting pairlist without allowEmptyKey enabled");
+    return Object.fromEntries(n.filter((i, l) => n.findIndex((p2) => p2[0] === i[0]) === l));
+  }
+  entries(e = { depth: 1 }) {
+    let t = this.toJs(e);
+    return t.values.map((r, n) => [t.names ? t.names[n] : null, r]);
+  }
+  toJs(e = { depth: 0 }, t = 1) {
+    let r = [], n = false, o = [];
+    for (let l = this; !l.isNull(); l = l.cdr()) {
+      let p2 = l.tag();
+      p2.isNull() ? r.push("") : (n = true, r.push(p2.toString())), e.depth && t >= e.depth ? o.push(l.car()) : o.push(l.car().toJs(e, t + 1));
+    }
+    return { type: "pairlist", names: n ? r : null, values: o };
+  }
+  includes(e) {
+    return e in this.toObject();
+  }
+  setcar(e) {
+    c._SETCAR(this.ptr, e.ptr);
+  }
+  car() {
+    return y.wrap(c._CAR(this.ptr));
+  }
+  cdr() {
+    return y.wrap(c._CDR(this.ptr));
+  }
+  tag() {
+    return y.wrap(c._TAG(this.ptr));
   }
 };
-F = /* @__PURE__ */ new WeakMap(), B = /* @__PURE__ */ new WeakMap(), Ne = /* @__PURE__ */ new WeakSet(), Dr = function() {
-  i(this, F).push(new Promise((e) => {
-    i(this, B).push(e);
+var q = class extends y {
+  constructor(e) {
+    if (e instanceof x)
+      return le(e, "call"), super(e), this;
+    let t = { n: 0 };
+    try {
+      let { values: r } = me(e), n = r.map((i) => w(new y(i), t)), o = q.wrap(c._Rf_allocVector(N.call, r.length));
+      w(o, t);
+      for (let [i, l] = [0, o]; !l.isNull(); [i, l] = [i + 1, l.cdr()])
+        l.setcar(n[i]);
+      super(o);
+    } finally {
+      T(t.n);
+    }
+  }
+  setcar(e) {
+    c._SETCAR(this.ptr, e.ptr);
+  }
+  car() {
+    return y.wrap(c._CAR(this.ptr));
+  }
+  cdr() {
+    return y.wrap(c._CDR(this.ptr));
+  }
+  eval() {
+    return c.webr.evalR(this, { env: k.baseEnv });
+  }
+  capture(e = {}) {
+    return c.webr.captureR(this, e);
+  }
+  deparse() {
+    let e = { n: 0 };
+    try {
+      let t = c._Rf_lang2(new U("deparse1").ptr, c._Rf_lang2(new U("quote").ptr, this.ptr));
+      w(t, e);
+      let r = F.wrap(Ne(t, k.baseEnv));
+      return w(r, e), r.toString();
+    } finally {
+      T(e.n);
+    }
+  }
+};
+var Ve = class extends y {
+  constructor(e, t = null) {
+    if (e instanceof x) {
+      if (le(e, "list"), super(e), t) {
+        if (t.length !== this.length)
+          throw new Error("Can't construct named `RList`. Supplied `names` must be the same length as the list.");
+        this.setNames(t);
+      }
+      return this;
+    }
+    let r = { n: 0 };
+    try {
+      let n = me(e), o = c._Rf_allocVector(N.list, n.values.length);
+      w(o, r), n.values.forEach((l, p2) => {
+        c._SET_VECTOR_ELT(o, p2, new y(l).ptr);
+      });
+      let i = t || n.names;
+      if (i && i.length !== n.values.length)
+        throw new Error("Can't construct named `RList`. Supplied `names` must be the same length as the list.");
+      y.wrap(o).setNames(i), super(new x(o));
+    } finally {
+      T(r.n);
+    }
+  }
+  get length() {
+    return c._LENGTH(this.ptr);
+  }
+  isDataFrame() {
+    let e = ie.wrap(c._ATTRIB(this.ptr)).get("class");
+    return !e.isNull() && e.toArray().includes("data.frame");
+  }
+  toArray(e = { depth: 1 }) {
+    return this.toJs(e).values;
+  }
+  toObject({ allowDuplicateKey: e = true, allowEmptyKey: t = false, depth: r = -1 } = {}) {
+    let n = this.entries({ depth: r }), o = n.map(([i]) => i);
+    if (!e && new Set(o).size !== o.length)
+      throw new Error("Duplicate key when converting list without allowDuplicateKey enabled");
+    if (!t && o.some((i) => !i))
+      throw new Error("Empty or null key when converting list without allowEmptyKey enabled");
+    return Object.fromEntries(n.filter((i, l) => n.findIndex((p2) => p2[0] === i[0]) === l));
+  }
+  toD3() {
+    if (!this.isDataFrame())
+      throw new Error("Can't convert R list object to D3 format. Object must be of class 'data.frame'.");
+    return this.entries().reduce((t, r) => (r[1].forEach((n, o) => t[o] = Object.assign(t[o] || {}, { [r[0]]: n })), t), []);
+  }
+  entries(e = { depth: -1 }) {
+    let t = this.toJs(e);
+    return this.isDataFrame() && e.depth < 0 && (t.values = t.values.map((r) => r.toArray())), t.values.map((r, n) => [t.names ? t.names[n] : null, r]);
+  }
+  toJs(e = { depth: 0 }, t = 1) {
+    return { type: "list", names: this.names(), values: [...Array(this.length).keys()].map((r) => e.depth && t >= e.depth ? this.get(r + 1) : this.get(r + 1).toJs(e, t + 1)) };
+  }
+};
+var ee = class extends Ve {
+  constructor(e) {
+    if (e instanceof x) {
+      if (super(e), !this.isDataFrame())
+        throw new Error("Can't construct `RDataFrame`. Supplied R object is not a `data.frame`.");
+      return this;
+    }
+    return ee.fromObject(e);
+  }
+  static fromObject(e) {
+    let { names: t, values: r } = me(e), n = { n: 0 };
+    try {
+      let o = !!t && t.length > 0 && t.every((l) => l), i = r.length > 0 && r.every((l) => Array.isArray(l) || ArrayBuffer.isView(l) || l instanceof ArrayBuffer);
+      if (o && i) {
+        let l = r, p2 = l.every((b2) => b2.length === l[0].length), D2 = l.every((b2) => cs(b2[0]) || ls(b2[0]));
+        if (p2 && D2) {
+          let b2 = new Ve({ type: "list", names: t, values: l.map((rn) => as(rn)) });
+          w(b2, n);
+          let j2 = new q([new U("as.data.frame"), b2]);
+          return w(j2, n), new ee(j2.eval());
+        }
+      }
+    } finally {
+      T(n.n);
+    }
+    throw new Error("Can't construct `data.frame`. Source object is not eligible.");
+  }
+  static fromD3(e) {
+    return this.fromObject(Object.fromEntries(Object.keys(e[0]).map((t) => [t, e.map((r) => r[t])])));
+  }
+};
+var ye = class extends y {
+  exec(...e) {
+    let t = { n: 0 };
+    try {
+      let r = new q([this, ...e]);
+      return w(r, t), r.eval();
+    } finally {
+      T(t.n);
+    }
+  }
+  capture(e = {}, ...t) {
+    let r = { n: 0 };
+    try {
+      let n = new q([this, ...t]);
+      return w(n, r), n.capture(e);
+    } finally {
+      T(r.n);
+    }
+  }
+};
+var Je = class extends y {
+  constructor(e) {
+    if (e instanceof x) {
+      le(e, "string"), super(e);
+      return;
+    }
+    let t = c.allocateUTF8(e);
+    try {
+      super(new x(c._Rf_mkChar(t)));
+    } finally {
+      c._free(t);
+    }
+  }
+  toString() {
+    return c.UTF8ToString(c._R_CHAR(this.ptr));
+  }
+  toJs() {
+    return { type: "string", value: this.toString() };
+  }
+};
+var Be = class extends y {
+  constructor(e = {}) {
+    if (e instanceof x)
+      return le(e, "environment"), super(e), this;
+    let t = 0;
+    try {
+      let { names: r, values: n } = me(e), o = je(c._R_NewEnv(k.globalEnv.ptr, 0, 0));
+      ++t, n.forEach((i, l) => {
+        let p2 = r ? r[l] : null;
+        if (!p2)
+          throw new Error("Can't create object in new environment with empty symbol name");
+        let D2 = new U(p2), b2 = je(new y(i));
+        try {
+          gr(o, D2, b2);
+        } finally {
+          T(1);
+        }
+      }), super(new x(o));
+    } finally {
+      T(t);
+    }
+  }
+  ls(e = false, t = true) {
+    return F.wrap(c._R_lsInternal3(this.ptr, Number(e), Number(t))).toArray();
+  }
+  bind(e, t) {
+    let r = new U(e), n = je(new y(t));
+    try {
+      gr(this, r, n);
+    } finally {
+      T(1);
+    }
+  }
+  names() {
+    return this.ls(true, true);
+  }
+  frame() {
+    return y.wrap(c._FRAME(this.ptr));
+  }
+  subset(e) {
+    if (typeof e == "number")
+      throw new Error("Object of type environment is not subsettable");
+    return this.getDollar(e);
+  }
+  toObject({ depth: e = -1 } = {}) {
+    let t = this.names();
+    return Object.fromEntries([...Array(t.length).keys()].map((r) => {
+      let n = this.getDollar(t[r]);
+      return [t[r], e < 0 ? n : n.toJs({ depth: e })];
+    }));
+  }
+  toJs(e = { depth: 0 }, t = 1) {
+    let r = this.names(), n = [...Array(r.length).keys()].map((o) => e.depth && t >= e.depth ? this.getDollar(r[o]) : this.getDollar(r[o]).toJs(e, t + 1));
+    return { type: "environment", names: r, values: n };
+  }
+};
+var te = class extends y {
+  constructor(e, t, r) {
+    if (e instanceof x)
+      return le(e, t), super(e), this;
+    let n = { n: 0 };
+    try {
+      let { names: o, values: i } = me(e), l = c._Rf_allocVector(N[t], i.length);
+      w(l, n), i.forEach(r(l)), y.wrap(l).setNames(o), super(new x(l));
+    } finally {
+      T(n.n);
+    }
+  }
+  get length() {
+    return c._LENGTH(this.ptr);
+  }
+  get(e) {
+    return super.get(e);
+  }
+  subset(e) {
+    return super.subset(e);
+  }
+  getDollar() {
+    throw new Error("$ operator is invalid for atomic vectors");
+  }
+  detectMissing() {
+    let e = { n: 0 };
+    try {
+      let t = c._Rf_lang2(new U("is.na").ptr, this.ptr);
+      w(t, e);
+      let r = Y.wrap(Ne(t, k.baseEnv));
+      w(r, e);
+      let n = r.toTypedArray();
+      return Array.from(n).map((o) => !!o);
+    } finally {
+      T(e.n);
+    }
+  }
+  toArray() {
+    let e = this.toTypedArray();
+    return this.detectMissing().map((t, r) => t ? null : e[r]);
+  }
+  toObject({ allowDuplicateKey: e = true, allowEmptyKey: t = false } = {}) {
+    let r = this.entries(), n = r.map(([o]) => o);
+    if (!e && new Set(n).size !== n.length)
+      throw new Error("Duplicate key when converting atomic vector without allowDuplicateKey enabled");
+    if (!t && n.some((o) => !o))
+      throw new Error("Empty or null key when converting atomic vector without allowEmptyKey enabled");
+    return Object.fromEntries(r.filter((o, i) => r.findIndex((l) => l[0] === o[0]) === i));
+  }
+  entries() {
+    let e = this.toArray(), t = this.names();
+    return e.map((r, n) => [t ? t[n] : null, r]);
+  }
+  toJs() {
+    return { type: this.type(), names: this.names(), values: this.toArray() };
+  }
+};
+var _t;
+var wr = class extends te {
+  constructor(e) {
+    super(e, "logical", a(wr, _t));
+  }
+  getBoolean(e) {
+    return this.get(e).toArray()[0];
+  }
+  toBoolean() {
+    if (this.length !== 1)
+      throw new Error("Can't convert atomic vector of length > 1 to a scalar JS value");
+    let e = this.getBoolean(1);
+    if (e === null)
+      throw new Error("Can't convert missing value `NA` to a JS boolean");
+    return e;
+  }
+  toTypedArray() {
+    return new Int32Array(c.HEAP32.subarray(c._LOGICAL(this.ptr) / 4, c._LOGICAL(this.ptr) / 4 + this.length));
+  }
+  toArray() {
+    let e = this.toTypedArray();
+    return this.detectMissing().map((t, r) => t ? null : !!e[r]);
+  }
+};
+var Y = wr;
+_t = /* @__PURE__ */ new WeakMap(), u(Y, _t, (e) => {
+  let t = c._LOGICAL(e), r = c.getValue(c._R_NaInt, "i32");
+  return (n, o) => {
+    c.setValue(t + 4 * o, n === null ? r : !!n, "i32");
+  };
+});
+var St;
+var xr = class extends te {
+  constructor(e) {
+    super(e, "integer", a(xr, St));
+  }
+  getNumber(e) {
+    return this.get(e).toArray()[0];
+  }
+  toNumber() {
+    if (this.length !== 1)
+      throw new Error("Can't convert atomic vector of length > 1 to a scalar JS value");
+    let e = this.getNumber(1);
+    if (e === null)
+      throw new Error("Can't convert missing value `NA` to a JS number");
+    return e;
+  }
+  toTypedArray() {
+    return new Int32Array(c.HEAP32.subarray(c._INTEGER(this.ptr) / 4, c._INTEGER(this.ptr) / 4 + this.length));
+  }
+};
+var Et = xr;
+St = /* @__PURE__ */ new WeakMap(), u(Et, St, (e) => {
+  let t = c._INTEGER(e), r = c.getValue(c._R_NaInt, "i32");
+  return (n, o) => {
+    c.setValue(t + 4 * o, n === null ? r : Math.round(Number(n)), "i32");
+  };
+});
+var kt;
+var vr = class extends te {
+  constructor(e) {
+    super(e, "double", a(vr, kt));
+  }
+  getNumber(e) {
+    return this.get(e).toArray()[0];
+  }
+  toNumber() {
+    if (this.length !== 1)
+      throw new Error("Can't convert atomic vector of length > 1 to a scalar JS value");
+    let e = this.getNumber(1);
+    if (e === null)
+      throw new Error("Can't convert missing value `NA` to a JS number");
+    return e;
+  }
+  toTypedArray() {
+    return new Float64Array(c.HEAPF64.subarray(c._REAL(this.ptr) / 8, c._REAL(this.ptr) / 8 + this.length));
+  }
+};
+var fe = vr;
+kt = /* @__PURE__ */ new WeakMap(), u(fe, kt, (e) => {
+  let t = c._REAL(e), r = c.getValue(c._R_NaReal, "double");
+  return (n, o) => {
+    c.setValue(t + 8 * o, n === null ? r : n, "double");
+  };
+});
+var Mt;
+var Er = class extends te {
+  constructor(e) {
+    super(e, "complex", a(Er, Mt));
+  }
+  getComplex(e) {
+    return this.get(e).toArray()[0];
+  }
+  toComplex() {
+    if (this.length !== 1)
+      throw new Error("Can't convert atomic vector of length > 1 to a scalar JS value");
+    let e = this.getComplex(1);
+    if (e === null)
+      throw new Error("Can't convert missing value `NA` to a JS object");
+    return e;
+  }
+  toTypedArray() {
+    return new Float64Array(c.HEAPF64.subarray(c._COMPLEX(this.ptr) / 8, c._COMPLEX(this.ptr) / 8 + 2 * this.length));
+  }
+  toArray() {
+    let e = this.toTypedArray();
+    return this.detectMissing().map((t, r) => t ? null : { re: e[2 * r], im: e[2 * r + 1] });
+  }
+};
+var Fe = Er;
+Mt = /* @__PURE__ */ new WeakMap(), u(Fe, Mt, (e) => {
+  let t = c._COMPLEX(e), r = c.getValue(c._R_NaReal, "double");
+  return (n, o) => {
+    c.setValue(t + 8 * (2 * o), n === null ? r : n.re, "double"), c.setValue(t + 8 * (2 * o + 1), n === null ? r : n.im, "double");
+  };
+});
+var Dt;
+var Pr = class extends te {
+  constructor(e) {
+    super(e, "character", a(Pr, Dt));
+  }
+  getString(e) {
+    return this.get(e).toArray()[0];
+  }
+  toString() {
+    if (this.length !== 1)
+      throw new Error("Can't convert atomic vector of length > 1 to a scalar JS value");
+    let e = this.getString(1);
+    if (e === null)
+      throw new Error("Can't convert missing value `NA` to a JS string");
+    return e;
+  }
+  toTypedArray() {
+    return new Uint32Array(c.HEAPU32.subarray(c._STRING_PTR(this.ptr) / 4, c._STRING_PTR(this.ptr) / 4 + this.length));
+  }
+  toArray() {
+    return this.detectMissing().map((e, t) => e ? null : c.UTF8ToString(c._R_CHAR(c._STRING_ELT(this.ptr, t))));
+  }
+};
+var F = Pr;
+Dt = /* @__PURE__ */ new WeakMap(), u(F, Dt, (e) => (t, r) => {
+  t === null ? c._SET_STRING_ELT(e, r, k.naString.ptr) : c._SET_STRING_ELT(e, r, new Je(t).ptr);
+});
+var Wt;
+var Tr = class extends te {
+  constructor(e) {
+    e instanceof ArrayBuffer && (e = new Uint8Array(e)), super(e, "raw", a(Tr, Wt));
+  }
+  getNumber(e) {
+    return this.get(e).toArray()[0];
+  }
+  toNumber() {
+    if (this.length !== 1)
+      throw new Error("Can't convert atomic vector of length > 1 to a scalar JS value");
+    let e = this.getNumber(1);
+    if (e === null)
+      throw new Error("Can't convert missing value `NA` to a JS number");
+    return e;
+  }
+  toTypedArray() {
+    return new Uint8Array(c.HEAPU8.subarray(c._RAW(this.ptr), c._RAW(this.ptr) + this.length));
+  }
+};
+var qe = Tr;
+Wt = /* @__PURE__ */ new WeakMap(), u(qe, Wt, (e) => {
+  let t = c._RAW(e);
+  return (r, n) => {
+    c.setValue(t + n, Number(r), "i8");
+  };
+});
+function me(s) {
+  return mr(s) ? s : Array.isArray(s) || ArrayBuffer.isView(s) ? { names: null, values: s } : s && typeof s == "object" && !Ce(s) ? { names: Object.keys(s), values: Object.values(s) } : { names: null, values: [s] };
+}
+function is(s) {
+  let e = { object: y, null: Pt, symbol: U, pairlist: ie, closure: ye, environment: Be, call: q, special: ye, builtin: ye, string: Je, logical: Y, integer: Et, double: fe, complex: Fe, character: F, list: Ve, raw: qe, function: ye, dataframe: ee };
+  return s in e ? e[s] : y;
+}
+function Tt(s) {
+  return s instanceof y;
+}
+function ls(s) {
+  let e = ["logical", "integer", "double", "complex", "character"];
+  return Tt(s) && e.includes(s.type()) || Tt(s) && s.isNa();
+}
+function cs(s) {
+  return s === null || typeof s == "number" || typeof s == "boolean" || typeof s == "string" || Ce(s);
+}
+var k;
+function $() {
+  let s = { resolve: () => {
+  }, reject: () => {
+  }, promise: Promise.resolve() }, e = new Promise((t, r) => {
+    s.resolve = t, s.reject = r;
+  });
+  return s.promise = e, s;
+}
+function us(s) {
+  return new Promise((e) => setTimeout(e, s));
+}
+function V(s, e, t, ...r) {
+  return s == null || yn(s) ? s : s instanceof ArrayBuffer ? new Uint8Array(s) : e(s) ? t(s, ...r) : Array.isArray(s) || ArrayBuffer.isView(s) ? s.map((n) => V(n, e, t, ...r)) : s instanceof x ? s : typeof s == "object" ? Object.fromEntries(Object.entries(s).map(([n, o]) => [n, V(o, e, t, ...r)])) : s;
+}
+function ge(s, e) {
+  let t = new XMLHttpRequest();
+  t.open("get", s, true), t.onload = () => {
+    let r = new Worker(URL.createObjectURL(new Blob([t.responseText])));
+    e(r);
+  }, t.send();
+}
+function be(s) {
+  if (m)
+    return false;
+  let e = new URL(location.href), t = new URL(s, location.origin);
+  return !(e.host === t.host && e.port === t.port && e.protocol === t.protocol);
+}
+function yn(s) {
+  return typeof ImageBitmap < "u" && s instanceof ImageBitmap;
+}
+var Os = oe(zt());
+var no = new TextEncoder();
+async function Is(s, e, t) {
+  try {
+    let { taskId: r, sizeBuffer: n, dataBuffer: o, signalBuffer: i } = e, l = (0, Os.encode)(t), p2 = l.length <= o.length;
+    if (Atomics.store(n, 0, l.length), Atomics.store(n, 1, +p2), !p2) {
+      let [D2, b2] = oo(s);
+      o.set(no.encode(D2)), await As(i, r), o = (await b2).dataBuffer;
+    }
+    o.set(l), Atomics.store(n, 1, 1), await As(i, r);
+  } catch (r) {
+    console.warn(r);
+  }
+}
+function oo(s) {
+  let e = xt();
+  return [e, new Promise((t) => {
+    m ? s.once("message", (r) => {
+      !r.id || r.id !== e || t(r);
+    }) : s.addEventListener("message", function r(n) {
+      !n.data || !n.data.id || n.data.id !== e || (s.removeEventListener("message", r), t(n.data));
+    }), s.start && s.start();
+  })];
+}
+async function As(s, e) {
+  let t = (e >> 1) % 32, r = 1;
+  for (; Atomics.compareExchange(s, t + 1, 0, e) !== 0; )
+    await us(r), r < 32 && (r *= 2);
+  Atomics.or(s, 0, 1 << t), Atomics.notify(s, 0);
+}
+var X;
+var G;
+var Ke;
+var Jr;
+var Ee = class {
+  constructor() {
+    u(this, Ke);
+    u(this, X, void 0);
+    u(this, G, void 0);
+    d(this, G, []), d(this, X, []);
+  }
+  reset() {
+    d(this, G, []), d(this, X, []);
+  }
+  put(e) {
+    a(this, G).length || E(this, Ke, Jr).call(this), a(this, G).shift()(e);
+  }
+  async get() {
+    return a(this, X).length || E(this, Ke, Jr).call(this), a(this, X).shift();
+  }
+  isEmpty() {
+    return !a(this, X).length;
+  }
+  isBlocked() {
+    return !!a(this, G).length;
+  }
+  get length() {
+    return a(this, X).length - a(this, G).length;
+  }
+};
+X = /* @__PURE__ */ new WeakMap(), G = /* @__PURE__ */ new WeakMap(), Ke = /* @__PURE__ */ new WeakSet(), Jr = function() {
+  a(this, X).push(new Promise((e) => {
+    a(this, G).push(e);
   }));
 };
-function me(r, e) {
-  return xs({ type: "request", data: { uuid: ft(), msg: r } }, e);
+function Pe(s, e) {
+  return Us({ type: "request", data: { uuid: xt(), msg: s } }, e);
 }
-function Le(r, e, t) {
-  return xs({ type: "response", data: { uuid: r, resp: e } }, t);
+function Qe(s, e, t) {
+  return Us({ type: "response", data: { uuid: s, resp: e } }, t);
 }
-function xs(r, e) {
-  return e && Kr(r, e), r;
+function Us(s, e) {
+  return e && ns(s, e), s;
 }
-function Es(r) {
-  let e = new ht(r.obj.message);
-  return r.obj.name !== "Error" && (e.name = r.obj.name), e.stack = r.obj.stack, e;
+function js(s) {
+  let e = new A(s.obj.message);
+  return s.obj.name !== "Error" && (e.name = s.obj.name), e.stack = s.obj.stack, e;
 }
-function $n(r) {
-  return r && typeof r == "object" && "payloadType" in r && "obj" in r;
+function ao(s) {
+  return !!s && typeof s == "object" && "payloadType" in s && "obj" in s;
 }
-function At(r) {
-  return $n(r) && r.payloadType === "ptr";
+function $t(s) {
+  return ao(s) && s.payloadType === "ptr";
 }
-var ge;
-var G = class {
+var Te;
+var Ze;
+var se = class {
   constructor() {
-    this.inputQueue = new Re();
-    this.outputQueue = new Re();
-    this.systemQueue = new Re();
-    u(this, ge, /* @__PURE__ */ new Map());
+    this.inputQueue = new Ee();
+    this.outputQueue = new Ee();
+    this.systemQueue = new Ee();
+    u(this, Te, /* @__PURE__ */ new Map());
+    u(this, Ze, false);
   }
   async read() {
     return await this.outputQueue.get();
@@ -30720,71 +31526,69 @@ var G = class {
     return await this.systemQueue.get();
   }
   write(e) {
+    if (a(this, Ze))
+      throw new P("The webR communication channel has been closed.");
     this.inputQueue.put(e);
   }
   async request(e, t) {
-    let s = me(e, t), { resolve: n, reject: o, promise: a } = V();
-    return i(this, ge).set(s.data.uuid, { resolve: n, reject: o }), this.write(s), a;
+    let r = Pe(e, t), { resolve: n, reject: o, promise: i } = $();
+    return a(this, Te).set(r.data.uuid, { resolve: n, reject: o }), this.write(r), i;
   }
   putClosedMessage() {
-    this.outputQueue.put({ type: "closed" });
+    d(this, Ze, true), this.outputQueue.put({ type: "closed" });
   }
   resolveResponse(e) {
-    let t = e.data.uuid, s = i(this, ge).get(t);
-    if (s) {
+    let t = e.data.uuid, r = a(this, Te).get(t);
+    if (r) {
       let n = e.data.resp;
-      i(this, ge).delete(t), n.payloadType === "err" ? s.reject(Es(n)) : s.resolve(n);
+      a(this, Te).delete(t), n.payloadType === "err" ? r.reject(js(n)) : r.resolve(n);
     } else
       console.warn("Can't find request.");
   }
 };
-ge = /* @__PURE__ */ new WeakMap();
-var Ts = te(Dt());
-var Kn = new TextDecoder("utf-8");
-var be;
-var we;
-var je;
-var Fe;
-var xe;
-be = /* @__PURE__ */ new WeakMap(), we = /* @__PURE__ */ new WeakMap(), je = /* @__PURE__ */ new WeakMap(), Fe = /* @__PURE__ */ new WeakMap(), xe = /* @__PURE__ */ new WeakMap();
-var Or = new Int32Array(new ArrayBuffer(4));
-var l = {};
-function ks(r) {
-  Object.keys(r).forEach((e) => l._free(r[e]));
-}
-m && (globalThis.Worker = U("worker_threads").Worker);
-var ve;
-var Ct;
-var Ds;
-var qe;
-var Be = class extends G {
+Te = /* @__PURE__ */ new WeakMap(), Ze = /* @__PURE__ */ new WeakMap();
+var Bs = oe(zt());
+var lo = new TextDecoder("utf-8");
+var _e;
+var Se;
+var Ye;
+var et;
+var ke;
+_e = /* @__PURE__ */ new WeakMap(), Se = /* @__PURE__ */ new WeakMap(), Ye = /* @__PURE__ */ new WeakMap(), et = /* @__PURE__ */ new WeakMap(), ke = /* @__PURE__ */ new WeakMap();
+var zr = new Int32Array(new ArrayBuffer(4));
+m && (globalThis.Worker = B("worker_threads").Worker);
+var Me;
+var Zt;
+var Vs;
+var rt;
+var tt = class extends se {
   constructor(t) {
     super();
-    u(this, Ct);
-    u(this, ve, void 0);
+    u(this, Zt);
+    u(this, Me, void 0);
     this.close = () => {
     };
-    u(this, qe, async (t2, s2) => {
-      if (!(!s2 || !s2.type))
-        switch (s2.type) {
+    u(this, rt, async (t2, r2) => {
+      if (!(!r2 || !r2.type))
+        switch (r2.type) {
           case "resolve":
-            d(this, ve, new Int32Array(s2.data)), this.resolve();
+            d(this, Me, new Int32Array(r2.data)), this.resolve();
             return;
           case "response":
-            this.resolveResponse(s2);
+            this.resolveResponse(r2);
             return;
           case "system":
-            this.systemQueue.put(s2.data);
+            this.systemQueue.put(r2.data);
             return;
           default:
-            this.outputQueue.put(s2);
+            this.outputQueue.put(r2);
             return;
           case "sync-request": {
-            let n = s2, o = n.data.msg, a = n.data.reqData;
+            let n = r2, o = n.data.msg, i = n.data.reqData;
             switch (o.type) {
               case "read": {
-                let c = await this.inputQueue.get();
-                await ws(t2, a, c);
+                let l = await this.inputQueue.get();
+                await Is(t2, i, l);
                 break;
               }
               default:
@@ -30796,137 +31600,141 @@ var Be = class extends G {
             throw new P("Can't send messages of type 'request' from a worker. Please Use 'sync-request' instead.");
         }
     });
-    let s = (n) => {
-      x(this, Ct, Ds).call(this, n), this.close = () => {
+    ({ resolve: this.resolve, reject: this.reject, promise: this.initialised } = $());
+    let r = (n) => {
+      E(this, Zt, Vs).call(this, n), this.close = () => {
         n.terminate(), this.putClosedMessage();
       };
       let o = { type: "init", data: { config: t, channelType: O.SharedArrayBuffer } };
       n.postMessage(o);
     };
-    if (de(t.baseUrl))
-      pe(`${t.baseUrl}webr-worker.js`, (n) => s(n));
+    if (be(t.baseUrl))
+      ge(`${t.baseUrl}webr-worker.js`, (n) => r(n));
     else {
       let n = new Worker(`${t.baseUrl}webr-worker.js`);
-      s(n);
+      r(n);
     }
-    ({ resolve: this.resolve, promise: this.initialised } = V());
   }
   interrupt() {
-    if (!i(this, ve))
+    if (!a(this, Me))
       throw new P("Failed attempt to interrupt before initialising interruptBuffer");
-    this.inputQueue.reset(), i(this, ve)[0] = 1;
+    this.inputQueue.reset(), a(this, Me)[0] = 1;
   }
 };
-ve = /* @__PURE__ */ new WeakMap(), Ct = /* @__PURE__ */ new WeakSet(), Ds = function(t) {
-  m ? t.on("message", (s) => {
-    i(this, qe).call(this, t, s);
-  }) : t.onmessage = (s) => i(this, qe).call(this, t, s.data);
-}, qe = /* @__PURE__ */ new WeakMap();
-var se;
-var Ve;
-var ne;
-var He;
-se = /* @__PURE__ */ new WeakMap(), Ve = /* @__PURE__ */ new WeakMap(), ne = /* @__PURE__ */ new WeakMap(), He = /* @__PURE__ */ new WeakMap();
-var Bt = te(Dt());
-m && (globalThis.Worker = U("worker_threads").Worker);
-var Ee;
-var oe;
-var Pe;
-var Lt;
-var Ws;
-var jt;
-var Os;
-var Ft;
-var As;
-var Je;
-var Nt = class extends G {
+Me = /* @__PURE__ */ new WeakMap(), Zt = /* @__PURE__ */ new WeakSet(), Vs = function(t) {
+  m ? (t.on("message", (r) => {
+    a(this, rt).call(this, t, r);
+  }), t.on("error", (r) => {
+    console.error(r), this.reject(new A("An error occurred initialising the webR SharedBufferChannel worker."));
+  })) : (t.onmessage = (r) => a(this, rt).call(this, t, r.data), t.onerror = (r) => {
+    console.error(r), this.reject(new A("An error occurred initialising the webR SharedBufferChannel worker."));
+  });
+}, rt = /* @__PURE__ */ new WeakMap();
+var ue;
+var st;
+var pe;
+var nt;
+ue = /* @__PURE__ */ new WeakMap(), st = /* @__PURE__ */ new WeakMap(), pe = /* @__PURE__ */ new WeakMap(), nt = /* @__PURE__ */ new WeakMap();
+var sr = oe(zt());
+m && (globalThis.Worker = B("worker_threads").Worker);
+var De;
+var de;
+var We;
+var er;
+var Js;
+var tr;
+var Hs;
+var rr;
+var zs;
+var ot;
+var Yt = class extends se {
   constructor(t) {
     super();
-    u(this, Lt);
-    u(this, jt);
-    u(this, Ft);
+    u(this, er);
+    u(this, tr);
+    u(this, rr);
     this.close = () => {
     };
-    u(this, Ee, /* @__PURE__ */ new Map());
-    u(this, oe, void 0);
-    u(this, Pe, false);
-    u(this, Je, async (t2, s2) => {
-      if (!(!s2 || !s2.type))
-        switch (s2.type) {
+    u(this, De, /* @__PURE__ */ new Map());
+    u(this, de, void 0);
+    u(this, We, false);
+    u(this, ot, (t2, r2) => {
+      if (!(!r2 || !r2.type))
+        switch (r2.type) {
           case "resolve":
             this.resolve();
             return;
           case "response":
-            this.resolveResponse(s2);
+            this.resolveResponse(r2);
             return;
           case "system":
-            this.systemQueue.put(s2.data);
+            this.systemQueue.put(r2.data);
             return;
           default:
-            this.outputQueue.put(s2);
+            this.outputQueue.put(r2);
             return;
           case "sync-request": {
-            let n = s2.data;
-            i(this, Ee).set(n.data.uuid, n.data.msg);
+            let n = r2.data;
+            a(this, De).set(n.data.uuid, n.data.msg);
             return;
           }
           case "request":
             throw new P("Can't send messages of type 'request' from a worker.Use service worker fetch request instead.");
         }
     });
-    let s = (n) => {
-      x(this, Ft, As).call(this, n), this.close = () => {
+    ({ resolve: this.resolve, reject: this.reject, promise: this.initialised } = $()), console.warn("The ServiceWorker communication channel is deprecated and will be removed in a future version of webR. Consider using the PostMessage channel instead. If blocking input is required (for example, `browser()`) the SharedArrayBuffer channel should be used. See https://docs.r-wasm.org/webr/latest/serving.html for further information.");
+    let r = (n) => {
+      E(this, rr, zs).call(this, n), this.close = () => {
         n.terminate(), this.putClosedMessage();
-      }, x(this, Lt, Ws).call(this, `${t.serviceWorkerUrl}webr-serviceworker.js`).then((o) => {
-        let a = { type: "init", data: { config: t, channelType: O.ServiceWorker, clientId: o, location: window.location.href } };
-        n.postMessage(a);
+      }, E(this, er, Js).call(this, `${t.serviceWorkerUrl}webr-serviceworker.js`).then((o) => {
+        let i = { type: "init", data: { config: t, channelType: O.ServiceWorker, clientId: o, location: window.location.href } };
+        n.postMessage(i);
       });
     };
-    if (de(t.serviceWorkerUrl))
-      pe(`${t.serviceWorkerUrl}webr-worker.js`, (n) => s(n));
+    if (be(t.serviceWorkerUrl))
+      ge(`${t.serviceWorkerUrl}webr-worker.js`, (n) => r(n));
     else {
       let n = new Worker(`${t.serviceWorkerUrl}webr-worker.js`);
-      s(n);
+      r(n);
     }
-    ({ resolve: this.resolve, promise: this.initialised } = V());
   }
   activeRegistration() {
     var t;
-    if (!((t = i(this, oe)) != null && t.active))
+    if (!((t = a(this, de)) != null && t.active))
       throw new P("Attempted to obtain a non-existent active registration.");
-    return i(this, oe).active;
+    return a(this, de).active;
   }
   interrupt() {
-    d(this, Pe, true);
+    d(this, We, true);
   }
 };
-Ee = /* @__PURE__ */ new WeakMap(), oe = /* @__PURE__ */ new WeakMap(), Pe = /* @__PURE__ */ new WeakMap(), Lt = /* @__PURE__ */ new WeakSet(), Ws = async function(t) {
-  d(this, oe, await navigator.serviceWorker.register(t)), await navigator.serviceWorker.ready, window.addEventListener("beforeunload", () => {
+De = /* @__PURE__ */ new WeakMap(), de = /* @__PURE__ */ new WeakMap(), We = /* @__PURE__ */ new WeakMap(), er = /* @__PURE__ */ new WeakSet(), Js = async function(t) {
+  d(this, de, await navigator.serviceWorker.register(t)), await navigator.serviceWorker.ready, window.addEventListener("beforeunload", () => {
     var n;
-    (n = i(this, oe)) == null || n.unregister();
+    (n = a(this, de)) == null || n.unregister();
   });
-  let s = await new Promise((n) => {
-    navigator.serviceWorker.addEventListener("message", function o(a) {
-      a.data.type === "registration-successful" && (navigator.serviceWorker.removeEventListener("message", o), n(a.data.clientId));
+  let r = await new Promise((n) => {
+    navigator.serviceWorker.addEventListener("message", function o(i) {
+      i.data.type === "registration-successful" && (navigator.serviceWorker.removeEventListener("message", o), n(i.data.clientId));
     }), this.activeRegistration().postMessage({ type: "register-client-main" });
   });
   return navigator.serviceWorker.addEventListener("message", (n) => {
-    x(this, jt, Os).call(this, n);
-  }), s;
-}, jt = /* @__PURE__ */ new WeakSet(), Os = async function(t) {
+    E(this, tr, Hs).call(this, n);
+  }), r;
+}, tr = /* @__PURE__ */ new WeakSet(), Hs = async function(t) {
   if (t.data.type === "request") {
-    let s = t.data.data, n = i(this, Ee).get(s);
+    let r = t.data.data, n = a(this, De).get(r);
     if (!n)
       throw new P("Request not found during service worker XHR request");
-    switch (i(this, Ee).delete(s), n.type) {
+    switch (a(this, De).delete(r), n.type) {
       case "read": {
         let o = await this.inputQueue.get();
-        this.activeRegistration().postMessage({ type: "wasm-webr-fetch-response", uuid: s, response: Le(s, o) });
+        this.activeRegistration().postMessage({ type: "wasm-webr-fetch-response", uuid: r, response: Qe(r, o) });
         break;
       }
       case "interrupt": {
-        let o = i(this, Pe);
-        this.activeRegistration().postMessage({ type: "wasm-webr-fetch-response", uuid: s, response: Le(s, o) }), this.inputQueue.reset(), d(this, Pe, false);
+        let o = a(this, We);
+        this.activeRegistration().postMessage({ type: "wasm-webr-fetch-response", uuid: r, response: Qe(r, o) }), this.inputQueue.reset(), d(this, We, false);
         break;
       }
       default:
@@ -30934,53 +31742,57 @@ Ee = /* @__PURE__ */ new WeakMap(), oe = /* @__PURE__ */ new WeakMap(), Pe = /* 
     }
     return;
   }
-}, Ft = /* @__PURE__ */ new WeakSet(), As = function(t) {
-  m ? t.on("message", (s) => {
-    i(this, Je).call(this, t, s);
-  }) : t.onmessage = (s) => i(this, Je).call(this, t, s.data);
-}, Je = /* @__PURE__ */ new WeakMap();
-var Te;
-var ze;
-var Xe;
-var $e;
-var Ge;
-var Ke;
-Te = /* @__PURE__ */ new WeakMap(), ze = /* @__PURE__ */ new WeakMap(), Xe = /* @__PURE__ */ new WeakMap(), $e = /* @__PURE__ */ new WeakMap(), Ge = /* @__PURE__ */ new WeakMap(), Ke = /* @__PURE__ */ new WeakMap();
-m && (globalThis.Worker = U("worker_threads").Worker);
-var _e;
-var qt;
-var Is;
-var Ze;
-var Qe = class extends G {
+}, rr = /* @__PURE__ */ new WeakSet(), zs = function(t) {
+  m ? (t.on("message", (r) => {
+    a(this, ot).call(this, t, r);
+  }), t.on("error", (r) => {
+    console.error(r), this.reject(new A("An error occurred initialising the webR ServiceWorkerChannel worker."));
+  })) : (t.onmessage = (r) => a(this, ot).call(this, t, r.data), t.onerror = (r) => {
+    console.error(r), this.reject(new A("An error occurred initialising the webR ServiceWorkerChannel worker."));
+  });
+}, ot = /* @__PURE__ */ new WeakMap();
+var Ae;
+var at;
+var it;
+var lt;
+var ct;
+var ut;
+Ae = /* @__PURE__ */ new WeakMap(), at = /* @__PURE__ */ new WeakMap(), it = /* @__PURE__ */ new WeakMap(), lt = /* @__PURE__ */ new WeakMap(), ct = /* @__PURE__ */ new WeakMap(), ut = /* @__PURE__ */ new WeakMap();
+m && (globalThis.Worker = B("worker_threads").Worker);
+var Oe;
+var nr;
+var Xs;
+var dt;
+var pt = class extends se {
   constructor(t) {
     super();
-    u(this, qt);
+    u(this, nr);
     this.close = () => {
     };
-    u(this, _e, void 0);
-    u(this, Ze, async (t2, s2) => {
-      if (!(!s2 || !s2.type))
-        switch (s2.type) {
+    u(this, Oe, void 0);
+    u(this, dt, async (t2, r2) => {
+      if (!(!r2 || !r2.type))
+        switch (r2.type) {
           case "resolve":
             this.resolve();
             return;
           case "response":
-            this.resolveResponse(s2);
+            this.resolveResponse(r2);
             return;
           case "system":
-            this.systemQueue.put(s2.data);
+            this.systemQueue.put(r2.data);
             return;
           default:
-            this.outputQueue.put(s2);
+            this.outputQueue.put(r2);
             return;
           case "request": {
-            let n = s2, o = n.data.msg;
+            let n = r2, o = n.data.msg;
             switch (o.type) {
               case "read": {
-                let a = await this.inputQueue.get();
-                if (i(this, _e)) {
-                  let c = Le(n.data.uuid, a);
-                  i(this, _e).postMessage(c);
+                let i = await this.inputQueue.get();
+                if (a(this, Oe)) {
+                  let l = Qe(n.data.uuid, i);
+                  a(this, Oe).postMessage(l);
                 }
                 break;
               }
@@ -30993,817 +31805,144 @@ var Qe = class extends G {
             throw new P("Can't send messages of type 'sync-request' in PostMessage mode. Use 'request' instead.");
         }
     });
-    let s = (n) => {
-      d(this, _e, n), x(this, qt, Is).call(this, n), this.close = () => n.terminate();
+    ({ resolve: this.resolve, reject: this.reject, promise: this.initialised } = $());
+    let r = (n) => {
+      d(this, Oe, n), E(this, nr, Xs).call(this, n), this.close = () => {
+        n.terminate(), this.putClosedMessage();
+      };
       let o = { type: "init", data: { config: t, channelType: O.PostMessage } };
       n.postMessage(o);
     };
-    if (de(t.baseUrl))
-      pe(`${t.baseUrl}webr-worker.js`, (n) => s(n));
+    if (be(t.baseUrl))
+      ge(`${t.baseUrl}webr-worker.js`, (n) => r(n));
     else {
       let n = new Worker(`${t.baseUrl}webr-worker.js`);
-      s(n);
+      r(n);
     }
-    ({ resolve: this.resolve, promise: this.initialised } = V());
   }
   interrupt() {
     console.error("Interrupting R execution is not available when using the PostMessage channel");
   }
 };
-_e = /* @__PURE__ */ new WeakMap(), qt = /* @__PURE__ */ new WeakSet(), Is = function(t) {
-  m ? t.on("message", (s) => {
-    i(this, Ze).call(this, t, s);
-  }) : t.onmessage = (s) => i(this, Ze).call(this, t, s.data);
-}, Ze = /* @__PURE__ */ new WeakMap();
-var Se;
-var Me;
-var Ye;
-var ie;
-var Vt;
-Se = /* @__PURE__ */ new WeakMap(), Me = /* @__PURE__ */ new WeakMap(), Ye = /* @__PURE__ */ new WeakMap(), ie = /* @__PURE__ */ new WeakMap(), Vt = /* @__PURE__ */ new WeakMap();
+Oe = /* @__PURE__ */ new WeakMap(), nr = /* @__PURE__ */ new WeakSet(), Xs = function(t) {
+  m ? (t.on("message", (r) => {
+    a(this, dt).call(this, t, r);
+  }), t.on("error", (r) => {
+    console.error(r), this.reject(new A("An error occurred initialising the webR PostMessageChannel worker."));
+  })) : (t.onmessage = (r) => a(this, dt).call(this, t, r.data), t.onerror = (r) => {
+    console.error(r), this.reject(new A("An error occurred initialising the webR PostMessageChannel worker."));
+  });
+}, dt = /* @__PURE__ */ new WeakMap();
+var Ie;
+var Ue;
+var ht;
+var he;
+var or;
+Ie = /* @__PURE__ */ new WeakMap(), Ue = /* @__PURE__ */ new WeakMap(), ht = /* @__PURE__ */ new WeakMap(), he = /* @__PURE__ */ new WeakMap(), or = /* @__PURE__ */ new WeakMap();
 var O = { Automatic: 0, SharedArrayBuffer: 1, ServiceWorker: 2, PostMessage: 3 };
-function Us(r) {
-  switch (r.channelType) {
+function Gs(s) {
+  switch (s.channelType) {
     case O.SharedArrayBuffer:
-      return new Be(r);
+      return new tt(s);
     case O.ServiceWorker:
-      return new Nt(r);
+      return new Yt(s);
     case O.PostMessage:
-      return new Qe(r);
+      return new pt(s);
     case O.Automatic:
     default:
-      return typeof SharedArrayBuffer < "u" ? new Be(r) : new Qe(r);
+      return typeof SharedArrayBuffer < "u" ? new tt(s) : new pt(s);
   }
 }
-var Cs = m ? __dirname + "/" : "https://webr.r-wasm.org/v0.2.2/";
-var Ns = "https://repo.r-wasm.org";
-function w(r) {
-  return r && (typeof r == "object" || typeof r == "function") && "payloadType" in r && At(r._payload);
+var $s = m ? __dirname + "/" : "https://webr.r-wasm.org/v0.4.2/";
+var Ks = "https://repo.r-wasm.org";
+var Kr = "0.4.2";
+function v(s) {
+  return !!s && (typeof s == "object" || typeof s == "function") && "payloadType" in s && $t(s._payload);
 }
-function ua(r) {
-  return w(r) && r._payload.obj.type === "list";
+function Zi(s) {
+  return v(s) && s._payload.obj.type === "list";
 }
-function Ls(r) {
+function Qs(s) {
   var e;
-  return !!(w(r) && ((e = r._payload.obj.methods) != null && e.includes("exec")));
+  return !!(v(s) && ((e = s._payload.obj.methods) != null && e.includes("exec")));
 }
-var f = { null: 0, symbol: 1, pairlist: 2, closure: 3, environment: 4, promise: 5, call: 6, special: 7, builtin: 8, string: 9, logical: 10, integer: 13, double: 14, complex: 15, character: 16, dots: 17, any: 18, list: 19, expression: 20, bytecode: 21, pointer: 22, weakref: 23, raw: 24, s4: 25, new: 30, free: 31, function: 99 };
-function Cr(r) {
-  return r && typeof r == "object" && Object.keys(f).includes(r.type);
+function uo() {
 }
-function Nr(r) {
-  return r && typeof r == "object" && "re" in r && "im" in r;
-}
-function Ht(r) {
-  return l._Rf_protect(q(r)), r;
-}
-function M(r, e) {
-  return l._Rf_protect(q(r)), ++e.n, r;
-}
-function js(r) {
-  let e = l._malloc(4);
-  return l._R_ProtectWithIndex(q(r), e), { loc: l.getValue(e, "i32"), ptr: e };
-}
-function Fs(r) {
-  l._Rf_unprotect(1), l._free(r.ptr);
-}
-function Bs(r, e) {
-  return l._R_Reprotect(q(r), e.loc), r;
-}
-function D(r) {
-  l._Rf_unprotect(r);
-}
-function Lr(r, e, t) {
-  l._Rf_defineVar(q(e), q(t), q(r));
-}
-function qs(r, e) {
-  let t = {}, s = { n: 0 };
-  try {
-    let n = new tt(e);
-    M(n, s), t.code = l.allocateUTF8(r);
-    let o = l._R_ParseEvalString(t.code, n.ptr);
-    return y.wrap(o);
-  } finally {
-    ks(t), D(s.n);
-  }
-}
-function et(r, e) {
-  return l.getWasmTableEntry(l.GOT.ffi_safe_eval.value)(q(r), q(e));
-}
-function q(r) {
-  return to(r) ? r.ptr : r;
-}
-function ue(r, e) {
-  if (l._TYPEOF(r.ptr) !== f[e])
-    throw new Error(`Unexpected object type "${r.type()}" when expecting type "${e}"`);
-}
-function Yn(r) {
-  if (Cr(r))
-    return new (Vs(f[r.type]))(r);
-  if (r && typeof r == "object" && "type" in r && r.type === "null")
-    return new $t();
-  if (r === null)
-    return new le({ type: "logical", names: null, values: [null] });
-  if (typeof r == "boolean")
-    return new le(r);
-  if (typeof r == "number")
-    return new rt(r);
-  if (typeof r == "string")
-    return new K(r);
-  if (Nr(r))
-    return new st(r);
-  if (Array.isArray(r))
-    return eo(r);
-  throw new Error("Robj construction for this JS object is not yet supported");
-}
-function eo(r) {
-  let e = { n: 0 };
-  try {
-    let t = new ce([new Q("c"), ...r]);
-    return M(t, e), t.eval();
-  } finally {
-    D(e.n);
-  }
-}
-var E = class {
-  constructor(e) {
-    this.ptr = e;
-  }
-  type() {
-    let e = l._TYPEOF(this.ptr);
-    return Object.keys(f).find((s) => f[s] === e);
-  }
-};
-var De;
-var Jt;
-var ae = class extends E {
-  constructor(t) {
-    if (!(t instanceof E))
-      return Yn(t);
-    super(t.ptr);
-    u(this, De);
-  }
-  static wrap(t) {
-    let s = l._TYPEOF(t);
-    return new (Vs(s))(new E(t));
-  }
-  get [Symbol.toStringTag]() {
-    return `RObject:${this.type()}`;
-  }
-  static getPersistentObject(t) {
-    return k[t];
-  }
-  getPropertyValue(t) {
-    return this[t];
-  }
-  inspect() {
-    qs(".Internal(inspect(x))", { x: this });
-  }
-  isNull() {
-    return l._TYPEOF(this.ptr) === f.null;
-  }
-  isUnbound() {
-    return this.ptr === k.unboundValue.ptr;
-  }
-  attrs() {
-    return We.wrap(l._ATTRIB(this.ptr));
-  }
-  setNames(t) {
-    let s;
-    if (t === null)
-      s = k.null;
-    else if (Array.isArray(t) && t.every((n) => typeof n == "string" || n === null))
-      s = new K(t);
-    else
-      throw new Error("Argument to setNames must be null or an Array of strings or null");
-    return l._Rf_setAttrib(this.ptr, k.namesSymbol.ptr, s.ptr), this;
-  }
-  names() {
-    let t = K.wrap(l._Rf_getAttrib(this.ptr, k.namesSymbol.ptr));
-    return t.isNull() ? null : t.toArray();
-  }
-  includes(t) {
-    let s = this.names();
-    return s && s.includes(t);
-  }
-  toJs(t = { depth: 0 }, s = 1) {
-    throw new Error("This R object cannot be converted to JS");
-  }
-  subset(t) {
-    return x(this, De, Jt).call(this, t, k.bracketSymbol.ptr);
-  }
-  get(t) {
-    return x(this, De, Jt).call(this, t, k.bracket2Symbol.ptr);
-  }
-  getDollar(t) {
-    return x(this, De, Jt).call(this, t, k.dollarSymbol.ptr);
-  }
-  pluck(...t) {
-    let s = js(k.null);
-    try {
-      let n = (a, c) => {
-        let p = a.get(c);
-        return Bs(p, s);
-      }, o = t.reduce(n, this);
-      return o.isNull() ? void 0 : o;
-    } finally {
-      Fs(s);
-    }
-  }
-  set(t, s) {
-    let n = { n: 0 };
-    try {
-      let o = new ae(t);
-      M(o, n);
-      let a = new ae(s);
-      M(a, n);
-      let c = new Q("[[<-"), p = l._Rf_lang4(c.ptr, this.ptr, o.ptr, a.ptr);
-      return M(p, n), ae.wrap(et(p, k.baseEnv));
-    } finally {
-      D(n.n);
-    }
-  }
-  static getMethods(t) {
-    let s = /* @__PURE__ */ new Set(), n = t;
-    do
-      Object.getOwnPropertyNames(n).map((o) => s.add(o));
-    while (n = Object.getPrototypeOf(n));
-    return [...s.keys()].filter((o) => typeof t[o] == "function");
-  }
-};
-var y = ae;
-De = /* @__PURE__ */ new WeakSet(), Jt = function(t, s) {
-  let n = { n: 0 };
-  try {
-    let o = new ae(t);
-    M(o, n);
-    let a = l._Rf_lang3(s, this.ptr, o.ptr);
-    return M(a, n), ae.wrap(et(a, k.baseEnv));
-  } finally {
-    D(n.n);
-  }
-};
-var $t = class extends y {
-  constructor() {
-    return super(new E(l.getValue(l._R_NilValue, "*"))), this;
-  }
-  toJs() {
-    return { type: "null" };
-  }
-};
-var Q = class extends y {
-  constructor(e) {
-    if (e instanceof E) {
-      ue(e, "symbol"), super(e);
-      return;
-    }
-    let t = l.allocateUTF8(e);
-    try {
-      super(new E(l._Rf_install(t)));
-    } finally {
-      l._free(t);
-    }
-  }
-  toJs() {
-    let e = this.toObject();
-    return { type: "symbol", printname: e.printname, symvalue: e.symvalue, internal: e.internal };
-  }
-  toObject() {
-    return { printname: this.printname().isUnbound() ? null : this.printname().toString(), symvalue: this.symvalue().isUnbound() ? null : this.symvalue().ptr, internal: this.internal().isNull() ? null : this.internal().ptr };
-  }
-  toString() {
-    return this.printname().toString();
-  }
-  printname() {
-    return nt.wrap(l._PRINTNAME(this.ptr));
-  }
-  symvalue() {
-    return y.wrap(l._SYMVALUE(this.ptr));
-  }
-  internal() {
-    return y.wrap(l._INTERNAL(this.ptr));
-  }
-};
-var We = class extends y {
-  constructor(e) {
-    if (e instanceof E)
-      return ue(e, "pairlist"), super(e), this;
-    let t = { n: 0 };
-    try {
-      let { names: s, values: n } = ot(e), o = We.wrap(l._Rf_allocList(n.length));
-      M(o, t);
-      for (let [a, c] = [0, o]; !c.isNull(); [a, c] = [a + 1, c.cdr()])
-        c.setcar(new y(n[a]));
-      o.setNames(s), super(o);
-    } finally {
-      D(t.n);
-    }
-  }
-  get length() {
-    return this.toArray().length;
-  }
-  toArray(e = { depth: 1 }) {
-    return this.toJs(e).values;
-  }
-  toObject({ allowDuplicateKey: e = true, allowEmptyKey: t = false, depth: s = 1 } = {}) {
-    let n = this.entries({ depth: s }), o = n.map(([a, c]) => a);
-    if (!e && new Set(o).size !== o.length)
-      throw new Error("Duplicate key when converting pairlist without allowDuplicateKey enabled");
-    if (!t && o.some((a) => !a))
-      throw new Error("Empty or null key when converting pairlist without allowEmptyKey enabled");
-    return Object.fromEntries(n.filter((a, c) => n.findIndex((p) => p[0] === a[0]) === c));
-  }
-  entries(e = { depth: 1 }) {
-    let t = this.toJs(e);
-    return t.values.map((s, n) => [t.names ? t.names[n] : null, s]);
-  }
-  toJs(e = { depth: 0 }, t = 1) {
-    let s = [], n = false, o = [];
-    for (let c = this; !c.isNull(); c = c.cdr()) {
-      let p = c.tag();
-      p.isNull() ? s.push("") : (n = true, s.push(p.toString())), e.depth && t >= e.depth ? o.push(c.car()) : o.push(c.car().toJs(e, t + 1));
-    }
-    return { type: "pairlist", names: n ? s : null, values: o };
-  }
-  includes(e) {
-    return e in this.toObject();
-  }
-  setcar(e) {
-    l._SETCAR(this.ptr, e.ptr);
-  }
-  car() {
-    return y.wrap(l._CAR(this.ptr));
-  }
-  cdr() {
-    return y.wrap(l._CDR(this.ptr));
-  }
-  tag() {
-    return y.wrap(l._TAG(this.ptr));
-  }
-};
-var ce = class extends y {
-  constructor(e) {
-    if (e instanceof E)
-      return ue(e, "call"), super(e), this;
-    let t = { n: 0 };
-    try {
-      let { values: s } = ot(e), n = s.map((a) => M(new y(a), t)), o = ce.wrap(l._Rf_allocVector(f.call, s.length));
-      M(o, t);
-      for (let [a, c] = [0, o]; !c.isNull(); [a, c] = [a + 1, c.cdr()])
-        c.setcar(n[a]);
-      super(o);
-    } finally {
-      D(t.n);
-    }
-  }
-  setcar(e) {
-    l._SETCAR(this.ptr, e.ptr);
-  }
-  car() {
-    return y.wrap(l._CAR(this.ptr));
-  }
-  cdr() {
-    return y.wrap(l._CDR(this.ptr));
-  }
-  eval() {
-    return y.wrap(et(this.ptr, k.baseEnv));
-  }
-};
-var jr = class extends y {
-  constructor(e) {
-    if (e instanceof E)
-      return ue(e, "list"), super(e), this;
-    let t = { n: 0 };
-    try {
-      let { names: s, values: n } = ot(e), o = l._Rf_allocVector(f.list, n.length);
-      M(o, t), n.forEach((a, c) => {
-        l._SET_VECTOR_ELT(o, c, new y(a).ptr);
-      }), y.wrap(o).setNames(s), super(new E(o));
-    } finally {
-      D(t.n);
-    }
-  }
-  get length() {
-    return l._LENGTH(this.ptr);
-  }
-  toArray(e = { depth: 1 }) {
-    return this.toJs(e).values;
-  }
-  toObject({ allowDuplicateKey: e = true, allowEmptyKey: t = false, depth: s = 1 } = {}) {
-    let n = this.entries({ depth: s }), o = n.map(([a, c]) => a);
-    if (!e && new Set(o).size !== o.length)
-      throw new Error("Duplicate key when converting list without allowDuplicateKey enabled");
-    if (!t && o.some((a) => !a))
-      throw new Error("Empty or null key when converting list without allowEmptyKey enabled");
-    return Object.fromEntries(n.filter((a, c) => n.findIndex((p) => p[0] === a[0]) === c));
-  }
-  entries(e = { depth: 1 }) {
-    let t = this.toJs(e);
-    return t.values.map((s, n) => [t.names ? t.names[n] : null, s]);
-  }
-  toJs(e = { depth: 0 }, t = 1) {
-    return { type: "list", names: this.names(), values: [...Array(this.length).keys()].map((s) => e.depth && t >= e.depth ? this.get(s + 1) : this.get(s + 1).toJs(e, t + 1)) };
-  }
-};
-var ke = class extends y {
-  exec(...e) {
-    let t = { n: 0 };
-    try {
-      let s = new ce([this, ...e]);
-      return M(s, t), s.eval();
-    } finally {
-      D(t.n);
-    }
-  }
-};
-var nt = class extends y {
-  constructor(e) {
-    if (e instanceof E) {
-      ue(e, "string"), super(e);
-      return;
-    }
-    let t = l.allocateUTF8(e);
-    try {
-      super(new E(l._Rf_mkChar(t)));
-    } finally {
-      l._free(t);
-    }
-  }
-  toString() {
-    return l.UTF8ToString(l._R_CHAR(this.ptr));
-  }
-  toJs() {
-    return { type: "string", value: this.toString() };
-  }
-};
-var tt = class extends y {
-  constructor(e = {}) {
-    if (e instanceof E)
-      return ue(e, "environment"), super(e), this;
-    let t = 0;
-    try {
-      let { names: s, values: n } = ot(e), o = Ht(l._R_NewEnv(k.globalEnv.ptr, 0, 0));
-      ++t, n.forEach((a, c) => {
-        let p = s ? s[c] : null;
-        if (!p)
-          throw new Error("Can't create object in new environment with empty symbol name");
-        let v = new Q(p), ee = Ht(new y(a));
-        try {
-          Lr(o, v, ee);
-        } finally {
-          D(1);
-        }
-      }), super(new E(o));
-    } finally {
-      D(t);
-    }
-  }
-  ls(e = false, t = true) {
-    return K.wrap(l._R_lsInternal3(this.ptr, Number(e), Number(t))).toArray();
-  }
-  bind(e, t) {
-    let s = new Q(e), n = Ht(new y(t));
-    try {
-      Lr(this, s, n);
-    } finally {
-      D(1);
-    }
-  }
-  names() {
-    return this.ls(true, true);
-  }
-  frame() {
-    return y.wrap(l._FRAME(this.ptr));
-  }
-  subset(e) {
-    if (typeof e == "number")
-      throw new Error("Object of type environment is not subsettable");
-    return this.getDollar(e);
-  }
-  toObject({ depth: e = 0 } = {}) {
-    let t = this.names();
-    return Object.fromEntries([...Array(t.length).keys()].map((s) => [t[s], this.getDollar(t[s]).toJs({ depth: e })]));
-  }
-  toJs(e = { depth: 0 }, t = 1) {
-    let s = this.names(), n = [...Array(s.length).keys()].map((o) => e.depth && t >= e.depth ? this.getDollar(s[o]) : this.getDollar(s[o]).toJs(e, t + 1));
-    return { type: "environment", names: s, values: n };
-  }
-};
-var Z = class extends y {
-  constructor(e, t, s) {
-    if (e instanceof E)
-      return ue(e, t), super(e), this;
-    let n = { n: 0 };
-    try {
-      let { names: o, values: a } = ot(e), c = l._Rf_allocVector(f[t], a.length);
-      M(c, n), a.forEach(s(c)), y.wrap(c).setNames(o), super(new E(c));
-    } finally {
-      D(n.n);
-    }
-  }
-  get length() {
-    return l._LENGTH(this.ptr);
-  }
-  get(e) {
-    return super.get(e);
-  }
-  subset(e) {
-    return super.subset(e);
-  }
-  getDollar(e) {
-    throw new Error("$ operator is invalid for atomic vectors");
-  }
-  detectMissing() {
-    let e = { n: 0 };
-    try {
-      let t = l._Rf_lang2(new Q("is.na").ptr, this.ptr);
-      M(t, e);
-      let s = le.wrap(et(t, k.baseEnv));
-      M(s, e);
-      let n = s.toTypedArray();
-      return Array.from(n).map((o) => !!o);
-    } finally {
-      D(e.n);
-    }
-  }
-  toArray() {
-    let e = this.toTypedArray();
-    return this.detectMissing().map((t, s) => t ? null : e[s]);
-  }
-  toObject({ allowDuplicateKey: e = true, allowEmptyKey: t = false } = {}) {
-    let s = this.entries(), n = s.map(([o, a]) => o);
-    if (!e && new Set(n).size !== n.length)
-      throw new Error("Duplicate key when converting atomic vector without allowDuplicateKey enabled");
-    if (!t && n.some((o) => !o))
-      throw new Error("Empty or null key when converting atomic vector without allowEmptyKey enabled");
-    return Object.fromEntries(s.filter((o, a) => s.findIndex((c) => c[0] === o[0]) === a));
-  }
-  entries() {
-    let e = this.toArray(), t = this.names();
-    return e.map((s, n) => [t ? t[n] : null, s]);
-  }
-  toJs() {
-    return { type: this.type(), names: this.names(), values: this.toArray() };
-  }
-};
-var Gt;
-var Fr = class extends Z {
-  constructor(e) {
-    super(e, "logical", i(Fr, Gt));
-  }
-  getBoolean(e) {
-    return this.get(e).toArray()[0];
-  }
-  toBoolean() {
-    if (this.length !== 1)
-      throw new Error("Can't convert atomic vector of length > 1 to a scalar JS value");
-    let e = this.getBoolean(1);
-    if (e === null)
-      throw new Error("Can't convert missing value `NA` to a JS boolean");
-    return e;
-  }
-  toTypedArray() {
-    return new Int32Array(l.HEAP32.subarray(l._LOGICAL(this.ptr) / 4, l._LOGICAL(this.ptr) / 4 + this.length));
-  }
-  toArray() {
-    let e = this.toTypedArray();
-    return this.detectMissing().map((t, s) => t ? null : !!e[s]);
-  }
-};
-var le = Fr;
-Gt = /* @__PURE__ */ new WeakMap(), u(le, Gt, (e) => {
-  let t = l._LOGICAL(e), s = l.getValue(l._R_NaInt, "i32");
-  return (n, o) => {
-    l.setValue(t + 4 * o, n === null ? s : !!n, "i32");
-  };
-});
-var Kt;
-var Br = class extends Z {
-  constructor(e) {
-    super(e, "integer", i(Br, Kt));
-  }
-  getNumber(e) {
-    return this.get(e).toArray()[0];
-  }
-  toNumber() {
-    if (this.length !== 1)
-      throw new Error("Can't convert atomic vector of length > 1 to a scalar JS value");
-    let e = this.getNumber(1);
-    if (e === null)
-      throw new Error("Can't convert missing value `NA` to a JS number");
-    return e;
-  }
-  toTypedArray() {
-    return new Int32Array(l.HEAP32.subarray(l._INTEGER(this.ptr) / 4, l._INTEGER(this.ptr) / 4 + this.length));
-  }
-};
-var zt = Br;
-Kt = /* @__PURE__ */ new WeakMap(), u(zt, Kt, (e) => {
-  let t = l._INTEGER(e), s = l.getValue(l._R_NaInt, "i32");
-  return (n, o) => {
-    l.setValue(t + 4 * o, n === null ? s : Math.round(Number(n)), "i32");
-  };
-});
-var Qt;
-var qr = class extends Z {
-  constructor(e) {
-    super(e, "double", i(qr, Qt));
-  }
-  getNumber(e) {
-    return this.get(e).toArray()[0];
-  }
-  toNumber() {
-    if (this.length !== 1)
-      throw new Error("Can't convert atomic vector of length > 1 to a scalar JS value");
-    let e = this.getNumber(1);
-    if (e === null)
-      throw new Error("Can't convert missing value `NA` to a JS number");
-    return e;
-  }
-  toTypedArray() {
-    return new Float64Array(l.HEAPF64.subarray(l._REAL(this.ptr) / 8, l._REAL(this.ptr) / 8 + this.length));
-  }
-};
-var rt = qr;
-Qt = /* @__PURE__ */ new WeakMap(), u(rt, Qt, (e) => {
-  let t = l._REAL(e), s = l.getValue(l._R_NaReal, "double");
-  return (n, o) => {
-    l.setValue(t + 8 * o, n === null ? s : n, "double");
-  };
-});
-var Zt;
-var Vr = class extends Z {
-  constructor(e) {
-    super(e, "complex", i(Vr, Zt));
-  }
-  getComplex(e) {
-    return this.get(e).toArray()[0];
-  }
-  toComplex() {
-    if (this.length !== 1)
-      throw new Error("Can't convert atomic vector of length > 1 to a scalar JS value");
-    let e = this.getComplex(1);
-    if (e === null)
-      throw new Error("Can't convert missing value `NA` to a JS object");
-    return e;
-  }
-  toTypedArray() {
-    return new Float64Array(l.HEAPF64.subarray(l._COMPLEX(this.ptr) / 8, l._COMPLEX(this.ptr) / 8 + 2 * this.length));
-  }
-  toArray() {
-    let e = this.toTypedArray();
-    return this.detectMissing().map((t, s) => t ? null : { re: e[2 * s], im: e[2 * s + 1] });
-  }
-};
-var st = Vr;
-Zt = /* @__PURE__ */ new WeakMap(), u(st, Zt, (e) => {
-  let t = l._COMPLEX(e), s = l.getValue(l._R_NaReal, "double");
-  return (n, o) => {
-    l.setValue(t + 8 * (2 * o), n === null ? s : n.re, "double"), l.setValue(t + 8 * (2 * o + 1), n === null ? s : n.im, "double");
-  };
-});
-var Yt;
-var Hr = class extends Z {
-  constructor(e) {
-    super(e, "character", i(Hr, Yt));
-  }
-  getString(e) {
-    return this.get(e).toArray()[0];
-  }
-  toString() {
-    if (this.length !== 1)
-      throw new Error("Can't convert atomic vector of length > 1 to a scalar JS value");
-    let e = this.getString(1);
-    if (e === null)
-      throw new Error("Can't convert missing value `NA` to a JS string");
-    return e;
-  }
-  toTypedArray() {
-    return new Uint32Array(l.HEAPU32.subarray(l._STRING_PTR(this.ptr) / 4, l._STRING_PTR(this.ptr) / 4 + this.length));
-  }
-  toArray() {
-    return this.detectMissing().map((e, t) => e ? null : l.UTF8ToString(l._R_CHAR(l._STRING_ELT(this.ptr, t))));
-  }
-};
-var K = Hr;
-Yt = /* @__PURE__ */ new WeakMap(), u(K, Yt, (e) => (t, s) => {
-  t === null ? l._SET_STRING_ELT(e, s, k.naString.ptr) : l._SET_STRING_ELT(e, s, new nt(t).ptr);
-});
-var er;
-var Jr = class extends Z {
-  constructor(e) {
-    super(e, "raw", i(Jr, er));
-  }
-  getNumber(e) {
-    return this.get(e).toArray()[0];
-  }
-  toNumber() {
-    if (this.length !== 1)
-      throw new Error("Can't convert atomic vector of length > 1 to a scalar JS value");
-    let e = this.getNumber(1);
-    if (e === null)
-      throw new Error("Can't convert missing value `NA` to a JS number");
-    return e;
-  }
-  toTypedArray() {
-    return new Uint8Array(l.HEAPU8.subarray(l._RAW(this.ptr), l._RAW(this.ptr) + this.length));
-  }
-};
-var Xt = Jr;
-er = /* @__PURE__ */ new WeakMap(), u(Xt, er, (e) => {
-  let t = l._RAW(e);
-  return (s, n) => {
-    l.setValue(t + n, Number(s), "i8");
-  };
-});
-function ot(r) {
-  return Cr(r) ? r : Array.isArray(r) || ArrayBuffer.isView(r) ? { names: null, values: r } : r && typeof r == "object" && !Nr(r) ? { names: Object.keys(r), values: Object.values(r) } : { names: null, values: [r] };
-}
-function Vs(r) {
-  let e = { [f.null]: $t, [f.symbol]: Q, [f.pairlist]: We, [f.closure]: ke, [f.environment]: tt, [f.call]: ce, [f.special]: ke, [f.builtin]: ke, [f.string]: nt, [f.logical]: le, [f.integer]: zt, [f.double]: rt, [f.complex]: st, [f.character]: K, [f.list]: jr, [f.raw]: Xt, [f.function]: ke };
-  return r in e ? e[r] : y;
-}
-function to(r) {
-  return r instanceof y;
-}
-var k;
-function so() {
-}
-function no(r, e) {
+function po(s, e) {
   return async function* () {
-    let t = { type: "callRObjectMethod", data: { payload: e._payload, prop: "getPropertyValue", args: [{ payloadType: "raw", obj: "length" }], shelter: void 0 } }, s = await r.request(t);
-    if (typeof s.obj != "number")
-      throw new A("Cannot iterate over object, unexpected type for length property.");
-    for (let n = 1; n <= s.obj; n++)
+    let t = { type: "callRObjectMethod", data: { payload: e._payload, prop: "getPropertyValue", args: [{ payloadType: "raw", obj: "length" }], shelter: void 0 } }, r = await s.request(t);
+    if (typeof r.obj != "number")
+      throw new I("Cannot iterate over object, unexpected type for length property.");
+    for (let n = 1; n <= r.obj; n++)
       yield e.get(n);
   };
 }
-function Hs(r, e, t) {
-  return async (...s) => {
-    let n = s.map((c) => w(c) ? c._payload : { obj: C(c, w, (p) => p._payload), payloadType: "raw" }), o = { type: "callRObjectMethod", data: { payload: t, prop: e, args: n } }, a = await r.request(o);
-    switch (a.payloadType) {
+function Zs(s, e, t) {
+  return async (...r) => {
+    let n = r.map((l) => v(l) ? l._payload : { obj: V(l, v, (p2) => p2._payload), payloadType: "raw" }), o = { type: "callRObjectMethod", data: { payload: t, prop: e, args: n } }, i = await s.request(o);
+    switch (i.payloadType) {
       case "ptr":
-        return Y(r, a);
+        return ne(s, i);
       case "raw":
-        return C(a, At, (p, v) => Y(v, p), r).obj;
+        return V(i, $t, (p2, D2) => ne(D2, p2), s).obj;
     }
   };
 }
-async function oo(r, e, t, s) {
-  let n = { type: "newRObject", data: { objType: e, obj: C(s, w, (a) => a._payload), shelter: t } }, o = await r.request(n);
+async function ho(s, e, t, ...r) {
+  let n = { type: "newRObject", data: { objType: e, args: V(r, v, (i) => i._payload), shelter: t } }, o = await s.request(n);
   switch (o.payloadType) {
     case "raw":
-      throw new X("Unexpected raw payload type returned from newRObject");
+      throw new Z("Unexpected raw payload type returned from newRObject");
     case "ptr":
-      return Y(r, o);
+      return ne(s, o);
   }
 }
-function Y(r, e) {
-  var s;
-  let t = new Proxy((s = e.obj.methods) != null && s.includes("exec") ? Object.assign(so, { ...e }) : e, { get: (n, o) => {
-    var a;
+function ne(s, e) {
+  var r;
+  let t = new Proxy((r = e.obj.methods) != null && r.includes("exec") ? Object.assign(uo, { ...e }) : e, { get: (n, o) => {
+    var i;
     if (o === "_payload")
       return e;
     if (o === Symbol.asyncIterator)
-      return no(r, t);
-    if ((a = e.obj.methods) != null && a.includes(o.toString()))
-      return Hs(r, o.toString(), e);
-  }, apply: async (n, o, a) => {
-    let c = await Y(r, e).exec(...a);
-    return Ls(c) ? c : c.toJs();
+      return po(s, t);
+    if ((i = e.obj.methods) != null && i.includes(o.toString()))
+      return Zs(s, o.toString(), e);
+  }, apply: async (n, o, i) => {
+    let l = await ne(s, e).exec(...i);
+    return Qs(l) ? l : l.toJs();
   } });
   return t;
 }
-function W(r, e, t) {
-  return new Proxy(y, { construct: (s, n) => oo(r, t, e, ...n), get: (s, n) => Hs(r, n.toString()) });
+function W(s, e, t) {
+  return new Proxy(y, { construct: (r, n) => ho(s, t, e, ...n), get: (r, n) => Zs(s, n.toString()) });
 }
-var it;
-var at;
-var lt;
-var ct;
-var ut;
-var tr;
-var rr;
-var sr;
-var nr;
-var or;
+var yt;
+var ft;
+var Rt;
+var mt;
+var gt;
+var ar;
 var ir;
-var Js;
-it = /* @__PURE__ */ new WeakMap(), at = /* @__PURE__ */ new WeakMap(), lt = /* @__PURE__ */ new WeakMap(), ct = /* @__PURE__ */ new WeakMap(), ut = /* @__PURE__ */ new WeakMap(), tr = /* @__PURE__ */ new WeakMap(), rr = /* @__PURE__ */ new WeakMap(), sr = /* @__PURE__ */ new WeakMap(), nr = /* @__PURE__ */ new WeakMap(), or = /* @__PURE__ */ new WeakMap(), ir = /* @__PURE__ */ new WeakSet(), Js = async function() {
+var lr;
+var cr;
+var ur;
+var pr;
+var Ys;
+yt = /* @__PURE__ */ new WeakMap(), ft = /* @__PURE__ */ new WeakMap(), Rt = /* @__PURE__ */ new WeakMap(), mt = /* @__PURE__ */ new WeakMap(), gt = /* @__PURE__ */ new WeakMap(), ar = /* @__PURE__ */ new WeakMap(), ir = /* @__PURE__ */ new WeakMap(), lr = /* @__PURE__ */ new WeakMap(), cr = /* @__PURE__ */ new WeakMap(), ur = /* @__PURE__ */ new WeakMap(), pr = /* @__PURE__ */ new WeakSet(), Ys = async function() {
   for (; ; ) {
     let e = await this.webR.read();
     switch (e.type) {
       case "stdout":
-        i(this, it).call(this, e.data);
+        a(this, yt).call(this, e.data);
         break;
       case "stderr":
-        i(this, at).call(this, e.data);
+        a(this, ft).call(this, e.data);
         break;
       case "prompt":
-        i(this, lt).call(this, e.data);
+        a(this, Rt).call(this, e.data);
         break;
       case "canvas":
-        e.data.event === "canvasImage" ? i(this, ct).call(this, e.data.image) : e.data.event === "canvasNewPage" && i(this, ut).call(this);
+        e.data.event === "canvasImage" ? a(this, mt).call(this, e.data.image) : e.data.event === "canvasNewPage" && a(this, gt).call(this);
         break;
       case "closed":
         return;
@@ -31812,75 +31951,82 @@ it = /* @__PURE__ */ new WeakMap(), at = /* @__PURE__ */ new WeakMap(), lt = /* 
     }
   }
 };
-var io = { FONTCONFIG_PATH: "/etc/fonts", R_HOME: "/usr/lib/R", R_ENABLE_JIT: "0" };
-var zs = { RArgs: [], REnv: io, baseUrl: Cs, serviceWorkerUrl: "", repoUrl: Ns, homedir: "/home/web_user", interactive: true, channelType: O.Automatic, createLazyFilesystem: true };
-var g;
-var pt;
-var cr;
-var Xs;
-var ar = class {
+var yo = { FONTCONFIG_PATH: "/etc/fonts", R_HOME: "/usr/lib/R", R_ENABLE_JIT: "0", WEBR: "1", WEBR_VERSION: Kr };
+var en = { RArgs: [], REnv: yo, baseUrl: $s, serviceWorkerUrl: "", repoUrl: Ks, homedir: "/home/web_user", interactive: true, channelType: O.Automatic, createLazyFilesystem: true };
+var R;
+var bt;
+var yr;
+var tn;
+var dr = class {
   constructor(e = {}) {
-    u(this, cr);
-    u(this, g, void 0);
-    u(this, pt, void 0);
+    u(this, yr);
+    u(this, R, void 0);
+    u(this, bt, void 0);
+    this.version = Kr;
     this.FS = { lookupPath: async (e2) => {
       let t2 = { type: "lookupPath", data: { path: e2 } };
-      return (await i(this, g).request(t2)).obj;
+      return (await a(this, R).request(t2)).obj;
     }, mkdir: async (e2) => {
       let t2 = { type: "mkdir", data: { path: e2 } };
-      return (await i(this, g).request(t2)).obj;
-    }, mount: async (e2, t2, s) => {
-      let n = { type: "mount", data: { type: e2, options: t2, mountpoint: s } };
-      await i(this, g).request(n);
+      return (await a(this, R).request(t2)).obj;
+    }, mount: async (e2, t2, r) => {
+      let n = [];
+      "blobs" in t2 && t2.blobs && (n = [...n, ...t2.blobs.map((i) => i.data instanceof Blob ? i.data.arrayBuffer().then((l) => {
+        i.data = new Uint8Array(l);
+      }) : Promise.resolve())]), "packages" in t2 && t2.packages && (n = [...n, ...t2.packages.map((i) => i.blob instanceof Blob ? i.blob.arrayBuffer().then((l) => {
+        i.blob = new Uint8Array(l);
+      }) : Promise.resolve())]), await Promise.all(n);
+      let o = { type: "mount", data: { type: e2, options: t2, mountpoint: r } };
+      await a(this, R).request(o);
+    }, syncfs: async (e2) => {
+      let t2 = { type: "syncfs", data: { populate: e2 } };
+      await a(this, R).request(t2);
     }, readFile: async (e2, t2) => {
-      let s = { type: "readFile", data: { path: e2, flags: t2 } };
-      return (await i(this, g).request(s)).obj;
+      let r = { type: "readFile", data: { path: e2, flags: t2 } };
+      return (await a(this, R).request(r)).obj;
     }, rmdir: async (e2) => {
       let t2 = { type: "rmdir", data: { path: e2 } };
-      await i(this, g).request(t2);
-    }, writeFile: async (e2, t2, s) => {
-      let n = { type: "writeFile", data: { path: e2, data: t2, flags: s } };
-      await i(this, g).request(n);
+      await a(this, R).request(t2);
+    }, writeFile: async (e2, t2, r) => {
+      let n = { type: "writeFile", data: { path: e2, data: t2, flags: r } };
+      await a(this, R).request(n);
     }, unlink: async (e2) => {
       let t2 = { type: "unlink", data: { path: e2 } };
-      await i(this, g).request(t2);
+      await a(this, R).request(t2);
     }, unmount: async (e2) => {
       let t2 = { type: "unmount", data: { path: e2 } };
-      await i(this, g).request(t2);
+      await a(this, R).request(t2);
     } };
-    let t = { ...zs, ...e, REnv: { ...zs.REnv, ...e.REnv } };
-    d(this, g, Us(t)), this.objs = {}, this.Shelter = ao(i(this, g)), d(this, pt, i(this, g).initialised.then(async () => {
-      this.globalShelter = await new this.Shelter(), this.RObject = this.globalShelter.RObject, this.RLogical = this.globalShelter.RLogical, this.RInteger = this.globalShelter.RInteger, this.RDouble = this.globalShelter.RDouble, this.RComplex = this.globalShelter.RComplex, this.RCharacter = this.globalShelter.RCharacter, this.RRaw = this.globalShelter.RRaw, this.RList = this.globalShelter.RList, this.RPairlist = this.globalShelter.RPairlist, this.REnvironment = this.globalShelter.REnvironment, this.RSymbol = this.globalShelter.RSymbol, this.RString = this.globalShelter.RString, this.RCall = this.globalShelter.RCall, this.objs = { baseEnv: await this.RObject.getPersistentObject("baseEnv"), globalEnv: await this.RObject.getPersistentObject("globalEnv"), null: await this.RObject.getPersistentObject("null"), true: await this.RObject.getPersistentObject("true"), false: await this.RObject.getPersistentObject("false"), na: await this.RObject.getPersistentObject("na") }, x(this, cr, Xs).call(this);
+    let t = { ...en, ...e, REnv: { ...en.REnv, ...e.REnv } };
+    d(this, R, Gs(t)), this.objs = {}, this.Shelter = fo(a(this, R)), d(this, bt, a(this, R).initialised.then(async () => {
+      this.globalShelter = await new this.Shelter(), this.RObject = this.globalShelter.RObject, this.RLogical = this.globalShelter.RLogical, this.RInteger = this.globalShelter.RInteger, this.RDouble = this.globalShelter.RDouble, this.RComplex = this.globalShelter.RComplex, this.RCharacter = this.globalShelter.RCharacter, this.RRaw = this.globalShelter.RRaw, this.RList = this.globalShelter.RList, this.RDataFrame = this.globalShelter.RDataFrame, this.RPairlist = this.globalShelter.RPairlist, this.REnvironment = this.globalShelter.REnvironment, this.RSymbol = this.globalShelter.RSymbol, this.RString = this.globalShelter.RString, this.RCall = this.globalShelter.RCall, this.objs = { baseEnv: await this.RObject.getPersistentObject("baseEnv"), globalEnv: await this.RObject.getPersistentObject("globalEnv"), null: await this.RObject.getPersistentObject("null"), true: await this.RObject.getPersistentObject("true"), false: await this.RObject.getPersistentObject("false"), na: await this.RObject.getPersistentObject("na") }, E(this, yr, tn).call(this);
     }));
   }
   async init() {
-    return i(this, pt);
+    return a(this, bt);
   }
   close() {
-    i(this, g).close();
+    a(this, R).close();
   }
   async read() {
-    return await i(this, g).read();
+    return await a(this, R).read();
   }
   async flush() {
-    return await i(this, g).flush();
+    return await a(this, R).flush();
   }
   write(e) {
-    i(this, g).write(e);
+    a(this, R).write(e);
   }
   writeConsole(e) {
     this.write({ type: "stdin", data: e + `
 ` });
   }
   interrupt() {
-    i(this, g).interrupt();
+    a(this, R).interrupt();
   }
   async installPackages(e, t) {
-    let s = Object.assign({ quiet: false, mount: true }, t);
-    for (let n of e) {
-      let o = { type: "installPackage", data: { name: n, options: s } };
-      await i(this, g).request(o);
-    }
+    let r = Object.assign({ quiet: false, mount: true }, t), n = { type: "installPackages", data: { name: e, options: r } };
+    await a(this, R).request(n);
   }
   async destroy(e) {
     await this.globalShelter.destroy(e);
@@ -31900,27 +32046,27 @@ var ar = class {
   async evalRString(e, t) {
     return this.evalRRaw(e, "string", t);
   }
-  async evalRRaw(e, t, s = {}) {
-    let n = C(s, w, (c) => c._payload), o = { type: "evalRRaw", data: { code: e, options: n, outputType: t } }, a = await i(this, g).request(o);
-    switch (a.payloadType) {
+  async evalRRaw(e, t, r = {}) {
+    let n = V(r, v, (l) => l._payload), o = { type: "evalRRaw", data: { code: e, options: n, outputType: t } }, i = await a(this, R).request(o);
+    switch (i.payloadType) {
       case "raw":
-        return a.obj;
+        return i.obj;
       case "ptr":
-        throw new X("Unexpected ptr payload type returned from evalRVoid");
+        throw new Z("Unexpected ptr payload type returned from evalRVoid");
     }
   }
   async invokeWasmFunction(e, ...t) {
-    let s = { type: "invokeWasmFunction", data: { ptr: e, args: t } };
-    return (await i(this, g).request(s)).obj;
+    let r = { type: "invokeWasmFunction", data: { ptr: e, args: t } };
+    return (await a(this, R).request(r)).obj;
   }
 };
-g = /* @__PURE__ */ new WeakMap(), pt = /* @__PURE__ */ new WeakMap(), cr = /* @__PURE__ */ new WeakSet(), Xs = async function() {
+R = /* @__PURE__ */ new WeakMap(), bt = /* @__PURE__ */ new WeakMap(), yr = /* @__PURE__ */ new WeakSet(), tn = async function() {
   for (; ; ) {
-    let e = await i(this, g).readSystem();
+    let e = await a(this, R).readSystem();
     switch (e.type) {
       case "setTimeoutWasm":
-        setTimeout((t, s) => {
-          this.invokeWasmFunction(t, ...s);
+        setTimeout((t, r) => {
+          this.invokeWasmFunction(t, ...r);
         }, e.data.delay, e.data.ptr, e.data.args);
         break;
       case "console.log":
@@ -31932,66 +32078,69 @@ g = /* @__PURE__ */ new WeakMap(), pt = /* @__PURE__ */ new WeakMap(), cr = /* @
       case "console.error":
         console.error(e.data);
         break;
+      case "close":
+        a(this, R).close();
+        break;
       default:
-        throw new A("Unknown system message type `" + e.type + "`");
+        throw new I("Unknown system message type `" + e.type + "`");
     }
   }
 };
-var b;
-var R;
-var dt;
-var lr = class {
+var g;
+var f;
+var wt;
+var hr = class {
   constructor(e) {
-    u(this, b, "");
-    u(this, R, void 0);
-    u(this, dt, false);
-    d(this, R, e);
+    u(this, g, "");
+    u(this, f, void 0);
+    u(this, wt, false);
+    d(this, f, e);
   }
   async init() {
-    if (i(this, dt))
+    if (a(this, wt))
       return;
-    let e = { type: "newShelter" }, t = await i(this, R).request(e);
-    d(this, b, t.obj), this.RObject = W(i(this, R), i(this, b), "object"), this.RLogical = W(i(this, R), i(this, b), "logical"), this.RInteger = W(i(this, R), i(this, b), "integer"), this.RDouble = W(i(this, R), i(this, b), "double"), this.RComplex = W(i(this, R), i(this, b), "complex"), this.RCharacter = W(i(this, R), i(this, b), "character"), this.RRaw = W(i(this, R), i(this, b), "raw"), this.RList = W(i(this, R), i(this, b), "list"), this.RPairlist = W(i(this, R), i(this, b), "pairlist"), this.REnvironment = W(i(this, R), i(this, b), "environment"), this.RSymbol = W(i(this, R), i(this, b), "symbol"), this.RString = W(i(this, R), i(this, b), "string"), this.RCall = W(i(this, R), i(this, b), "call"), d(this, dt, true);
+    let e = { type: "newShelter" }, t = await a(this, f).request(e);
+    d(this, g, t.obj), this.RObject = W(a(this, f), a(this, g), "object"), this.RLogical = W(a(this, f), a(this, g), "logical"), this.RInteger = W(a(this, f), a(this, g), "integer"), this.RDouble = W(a(this, f), a(this, g), "double"), this.RComplex = W(a(this, f), a(this, g), "complex"), this.RCharacter = W(a(this, f), a(this, g), "character"), this.RRaw = W(a(this, f), a(this, g), "raw"), this.RList = W(a(this, f), a(this, g), "list"), this.RDataFrame = W(a(this, f), a(this, g), "dataframe"), this.RPairlist = W(a(this, f), a(this, g), "pairlist"), this.REnvironment = W(a(this, f), a(this, g), "environment"), this.RSymbol = W(a(this, f), a(this, g), "symbol"), this.RString = W(a(this, f), a(this, g), "string"), this.RCall = W(a(this, f), a(this, g), "call"), d(this, wt, true);
   }
   async purge() {
-    let e = { type: "shelterPurge", data: i(this, b) };
-    await i(this, R).request(e);
+    let e = { type: "shelterPurge", data: a(this, g) };
+    await a(this, f).request(e);
   }
   async destroy(e) {
-    let t = { type: "shelterDestroy", data: { id: i(this, b), obj: e._payload } };
-    await i(this, R).request(t);
+    let t = { type: "shelterDestroy", data: { id: a(this, g), obj: e._payload } };
+    await a(this, f).request(t);
   }
   async size() {
-    let e = { type: "shelterSize", data: i(this, b) };
-    return (await i(this, R).request(e)).obj;
+    let e = { type: "shelterSize", data: a(this, g) };
+    return (await a(this, f).request(e)).obj;
   }
   async evalR(e, t = {}) {
-    let s = C(t, w, (a) => a._payload), n = { type: "evalR", data: { code: e, options: s, shelter: i(this, b) } }, o = await i(this, R).request(n);
+    let r = V(t, v, (i) => i._payload), n = { type: "evalR", data: { code: e, options: r, shelter: a(this, g) } }, o = await a(this, f).request(n);
     switch (o.payloadType) {
       case "raw":
-        throw new X("Unexpected payload type returned from evalR");
+        throw new Z("Unexpected payload type returned from evalR");
       default:
-        return Y(i(this, R), o);
+        return ne(a(this, f), o);
     }
   }
   async captureR(e, t = {}) {
-    let s = C(t, w, (a) => a._payload), n = { type: "captureR", data: { code: e, options: s, shelter: i(this, b) } }, o = await i(this, R).request(n);
+    let r = V(t, v, (i) => i._payload), n = { type: "captureR", data: { code: e, options: r, shelter: a(this, g) } }, o = await a(this, f).request(n);
     switch (o.payloadType) {
       case "ptr":
-        throw new X("Unexpected payload type returned from evalR");
+        throw new Z("Unexpected payload type returned from evalR");
       case "raw": {
-        let a = o.obj, c = Y(i(this, R), a.result), p = a.output;
-        for (let v = 0; v < p.length; ++v)
-          p[v].type !== "stdout" && p[v].type !== "stderr" && (p[v].data = Y(i(this, R), p[v].data));
-        return { result: c, output: p };
+        let i = o.obj, l = ne(a(this, f), i.result), p2 = i.output, D2 = i.images;
+        for (let b2 = 0; b2 < p2.length; ++b2)
+          p2[b2].type !== "stdout" && p2[b2].type !== "stderr" && (p2[b2].data = ne(a(this, f), p2[b2].data));
+        return { result: l, output: p2, images: D2 };
       }
     }
   }
 };
-b = /* @__PURE__ */ new WeakMap(), R = /* @__PURE__ */ new WeakMap(), dt = /* @__PURE__ */ new WeakMap();
-function ao(r) {
-  return new Proxy(lr, { construct: async () => {
-    let e = new lr(r);
+g = /* @__PURE__ */ new WeakMap(), f = /* @__PURE__ */ new WeakMap(), wt = /* @__PURE__ */ new WeakMap();
+function fo(s) {
+  return new Proxy(hr, { construct: async () => {
+    let e = new hr(s);
     return await e.init(), e;
   } });
 }
@@ -32068,12 +32217,12 @@ async function makeHttpuvRequest(scope, appName, clientPort, webRProxy) {
     const body = event.body.type === "raw" ? new Uint8Array(event.body.values) : utf8Encode.encode(event.body.values[0]);
     const headers = Object.assign(
       {
-        "cross-origin-embedder-policy": "require-corp",
+        "cross-origin-embedder-policy": "credentialless",
         "cross-origin-resource-policy": "cross-origin"
       },
       Object.fromEntries(
-        [...Array(event.headers.names.length).keys()].map((i2) => {
-          return [event.headers.names[i2], event.headers.values[i2].values[0]];
+        [...Array(event.headers.names.length).keys()].map((i) => {
+          return [event.headers.names[i], event.headers.values[i].values[0]];
         })
       )
     );
@@ -32103,7 +32252,7 @@ async function handleHttpuvRequests(scope, appName, webRProxy, fromClient, toCli
     }
     if (!request.more_body) {
       try {
-        const bytes = await new shelter.RRaw(Array.from(body));
+        const bytes = await new shelter.RRaw(body);
         const env = await new shelter.REnvironment({ bytes, appName });
         const httpuvResp = await webRProxy.webR.evalR(
           `
@@ -32130,7 +32279,7 @@ async function handleHttpuvRequests(scope, appName, webRProxy, fromClient, toCli
         `,
           { env, captureConditions: false, captureStreams: false }
         );
-        if (!ua(httpuvResp)) {
+        if (!Zi(httpuvResp)) {
           const type = await httpuvResp.type();
           throw new Error(
             `Unexpected response type: "${type}", expected "list".`
@@ -32143,7 +32292,7 @@ async function handleHttpuvRequests(scope, appName, webRProxy, fromClient, toCli
           if (file) {
             const filename = await file.toString();
             const content = await webRProxy.webR.FS.readFile(filename);
-            const raw = await new shelter.RRaw(Array.from(content));
+            const raw = await new shelter.RRaw(content);
             resp = await httpuvResp.set("body", raw);
           }
         }
@@ -32289,12 +32438,12 @@ async function connect2(path, conn, asgiFunc) {
     }
   }
   conn.addEventListener("message", (e) => {
-    const me2 = e;
+    const me3 = e;
     const event = { type: "websocket.receive" };
-    if (typeof me2.data === "string") {
-      event.text = me2.data;
+    if (typeof me3.data === "string") {
+      event.text = me3.data;
     } else {
-      event.bytes = me2.data;
+      event.bytes = me3.data;
     }
     fromClientQueue.enqueue(event);
   });
@@ -32333,9 +32482,9 @@ async function openChannelHttpuv(path, appName, clientPort, webRProxy) {
   const fromClientQueue = new AwaitableQueue();
   fromClientQueue.enqueue({ type: "websocket.connect" });
   conn.addEventListener("message", (e) => {
-    const me2 = e;
+    const me3 = e;
     const event = { type: "websocket.receive" };
-    event.text = me2.data;
+    event.text = me3.data;
     fromClientQueue.enqueue(event);
   });
   conn.addEventListener("close", (e) => {
@@ -32415,439 +32564,452 @@ function postableErrorObjectToError(errObj) {
 }
 
 // src/pyodide/pyodide.js
-var StackFrame;
-var FIREFOX_SAFARI_STACK_REGEXP;
-var CHROME_IE_STACK_REGEXP;
-var SAFARI_NATIVE_CODE_REGEXP;
-var errorStackParser = { exports: {} };
-var stackframe = { exports: {} };
-stackframe.exports = function() {
-  function _isNumber(n) {
-    return !isNaN(parseFloat(n)) && isFinite(n);
-  }
-  function _capitalize(str) {
-    return str.charAt(0).toUpperCase() + str.substring(1);
-  }
-  function _getter(p) {
-    return function() {
-      return this[p];
-    };
-  }
-  var booleanProps = ["isConstructor", "isEval", "isNative", "isToplevel"], numericProps = ["columnNumber", "lineNumber"], stringProps = ["fileName", "functionName", "source"], arrayProps = ["args"], objectProps = ["evalOrigin"], props = booleanProps.concat(numericProps, stringProps, arrayProps, objectProps);
-  function StackFrame2(obj) {
-    if (obj)
-      for (var i3 = 0; i3 < props.length; i3++)
-        void 0 !== obj[props[i3]] && this["set" + _capitalize(props[i3])](obj[props[i3]]);
-  }
-  StackFrame2.prototype = { getArgs: function() {
-    return this.args;
-  }, setArgs: function(v) {
-    if ("[object Array]" !== Object.prototype.toString.call(v))
-      throw new TypeError("Args must be an Array");
-    this.args = v;
-  }, getEvalOrigin: function() {
-    return this.evalOrigin;
-  }, setEvalOrigin: function(v) {
-    if (v instanceof StackFrame2)
-      this.evalOrigin = v;
-    else {
-      if (!(v instanceof Object))
-        throw new TypeError("Eval Origin must be an Object or StackFrame");
-      this.evalOrigin = new StackFrame2(v);
-    }
-  }, toString: function() {
-    var fileName = this.getFileName() || "", lineNumber = this.getLineNumber() || "", columnNumber = this.getColumnNumber() || "", functionName = this.getFunctionName() || "";
-    return this.getIsEval() ? fileName ? "[eval] (" + fileName + ":" + lineNumber + ":" + columnNumber + ")" : "[eval]:" + lineNumber + ":" + columnNumber : functionName ? functionName + " (" + fileName + ":" + lineNumber + ":" + columnNumber + ")" : fileName + ":" + lineNumber + ":" + columnNumber;
-  } }, StackFrame2.fromString = function(str) {
-    var argsStartIndex = str.indexOf("("), argsEndIndex = str.lastIndexOf(")"), functionName = str.substring(0, argsStartIndex), args = str.substring(argsStartIndex + 1, argsEndIndex).split(","), locationString = str.substring(argsEndIndex + 1);
-    if (0 === locationString.indexOf("@"))
-      var parts = /@(.+?)(?::(\d+))?(?::(\d+))?$/.exec(locationString, ""), fileName = parts[1], lineNumber = parts[2], columnNumber = parts[3];
-    return new StackFrame2({ functionName, args: args || void 0, fileName, lineNumber: lineNumber || void 0, columnNumber: columnNumber || void 0 });
-  };
-  for (var i2 = 0; i2 < booleanProps.length; i2++)
-    StackFrame2.prototype["get" + _capitalize(booleanProps[i2])] = _getter(booleanProps[i2]), StackFrame2.prototype["set" + _capitalize(booleanProps[i2])] = function(p) {
-      return function(v) {
-        this[p] = Boolean(v);
-      };
-    }(booleanProps[i2]);
-  for (var j = 0; j < numericProps.length; j++)
-    StackFrame2.prototype["get" + _capitalize(numericProps[j])] = _getter(numericProps[j]), StackFrame2.prototype["set" + _capitalize(numericProps[j])] = function(p) {
-      return function(v) {
-        if (!_isNumber(v))
-          throw new TypeError(p + " must be a Number");
-        this[p] = Number(v);
-      };
-    }(numericProps[j]);
-  for (var k2 = 0; k2 < stringProps.length; k2++)
-    StackFrame2.prototype["get" + _capitalize(stringProps[k2])] = _getter(stringProps[k2]), StackFrame2.prototype["set" + _capitalize(stringProps[k2])] = function(p) {
-      return function(v) {
-        this[p] = String(v);
-      };
-    }(stringProps[k2]);
-  return StackFrame2;
-}();
-var ErrorStackParser = errorStackParser.exports = (StackFrame = stackframe.exports, FIREFOX_SAFARI_STACK_REGEXP = /(^|@)\S+:\d+/, CHROME_IE_STACK_REGEXP = /^\s*at .*(\S+:\d+|\(native\))/m, SAFARI_NATIVE_CODE_REGEXP = /^(eval@)?(\[native code])?$/, { parse: function(error) {
-  if (void 0 !== error.stacktrace || void 0 !== error["opera#sourceloc"])
-    return this.parseOpera(error);
-  if (error.stack && error.stack.match(CHROME_IE_STACK_REGEXP))
-    return this.parseV8OrIE(error);
-  if (error.stack)
-    return this.parseFFOrSafari(error);
-  throw new Error("Cannot parse given Error object");
-}, extractLocation: function(urlLike) {
-  if (-1 === urlLike.indexOf(":"))
-    return [urlLike];
-  var parts = /(.+?)(?::(\d+))?(?::(\d+))?$/.exec(urlLike.replace(/[()]/g, ""));
-  return [parts[1], parts[2] || void 0, parts[3] || void 0];
-}, parseV8OrIE: function(error) {
-  return error.stack.split("\n").filter(function(line) {
-    return !!line.match(CHROME_IE_STACK_REGEXP);
-  }, this).map(function(line) {
-    line.indexOf("(eval ") > -1 && (line = line.replace(/eval code/g, "eval").replace(/(\(eval at [^()]*)|(,.*$)/g, ""));
-    var sanitizedLine = line.replace(/^\s+/, "").replace(/\(eval code/g, "(").replace(/^.*?\s+/, ""), location2 = sanitizedLine.match(/ (\(.+\)$)/);
-    sanitizedLine = location2 ? sanitizedLine.replace(location2[0], "") : sanitizedLine;
-    var locationParts = this.extractLocation(location2 ? location2[1] : sanitizedLine), functionName = location2 && sanitizedLine || void 0, fileName = ["eval", "<anonymous>"].indexOf(locationParts[0]) > -1 ? void 0 : locationParts[0];
-    return new StackFrame({ functionName, fileName, lineNumber: locationParts[1], columnNumber: locationParts[2], source: line });
-  }, this);
-}, parseFFOrSafari: function(error) {
-  return error.stack.split("\n").filter(function(line) {
-    return !line.match(SAFARI_NATIVE_CODE_REGEXP);
-  }, this).map(function(line) {
-    if (line.indexOf(" > eval") > -1 && (line = line.replace(/ line (\d+)(?: > eval line \d+)* > eval:\d+:\d+/g, ":$1")), -1 === line.indexOf("@") && -1 === line.indexOf(":"))
-      return new StackFrame({ functionName: line });
-    var functionNameRegex = /((.*".+"[^@]*)?[^@]*)(?:@)/, matches = line.match(functionNameRegex), functionName = matches && matches[1] ? matches[1] : void 0, locationParts = this.extractLocation(line.replace(functionNameRegex, ""));
-    return new StackFrame({ functionName, fileName: locationParts[0], lineNumber: locationParts[1], columnNumber: locationParts[2], source: line });
-  }, this);
-}, parseOpera: function(e) {
-  return !e.stacktrace || e.message.indexOf("\n") > -1 && e.message.split("\n").length > e.stacktrace.split("\n").length ? this.parseOpera9(e) : e.stack ? this.parseOpera11(e) : this.parseOpera10(e);
-}, parseOpera9: function(e) {
-  for (var lineRE = /Line (\d+).*script (?:in )?(\S+)/i, lines = e.message.split("\n"), result = [], i2 = 2, len = lines.length; i2 < len; i2 += 2) {
-    var match = lineRE.exec(lines[i2]);
-    match && result.push(new StackFrame({ fileName: match[2], lineNumber: match[1], source: lines[i2] }));
-  }
-  return result;
-}, parseOpera10: function(e) {
-  for (var lineRE = /Line (\d+).*script (?:in )?(\S+)(?:: In function (\S+))?$/i, lines = e.stacktrace.split("\n"), result = [], i2 = 0, len = lines.length; i2 < len; i2 += 2) {
-    var match = lineRE.exec(lines[i2]);
-    match && result.push(new StackFrame({ functionName: match[3] || void 0, fileName: match[2], lineNumber: match[1], source: lines[i2] }));
-  }
-  return result;
-}, parseOpera11: function(error) {
-  return error.stack.split("\n").filter(function(line) {
-    return !!line.match(FIREFOX_SAFARI_STACK_REGEXP) && !line.match(/^Error created at/);
-  }, this).map(function(line) {
-    var argsRaw, tokens = line.split("@"), locationParts = this.extractLocation(tokens.pop()), functionCall = tokens.shift() || "", functionName = functionCall.replace(/<anonymous function(: (\w+))?>/, "$2").replace(/\([^)]*\)/g, "") || void 0;
-    functionCall.match(/\(([^)]*)\)/) && (argsRaw = functionCall.replace(/^[^(]+\(([^)]*)\)$/, "$1"));
-    var args = void 0 === argsRaw || "[arguments not available]" === argsRaw ? void 0 : argsRaw.split(",");
-    return new StackFrame({ functionName, args, fileName: locationParts[0], lineNumber: locationParts[1], columnNumber: locationParts[2], source: line });
-  }, this);
-} });
-var IN_NODE = "undefined" != typeof process && process.release && "node" === process.release.name && void 0 === process.browser;
-var nodeUrlMod;
-var nodeFetch;
-var nodePath;
-var nodeVmMod;
-var nodeFsPromisesMod;
-var resolvePath;
-var pathSep;
-var loadBinaryFile;
-var loadScript;
-if (resolvePath = IN_NODE ? function(path, base) {
-  return nodePath.resolve(base || ".", path);
-} : function(path, base) {
-  return void 0 === base && (base = location), new URL(path, base).toString();
-}, IN_NODE || (pathSep = "/"), loadBinaryFile = IN_NODE ? async function(path, _file_sub_resource_hash) {
-  if (path.startsWith("file://") && (path = path.slice("file://".length)), path.includes("://")) {
-    let response = await nodeFetch(path);
-    if (!response.ok)
-      throw new Error(`Failed to load '${path}': request failed.`);
-    return new Uint8Array(await response.arrayBuffer());
-  }
-  {
-    const data = await nodeFsPromisesMod.readFile(path);
-    return new Uint8Array(data.buffer, data.byteOffset, data.byteLength);
-  }
-} : async function(path, subResourceHash) {
-  const url = new URL(path, location);
-  let options = subResourceHash ? { integrity: subResourceHash } : {}, response = await fetch(url, options);
-  if (!response.ok)
-    throw new Error(`Failed to load '${url}': request failed.`);
-  return new Uint8Array(await response.arrayBuffer());
-}, globalThis.document)
-  loadScript = async (url) => await import(
-    /* webpackIgnore: true */
-    url
-  );
-else if (globalThis.importScripts)
-  loadScript = async (url) => {
-    try {
-      globalThis.importScripts(url);
-    } catch (e) {
-      if (!(e instanceof TypeError))
-        throw e;
-      await import(
-        /* webpackIgnore: true */
-        url
-      );
-    }
-  };
-else {
-  if (!IN_NODE)
-    throw new Error("Cannot determine runtime environment");
-  loadScript = async function(url) {
-    url.startsWith("file://") && (url = url.slice("file://".length));
-    url.includes("://") ? nodeVmMod.runInThisContext(await (await nodeFetch(url)).text()) : await import(
-      /* webpackIgnore: true */
-      nodeUrlMod.pathToFileURL(url).href
-    );
+var Q = Object.defineProperty;
+var c2 = (e, t) => Q(e, "name", { value: t, configurable: true });
+var O2 = ((e) => typeof __require < "u" ? __require : typeof Proxy < "u" ? new Proxy(e, { get: (t, i) => (typeof __require < "u" ? __require : t)[i] }) : e)(function(e) {
+  if (typeof __require < "u")
+    return __require.apply(this, arguments);
+  throw new Error('Dynamic require of "' + e + '" is not supported');
+});
+function Z2(e) {
+  return !isNaN(parseFloat(e)) && isFinite(e);
+}
+c2(Z2, "_isNumber");
+function E2(e) {
+  return e.charAt(0).toUpperCase() + e.substring(1);
+}
+c2(E2, "_capitalize");
+function P2(e) {
+  return function() {
+    return this[e];
   };
 }
-function __values(o) {
-  var s = "function" == typeof Symbol && Symbol.iterator, m2 = s && o[s], i2 = 0;
-  if (m2)
-    return m2.call(o);
-  if (o && "number" == typeof o.length)
-    return { next: function() {
-      return o && i2 >= o.length && (o = void 0), { value: o && o[i2++], done: !o };
-    } };
-  throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
+c2(P2, "_getter");
+var w2 = ["isConstructor", "isEval", "isNative", "isToplevel"];
+var N2 = ["columnNumber", "lineNumber"];
+var _ = ["fileName", "functionName", "source"];
+var ee2 = ["args"];
+var te2 = ["evalOrigin"];
+var I2 = w2.concat(N2, _, ee2, te2);
+function p(e) {
+  if (e)
+    for (var t = 0; t < I2.length; t++)
+      e[I2[t]] !== void 0 && this["set" + E2(I2[t])](e[I2[t]]);
 }
-function __asyncValues(o) {
-  if (!Symbol.asyncIterator)
-    throw new TypeError("Symbol.asyncIterator is not defined.");
-  var i2, m2 = o[Symbol.asyncIterator];
-  return m2 ? m2.call(o) : (o = __values(o), i2 = {}, verb("next"), verb("throw"), verb("return"), i2[Symbol.asyncIterator] = function() {
-    return this;
-  }, i2);
-  function verb(n) {
-    i2[n] = o[n] && function(v) {
-      return new Promise(function(resolve, reject) {
-        (function(resolve2, reject2, d2, v2) {
-          Promise.resolve(v2).then(function(v3) {
-            resolve2({ value: v3, done: d2 });
-          }, reject2);
-        })(resolve, reject, (v = o[n](v)).done, v.value);
-      });
+c2(p, "StackFrame");
+p.prototype = { getArgs: function() {
+  return this.args;
+}, setArgs: function(e) {
+  if (Object.prototype.toString.call(e) !== "[object Array]")
+    throw new TypeError("Args must be an Array");
+  this.args = e;
+}, getEvalOrigin: function() {
+  return this.evalOrigin;
+}, setEvalOrigin: function(e) {
+  if (e instanceof p)
+    this.evalOrigin = e;
+  else if (e instanceof Object)
+    this.evalOrigin = new p(e);
+  else
+    throw new TypeError("Eval Origin must be an Object or StackFrame");
+}, toString: function() {
+  var e = this.getFileName() || "", t = this.getLineNumber() || "", i = this.getColumnNumber() || "", r = this.getFunctionName() || "";
+  return this.getIsEval() ? e ? "[eval] (" + e + ":" + t + ":" + i + ")" : "[eval]:" + t + ":" + i : r ? r + " (" + e + ":" + t + ":" + i + ")" : e + ":" + t + ":" + i;
+} };
+p.fromString = c2(function(t) {
+  var i = t.indexOf("("), r = t.lastIndexOf(")"), a2 = t.substring(0, i), n = t.substring(i + 1, r).split(","), o = t.substring(r + 1);
+  if (o.indexOf("@") === 0)
+    var s = /@(.+?)(?::(\d+))?(?::(\d+))?$/.exec(o, ""), l = s[1], d2 = s[2], u2 = s[3];
+  return new p({ functionName: a2, args: n || void 0, fileName: l, lineNumber: d2 || void 0, columnNumber: u2 || void 0 });
+}, "StackFrame$$fromString");
+for (b = 0; b < w2.length; b++)
+  p.prototype["get" + E2(w2[b])] = P2(w2[b]), p.prototype["set" + E2(w2[b])] = function(e) {
+    return function(t) {
+      this[e] = !!t;
     };
-  }
-}
-var getFsHandles = async (dirHandle) => {
-  const handles = [];
-  await async function collect(curDirHandle) {
-    var e_1, _a;
-    try {
-      for (var _c, _b = __asyncValues(curDirHandle.values()); !(_c = await _b.next()).done; ) {
-        const entry = _c.value;
-        handles.push(entry), "directory" === entry.kind && await collect(entry);
-      }
-    } catch (e_1_1) {
-      e_1 = { error: e_1_1 };
-    } finally {
-      try {
-        _c && !_c.done && (_a = _b.return) && await _a.call(_b);
-      } finally {
-        if (e_1)
-          throw e_1.error;
-      }
-    }
-  }(dirHandle);
-  const result = /* @__PURE__ */ new Map();
-  result.set(".", dirHandle);
-  for (const handle of handles) {
-    const relativePath = (await dirHandle.resolve(handle)).join("/");
-    result.set(relativePath, handle);
-  }
-  return result;
-};
-function finalizeBootstrap(API, config) {
-  API.runPythonInternal_dict = API._pyodide._base.eval_code("{}"), API.importlib = API.runPythonInternal("import importlib; importlib");
-  let import_module = API.importlib.import_module;
-  API.sys = import_module("sys"), API.sys.path.insert(0, config.homedir), API.os = import_module("os");
-  let globals = API.runPythonInternal("import __main__; __main__.__dict__"), builtins = API.runPythonInternal("import builtins; builtins.__dict__");
-  var builtins_dict;
-  API.globals = (builtins_dict = builtins, new Proxy(globals, { get: (target, symbol) => "get" === symbol ? (key) => {
-    let result = target.get(key);
-    return void 0 === result && (result = builtins_dict.get(key)), result;
-  } : "has" === symbol ? (key) => target.has(key) || builtins_dict.has(key) : Reflect.get(target, symbol) }));
-  let importhook = API._pyodide._importhook;
-  importhook.register_js_finder(), importhook.register_js_module("js", config.jsglobals);
-  let pyodide = API.makePublicAPI();
-  return importhook.register_js_module("pyodide_js", pyodide), API.pyodide_py = import_module("pyodide"), API.pyodide_code = import_module("pyodide.code"), API.pyodide_ffi = import_module("pyodide.ffi"), API.package_loader = import_module("pyodide._package_loader"), API.sitepackages = API.package_loader.SITE_PACKAGES.__str__(), API.dsodir = API.package_loader.DSO_DIR.__str__(), API.defaultLdLibraryPath = [API.dsodir, API.sitepackages], API.os.environ.__setitem__("LD_LIBRARY_PATH", API.defaultLdLibraryPath.join(":")), pyodide.pyodide_py = API.pyodide_py, pyodide.globals = API.globals, pyodide;
-}
-async function loadPyodide(options = {}) {
-  await async function() {
-    if (!IN_NODE)
-      return;
-    if (nodeUrlMod = (await import("url")).default, nodeFsPromisesMod = await import("fs/promises"), nodeFetch = globalThis.fetch ? fetch : (await import("node-fetch")).default, nodeVmMod = (await import("vm")).default, nodePath = await import("path"), pathSep = nodePath.sep, "undefined" != typeof __require)
-      return;
-    const node_modules = { fs: await import("fs"), crypto: await import("crypto"), ws: await import("ws"), child_process: await import("child_process") };
-    globalThis.require = function(mod) {
-      return node_modules[mod];
+  }(w2[b]);
+var b;
+for (v2 = 0; v2 < N2.length; v2++)
+  p.prototype["get" + E2(N2[v2])] = P2(N2[v2]), p.prototype["set" + E2(N2[v2])] = function(e) {
+    return function(t) {
+      if (!Z2(t))
+        throw new TypeError(e + " must be a Number");
+      this[e] = Number(t);
     };
-  }();
-  let indexURL = options.indexURL || function() {
-    if ("string" == typeof __dirname)
-      return __dirname;
-    let err2;
+  }(N2[v2]);
+var v2;
+for (h = 0; h < _.length; h++)
+  p.prototype["get" + E2(_[h])] = P2(_[h]), p.prototype["set" + E2(_[h])] = function(e) {
+    return function(t) {
+      this[e] = String(t);
+    };
+  }(_[h]);
+var h;
+var x2 = p;
+function ne2() {
+  var e = /^\s*at .*(\S+:\d+|\(native\))/m, t = /^(eval@)?(\[native code])?$/;
+  return { parse: c2(function(r) {
+    if (r.stack && r.stack.match(e))
+      return this.parseV8OrIE(r);
+    if (r.stack)
+      return this.parseFFOrSafari(r);
+    throw new Error("Cannot parse given Error object");
+  }, "ErrorStackParser$$parse"), extractLocation: c2(function(r) {
+    if (r.indexOf(":") === -1)
+      return [r];
+    var a2 = /(.+?)(?::(\d+))?(?::(\d+))?$/, n = a2.exec(r.replace(/[()]/g, ""));
+    return [n[1], n[2] || void 0, n[3] || void 0];
+  }, "ErrorStackParser$$extractLocation"), parseV8OrIE: c2(function(r) {
+    var a2 = r.stack.split(`
+`).filter(function(n) {
+      return !!n.match(e);
+    }, this);
+    return a2.map(function(n) {
+      n.indexOf("(eval ") > -1 && (n = n.replace(/eval code/g, "eval").replace(/(\(eval at [^()]*)|(,.*$)/g, ""));
+      var o = n.replace(/^\s+/, "").replace(/\(eval code/g, "(").replace(/^.*?\s+/, ""), s = o.match(/ (\(.+\)$)/);
+      o = s ? o.replace(s[0], "") : o;
+      var l = this.extractLocation(s ? s[1] : o), d2 = s && o || void 0, u2 = ["eval", "<anonymous>"].indexOf(l[0]) > -1 ? void 0 : l[0];
+      return new x2({ functionName: d2, fileName: u2, lineNumber: l[1], columnNumber: l[2], source: n });
+    }, this);
+  }, "ErrorStackParser$$parseV8OrIE"), parseFFOrSafari: c2(function(r) {
+    var a2 = r.stack.split(`
+`).filter(function(n) {
+      return !n.match(t);
+    }, this);
+    return a2.map(function(n) {
+      if (n.indexOf(" > eval") > -1 && (n = n.replace(/ line (\d+)(?: > eval line \d+)* > eval:\d+:\d+/g, ":$1")), n.indexOf("@") === -1 && n.indexOf(":") === -1)
+        return new x2({ functionName: n });
+      var o = /((.*".+"[^@]*)?[^@]*)(?:@)/, s = n.match(o), l = s && s[1] ? s[1] : void 0, d2 = this.extractLocation(n.replace(o, ""));
+      return new x2({ functionName: l, fileName: d2[0], lineNumber: d2[1], columnNumber: d2[2], source: n });
+    }, this);
+  }, "ErrorStackParser$$parseFFOrSafari") };
+}
+c2(ne2, "ErrorStackParser");
+var re = new ne2();
+var M = re;
+var g2 = typeof process == "object" && typeof process.versions == "object" && typeof process.versions.node == "string" && !process.browser;
+var A2 = g2 && typeof module < "u" && typeof module.exports < "u" && typeof O2 < "u" && typeof __dirname < "u";
+var W2 = g2 && !A2;
+var Ne2 = typeof globalThis.Bun < "u";
+var oe2 = typeof Deno < "u";
+var B2 = !g2 && !oe2;
+var $2 = B2 && typeof window == "object" && typeof document == "object" && typeof document.createElement == "function" && typeof sessionStorage == "object" && typeof importScripts != "function";
+var j = B2 && typeof importScripts == "function" && typeof self == "object";
+var _e2 = typeof navigator == "object" && typeof navigator.userAgent == "string" && navigator.userAgent.indexOf("Chrome") == -1 && navigator.userAgent.indexOf("Safari") > -1;
+var V2;
+var L2;
+var z;
+var H;
+var D;
+async function T2() {
+  if (!g2 || (V2 = (await import("node:url")).default, H = await import("node:fs"), D = await import("node:fs/promises"), z = (await import("node:vm")).default, L2 = await import("node:path"), U2 = L2.sep, typeof O2 < "u"))
+    return;
+  let e = H, t = await import("node:crypto"), i = await import("./browser-OYYBATHK.js"), r = await import("node:child_process"), a2 = { fs: e, crypto: t, ws: i, child_process: r };
+  globalThis.require = function(n) {
+    return a2[n];
+  };
+}
+c2(T2, "initNodeModules");
+function ie2(e, t) {
+  return L2.resolve(t || ".", e);
+}
+c2(ie2, "node_resolvePath");
+function ae2(e, t) {
+  return t === void 0 && (t = location), new URL(e, t).toString();
+}
+c2(ae2, "browser_resolvePath");
+var k2;
+g2 ? k2 = ie2 : k2 = ae2;
+var U2;
+g2 || (U2 = "/");
+function se2(e, t) {
+  return e.startsWith("file://") && (e = e.slice(7)), e.includes("://") ? { response: fetch(e) } : { binary: D.readFile(e).then((i) => new Uint8Array(i.buffer, i.byteOffset, i.byteLength)) };
+}
+c2(se2, "node_getBinaryResponse");
+function ce(e, t) {
+  let i = new URL(e, location);
+  return { response: fetch(i, t ? { integrity: t } : {}) };
+}
+c2(ce, "browser_getBinaryResponse");
+var R2;
+g2 ? R2 = se2 : R2 = ce;
+async function q2(e, t) {
+  let { response: i, binary: r } = R2(e, t);
+  if (r)
+    return r;
+  let a2 = await i;
+  if (!a2.ok)
+    throw new Error(`Failed to load '${e}': request failed.`);
+  return new Uint8Array(await a2.arrayBuffer());
+}
+c2(q2, "loadBinaryFile");
+var F2;
+if ($2)
+  F2 = c2(async (e) => await import(e), "loadScript");
+else if (j)
+  F2 = c2(async (e) => {
     try {
-      throw new Error();
-    } catch (e) {
-      err2 = e;
+      globalThis.importScripts(e);
+    } catch (t) {
+      if (t instanceof TypeError)
+        await import(e);
+      else
+        throw t;
     }
-    let fileName = ErrorStackParser.parse(err2)[0].fileName;
-    const indexOfLastSlash = fileName.lastIndexOf(pathSep);
-    if (-1 === indexOfLastSlash)
-      throw new Error("Could not extract indexURL path from pyodide module location");
-    return fileName.slice(0, indexOfLastSlash);
-  }();
-  indexURL = resolvePath(indexURL), indexURL.endsWith("/") || (indexURL += "/"), options.indexURL = indexURL;
-  const default_config = { fullStdLib: false, jsglobals: globalThis, stdin: globalThis.prompt ? globalThis.prompt : void 0, homedir: "/home/pyodide", lockFileURL: indexURL + "repodata.json", args: [], _node_mounts: [] }, config = Object.assign(default_config, options), pyodide_py_tar_promise = loadBinaryFile(config.indexURL + "pyodide_py.tar"), Module2 = function() {
-    let Module3 = { noImageDecoding: true, noAudioDecoding: true, noWasmDecoding: false, preRun: [], quit: (status, toThrow) => {
-      throw Module3.exited = { status, toThrow }, toThrow;
-    } };
-    return Module3;
-  }();
-  Module2.print = config.stdout, Module2.printErr = config.stderr, Module2.preRun.push(() => {
-    for (const mount of config._node_mounts)
-      Module2.FS.mkdirTree(mount), Module2.FS.mount(Module2.NODEFS, { root: mount }, mount);
-  }), Module2.arguments = config.args;
-  const API = { config };
-  Module2.API = API, function(Module3, path) {
-    Module3.preRun.push(function() {
-      try {
-        Module3.FS.mkdirTree(path);
-      } catch (e) {
-        console.error(`Error occurred while making a home directory '${path}':`), console.error(e), console.error("Using '/' for a home directory instead"), path = "/";
-      }
-      Module3.ENV.HOME = path, Module3.FS.chdir(path);
-    });
-  }(Module2, config.homedir);
-  const moduleLoaded = new Promise((r) => Module2.postRun = r);
-  if (Module2.locateFile = (path) => config.indexURL + path, "function" != typeof _createPyodideModule) {
-    const scriptSrc = `${config.indexURL}pyodide.asm.js`;
-    await loadScript(scriptSrc);
+  }, "loadScript");
+else if (g2)
+  F2 = le2;
+else
+  throw new Error("Cannot determine runtime environment");
+async function le2(e) {
+  e.startsWith("file://") && (e = e.slice(7)), e.includes("://") ? z.runInThisContext(await (await fetch(e)).text()) : await import(V2.pathToFileURL(e).href);
+}
+c2(le2, "nodeLoadScript");
+async function J(e) {
+  if (g2) {
+    await T2();
+    let t = await D.readFile(e, { encoding: "utf8" });
+    return JSON.parse(t);
+  } else
+    return await (await fetch(e)).json();
+}
+c2(J, "loadLockFile");
+async function K() {
+  if (A2)
+    return __dirname;
+  let e;
+  try {
+    throw new Error();
+  } catch (r) {
+    e = r;
   }
-  if (await _createPyodideModule(Module2), await moduleLoaded, Module2.exited)
-    throw Module2.exited.toThrow;
-  if ("0.22.1" !== API.version)
-    throw new Error(`Pyodide version does not match: '0.22.1' <==> '${API.version}'. If you updated the Pyodide version, make sure you also updated the 'indexURL' parameter passed to loadPyodide.`);
-  Module2.locateFile = (path) => {
-    throw new Error("Didn't expect to load any more file_packager files!");
-  }, function(module) {
-    const FS = module.FS, MEMFS = module.FS.filesystems.MEMFS, PATH = module.PATH, nativeFSAsync = { DIR_MODE: 16895, FILE_MODE: 33279, mount: function(mount) {
-      if (!mount.opts.fileSystemHandle)
-        throw new Error("opts.fileSystemHandle is required");
-      return MEMFS.mount.apply(null, arguments);
-    }, syncfs: async (mount, populate, callback) => {
-      try {
-        const local = nativeFSAsync.getLocalSet(mount), remote = await nativeFSAsync.getRemoteSet(mount), src = populate ? remote : local, dst = populate ? local : remote;
-        await nativeFSAsync.reconcile(mount, src, dst), callback(null);
-      } catch (e) {
-        callback(e);
-      }
-    }, getLocalSet: (mount) => {
-      let entries = /* @__PURE__ */ Object.create(null);
-      function isRealDir(p) {
-        return "." !== p && ".." !== p;
-      }
-      function toAbsolute(root) {
-        return (p) => PATH.join2(root, p);
-      }
-      let check = FS.readdir(mount.mountpoint).filter(isRealDir).map(toAbsolute(mount.mountpoint));
-      for (; check.length; ) {
-        let path = check.pop(), stat = FS.stat(path);
-        FS.isDir(stat.mode) && check.push.apply(check, FS.readdir(path).filter(isRealDir).map(toAbsolute(path))), entries[path] = { timestamp: stat.mtime, mode: stat.mode };
-      }
-      return { type: "local", entries };
-    }, getRemoteSet: async (mount) => {
-      const entries = /* @__PURE__ */ Object.create(null), handles = await getFsHandles(mount.opts.fileSystemHandle);
-      for (const [path, handle] of handles)
-        "." !== path && (entries[PATH.join2(mount.mountpoint, path)] = { timestamp: "file" === handle.kind ? (await handle.getFile()).lastModifiedDate : /* @__PURE__ */ new Date(), mode: "file" === handle.kind ? nativeFSAsync.FILE_MODE : nativeFSAsync.DIR_MODE });
-      return { type: "remote", entries, handles };
-    }, loadLocalEntry: (path) => {
-      const node = FS.lookupPath(path).node, stat = FS.stat(path);
-      if (FS.isDir(stat.mode))
-        return { timestamp: stat.mtime, mode: stat.mode };
-      if (FS.isFile(stat.mode))
-        return node.contents = MEMFS.getFileDataAsTypedArray(node), { timestamp: stat.mtime, mode: stat.mode, contents: node.contents };
+  let t = M.parse(e)[0].fileName;
+  if (g2 && !t.startsWith("file://") && (t = `file://${t}`), W2) {
+    let r = await import("node:path");
+    return (await import("node:url")).fileURLToPath(r.dirname(t));
+  }
+  let i = t.lastIndexOf(U2);
+  if (i === -1)
+    throw new Error("Could not extract indexURL path from pyodide module location");
+  return t.slice(0, i);
+}
+c2(K, "calculateDirname");
+function Y2(e) {
+  let t = e.FS, i = e.FS.filesystems.MEMFS, r = e.PATH, a2 = { DIR_MODE: 16895, FILE_MODE: 33279, mount: function(n) {
+    if (!n.opts.fileSystemHandle)
+      throw new Error("opts.fileSystemHandle is required");
+    return i.mount.apply(null, arguments);
+  }, syncfs: async (n, o, s) => {
+    try {
+      let l = a2.getLocalSet(n), d2 = await a2.getRemoteSet(n), u2 = o ? d2 : l, m2 = o ? l : d2;
+      await a2.reconcile(n, u2, m2), s(null);
+    } catch (l) {
+      s(l);
+    }
+  }, getLocalSet: (n) => {
+    let o = /* @__PURE__ */ Object.create(null);
+    function s(u2) {
+      return u2 !== "." && u2 !== "..";
+    }
+    c2(s, "isRealDir");
+    function l(u2) {
+      return (m2) => r.join2(u2, m2);
+    }
+    c2(l, "toAbsolute");
+    let d2 = t.readdir(n.mountpoint).filter(s).map(l(n.mountpoint));
+    for (; d2.length; ) {
+      let u2 = d2.pop(), m2 = t.stat(u2);
+      t.isDir(m2.mode) && d2.push.apply(d2, t.readdir(u2).filter(s).map(l(u2))), o[u2] = { timestamp: m2.mtime, mode: m2.mode };
+    }
+    return { type: "local", entries: o };
+  }, getRemoteSet: async (n) => {
+    let o = /* @__PURE__ */ Object.create(null), s = await de2(n.opts.fileSystemHandle);
+    for (let [l, d2] of s)
+      l !== "." && (o[r.join2(n.mountpoint, l)] = { timestamp: d2.kind === "file" ? (await d2.getFile()).lastModifiedDate : /* @__PURE__ */ new Date(), mode: d2.kind === "file" ? a2.FILE_MODE : a2.DIR_MODE });
+    return { type: "remote", entries: o, handles: s };
+  }, loadLocalEntry: (n) => {
+    let s = t.lookupPath(n).node, l = t.stat(n);
+    if (t.isDir(l.mode))
+      return { timestamp: l.mtime, mode: l.mode };
+    if (t.isFile(l.mode))
+      return s.contents = i.getFileDataAsTypedArray(s), { timestamp: l.mtime, mode: l.mode, contents: s.contents };
+    throw new Error("node type not supported");
+  }, storeLocalEntry: (n, o) => {
+    if (t.isDir(o.mode))
+      t.mkdirTree(n, o.mode);
+    else if (t.isFile(o.mode))
+      t.writeFile(n, o.contents, { canOwn: true });
+    else
       throw new Error("node type not supported");
-    }, storeLocalEntry: (path, entry) => {
-      if (FS.isDir(entry.mode))
-        FS.mkdirTree(path, entry.mode);
+    t.chmod(n, o.mode), t.utime(n, o.timestamp, o.timestamp);
+  }, removeLocalEntry: (n) => {
+    var o = t.stat(n);
+    t.isDir(o.mode) ? t.rmdir(n) : t.isFile(o.mode) && t.unlink(n);
+  }, loadRemoteEntry: async (n) => {
+    if (n.kind === "file") {
+      let o = await n.getFile();
+      return { contents: new Uint8Array(await o.arrayBuffer()), mode: a2.FILE_MODE, timestamp: o.lastModifiedDate };
+    } else {
+      if (n.kind === "directory")
+        return { mode: a2.DIR_MODE, timestamp: /* @__PURE__ */ new Date() };
+      throw new Error("unknown kind: " + n.kind);
+    }
+  }, storeRemoteEntry: async (n, o, s) => {
+    let l = n.get(r.dirname(o)), d2 = t.isFile(s.mode) ? await l.getFileHandle(r.basename(o), { create: true }) : await l.getDirectoryHandle(r.basename(o), { create: true });
+    if (d2.kind === "file") {
+      let u2 = await d2.createWritable();
+      await u2.write(s.contents), await u2.close();
+    }
+    n.set(o, d2);
+  }, removeRemoteEntry: async (n, o) => {
+    await n.get(r.dirname(o)).removeEntry(r.basename(o)), n.delete(o);
+  }, reconcile: async (n, o, s) => {
+    let l = 0, d2 = [];
+    Object.keys(o.entries).forEach(function(f2) {
+      let y2 = o.entries[f2], S2 = s.entries[f2];
+      (!S2 || t.isFile(y2.mode) && y2.timestamp.getTime() > S2.timestamp.getTime()) && (d2.push(f2), l++);
+    }), d2.sort();
+    let u2 = [];
+    if (Object.keys(s.entries).forEach(function(f2) {
+      o.entries[f2] || (u2.push(f2), l++);
+    }), u2.sort().reverse(), !l)
+      return;
+    let m2 = o.type === "remote" ? o.handles : s.handles;
+    for (let f2 of d2) {
+      let y2 = r.normalize(f2.replace(n.mountpoint, "/")).substring(1);
+      if (s.type === "local") {
+        let S2 = m2.get(y2), X2 = await a2.loadRemoteEntry(S2);
+        a2.storeLocalEntry(f2, X2);
+      } else {
+        let S2 = a2.loadLocalEntry(f2);
+        await a2.storeRemoteEntry(m2, y2, S2);
+      }
+    }
+    for (let f2 of u2)
+      if (s.type === "local")
+        a2.removeLocalEntry(f2);
       else {
-        if (!FS.isFile(entry.mode))
-          throw new Error("node type not supported");
-        FS.writeFile(path, entry.contents, { canOwn: true });
+        let y2 = r.normalize(f2.replace(n.mountpoint, "/")).substring(1);
+        await a2.removeRemoteEntry(m2, y2);
       }
-      FS.chmod(path, entry.mode), FS.utime(path, entry.timestamp, entry.timestamp);
-    }, removeLocalEntry: (path) => {
-      var stat = FS.stat(path);
-      FS.isDir(stat.mode) ? FS.rmdir(path) : FS.isFile(stat.mode) && FS.unlink(path);
-    }, loadRemoteEntry: async (handle) => {
-      if ("file" === handle.kind) {
-        const file = await handle.getFile();
-        return { contents: new Uint8Array(await file.arrayBuffer()), mode: nativeFSAsync.FILE_MODE, timestamp: file.lastModifiedDate };
-      }
-      if ("directory" === handle.kind)
-        return { mode: nativeFSAsync.DIR_MODE, timestamp: /* @__PURE__ */ new Date() };
-      throw new Error("unknown kind: " + handle.kind);
-    }, storeRemoteEntry: async (handles, path, entry) => {
-      const parentDirHandle = handles.get(PATH.dirname(path)), handle = FS.isFile(entry.mode) ? await parentDirHandle.getFileHandle(PATH.basename(path), { create: true }) : await parentDirHandle.getDirectoryHandle(PATH.basename(path), { create: true });
-      if ("file" === handle.kind) {
-        const writable = await handle.createWritable();
-        await writable.write(entry.contents), await writable.close();
-      }
-      handles.set(path, handle);
-    }, removeRemoteEntry: async (handles, path) => {
-      const parentDirHandle = handles.get(PATH.dirname(path));
-      await parentDirHandle.removeEntry(PATH.basename(path)), handles.delete(path);
-    }, reconcile: async (mount, src, dst) => {
-      let total = 0;
-      const create = [];
-      Object.keys(src.entries).forEach(function(key) {
-        const e = src.entries[key], e2 = dst.entries[key];
-        (!e2 || FS.isFile(e.mode) && e.timestamp.getTime() > e2.timestamp.getTime()) && (create.push(key), total++);
-      }), create.sort();
-      const remove = [];
-      if (Object.keys(dst.entries).forEach(function(key) {
-        src.entries[key] || (remove.push(key), total++);
-      }), remove.sort().reverse(), !total)
-        return;
-      const handles = "remote" === src.type ? src.handles : dst.handles;
-      for (const path of create) {
-        const relPath = PATH.normalize(path.replace(mount.mountpoint, "/")).substring(1);
-        if ("local" === dst.type) {
-          const handle = handles.get(relPath), entry = await nativeFSAsync.loadRemoteEntry(handle);
-          nativeFSAsync.storeLocalEntry(path, entry);
-        } else {
-          const entry = nativeFSAsync.loadLocalEntry(path);
-          await nativeFSAsync.storeRemoteEntry(handles, relPath, entry);
-        }
-      }
-      for (const path of remove)
-        if ("local" === dst.type)
-          nativeFSAsync.removeLocalEntry(path);
-        else {
-          const relPath = PATH.normalize(path.replace(mount.mountpoint, "/")).substring(1);
-          await nativeFSAsync.removeRemoteEntry(handles, relPath);
-        }
-    } };
-    module.FS.filesystems.NATIVEFS_ASYNC = nativeFSAsync;
-  }(Module2);
-  const pyodide_py_tar = await pyodide_py_tar_promise;
-  !function(Module3, pyodide_py_tar2) {
-    let stream = Module3.FS.open("/pyodide_py.tar", "w");
-    Module3.FS.write(stream, pyodide_py_tar2, 0, pyodide_py_tar2.byteLength, void 0, true), Module3.FS.close(stream);
-    let [errcode, captured_stderr2] = Module3.API.rawRun('\nfrom sys import version_info\npyversion = f"python{version_info.major}.{version_info.minor}"\nimport shutil\nshutil.unpack_archive("/pyodide_py.tar", f"/lib/{pyversion}/")\ndel shutil\nimport importlib\nimportlib.invalidate_caches()\ndel importlib\n');
-    errcode && Module3.API.fatal_loading_error("Failed to unpack standard library.\n", captured_stderr2), Module3.FS.unlink("/pyodide_py.tar");
-  }(Module2, pyodide_py_tar);
-  let [err, captured_stderr] = API.rawRun("import _pyodide_core");
-  err && Module2.API.fatal_loading_error("Failed to import _pyodide_core\n", captured_stderr);
-  const pyodide = finalizeBootstrap(API, config);
-  if (pyodide.version.includes("dev") || API.setCdnUrl(`https://cdn.jsdelivr.net/pyodide/v${pyodide.version}/full/`), await API.packageIndexReady, API._pyodide._importhook.register_module_not_found_hook(API._import_name_to_package_name), "0.22.1" !== API.repodata_info.version)
-    throw new Error("Lock file version doesn't match Pyodide version");
-  return API.package_loader.init_loaded_packages(), config.fullStdLib && await pyodide.loadPackage(API._pyodide._importhook.UNVENDORED_STDLIBS), API.initializeStreams(config.stdin, config.stdout, config.stderr), pyodide;
+  } };
+  e.FS.filesystems.NATIVEFS_ASYNC = a2;
 }
+c2(Y2, "initializeNativeFS");
+var de2 = c2(async (e) => {
+  let t = [];
+  async function i(a2) {
+    for await (let n of a2.values())
+      t.push(n), n.kind === "directory" && await i(n);
+  }
+  c2(i, "collect"), await i(e);
+  let r = /* @__PURE__ */ new Map();
+  r.set(".", e);
+  for (let a2 of t) {
+    let n = (await e.resolve(a2)).join("/");
+    r.set(n, a2);
+  }
+  return r;
+}, "getFsHandles");
+function G2(e) {
+  let t = { noImageDecoding: true, noAudioDecoding: true, noWasmDecoding: false, preRun: ge2(e), quit(i, r) {
+    throw t.exited = { status: i, toThrow: r }, r;
+  }, print: e.stdout, printErr: e.stderr, arguments: e.args, API: { config: e }, locateFile: (i) => e.indexURL + i, instantiateWasm: ye2(e.indexURL) };
+  return t;
+}
+c2(G2, "createSettings");
+function ue2(e) {
+  return function(t) {
+    let i = "/";
+    try {
+      t.FS.mkdirTree(e);
+    } catch (r) {
+      console.error(`Error occurred while making a home directory '${e}':`), console.error(r), console.error(`Using '${i}' for a home directory instead`), e = i;
+    }
+    t.FS.chdir(e);
+  };
+}
+c2(ue2, "createHomeDirectory");
+function fe2(e) {
+  return function(t) {
+    Object.assign(t.ENV, e);
+  };
+}
+c2(fe2, "setEnvironment");
+function me2(e) {
+  return (t) => {
+    for (let i of e)
+      t.FS.mkdirTree(i), t.FS.mount(t.FS.filesystems.NODEFS, { root: i }, i);
+  };
+}
+c2(me2, "mountLocalDirectories");
+function pe2(e) {
+  let t = q2(e);
+  return (i) => {
+    let r = i._py_version_major(), a2 = i._py_version_minor();
+    i.FS.mkdirTree("/lib"), i.FS.mkdirTree(`/lib/python${r}.${a2}/site-packages`), i.addRunDependency("install-stdlib"), t.then((n) => {
+      i.FS.writeFile(`/lib/python${r}${a2}.zip`, n);
+    }).catch((n) => {
+      console.error("Error occurred while installing the standard library:"), console.error(n);
+    }).finally(() => {
+      i.removeRunDependency("install-stdlib");
+    });
+  };
+}
+c2(pe2, "installStdlib");
+function ge2(e) {
+  let t;
+  return e.stdLibURL != null ? t = e.stdLibURL : t = e.indexURL + "python_stdlib.zip", [pe2(t), ue2(e.env.HOME), fe2(e.env), me2(e._node_mounts), Y2];
+}
+c2(ge2, "getFileSystemInitializationFuncs");
+function ye2(e) {
+  let { binary: t, response: i } = R2(e + "pyodide.asm.wasm");
+  return function(r, a2) {
+    return async function() {
+      try {
+        let n;
+        i ? n = await WebAssembly.instantiateStreaming(i, r) : n = await WebAssembly.instantiate(await t, r);
+        let { instance: o, module: s } = n;
+        typeof WasmOffsetConverter < "u" && (wasmOffsetConverter = new WasmOffsetConverter(wasmBinary, s)), a2(o, s);
+      } catch (n) {
+        console.warn("wasm instantiation failed!"), console.warn(n);
+      }
+    }(), {};
+  };
+}
+c2(ye2, "getInstantiateWasmFunc");
+var C = "0.26.3";
+async function $e(e = {}) {
+  var u2, m2;
+  await T2();
+  let t = e.indexURL || await K();
+  t = k2(t), t.endsWith("/") || (t += "/"), e.indexURL = t;
+  let i = { fullStdLib: false, jsglobals: globalThis, stdin: globalThis.prompt ? globalThis.prompt : void 0, lockFileURL: t + "pyodide-lock.json", args: [], _node_mounts: [], env: {}, packageCacheDir: t, packages: [], enableRunUntilComplete: false, checkAPIVersion: true }, r = Object.assign(i, e);
+  (u2 = r.env).HOME ?? (u2.HOME = "/home/pyodide"), (m2 = r.env).PYTHONINSPECT ?? (m2.PYTHONINSPECT = "1");
+  let a2 = G2(r), n = a2.API;
+  if (n.lockFilePromise = J(r.lockFileURL), typeof _createPyodideModule != "function") {
+    let f2 = `${r.indexURL}pyodide.asm.js`;
+    await F2(f2);
+  }
+  let o;
+  if (e._loadSnapshot) {
+    let f2 = await e._loadSnapshot;
+    ArrayBuffer.isView(f2) ? o = f2 : o = new Uint8Array(f2), a2.noInitialRun = true, a2.INITIAL_MEMORY = o.length;
+  }
+  let s = await _createPyodideModule(a2);
+  if (a2.exited)
+    throw a2.exited.toThrow;
+  if (e.pyproxyToStringRepr && n.setPyProxyToStringMethod(true), n.version !== C && r.checkAPIVersion)
+    throw new Error(`Pyodide version does not match: '${C}' <==> '${n.version}'. If you updated the Pyodide version, make sure you also updated the 'indexURL' parameter passed to loadPyodide.`);
+  s.locateFile = (f2) => {
+    throw new Error("Didn't expect to load any more file_packager files!");
+  };
+  let l;
+  o && (l = n.restoreSnapshot(o));
+  let d2 = n.finalizeBootstrap(l);
+  return n.sys.path.insert(0, n.config.env.HOME), d2.version.includes("dev") || n.setCdnUrl(`https://cdn.jsdelivr.net/pyodide/v${d2.version}/full/`), n._pyodide.set_excepthook(), await n.packageIndexReady, n.initializeStreams(r.stdin, r.stdout, r.stderr), d2;
+}
+c2($e, "loadPyodide");
 
 // src/pyodide-proxy.ts
 async function setupPythonEnv(pyodide, callJS) {
@@ -32892,7 +33054,7 @@ var NormalPyodideProxy = class _NormalPyodideProxy {
     this.stderrCallback = stderrCallback;
   }
   async init(config) {
-    this.pyodide = await loadPyodide(config);
+    this.pyodide = await $e(config);
     this.pyUtils = await setupPythonEnv(this.pyodide, this.callJS);
   }
   loadPackagesFromImports(code) {
@@ -32917,11 +33079,9 @@ var NormalPyodideProxy = class _NormalPyodideProxy {
     await this.pyodide.loadPackagesFromImports(code);
     let result;
     try {
-      result = await this.pyodide.runPythonAsync(
-        code
-      );
+      result = await this.pyodide.runPythonAsync(code);
     } catch (err) {
-      if (err instanceof this.pyodide.PythonError) {
+      if (err instanceof this.pyodide.ffi.PythonError) {
         const shortTraceback = this.pyUtils.shortFormatLastTraceback();
         err.message = shortTraceback;
       }
@@ -32939,7 +33099,7 @@ var NormalPyodideProxy = class _NormalPyodideProxy {
         this.pyUtils.repr
       );
     } finally {
-      if (this.pyodide.isPyProxy(result)) {
+      if (result instanceof this.pyodide.ffi.PyProxy) {
         result.destroy();
       }
     }
@@ -32968,16 +33128,16 @@ var NormalPyodideProxy = class _NormalPyodideProxy {
         this.pyUtils.repr
       );
     } finally {
-      if (this.pyodide.isPyProxy(result)) {
+      if (result instanceof this.pyodide.ffi.PyProxy) {
         result.destroy();
       }
     }
   }
   async openChannel(path, appName, clientPort) {
-    openChannel(path, appName, clientPort, this.pyodide);
+    await openChannel(path, appName, clientPort, this.pyodide);
   }
   async makeRequest(scope, appName, clientPort) {
-    makeRequest(scope, appName, clientPort, this.pyodide);
+    await makeRequest(scope, appName, clientPort, this.pyodide);
   }
   static async build(config, stdoutCallback, stderrCallback) {
     const proxy = new _NormalPyodideProxy(stdoutCallback, stderrCallback);
@@ -33052,17 +33212,22 @@ var WebWorkerPyodideProxy = class _WebWorkerPyodideProxy {
     });
   }
   async loadPackagesFromImports(code) {
-    await this.postMessageAsync({
+    const msg = await this.postMessageAsync({
       type: "loadPackagesFromImports",
       code
     });
+    if (msg.subtype !== "done") {
+      throw new Error(
+        `Unexpected message type. Expected type 'done', got type '${msg.subtype}'`
+      );
+    }
+    return msg.value;
   }
   async tabComplete(code) {
-    let msg = await this.postMessageAsync({
+    const msg = await this.postMessageAsync({
       type: "tabComplete",
       code
     });
-    msg = msg;
     if (msg.subtype !== "tabCompletions") {
       throw new Error(
         `Unexpected message type. Expected type 'tabCompletions', got type '${msg.subtype}'`
@@ -33148,7 +33313,7 @@ function loadPyodideProxy(config, stdoutCallback = console.log, stderrCallback =
 function processReturnValue(value, returnResult = "none", pyodide, repr) {
   const possibleReturnValues = {
     get value() {
-      if (pyodide.isPyProxy(value)) {
+      if (value instanceof pyodide.ffi.PyProxy) {
         return value.toJs();
       } else {
         return value;
@@ -33163,7 +33328,7 @@ function processReturnValue(value, returnResult = "none", pyodide, repr) {
         toHtml = pyodide.globals.get("_to_html");
       } catch (e) {
         console.error("Couldn't find _to_html function: ", e);
-        toHtml = (x2) => ({
+        toHtml = (x3) => ({
           type: "text",
           value: "Couldn't finding _to_html function."
         });
@@ -33187,9 +33352,9 @@ async function initPyodide({
   stderr
 }) {
   if (!stdout)
-    stdout = async (x2) => console.log("pyodide echo:" + x2);
+    stdout = async (x3) => console.log("pyodide echo:" + x3);
   if (!stderr)
-    stderr = (x2) => console.error("pyodide error:" + x2);
+    stderr = (x3) => console.error("pyodide error:" + x3);
   const pyodideProxy = await loadPyodideProxy(
     {
       type: proxyType,
@@ -33292,42 +33457,168 @@ def _mock_ipykernel():
     mods["ipykernel.comm"] = m
 
 
-def _mock_ipython():
+# A shim for the seaborn.load_dataset() function to work in Pyodide. Normally
+# that function won't work in Pyodide because it uses the urllib module, which
+# doesn't work in Pyodide. This shim replaces the uses of urllib with a wrapper
+# function around JS's synchronous XMLHttpRequest.
+def _shim_seaborn_load_dataset():
+    import importlib
+    import importlib.abc
+    import io
+    import os
     import sys
-    import types
-    mods = sys.modules
+    import pyodide.code
 
-    def get_ipython():
-        import ipykernel
-        return ipykernel.kernel
+    # ==========================================================================
+    # Python wrapper to get a URL synchronously using a JS XMLHttpRequest.
+    # ==========================================================================
+    get_url = pyodide.code.run_js(
+        """
+    (url) => {
+      const request = new XMLHttpRequest();
+      request.open("GET", url, false); // false for synchronous request
+      request.send(null);
+      if (request.status === 200) {
+          return request.responseText;
+      } else {
+          return "";
+      }
+    }
+    """
+    )
 
-    m = types.ModuleType("IPython")
-    m.get_ipython = get_ipython
-    mods["IPython"] = m
+    # ==========================================================================
+    # Substitutes for functions from seaborn.utils
+    # ==========================================================================
+    DATASET_SOURCE = "https://raw.githubusercontent.com/mwaskom/seaborn-data/master"
+    DATASET_NAMES_URL = f"{DATASET_SOURCE}/dataset_names.txt"
 
-    mods["IPython.core"] = types.ModuleType("IPython.core")
+    def urlopen(url: str) -> io.BytesIO:
+        res = get_url(url)
+        return io.BytesIO(res.encode("utf-8"))
 
-    m = types.ModuleType("IPython.core.getipython")
-    m.get_ipython = get_ipython
-    mods["IPython.core.getipython"] = m
+    def urlretrieve(url: str, filename: str) -> None:
+        res = get_url(url)
+        with open(filename, "w") as file:
+            file.write(res)
 
-    m = types.ModuleType("IPython.core.interactiveshell")
-    m.InteractiveShell = "Mock"
-    mods["IPython.core.interactiveshell"] = m
+    def get_dataset_names():
+        with urlopen(DATASET_NAMES_URL) as resp:
+            txt = resp.read()
 
-    m = types.ModuleType("IPython.display")
-    m.display = "Mock"
-    m.clear_output = "Mock"
-    mods["IPython.display"] = m
+        dataset_names = [name.strip() for name in txt.decode().split("\\n")]
+        return list(filter(None, dataset_names))
 
-    # Needed for matplotlib - if IPython is present, it'll look for this.
-    m = types.ModuleType("IPython.core.pylabtools")
-    m.backend2gui = {}
-    mods["IPython.core.pylabtools"] = m
+    def load_dataset(name, cache=True, data_home=None, **kws):
+        # Load these dynamically with importlib instead of with 'import pandas'
+        # because if we do a normal import, then Pyodide will detect and
+        # automatically download the files for these packages and all their
+        # dependencies when it starts, which is slow.
+        pd = importlib.import_module("pandas")
+        seaborn = importlib.import_module("seaborn")
+
+        if isinstance(name, pd.DataFrame):
+            err = (
+                "This function accepts only strings (the name of an example dataset). "
+                "You passed a pandas DataFrame. If you have your own dataset, "
+                "it is not necessary to use this function before plotting."
+            )
+            raise TypeError(err)
+
+        url = f"{DATASET_SOURCE}/{name}.csv"
+
+        if cache:
+            cache_path = os.path.join(
+                seaborn.utils.get_data_home(data_home), os.path.basename(url)
+            )
+            if not os.path.exists(cache_path):
+                if name not in get_dataset_names():
+                    raise ValueError(f"'{name}' is not one of the example datasets.")
+                urlretrieve(url, cache_path)
+            full_path = cache_path
+        else:
+            full_path = url
+
+        df = pd.read_csv(full_path, **kws)
+
+        if df.iloc[-1].isnull().all():
+            df = df.iloc[:-1]
+
+        if name == "tips":
+            df["day"] = pd.Categorical(df["day"], ["Thur", "Fri", "Sat", "Sun"])
+            df["sex"] = pd.Categorical(df["sex"], ["Male", "Female"])
+            df["time"] = pd.Categorical(df["time"], ["Lunch", "Dinner"])
+            df["smoker"] = pd.Categorical(df["smoker"], ["Yes", "No"])
+
+        elif name == "flights":
+            months = df["month"].str[:3]
+            df["month"] = pd.Categorical(months, months.unique())
+
+        elif name == "exercise":
+            df["time"] = pd.Categorical(df["time"], ["1 min", "15 min", "30 min"])
+            df["kind"] = pd.Categorical(df["kind"], ["rest", "walking", "running"])
+            df["diet"] = pd.Categorical(df["diet"], ["no fat", "low fat"])
+
+        elif name == "titanic":
+            df["class"] = pd.Categorical(df["class"], ["First", "Second", "Third"])
+            df["deck"] = pd.Categorical(df["deck"], list("ABCDEFG"))
+
+        elif name == "penguins":
+            df["sex"] = df["sex"].str.title()
+
+        elif name == "diamonds":
+            df["color"] = pd.Categorical(
+                df["color"],
+                ["D", "E", "F", "G", "H", "I", "J"],
+            )
+            df["clarity"] = pd.Categorical(
+                df["clarity"],
+                ["IF", "VVS1", "VVS2", "VS1", "VS2", "SI1", "SI2", "I1"],
+            )
+            df["cut"] = pd.Categorical(
+                df["cut"],
+                ["Ideal", "Premium", "Very Good", "Good", "Fair"],
+            )
+
+        elif name == "taxis":
+            df["pickup"] = pd.to_datetime(df["pickup"])
+            df["dropoff"] = pd.to_datetime(df["dropoff"])
+
+        elif name == "seaice":
+            df["Date"] = pd.to_datetime(df["Date"])
+
+        elif name == "dowjones":
+            df["Date"] = pd.to_datetime(df["Date"])
+
+        return df
+
+    # ======================================================================================
+    # Import hook to inject shim when seaborn is loaded
+    # ======================================================================================
+    class PostImportFinder(importlib.abc.MetaPathFinder):
+        def __init__(self):
+            self.is_loading = False
+
+        def find_module(self, fullname, path=None):
+            if fullname == "seaborn" and not self.is_loading:
+                return self
+
+        def load_module(self, fullname):
+            self.is_loading = True
+            # Load the actual seaborn module
+            seaborn = importlib.import_module("seaborn")
+
+            # Apply the shimmed version of load_dataset
+            seaborn.utils.load_dataset = load_dataset
+            seaborn.load_dataset = load_dataset
+
+            return seaborn
+
+    sys.meta_path.insert(0, PostImportFinder())
 
 _mock_multiprocessing()
 _mock_ipykernel()
-_mock_ipython()
+_shim_seaborn_load_dataset()
 
 def _pyodide_env_init():
     import os
@@ -33376,6 +33667,7 @@ async def _install_requirements_from_dir(dir: str) -> None:
     import re
     import micropip
     import sys
+    import importlib.metadata
 
     files = os.listdir(dir)
     if "requirements.txt" not in files:
@@ -33385,6 +33677,8 @@ async def _install_requirements_from_dir(dir: str) -> None:
 
     for req in reqs:
         req = req.strip()
+        extras = set()
+
         if req == "" or req.startswith("#"):
             continue
         # If it's a URL, then it must be a wheel file.
@@ -33392,13 +33686,54 @@ async def _install_requirements_from_dir(dir: str) -> None:
             pkg_name = re.sub(r"^.+/(.*)-\\d.*$", r"\\1", req)
         else:
             # If we got here, it's a package specification.
+            # https://peps.python.org/pep-0508/#examples
             # Remove any trailing version info: "my-package (>= 1.0.0)" -> "my-package"
-            pkg_name = re.sub(r"([a-zA-Z0-9._-]+)(.*)", r"\\1", req).strip()
+            # or "shiny [theme] == 1.2.0" -> "shiny[theme]"
+            pkg_name = re.sub(r" \\[", "[", req)
+            pkg_name = re.sub(r"([a-zA-Z0-9._,\\[\\]-]+)(.*)", r"\\1", pkg_name).strip()
 
-        if pkg_name in micropip.list():
+            match_extras = re.match(r"([^\\[]+)(?:\\[(.*)\\])?", pkg_name)
+            if match_extras and match_extras.group(2):
+                pkg_name = match_extras.group(1)
+                extras.update({e.strip() for e in match_extras.group(2).split(",")})
+
+        if pkg_name not in micropip.list():
+            print(f"Installing {pkg_name} ...")
+            await micropip.install(pkg_name)
+
+        if len(extras) == 0:
             continue
-        print(f"Installing {req} ...")
-        await micropip.install(req)
+        else:
+            # Because micropip.install() doesn't install extras, we have to
+            # find the package requirements of each extra and install them
+            # if they aren't already installed.
+            dist = importlib.metadata.distribution(pkg_name)
+
+            provided_extras = set(dist.metadata.get_all("Provides-Extra") or [])
+            valid_extras = extras & provided_extras
+            invalid_extras = extras - valid_extras
+            if len(invalid_extras):
+                raise ValueError(
+                    f"Invalid extras for package {pkg_name}: {','.join(invalid_extras)}. "
+                    f"Found in '{req}' in requirements.txt."
+                )
+
+            pkg_reqs = dist.requires or []
+
+            for extra in valid_extras:
+                # Convert requires records  : 'libsass>=0.23.0; extra == "theme"'
+                # into just the package name: 'libsass'
+                extra_reqs = [
+                    r for r in pkg_reqs
+                    if f'extra == "{extra}"' in str(r)
+                    or f"extra == '{extra}'" in str(r)
+                ]
+
+                for extra_req in extra_reqs:
+                    extra_req_name = re.sub(r"([a-zA-Z0-9._,-]+)(.*)", r"\\1", extra_req).strip()
+                    if extra_req_name not in micropip.list():
+                        print(f"Installing {extra_req_name} for {pkg_name}[{extra}]")
+                        await micropip.install(extra_req_name)
 
 
 async def _load_packages_from_dir(dir: str) -> None:
@@ -33455,7 +33790,8 @@ class ShinyExpressAppModule:
         import shiny.express
         self.app = shiny.express.wrap_express_app(app_path)
 
-async def _start_app(app_name, scope = _shiny_app_registry):
+async def _start_app(app_name, scope = _shiny_app_registry, dev_mode = False):
+    import os
     import sys
     import importlib
     import shiny.express
@@ -33474,10 +33810,17 @@ async def _start_app(app_name, scope = _shiny_app_registry):
     class ModuleApp:
         app = None
 
+    if dev_mode:
+        # Enable shiny dev mode for error console
+        os.environ["SHINY_DEV_MODE"] = "1"
+
     if shiny.express.is_express_app("app.py", app_dir):
         app_obj = ShinyExpressAppModule(Path(app_dir) / "app.py")
     else:
         app_obj = importlib.import_module(f"{app_name}.app")
+
+    if dev_mode:
+        os.environ.pop("SHINY_DEV_MODE")
 
     scope[app_name] = app_obj
 
@@ -33532,8 +33875,20 @@ function ensureOpenChannelListener(pyodideProxy) {
   channelListenerRegistered = true;
 }
 
-// src/hooks/useWebR.tsx
+// src/hooks/useRunOnceOnMount.tsx
 var import_react2 = __toESM(require_react());
+function useRunOnceOnMount(callback) {
+  const hasRun = import_react2.default.useRef(false);
+  import_react2.default.useEffect(() => {
+    if (!hasRun.current) {
+      callback();
+      hasRun.current = true;
+    }
+  }, []);
+}
+
+// src/hooks/useWebR.tsx
+var import_react3 = __toESM(require_react());
 
 // src/webr-proxy.ts
 var _run, run_fn;
@@ -33543,7 +33898,7 @@ var WebRWorkerProxy = class {
     this.stderrCallback = stderrCallback;
     __privateAdd(this, _run);
     this.toClientCache = {};
-    this.webR = new ar(config);
+    this.webR = new dr(config);
   }
   async runCode(code) {
     const waitForPrompt = new Promise((resolve, reject) => {
@@ -33628,13 +33983,14 @@ async function initWebR({
   stderr
 }) {
   if (!stdout)
-    stdout = (x2) => console.log("webR echo:" + x2);
+    stdout = (x3) => console.log("webR echo:" + x3);
   if (!stderr)
-    stderr = (x2) => console.error("webR error:" + x2);
+    stderr = (x3) => console.error("webR error:" + x3);
   const channelType = crossOriginIsolated ? O.Automatic : O.PostMessage;
+  const baseUrl = currentScriptDir() + "/webr/";
   const webRProxy = await loadWebRProxy(
     {
-      baseUrl: currentScriptDir() + "/webr/",
+      baseUrl,
       channelType
     },
     stdout,
@@ -33642,7 +33998,10 @@ async function initWebR({
   );
   let initError = false;
   try {
-    await webRProxy.runRAsync('webr::install(c("codetools", "renv", "shiny"))');
+    await webRProxy.webR.objs.globalEnv.bind(".base_url", baseUrl);
+    await webRProxy.runRAsync(
+      `webr::mount("/shinylive/library", "${baseUrl}library.data")`
+    );
     await webRProxy.runRAsync(load_r_pre);
   } catch (e) {
     initError = true;
@@ -33685,14 +34044,14 @@ async function initRShiny({
 function useWebR({
   webRProxyHandlePromise: webRProxyHandlePromise2
 }) {
-  const [webRProxyHandle, setwebRProxyHandle] = import_react2.default.useState(
+  const [webRProxyHandle, setwebRProxyHandle] = import_react3.default.useState(
     {
       ready: false,
       shinyReady: false,
       initError: false
     }
   );
-  (0, import_react2.useEffect)(() => {
+  (0, import_react3.useEffect)(() => {
     (async () => {
       const webRProxyHandle2 = await webRProxyHandlePromise2;
       setwebRProxyHandle(webRProxyHandle2);
@@ -33720,6 +34079,13 @@ function ensureOpenChannelListener2(webRProxy) {
 var load_r_pre = `
 # Force internal tar - silence renv warning
 Sys.setenv(TAR = "internal")
+
+# Set {config} envvar for shinylive
+Sys.setenv(R_CONFIG_ACTIVE = "shinylive")
+
+# Use shinylive R package libraries
+dir.create("/shinylive/webr/packages", showWarnings = FALSE, recursive = TRUE)
+.libPaths(c(.libPaths(), "/shinylive/webr/packages", "/shinylive/library"))
 
 # Shim R functions with webR versions (e.g. install.packages())
 webr::shim_install()
@@ -33807,7 +34173,11 @@ webr::shim_install()
     filename <- file.path(appDir, name)
     path <- dirname(filename)
     dir.create(path, recursive = TRUE, showWarnings = FALSE)
-    writeLines(files[[name]], filename)
+    if (is.character(files[[name]])) {
+      writeLines(files[[name]], filename, useBytes = TRUE)
+    } else {
+      writeBin(files[[name]], filename)
+    }
   }
 }
 
@@ -33818,7 +34188,75 @@ webr::shim_install()
 }
 
 .webr_pkg_cache <- list()
-.start_app <- function(appName, appDir) {
+
+.install_pkg_tgz <- function(path, lib) {
+  tmp <- tempfile()
+  on.exit(unlink(tmp, recursive = TRUE))
+
+  utils::download.file(path, tmp, quiet = TRUE)
+  utils::untar(
+    tmp,
+    exdir = lib,
+    tar = "internal",
+    extras = "--no-same-permissions"
+  )
+}
+
+.mount_vfs_images <- function() {
+  metadata_url <- glue::glue("{.base_url}packages/metadata.rds")
+  metadata_path <- glue::glue("/shinylive/webr/packages/metadata.rds")
+
+  # Attempt this download quietly, if no metadata exists we can still continue
+  found <- webr::eval_js(glue::glue("
+    var xhr = new XMLHttpRequest();
+    xhr.open('HEAD', '{metadata_url}', false);
+    xhr.send();
+    (xhr.status >= 200 && xhr.status < 300)
+  "))
+  if (found) {
+    download.file(metadata_url, metadata_path, quiet = TRUE)
+  }
+
+  if (file.exists(metadata_path)) {
+    metadata <- readRDS(metadata_path)
+    lapply(metadata, function(data) {
+      name <- data$name
+      path <- data$path
+      available <- data$cached && length(data$assets) > 0
+      mountpoint <- glue::glue("/shinylive/webr/packages/{name}")
+
+      try({
+        # Mount the virtual filesystem image, unless we already have done so
+        if (available && !file.exists(mountpoint)) {
+          tryCatch({
+            webr::mount(mountpoint, glue::glue("{.base_url}{path}"))
+          }, error = function(cnd) {
+            # File extraction fallback for .tgz with no filesystem metadata
+            if (grepl(".tgz$", path)) {
+              .install_pkg_tgz(path, "/shinylive/webr/packages/")
+            } else {
+              stop(cnd)
+            }
+          })
+        }
+
+        # If this is a full library, add it to .libPaths()
+        if(data$type == "library") {
+          paths <- .libPaths()
+          paths <- append(paths, mountpoint , after = length(paths) - 1)
+          .libPaths(paths)
+        }
+      })
+    })
+  }
+
+  # Warm package cache with installed packages
+  lapply(rownames(installed.packages()), function(p) { .webr_pkg_cache[[p]] <<- TRUE })
+}
+
+.start_app <- function(appName, appDir, devMode = FALSE) {
+  # Mount VFS images provided in Shinylive app assets
+  .mount_vfs_images()
 
   # Uniquely install packages with webr
   unique_pkgs <- unique(renv::dependencies(appDir, quiet = TRUE)$Package)
@@ -33833,6 +34271,11 @@ webr::shim_install()
     }
   })
 
+  if (isTRUE(devMode)) {
+    # Enable client-side dev mode features, namely the error console
+    options(shiny.client_devmode = TRUE)
+  }
+
   app <- .shiny_to_httpuv(appDir)
   assign(appName, app, envir = .shiny_app_registry)
   invisible(0)
@@ -33842,7 +34285,7 @@ invisible(0)
 `;
 
 // src/Components/ExampleSelector.tsx
-var React3 = __toESM(require_react());
+var React4 = __toESM(require_react());
 var import_jsx_runtime = __toESM(require_jsx_runtime());
 function ExampleSelector({
   setCurrentFiles,
@@ -33850,14 +34293,14 @@ function ExampleSelector({
   startWithSelectedExample,
   appEngine
 }) {
-  const [currentSelection, setCurrentSelection] = React3.useState(null);
-  const [exampleCategories2, setExampleCategories] = React3.useState(null);
-  React3.useEffect(() => {
+  const [currentSelection, setCurrentSelection] = React4.useState(null);
+  const [exampleCategories2, setExampleCategories] = React4.useState(null);
+  React4.useEffect(() => {
     (async () => {
       setExampleCategories(await getExampleCategories(appEngine));
     })();
   }, [appEngine]);
-  React3.useEffect(() => {
+  React4.useEffect(() => {
     if (!startWithSelectedExample)
       return;
     if (!exampleCategories2)
@@ -33871,7 +34314,7 @@ function ExampleSelector({
     }
     setCurrentSelection(position);
   }, [startWithSelectedExample, exampleCategories2]);
-  const setFilesForApp = React3.useCallback(
+  const setFilesForApp = React4.useCallback(
     ({ categoryIndex, index }) => {
       if (!exampleCategories2)
         return;
@@ -33879,7 +34322,7 @@ function ExampleSelector({
     },
     [exampleCategories2, setCurrentFiles]
   );
-  const chooseExample = React3.useCallback(
+  const chooseExample = React4.useCallback(
     ({ categoryIndex, index }) => {
       if (!exampleCategories2)
         return;
@@ -33893,7 +34336,7 @@ function ExampleSelector({
     },
     [filesHaveChanged, exampleCategories2, setCurrentSelection]
   );
-  React3.useEffect(() => {
+  React4.useEffect(() => {
     if (!currentSelection)
       return;
     setFilesForApp(currentSelection);
@@ -33909,7 +34352,7 @@ function ExampleSelector({
     } else {
       isSelected = currentSelection.categoryIndex === categoryIndex && currentSelection.index === index;
     }
-    return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(React3.Fragment, { children: [
+    return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(React4.Fragment, { children: [
       /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "example" + (isSelected ? " selected" : ""), children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(
         "a",
         {
@@ -33948,9 +34391,6 @@ function setExampleUrlHash(title) {
 function buildUrlForExample(title) {
   return window.location.origin + window.location.pathname + "#" + sanitizeTitleForUrl(title);
 }
-
-// src/assets/shiny-for-python.svg
-var shiny_for_python_default = 'data:image/svg+xml,<?xml version="1.0" encoding="utf-8"?>%0A<!-- Generator: Adobe Illustrator 27.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->%0A<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"%0A%09 viewBox="0 0 318.9 58.1" style="enable-background:new 0 0 318.9 58.1;" xml:space="preserve">%0A<style type="text/css">%0A%09.st0{fill:%23007BC2;}%0A%09.st1{fill:%23F8F8F8;}%0A%09.st2{fill:%23007BC1;}%0A%09.st3{opacity:3.000000e-02;fill:url(%23SVGID_1_);}%0A%09.st4{fill:%230088DA;}%0A%09.st5{opacity:0.5;fill:none;stroke:%23FFFFFF;stroke-width:0.3436;stroke-miterlimit:10;}%0A%09.st6{fill:%23E3B061;}%0A%09.st7{opacity:0.9;fill:%23FFFFFF;}%0A%09.st8{opacity:0.25;fill:url(%23SVGID_00000062890845597404697740000002567374690307773069_);enable-background:new    ;}%0A%09.st9{opacity:0.7;fill:url(%23SVGID_00000117653277675818804050000004613785110562981792_);}%0A%09.st10{opacity:0.25;fill:url(%23SVGID_00000109024760873814890990000000033129034029738662_);enable-background:new    ;}%0A%09.st11{fill:%23FFFFFF;}%0A%09.st12{opacity:0.7;fill:%23FFFFFF;}%0A%09.st13{opacity:0.7;fill:url(%23SVGID_00000139983219339483814630000005254680771827834263_);}%0A%09.st14{fill:%23FFFFFF;enable-background:new    ;}%0A%09.st15{opacity:4.000000e-02;fill:url(%23SVGID_00000130632266760883054660000002228431866286590143_);}%0A%09.st16{fill:%234189C8;}%0A%09.st17{opacity:0.25;fill:url(%23SVGID_00000058577780002537468530000016373266062356130438_);enable-background:new    ;}%0A%09.st18{fill:%233875A7;}%0A%09.st19{fill:%23E2B058;}%0A%09.st20{opacity:0.9;fill:%23FFFFFF;enable-background:new    ;}%0A%09.st21{opacity:0.25;fill:url(%23SVGID_00000039114990909304009530000012926441817174788539_);enable-background:new    ;}%0A%09.st22{fill:%230078BE;}%0A%09.st23{opacity:0.95;fill:%23FFFFFF;enable-background:new    ;}%0A%09.st24{fill:%234189CB;}%0A%09.st25{opacity:0.14;fill:url(%23SVGID_00000143612544159209155680000002483579818725933487_);}%0A%09.st26{fill:%23468AC6;}%0A%09.st27{opacity:0.9;clip-path:url(%23SVGID_00000089549041185167452760000015988838166177090990_);}%0A%09.st28{opacity:0.25;fill:url(%23SVGID_00000080898099493742819360000012969674392930713263_);}%0A%09.st29{opacity:0.5;fill:none;stroke:%23FFFFFF;stroke-width:2;stroke-miterlimit:10;}%0A%09.st30{fill:%230196F5;}%0A%09.st31{fill:%234B00C0;}%0A%09.st32{fill:%2374149B;}%0A%09.st33{fill:%23BE007F;}%0A%09.st34{fill:%23C00000;}%0A%09.st35{fill:%23F35100;}%0A%09.st36{fill:%23F8B828;}%0A%09.st37{fill:%2300881A;}%0A%09.st38{fill:%2300BE7F;}%0A%09.st39{fill:%2303C6E7;}%0A%09.st40{fill:%23FFFFFF;stroke:%23B2B1B2;stroke-width:2.013;stroke-miterlimit:10;}%0A%09.st41{fill:%23606060;}%0A%09.st42{fill:%23303030;}%0A%09.st43{fill:%23F7F7F7;}%0A%09.st44{fill:%23EEEEF2;}%0A%09.st45{fill:%23DDE0E6;}%0A%09.st46{fill:%23CDD4DA;}%0A%09.st47{fill:%238D959E;}%0A%09.st48{fill:%23707782;}%0A%09.st49{fill:%2348505F;}%0A%09.st50{fill:%23343A46;}%0A%09.st51{fill:%231D1F21;}%0A%09.st52{fill:%23DCE1E5;}%0A%09.st53{fill:%23404040;}%0A%09.st54{fill:%23202020;}%0A%09.st55{fill:%23F6ADF7;}%0A%09.st56{fill:%23E92B1F;}%0A%09.st57{fill:%23FFE64C;}%0A%09.st58{fill:%231CE5FB;}%0A%09.st59{fill:%23E6F1F7;}%0A%09.st60{fill:%23ECE7F7;}%0A%09.st61{fill:%23F0E7F4;}%0A%09.st62{fill:%23F7E6F1;}%0A%09.st63{fill:%23F7E5E6;}%0A%09.st64{fill:%23FDECE7;}%0A%09.st65{fill:%23FDF7EA;}%0A%09.st66{fill:%23E6F2E8;}%0A%09.st67{fill:%23E7F7F1;}%0A%09.st68{fill:%23E7F8FB;}%0A%09.st69{opacity:4.000000e-02;fill:url(%23SVGID_00000173879744948930459970000015959663358578446232_);}%0A%09.st70{opacity:0.14;fill:url(%23SVGID_00000080186321027384662000000001033574728202994069_);}%0A%09.st71{opacity:3.000000e-02;fill:url(%23SVGID_00000164508869431471439510000007502325794965023881_);}%0A%09.st72{opacity:0.25;fill:url(%23SVGID_00000157275545443706783380000016876820805712853130_);enable-background:new    ;}%0A%09.st73{opacity:0.25;fill:url(%23SVGID_00000134929222640531317420000009979737418987508408_);enable-background:new    ;}%0A%09.st74{fill:none;}%0A%09.st75{opacity:0.25;fill:url(%23SVGID_00000003079896418390689470000008180949246440207748_);enable-background:new    ;}%0A%09.st76{fill:%230D6EFC;}%0A%09.st77{fill:%235D2BE2;}%0A%09.st78{fill:%236A48B6;}%0A%09.st79{fill:%23C14681;}%0A%09.st80{fill:%23C8464E;}%0A%09.st81{fill:%23EA8441;}%0A%09.st82{fill:%23F4C150;}%0A%09.st83{fill:%2343825B;}%0A%09.st84{fill:%2362C499;}%0A%09.st85{fill:%2362C6E7;}%0A%09.st86{fill:%23FFFFFF;stroke:%23B2B1B2;stroke-width:6.3504;stroke-miterlimit:10;}%0A%09.st87{fill:%236E757C;}%0A%09.st88{fill:%23353A3F;}%0A%09.st89{opacity:0.25;fill:url(%23SVGID_00000013911575411688682110000007200871399313389965_);enable-background:new    ;}%0A%09.st90{opacity:0.7;fill:url(%23SVGID_00000158719657197352095380000004407285517381559936_);}%0A%09.st91{opacity:0.7;fill:url(%23SVGID_00000091701434907043937850000013416876554977017747_);}%0A%09.st92{opacity:0.7;fill:url(%23SVGID_00000049906463371638145840000012661586987986386091_);}%0A%09.st93{fill:%23F5F5F5;}%0A%09.st94{opacity:0.5;fill:%23FFFFFF;}%0A%09.st95{clip-path:url(%23SVGID_00000141444080588319561470000016902007851871056817_);}%0A%09.st96{fill:%23B6B6B6;}%0A%09.st97{fill:%23F6F6F6;}%0A%09.st98{fill:%23E5E5E5;}%0A%09.st99{clip-path:url(%23SVGID_00000064355708922344013080000011373511208333879691_);}%0A%09.st100{opacity:3.000000e-02;fill:url(%23SVGID_00000109725041932130259050000000945573083422059409_);}%0A%09.st101{opacity:0.5;fill:none;stroke:%23FFFFFF;stroke-width:4.1229;stroke-miterlimit:10;}%0A%09.st102{opacity:0.25;fill:url(%23SVGID_00000016067945615771040000000013693127875553283744_);enable-background:new    ;}%0A%09.st103{opacity:0.25;fill:url(%23SVGID_00000068643156036815804640000006532162527500205729_);enable-background:new    ;}%0A%09.st104{opacity:0.5;fill:none;stroke:%23FFFFFF;stroke-width:2.971;stroke-miterlimit:10;}%0A%09.st105{opacity:0.25;fill:url(%23SVGID_00000078017300052106270050000009625528678634657196_);enable-background:new    ;}%0A%09.st106{opacity:3.000000e-02;fill:url(%23SVGID_00000173870564607142668800000016832036121160416172_);}%0A%09.st107{opacity:0.25;fill:url(%23SVGID_00000008827864634808362620000006777047640542672525_);enable-background:new    ;}%0A%09.st108{opacity:0.25;fill:url(%23SVGID_00000176002865321500107590000005404138354098027415_);enable-background:new    ;}%0A%09.st109{opacity:3.000000e-02;fill:url(%23SVGID_00000101084623146919938800000004239883371070752402_);}%0A%09.st110{opacity:0.7;}%0A%09.st111{opacity:0.25;fill:url(%23SVGID_00000000209746584145283740000003281231264581853628_);enable-background:new    ;}%0A%09.st112{clip-path:url(%23SVGID_00000119826318785294414430000016532113971559763087_);}%0A%09.st113{opacity:3.000000e-02;fill:url(%23SVGID_00000080199703173278536290000005414200803493335460_);}%0A%09.st114{opacity:3.000000e-02;fill:url(%23SVGID_00000088128051486677082970000015402995378387346357_);}%0A%09.st115{opacity:0.5;fill:none;stroke:%23FFFFFF;stroke-width:2.4978;stroke-miterlimit:10;}%0A%09.st116{opacity:0.25;fill:url(%23SVGID_00000160879206783274305200000004212035629657672127_);enable-background:new    ;}%0A%09.st117{opacity:3.000000e-02;fill:url(%23SVGID_00000103260766746531481750000007576742826090277010_);}%0A%09.st118{opacity:0.8;}%0A%09.st119{opacity:3.000000e-02;fill:url(%23SVGID_00000101813779711352814300000007561575700468796056_);}%0A%09.st120{opacity:0.5;fill:none;stroke:%23FFFFFF;stroke-width:2.1382;stroke-miterlimit:10;}%0A%09.st121{opacity:0.25;fill:url(%23SVGID_00000036963715569117748630000018338771576385635214_);enable-background:new    ;}%0A%09.st122{opacity:0.5;fill:none;stroke:%23FFFFFF;stroke-width:1.7651;stroke-miterlimit:10;}%0A%09.st123{opacity:0.25;fill:url(%23SVGID_00000121275435342893186160000012102735171355931013_);enable-background:new    ;}%0A%09.st124{clip-path:url(%23SVGID_00000086682858054361674600000014691766637232345765_);}%0A%09.st125{clip-path:url(%23SVGID_00000141422647091113865560000000139278928429694112_);}%0A%09.st126{clip-path:url(%23SVGID_00000023988496104941715650000004521252890359135877_);}%0A%09.st127{opacity:0.5;fill:none;stroke:%23FFFFFF;stroke-width:2.0002;stroke-miterlimit:10;}%0A%09.st128{opacity:0.25;fill:url(%23SVGID_00000083053232654742214870000000243512644892217236_);enable-background:new    ;}%0A%09.st129{enable-background:new    ;}%0A%09.st130{opacity:0.8;fill:%23FFFFFF;}%0A%09.st131{fill:%23383838;}%0A%09.st132{fill:url(%23SVGID_00000049197140363204562840000005706646912319394199_);}%0A%09.st133{opacity:0.25;fill:url(%23SVGID_00000037681538552213839950000001187329076681417893_);enable-background:new    ;}%0A%09.st134{fill:none;stroke:%238FC1E9;stroke-width:2.8809;stroke-miterlimit:10;}%0A%09.st135{fill:url(%23path1948_00000107571427772368003920000008564810897700960676_);}%0A%09.st136{fill:url(%23path1950_00000180357363965723571520000014694004668123400633_);}%0A%09.st137{fill-rule:evenodd;clip-rule:evenodd;fill:url(%23SVGID_00000067203180522951520890000001438711410018501547_);}%0A%09.st138{fill-rule:evenodd;clip-rule:evenodd;fill:url(%23SVGID_00000031181101863174119500000014542122765093877929_);}%0A%09.st139{opacity:0.7;fill-rule:evenodd;clip-rule:evenodd;fill:%23FFFFFF;}%0A%09.st140{fill-rule:evenodd;clip-rule:evenodd;fill:%23FFFFFF;}%0A%09.st141{opacity:0.9;fill:%23202020;}%0A%09.st142{opacity:0.7;fill:%23202020;}%0A%09.st143{opacity:0.7;fill-rule:evenodd;clip-rule:evenodd;fill:%23202020;}%0A%09.st144{fill-rule:evenodd;clip-rule:evenodd;fill:%23202020;}%0A%09.st145{fill:%23151515;}%0A%09.st146{opacity:0.6;}%0A%09.st147{fill:url(%23SVGID_00000110443355104091079090000004170693292899312822_);}%0A%09.st148{fill:url(%23SVGID_00000177483504619938808800000013933959484244162688_);}%0A%09.st149{fill:url(%23SVGID_00000017481593312060248540000005301043586270551729_);}%0A%09.st150{fill:url(%23SVGID_00000069386152788058020170000005271626713341217927_);}%0A%09.st151{fill:url(%23SVGID_00000028325475566083250450000010107574497167120305_);}%0A%09.st152{fill:url(%23SVGID_00000117656121226381934090000006744023142485630080_);}%0A%09.st153{fill:url(%23SVGID_00000168082575201019071360000014754740562970929328_);}%0A%09.st154{fill:url(%23SVGID_00000127741234663349097110000001528098829686764434_);}%0A%09.st155{fill:url(%23SVGID_00000034060950658671862920000001397907526570235569_);}%0A%09.st156{fill:url(%23SVGID_00000029037343976600481720000008870383085712797871_);}%0A%09.st157{fill:url(%23SVGID_00000053517553719418669070000003042206307506520251_);}%0A%09.st158{fill:url(%23SVGID_00000181048759616530933830000010194414063769397945_);}%0A%09.st159{fill:url(%23SVGID_00000026158439111011706170000014176033020405491338_);}%0A%09.st160{fill:url(%23SVGID_00000024720974559610770560000015546213897730449844_);}%0A%09.st161{fill:url(%23SVGID_00000183243236180380773650000002059437397641076123_);}%0A%09.st162{fill:url(%23SVGID_00000123415748674890958220000002526925971779012761_);}%0A%09.st163{fill:url(%23SVGID_00000160904663755400051230000012126809631458397119_);}%0A%09.st164{fill:url(%23SVGID_00000071520722380689217860000014822934165281870755_);}%0A%09.st165{fill:url(%23SVGID_00000041296441263500525070000001975872625737256851_);}%0A%09.st166{fill:url(%23SVGID_00000091722320157948223600000011732562480068863365_);}%0A%09.st167{fill:url(%23SVGID_00000112598958452132544480000007645170598479933315_);}%0A%09.st168{fill:url(%23SVGID_00000090981211352270342910000015269785526678630826_);}%0A%09.st169{fill:url(%23SVGID_00000118370484827851101950000012982409707334243775_);}%0A%09.st170{fill:url(%23SVGID_00000010284905328042099790000003744403543751197081_);}%0A%09.st171{fill:url(%23SVGID_00000038375076892984943810000005399608180174870933_);}%0A%09.st172{fill:url(%23SVGID_00000179614159083096307990000010487228365891102098_);}%0A%09.st173{fill:url(%23SVGID_00000014600905532807413520000006865478824768245904_);}%0A%09.st174{fill:url(%23SVGID_00000061444386009083416530000009038987981059668117_);}%0A%09.st175{fill:url(%23SVGID_00000162315302032896698560000006394040303915401102_);}%0A%09.st176{fill:url(%23SVGID_00000018217665546842622190000009608175295192086190_);}%0A%09.st177{fill:url(%23SVGID_00000080929268104429348180000007471076861625678471_);}%0A%09.st178{fill:url(%23SVGID_00000044900451492258315240000005764062887646829208_);}%0A%09.st179{fill:url(%23SVGID_00000136406253508767895700000001770652564823995282_);}%0A%09.st180{fill:url(%23SVGID_00000019673471116099523210000004661188583555242396_);}%0A%09.st181{fill:url(%23SVGID_00000178187571947607850390000018020070102189938314_);}%0A%09.st182{fill:url(%23SVGID_00000119077257173720542230000016106733188312045498_);}%0A%09.st183{fill:url(%23SVGID_00000061447768562750616400000006371619032045834660_);}%0A%09.st184{fill:url(%23SVGID_00000060749866133888134190000008234522254691778968_);}%0A%09.st185{fill:url(%23SVGID_00000143585941202079184330000003421895239333183110_);}%0A%09.st186{fill:url(%23SVGID_00000119825840319646034620000008263535863478988207_);}%0A%09.st187{fill:url(%23SVGID_00000129201117001962099070000016948399022708821930_);}%0A%09.st188{fill:url(%23SVGID_00000098941809612638221280000008667020729283798458_);}%0A%09.st189{fill:url(%23SVGID_00000085937959854397826450000014449798410758788512_);}%0A%09.st190{fill:url(%23SVGID_00000119803722170546169830000006754772335463704490_);}%0A%09.st191{fill:url(%23SVGID_00000035504941708173182970000017440925928597284018_);}%0A%09.st192{fill:url(%23SVGID_00000140735691985904165590000016032227344171071404_);}%0A%09.st193{fill:url(%23SVGID_00000030484900097264321520000014091444334710246282_);}%0A%09.st194{fill:url(%23SVGID_00000063616330807621163860000017336918169460845447_);}%0A%09.st195{fill:url(%23SVGID_00000153700895877066227230000015421026867518444183_);}%0A%09.st196{fill:url(%23SVGID_00000160187448158529068320000013176172845350121142_);}%0A%09.st197{fill:url(%23SVGID_00000023996140192249642720000017735743486236701056_);}%0A%09.st198{fill:url(%23SVGID_00000031928493407895192810000017667784415207674531_);}%0A%09.st199{fill:url(%23SVGID_00000084520673138550654450000005476120299058304903_);}%0A%09.st200{fill:url(%23SVGID_00000065063929428695901900000011092830657262940069_);}%0A%09.st201{fill:url(%23SVGID_00000072282479975612486490000005649904685960146067_);}%0A%09.st202{fill:url(%23SVGID_00000058578658437808277020000011791313088789901465_);}%0A%09.st203{fill:url(%23SVGID_00000125594020723556557930000000070165096089021113_);}%0A%09.st204{fill:url(%23SVGID_00000079466556111501546420000013209244580244670384_);}%0A%09.st205{fill:url(%23SVGID_00000134246142389802075220000006470161391724029871_);}%0A%09.st206{fill:url(%23SVGID_00000021113576054959959310000006786197543696659336_);}%0A%09.st207{fill:url(%23SVGID_00000155126580525082440030000003245939654579797376_);}%0A%09.st208{fill:url(%23SVGID_00000166672943000755880550000008422738376949743504_);}%0A%09.st209{fill:url(%23SVGID_00000176028543210453805560000015530133318836644009_);}%0A%09.st210{fill:url(%23SVGID_00000146492827448221205710000009010115423360066991_);}%0A%09.st211{fill:url(%23SVGID_00000144319106589871431540000010348115902117471661_);}%0A%09.st212{fill:url(%23SVGID_00000069373730936977307260000010752483091186488708_);}%0A%09.st213{fill:url(%23SVGID_00000147918928550472103100000014503061964549210248_);}%0A%09.st214{fill:url(%23SVGID_00000147201422586732180450000001556306597208060831_);}%0A%09.st215{fill:url(%23SVGID_00000031180141283669193490000015817271658390995614_);}%0A%09.st216{fill:url(%23SVGID_00000169550400316036015880000015302840617059511198_);}%0A%09.st217{fill:url(%23SVGID_00000176004276859279330420000007942688126574258585_);}%0A%09.st218{fill:url(%23SVGID_00000010299670082676381850000003554821190629077902_);}%0A%09.st219{fill:url(%23SVGID_00000060026618533019484150000016844140324759132346_);}%0A%09.st220{fill:url(%23SVGID_00000075862050709438729830000000940753547377821596_);}%0A%09.st221{fill:url(%23SVGID_00000027603182118282038860000005739292781706352788_);}%0A%09.st222{fill:url(%23SVGID_00000119825898305326484080000016404926572864281764_);}%0A%09.st223{fill:url(%23SVGID_00000047768298762479750160000002832059137678893989_);}%0A%09.st224{fill:url(%23SVGID_00000020390056315229707400000006317057557465644985_);}%0A%09.st225{fill:url(%23SVGID_00000108280339289070734700000012300159364327663515_);}%0A%09.st226{fill:url(%23SVGID_00000013885527168994260950000001723865425903435711_);}%0A%09.st227{fill:url(%23SVGID_00000169543248362552254260000015404377480371351702_);}%0A%09.st228{fill:url(%23SVGID_00000107577932777512522490000003115869791514689723_);}%0A%09.st229{fill:url(%23SVGID_00000112627030509494823140000016938810915882688667_);}%0A%09.st230{fill:url(%23SVGID_00000083775076206536782430000014881999305080613551_);}%0A%09.st231{fill:url(%23SVGID_00000178916307534562175280000007154837677718310282_);}%0A%09.st232{fill:url(%23SVGID_00000073720560912747552540000017997107450145021847_);}%0A%09.st233{fill:url(%23SVGID_00000139256666623813746210000010111212786848043151_);}%0A%09.st234{fill:url(%23SVGID_00000174598138529533695100000002384834722409290658_);}%0A%09.st235{fill:url(%23SVGID_00000134238716000703498210000007345410476308569022_);}%0A%09.st236{fill:url(%23SVGID_00000097463238269581970950000015069012261289936571_);}%0A%09.st237{fill:url(%23SVGID_00000061430006649259869450000005110394093022560942_);}%0A%09.st238{fill:url(%23SVGID_00000036252866246606732140000015274324986591789463_);}%0A%09.st239{fill:url(%23SVGID_00000103232682290748692240000005164809632463632010_);}%0A%09.st240{fill:url(%23SVGID_00000049182475551380150530000009731315271305215386_);}%0A%09.st241{fill:url(%23SVGID_00000098930705176817636920000011776574124488356995_);}%0A%09.st242{fill:url(%23SVGID_00000126299502089415054540000016922899883241236376_);}%0A%09.st243{fill:url(%23SVGID_00000093876603616663210750000013947160106886071481_);}%0A%09.st244{fill:url(%23SVGID_00000181793314975017077760000014423013164032508076_);}%0A%09.st245{fill:url(%23SVGID_00000039135340011161723160000013310729678683653288_);}%0A%09.st246{fill:url(%23SVGID_00000088837260470886924210000007536129632482748092_);}%0A%09.st247{fill:url(%23SVGID_00000023275773061400011760000016138215536616486309_);}%0A%09.st248{fill:url(%23SVGID_00000003790862433168934280000016095504916432154550_);}%0A%09.st249{fill:url(%23SVGID_00000175314177530022377570000016446064611270339208_);}%0A%09.st250{fill:url(%23SVGID_00000104665914012478554740000010308696881919305601_);}%0A%09.st251{fill:url(%23SVGID_00000038412376126705706200000011707987160410656142_);}%0A%09.st252{fill:url(%23SVGID_00000055686790609318851760000006722074349757314973_);}%0A%09.st253{fill:url(%23SVGID_00000167361954814066768360000011654405637151208323_);}%0A%09.st254{fill:url(%23SVGID_00000018231377677283326180000016170751120149662614_);}%0A%09.st255{fill:url(%23SVGID_00000066496734270636208710000015926593129845160611_);}%0A%09.st256{fill:url(%23SVGID_00000100347708643200068360000015214405039975810212_);}%0A%09.st257{fill:url(%23SVGID_00000162325414279174959840000014648168374369126296_);}%0A%09.st258{fill:url(%23SVGID_00000004546135286760044460000015218924414741555629_);}%0A%09.st259{fill:url(%23SVGID_00000047746106622210337930000013490701850746543037_);}%0A%09.st260{fill:url(%23SVGID_00000178176864147943830920000011794363510951029666_);}%0A%09.st261{fill:url(%23SVGID_00000068635885903176712270000018333969375079813025_);}%0A%09.st262{fill:url(%23SVGID_00000039113253796763013400000009993541218408604298_);}%0A%09.st263{fill:url(%23SVGID_00000150806562756000540140000008508246806907462287_);}%0A%09.st264{fill:url(%23SVGID_00000129171257806010404390000016609109864206065281_);}%0A%09.st265{fill:url(%23SVGID_00000103252683525140977980000007945643609605572756_);}%0A%09.st266{fill:url(%23SVGID_00000165945982650673823210000014226554627737812874_);}%0A%09.st267{fill:url(%23SVGID_00000004529461356320545790000017946503070570107035_);}%0A%09.st268{fill:url(%23SVGID_00000083090662457126724410000008133151816177825977_);}%0A%09.st269{fill:url(%23SVGID_00000050657834661532794410000004904741620051825289_);}%0A%09.st270{fill:url(%23SVGID_00000068651243249598579450000017655432346510274461_);}%0A%09.st271{fill:url(%23SVGID_00000011720837514705047310000016106366142631713444_);}%0A%09.st272{fill:url(%23SVGID_00000022521632042857228840000008150689548062850946_);}%0A%09.st273{fill:url(%23SVGID_00000164515645835779470500000006029978100224301185_);}%0A%09.st274{fill:url(%23SVGID_00000010294916139349768250000010384742406679871914_);}%0A%09.st275{fill:url(%23SVGID_00000112628658016751011580000000393679998045630886_);}%0A%09.st276{fill:url(%23SVGID_00000173162109876331158820000002424671596436679068_);}%0A%09.st277{fill:url(%23SVGID_00000081641260608597426100000009563169260744741253_);}%0A%09.st278{fill:url(%23SVGID_00000161623363145645319140000005390892695785328023_);}%0A%09.st279{fill:url(%23SVGID_00000110453664811865434430000015878031967803449217_);}%0A%09.st280{fill:url(%23SVGID_00000019664276290283497450000008951733478191791530_);}%0A%09.st281{fill:url(%23SVGID_00000011735795897316225440000012114472316689371051_);}%0A%09.st282{fill:url(%23SVGID_00000075874600978776678390000004678716772079799710_);}%0A%09.st283{fill:url(%23SVGID_00000080897019297331000730000004944118568981964423_);}%0A%09.st284{fill:url(%23SVGID_00000099657153732221950350000002924190178298789524_);}%0A%09.st285{fill:url(%23SVGID_00000081647366032414574690000005746807948329468602_);}%0A%09.st286{fill:url(%23SVGID_00000149357166347022346660000008012772519444003262_);}%0A%09.st287{fill:url(%23SVGID_00000080900838278259725490000016211691145188015269_);}%0A%09.st288{fill:url(%23SVGID_00000004536689044929864920000014447301974904846223_);}%0A%09.st289{fill:url(%23SVGID_00000038377056023507284730000011606449857102791831_);}%0A%09.st290{fill:url(%23SVGID_00000096040918722201456520000000105225685175361944_);}%0A%09.st291{fill:url(%23SVGID_00000000906172016896839470000001383252251413169311_);}%0A%09.st292{fill:url(%23SVGID_00000010293597894667121890000005383105693469951420_);}%0A%09.st293{fill:url(%23SVGID_00000177455024217807107680000018400843041972901812_);}%0A%09.st294{fill:url(%23SVGID_00000021093963607602177530000012684742076166765441_);}%0A%09.st295{fill:url(%23SVGID_00000045579806848890370830000007748013357711631783_);}%0A%09.st296{fill:url(%23SVGID_00000111888145606836820300000015186045977364553890_);}%0A%09.st297{fill:url(%23SVGID_00000119097785049930816880000011293822528595223434_);}%0A%09.st298{fill:url(%23SVGID_00000136397607166935235570000009798083187339692434_);}%0A%09.st299{fill:url(%23SVGID_00000160192106873728460940000015353116803731847320_);}%0A%09.st300{fill:url(%23SVGID_00000171689405040294818400000016560072617702066613_);}%0A%09.st301{fill:url(%23SVGID_00000099625438937634753240000017173862565081894079_);}%0A%09.st302{fill:url(%23SVGID_00000064330856544680897220000004854766652344263096_);}%0A%09.st303{fill:url(%23SVGID_00000014635863391824765490000016467048599156329644_);}%0A%09.st304{fill:url(%23SVGID_00000047764263471050095160000006907629565321240199_);}%0A%09.st305{fill:url(%23SVGID_00000048490962312865698750000004906035800477754815_);}%0A%09.st306{fill:url(%23SVGID_00000072968159082224531280000002354524327430968203_);}%0A%09.st307{fill:url(%23SVGID_00000174602129481327449430000002366273344276690348_);}%0A%09.st308{fill:url(%23SVGID_00000137831714109468798360000001852123570831041923_);}%0A%09.st309{fill:url(%23SVGID_00000081642477761131090830000002815600739963660713_);}%0A%09.st310{fill:url(%23SVGID_00000003098965381799805850000001629380470165999787_);}%0A%09.st311{fill:url(%23SVGID_00000179639446886263634430000003148081604259294132_);}%0A%09.st312{fill:url(%23SVGID_00000151510714154176101470000017642998803562276790_);}%0A%09.st313{fill:url(%23SVGID_00000160885809752561740600000009919206739209772428_);}%0A%09.st314{fill:url(%23SVGID_00000092457970348087527890000012510635864137271998_);}%0A%09.st315{fill:url(%23SVGID_00000111890427102981025730000010626141730546734727_);}%0A%09.st316{fill:url(%23SVGID_00000134932555930600821270000005169788393614686895_);}%0A%09.st317{fill:url(%23SVGID_00000174584914932091006770000003315163976381872556_);}%0A%09.st318{fill:url(%23SVGID_00000176038246716740215640000010032883082050864777_);}%0A%09.st319{fill:url(%23SVGID_00000060720643693627205830000003880922356222063784_);}%0A%09.st320{fill:url(%23SVGID_00000034087069520171566820000007878680048888230331_);}%0A%09.st321{fill:url(%23SVGID_00000121259939478615624530000012616359584278266281_);}%0A%09.st322{fill:url(%23SVGID_00000047053851940569625880000010838205280581964700_);}%0A%09.st323{fill:url(%23SVGID_00000044152127031022404630000012180633830988203707_);}%0A%09.st324{fill:url(%23SVGID_00000113348862196946235790000013957779846216255105_);}%0A%09.st325{fill:url(%23SVGID_00000096038644217984046540000004799247170262918040_);}%0A%09.st326{fill:url(%23SVGID_00000023984919894679746110000017585188185645437599_);}%0A%09.st327{fill:url(%23SVGID_00000034809714517016927330000018229495420476478344_);}%0A%09.st328{fill:url(%23SVGID_00000157274989130828962470000007736919061219620793_);}%0A%09.st329{fill:url(%23SVGID_00000146491059537689067620000007856461939976747967_);}%0A%09.st330{fill:url(%23SVGID_00000079474562493894474040000007263266742187569537_);}%0A%09.st331{fill:url(%23SVGID_00000093894142815640752900000005373179425838129800_);}%0A%09.st332{fill:url(%23SVGID_00000047023781245933125910000004098548045278771123_);}%0A%09.st333{fill:url(%23SVGID_00000098923726990597866160000017850623332303677606_);}%0A%09.st334{fill:url(%23SVGID_00000125602915353007665800000016585658655755349376_);}%0A%09.st335{fill:url(%23SVGID_00000099635815349981268740000008068230276276133007_);}%0A%09.st336{fill:url(%23SVGID_00000101071136090258242200000005939531639348630933_);}%0A%09.st337{fill:url(%23SVGID_00000045583711160732522850000005435225877472914858_);}%0A%09.st338{fill:url(%23SVGID_00000124143153583382640580000016589853857402984363_);}%0A%09.st339{fill:url(%23SVGID_00000119106037691058094150000009880892886039568021_);}%0A%09.st340{fill:url(%23SVGID_00000157987761813788610130000014269743429958130111_);}%0A%09.st341{fill:url(%23SVGID_00000018194551512025012450000003748474701039013009_);}%0A%09.st342{fill:url(%23SVGID_00000044893031572363280820000013014116228076532354_);}%0A%09.st343{fill:url(%23SVGID_00000055686519311625779530000013807973356507005573_);}%0A%09.st344{fill:url(%23SVGID_00000114068940748035631320000000122481748995005368_);}%0A%09.st345{fill:url(%23SVGID_00000051342365934840951610000006405545453554528417_);}%0A%09.st346{fill:url(%23SVGID_00000127736188218943767780000009164321246666800570_);}%0A%09.st347{fill:url(%23SVGID_00000136394569514302956320000000240409041794712223_);}%0A%09.st348{fill:url(%23SVGID_00000071551076002127696230000003933545822804117130_);}%0A%09.st349{fill:url(%23SVGID_00000124150120777136908350000001883173872844562335_);}%0A%09.st350{fill:url(%23SVGID_00000170251214246184949920000004062739969326481027_);}%0A%09.st351{fill:url(%23SVGID_00000075126051855337151580000013272894882599827631_);}%0A%09.st352{fill:url(%23SVGID_00000030481403853905151870000015206696137816333485_);}%0A%09.st353{fill:url(%23SVGID_00000136392437360287047590000008282201806659899806_);}%0A%09.st354{fill:url(%23SVGID_00000049941030955222808550000001058560983648044974_);}%0A%09.st355{fill:url(%23SVGID_00000095326929684170834150000013805136471452546737_);}%0A%09.st356{fill:url(%23SVGID_00000077297184462019603050000014203352203333721220_);}%0A%09.st357{fill:url(%23SVGID_00000168832211256806246710000006354159691524958369_);}%0A%09.st358{fill:url(%23SVGID_00000005979993459771752350000017973540940754154169_);}%0A%09.st359{fill:url(%23SVGID_00000142176616879938273650000017853724519008762283_);}%0A%09.st360{fill:url(%23SVGID_00000057841824254941195130000000041187002454415244_);}%0A%09.st361{fill:url(%23SVGID_00000018957383819000046690000013840506961910608265_);}%0A%09.st362{fill:url(%23SVGID_00000150100347640297329820000017708067373474059448_);}%0A%09.st363{fill:url(%23SVGID_00000110446910803519536820000004037579479305423285_);}%0A%09.st364{fill:url(%23SVGID_00000026859439841738818730000003879986964604222136_);}%0A%09.st365{fill:url(%23SVGID_00000101065616062650540090000011862218375148542882_);}%0A%09.st366{fill:url(%23SVGID_00000157268191132984971780000008042184582462724794_);}%0A%09.st367{fill:url(%23SVGID_00000013887451684067354100000007891327656857693619_);}%0A%09.st368{fill:url(%23SVGID_00000037680811099735676250000017551948752052704445_);}%0A%09.st369{fill:url(%23SVGID_00000033371619270561890770000016166668743787070143_);}%0A%09.st370{fill:url(%23SVGID_00000136380931956876419000000002124755778774184595_);}%0A%09.st371{fill:url(%23SVGID_00000018215177866507349390000005012023975927389110_);}%0A%09.st372{fill:url(%23SVGID_00000075156847250873186800000008727054286075554468_);}%0A%09.st373{fill:url(%23SVGID_00000173872860967792812600000002391312492511490691_);}%0A%09.st374{fill:url(%23SVGID_00000054255906414126378210000013065102416663084470_);}%0A%09.st375{fill:url(%23SVGID_00000152264506865771828160000000945803999269221286_);}%0A%09.st376{fill:url(%23SVGID_00000139270540168846084870000017982244049098155682_);}%0A%09.st377{fill:url(%23SVGID_00000047046896045490572660000008539621030269069443_);}%0A%09.st378{fill:url(%23SVGID_00000004513671357123219120000013816486565475894196_);}%0A%09.st379{fill:url(%23SVGID_00000173136572715651548610000011762791269598109603_);}%0A%09.st380{fill:url(%23SVGID_00000072968165090412864850000017508516326666481851_);}%0A%09.st381{fill:url(%23SVGID_00000134963518183317150680000012187777488076313781_);}%0A%09.st382{fill:url(%23SVGID_00000113335863758152679450000013526567302881264291_);}%0A%09.st383{fill:url(%23SVGID_00000014617027197522431310000012254194503672848827_);}%0A%09.st384{fill:url(%23SVGID_00000077312054934136307630000007628161026788409223_);}%0A%09.st385{fill:url(%23SVGID_00000026163022491944224390000000318049095328073402_);}%0A%09.st386{fill:url(%23SVGID_00000080174916066327222300000009347446023217102518_);}%0A%09.st387{fill:url(%23SVGID_00000164510199346640018370000006119008420053132963_);}%0A%09.st388{fill:url(%23SVGID_00000018226410702405206770000008750683775161551022_);}%0A%09.st389{fill:url(%23SVGID_00000044171305718380618520000011054193487906910365_);}%0A%09.st390{fill:url(%23SVGID_00000091710491781048673520000007949738852754089618_);}%0A%09.st391{fill:url(%23SVGID_00000031907279968321219250000014234380444216192434_);}%0A%09.st392{fill:url(%23SVGID_00000106835748263026892740000006512343549126822838_);}%0A%09.st393{fill:url(%23SVGID_00000028302142107430431050000011229729115020180870_);}%0A%09.st394{fill:url(%23SVGID_00000101821282183702796200000006674777808921002912_);}%0A%09.st395{fill:url(%23SVGID_00000012462132184943945310000012438252993439203001_);}%0A%09.st396{fill:url(%23SVGID_00000057856757566556475610000006957432684505794725_);}%0A%09.st397{fill:url(%23SVGID_00000145770004898910821730000010010620625623181731_);}%0A%09.st398{fill:url(%23SVGID_00000039095546878738321000000015895596668801081506_);}%0A%09.st399{fill:url(%23SVGID_00000054224826894808806200000010882043716472844991_);}%0A%09.st400{fill:url(%23SVGID_00000085234795253246836360000015517235660744423088_);}%0A%09.st401{fill:url(%23SVGID_00000126301445673899618340000017429410843638988464_);}%0A%09.st402{fill:url(%23SVGID_00000073681248904459234340000010095775487611509126_);}%0A%09.st403{fill:url(%23SVGID_00000169518493145387036700000009669494801582549417_);}%0A%09.st404{fill:url(%23SVGID_00000153695901495316629620000001663868342650823074_);}%0A%09.st405{fill:url(%23SVGID_00000102518267927210477550000017525591673440816270_);}%0A%09.st406{fill:url(%23SVGID_00000005985537308656799700000001053358050180577209_);}%0A%09.st407{fill:url(%23SVGID_00000070798553211734235140000011532348069492886165_);}%0A%09.st408{fill:url(%23SVGID_00000101810227372802104090000003537426123931412657_);}%0A%09.st409{fill:url(%23SVGID_00000077301633388036475200000007367331904496480171_);}%0A%09.st410{fill:url(%23SVGID_00000166643936762155483790000001916441146944306874_);}%0A%09.st411{fill:url(%23SVGID_00000006695522097295039810000016684910029618296981_);}%0A%09.st412{fill:url(%23SVGID_00000096034258518289438350000000337840821438619779_);}%0A%09.st413{fill:url(%23SVGID_00000168816224256939034800000003794856828868240544_);}%0A%09.st414{fill:url(%23SVGID_00000128461252767712142090000017972906022352589702_);}%0A%09.st415{fill:url(%23SVGID_00000157280398879512731590000006379359027831848841_);}%0A%09.st416{fill:url(%23SVGID_00000132780284585894677940000006494087702628302757_);}%0A%09.st417{fill:url(%23SVGID_00000075120683609513828980000001313956948169576595_);}%0A%09.st418{fill:url(%23SVGID_00000061463378120590387110000003461590088064382096_);}%0A%09.st419{fill:url(%23SVGID_00000092450906415343155100000013571368642583469247_);}%0A%09.st420{fill:url(%23SVGID_00000097463679039425968480000017118192117788462478_);}%0A%09.st421{fill:url(%23SVGID_00000000911841918044711390000004135262126586459274_);}%0A%09.st422{fill:url(%23SVGID_00000029012772423372869350000008711242830970177192_);}%0A%09.st423{fill:url(%23SVGID_00000021799791519990094560000015641043015977136290_);}%0A%09.st424{fill:url(%23SVGID_00000067952465751579573570000018130690996540634292_);}%0A%09.st425{fill:url(%23SVGID_00000109748282133728382510000011053296897533129148_);}%0A%09.st426{fill:url(%23SVGID_00000114062480426884032430000004373282643560934066_);}%0A%09.st427{fill:url(%23SVGID_00000132082133921805937170000013721382027045855672_);}%0A%09.st428{fill:url(%23SVGID_00000163058765217534456140000011407329430205243300_);}%0A%09.st429{fill:url(%23SVGID_00000021106943686840256630000000112052839506472872_);}%0A%09.st430{fill:url(%23SVGID_00000034772527909058227700000006771325804416357008_);}%0A%09.st431{fill:url(%23SVGID_00000082332165722886975480000012416026536652896922_);}%0A%09.st432{fill:url(%23SVGID_00000169519265908965074180000013523677540673457072_);}%0A%09.st433{fill:url(%23SVGID_00000072272248448497139100000001747076468266302651_);}%0A%09.st434{fill:url(%23SVGID_00000134226880983537725450000012964012219244868255_);}%0A%09.st435{fill:url(%23SVGID_00000136386903825449539470000010003231753692893336_);}%0A%09.st436{fill:url(%23SVGID_00000180360443903397034880000012540126719204004791_);}%0A%09.st437{fill:url(%23SVGID_00000054955973286302861540000014082363071064812943_);}%0A%09.st438{fill:url(%23SVGID_00000049931238923021579610000017808715929555400321_);}%0A%09.st439{fill:url(%23SVGID_00000170246161078415113020000012466831430525511332_);}%0A%09.st440{fill:url(%23SVGID_00000014592490110426596950000005873564482359318926_);}%0A%09.st441{fill:url(%23SVGID_00000079458992330275677710000006201955336995619487_);}%0A%09.st442{fill:url(%23SVGID_00000125574951100574038290000009625966229268710565_);}%0A%09.st443{fill:url(%23SVGID_00000090987342944179278000000001010888868825924491_);}%0A%09.st444{fill:url(%23SVGID_00000181049069100042188480000001568705239798665360_);}%0A%09.st445{fill:url(%23SVGID_00000026877410826759352690000005038089330967488644_);}%0A%09.st446{fill:url(%23SVGID_00000011015973365543025720000005283773466235143603_);}%0A%09.st447{fill:url(%23SVGID_00000041975407784663115960000009260738324202399393_);}%0A%09.st448{fill:url(%23SVGID_00000013901475784549428720000014905022892447465872_);}%0A%09.st449{fill:url(%23SVGID_00000164484893416043615220000012318516009721648288_);}%0A%09.st450{fill:url(%23SVGID_00000034794440830139415940000004819176823571818916_);}%0A%09.st451{fill:url(%23SVGID_00000037663744231392610030000009542036872530215837_);}%0A%09.st452{fill:url(%23SVGID_00000024699816218073382860000001427892097356199585_);}%0A%09.st453{fill:url(%23SVGID_00000110460380360022856110000011233752704232587454_);}%0A%09.st454{fill:url(%23SVGID_00000067924238016286929540000003787163700892455842_);}%0A%09.st455{fill:url(%23SVGID_00000085231478409013987890000001395481012203078311_);}%0A%09.st456{fill:url(%23SVGID_00000119834152157566355610000009789934215968656029_);}%0A%09.st457{fill:url(%23SVGID_00000134956733336606469840000008324928463162858381_);}%0A%09.st458{fill:url(%23SVGID_00000065055983834972455610000015923562210661855145_);}%0A%09.st459{fill:url(%23SVGID_00000024694749853266704530000007802683605277411765_);}%0A%09.st460{fill:url(%23SVGID_00000083051245242698173020000006372606659214867381_);}%0A%09.st461{fill:url(%23SVGID_00000004521483455359882840000013191041044164460981_);}%0A%09.st462{fill:url(%23SVGID_00000008125935582001761440000005952904577929351078_);}%0A%09.st463{fill:url(%23SVGID_00000144315681940805010770000013011166700639372693_);}%0A%09.st464{fill:url(%23SVGID_00000003819224944729877370000016907310086466295191_);}%0A%09.st465{fill:url(%23SVGID_00000015348425564366141480000004178827671790839970_);}%0A%09.st466{fill:url(%23SVGID_00000152258545024023390050000006611472777111535031_);}%0A%09.st467{fill:url(%23SVGID_00000082347071683215032550000004194338713358791330_);}%0A%09.st468{fill:url(%23SVGID_00000067235452303435556910000004176628311417392015_);}%0A%09.st469{fill:url(%23SVGID_00000046329604255502702520000011784885070755104682_);}%0A%09.st470{fill:url(%23SVGID_00000080180984651233388610000014781091710968449443_);}%0A%09.st471{fill:url(%23SVGID_00000147208007212545734940000003157337840355941518_);}%0A%09.st472{fill:url(%23SVGID_00000062912260814218164980000015979271907709576365_);}%0A%09.st473{fill:url(%23SVGID_00000014615212709348215520000010112280141548417673_);}%0A%09.st474{fill:url(%23SVGID_00000053521546260604417260000001817767281007164313_);}%0A%09.st475{fill:url(%23SVGID_00000034795783307940576280000012834080496640335253_);}%0A%09.st476{fill:url(%23SVGID_00000080198987401313746140000008018732487424319629_);}%0A%09.st477{fill:url(%23SVGID_00000129171164882395973600000002719004418110894003_);}%0A%09.st478{fill:url(%23SVGID_00000096774507830993815340000004822034213908160191_);}%0A%09.st479{fill:url(%23SVGID_00000032650460221837528370000004800382482209625788_);}%0A%09.st480{fill:url(%23SVGID_00000104687672798834731630000017722367148246673553_);}%0A%09.st481{fill:url(%23SVGID_00000160192294127778233650000016223632023791345281_);}%0A%09.st482{fill:url(%23SVGID_00000059299737973615937360000007667480846650120341_);}%0A%09.st483{fill:url(%23SVGID_00000147197909907313027440000002465484719483953820_);}%0A%09.st484{fill:url(%23SVGID_00000159459767775409078260000003158678070032886206_);}%0A%09.st485{fill:url(%23SVGID_00000176727484672404997660000016248496326948695989_);}%0A%09.st486{fill:url(%23SVGID_00000118397626499892538290000013682112396216245414_);}%0A%09.st487{fill:url(%23SVGID_00000108289612446495459310000017749415439281617540_);}%0A%09.st488{fill:url(%23SVGID_00000120552435705834015400000006538712809254756737_);}%0A%09.st489{fill:url(%23SVGID_00000165953407890585025590000014642147007090551701_);}%0A%09.st490{fill:url(%23SVGID_00000116231303962448017480000012085863110522349197_);}%0A%09.st491{fill:url(%23SVGID_00000075856675326012801000000018441910475498966442_);}%0A%09.st492{fill:url(%23SVGID_00000023990229497162408620000012921369128802299308_);}%0A%09.st493{fill:url(%23SVGID_00000028322484878002437570000008233526503201141658_);}%0A%09.st494{fill:url(%23SVGID_00000163049598356002821480000000260676589548896942_);}%0A%09.st495{fill:url(%23SVGID_00000060020584479502448320000013955495483771669923_);}%0A%09.st496{fill:url(%23SVGID_00000148627373329241468020000001293546218356514434_);}%0A%09.st497{fill:url(%23SVGID_00000023987250480984908870000007335193734893407669_);}%0A%09.st498{fill:url(%23SVGID_00000010995621239798464700000013617729908868762033_);}%0A%09.st499{fill:url(%23SVGID_00000097482619012125441120000006362944244714577283_);}%0A%09.st500{fill:url(%23SVGID_00000067235185065625466890000002067834743487543184_);}%0A%09.st501{fill:url(%23SVGID_00000183933687588899977420000003022030121279052174_);}%0A%09.st502{fill:url(%23SVGID_00000181773718647019514390000016473408548714120894_);}%0A%09.st503{fill:url(%23SVGID_00000022521732256907058200000017582459811521519533_);}%0A%09.st504{fill:url(%23SVGID_00000093141112083980802350000014914382185691875751_);}%0A%09.st505{fill:url(%23SVGID_00000176008807464479732060000012164439810065258134_);}%0A%09.st506{fill:url(%23SVGID_00000065794016597266892350000018403083204125092247_);}%0A%09.st507{fill:url(%23SVGID_00000183229263722727456010000003850004569057825454_);}%0A%09.st508{fill:url(%23SVGID_00000008844481813796348280000014012721238585786261_);}%0A%09.st509{fill:url(%23SVGID_00000140707136649074949350000016273931550796289421_);}%0A%09.st510{fill:url(%23SVGID_00000124155314996134737600000008173026528373495486_);}%0A%09.st511{fill:url(%23SVGID_00000052819118237553212490000003033208177529996936_);}%0A%09.st512{fill:url(%23SVGID_00000052062026644832203030000002735701265550305947_);}%0A%09.st513{fill:url(%23SVGID_00000180356022628803337810000017050785140800840064_);}%0A%09.st514{fill:url(%23SVGID_00000147906444547996298810000008287431309514844076_);}%0A%09.st515{fill:url(%23SVGID_00000028319517544092908970000010568596937963851179_);}%0A%09.st516{fill:url(%23SVGID_00000097491149644292795700000000449425225451440823_);}%0A%09.st517{fill:url(%23SVGID_00000160184212615336862520000011299051417147989920_);}%0A%09.st518{fill:url(%23SVGID_00000161606807650223847860000017316732071596141188_);}%0A%09.st519{fill:url(%23SVGID_00000172409092192712952260000003263782909558908546_);}%0A%09.st520{fill:url(%23SVGID_00000095334290515375528750000001526407808190585514_);}%0A%09.st521{fill:url(%23SVGID_00000055688194724352064890000010035102687577526682_);}%0A%09.st522{fill:url(%23SVGID_00000152250274589477187910000008780233975061440169_);}%0A%09.st523{fill:url(%23SVGID_00000103225442901109298430000000286691470036724642_);}%0A%09.st524{fill:url(%23SVGID_00000180361246499456042720000003119202178476451718_);}%0A%09.st525{fill:url(%23SVGID_00000049185132542652025270000012288294523223324071_);}%0A%09.st526{fill:url(%23SVGID_00000092433699372361086060000012783285963233080499_);}%0A%09.st527{fill:url(%23SVGID_00000170964959854478224270000013797274634735883173_);}%0A%09.st528{fill:url(%23SVGID_00000174581170923017118330000005461290320863462294_);}%0A%09.st529{fill:url(%23SVGID_00000120543661069459809780000003331369646980216766_);}%0A%09.st530{fill:url(%23SVGID_00000097481454176715247110000012029266079343164335_);}%0A%09.st531{fill:url(%23SVGID_00000062194265276689034170000004113507972057451707_);}%0A%09.st532{fill:url(%23SVGID_00000178892316463993146300000000022975572008066981_);}%0A%09.st533{fill:url(%23SVGID_00000152972207716284524010000005232320582826880151_);}%0A%09.st534{fill:url(%23SVGID_00000023968981445514874300000002071821584764166532_);}%0A%09.st535{fill:url(%23SVGID_00000121973296323061341040000002759679564358941099_);}%0A%09.st536{fill:url(%23SVGID_00000173134320050565884380000005116773865172150925_);}%0A%09.st537{fill:url(%23SVGID_00000052815819279313432740000000544806244941827767_);}%0A%09.st538{fill:url(%23SVGID_00000069367242592369472460000001591456782280203949_);}%0A%09.st539{fill:url(%23SVGID_00000148620421566039277750000008350535052620182404_);}%0A%09.st540{fill:url(%23SVGID_00000078723137627809595080000005457017985496150458_);}%0A%09.st541{fill:url(%23SVGID_00000179647786112505782130000010646401840882208161_);}%0A%09.st542{fill:url(%23SVGID_00000089571723290547867860000006059186684765947277_);}%0A%09.st543{fill:url(%23SVGID_00000155140891906069869620000011920919118492296879_);}%0A%09.st544{fill:url(%23SVGID_00000144296107208015503680000009322188726937263028_);}%0A%09.st545{fill:url(%23SVGID_00000086684089323693842300000014053906586401136315_);}%0A%09.st546{fill:url(%23SVGID_00000062905973036221812220000003206653170176995473_);}%0A%09.st547{fill:url(%23SVGID_00000093170621935233466680000001795856663929627311_);}%0A%09.st548{fill:url(%23SVGID_00000171678253319419014340000015630309093562774434_);}%0A%09.st549{fill:url(%23SVGID_00000177483975625811736090000009558256050015149722_);}%0A%09.st550{fill:url(%23SVGID_00000133515299773785388630000015768668620307485591_);}%0A%09.st551{fill:url(%23SVGID_00000034055938048177182290000014500773316576514702_);}%0A%09.st552{fill:url(%23SVGID_00000176022946482670496170000005105721776713082510_);}%0A%09.st553{fill:url(%23SVGID_00000067929897846192627210000000648440480617841541_);}%0A%09.st554{fill:url(%23SVGID_00000160174025601260709690000005630408451635499415_);}%0A%09.st555{fill:url(%23SVGID_00000111912869707731356190000015854160094718250666_);}%0A%09.st556{fill:url(%23SVGID_00000000906331003395441170000005381781176386626485_);}%0A%09.st557{fill:url(%23SVGID_00000094620035641130179870000012668433051664259969_);}%0A%09.st558{fill:url(%23SVGID_00000060716171210416832210000007824991794467536556_);}%0A%09.st559{fill:url(%23SVGID_00000088839084437027407630000015153738694671893151_);}%0A%09.st560{fill:url(%23SVGID_00000145058342942233401940000004473558607369400209_);}%0A%09.st561{fill:url(%23SVGID_00000126285757301857559140000015361462034697472904_);}%0A%09.st562{fill:url(%23SVGID_00000010998774672516156610000006758104289755050894_);}%0A%09.st563{fill:url(%23SVGID_00000109013519372178338240000008246873041707547308_);}%0A%09.st564{fill:url(%23SVGID_00000109748183616614576230000012594094633503855267_);}%0A%09.st565{fill:url(%23SVGID_00000172435263829486054980000004670070911350227634_);}%0A%09.st566{fill:url(%23SVGID_00000031898952841995863720000003859977170692482698_);}%0A%09.st567{fill:url(%23SVGID_00000119116865443544563020000015469383641271310006_);}%0A%09.st568{fill:url(%23SVGID_00000008834661273892024520000017129543558488605327_);}%0A%09.st569{fill:url(%23SVGID_00000170974277822608062390000014299812997571546030_);}%0A%09.st570{fill:url(%23SVGID_00000026154695650660861600000017188086674790461111_);}%0A%09.st571{fill:url(%23SVGID_00000108285420939422926950000009523678179007058317_);}%0A%09.st572{fill:url(%23SVGID_00000085219033983143748590000016349709029538384559_);}%0A%09.st573{fill:url(%23SVGID_00000117652205932098034720000005455803425733028000_);}%0A%09.st574{fill:url(%23SVGID_00000100346761518856361500000009650362945727909010_);}%0A%09.st575{fill:url(%23SVGID_00000119824284761977092560000017873459466789683604_);}%0A%09.st576{fill:url(%23SVGID_00000020365154516670639010000008248536696304341687_);}%0A%09.st577{fill:url(%23SVGID_00000010995019644283372590000014914731511049574825_);}%0A%09.st578{fill:url(%23SVGID_00000029738495222934213490000014812505925844453791_);}%0A%09.st579{fill:url(%23SVGID_00000032647762630500529820000009072337002699374244_);}%0A%09.st580{fill:url(%23SVGID_00000177470704019613037960000013273162940329886862_);}%0A%09.st581{fill:url(%23SVGID_00000150103693423656419130000009146163011341296055_);}%0A%09.st582{fill:url(%23SVGID_00000041997588284490965660000017332629475577783697_);}%0A%09.st583{fill:url(%23SVGID_00000095300623256720052470000016813132067975747252_);}%0A%09.st584{fill:url(%23SVGID_00000142171151656269390020000003666608709195417219_);}%0A%09.st585{fill:url(%23SVGID_00000081637486658608601870000003373901512653981626_);}%0A%09.st586{fill:url(%23SVGID_00000109751031384822626160000016510233527368578952_);}%0A%09.st587{fill:url(%23SVGID_00000117637035743535370820000004413946452729235896_);}%0A%09.st588{fill:url(%23SVGID_00000149355921360680743930000013426149408260742053_);}%0A%09.st589{fill:url(%23SVGID_00000116228515172615063400000011224700077575759749_);}%0A%09.st590{fill:url(%23SVGID_00000166668129267030359740000018006202022664574354_);}%0A%09.st591{fill:url(%23SVGID_00000094599252845675854380000007212263132451351220_);}%0A%09.st592{fill:url(%23SVGID_00000115489349178085113220000017070192833901197978_);}%0A%09.st593{fill:url(%23SVGID_00000085936446674703893520000000894259116405830318_);}%0A%09.st594{fill:url(%23SVGID_00000083063512623008479170000002675051008716036228_);}%0A%09.st595{fill:url(%23SVGID_00000071521365245152761730000006320916801901084592_);}%0A%09.st596{fill:url(%23SVGID_00000101824303226637971950000001698053122379737233_);}%0A%09.st597{fill:url(%23SVGID_00000162339599111443211300000003842436390062437539_);}%0A%09.st598{fill:url(%23SVGID_00000144311995180486483170000013264161501429620411_);}%0A%09.st599{fill:url(%23SVGID_00000010277128547584118360000015935508792532439192_);}%0A%09.st600{fill:url(%23SVGID_00000127021507546604623850000000616756679003099304_);}%0A%09.st601{fill:url(%23SVGID_00000141421149062548821190000011491258799945567898_);}%0A%09.st602{fill:url(%23SVGID_00000003093197868197513500000007345037732283355291_);}%0A%09.st603{fill:url(%23SVGID_00000164483367021944979760000002764850018260206721_);}%0A%09.st604{fill:url(%23SVGID_00000032630391728575378540000006138999334363216564_);}%0A%09.st605{fill:url(%23SVGID_00000183227040005195628670000005287282183631308699_);}%0A%09.st606{fill:url(%23SVGID_00000091696401196531962470000009927440572756993190_);}%0A%09.st607{fill:url(%23SVGID_00000164497603891415297170000006986213691188727470_);}%0A%09.st608{fill:url(%23SVGID_00000182485940174344815750000014534230874593568652_);}%0A%09.st609{fill:url(%23SVGID_00000000940466315005871870000009542006573848286872_);}%0A%09.st610{fill:url(%23SVGID_00000015326709257895996830000015712941936569463717_);}%0A%09.st611{fill:url(%23SVGID_00000046320732786358245730000000191288212746330285_);}%0A%09.st612{fill:url(%23SVGID_00000002364329768025955330000004089567079064997043_);}%0A%09.st613{fill:url(%23SVGID_00000091720160884932122250000000823273511298540705_);}%0A%09.st614{fill:url(%23SVGID_00000152238360359781464390000015381658474345196217_);}%0A%09.st615{fill:url(%23SVGID_00000127026097320199228690000016194377228204179368_);}%0A%09.st616{fill:url(%23SVGID_00000080180429191344201710000005876502939647423669_);}%0A%09.st617{fill:url(%23SVGID_00000052801702936287166650000005691356105559549591_);}%0A%09.st618{fill:url(%23SVGID_00000026852369321330234770000006912667194296673158_);}%0A%09.st619{fill:url(%23SVGID_00000009577146015541529410000013973581204452252843_);}%0A%09.st620{fill:url(%23SVGID_00000044156931373961441450000000891711582544568470_);}%0A%09.st621{fill:url(%23SVGID_00000002380324769010138770000012522143514807840689_);}%0A%09.st622{fill:url(%23SVGID_00000157267766056800945980000012165476401764720809_);}%0A%09.st623{fill:url(%23SVGID_00000164493305843159729790000010401030849257564050_);}%0A%09.st624{fill:url(%23SVGID_00000111168154459973999970000007821715051556096651_);}%0A%09.st625{fill:url(%23SVGID_00000085948677767276444600000018437321695210840254_);}%0A%09.st626{fill:url(%23SVGID_00000118369581757057702250000017434145687929584273_);}%0A%09.st627{fill:url(%23SVGID_00000137109028583692111680000011364703736242100662_);}%0A%09.st628{fill:url(%23SVGID_00000136394147166643545310000017204794979036647061_);}%0A%09.st629{fill:url(%23SVGID_00000023243727907349386870000007897603871371169688_);}%0A%09.st630{fill:url(%23SVGID_00000038379223780270748930000000414794378906807975_);}%0A%09.st631{fill:url(%23SVGID_00000114772294967282368060000003253753171137554599_);}%0A%09.st632{fill:url(%23SVGID_00000027562636569158686140000011625977110202087101_);}%0A%09.st633{fill:url(%23SVGID_00000030483034174994658060000017128950575644132240_);}%0A%09.st634{fill:url(%23SVGID_00000063620592134625188190000013659882710995986077_);}%0A%09.st635{fill:url(%23SVGID_00000084526423019538169860000008863474914299973820_);}%0A%09.st636{fill:url(%23SVGID_00000099640877242469525000000000913949360114735541_);}%0A%09.st637{fill:url(%23SVGID_00000170250986798182036330000006045185701739149472_);}%0A%09.st638{fill:url(%23SVGID_00000091709795037974764580000013688160670081547679_);}%0A%09.st639{fill:url(%23SVGID_00000047058027115613674930000016332722520484552086_);}%0A%09.st640{fill:url(%23SVGID_00000036931758236205474370000010622318302658686905_);}%0A%09.st641{fill:url(%23SVGID_00000003078502951147683190000005198748846874284416_);}%0A%09.st642{fill:url(%23SVGID_00000159471233944092101160000016080421135495220912_);}%0A%09.st643{fill:url(%23SVGID_00000150090978582345583950000000198392662823575444_);}%0A%09.st644{fill:url(%23SVGID_00000107560767257234519490000006139882858559432071_);}%0A%09.st645{fill:url(%23SVGID_00000166642839448578240400000009835742810136551861_);}%0A%09.st646{fill:url(%23SVGID_00000022537650582783367510000009257551115693747862_);}%0A%09.st647{fill:url(%23SVGID_00000110444662686701508200000004189659330744695184_);}%0A%09.st648{fill:url(%23SVGID_00000080904157868408646550000000924269205042527632_);}%0A%09.st649{fill:url(%23SVGID_00000134928311979638529610000014319208280648462762_);}%0A%09.st650{fill:url(%23SVGID_00000171705167694658508310000008717695655073161393_);}%0A%09.st651{fill:url(%23SVGID_00000018926112522558793090000002319511717102960280_);}%0A%09.st652{fill:url(%23SVGID_00000117672977890121487050000017092498468101193601_);}%0A%09.st653{fill:url(%23SVGID_00000089559676761742348330000010725049693316580746_);}%0A%09.st654{fill:url(%23SVGID_00000050622276664761842650000002594138056751425958_);}%0A%09.st655{fill:url(%23SVGID_00000151527070865422945630000013010807248788105654_);}%0A%09.st656{fill:url(%23SVGID_00000106861787875096560620000010329468028597497011_);}%0A%09.st657{fill:url(%23SVGID_00000015316603778844828220000005617979497291397538_);}%0A%09.st658{fill:url(%23SVGID_00000130630497115033703300000014038374740941229476_);}%0A%09.st659{fill:url(%23SVGID_00000081630279069243479830000009159455588113431190_);}%0A%09.st660{fill:url(%23SVGID_00000159468454620203442070000010739377157678793915_);}%0A%09.st661{fill:url(%23SVGID_00000104680874644785971890000000076272073957925505_);}%0A%09.st662{fill:url(%23SVGID_00000043458928439131888630000006547399703966335674_);}%0A%09.st663{fill:url(%23SVGID_00000160161909690851941250000016735918881131672213_);}%0A%09.st664{fill:url(%23SVGID_00000039114418664837186790000002367399727383604653_);}%0A%09.st665{fill:url(%23SVGID_00000002352916585649187930000016104688063676066212_);}%0A%09.st666{fill:url(%23SVGID_00000166667486509956990830000014268013842815864972_);}%0A%09.st667{fill:url(%23SVGID_00000034058979769458384930000015615240150490045856_);}%0A%09.st668{fill:url(%23SVGID_00000137130367446595301110000016735991454878708361_);}%0A%09.st669{fill:url(%23SVGID_00000113342100339542814330000005811717926683690905_);}%0A%09.st670{fill:url(%23SVGID_00000001655971990814739270000010542781222218190260_);}%0A%09.st671{fill:url(%23SVGID_00000082346779236500885600000010248224178119112340_);}%0A%09.st672{fill:url(%23SVGID_00000114034463387226115640000017166035909247029657_);}%0A%09.st673{fill:url(%23SVGID_00000044173033441951569120000009221145369682114199_);}%0A%09.st674{fill:url(%23SVGID_00000022535646928207351950000005478814515534322840_);}%0A%09.st675{fill:url(%23SVGID_00000029016378929356697300000000783849130722669232_);}%0A%09.st676{fill:url(%23SVGID_00000066477829611921560990000010276358586409303740_);}%0A%09.st677{fill:url(%23SVGID_00000140695126273413058390000012902478718512634785_);}%0A%09.st678{fill:url(%23SVGID_00000013166646636448496260000017518798478207950475_);}%0A%09.st679{fill:url(%23SVGID_00000023960454283889657690000013220974218140095679_);}%0A%09.st680{fill:url(%23SVGID_00000024704102096674162910000002077199962223397772_);}%0A%09.st681{fill:url(%23SVGID_00000017507766440482764320000003019716945860065971_);}%0A%09.st682{fill:url(%23SVGID_00000005250510976671185020000005026215740622587304_);}%0A%09.st683{fill:url(%23SVGID_00000134938565584920430720000004163264709997224104_);}%0A%09.st684{fill:url(%23SVGID_00000141437323521579991530000017163207409259790507_);}%0A%09.st685{fill:url(%23SVGID_00000037688019103186491400000008676454490044223401_);}%0A%09.st686{fill:url(%23SVGID_00000031191995318565918930000008163627261685052606_);}%0A%09.st687{fill:url(%23SVGID_00000030472254371470604980000013385883995807862973_);}%0A%09.st688{fill:url(%23SVGID_00000057827036498862588340000018407907794340952200_);}%0A%09.st689{fill:url(%23SVGID_00000017490650202580161290000016069129585566471358_);}%0A%09.st690{fill:url(%23SVGID_00000008132225186007609530000003173805613995377579_);}%0A%09.st691{fill:url(%23SVGID_00000130634008195872681540000017423089622457554865_);}%0A%09.st692{fill:url(%23SVGID_00000178917846664338571170000001172397598193263781_);}%0A%09.st693{fill:url(%23SVGID_00000163781082506217032380000000047197726134119333_);}%0A%09.st694{fill:url(%23SVGID_00000124130598916641792760000011342299472364703889_);}%0A%09.st695{fill:url(%23SVGID_00000103248061581036398030000010431315355827216522_);}%0A%09.st696{fill:url(%23SVGID_00000098213095143254067850000001562525875048093081_);}%0A%09.st697{fill:url(%23SVGID_00000008871618147422971170000015021006008335318190_);}%0A%09.st698{fill:url(%23SVGID_00000160171803294949282700000007774723957581388687_);}%0A%09.st699{fill:url(%23SVGID_00000082347757276644132930000017029334296553980559_);}%0A%09.st700{fill:url(%23SVGID_00000023255092157370529840000002729497827828344511_);}%0A%09.st701{fill:url(%23SVGID_00000084519104834836954000000016256854893412191374_);}%0A%09.st702{fill:url(%23SVGID_00000165924623041529024190000008515517170631612330_);}%0A%09.st703{fill:url(%23SVGID_00000019677227650129681820000002296194794760641965_);}%0A%09.st704{fill:url(%23SVGID_00000086689440836324552750000013418995548660659631_);}%0A%09.st705{fill:url(%23SVGID_00000122714894212372766140000001624751669974273168_);}%0A%09.st706{fill:url(%23SVGID_00000090293706312959073480000003628245915095245198_);}%0A%09.st707{fill:url(%23SVGID_00000025403356976099812510000001871526310756765353_);}%0A%09.st708{fill:url(%23SVGID_00000011020974829660354810000008886236004330166400_);}%0A%09.st709{fill:url(%23SVGID_00000103236874032973835510000003024539746769501073_);}%0A%09.st710{fill:url(%23SVGID_00000094589668459197616580000011816081318546488728_);}%0A%09.st711{fill:url(%23SVGID_00000137103432342012391880000010586151681499525003_);}%0A%09.st712{fill:url(%23SVGID_00000047022229841475745130000009531709109296261566_);}%0A%09.st713{fill:url(%23SVGID_00000125593036415581879530000002451432217534976929_);}%0A%09.st714{fill:url(%23SVGID_00000168825628796547149100000017392458403748503954_);}%0A%09.st715{fill:url(%23SVGID_00000043450150234534126010000001175049846201208228_);}%0A%09.st716{fill:url(%23SVGID_00000095319874817709110160000005308687954053136534_);}%0A%09.st717{fill:url(%23SVGID_00000019654854965593391280000002459553022131904684_);}%0A%09.st718{fill:url(%23SVGID_00000098911393942159057190000013069713320172809658_);}%0A%09.st719{fill:url(%23SVGID_00000075859906861225818170000001459457345860137641_);}%0A%09.st720{fill:url(%23SVGID_00000082367755860826157070000018140155169249780148_);}%0A%09.st721{fill:url(%23SVGID_00000144297602377100076270000014451233242723906698_);}%0A%09.st722{fill:url(%23SVGID_00000083084062284834049740000009295217210958686113_);}%0A%09.st723{fill:url(%23SVGID_00000161628389601880735120000006887704255488697779_);}%0A%09.st724{fill:url(%23SVGID_00000152947093856046512330000005134110051987608716_);}%0A%09.st725{fill:url(%23SVGID_00000161617862738729210030000000788075752095453373_);}%0A%09.st726{fill:url(%23SVGID_00000029757374309638309540000013715181631554514820_);}%0A%09.st727{fill:url(%23SVGID_00000075164755402454769580000000958339820541613988_);}%0A%09.st728{fill:url(%23SVGID_00000041273111301360395690000007338976625612278192_);}%0A%09.st729{fill:url(%23SVGID_00000082347761636308388060000001175956335649340831_);}%0A%09.st730{fill:url(%23SVGID_00000142138749968891866650000018125133474535244721_);}%0A%09.st731{fill:url(%23SVGID_00000155851704500177276490000011578221786364619929_);}%0A%09.st732{fill:url(%23SVGID_00000127725346615251506150000009737003507757403298_);}%0A%09.st733{fill:url(%23SVGID_00000029746290782079786320000003387104054901788855_);}%0A%09.st734{fill:url(%23SVGID_00000062151882614010833280000011623951159100467082_);}%0A%09.st735{fill:url(%23SVGID_00000100381925844101970480000015542237743363459760_);}%0A%09.st736{fill:url(%23SVGID_00000042697564364665001010000000192148489972921495_);}%0A%09.st737{fill:url(%23SVGID_00000083796141157487858190000004106606220121973385_);}%0A%09.st738{fill:url(%23SVGID_00000173134952946238667790000017845233315360967604_);}%0A%09.st739{fill:url(%23SVGID_00000091700787217929781880000013629118805108548020_);}%0A%09.st740{fill:url(%23SVGID_00000044160317478758465670000005446139609601546881_);}%0A%09.st741{fill:url(%23SVGID_00000120559140997226248900000012846756609411072933_);}%0A%09.st742{fill:url(%23SVGID_00000147928251454419420860000014676279667475232692_);}%0A%09.st743{fill:url(%23SVGID_00000023959841446026491290000003626132072829178755_);}%0A%09.st744{fill:url(%23SVGID_00000067230505872846988520000007583071434648444563_);}%0A%09.st745{fill:url(%23SVGID_00000036211473795123425640000018268448747222253471_);}%0A%09.st746{fill:url(%23SVGID_00000083783521550859460650000012837238482039186328_);}%0A%09.st747{fill:url(%23SVGID_00000153670129226277941370000002172626048421100213_);}%0A%09.st748{fill:url(%23SVGID_00000034089877278995035870000008326559686275030913_);}%0A%09.st749{fill:url(%23SVGID_00000152981068061781806230000016590783625283190203_);}%0A%09.st750{fill:url(%23SVGID_00000104687716197919703890000005721599491366876072_);}%0A%09.st751{fill:url(%23SVGID_00000119109907049735705210000003597218554123027843_);}%0A%09.st752{fill:url(%23SVGID_00000121262571559277922900000017629387989086347150_);}%0A%09.st753{fill:url(%23SVGID_00000038381943580824627090000001557250016733331121_);}%0A%09.st754{fill:url(%23SVGID_00000161618967809554027570000014557807017066636988_);}%0A%09.st755{fill:url(%23SVGID_00000085238533925560584720000018308013646784761766_);}%0A%09.st756{fill:url(%23SVGID_00000125565343963029933110000014487529443507808413_);}%0A%09.st757{fill:url(%23SVGID_00000082345359003340077940000016376801048822415500_);}%0A%09.st758{fill:url(%23SVGID_00000129185362805012670580000016378627269466531988_);}%0A%09.st759{fill:url(%23SVGID_00000081623138425807317490000012307867579212618118_);}%0A%09.st760{fill:url(%23SVGID_00000109019037304363762750000004012746127000766358_);}%0A%09.st761{fill:url(%23SVGID_00000036211343477193991080000002397390229989921980_);}%0A%09.st762{fill:url(%23SVGID_00000028291594637158803230000015614079139613674387_);}%0A%09.st763{fill:url(%23SVGID_00000004506329113142566930000015796041520890405286_);}%0A%09.st764{fill:url(%23SVGID_00000052090933555897059420000002661029557911002497_);}%0A%09.st765{fill:url(%23SVGID_00000111172855429002951280000018327914757794718862_);}%0A%09.st766{fill:url(%23SVGID_00000034781961029758848540000001763963511593955719_);}%0A%09.st767{fill:url(%23SVGID_00000068643814514788900040000013276448482981910439_);}%0A%09.st768{fill:url(%23SVGID_00000029040746847730744990000009194345262719811721_);}%0A%09.st769{fill:url(%23SVGID_00000181792850395364642170000016789778540690293675_);}%0A%09.st770{fill:url(%23SVGID_00000046311661461010280980000005401212301795744687_);}%0A%09.st771{fill:url(%23SVGID_00000152955192337283037980000013843434372091847843_);}%0A%09.st772{fill:url(%23SVGID_00000018223116997833081510000009207667334926350237_);}%0A%09.st773{fill:url(%23SVGID_00000081620652669293893930000014347119559411864993_);}%0A%09.st774{fill:url(%23SVGID_00000181050819414937920290000009055311771388488338_);}%0A%09.st775{fill:url(%23SVGID_00000010312754843186937740000010631814460114160562_);}%0A%09.st776{fill:url(%23SVGID_00000105385222233551710160000004468737896166664877_);}%0A%09.st777{fill:url(%23SVGID_00000104675225132687872670000003330470680145534371_);}%0A%09.st778{fill:url(%23SVGID_00000096767564499772022770000004240909450815577755_);}%0A%09.st779{fill:url(%23SVGID_00000008857097627530143070000001029672250813103247_);}%0A%09.st780{fill:url(%23SVGID_00000110434138856230714050000000827260293324361116_);}%0A%09.st781{fill:url(%23SVGID_00000058571480689879138120000005927572932501874853_);}%0A%09.st782{fill:url(%23SVGID_00000175312779620499121230000003613770828125949607_);}%0A%09.st783{fill:url(%23SVGID_00000114756497721358190520000007898986333091550383_);}%0A%09.st784{fill:url(%23SVGID_00000061450006541760860770000002021976175796686522_);}%0A%09.st785{fill:url(%23SVGID_00000096757341835496062430000016452277999802212245_);}%0A%09.st786{fill:url(%23SVGID_00000075851334888904011460000009348598071117045177_);}%0A%09.st787{fill:url(%23SVGID_00000106832098735498894140000010360147839374506897_);}%0A%09.st788{fill:url(%23SVGID_00000024694539485168457820000005278569275455769492_);}%0A%09.st789{fill:url(%23SVGID_00000073681984695538562490000016251472688929751707_);}%0A%09.st790{fill:url(%23SVGID_00000143618709939671576950000000833024485840807308_);}%0A%09.st791{fill:url(%23SVGID_00000012449382484546081470000013130014796787729557_);}%0A%09.st792{fill:url(%23SVGID_00000008112623196528882160000007999304456070308516_);}%0A%09.st793{fill:url(%23SVGID_00000130633254412457665950000007573976352222961297_);}%0A%09.st794{fill:url(%23SVGID_00000153699508084674052020000015411590829228115107_);}%0A%09.st795{fill:url(%23SVGID_00000038381709393729826220000004507164164210762942_);}%0A%09.st796{fill:url(%23SVGID_00000096774129588485865070000004573413993570167699_);}%0A%09.st797{fill:url(%23SVGID_00000098213455046511093740000007164678636974851490_);}%0A%09.st798{fill:url(%23SVGID_00000048468026155943904360000003000460692530931894_);}%0A%09.st799{fill:url(%23SVGID_00000107570001171566991610000010135168090279973510_);}%0A%09.st800{fill:url(%23SVGID_00000034773753691030536820000014419616652162332321_);}%0A%09.st801{fill:url(%23SVGID_00000093136649710909926600000011512842154548356536_);}%0A%09.st802{fill:url(%23SVGID_00000118380012946462882710000006806589190614868389_);}%0A%09.st803{fill:url(%23SVGID_00000088112533527950374970000013034751672099805354_);}%0A%09.st804{fill:url(%23SVGID_00000138567481993696199110000016462320592882366340_);}%0A%09.st805{fill:url(%23SVGID_00000039849289334247434990000009065622634458536333_);}%0A%09.st806{fill:url(%23SVGID_00000054977816099551133370000003078392405354462341_);}%0A%09.st807{fill:url(%23SVGID_00000181082214126554838960000011812705092108174229_);}%0A%09.st808{fill:url(%23SVGID_00000042735310507227318460000017854467965134042030_);}%0A%09.st809{fill:url(%23SVGID_00000033332247381096875880000012655046202436539803_);}%0A%09.st810{fill:url(%23SVGID_00000015326632484611790000000014350512295688024224_);}%0A%09.st811{fill:url(%23SVGID_00000144302239088482059990000017116311574919475866_);}%0A%09.st812{fill:url(%23SVGID_00000024001307587816521230000018011014135179929234_);}%0A%09.st813{fill:url(%23SVGID_00000134958839759697215550000012521506746134646691_);}%0A%09.st814{fill:url(%23SVGID_00000165225251389060151600000018381325206360256139_);}%0A%09.st815{fill:url(%23SVGID_00000102543190061411108770000013744927882904257444_);}%0A%09.st816{fill:url(%23SVGID_00000047054223057909442710000003866099506576592008_);}%0A%09.st817{fill:url(%23SVGID_00000170256207767787179310000011827118715996159144_);}%0A%09.st818{fill:url(%23SVGID_00000091718290158965731420000018205015430623384720_);}%0A%09.st819{fill:url(%23SVGID_00000115514538081464747860000000607381565481935535_);}%0A%09.st820{fill:url(%23SVGID_00000023970727433237114180000008180106376746854071_);}%0A%09.st821{fill:url(%23SVGID_00000000223141506904920170000003564104874597331081_);}%0A%09.st822{fill:url(%23SVGID_00000086689211008465087260000010445545626353870249_);}%0A%09.st823{fill:url(%23SVGID_00000178203053672471374280000002098017136051313816_);}%0A%09.st824{fill:url(%23SVGID_00000046327691364677126970000015174092297630702511_);}%0A%09.st825{fill:url(%23SVGID_00000025424490931224718990000011612126809272649866_);}%0A%09.st826{fill:url(%23SVGID_00000000222034730937264860000003204178750976024711_);}%0A%09.st827{fill:url(%23SVGID_00000173157768055294885230000011286791195816765887_);}%0A%09.st828{fill:url(%23SVGID_00000071536623827545157390000003555100202686544048_);}%0A%09.st829{fill:url(%23SVGID_00000060741932972507325940000016727595507118809225_);}%0A%09.st830{fill:url(%23SVGID_00000176750264856816337630000015715359613402429114_);}%0A%09.st831{fill:url(%23SVGID_00000106853120291852547120000012344653845244213891_);}%0A%09.st832{fill:url(%23SVGID_00000057830157496169666640000013120606875013659552_);}%0A%09.st833{fill:url(%23SVGID_00000101098860382442641690000010954791852560611984_);}%0A%09.st834{fill:url(%23SVGID_00000132794793893586905330000013217333435111936691_);}%0A%09.st835{fill:url(%23SVGID_00000140007451868281073860000014630479345611122079_);}%0A%09.st836{fill:url(%23SVGID_00000163030881767924794850000017285874919330958238_);}%0A%09.st837{fill:url(%23SVGID_00000183931921076236803930000004357161359432813464_);}%0A%09.st838{fill:url(%23SVGID_00000070103893361243326650000005311313159419933328_);}%0A%09.st839{fill:url(%23SVGID_00000075132692100204418090000003042571412460042139_);}%0A%09.st840{fill:url(%23SVGID_00000147915941619274196550000000092533979592589709_);}%0A%09.st841{fill:url(%23SVGID_00000087409366259436268640000017294928012874215585_);}%0A%09.st842{fill:url(%23SVGID_00000183952054341590409080000007092614896963822751_);}%0A%09.st843{fill:url(%23SVGID_00000104676231823890852050000017063006639348416929_);}%0A%09.st844{fill:url(%23SVGID_00000140001222635112642190000014092878132035635134_);}%0A%09.st845{fill:url(%23SVGID_00000165922367174436912260000010090532306572507582_);}%0A%09.st846{fill:url(%23SVGID_00000016074665434654295050000013860815473992160945_);}%0A%09.st847{fill:url(%23SVGID_00000160887936640468545580000006989153388371102080_);}%0A%09.st848{fill:url(%23SVGID_00000094592360254370797110000015445330533661274762_);}%0A%09.st849{fill:url(%23SVGID_00000076576141612032720920000016852792532749676683_);}%0A%09.st850{fill:url(%23SVGID_00000047755122480134503140000001325587330472646036_);}%0A%09.st851{fill:url(%23SVGID_00000074407227692497600120000013765958501352842420_);}%0A%09.st852{fill:url(%23SVGID_00000054976655567903782440000014591808923023913369_);}%0A%09.st853{fill:url(%23SVGID_00000147190828817288686880000016455844476925799605_);}%0A%09.st854{fill:url(%23SVGID_00000129916885795101931180000010838288607195200135_);}%0A%09.st855{fill:url(%23SVGID_00000152986042276069061610000010813181921110726320_);}%0A%09.st856{fill:url(%23SVGID_00000118389338996350961800000015072145547899661197_);}%0A%09.st857{fill:url(%23SVGID_00000039843317479382055490000008205198356476980921_);}%0A%09.st858{fill:url(%23SVGID_00000041979287438231459580000007649936519819966908_);}%0A%09.st859{fill:url(%23SVGID_00000098216900296304461740000007883013490794111380_);}%0A%09.st860{fill:url(%23SVGID_00000152959404305239616100000004841048795332013501_);}%0A%09.st861{fill:url(%23SVGID_00000160895194423138548240000001319531462734003612_);}%0A%09.st862{fill:url(%23SVGID_00000104670753629983186220000014075411899972668827_);}%0A%09.st863{fill:url(%23SVGID_00000000940750872227316680000010913206740643782046_);}%0A%09.st864{fill:url(%23SVGID_00000127739411421782988940000002190434056605634472_);}%0A%09.st865{fill:url(%23SVGID_00000107567160606557458110000017155736544919661464_);}%0A%09.st866{fill:url(%23SVGID_00000000933329937886446230000006602317953958634394_);}%0A%09.st867{fill:url(%23SVGID_00000049210364426532576950000012133231351099314099_);}%0A%09.st868{fill:url(%23SVGID_00000151514948688191491020000015549003518739658940_);}%0A%09.st869{fill:url(%23SVGID_00000008135541266545328070000013560419333657495171_);}%0A%09.st870{fill:url(%23SVGID_00000098900827271776796690000015023963666110300325_);}%0A%09.st871{fill:url(%23SVGID_00000101805143521445443380000008193654191374395809_);}%0A%09.st872{fill:url(%23SVGID_00000021090911128299372150000011707006930483632265_);}%0A%09.st873{fill:url(%23SVGID_00000183222050140477602640000016246976295134909098_);}%0A%09.st874{fill:url(%23SVGID_00000111187739304600936910000000916714487413556918_);}%0A%09.st875{fill:url(%23SVGID_00000080898462416290772900000015083793649525520302_);}%0A%09.st876{fill:url(%23SVGID_00000032622420310872092630000011563393398182992810_);}%0A%09.st877{fill:url(%23SVGID_00000166673345565661700530000017865313076945574555_);}%0A%09.st878{fill:url(%23SVGID_00000000913835678238982390000009077041405805417108_);}%0A%09.st879{fill:url(%23SVGID_00000025424664273131948690000001602544504106022533_);}%0A%09.st880{fill:url(%23SVGID_00000040558328939940164360000004202998127059948726_);}%0A%09.st881{fill:url(%23SVGID_00000085962381688647588520000000246756808376977855_);}%0A%09.st882{fill:url(%23SVGID_00000024720643521888285680000016204237820780038019_);}%0A%09.st883{fill:url(%23SVGID_00000067953102642176401600000016489006209937401263_);}%0A%09.st884{fill:url(%23SVGID_00000024000660813330402030000003729588056550835099_);}%0A%09.st885{fill:url(%23SVGID_00000167382565683054012770000003072972474304940442_);}%0A%09.st886{fill:url(%23SVGID_00000132808094388357339020000003114813860074865040_);}%0A%09.st887{fill:url(%23SVGID_00000107546795588906640110000009689860642117366708_);}%0A%09.st888{fill:url(%23SVGID_00000112630308521822762410000009115093195829325477_);}%0A%09.st889{fill:url(%23SVGID_00000116914469227595444320000014155434412824012472_);}%0A%09.st890{fill:url(%23SVGID_00000110471793445812552280000012131357871058128048_);}%0A%09.st891{fill:url(%23SVGID_00000109000031382317861200000008232474126898977690_);}%0A%09.st892{fill:url(%23SVGID_00000073703129503637945260000001763530017495293092_);}%0A%09.st893{fill:url(%23SVGID_00000012454582604224890490000014689402063950087810_);}%0A%09.st894{fill:url(%23SVGID_00000131337418656393928880000007091976106652007308_);}%0A%09.st895{fill:url(%23SVGID_00000000220019195962791560000011882514703106153652_);}%0A%09.st896{fill:url(%23SVGID_00000056427124729160206130000000200132498070397316_);}%0A%09.st897{fill:url(%23SVGID_00000060006724492894882730000016189083736108660406_);}%0A%09.st898{fill:url(%23SVGID_00000166657616192775644180000015593729490312243084_);}%0A%09.st899{fill:url(%23SVGID_00000012434625647039380340000017606002980959542438_);}%0A%09.st900{fill:url(%23SVGID_00000075147555670929129900000008522280914263193785_);}%0A%09.st901{fill:url(%23SVGID_00000085215632931417411350000018430087532005909898_);}%0A%09.st902{fill:url(%23SVGID_00000074430391331879395690000006263394797216615557_);}%0A%09.st903{fill:url(%23SVGID_00000037658492167809579590000005815397911753973167_);}%0A%09.st904{fill:url(%23SVGID_00000101785760672135697270000002093827305716495488_);}%0A%09.st905{fill:url(%23SVGID_00000143600262158931114530000002175739576078763177_);}%0A%09.st906{fill:url(%23SVGID_00000101805236666073046190000016223295432820969365_);}%0A%09.st907{fill:url(%23SVGID_00000032616599884177951650000011042911564795608470_);}%0A%09.st908{fill:url(%23SVGID_00000118370898442960651480000016962940734876606363_);}%0A%09.st909{fill:url(%23SVGID_00000069392961495007702720000007081302024236243855_);}%0A%09.st910{fill:url(%23SVGID_00000172418894166301332280000008533942895676089506_);}%0A%09.st911{fill:url(%23SVGID_00000036218384526377610690000015480451431811486108_);}%0A%09.st912{fill:url(%23SVGID_00000083069823260198195850000004385909380354126212_);}%0A%09.st913{fill:url(%23SVGID_00000109718668941026454200000003517179700975933864_);}%0A%09.st914{fill:url(%23SVGID_00000077286526576001254390000004993538879377978027_);}%0A%09.st915{fill:url(%23SVGID_00000021107480964261179370000006029019758384591798_);}%0A%09.st916{fill:url(%23SVGID_00000072994312778708818800000010063919960197055917_);}%0A%09.st917{fill:url(%23SVGID_00000081619227981931338030000006851064056943338941_);}%0A%09.st918{fill:url(%23SVGID_00000119829889005390985960000008770963813928598707_);}%0A%09.st919{fill:url(%23SVGID_00000098200862711537112000000011562813616881070728_);}%0A%09.st920{fill:url(%23SVGID_00000112605175153899197140000013189808200496598924_);}%0A%09.st921{fill:url(%23SVGID_00000045594740246836630030000005721398286199972257_);}%0A%09.st922{fill:url(%23SVGID_00000000944677756782020450000018048855976542409640_);}%0A%09.st923{fill:url(%23SVGID_00000049194916160839325130000015072491291112493456_);}%0A%09.st924{fill:url(%23SVGID_00000162334036371983007610000002575595562031759033_);}%0A%09.st925{fill:url(%23SVGID_00000086685865669333709210000005467283576614724755_);}%0A%09.st926{fill:url(%23SVGID_00000003824365821797231010000012889974189419042971_);}%0A%09.st927{fill:url(%23SVGID_00000158002515793643401910000000442273131839698571_);}%0A%09.st928{fill:url(%23SVGID_00000088854491498406191990000003167986272226427830_);}%0A%09.st929{fill:url(%23SVGID_00000050652093014749204320000000318789639462456997_);}%0A%09.st930{fill:url(%23SVGID_00000103239034836649767330000013641174275525077900_);}%0A%09.st931{fill:url(%23SVGID_00000006694086177127158160000006930672206173003696_);}%0A%09.st932{fill:url(%23SVGID_00000163053539230885111480000005077426559270411945_);}%0A%09.st933{fill:url(%23SVGID_00000069369420894579712170000009994253235202902956_);}%0A%09.st934{fill:url(%23SVGID_00000166649769545312475790000008425575942555824771_);}%0A%09.st935{fill:url(%23SVGID_00000079482807474831516670000000832283225493698479_);}%0A%09.st936{fill:url(%23SVGID_00000055695834591778809340000001426577040842469817_);}%0A%09.st937{fill:url(%23SVGID_00000148631201422368956670000007466040148749306550_);}%0A%09.st938{fill:url(%23SVGID_00000055676721461914273490000015167495985638062264_);}%0A%09.st939{fill:url(%23SVGID_00000065757273304599858870000011897450781714113429_);}%0A%09.st940{fill:url(%23SVGID_00000166666320781266045190000010200422108211695005_);}%0A%09.st941{fill:url(%23SVGID_00000038374736308439411690000007337671946689113273_);}%0A%09.st942{fill:url(%23SVGID_00000054970196861861269340000008986147795931055252_);}%0A%09.st943{fill:url(%23SVGID_00000063601207042647118100000002514518113561987729_);}%0A%09.st944{fill:url(%23SVGID_00000088112680465139194400000011433065354032445316_);}%0A%09.st945{fill:url(%23SVGID_00000124149710897964819190000007354197821332992671_);}%0A%09.st946{fill:url(%23SVGID_00000160182371828700237370000003557895675407182999_);}%0A%09.st947{fill:url(%23SVGID_00000072238779429466657210000000325536801562043529_);}%0A%09.st948{fill:url(%23SVGID_00000008130048473881196340000013992399012507738763_);}%0A%09.st949{fill:url(%23SVGID_00000109004010716928717890000011670553603273632153_);}%0A%09.st950{fill:url(%23SVGID_00000160167987425699744830000006187694578654060681_);}%0A%09.st951{fill:url(%23SVGID_00000049910595440552254300000003705539836622367915_);}%0A%09.st952{fill:url(%23SVGID_00000106851001357233680550000011767383755013103747_);}%0A%09.st953{fill:url(%23SVGID_00000016789500814739612830000003224496438520057004_);}%0A%09.st954{fill:url(%23SVGID_00000154414353737819258910000013193309066002562239_);}%0A%09.st955{fill:url(%23SVGID_00000164482446849530517410000009218722574776715423_);}%0A%09.st956{fill:url(%23SVGID_00000002368385390587586250000008628137515223278217_);}%0A%09.st957{fill:url(%23SVGID_00000056414614377240285670000013833640692267715215_);}%0A%09.st958{fill:url(%23SVGID_00000009566037906501122100000008794338814698276794_);}%0A%09.st959{fill:url(%23SVGID_00000071542739258513999810000012705559580799169471_);}%0A%09.st960{fill:url(%23SVGID_00000130609157624418575530000001205153096509542570_);}%0A%09.st961{fill:url(%23SVGID_00000029739195659123649570000002716825009910353826_);}%0A%09.st962{fill:url(%23SVGID_00000170977279567530965690000008975623321296967078_);}%0A%09.st963{fill:url(%23SVGID_00000040547256324515737400000013008051425896001180_);}%0A%09.st964{fill:url(%23SVGID_00000023258233356178064410000001621986193122485427_);}%0A%09.st965{fill:url(%23SVGID_00000145775595561423431490000010991444794175511693_);}%0A%09.st966{fill:url(%23SVGID_00000081631769089575019940000009465418117489519757_);}%0A%09.st967{fill:url(%23SVGID_00000106109060655424137930000003314923394183029423_);}%0A%09.st968{fill:url(%23SVGID_00000048470981974934686420000000260055458787330214_);}%0A%09.st969{fill:url(%23SVGID_00000062878678597864781630000015478585488868502933_);}%0A%09.st970{fill:url(%23SVGID_00000072271767802802925140000015261591864419281035_);}%0A%09.st971{fill:url(%23SVGID_00000171712625276664884890000016330803770380088253_);}%0A%09.st972{fill:url(%23SVGID_00000013164423347319174610000008744589186777060511_);}%0A%09.st973{fill:url(%23SVGID_00000022545743988017646720000011747388015522764733_);}%0A%09.st974{fill:url(%23SVGID_00000111890570366085691380000007264038459135770034_);}%0A%09.st975{fill:url(%23SVGID_00000054978438375053981520000009003758073879274641_);}%0A%09.st976{fill:url(%23SVGID_00000127733949069736621460000007738586113195526030_);}%0A%09.st977{fill:url(%23SVGID_00000005981737474739073010000011812474646645917370_);}%0A%09.st978{fill:url(%23SVGID_00000145044108746662793810000017401420931586998160_);}%0A%09.st979{fill:url(%23SVGID_00000153685828873385244250000003429026862616068529_);}%0A%09.st980{fill:url(%23SVGID_00000092450246525169552390000003999506498177990054_);}%0A%09.st981{fill:url(%23SVGID_00000010281170413383811670000018128661083870825623_);}%0A%09.st982{fill:url(%23SVGID_00000161601726038408984810000003682449187959182992_);}%0A%09.st983{fill:url(%23SVGID_00000144316974754481052170000013538881896552331143_);}%0A%09.st984{fill:url(%23SVGID_00000081628833809119331830000004594960597397159301_);}%0A%09.st985{fill:url(%23SVGID_00000054264692020508309420000018409470485880595084_);}%0A%09.st986{fill:url(%23SVGID_00000123424694890022875030000010008282167583807412_);}%0A%09.st987{fill:url(%23SVGID_00000130633296080242742840000009990243151827005119_);}%0A%09.st988{fill:url(%23SVGID_00000179638343142219393470000000308394624506387882_);}%0A%09.st989{fill:url(%23SVGID_00000067205865410152362000000001958796805306781067_);}%0A%09.st990{fill:url(%23SVGID_00000082339247211896639570000014804409633014692001_);}%0A%09.st991{fill:url(%23SVGID_00000051363995062541962660000005236906832967080065_);}%0A%09.st992{fill:url(%23SVGID_00000084516248660143287200000009107683811761358994_);}%0A%09.st993{fill:url(%23SVGID_00000065066170653732236860000012496909590205299360_);}%0A%09.st994{fill:url(%23SVGID_00000012470312639561851620000006364393044050000804_);}%0A%09.st995{fill:url(%23SVGID_00000112632925748807392970000010377243714307776390_);}%0A%09.st996{fill:url(%23SVGID_00000034066186325322810030000001643573325869649024_);}%0A%09.st997{fill:url(%23SVGID_00000127033046754747521380000012514904791435081399_);}%0A%09.st998{fill:url(%23SVGID_00000157995642249560797170000015245360523608442774_);}%0A%09.st999{fill:url(%23SVGID_00000096743078642093356530000009246858141646480512_);}%0A%09.st1000{fill:url(%23SVGID_00000092450878679345089620000016629609907430867366_);}%0A%09.st1001{fill:url(%23SVGID_00000140000634203767801140000010064343796912940436_);}%0A%09.st1002{fill:url(%23SVGID_00000116941564575723911160000010491966576704817806_);}%0A%09.st1003{fill:url(%23SVGID_00000152243724384796695400000016689619571739808437_);}%0A%09.st1004{fill:url(%23SVGID_00000008125261160050375330000010371250255049797292_);}%0A%09.st1005{fill:url(%23SVGID_00000079469609698048939950000005934208927000008873_);}%0A%09.st1006{fill:url(%23SVGID_00000155116855314481901600000000793875380905519276_);}%0A%09.st1007{fill:url(%23SVGID_00000047749533123740847330000000712754861832875170_);}%0A%09.st1008{fill:url(%23SVGID_00000128463477395535951060000016895626588011062929_);}%0A%09.st1009{fill:url(%23SVGID_00000007416635386591265820000005877332298301308070_);}%0A%09.st1010{fill:url(%23SVGID_00000139991017009436336350000016933016006891834798_);}%0A%09.st1011{fill:url(%23SVGID_00000078737301403750672580000011287843078836522429_);}%0A%09.st1012{fill:url(%23SVGID_00000067921714977679755080000004559245463950913934_);}%0A%09.st1013{fill:url(%23SVGID_00000006671244218680027910000007401034490989752746_);}%0A%09.st1014{fill:url(%23SVGID_00000126284422537050405110000015871309749963641736_);}%0A%09.st1015{fill:url(%23SVGID_00000075152724946434639560000011658622710772372114_);}%0A%09.st1016{fill:url(%23SVGID_00000165946214577956253710000000573957951989755044_);}%0A%09.st1017{fill:url(%23SVGID_00000142881921314727165080000007520996201571157167_);}%0A%09.st1018{fill:url(%23SVGID_00000137816462005946215000000004512390778171861946_);}%0A%09.st1019{fill:url(%23SVGID_00000017514843965476710840000014435425223246417804_);}%0A%09.st1020{fill:url(%23SVGID_00000040567043393596528540000011205639235296490377_);}%0A%09.st1021{fill:url(%23SVGID_00000057112465443662432360000010912936972766715285_);}%0A%09.st1022{fill:url(%23SVGID_00000169554894581271569140000017984765673833634435_);}%0A%09.st1023{fill:url(%23SVGID_00000046298731067571741080000015119713240918019232_);}%0A%09.st1024{fill:url(%23SVGID_00000173155434116653500270000009487451376506850738_);}%0A%09.st1025{fill:url(%23SVGID_00000146470520796718461910000002052529931982819518_);}%0A%09.st1026{fill:url(%23SVGID_00000132082815562369001570000001591423547485909162_);}%0A%09.st1027{fill:url(%23SVGID_00000135672734198658168360000012247820708337026225_);}%0A%09.st1028{fill:url(%23SVGID_00000006689009499267517970000017203902343273829255_);}%0A%09.st1029{fill:url(%23SVGID_00000175296137786901667430000008489505223348726445_);}%0A%09.st1030{fill:url(%23SVGID_00000160192954368772666530000007948559730969069980_);}%0A%09.st1031{fill:url(%23SVGID_00000133502107869447373180000008460284946967241905_);}%0A%09.st1032{fill:url(%23SVGID_00000162343765007263579270000018321565781535191703_);}%0A%09.st1033{fill:url(%23SVGID_00000061460166624762609650000006185821605838178493_);}%0A%09.st1034{fill:url(%23SVGID_00000014624183585863078030000011166613443862066564_);}%0A%09.st1035{fill:url(%23SVGID_00000076573676667038632820000018434819627648216767_);}%0A%09.st1036{fill:url(%23SVGID_00000131335206940365817390000008370220386461824938_);}%0A%09.st1037{fill:url(%23SVGID_00000040567748906310419720000009181582516479480986_);}%0A%09.st1038{fill:url(%23SVGID_00000018199254291172066720000015852106164661360003_);}%0A%09.st1039{fill:url(%23SVGID_00000062904714304070952520000002476732852054077630_);}%0A%09.st1040{fill:url(%23SVGID_00000060737426049512517240000011333644448338607519_);}%0A%09.st1041{fill:url(%23SVGID_00000035526546777338012480000007449338003638815137_);}%0A%09.st1042{fill:url(%23SVGID_00000170236466112466280540000000818787473163581627_);}%0A%09.st1043{fill:url(%23SVGID_00000028286325417425560200000006046722027437504922_);}%0A%09.st1044{fill:url(%23SVGID_00000005971318064445929020000017580785873658577854_);}%0A%09.st1045{fill:url(%23SVGID_00000089575362250849656940000006335500636939254923_);}%0A%09.st1046{fill:url(%23SVGID_00000173843570531091361380000005250590471505467815_);}%0A%09.st1047{fill:url(%23SVGID_00000116203446058221637300000008679538428763746710_);}%0A%09.st1048{fill:url(%23SVGID_00000009570952906229456360000015044538172210300559_);}%0A%09.st1049{fill:url(%23SVGID_00000044180014338500503660000011220269137447113387_);}%0A%09.st1050{fill:url(%23SVGID_00000063594086511950496900000000065734518406106271_);}%0A%09.st1051{fill:url(%23SVGID_00000078035131771354594830000015444352999312092349_);}%0A%09.st1052{fill:url(%23SVGID_00000109027042799874867540000004802964444998794117_);}%0A%09.st1053{fill:url(%23SVGID_00000007426035086093559830000006887821595082149311_);}%0A%09.st1054{fill:url(%23SVGID_00000078725965054319137520000011735893553061702282_);}%0A%09.st1055{fill:url(%23SVGID_00000009547843501781852900000003999996887002201275_);}%0A%09.st1056{fill:url(%23SVGID_00000099621123380717816280000012324782306735956136_);}%0A%09.st1057{fill:url(%23SVGID_00000116225785724629114940000011965737756898475670_);}%0A%09.st1058{fill:url(%23SVGID_00000086674391800821558670000002333313176278234044_);}%0A%09.st1059{fill:url(%23SVGID_00000059991556277010840840000013643748856660147638_);}%0A%09.st1060{fill:url(%23SVGID_00000049902713208892302430000008207799180081424541_);}%0A%09.st1061{fill:url(%23SVGID_00000060730192111300637070000009832798977932380825_);}%0A%09.st1062{fill:url(%23SVGID_00000121961634997512860830000014133479947410399123_);}%0A%09.st1063{fill:url(%23SVGID_00000164474809477591805700000006101615248465642915_);}%0A%09.st1064{fill:url(%23SVGID_00000038379101005310177200000015588760540482765206_);}%0A%09.st1065{fill:url(%23SVGID_00000134931148049471586190000004595393137449298315_);}%0A%09.st1066{fill:url(%23SVGID_00000136411856483306409640000005245768785030193594_);}%0A%09.st1067{fill:url(%23SVGID_00000080176918923120595200000010717316222612969377_);}%0A%09.st1068{fill:url(%23SVGID_00000183971335454491726400000007177220911068522934_);}%0A%09.st1069{fill:url(%23SVGID_00000183950825209399444240000017770322581836459398_);}%0A%09.st1070{fill:url(%23SVGID_00000090984156240728493670000010893148785989836178_);}%0A%09.st1071{fill:url(%23SVGID_00000132063498578464172270000015907331606389781932_);}%0A%09.st1072{fill:url(%23SVGID_00000137113381966751647470000011205864978221894327_);}%0A%09.st1073{fill:url(%23SVGID_00000155825964513844171050000006081193085565831834_);}%0A%09.st1074{fill:url(%23SVGID_00000043453818695437003290000017858040956438707334_);}%0A%09.st1075{fill:url(%23SVGID_00000116217034606265648230000017093095117989108883_);}%0A%09.st1076{fill:url(%23SVGID_00000028310016482612910310000010503834772871806869_);}%0A%09.st1077{fill:url(%23SVGID_00000081621360473920585850000010503919591584568755_);}%0A%09.st1078{fill:url(%23SVGID_00000127014092704821348110000017777234325945091731_);}%0A%09.st1079{fill:url(%23SVGID_00000156559053406587823260000014959083652593388161_);}%0A%09.st1080{fill:url(%23SVGID_00000013887750960908104350000009901767033613391253_);}%0A%09.st1081{fill:url(%23SVGID_00000054958081727804701630000011064968587641969810_);}%0A%09.st1082{fill:url(%23SVGID_00000092433122200078415370000016835786422300066203_);}%0A%09.st1083{fill:url(%23SVGID_00000174580142002534754280000002181218748500705944_);}%0A%09.st1084{fill:url(%23SVGID_00000021079327335061850300000014102802996892287149_);}%0A%09.st1085{fill:url(%23SVGID_00000036951325294829775710000006593166659928146331_);}%0A%09.st1086{fill:url(%23SVGID_00000137113093010752059720000008399789180614560936_);}%0A%09.st1087{fill:url(%23SVGID_00000041293691718326323040000012596016655836179866_);}%0A%09.st1088{fill:url(%23SVGID_00000015314218864921673650000018439884686500479156_);}%0A%09.st1089{fill:url(%23SVGID_00000034066306369056085390000014399213567264942493_);}%0A%09.st1090{fill:url(%23SVGID_00000115488136004493934440000005689291668063482018_);}%0A%09.st1091{fill:url(%23SVGID_00000069366482155667117150000008309835918847786163_);}%0A%09.st1092{fill:url(%23SVGID_00000145751979389442284650000004273743681550675851_);}%0A%09.st1093{fill:url(%23SVGID_00000182518018162334037390000016861878762543603087_);}%0A%09.st1094{fill:url(%23SVGID_00000075141756571045204640000016981478374932260744_);}%0A%09.st1095{fill:url(%23SVGID_00000159442342926871423150000013362998349677100207_);}%0A%09.st1096{fill:url(%23SVGID_00000134236981751964594210000007335932788467575210_);}%0A%09.st1097{fill:url(%23SVGID_00000043416387330853063080000010901363797424775586_);}%0A%09.st1098{fill:url(%23SVGID_00000176044834504516263160000006822058584025859488_);}%0A%09.st1099{fill:url(%23SVGID_00000070841518531717256560000007937037316777947563_);}%0A%09.st1100{fill:url(%23SVGID_00000072248840870567781120000007323214383718730119_);}%0A%09.st1101{fill:url(%23SVGID_00000013873552964334211370000001656061304192794259_);}%0A%09.st1102{fill:url(%23SVGID_00000143575744091304546340000011720631048746885819_);}%0A%09.st1103{fill:url(%23SVGID_00000157308832761678089110000004818203379657594813_);}%0A%09.st1104{fill:url(%23SVGID_00000105387942340604228480000007868523474989415565_);}%0A%09.st1105{fill:url(%23SVGID_00000106147141626617802540000008408846344906135184_);}%0A%09.st1106{fill:url(%23SVGID_00000105410830077728993160000018267889217346475938_);}%0A%09.st1107{fill:url(%23SVGID_00000080889121267388395590000017133913596157398442_);}%0A%09.st1108{fill:url(%23SVGID_00000046304693014925802270000002084538779469373599_);}%0A%09.st1109{fill:url(%23SVGID_00000076604632391826671150000008468175474049199539_);}%0A%09.st1110{fill:url(%23SVGID_00000127020117921456069030000007293479938028828062_);}%0A%09.st1111{fill:url(%23SVGID_00000139256774064056495530000002681760416256859581_);}%0A%09.st1112{fill:url(%23SVGID_00000091013014178658334730000001372243271199646612_);}%0A%09.st1113{fill:url(%23SVGID_00000118384596905426463390000011335435211494705822_);}%0A%09.st1114{fill:url(%23SVGID_00000029015869587988156410000014324794590641402528_);}%0A%09.st1115{fill:url(%23SVGID_00000103257272701837118740000005420519934432017829_);}%0A%09.st1116{fill:url(%23SVGID_00000062914530260547403540000007803174740632924291_);}%0A%09.st1117{fill:url(%23SVGID_00000180335733854799982780000010570286871711488139_);}%0A%09.st1118{fill:url(%23SVGID_00000040534878837151553700000004913518972299638695_);}%0A%09.st1119{fill:url(%23SVGID_00000057833629133572241940000015270079916279998121_);}%0A%09.st1120{fill:url(%23SVGID_00000123416891201474187860000001282459500757760141_);}%0A%09.st1121{fill:url(%23SVGID_00000068661298192934103960000009892288378293662342_);}%0A%09.st1122{fill:url(%23SVGID_00000059296619277954200360000011421606352882116786_);}%0A%09.st1123{fill:url(%23SVGID_00000169526658787238779550000018350950532796948635_);}%0A%09.st1124{fill:url(%23SVGID_00000013883590398564882580000003025332424578789538_);}%0A%09.st1125{fill:url(%23SVGID_00000073002590973589302650000012539441507615332793_);}%0A%09.st1126{fill:url(%23SVGID_00000183956967904744123680000016490596730829174702_);}%0A%09.st1127{fill:url(%23SVGID_00000078038478791660870610000015510423650632882866_);}%0A%09.st1128{fill:url(%23SVGID_00000054242013080360693400000015558479426880101303_);}%0A%09.st1129{fill:url(%23SVGID_00000061463010406573985530000006881133967399527835_);}%0A%09.st1130{fill:url(%23SVGID_00000041291425924916759780000002081122118687053978_);}%0A%09.st1131{fill:url(%23SVGID_00000157282121860929198320000010108218753151457414_);}%0A%09.st1132{fill:url(%23SVGID_00000106148279329924845330000007935806229011872388_);}%0A%09.st1133{fill:url(%23SVGID_00000141457036318950371110000004314465117247320737_);}%0A%09.st1134{fill:url(%23SVGID_00000072969763572766236270000011873681784710142369_);}%0A%09.st1135{fill:url(%23SVGID_00000139261472640486251710000003410359649596183727_);}%0A%09.st1136{fill:url(%23SVGID_00000096779801224723923100000002675809303473387190_);}%0A%09.st1137{fill:url(%23SVGID_00000082336430751990916700000006082121054397640834_);}%0A%09.st1138{fill:url(%23SVGID_00000147193570988319189070000018016578138297073801_);}%0A%09.st1139{fill:url(%23SVGID_00000112628461833932998230000009341647150838014132_);}%0A%09.st1140{fill:url(%23SVGID_00000000192306587793501430000018188339204109575809_);}%0A%09.st1141{fill:url(%23SVGID_00000074404623528512707640000018129597695394105222_);}%0A%09.st1142{fill:url(%23SVGID_00000127035800790164924100000017130520503919124361_);}%0A%09.st1143{fill:url(%23SVGID_00000078764209076663454170000016671941298563657866_);}%0A%09.st1144{fill:url(%23SVGID_00000072999761527669659590000004078013701575649934_);}%0A%09.st1145{fill:url(%23SVGID_00000059996245348823011240000012004649987056273549_);}%0A%09.st1146{fill:url(%23SVGID_00000178893408947046310840000005256687417214293890_);}%0A%09.st1147{fill:url(%23SVGID_00000003826390714074670320000003260679058460062360_);}%0A%09.st1148{fill:url(%23SVGID_00000080911206852240648870000016261670100138331572_);}%0A%09.st1149{fill:url(%23SVGID_00000158019234430096881890000004579719196063486102_);}%0A%09.st1150{fill:url(%23SVGID_00000107550833958371743770000002887668793702354353_);}%0A%09.st1151{fill:url(%23SVGID_00000137836538145118578580000001744304008347238022_);}%0A%09.st1152{fill:url(%23SVGID_00000096041950491868103240000014418546812709042103_);}%0A%09.st1153{fill:url(%23SVGID_00000072968209107394466340000015089997205153274814_);}%0A%09.st1154{fill:url(%23SVGID_00000045585255535112323710000015118715322741871292_);}%0A%09.st1155{fill:url(%23SVGID_00000119798231132178190440000009906216037926293402_);}%0A%09.st1156{fill:url(%23SVGID_00000078750368976092789890000007081276242067712183_);}%0A%09.st1157{fill:url(%23SVGID_00000038401614766867403350000011415616183279811990_);}%0A%09.st1158{fill:url(%23SVGID_00000052070337091493605620000005080366010804158884_);}%0A%09.st1159{fill:url(%23SVGID_00000141420152225686070170000007099159460083988150_);}%0A%09.st1160{fill:url(%23SVGID_00000086670740733731342630000012690258092917492125_);}%0A%09.st1161{fill:url(%23SVGID_00000148652023754880912070000014255912960063936924_);}%0A%09.st1162{fill:url(%23SVGID_00000090981533201061439130000008610202804189389247_);}%0A%09.st1163{fill:url(%23SVGID_00000019648910884268443050000009081327160812082843_);}%0A%09.st1164{fill:url(%23SVGID_00000016067195618958618930000010960514027530940085_);}%0A%09.st1165{fill:url(%23SVGID_00000039098173833269967070000006459742223289492376_);}%0A%09.st1166{fill:url(%23SVGID_00000013190946459470080630000011634617538768580505_);}%0A%09.st1167{fill:url(%23SVGID_00000037689971019952694860000009184986523843234716_);}%0A%09.st1168{fill:url(%23SVGID_00000134232038275286607270000003964867632738045115_);}%0A%09.st1169{fill:url(%23SVGID_00000143600991053487294030000008509074036911770549_);}%0A%09.st1170{fill:url(%23SVGID_00000109014895716100311110000013579310725554538657_);}%0A%09.st1171{fill:url(%23SVGID_00000105392458939943420430000003200426447650874244_);}%0A%09.st1172{fill:url(%23SVGID_00000026863719387116096720000007058792997100647319_);}%0A%09.st1173{fill:url(%23SVGID_00000011027040082539173470000015105529858415832470_);}%0A%09.st1174{fill:url(%23SVGID_00000044873802652617261790000017183857118875177644_);}%0A%09.st1175{fill:url(%23SVGID_00000077287169021732498470000002559421484357346211_);}%0A%09.st1176{fill:url(%23SVGID_00000011742624664285861270000016602845385445053600_);}%0A%09.st1177{fill:url(%23SVGID_00000039128059278445832170000001966973362061513389_);}%0A%09.st1178{fill:url(%23SVGID_00000023266780999613133450000004716814699213759157_);}%0A%09.st1179{fill:url(%23SVGID_00000012442364840332656960000005929279058742416314_);}%0A%09.st1180{fill:url(%23SVGID_00000183224907431037019090000016828200511212498320_);}%0A%09.st1181{fill:url(%23SVGID_00000168838144863513025140000001365309184181583279_);}%0A%09.st1182{fill:url(%23SVGID_00000044149505869493466360000000888326593555426478_);}%0A%09.st1183{fill:url(%23SVGID_00000093898686598016162340000013529844748917462719_);}%0A%09.st1184{fill:url(%23SVGID_00000177486220888381405580000008191895687115864502_);}%0A%09.st1185{fill:url(%23SVGID_00000052065616223035115270000008381396913994869387_);}%0A%09.st1186{fill:url(%23SVGID_00000132080337550472964140000005105879848698612407_);}%0A%09.st1187{fill:url(%23SVGID_00000110455119299253576610000011587854905296976827_);}%0A%09.st1188{fill:url(%23SVGID_00000168819432918519094810000015063689534674915758_);}%0A%09.st1189{fill:url(%23SVGID_00000114785505806884948270000015587258031721564588_);}%0A%09.st1190{fill:url(%23SVGID_00000138572081410248002730000010015591238815980724_);}%0A%09.st1191{fill:url(%23SVGID_00000072979431511079046460000002056302498825860243_);}%0A%09.st1192{fill:url(%23SVGID_00000171680468591275476660000007086102176972057226_);}%0A%09.st1193{fill:url(%23SVGID_00000044176907123350497770000014419200987102885815_);}%0A%09.st1194{fill:url(%23SVGID_00000029765948587798065530000000465372097461599159_);}%0A%09.st1195{fill:url(%23SVGID_00000049911572531587678590000000753430450580746172_);}%0A%09.st1196{fill:url(%23SVGID_00000150078050950484445080000009586656549432778914_);}%0A%09.st1197{fill:url(%23SVGID_00000134970895375600104440000001095472788246916785_);}%0A%09.st1198{fill:url(%23SVGID_00000171694103105349849360000001366638079495070598_);}%0A%09.st1199{fill:url(%23SVGID_00000155120560485014920810000010642777434031777956_);}%0A%09.st1200{fill:url(%23SVGID_00000168114543954133063310000012148032444174402985_);}%0A%09.st1201{fill:url(%23SVGID_00000056386300153857666790000001936055875089918623_);}%0A%09.st1202{fill:url(%23SVGID_00000001634189303604979060000012758820130852004240_);}%0A%09.st1203{fill:url(%23SVGID_00000013167483108921665890000004781745037691128496_);}%0A%09.st1204{fill:url(%23SVGID_00000160150859611882330380000007833696114853079474_);}%0A%09.st1205{fill:url(%23SVGID_00000125584973371240302670000016945323691550158242_);}%0A%09.st1206{fill:url(%23SVGID_00000022557961458122641050000007656792111219948432_);}%0A%09.st1207{fill:url(%23SVGID_00000125598453716422113610000008625028704335589560_);}%0A%09.st1208{fill:url(%23SVGID_00000104674173201461083720000000741763042593568398_);}%0A%09.st1209{fill:url(%23SVGID_00000145740766650440317160000003568026255393648515_);}%0A%09.st1210{fill:url(%23SVGID_00000077283238262220019720000001047711221295701153_);}%0A%09.st1211{fill:url(%23SVGID_00000142861244561681519100000005932084362993591741_);}%0A%09.st1212{fill:url(%23SVGID_00000008127874000189734920000016722632079803186620_);}%0A%09.st1213{fill:url(%23SVGID_00000173140901272455791470000005148741750165423503_);}%0A%09.st1214{fill:url(%23SVGID_00000142151344669897448080000008258407478359769220_);}%0A%09.st1215{fill:url(%23SVGID_00000013904532705080303250000005777255093941211277_);}%0A%09.st1216{fill:url(%23SVGID_00000115472464364738780350000007151233149996769950_);}%0A%09.st1217{fill:url(%23SVGID_00000042012822002166497730000008310826260582519460_);}%0A%09.st1218{fill:url(%23SVGID_00000120553145654874349670000009748524002915198364_);}%0A%09.st1219{fill:url(%23SVGID_00000160909551577760403850000017262381966725443253_);}%0A%09.st1220{fill:url(%23SVGID_00000124852131963490523880000017111516978113210020_);}%0A%09.st1221{fill:url(%23SVGID_00000087408141589815364960000003587512681139921569_);}%0A%09.st1222{fill:url(%23SVGID_00000136405166516733134830000012553895185967701690_);}%0A%09.st1223{fill:url(%23SVGID_00000121276960617606256530000011694697050039183761_);}%0A%09.st1224{fill:url(%23SVGID_00000067930959534383389060000009115216629437346694_);}%0A%09.st1225{fill:url(%23SVGID_00000028291390060275528800000009127954553995470253_);}%0A%09.st1226{fill:url(%23SVGID_00000016033112256501200520000016439705775346774165_);}%0A%09.st1227{fill:url(%23SVGID_00000016793666913223928940000001004958236015935916_);}%0A%09.st1228{fill:url(%23SVGID_00000121962494928961929190000015716479033027593350_);}%0A%09.st1229{fill:url(%23SVGID_00000033370341198623022060000011146409637983645848_);}%0A%09.st1230{fill:url(%23SVGID_00000097491432529990394600000001655696820166382224_);}%0A%09.st1231{fill:url(%23SVGID_00000088827559199283626640000017613293104055491749_);}%0A%09.st1232{fill:url(%23SVGID_00000085220497649670789980000012234285454584420786_);}%0A%09.st1233{fill:url(%23SVGID_00000098922848894116555630000002780570840174455208_);}%0A%09.st1234{fill:url(%23SVGID_00000064356006058168547660000009300291269588872107_);}%0A%09.st1235{fill:url(%23SVGID_00000111904668553393844570000003890954760891164092_);}%0A%09.st1236{fill:url(%23SVGID_00000092438036059293346920000003870123268820794787_);}%0A%09.st1237{fill:url(%23SVGID_00000056395237862175296350000014881374163001669769_);}%0A%09.st1238{fill:url(%23SVGID_00000177462991074743344360000000562310689929764024_);}%0A%09.st1239{fill:url(%23SVGID_00000181796985713061810260000004813562326130881927_);}%0A%09.st1240{fill:url(%23SVGID_00000147934622334311310800000000729644112475269251_);}%0A%09.st1241{fill:url(%23SVGID_00000121982426199269246470000010423774243090923933_);}%0A%09.st1242{fill:url(%23SVGID_00000108275411348341839830000015261455774586748556_);}%0A%09.st1243{fill:url(%23SVGID_00000110447390936649163770000007002171499852452261_);}%0A%09.st1244{fill:url(%23SVGID_00000134957731168544906090000000066221228256463758_);}%0A%09.st1245{fill:url(%23SVGID_00000070114916376217069780000012276448340719933362_);}%0A%09.st1246{fill:url(%23SVGID_00000067930786074326272350000001883883259392654225_);}%0A%09.st1247{fill:url(%23SVGID_00000038377150398222708080000011297368906154534538_);}%0A%09.st1248{fill:url(%23SVGID_00000044868180630594179130000017429228612677176505_);}%0A%09.st1249{fill:url(%23SVGID_00000129169989836547359710000016979739615866876091_);}%0A%09.st1250{fill:url(%23SVGID_00000057827934571589885920000008050026631621038777_);}%0A%09.st1251{fill:url(%23SVGID_00000122691191586188622430000009017683646506496413_);}%0A%09.st1252{fill:url(%23SVGID_00000156584276939496892260000016857924914429185695_);}%0A%09.st1253{fill:url(%23SVGID_00000070830016530276211250000000164755772147338371_);}%0A%09.st1254{fill:url(%23SVGID_00000115489285119819555770000001997722710477809583_);}%0A%09.st1255{fill:url(%23SVGID_00000013171508283059201120000004238399389825236667_);}%0A%09.st1256{fill:url(%23SVGID_00000072252844910624799750000011229879129869070732_);}%0A%09.st1257{fill:url(%23SVGID_00000063610943790010662470000000956603750525474718_);}%0A%09.st1258{fill:url(%23SVGID_00000071542467445256706510000006286598738005662350_);}%0A%09.st1259{fill:url(%23SVGID_00000003097874158697867220000013419157961581646514_);}%0A%09.st1260{fill:url(%23SVGID_00000052104182699205821300000005667730192681162939_);}%0A%09.st1261{fill:url(%23SVGID_00000153678492987706654660000002928474043903387050_);}%0A%09.st1262{fill:url(%23SVGID_00000021817819367110706530000007663389120340501126_);}%0A%09.st1263{fill:url(%23SVGID_00000162349339334437020650000016289278937167539376_);}%0A%09.st1264{fill:url(%23SVGID_00000032629472001683668040000012225444602237729715_);}%0A%09.st1265{fill:url(%23SVGID_00000164506964398590372110000010765046393756885932_);}%0A%09.st1266{fill:url(%23SVGID_00000170997217378645925440000004500852992754298015_);}%0A%09.st1267{fill:url(%23SVGID_00000150077537105401612300000012929079290379034787_);}%0A%09.st1268{fill:url(%23SVGID_00000162335344189772423100000015231542564501811633_);}%0A%09.st1269{fill:url(%23SVGID_00000087395412779175308620000003719579700849530768_);}%0A%09.st1270{fill:url(%23SVGID_00000030488474264691154560000002727707549569050501_);}%0A%09.st1271{fill:url(%23SVGID_00000145745245243181396230000013051122806247236774_);}%0A%09.st1272{fill:url(%23SVGID_00000068638019129147934680000002388058470392807311_);}%0A%09.st1273{fill:url(%23SVGID_00000157273305185075841120000013193950305812373929_);}%0A%09.st1274{fill:url(%23SVGID_00000000214918119849933830000008216853841160472243_);}%0A%09.st1275{fill:url(%23SVGID_00000139276726408379935070000002730881005275855021_);}%0A%09.st1276{fill:url(%23SVGID_00000109731766302345952780000000737519477717227967_);}%0A%09.st1277{fill:url(%23SVGID_00000054971586014827160340000016442644673234389402_);}%0A%09.st1278{fill:url(%23SVGID_00000018940367478382121160000000556400455739473337_);}%0A%09.st1279{fill:url(%23SVGID_00000078037271411442723060000016025116260323932091_);}%0A%09.st1280{fill:url(%23SVGID_00000117638135536336830680000002084887681026206390_);}%0A%09.st1281{fill:url(%23SVGID_00000124844552726973988950000000516309255889644457_);}%0A%09.st1282{fill:url(%23SVGID_00000123410567575475819280000004280251156989960582_);}%0A%09.st1283{fill:url(%23SVGID_00000044160575540515955560000007058113357865863593_);}%0A%09.st1284{fill:url(%23SVGID_00000081611084497307506860000009163234537180150700_);}%0A%09.st1285{fill:url(%23SVGID_00000149352995343667892250000008543928187062308543_);}%0A%09.st1286{fill:url(%23SVGID_00000020379564909934941040000005394915879888823454_);}%0A%09.st1287{fill:url(%23SVGID_00000028310644131170732810000017697758708662530432_);}%0A%09.st1288{fill:url(%23SVGID_00000042699037637816736440000014461312398781816448_);}%0A%09.st1289{fill:url(%23SVGID_00000106135259313964926880000013629777444209067690_);}%0A%09.st1290{fill:url(%23SVGID_00000003087478810653603640000000895817109653130118_);}%0A%09.st1291{fill:url(%23SVGID_00000110462276736171977810000002435241221503041961_);}%0A%09.st1292{fill:url(%23SVGID_00000056415471079328072720000005152096233013492668_);}%0A%09.st1293{fill:url(%23SVGID_00000067940931296853972320000018123282085809116052_);}%0A%09.st1294{fill:url(%23SVGID_00000078016457005706181780000006228937120107877036_);}%0A%09.st1295{fill:url(%23SVGID_00000016040829083373760180000002689277391523761594_);}%0A%09.st1296{fill:url(%23SVGID_00000050664618270122311780000004048890851928570528_);}%0A%09.st1297{fill:url(%23SVGID_00000023969534773874828780000009560022152120027796_);}%0A%09.st1298{fill:url(%23SVGID_00000154415115990137337320000013230444513198838927_);}%0A%09.st1299{fill:url(%23SVGID_00000020380127834701006040000009186700028092429203_);}%0A%09.st1300{fill:url(%23SVGID_00000080913703079165214750000002760028743968248753_);}%0A%09.st1301{fill:url(%23SVGID_00000152966233963620212290000000207534438935054510_);}%0A%09.st1302{fill:url(%23SVGID_00000021802108749689947510000007432224150312933772_);}%0A%09.st1303{fill:url(%23SVGID_00000165939523459596471760000008859497394234719666_);}%0A%09.st1304{fill:url(%23SVGID_00000169558232738296206970000012459419422776537022_);}%0A%09.st1305{fill:url(%23SVGID_00000157267915167846916250000015929623067887174790_);}%0A%09.st1306{fill:url(%23SVGID_00000070089937705623368890000014549879614225752754_);}%0A%09.st1307{fill:url(%23SVGID_00000163779519849123170500000008884985258299926452_);}%0A%09.st1308{fill:url(%23SVGID_00000101070652016145199740000007829854010339342004_);}%0A%09.st1309{fill:url(%23SVGID_00000158708473418746156370000006878570009438399894_);}%0A%09.st1310{fill:url(%23SVGID_00000023254331790797986140000016692186505237948808_);}%0A%09.st1311{fill:url(%23SVGID_00000002367977439094761020000017573368952923823807_);}%0A%09.st1312{fill:url(%23SVGID_00000003069365287836086120000007625960411338992775_);}%0A%09.st1313{fill:url(%23SVGID_00000136374848378697277520000006393458342342567334_);}%0A%09.st1314{fill:url(%23SVGID_00000168819966263409628880000012746813201382271872_);}%0A%09.st1315{fill:url(%23SVGID_00000080912020586287489260000000449022895271234472_);}%0A%09.st1316{fill:url(%23SVGID_00000177455765360768342690000010607994141846942911_);}%0A%09.st1317{fill:url(%23SVGID_00000103225897343763598400000004531121973937565085_);}%0A%09.st1318{fill:url(%23SVGID_00000034789652013392609100000017076013431666103979_);}%0A%09.st1319{fill:url(%23SVGID_00000114037559596150483660000010015035830481784713_);}%0A%09.st1320{fill:url(%23SVGID_00000167391747520321364640000001195536113157274250_);}%0A%09.st1321{fill:url(%23SVGID_00000099633099055973138700000015221432549269026188_);}%0A%09.st1322{fill:url(%23SVGID_00000116914518681548073520000004019248992887656368_);}%0A%09.st1323{fill:url(%23SVGID_00000111911810175446369270000016746962892064422307_);}%0A%09.st1324{fill:url(%23SVGID_00000103244378927585786570000010116503765192700842_);}%0A%09.st1325{fill:url(%23SVGID_00000140721188049688024050000013447026280582638511_);}%0A%09.st1326{fill:url(%23SVGID_00000017479744522611554500000016156527422356698520_);}%0A%09.st1327{fill:url(%23SVGID_00000046321220246091175670000016097034865216488118_);}%0A%09.st1328{fill:url(%23SVGID_00000039107052816328099470000016787664462106267293_);}%0A%09.st1329{fill:url(%23SVGID_00000123419608599876318780000002045361132864956859_);}%0A%09.st1330{fill:url(%23SVGID_00000099631857999610882180000013823900890831552398_);}%0A%09.st1331{fill:url(%23SVGID_00000165210770324623609550000015251743021823577259_);}%0A%09.st1332{fill:url(%23SVGID_00000035508740227006263460000012667096495713813429_);}%0A%09.st1333{fill:url(%23SVGID_00000137833541091962904840000015687888164503825069_);}%0A%09.st1334{fill:url(%23SVGID_00000077290311138190966880000013511207843856200381_);}%0A%09.st1335{fill:url(%23SVGID_00000003798386633965866300000001715464649275871389_);}%0A%09.st1336{fill:url(%23SVGID_00000011007781827654234280000013496676642670835093_);}%0A%09.st1337{fill:url(%23SVGID_00000073703911379712675470000006812561040773082548_);}%0A%09.st1338{fill:url(%23SVGID_00000140011353401172205620000007283171239845417116_);}%0A%09.st1339{fill:url(%23SVGID_00000127746802253221286150000007543719503733658794_);}%0A%09.st1340{fill:url(%23SVGID_00000152247091811511694990000007843341741355343272_);}%0A%09.st1341{fill:url(%23SVGID_00000095297520459630996790000002174565659264273583_);}%0A%09.st1342{fill:url(%23SVGID_00000176750694593587032750000004300399523463468672_);}%0A%09.st1343{fill:url(%23SVGID_00000148632690729852213010000014858649610891344548_);}%0A%09.st1344{fill:url(%23SVGID_00000129195441120946914740000010024305409518179764_);}%0A%09.st1345{fill:url(%23SVGID_00000029765772255436136600000001213510720185256620_);}%0A%09.st1346{fill:url(%23SVGID_00000099623621521374841050000000514586007448444310_);}%0A%09.st1347{fill:url(%23SVGID_00000052812768600925670950000006028203350005493910_);}%0A%09.st1348{fill:url(%23SVGID_00000155143083228115793260000009265651075640359574_);}%0A%09.st1349{fill:url(%23SVGID_00000053543275496629796720000012380320425390440101_);}%0A%09.st1350{fill:url(%23SVGID_00000090999220797451602010000001249946840107485631_);}%0A%09.st1351{fill:url(%23SVGID_00000088097967474361051130000011518231491418896517_);}%0A%09.st1352{fill:url(%23SVGID_00000039827943735426212310000015670769165639156889_);}%0A%09.st1353{fill:url(%23SVGID_00000106122129351411123230000011945993593237090998_);}%0A%09.st1354{fill:url(%23SVGID_00000104687208177879276030000012821706005626110092_);}%0A%09.st1355{fill:url(%23SVGID_00000003096711537752129820000011700378628265992322_);}%0A%09.st1356{fill:url(%23SVGID_00000166670296413642415790000012046227568464071566_);}%0A%09.st1357{fill:url(%23SVGID_00000103225680090994277440000003135511427674377896_);}%0A%09.st1358{fill:url(%23SVGID_00000147177795506710539030000018134997986053998515_);}%0A%09.st1359{fill:url(%23SVGID_00000061470815896622467120000009097763871941617817_);}%0A%09.st1360{fill:url(%23SVGID_00000125578237145046403200000006344806222053973635_);}%0A%09.st1361{fill:url(%23SVGID_00000103230226226654910140000009633076817097106315_);}%0A%09.st1362{fill:url(%23SVGID_00000156560722720711403400000014336185185647958410_);}%0A%09.st1363{fill:url(%23SVGID_00000155119932790726526930000016223275960577675694_);}%0A%09.st1364{fill:url(%23SVGID_00000036931218097388538280000014682880265719483788_);}%0A%09.st1365{fill:url(%23SVGID_00000152248831434500715010000006615403021326822804_);}%0A%09.st1366{fill:url(%23SVGID_00000066505434395175344210000000660131285533071785_);}%0A%09.st1367{fill:url(%23SVGID_00000007401947619323184230000007021999861700464809_);}%0A%09.st1368{fill:url(%23SVGID_00000073002481936698876770000000528308470957162662_);}%0A%09.st1369{fill:url(%23SVGID_00000060031889060437481410000000346411675936154556_);}%0A%09.st1370{fill:url(%23SVGID_00000150064528681625063040000015487281237064275330_);}%0A%09.st1371{fill:url(%23SVGID_00000066502442238905483850000009020333922949808557_);}%0A%09.st1372{fill:url(%23SVGID_00000109009368261883781650000012470874183738403480_);}%0A%09.st1373{fill:url(%23SVGID_00000179617031846665009280000004774624817145118379_);}%0A%09.st1374{fill:url(%23SVGID_00000140723409757915621230000011279109269422086837_);}%0A%09.st1375{fill:url(%23SVGID_00000011750574386120647180000014427783847371734949_);}%0A%09.st1376{fill:url(%23SVGID_00000155110413487820625580000005098057481952888488_);}%0A%09.st1377{fill:url(%23SVGID_00000010996553847119078080000012877738946240085389_);}%0A%09.st1378{fill:url(%23SVGID_00000107550792001186639000000009572198940770884267_);}%0A%09.st1379{fill:url(%23SVGID_00000094601699615617451080000000468281890877174706_);}%0A%09.st1380{fill:url(%23SVGID_00000005959147999026481150000015680074121659671473_);}%0A%09.st1381{fill:url(%23SVGID_00000017486171055765101110000003057061141576016829_);}%0A%09.st1382{fill:url(%23SVGID_00000012464755274324079720000003304632239372333227_);}%0A%09.st1383{fill:url(%23SVGID_00000039111788188912349440000008143559847485689759_);}%0A%09.st1384{fill:url(%23SVGID_00000108999902873160941030000017675766064326878865_);}%0A%09.st1385{fill:url(%23SVGID_00000077323465806427822560000014048687268326846622_);}%0A%09.st1386{fill:url(%23SVGID_00000068667443542419584120000013404564183312668840_);}%0A%09.st1387{fill:url(%23SVGID_00000088120530400632934950000012981462118063910795_);}%0A%09.st1388{fill:url(%23SVGID_00000147934187734847099680000007197088257698949032_);}%0A%09.st1389{fill:url(%23SVGID_00000168825307118843716290000013405760415154287280_);}%0A%09.st1390{fill:url(%23SVGID_00000143613069668021505780000016593302353081680282_);}%0A%09.st1391{fill:url(%23SVGID_00000081628429503826957040000017947011768517645475_);}%0A%09.st1392{fill:url(%23SVGID_00000117655588534985574200000010553740419418078892_);}%0A%09.st1393{fill:url(%23SVGID_00000013166571941729701770000009870551102581750942_);}%0A%09.st1394{fill:url(%23SVGID_00000035492853674767701860000001841622434077293485_);}%0A%09.st1395{fill:url(%23SVGID_00000067953634042198162210000010827981231897695127_);}%0A%09.st1396{fill:url(%23SVGID_00000096058012553934851490000004748447919654520995_);}%0A%09.st1397{fill:url(%23SVGID_00000091009543604250622140000012683120099151747226_);}%0A%09.st1398{fill:url(%23SVGID_00000029045715583282886850000012721911347414436793_);}%0A%09.st1399{fill:url(%23SVGID_00000060005348954550902480000005249999468593303993_);}%0A%09.st1400{fill:url(%23SVGID_00000115509230408012345610000002246538217584828301_);}%0A%09.st1401{fill:url(%23SVGID_00000079455125869536470880000006883470235387356333_);}%0A%09.st1402{fill:url(%23SVGID_00000090283682113678321170000006236770858061096887_);}%0A%09.st1403{fill:url(%23SVGID_00000002343374662240832390000017967147331533640631_);}%0A%09.st1404{fill:url(%23SVGID_00000116951055669999218050000004901879508784704440_);}%0A%09.st1405{fill:url(%23SVGID_00000002353384759266632820000003318369085467112082_);}%0A%09.st1406{fill:url(%23SVGID_00000169548130150193494560000008598865502208689809_);}%0A%09.st1407{fill:url(%23SVGID_00000157298604847442561710000008318071349599303836_);}%0A%09.st1408{fill:url(%23SVGID_00000086650234636859624720000007037993980621994410_);}%0A%09.st1409{fill:url(%23SVGID_00000016760379477971008180000008604328399160172685_);}%0A%09.st1410{fill:url(%23SVGID_00000104694794191291021660000013887887129045324701_);}%0A%09.st1411{fill:url(%23SVGID_00000181798090479383587810000002300909154909272744_);}%0A%09.st1412{fill:url(%23SVGID_00000054951316777028336380000005757723498972384394_);}%0A%09.st1413{fill:url(%23SVGID_00000093137280125729405800000004829525214184590012_);}%0A%09.st1414{fill:url(%23SVGID_00000036958385675186541960000003213156156954364593_);}%0A%09.st1415{fill:url(%23SVGID_00000109012083576520753740000002396057554032935614_);}%0A%09.st1416{fill:url(%23SVGID_00000155849915418895289050000016075296559926426029_);}%0A%09.st1417{fill:url(%23SVGID_00000151534543590978658460000005469434888974529923_);}%0A%09.st1418{fill:url(%23SVGID_00000179647396722278314600000018363644790529855370_);}%0A%09.st1419{fill:url(%23SVGID_00000102527963034196062430000010059417829753325703_);}%0A%09.st1420{fill:url(%23SVGID_00000039817407624838535090000009107928322370997420_);}%0A%09.st1421{fill:url(%23SVGID_00000127743326876013260880000001908820105436300474_);}%0A%09.st1422{fill:url(%23SVGID_00000051365201097324571330000003642690255739922820_);}%0A%09.st1423{fill:url(%23SVGID_00000012441641497439464980000009861080048584668295_);}%0A%09.st1424{fill:url(%23SVGID_00000028287862841347262890000009888712487334121915_);}%0A%09.st1425{fill:url(%23SVGID_00000134971673176767701200000016729721421863489408_);}%0A%09.st1426{fill:url(%23SVGID_00000104699119781777979290000013541970780777570456_);}%0A%09.st1427{fill:url(%23SVGID_00000137103553124522119710000014330592916373342894_);}%0A%09.st1428{fill:url(%23SVGID_00000018950112255019458900000017521367083157079703_);}%0A%09.st1429{fill:url(%23SVGID_00000165938525043998813030000006670142664773996732_);}%0A%09.st1430{fill:url(%23SVGID_00000065778216935419526710000014673791441076505533_);}%0A%09.st1431{fill:url(%23SVGID_00000046299181536133253860000010631810927964776881_);}%0A%09.st1432{fill:url(%23SVGID_00000153698547873043280270000009799923949258252677_);}%0A%09.st1433{fill:url(%23SVGID_00000012454489939635928140000010802174594318962342_);}%0A%09.st1434{fill:url(%23SVGID_00000110468342237989849050000001518279088224720514_);}%0A%09.st1435{fill:url(%23SVGID_00000089551604140047972620000009931144824988542608_);}%0A%09.st1436{fill:url(%23SVGID_00000078016209643932393070000009256988821664513962_);}%0A%09.st1437{fill:url(%23SVGID_00000047755828642437935890000005432729257922320545_);}%0A%09.st1438{fill:url(%23SVGID_00000022557585991116929100000013240099782405232259_);}%0A%09.st1439{fill:url(%23SVGID_00000103231433842238589880000016927921125146818229_);}%0A%09.st1440{fill:url(%23SVGID_00000178183013855921428040000008029191514485794182_);}%0A%09.st1441{fill:url(%23SVGID_00000121996574787303957150000016988303195914997411_);}%0A%09.st1442{fill:url(%23SVGID_00000121244656263042207210000002035824708997494692_);}%0A%09.st1443{fill:url(%23SVGID_00000030465559073981455010000015210093240004724916_);}%0A%09.st1444{fill:url(%23SVGID_00000072267023638450501470000007425189993675287471_);}%0A%09.st1445{fill:url(%23SVGID_00000005251535667318148400000016062451997058900138_);}%0A%09.st1446{fill:url(%23SVGID_00000009549337919700420990000006435979732025069482_);}%0A%09.st1447{fill:url(%23SVGID_00000130644999623653639460000009401635189245657787_);}%0A%09.st1448{fill:url(%23SVGID_00000168818689921757791860000003074702224566369710_);}%0A%09.st1449{fill:url(%23SVGID_00000013910180954952506880000005931733049136568498_);}%0A%09.st1450{fill:url(%23SVGID_00000170985451004300125380000010511726236574028683_);}%0A%09.st1451{fill:url(%23SVGID_00000072278027047535054800000006746393137782747311_);}%0A%09.st1452{fill:url(%23SVGID_00000050629343083049740310000016026988865968968610_);}%0A%09.st1453{fill:url(%23SVGID_00000026873315319825385780000012115709029668691630_);}%0A%09.st1454{fill:url(%23SVGID_00000021814080743092200510000000230245637781194681_);}%0A%09.st1455{fill:url(%23SVGID_00000016054527573776276130000009208974586847258264_);}%0A%09.st1456{fill:url(%23SVGID_00000079486369821048726530000000504401107359250817_);}%0A%09.st1457{fill:url(%23SVGID_00000167386515228353862760000000000892963359037089_);}%0A%09.st1458{fill:url(%23SVGID_00000168093251517394637890000004617772399459410317_);}%0A%09.st1459{fill:url(%23SVGID_00000146457757202305703560000003209015937190868398_);}%0A%09.st1460{fill:url(%23SVGID_00000140014474095438200090000003628864199126762402_);}%0A%09.st1461{fill:url(%23SVGID_00000176743945702896078980000007243026380188902823_);}%0A%09.st1462{fill:url(%23SVGID_00000067956567872810884200000009453211081078767550_);}%0A%09.st1463{fill:url(%23SVGID_00000160873455469024502870000013472868927077580719_);}%0A%09.st1464{fill:url(%23SVGID_00000075859720644023344800000008025140132588006297_);}%0A%09.st1465{fill:url(%23SVGID_00000044176644047511083870000016412182888985295236_);}%0A%09.st1466{fill:url(%23SVGID_00000181047965820158789270000001519255878313669525_);}%0A%09.st1467{fill:url(%23SVGID_00000027578843040788521700000014377618438858823595_);}%0A%09.st1468{fill:url(%23SVGID_00000082342977148223851170000013934295318499799214_);}%0A%09.st1469{fill:url(%23SVGID_00000126297308010195226120000000946029830632966069_);}%0A%09.st1470{fill:url(%23SVGID_00000022551871420036324560000000713451697292347809_);}%0A%09.st1471{fill:url(%23SVGID_00000044173454543606004450000006335643031644787624_);}%0A%09.st1472{fill:url(%23SVGID_00000111183509772339455030000011233802518159050646_);}%0A%09.st1473{fill:url(%23SVGID_00000167397200670922834260000017782542947572609718_);}%0A%09.st1474{fill:url(%23SVGID_00000154424455159194375890000001488292295087179415_);}%0A%09.st1475{fill:url(%23SVGID_00000120534105890856371750000008273486444456261045_);}%0A%09.st1476{fill:url(%23SVGID_00000180339351897922418960000018175184822632763812_);}%0A%09.st1477{fill:url(%23SVGID_00000134213134397751283230000013981228356545509805_);}%0A%09.st1478{fill:url(%23SVGID_00000160158918144237864430000016983247489048876220_);}%0A%09.st1479{fill:url(%23SVGID_00000088841230735311726430000007507406744062041985_);}%0A%09.st1480{fill:url(%23SVGID_00000093868830141932502040000015414951331572752271_);}%0A%09.st1481{fill:url(%23SVGID_00000070115766461931423960000010870075612123703987_);}%0A%09.st1482{fill:url(%23SVGID_00000155109604421391006680000014059390108353219256_);}%0A%09.st1483{fill:url(%23SVGID_00000183953831167342280400000011591700846783176860_);}%0A%09.st1484{fill:url(%23SVGID_00000118384363826722692290000002697417913917108654_);}%0A%09.st1485{fill:url(%23SVGID_00000054258695911534177850000006152823502678393763_);}%0A%09.st1486{fill:url(%23SVGID_00000097494962987152022260000006146647508421564078_);}%0A%09.st1487{fill:url(%23SVGID_00000128448505551639738910000014814185881790362784_);}%0A%09.st1488{fill:url(%23SVGID_00000074410392198436186820000002440784021723018154_);}%0A%09.st1489{fill:url(%23SVGID_00000158746219331059118860000009368375924307974587_);}%0A%09.st1490{fill:url(%23SVGID_00000109707895759926090520000017871131643373352354_);}%0A%09.st1491{fill:url(%23SVGID_00000169515618406759579980000014087590092412288163_);}%0A%09.st1492{fill:url(%23SVGID_00000058565184826651509770000014546798963789613954_);}%0A%09.st1493{fill:url(%23SVGID_00000096781317664628433880000017110144051114089382_);}%0A%09.st1494{fill:url(%23SVGID_00000012460639141305509420000005941292717784332190_);}%0A%09.st1495{fill:url(%23SVGID_00000182486937641575020390000007864993431726288276_);}%0A%09.st1496{fill:url(%23SVGID_00000107578867002683859910000013440841518099700659_);}%0A%09.st1497{fill:url(%23SVGID_00000093136882063950111470000015335978889067744655_);}%0A%09.st1498{fill:url(%23SVGID_00000161589638635485070300000009853657201373343621_);}%0A%09.st1499{fill:url(%23SVGID_00000183929231128483134510000016304544352819629980_);}%0A%09.st1500{fill:url(%23SVGID_00000172425398693387141450000010924409392819217555_);}%0A%09.st1501{fill:url(%23SVGID_00000164512836063697973910000006668167543251436678_);}%0A%09.st1502{fill:url(%23SVGID_00000070810955641823341120000014182284508986382759_);}%0A%09.st1503{fill:url(%23SVGID_00000055670483347413400560000001160039813870152592_);}%0A%09.st1504{fill:url(%23SVGID_00000086659185788034895130000009429959458095018680_);}%0A%09.st1505{fill:url(%23SVGID_00000124877588366446270800000014761865652072739968_);}%0A%09.st1506{fill:url(%23SVGID_00000069389117903405594950000003532918165742855583_);}%0A%09.st1507{fill:url(%23SVGID_00000070839278882393211670000004148970245506375580_);}%0A%09.st1508{fill:url(%23SVGID_00000124865527160971886210000000063727040525361545_);}%0A%09.st1509{fill:url(%23SVGID_00000103951122678756603670000001727252819401741702_);}%0A%09.st1510{fill:url(%23SVGID_00000154403532809682305880000015581491481669965707_);}%0A%09.st1511{fill:url(%23SVGID_00000060726030854684547430000004823480632505511566_);}%0A%09.st1512{fill:url(%23SVGID_00000098929195073476297800000002170718192727073943_);}%0A%09.st1513{fill:url(%23SVGID_00000053536362789264000300000014429372786107073961_);}%0A%09.st1514{fill:url(%23SVGID_00000104677983301056153760000007044619611495062967_);}%0A%09.st1515{fill:url(%23SVGID_00000001645344359075656260000015049001543899689870_);}%0A%09.st1516{fill:url(%23SVGID_00000051354694732929738080000005916653310754379150_);}%0A%09.st1517{fill:url(%23SVGID_00000134232278220537027640000008776502715964034480_);}%0A%09.st1518{fill:url(%23SVGID_00000168118755580895635910000008960886743098879377_);}%0A%09.st1519{fill:url(%23SVGID_00000142170563112603603780000005974260838958834875_);}%0A%09.st1520{fill:url(%23SVGID_00000008131137583133599020000015978828890171787197_);}%0A%09.st1521{fill:url(%23SVGID_00000161620557413086810370000006618775412446313649_);}%0A%09.st1522{fill:url(%23SVGID_00000182486891556061855110000013133319024339982728_);}%0A%09.st1523{fill:url(%23SVGID_00000036948888053829556130000003376715407884371118_);}%0A%09.st1524{fill:url(%23SVGID_00000093879113870338536590000010702463842772889485_);}%0A%09.st1525{fill:url(%23SVGID_00000139986170735162606290000014656146027342533003_);}%0A%09.st1526{fill:url(%23SVGID_00000145034066956355539200000007394948544802382522_);}%0A%09.st1527{fill:url(%23SVGID_00000060003684703905410350000011423956012840992915_);}%0A%09.st1528{fill:url(%23SVGID_00000089568732355521698640000004529288388274499725_);}%0A%09.st1529{fill:url(%23SVGID_00000137123625476837801780000014108536429051435178_);}%0A%09.st1530{fill:url(%23SVGID_00000119835075271666197290000005061348770271814054_);}%0A%09.st1531{fill:url(%23SVGID_00000140718606719412104890000004945043747705054130_);}%0A%09.st1532{fill:url(%23SVGID_00000173134705495350300480000003291062494575028648_);}%0A%09.st1533{fill:url(%23SVGID_00000095308118091188565510000014779375990461999254_);}%0A%09.st1534{fill:url(%23SVGID_00000049928810457037845160000000563965426639546758_);}%0A%09.st1535{fill:url(%23SVGID_00000016792300673128886270000007760878188700373931_);}%0A%09.st1536{fill:url(%23SVGID_00000018233227047198397280000002532259881354460327_);}%0A%09.st1537{fill:url(%23SVGID_00000168097716622450809360000002560859255812397758_);}%0A%09.st1538{fill:url(%23SVGID_00000111151232618441574570000011205563017422811810_);}%0A%09.st1539{fill:url(%23SVGID_00000095297700495479481090000016883335961251969693_);}%0A%09.st1540{fill:url(%23SVGID_00000156557117432646112020000017444016571294384300_);}%0A%09.st1541{fill:url(%23SVGID_00000075127823028879144280000013802326970380960911_);}%0A%09.st1542{fill:url(%23SVGID_00000140717133293703070390000003850177716994225832_);}%0A%09.st1543{fill:url(%23SVGID_00000010995023390848687830000001100943572054286988_);}%0A%09.st1544{fill:url(%23SVGID_00000136398183945556356830000014127285067140210589_);}%0A%09.st1545{fill:url(%23SVGID_00000156561021278693890970000006357500303433883583_);}%0A%09.st1546{fill:url(%23SVGID_00000052075242487683588790000005118044845898125220_);}%0A%09.st1547{fill:url(%23SVGID_00000124145795222613731280000011180321259183904703_);}%0A%09.st1548{fill:url(%23SVGID_00000152230328395732449750000001784862643679990923_);}%0A%09.st1549{fill:url(%23SVGID_00000015331754550417456020000014385650137279503755_);}%0A%09.st1550{fill:url(%23SVGID_00000029734255323483010100000005632140151734448030_);}%0A%09.st1551{fill:url(%23SVGID_00000133487228648249420230000009260310202610508672_);}%0A%09.st1552{fill:url(%23SVGID_00000111905125816422936550000012317642616004221099_);}%0A%09.st1553{fill:url(%23SVGID_00000152969150043936417590000009217279426934565275_);}%0A%09.st1554{fill:url(%23SVGID_00000165231257900335247500000013033981351063495589_);}%0A%09.st1555{fill:url(%23SVGID_00000125564129503757994400000000967345449985522838_);}%0A%09.st1556{fill:url(%23SVGID_00000064313266791067334940000013022530401245450880_);}%0A%09.st1557{fill:url(%23SVGID_00000005947012094564894030000006129819025029824186_);}%0A%09.st1558{fill:url(%23SVGID_00000042715019434386043090000012808323519950686887_);}%0A%09.st1559{fill:url(%23SVGID_00000100379315848134110890000013330316971588623281_);}%0A%09.st1560{fill:url(%23SVGID_00000133490636569311299150000006081672782220859541_);}%0A%09.st1561{fill:url(%23SVGID_00000046302765540079767600000017677884408338217628_);}%0A%09.st1562{fill:url(%23SVGID_00000121990328765239072980000003594212202518463914_);}%0A%09.st1563{fill:url(%23SVGID_00000102504218732253545530000014639872861620859829_);}%0A%09.st1564{fill:url(%23SVGID_00000112624751493023345560000012888760718507678627_);}%0A%09.st1565{fill:url(%23SVGID_00000058561833505232194270000016588967732294422169_);}%0A%09.st1566{fill:url(%23SVGID_00000072281664397563579660000001612211805998707109_);}%0A%09.st1567{fill:url(%23SVGID_00000023983428388032259780000017505053416084882338_);}%0A%09.st1568{fill:url(%23SVGID_00000165212224493199940050000006465242229149798030_);}%0A%09.st1569{fill:url(%23SVGID_00000178891129907427200750000002902426108868122532_);}%0A%09.st1570{fill:url(%23SVGID_00000038381502402944562600000015027301279994754236_);}%0A%09.st1571{fill:url(%23SVGID_00000163788947708613584450000008724061255862836886_);}%0A%09.st1572{fill:url(%23SVGID_00000114772886889754645820000008093463374434830756_);}%0A%09.st1573{fill:url(%23SVGID_00000075843685034078733190000017015924632010696123_);}%0A%09.st1574{fill:url(%23SVGID_00000091733484003296008050000002182782259722042039_);}%0A%09.st1575{fill:url(%23SVGID_00000178921626701865161220000001857452307491778984_);}%0A%09.st1576{fill:url(%23SVGID_00000095334727891583525300000012784492716424746147_);}%0A%09.st1577{fill:url(%23SVGID_00000114758757045823925110000012455124295683255205_);}%0A%09.st1578{fill:url(%23SVGID_00000003088524878150991600000004175196810537885086_);}%0A%09.st1579{fill:url(%23SVGID_00000052801012115888974700000003725833988450039428_);}%0A%09.st1580{fill:url(%23SVGID_00000032618373772545270560000002346041886247268243_);}%0A%09.st1581{fill:url(%23SVGID_00000055667635263563122770000007694830869192111785_);}%0A%09.st1582{fill:url(%23SVGID_00000096017514178059525620000012363402800157573289_);}%0A%09.st1583{fill:url(%23SVGID_00000005260534076751499330000008838554236896130449_);}%0A%09.st1584{fill:url(%23SVGID_00000084505305919709089340000018327220437392018849_);}%0A%09.st1585{fill:url(%23SVGID_00000114776404053071237450000009592661519257061775_);}%0A%09.st1586{fill:url(%23SVGID_00000058563001418266947620000009823509578731071127_);}%0A%09.st1587{fill:url(%23SVGID_00000107549221849697985780000008734330480341597115_);}%0A%09.st1588{fill:url(%23SVGID_00000108988511984106569820000018177187289033512105_);}%0A%09.st1589{fill:url(%23SVGID_00000029017274951160344880000002237474863651874463_);}%0A%09.st1590{fill:url(%23SVGID_00000030485605416287266370000001811327065844767618_);}%0A%09.st1591{fill:url(%23SVGID_00000066475734931700470720000017565107689393353140_);}%0A%09.st1592{fill:url(%23SVGID_00000140712272830448649990000004385254252730693507_);}%0A%09.st1593{fill:url(%23SVGID_00000162339261681019803190000014993683505226624678_);}%0A%09.st1594{fill:url(%23SVGID_00000098212146247010659290000004107315905844253369_);}%0A%09.st1595{fill:url(%23SVGID_00000023260510827479971140000003121106268229892748_);}%0A%09.st1596{fill:url(%23SVGID_00000010273008583465932580000012675354634869607836_);}%0A%09.st1597{fill:url(%23SVGID_00000157276376522827347910000016411957862774114696_);}%0A%09.st1598{fill:url(%23SVGID_00000074441141885064117890000006081658033343293829_);}%0A%09.st1599{fill:url(%23SVGID_00000152260075273446722690000006739623401909756044_);}%0A%09.st1600{fill:url(%23SVGID_00000133530995499069960770000004811011732218947980_);}%0A%09.st1601{fill:url(%23SVGID_00000119810354411674798570000004088186747794089911_);}%0A%09.st1602{fill:url(%23SVGID_00000175309241639212266730000011442315387701359288_);}%0A%09.st1603{fill:url(%23SVGID_00000026140950774993789470000005239286533715575218_);}%0A%09.st1604{fill:url(%23SVGID_00000160910346349716739300000014903901893299045008_);}%0A%09.st1605{fill:url(%23SVGID_00000003070563796008472080000000511017053852622238_);}%0A%09.st1606{fill:url(%23SVGID_00000126317191303156200880000011789166106379305606_);}%0A%09.st1607{fill:url(%23SVGID_00000123406520114114515170000009954487572615904175_);}%0A%09.st1608{fill:url(%23SVGID_00000150812732959931250260000002823438876372431031_);}%0A%09.st1609{fill:url(%23SVGID_00000010289420111211689630000016051313682977975684_);}%0A%09.st1610{fill:url(%23SVGID_00000028286612683472787140000001479086913244635028_);}%0A%09.st1611{fill:url(%23SVGID_00000048466784523855601300000010804573124690870422_);}%0A%09.st1612{fill:url(%23SVGID_00000010274090922933653520000010393554777232213145_);}%0A%09.st1613{fill:url(%23SVGID_00000124123751601726212440000013479275692220202427_);}%0A%09.st1614{fill:url(%23SVGID_00000164516009324575074840000003533776942957411749_);}%0A%09.st1615{fill:url(%23SVGID_00000110462699946777608610000011832903911603234716_);}%0A%09.st1616{fill:url(%23SVGID_00000070084174454963699510000015542866295617532800_);}%0A%09.st1617{fill:url(%23SVGID_00000044148941466082716950000018032348056391576761_);}%0A%09.st1618{fill:url(%23SVGID_00000114759049410833973660000003867338642048363696_);}%0A%09.st1619{fill:url(%23SVGID_00000024002783306254373240000017611642101580703618_);}%0A%09.st1620{fill:url(%23SVGID_00000047023539610050335530000005312513757991138987_);}%0A%09.st1621{fill:url(%23SVGID_00000090992979235155529650000012969065063493032627_);}%0A%09.st1622{fill:url(%23SVGID_00000049187625694909708860000016420544804398640280_);}%0A%09.st1623{fill:url(%23SVGID_00000135660509646891403130000000727445525538267530_);}%0A%09.st1624{fill:url(%23SVGID_00000036250198170633534200000001199331079883400077_);}%0A%09.st1625{fill:url(%23SVGID_00000114037142633121907170000016223454163553686674_);}%0A%09.st1626{fill:url(%23SVGID_00000093877709498458129960000013151474250086954931_);}%0A%09.st1627{fill:url(%23SVGID_00000094580852818510730180000007183164039558756266_);}%0A%09.st1628{fill:url(%23SVGID_00000098917382716171952060000003644379277063725483_);}%0A%09.st1629{fill:url(%23SVGID_00000183954168059439333070000013428933292414444962_);}%0A%09.st1630{fill:url(%23SVGID_00000119800171128477532600000017043070238754543280_);}%0A%09.st1631{fill:url(%23SVGID_00000142868885950273578070000006778047030449522613_);}%0A%09.st1632{fill:url(%23SVGID_00000158022782660421525060000017964422519244409277_);}%0A%09.st1633{fill:url(%23SVGID_00000095332838373053876660000009845928279374273965_);}%0A%09.st1634{fill:url(%23SVGID_00000182498852531997155810000010889003695918709899_);}%0A%09.st1635{fill:url(%23SVGID_00000162353371290654933080000004068026066858119327_);}%0A%09.st1636{fill:url(%23SVGID_00000003081940427207253520000017278882724911213441_);}%0A%09.st1637{fill:url(%23SVGID_00000126301210283088255710000001655303030857301381_);}%0A%09.st1638{fill:url(%23SVGID_00000006701307709170576430000014721617134251506605_);}%0A%09.st1639{fill:url(%23SVGID_00000139274059620234383270000015023679637551178624_);}%0A%09.st1640{fill:url(%23SVGID_00000048502904935675565520000001691516433547935164_);}%0A%09.st1641{fill:url(%23SVGID_00000022562263509037015440000009956335116830386832_);}%0A%09.st1642{fill:url(%23SVGID_00000062883344065685973910000017062045863870501531_);}%0A%09.st1643{fill:url(%23SVGID_00000062180934599295495580000013689961198398681488_);}%0A%09.st1644{fill:url(%23SVGID_00000004523318915212296560000007746913131595415952_);}%0A%09.st1645{fill:url(%23SVGID_00000108305002626867502190000014011156156138626969_);}%0A%09.st1646{fill:url(%23SVGID_00000109738324730535847630000003068379881602901888_);}%0A%09.st1647{fill:url(%23SVGID_00000060027474451585877960000008832570400261239731_);}%0A%09.st1648{fill:url(%23SVGID_00000106121112201600044570000010542428274871603595_);}%0A%09.st1649{fill:url(%23SVGID_00000183219759085742129530000008072947412403531194_);}%0A%09.st1650{fill:url(%23SVGID_00000108311137244782346770000007036264414635402377_);}%0A%09.st1651{fill:url(%23SVGID_00000075147290733287083300000012498188463717175217_);}%0A%09.st1652{fill:url(%23SVGID_00000091733151897863239900000016973627400277534650_);}%0A%09.st1653{fill:url(%23SVGID_00000168078041365044287950000012577274424917404819_);}%0A%09.st1654{fill:url(%23SVGID_00000181787469468972296560000011675563713452732590_);}%0A%09.st1655{fill:url(%23SVGID_00000129919320881779178520000004823361310150647480_);}%0A%09.st1656{fill:url(%23SVGID_00000097466096979885195640000002345193521142902407_);}%0A%09.st1657{fill:url(%23SVGID_00000003067441060586871620000002403002818526095233_);}%0A%09.st1658{fill:url(%23SVGID_00000093162173115445905450000012102236658019021724_);}%0A%09.st1659{fill:url(%23SVGID_00000104698545053814656230000013656941874008727950_);}%0A%09.st1660{fill:url(%23SVGID_00000136377481737213899700000016000848174560011918_);}%0A%09.st1661{fill:url(%23SVGID_00000154422676369439728940000002646340292453131919_);}%0A%09.st1662{fill:url(%23SVGID_00000156572797847607953280000010206415791790079931_);}%0A%09.st1663{fill:url(%23SVGID_00000035491329738207485410000002987225090748834966_);}%0A%09.st1664{fill:url(%23SVGID_00000068670525071962360120000007106810939402327178_);}%0A%09.st1665{fill:url(%23SVGID_00000052062945471734922810000017831823665926954368_);}%0A%09.st1666{fill:url(%23SVGID_00000018198264384447315720000018434209203540062372_);}%0A%09.st1667{fill:url(%23SVGID_00000176034719475484148430000010784309802934831293_);}%0A%09.st1668{fill:url(%23SVGID_00000075848303545302551860000006969218620279909284_);}%0A%09.st1669{fill:url(%23SVGID_00000093861631323627112220000002096858481514712451_);}%0A%09.st1670{fill:url(%23SVGID_00000101804923875303893510000010412236341689572510_);}%0A%09.st1671{fill:url(%23SVGID_00000024701738600530089400000015723320955677552299_);}%0A%09.st1672{fill:url(%23SVGID_00000025403408510912712910000000110206235737189803_);}%0A%09.st1673{fill:url(%23SVGID_00000129905301164350696120000011793937619271165843_);}%0A%09.st1674{fill:url(%23SVGID_00000127725461954929777100000012886954456985649847_);}%0A%09.st1675{fill:url(%23SVGID_00000134948702303540538750000012524284610273913743_);}%0A%09.st1676{fill:url(%23SVGID_00000103973272545473829830000007590236818204591801_);}%0A%09.st1677{fill:url(%23SVGID_00000000215883001671389410000016870048343085319318_);}%0A%09.st1678{fill:url(%23SVGID_00000041269886900326258930000009972378326289431483_);}%0A%09.st1679{fill:url(%23SVGID_00000134211022197053879830000013308252118489864619_);}%0A%09.st1680{fill:url(%23SVGID_00000098196765061678628500000009574979472170805174_);}%0A%09.st1681{fill:url(%23SVGID_00000016047698604716621370000011350930134072271789_);}%0A%09.st1682{fill:url(%23SVGID_00000168822775569839924020000016370934505009531040_);}%0A%09.st1683{fill:url(%23SVGID_00000030464036785669496640000007982229408128620704_);}%0A%09.st1684{fill:url(%23SVGID_00000039834387256447512740000015285378737978933414_);}%0A%09.st1685{fill:url(%23SVGID_00000070085411021332053320000002375479974153917573_);}%0A%09.st1686{fill:url(%23SVGID_00000132086834434306729040000016100104518657212035_);}%0A%09.st1687{fill:url(%23SVGID_00000070809177015623562230000009657170674258543784_);}%0A%09.st1688{fill:url(%23SVGID_00000048493580247982838660000012699437353136830131_);}%0A%09.st1689{fill:url(%23SVGID_00000088818793157087432330000011128505042836101551_);}%0A%09.st1690{fill:url(%23SVGID_00000019669932415830187890000018078984138268624042_);}%0A%09.st1691{fill:url(%23SVGID_00000062911810019709805940000016941963936325267131_);}%0A%09.st1692{fill:url(%23SVGID_00000062170058115367924360000000123344273802131885_);}%0A%09.st1693{fill:url(%23SVGID_00000148662806595345151860000018252016902846039197_);}%0A%09.st1694{fill:url(%23SVGID_00000132064630719751881110000012915212915691434921_);}%0A%09.st1695{fill:url(%23SVGID_00000018220351947773606130000003212615034035437220_);}%0A%09.st1696{fill:url(%23SVGID_00000021811725644490423600000015981750457829097897_);}%0A%09.st1697{fill:url(%23SVGID_00000100379469980069316690000016475793030697624491_);}%0A%09.st1698{fill:url(%23SVGID_00000146470785113475733260000002193476195166131115_);}%0A%09.st1699{fill:url(%23SVGID_00000062187174452543281070000008667034818844093354_);}%0A%09.st1700{fill:url(%23SVGID_00000000194558254993035640000017778310651204148364_);}%0A%09.st1701{fill:url(%23SVGID_00000071521870590197136230000016990419511538206137_);}%0A%09.st1702{fill:url(%23SVGID_00000076572023091755309280000017836069347409384876_);}%0A%09.st1703{fill:url(%23SVGID_00000126301580097358483970000002112471307226289299_);}%0A%09.st1704{fill:url(%23SVGID_00000005239173328648306820000018377749822699425447_);}%0A%09.st1705{fill:url(%23SVGID_00000026871561688031553020000014136546535178162573_);}%0A%09.st1706{fill:url(%23SVGID_00000096775260113632224400000007068830964798977683_);}%0A%09.st1707{fill:url(%23SVGID_00000176000884980023456460000001050363240715389571_);}%0A%09.st1708{fill:url(%23SVGID_00000089538835444306854230000004852821061481397422_);}%0A%09.st1709{fill:url(%23SVGID_00000176023766292053720390000002501466604902848426_);}%0A%09.st1710{fill:url(%23SVGID_00000098931674953948825600000012150304937945610674_);}%0A%09.st1711{fill:url(%23SVGID_00000041280933500627397360000010388264193468851608_);}%0A%09.st1712{fill:url(%23SVGID_00000170254213540435135120000009375400184742775705_);}%0A%09.st1713{fill:url(%23SVGID_00000118358532086748458690000017455509381292490658_);}%0A%09.st1714{fill:url(%23SVGID_00000005232117671482356670000002556105344162657715_);}%0A%09.st1715{fill:url(%23SVGID_00000173122509275743337870000013444160067310270108_);}%0A%09.st1716{fill:url(%23SVGID_00000093155765259117538420000012718742437379568039_);}%0A%09.st1717{fill:url(%23SVGID_00000108303225700933598070000013683992771738599813_);}%0A%09.st1718{fill:url(%23SVGID_00000103253935033386610410000017326083825265507208_);}%0A%09.st1719{fill:url(%23SVGID_00000098223143356215353770000006617260822604085183_);}%0A%09.st1720{fill:url(%23SVGID_00000092435145862650108470000016878093708127075502_);}%0A%09.st1721{fill:url(%23SVGID_00000137811289233026812270000000302250464218650509_);}%0A%09.st1722{fill:url(%23SVGID_00000077302718914905768130000001104552717895276673_);}%0A%09.st1723{fill:url(%23SVGID_00000045611190447491326230000007933759597304716680_);}%0A%09.st1724{fill:url(%23SVGID_00000182528370671318209070000006066909525838282671_);}%0A%09.st1725{fill:url(%23SVGID_00000021092307428022416570000002780909716610853036_);}%0A%09.st1726{fill:url(%23SVGID_00000152973871955365153230000009044789185022622634_);}%0A%09.st1727{fill:url(%23SVGID_00000012450110077489948340000013754677010501647752_);}%0A%09.st1728{fill:url(%23SVGID_00000057121203828739159740000017761618306534123658_);}%0A%09.st1729{fill:url(%23SVGID_00000129902887156566054170000012074885715249013912_);}%0A%09.st1730{fill:url(%23SVGID_00000145770542370213182920000013168481752626993797_);}%0A%09.st1731{fill:url(%23SVGID_00000031185223241611745910000010745068261611917991_);}%0A%09.st1732{fill:url(%23SVGID_00000104668842912227061740000000055551984848009890_);}%0A%09.st1733{fill:url(%23SVGID_00000169517584317509528870000006201375084027153590_);}%0A%09.st1734{fill:url(%23SVGID_00000138545406434373879350000006485452213124179584_);}%0A%09.st1735{fill:url(%23SVGID_00000150780675624380715030000005769129786323668893_);}%0A%09.st1736{fill:url(%23SVGID_00000060004540630916576910000013463923524301642428_);}%0A%09.st1737{fill:url(%23SVGID_00000016037942859625516700000008012789526155011767_);}%0A%09.st1738{fill:url(%23SVGID_00000127036701976576831410000001603018504906767516_);}%0A%09.st1739{fill:url(%23SVGID_00000177478271249107673650000016519369493884607137_);}%0A%09.st1740{fill:url(%23SVGID_00000087391927254660556600000013856452218591406978_);}%0A%09.st1741{fill:url(%23SVGID_00000160902873733867573410000008149761547005491090_);}%0A%09.st1742{fill:url(%23SVGID_00000142893190992286157770000012094710064710153601_);}%0A%09.st1743{fill:url(%23SVGID_00000010271547296461623830000010922297409342613645_);}%0A%09.st1744{fill:url(%23SVGID_00000023272588029568570690000003232914931915276976_);}%0A%09.st1745{fill:url(%23SVGID_00000181045278819905928910000009799587263953981849_);}%0A%09.st1746{fill:url(%23SVGID_00000115494585583487797620000017768335621462523577_);}%0A%09.st1747{fill:url(%23SVGID_00000049935468339089158490000002959924301614264735_);}%0A%09.st1748{fill:url(%23SVGID_00000008859468564735513350000009361807162838083514_);}%0A%09.st1749{fill:url(%23SVGID_00000063611077257326368960000017831205554726937517_);}%0A%09.st1750{fill:url(%23SVGID_00000169556644227103849770000014678825153934642870_);}%0A%09.st1751{fill:url(%23SVGID_00000067950760919050763160000017524967427354812069_);}%0A%09.st1752{fill:url(%23SVGID_00000046317407736117317280000012797290745259937437_);}%0A%09.st1753{fill:url(%23SVGID_00000077324249836994851060000002923192356406456215_);}%0A%09.st1754{fill:url(%23SVGID_00000176012845334438455750000016416039634513483197_);}%0A%09.st1755{fill:url(%23SVGID_00000083783290591799640260000006862767399595351985_);}%0A%09.st1756{fill:url(%23SVGID_00000023271384107185851420000004303551453145143717_);}%0A%09.st1757{fill:url(%23SVGID_00000116212903319230103440000012329492894279138495_);}%0A%09.st1758{fill:url(%23SVGID_00000089576415150976026120000015852191774859083907_);}%0A%09.st1759{fill:url(%23SVGID_00000167394490378677964500000014871481907942655910_);}%0A%09.st1760{fill:url(%23SVGID_00000007387728941618299990000011061435085991581358_);}%0A%09.st1761{fill:url(%23SVGID_00000039855766891146150750000008867628891023441287_);}%0A%09.st1762{fill:url(%23SVGID_00000127725133090920049770000000239754420681527183_);}%0A%09.st1763{fill:url(%23SVGID_00000059988710388197477920000004429473352197205156_);}%0A%09.st1764{fill:url(%23SVGID_00000119117722796258712390000005966102634717881231_);}%0A%09.st1765{fill:url(%23SVGID_00000075870838628939907830000006212719524482712999_);}%0A%09.st1766{fill:url(%23SVGID_00000132046094842227409280000010743896719446723771_);}%0A%09.st1767{fill:url(%23SVGID_00000157276825584915037820000000533739260351566995_);}%0A%09.st1768{fill:url(%23SVGID_00000028311079592918447160000003810908136315770288_);}%0A%09.st1769{fill:url(%23SVGID_00000010283066816424770490000004507952197811961742_);}%0A%09.st1770{fill:url(%23SVGID_00000011005327484463972920000010266804545640310403_);}%0A%09.st1771{fill:url(%23SVGID_00000175310930996477038100000002052987853983453838_);}%0A%09.st1772{fill:url(%23SVGID_00000168819781521632750540000017626258414027508867_);}%0A%09.st1773{fill:url(%23SVGID_00000034083688932815978920000005745449589883960721_);}%0A%09.st1774{fill:url(%23SVGID_00000160885076899077110020000015463860290059699647_);}%0A%09.st1775{fill:url(%23SVGID_00000073689358067244555890000016990209667313611446_);}%0A%09.st1776{fill:url(%23SVGID_00000158018196571525804910000000271056001226618002_);}%0A%09.st1777{fill:url(%23SVGID_00000176006438237756300360000000400874418979261630_);}%0A%09.st1778{fill:url(%23SVGID_00000021800470771468631220000008838323707422749350_);}%0A%09.st1779{fill:url(%23SVGID_00000036228201460113584640000008991509146949275544_);}%0A%09.st1780{fill:url(%23SVGID_00000170962815321413241640000007996922792286910394_);}%0A%09.st1781{fill:url(%23SVGID_00000062167902330314520500000018180050533226566836_);}%0A%09.st1782{fill:url(%23SVGID_00000180359607673443880970000016585459774672244907_);}%0A%09.st1783{fill:url(%23SVGID_00000106111330544704197390000000295337752538007484_);}%0A%09.st1784{fill:url(%23SVGID_00000067926034580034143060000002655337511047991187_);}%0A%09.st1785{fill:url(%23SVGID_00000109003219768387054720000015558523790766569629_);}%0A%09.st1786{fill:url(%23SVGID_00000043457520762073659790000014058670365705176247_);}%0A%09.st1787{fill:url(%23SVGID_00000071551137464655394770000010023975787789034413_);}%0A%09.st1788{fill:url(%23SVGID_00000042710382155357595110000012047131355720009874_);}%0A%09.st1789{fill:url(%23SVGID_00000123425007803343674690000009047298745567196300_);}%0A%09.st1790{fill:url(%23SVGID_00000120548755918291994740000014799647236818305461_);}%0A%09.st1791{fill:url(%23SVGID_00000155132108387624319150000016885402600684759198_);}%0A%09.st1792{fill:url(%23SVGID_00000084523090529990970640000004253212749674502045_);}%0A%09.st1793{fill:url(%23SVGID_00000037652274288201516760000006973852545459828127_);}%0A%09.st1794{fill:url(%23SVGID_00000065033646225437395110000014728297403742701185_);}%0A%09.st1795{fill:url(%23SVGID_00000057829854136052268050000016850911230305986180_);}%0A%09.st1796{fill:url(%23SVGID_00000034053291500941112480000009185862766627767428_);}%0A%09.st1797{fill:url(%23SVGID_00000181084449612870640670000001584204864151886761_);}%0A%09.st1798{fill:url(%23SVGID_00000109708232058711503600000003149969720280642202_);}%0A%09.st1799{fill:url(%23SVGID_00000063605222759868311380000014184835513181483428_);}%0A%09.st1800{fill:url(%23SVGID_00000066509453887171625040000001649704256647949498_);}%0A%09.st1801{fill:url(%23SVGID_00000166671462837282308220000008789712911548352666_);}%0A%09.st1802{fill:url(%23SVGID_00000138552654145290005870000000336809175173903545_);}%0A%09.st1803{fill:url(%23SVGID_00000054236588520669041460000007591145092753693836_);}%0A%09.st1804{fill:url(%23SVGID_00000060022730215212131990000011325102183285235330_);}%0A%09.st1805{fill:url(%23SVGID_00000155145054087124379820000015437146914066726306_);}%0A%09.st1806{fill:url(%23SVGID_00000031202331572479461660000011938505876033103795_);}%0A%09.st1807{fill:url(%23SVGID_00000089536459717256158870000009815692886864716205_);}%0A%09.st1808{fill:url(%23SVGID_00000081645890508147142900000003703269583548554128_);}%0A%09.st1809{fill:url(%23SVGID_00000099663706838587411770000004771173399753443234_);}%0A%09.st1810{fill:url(%23SVGID_00000119797267045410299750000017132684802232182702_);}%0A%09.st1811{fill:url(%23SVGID_00000156571946532507143910000003560155667074996617_);}%0A%09.st1812{fill:url(%23SVGID_00000183222982929441813300000010567015221633383552_);}%0A%09.st1813{fill:url(%23SVGID_00000069390845667323419870000003765483301412367277_);}%0A%09.st1814{fill:url(%23SVGID_00000034805813459200423470000004638457043896721546_);}%0A%09.st1815{fill:url(%23SVGID_00000111890675199882573000000012477566579037500848_);}%0A%09.st1816{fill:url(%23SVGID_00000165214534646698629170000010639525860329780159_);}%0A%09.st1817{fill:url(%23SVGID_00000026861968410886381030000012055863574995899542_);}%0A%09.st1818{fill:url(%23SVGID_00000004527212468421196520000003447314356540327350_);}%0A%09.st1819{fill:url(%23SVGID_00000032632977171981989490000005492139159324658335_);}%0A%09.st1820{fill:url(%23SVGID_00000158743345036373325680000017023737718059567500_);}%0A%09.st1821{fill:url(%23SVGID_00000048487402371881578060000001184644849980269247_);}%0A%09.st1822{fill:url(%23SVGID_00000030446115037665084700000013817800996101826218_);}%0A%09.st1823{fill:url(%23SVGID_00000074415528837832081740000011629741707772102075_);}%0A%09.st1824{fill:url(%23SVGID_00000145057839046801591520000004554168843633787531_);}%0A%09.st1825{fill:url(%23SVGID_00000115500858876374984160000005419184122150959534_);}%0A%09.st1826{fill:url(%23SVGID_00000181067456275953822110000010954304483590009760_);}%0A%09.st1827{fill:url(%23SVGID_00000098902448599885671610000015396880372368843396_);}%0A%09.st1828{fill:url(%23SVGID_00000011741217407616947320000014269934860388574597_);}%0A%09.st1829{fill:url(%23SVGID_00000005954954451687654070000017413159517314028465_);}%0A%09.st1830{fill:url(%23SVGID_00000083084128885922626900000007060137738252244155_);}%0A%09.st1831{fill:url(%23SVGID_00000093891222544802406550000012072510392771319196_);}%0A%09.st1832{fill:url(%23SVGID_00000136391451480089189470000001138342201391263656_);}%0A%09.st1833{fill:url(%23SVGID_00000017514307760790731280000003574439067952890043_);}%0A%09.st1834{fill:url(%23SVGID_00000139980960496983544160000004616167700378230151_);}%0A%09.st1835{fill:url(%23SVGID_00000019655684196484470030000003510093925399854513_);}%0A%09.st1836{fill:url(%23SVGID_00000101785229341217766780000004089325684161026473_);}%0A%09.st1837{fill:url(%23SVGID_00000050627746282189227980000010409996888456131261_);}%0A%09.st1838{fill:url(%23SVGID_00000127730377697280391520000013895145842213696187_);}%0A%09.st1839{fill:url(%23SVGID_00000178910067151908458190000013679235526530763660_);}%0A%09.st1840{fill:url(%23SVGID_00000137824679556453729340000001444940945623514524_);}%0A%09.st1841{fill:url(%23SVGID_00000119076770778198052420000015214922197577658273_);}%0A%09.st1842{fill:url(%23SVGID_00000099625589542349748010000012292929180099982237_);}%0A%09.st1843{fill:url(%23SVGID_00000176730220598505441970000007198338111821522562_);}%0A%09.st1844{fill:url(%23SVGID_00000139275598715570686590000013959562113580289974_);}%0A%09.st1845{fill:url(%23SVGID_00000093871593256883004730000004214107613144615081_);}%0A%09.st1846{fill:url(%23SVGID_00000118365961165742258890000010317398841136384956_);}%0A%09.st1847{fill:url(%23SVGID_00000129918381684371437100000014219186512515299742_);}%0A%09.st1848{fill:url(%23SVGID_00000158011298997972849880000017000631995090962354_);}%0A%09.st1849{fill:url(%23SVGID_00000165201927019498995920000014302704682687470512_);}%0A%09.st1850{fill:url(%23SVGID_00000018935816888404002230000010306331052243846331_);}%0A%09.st1851{fill:url(%23SVGID_00000060740154326101877770000002301145201359051925_);}%0A%09.st1852{fill:url(%23SVGID_00000049913411829169714940000016331706449118957999_);}%0A%09.st1853{fill:url(%23SVGID_00000116920397242081150080000000026993772243174836_);}%0A%09.st1854{fill:url(%23SVGID_00000033335119099625869490000005636754294541296308_);}%0A%09.st1855{fill:url(%23SVGID_00000088134413315938329770000017122675499061722533_);}%0A%09.st1856{fill:url(%23SVGID_00000058587702418617541000000000520826422715314059_);}%0A%09.st1857{fill:url(%23SVGID_00000028284577021570732970000006128625916501176962_);}%0A%09.st1858{fill:url(%23SVGID_00000154420857143053531190000011483635530050738618_);}%0A%09.st1859{fill:url(%23SVGID_00000181777665894519637740000016197587187118127234_);}%0A%09.st1860{fill:url(%23SVGID_00000162312208237378495560000000794492781362614660_);}%0A%09.st1861{fill:url(%23SVGID_00000048500932693891309880000014349858530799372971_);}%0A%09.st1862{fill:url(%23SVGID_00000170244106121758377190000012525544274000565917_);}%0A%09.st1863{fill:url(%23SVGID_00000060029774351251372680000002577505020621946772_);}%0A%09.st1864{fill:url(%23SVGID_00000000219000655933732290000008480772580540768441_);}%0A%09.st1865{fill:url(%23SVGID_00000101088920582098915080000003734712420554961575_);}%0A%09.st1866{fill:url(%23SVGID_00000073714007619299610360000006082206684332589701_);}%0A%09.st1867{fill:url(%23SVGID_00000125597942776861133580000001095864239975072177_);}%0A%09.st1868{fill:url(%23SVGID_00000097467923340637058960000014496185106163753113_);}%0A%09.st1869{fill:url(%23SVGID_00000040550357981943848940000006965278908049604244_);}%0A%09.st1870{fill:url(%23SVGID_00000065759510140071386730000000306278908241169848_);}%0A%09.st1871{fill:url(%23SVGID_00000026162538625277768910000013620100563166545031_);}%0A%09.st1872{fill:url(%23SVGID_00000049209281109529882660000002060858419175179675_);}%0A%09.st1873{fill:url(%23SVGID_00000017510677410683020920000013473056570965229220_);}%0A%09.st1874{fill:url(%23SVGID_00000125573081056323248910000000275150079595840957_);}%0A%09.st1875{fill:url(%23SVGID_00000060719646835740572930000018361249221505215933_);}%0A%09.st1876{fill:url(%23SVGID_00000015345451471723136160000014079259049877873317_);}%0A%09.st1877{fill:url(%23SVGID_00000178910632412066973690000012124532999948476801_);}%0A%09.st1878{fill:url(%23SVGID_00000135671343966310027910000007336410714755516071_);}%0A%09.st1879{fill:url(%23SVGID_00000134950781680201099420000007428393670420049301_);}%0A%09.st1880{fill:url(%23SVGID_00000067196764165346735070000003349909611356311482_);}%0A%09.st1881{fill:url(%23SVGID_00000049201022348330077540000007146787063302476933_);}%0A%09.st1882{fill:url(%23SVGID_00000164499281937639596580000016864694524920835254_);}%0A%09.st1883{fill:url(%23SVGID_00000104679668267609531630000008164464453057741195_);}%0A%09.st1884{fill:url(%23SVGID_00000141449225474782452730000005994667228808344487_);}%0A%09.st1885{fill:url(%23SVGID_00000155113671969857082420000017717664159921908653_);}%0A%09.st1886{fill:url(%23SVGID_00000178925186712523676010000016895450686245216157_);}%0A%09.st1887{fill:url(%23SVGID_00000119087368955437426540000005131611133082750899_);}%0A%09.st1888{fill:url(%23SVGID_00000118365877985650790510000011511396153084665240_);}%0A%09.st1889{fill:url(%23SVGID_00000152945247359674706820000013319629377319379337_);}%0A%09.st1890{fill:url(%23SVGID_00000144319548457095019410000010904048999431199910_);}%0A%09.st1891{fill:url(%23SVGID_00000074410837915248585380000016325074583291301305_);}%0A%09.st1892{fill:url(%23SVGID_00000135654585067759862580000010992153123324949907_);}%0A%09.st1893{fill:url(%23SVGID_00000183932761953030692670000013334690345414480779_);}%0A%09.st1894{fill:url(%23SVGID_00000160896133720481060960000002485308922356044950_);}%0A%09.st1895{fill:url(%23SVGID_00000133525728055366969700000012640945460929806210_);}%0A%09.st1896{fill:url(%23SVGID_00000033358217609761830150000006911881241062050958_);}%0A%09.st1897{fill:url(%23SVGID_00000169539906811025317650000001046114201207795891_);}%0A%09.st1898{fill:url(%23SVGID_00000137107227953714571640000013510988349138065318_);}%0A%09.st1899{fill:url(%23SVGID_00000140016533931358085280000010662800471356308393_);}%0A%09.st1900{fill:url(%23SVGID_00000095323031187753081480000003425511018625571517_);}%0A%09.st1901{fill:url(%23SVGID_00000088848542045768596690000016492013133270717355_);}%0A%09.st1902{fill:url(%23SVGID_00000018221291500665251080000005074749636787582385_);}%0A%09.st1903{fill:url(%23SVGID_00000045608178821156025250000005362245978031784064_);}%0A%09.st1904{fill:url(%23SVGID_00000134954646617410642790000015891885735831505028_);}%0A%09.st1905{fill:url(%23SVGID_00000026147525710825087310000012448348826863905926_);}%0A%09.st1906{fill:url(%23SVGID_00000178193911516999433640000017200984776625993612_);}%0A%09.st1907{fill:url(%23SVGID_00000153701621357763987680000012528981869840194236_);}%0A%09.st1908{fill:url(%23SVGID_00000111167989401973897000000013568902138531576242_);}%0A%09.st1909{fill:url(%23SVGID_00000106130394273382910500000003186183702786939028_);}%0A%09.st1910{fill:url(%23SVGID_00000101093933645347338740000015484542386575902111_);}%0A%09.st1911{fill:url(%23SVGID_00000000197421172537883440000014230953817798290583_);}%0A%09.st1912{fill:url(%23SVGID_00000049184516361591340070000016057897941837929147_);}%0A%09.st1913{fill:url(%23SVGID_00000002356999768548381800000003943784867624422590_);}%0A%09.st1914{fill:url(%23SVGID_00000132072414526153871430000007586765431254090894_);}%0A%09.st1915{fill:url(%23SVGID_00000150808126127981108980000006082471559062841763_);}%0A%09.st1916{fill:url(%23SVGID_00000164489463926940320140000013774187844334714773_);}%0A%09.st1917{fill:url(%23SVGID_00000068637645170031130930000001377824714496405157_);}%0A%09.st1918{fill:url(%23SVGID_00000153703448957015972330000011412221435677711288_);}%0A%09.st1919{fill:url(%23SVGID_00000057828249114107605740000003666395198373261474_);}%0A%09.st1920{fill:url(%23SVGID_00000123404126996376595840000007283942322136883588_);}%0A%09.st1921{fill:url(%23SVGID_00000149362215023517688490000013575460454793334674_);}%0A%09.st1922{fill:url(%23SVGID_00000158722209883142943060000004392498520176168610_);}%0A%09.st1923{fill:url(%23SVGID_00000107587905899234943150000007603064892477022372_);}%0A%09.st1924{fill:url(%23SVGID_00000003071215279444513650000010065540730683982485_);}%0A%09.st1925{fill:url(%23SVGID_00000127040115250788165870000006194366430010900914_);}%0A%09.st1926{fill:url(%23SVGID_00000042698340360118999350000003681044416187953313_);}%0A%09.st1927{fill:url(%23SVGID_00000084508407225050633320000016465752521961936778_);}%0A%09.st1928{fill:url(%23SVGID_00000026843647404002232940000005789859126741905072_);}%0A%09.st1929{fill:url(%23SVGID_00000044860959487061099040000015036794431879538090_);}%0A%09.st1930{fill:url(%23SVGID_00000007423760849917475800000012007476611023135648_);}%0A%09.st1931{fill:url(%23SVGID_00000093895138254962318720000005088813675849559445_);}%0A%09.st1932{fill:url(%23SVGID_00000156553920905082183350000003269074871025721022_);}%0A%09.st1933{fill:url(%23SVGID_00000065794150902949295460000015867285330484724635_);}%0A%09.st1934{fill:url(%23SVGID_00000027563919932471335340000012381403517738339513_);}%0A%09.st1935{fill:url(%23SVGID_00000139987974225018373590000002783275526602179762_);}%0A%09.st1936{fill:url(%23SVGID_00000166644350720879613760000006243253169598388876_);}%0A%09.st1937{fill:url(%23SVGID_00000092429859559118250950000014930951449403101103_);}%0A%09.st1938{fill:url(%23SVGID_00000146487305245439045320000017334221258350346158_);}%0A%09.st1939{fill:url(%23SVGID_00000112596165172077066990000001554370721267132821_);}%0A%09.st1940{fill:url(%23SVGID_00000072969800106272127650000010177388905107299484_);}%0A%09.st1941{fill:url(%23SVGID_00000157287053816876351920000012216991082906369441_);}%0A%09.st1942{fill:url(%23SVGID_00000032614800475059718120000011264265172994363557_);}%0A%09.st1943{fill:url(%23SVGID_00000112620788512590304840000000521665325802770057_);}%0A%09.st1944{fill:url(%23SVGID_00000047747296693131450990000018364863754707513772_);}%0A%09.st1945{fill:url(%23SVGID_00000098933134042790579660000018315244408740262845_);}%0A%09.st1946{fill:url(%23SVGID_00000036959289562242238400000001604278074322995902_);}%0A%09.st1947{fill:url(%23SVGID_00000062194544996000230900000008278772362914097573_);}%0A%09.st1948{fill:url(%23SVGID_00000075127579551709567980000000306565382507734941_);}%0A%09.st1949{fill:url(%23SVGID_00000078750561893358803890000000525735166346494604_);}%0A%09.st1950{fill:url(%23SVGID_00000164510754894803126570000015606960012008382389_);}%0A%09.st1951{fill:url(%23SVGID_00000050629822882108226170000003012484372539308928_);}%0A%09.st1952{fill:url(%23SVGID_00000137814099947765852880000014080498730048187057_);}%0A%09.st1953{fill:url(%23SVGID_00000174560967457978280790000013110839327089595550_);}%0A%09.st1954{fill:url(%23SVGID_00000018927848627211573320000013384813463577361848_);}%0A%09.st1955{fill:url(%23SVGID_00000049191163400907451370000000394982702858077082_);}%0A%09.st1956{fill:url(%23SVGID_00000123419206903980531520000011939830929757815427_);}%0A%09.st1957{fill:url(%23SVGID_00000102506395374445720820000000335499849727457965_);}%0A%09.st1958{fill:url(%23SVGID_00000123434658869923944450000001102510547329277104_);}%0A%09.st1959{fill:url(%23SVGID_00000023992412285124754200000012008489916986155950_);}%0A%09.st1960{fill:url(%23SVGID_00000004533071757160293810000018191512715284501408_);}%0A%09.st1961{fill:url(%23SVGID_00000124152706668593708400000002672795227593705605_);}%0A%09.st1962{fill:url(%23SVGID_00000042004567913647963850000015202234686844872576_);}%0A%09.st1963{fill:url(%23SVGID_00000057845663555018672110000000585737482098189460_);}%0A%09.st1964{fill:url(%23SVGID_00000081642913500639462790000013095499156981520036_);}%0A%09.st1965{fill:url(%23SVGID_00000062168715471856391640000014071786706942096534_);}%0A%09.st1966{fill:url(%23SVGID_00000042698358992223653990000008333710814654236071_);}%0A%09.st1967{fill:url(%23SVGID_00000023964077730960419910000017479997171817364626_);}%0A%09.st1968{fill:url(%23SVGID_00000129192972713992611230000005104089541508091010_);}%0A%09.st1969{fill:url(%23SVGID_00000147215287207970004470000007492683105275430588_);}%0A%09.st1970{fill:url(%23SVGID_00000068664580724702947250000002123652468431238538_);}%0A%09.st1971{fill:url(%23SVGID_00000060024955733182463740000014607380378213106604_);}%0A%09.st1972{fill:url(%23SVGID_00000176009008671039628290000011884769823102309509_);}%0A%09.st1973{fill:url(%23SVGID_00000083803210562302033350000007704179658011977606_);}%0A%09.st1974{fill:url(%23SVGID_00000039851850098914293860000015494527601469163444_);}%0A%09.st1975{fill:url(%23SVGID_00000021812912330856370910000003588131689736305037_);}%0A%09.st1976{fill:url(%23SVGID_00000092448547560852784350000008456112997457494919_);}%0A%09.st1977{fill:url(%23SVGID_00000127045744746100776050000017403138056484657809_);}%0A%09.st1978{fill:url(%23SVGID_00000173133990115284848810000018336892531269994914_);}%0A%09.st1979{fill:url(%23SVGID_00000023997369999605402000000018381184069758243506_);}%0A%09.st1980{fill:url(%23SVGID_00000041278702679980515830000013829799671437160837_);}%0A%09.st1981{fill:url(%23SVGID_00000114791623983709348550000000371855263986210176_);}%0A%09.st1982{fill:url(%23SVGID_00000144339112358090560350000010443757082402198151_);}%0A%09.st1983{fill:url(%23SVGID_00000055680714869696813710000015273445427995079577_);}%0A%09.st1984{fill:url(%23SVGID_00000072248294527501190230000012865931306079052932_);}%0A%09.st1985{fill:url(%23SVGID_00000150796719530676482470000003273167920911352243_);}%0A%09.st1986{fill:url(%23SVGID_00000107562969664386089560000014674887497099686532_);}%0A%09.st1987{fill:url(%23SVGID_00000147913120675323009450000008117195794479548549_);}%0A%09.st1988{fill:url(%23SVGID_00000109749976607058683240000000978720756454507685_);}%0A%09.st1989{fill:url(%23SVGID_00000057850038081548778190000009519957086961733286_);}%0A%09.st1990{fill:url(%23SVGID_00000005981723855141008410000010985344544914829455_);}%0A%09.st1991{fill:url(%23SVGID_00000163778013180749194360000015722089409039519384_);}%0A%09.st1992{fill:url(%23SVGID_00000048499576497878068090000016592391577704482460_);}%0A%09.st1993{fill:url(%23SVGID_00000038390792883001480850000007153866097068820920_);}%0A%09.st1994{fill:url(%23SVGID_00000026883421983882668350000014075835115115704494_);}%0A%09.st1995{fill:url(%23SVGID_00000088125506895002613030000014117751316263040411_);}%0A%09.st1996{fill:url(%23SVGID_00000171717587691177669350000010619023416780486020_);}%0A%09.st1997{fill:url(%23SVGID_00000014628007657178645420000014545810792535794111_);}%0A%09.st1998{fill:url(%23SVGID_00000158728779594240561770000011072464493106419117_);}%0A%09.st1999{fill:url(%23SVGID_00000157990517516992109750000002973091027391179908_);}%0A%09.st2000{fill:url(%23SVGID_00000130609994876144824620000013930034371720524178_);}%0A%09.st2001{fill:url(%23SVGID_00000024717872683691180500000015467808357168922275_);}%0A%09.st2002{fill:url(%23SVGID_00000144318885548003022150000007032770360928764846_);}%0A%09.st2003{fill:url(%23SVGID_00000170968394236761412350000000800825889498046383_);}%0A%09.st2004{fill:url(%23SVGID_00000081633499902069010550000001574837585542939803_);}%0A%09.st2005{fill:url(%23SVGID_00000079476098315757992370000014191664598826984099_);}%0A%09.st2006{fill:url(%23SVGID_00000151504400183498361110000007957652239355159722_);}%0A%09.st2007{fill:%23151515;stroke:%23B3E4FF;stroke-width:2;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:1;}%0A%09.st2008{fill:%23B3E4FF;}%0A%09.st2009{fill:none;stroke:%23B3E4FF;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}%0A%09.st2010{fill:%232580C3;}%0A%09.st2011{opacity:0.25;fill:url(%23SVGID_00000057828535479387589320000007969777828420533392_);enable-background:new    ;}%0A%09.st2012{fill:none;stroke:%238EBBDF;stroke-width:1.5241;stroke-miterlimit:10;}%0A%09.st2013{fill:%23DBAC5B;}%0A%09.st2014{fill:%23F39A1F;}%0A%09.st2015{fill-rule:evenodd;clip-rule:evenodd;fill:%23F5CB33;}%0A%09.st2016{fill-rule:evenodd;clip-rule:evenodd;fill:%2332343C;}%0A%09.st2017{fill:%23EE3A3F;}%0A%09.st2018{fill-rule:evenodd;clip-rule:evenodd;fill:%23F4A921;}%0A%09.st2019{opacity:0.85;}%0A%09.st2020{opacity:0.25;fill:url(%23SVGID_00000012441477220694672230000016229378876582179519_);enable-background:new    ;}%0A%09.st2021{fill:%2316445B;}%0A</style>%0A<g>%0A%09<g>%0A%09%09<path class="st11" d="M155.8,30.4H152v13.1h-2.2V30.4h-2.6v-1l2.6-0.8v-0.8c0-3.6,1.6-5.5,4.8-5.5c0.8,0,1.7,0.2,2.8,0.5l-0.6,1.8%0A%09%09%09c-0.9-0.3-1.6-0.4-2.2-0.4c-0.8,0-1.5,0.3-1.9,0.8c-0.4,0.6-0.6,1.5-0.6,2.7v1h3.8V30.4z"/>%0A%09%09<path class="st11" d="M171.2,36.1c0,2.4-0.6,4.3-1.8,5.7c-1.2,1.4-2.9,2-5,2c-1.3,0-2.5-0.3-3.5-0.9c-1-0.6-1.8-1.5-2.4-2.7%0A%09%09%09c-0.6-1.2-0.8-2.5-0.8-4.1c0-2.4,0.6-4.3,1.8-5.6c1.2-1.3,2.9-2,5-2c2.1,0,3.7,0.7,4.9,2.1C170.5,31.9,171.2,33.7,171.2,36.1z%0A%09%09%09 M159.9,36.1c0,1.9,0.4,3.3,1.1,4.3c0.8,1,1.9,1.5,3.3,1.5c1.5,0,2.6-0.5,3.3-1.5c0.8-1,1.1-2.4,1.1-4.3c0-1.9-0.4-3.3-1.1-4.3%0A%09%09%09c-0.8-1-1.9-1.5-3.4-1.5c-1.5,0-2.6,0.5-3.3,1.4C160.2,32.7,159.9,34.2,159.9,36.1z"/>%0A%09%09<path class="st11" d="M181.7,28.4c0.7,0,1.2,0.1,1.8,0.2l-0.3,2.1c-0.6-0.1-1.2-0.2-1.6-0.2c-1.2,0-2.2,0.5-3.1,1.5%0A%09%09%09c-0.9,1-1.3,2.2-1.3,3.6v7.9H175V28.7h1.9l0.3,2.7h0.1c0.5-1,1.2-1.7,2-2.2C180,28.7,180.8,28.4,181.7,28.4z"/>%0A%09%09<path class="st11" d="M214.7,23.8c0,2.8-1,5-2.9,6.5s-4.7,2.3-8.2,2.3h-3.3v10.9h-3.2V15.7h7.2C211.3,15.7,214.7,18.4,214.7,23.8z%0A%09%09%09 M200.4,29.8h2.9c2.9,0,4.9-0.5,6.2-1.4c1.3-0.9,1.9-2.4,1.9-4.4c0-1.8-0.6-3.2-1.8-4.1c-1.2-0.9-3.1-1.3-5.6-1.3h-3.6V29.8z"/>%0A%09%09<path class="st11" d="M217.6,22.7h3.4l4.6,11.9c1,2.7,1.6,4.7,1.9,5.9h0.2c0.2-0.6,0.5-1.7,1-3.3c0.5-1.6,2.2-6.4,5.2-14.4h3.4%0A%09%09%09l-8.9,23.7c-0.9,2.3-1.9,4-3.1,5c-1.2,1-2.6,1.5-4.4,1.5c-1,0-1.9-0.1-2.8-0.3V50c0.7,0.2,1.5,0.2,2.3,0.2c2.2,0,3.7-1.2,4.6-3.6%0A%09%09%09l1.2-3L217.6,22.7z"/>%0A%09%09<path class="st11" d="M248.6,41.3c0.6,0,1.1,0,1.6-0.1c0.5-0.1,0.9-0.2,1.2-0.3v2.4c-0.3,0.2-0.8,0.3-1.5,0.4%0A%09%09%09c-0.7,0.1-1.3,0.2-1.8,0.2c-4,0-6-2.1-6-6.4V25.1h-3v-1.5l3-1.3l1.3-4.4h1.8v4.8h6v2.4h-6v12.2c0,1.3,0.3,2.2,0.9,2.9%0A%09%09%09C246.8,40.9,247.6,41.3,248.6,41.3z"/>%0A%09%09<path class="st11" d="M269.6,43.5V30c0-1.7-0.4-3-1.2-3.8c-0.8-0.8-2-1.3-3.6-1.3c-2.2,0-3.8,0.6-4.8,1.8c-1,1.2-1.5,3.1-1.5,5.8%0A%09%09%09v10.9h-3.1V14h3.1v8.9c0,1.1-0.1,2-0.2,2.7h0.2c0.6-1,1.5-1.8,2.6-2.4c1.1-0.6,2.5-0.9,3.9-0.9c2.5,0,4.4,0.6,5.7,1.8%0A%09%09%09c1.3,1.2,1.9,3.1,1.9,5.8v13.6H269.6z"/>%0A%09%09<path class="st11" d="M296.6,33.1c0,3.4-0.9,6-2.6,7.9s-4.1,2.9-7.1,2.9c-1.9,0-3.5-0.4-5-1.3c-1.4-0.9-2.6-2.1-3.3-3.8%0A%09%09%09c-0.8-1.6-1.2-3.5-1.2-5.7c0-3.4,0.8-6,2.5-7.9c1.7-1.9,4-2.8,7.1-2.8c2.9,0,5.2,1,6.9,2.9C295.8,27.1,296.6,29.8,296.6,33.1z%0A%09%09%09 M280.8,33.1c0,2.7,0.5,4.7,1.6,6.1c1.1,1.4,2.6,2.1,4.7,2.1c2.1,0,3.6-0.7,4.7-2.1c1.1-1.4,1.6-3.4,1.6-6.1c0-2.6-0.5-4.7-1.6-6%0A%09%09%09c-1.1-1.4-2.6-2.1-4.7-2.1c-2.1,0-3.6,0.7-4.7,2C281.3,28.4,280.8,30.4,280.8,33.1z"/>%0A%09%09<path class="st11" d="M315.8,43.5V30c0-1.7-0.4-3-1.2-3.8c-0.8-0.8-2-1.3-3.6-1.3c-2.2,0-3.8,0.6-4.8,1.8c-1,1.2-1.5,3.1-1.5,5.8%0A%09%09%09v10.9h-3.1V22.7h2.6l0.5,2.8h0.2c0.6-1,1.5-1.8,2.7-2.4c1.2-0.6,2.5-0.8,3.9-0.8c2.5,0,4.4,0.6,5.7,1.8c1.3,1.2,1.9,3.1,1.9,5.8%0A%09%09%09v13.6H315.8z"/>%0A%09</g>%0A%09<g id="Layer_1_00000088096514940250906280000012562000029141802941_" class="st129">%0A%09%09<g>%0A%09%09%09<path class="st11" d="M133.8,29.7c-2.9,1.7-6.5,5.5-7.2,6.2c-2.1,2.1-4.5,3.9-7.1,5.5c-0.1,0.1-0.2,0.1-0.2,0.1%0A%09%09%09%09c-0.1-0.1-0.2-0.2-0.1-0.3c0.3-1,0.6-2.2,0.9-3.6c0.5-1.9,0.8-3.2,0.9-3.7c0.1-0.5,0.5-2,1.1-4.4s1.3-5.1,2.3-8%0A%09%09%09%09c1.1-3.4,2.3-5.6,3.4-6.5l0.1-0.1c0.1-0.1,0.2-0.2,0.1-0.3c-0.1-0.1-0.2-0.2-0.3-0.1l-2.6,0.2c-1.2,0.1-2.3,0.3-3.4,0.6%0A%09%09%09%09c-0.4,0.1-0.8,0.4-1.2,0.8c-0.3,0.3-0.6,0.6-0.8,0.8c0,0,0,0,0,0.1c-0.3,0.4-0.5,0.8-0.7,1.3c-0.2,0.6-0.4,1.1-0.5,1.4%0A%09%09%09%09c-0.1,0.3-0.3,0.9-0.5,1.8c-0.3,0.9-0.4,1.6-0.6,2c-1.1,3.6-2.7,7-4.7,10.1c-2.1,3.3-3.8,5.1-5.2,5.1h-0.1c-0.6,0-0.9-0.7-1-2%0A%09%09%09%09c-0.2-2.9,0.5-6.5,2-10.8c1.5-4.3,3-7.3,4.6-9.1c0.3-0.4,0.4-0.6,0.4-0.9c0,0,0,0,0-0.1c0-0.3-0.3-0.5-0.5-0.4%0A%09%09%09%09c-2.3,0.1-4,0.5-5.3,1.3c-1.3,0.7-2.5,2.1-3.5,4.3c-0.9,1.8-1.7,4.2-2.4,7.1c0,0,0,0,0,0.1c-0.1,0.2-0.3,0.5-0.4,0.9%0A%09%09%09%09c-0.5,1-1.1,2.3-1.8,3.6c-0.6,1.2-1.2,2.3-1.9,3.4c-0.6,1-1.4,1.9-2.2,2.7c-1.1,1-1.7,1.3-2,1.3h-0.1c-0.4,0-0.8-0.1-0.9-1.3%0A%09%09%09%09c-0.1-1.7,0.6-5.2,2.1-10.3c0.7-2.4,1.1-4,1.3-4.8c0.2-0.8,0.2-1.6,0.2-2.4c-0.1-2.5-1.5-3.7-4-3.6c-3.2,0.2-6.2,1.8-9.2,4.9%0A%09%09%09%09c-0.1,0.1-0.1,0.1-0.2,0.1c-0.1,0-0.2-0.1-0.2-0.3c0.1-0.6,0.2-1.2,0.2-1.7c0-0.6-0.3-1.1-0.8-1.4c-0.5-0.3-1.5-0.4-3-0.3%0A%09%09%09%09L75.8,19c-0.1,0-0.1,0-0.1,0.1c-0.1,0.1-0.1,0.2-0.1,0.3c0.1,0.3,0.2,0.6,0.2,0.9c0.1,1.8-0.4,5.1-1.6,9.8l-0.3,0.6%0A%09%09%09%09c-0.1,0.1-0.4,0.5-0.9,1.6c-0.5,1-1.1,2.3-1.8,3.7c-0.7,1.4-1.3,2.6-1.9,3.5c-0.6,1-1.3,1.8-2.2,2.6c-1.1,1-1.7,1.3-2.1,1.3h-0.1%0A%09%09%09%09c-0.2,0-0.9,0-1-1.7c-0.1-1.3,0.1-3,0.7-5.1c0.5-2.1,1.1-3.8,1.5-5.1c0.4-1.2,1.1-3,2.1-5.6c0.9-2.4,1.7-3.9,2.3-4.5%0A%09%09%09%09c0.1-0.1,0.1-0.1,0.1-0.2c0-0.1-0.1-0.2-0.3-0.2l-3.8,0.2c-1.9,0.1-3.5,1.7-4.8,4.6c-1.1,2.5-2,5.1-2.8,7.8c0,0.1,0,0.1-0.1,0.1%0A%09%09%09%09c-3.2,8-6,12.2-8.4,12.3h-0.1c-0.2,0-0.8,0-0.9-1.4c-0.1-1.1,0.1-2.6,0.5-4.6c0.1-0.8,0.4-1.7,0.7-2.8c0.3-1.1,0.5-2,0.7-2.6%0A%09%09%09%09c0.2-0.6,0.4-1.5,0.7-2.5c0.3-1,0.6-1.9,0.8-2.7c0.3-0.9,0.4-1.8,0.3-2.6c-0.2-2.4-1.5-3.6-4-3.4c-1.3,0.1-2.6,0.5-3.8,1.1%0A%09%09%09%09c-0.8,0.4-1.6,0.9-2.3,1.4c-0.1,0.1-0.3,0.1-0.4,0c-0.1-0.1-0.1-0.3,0-0.4c4.1-5.9,7-11.3,8.8-15.8c1-2.6,1.4-4.6,1.3-6.2%0A%09%09%09%09C53,1,51.8-0.1,49.6,0c-2.1,0.1-4.1,1.2-5.9,3.2c-1.9,2.1-3.4,4.6-4.5,7.2c-1.5,3.3-2.7,6.8-3.8,10.3c-1.2,4-2.7,9.6-4.4,16.6%0A%09%09%09%09c-1.7,7-2.9,12.2-3.9,15.4v0.1c0,0.1,0.1,0.2,0.3,0.2l6.2-0.4l0.1-0.2c0.3-1.4,0.6-2.7,0.9-3.8c0.3-1.1,0.6-2.6,0.9-4.3%0A%09%09%09%09s0.7-3.2,1.1-4.4s0.9-2.6,1.5-4.3c0.6-1.6,1.4-3.1,2.4-4.4c0.9-1.2,1.9-2.1,3.2-2.9c1.4-0.9,2.1-1.1,2.4-1.1h0.1%0A%09%09%09%09c0.4,0,0.8,0.1,0.9,1.1c0.1,0.6-0.2,1.8-0.6,3.4c-2.2,6.8-3.2,12.1-2.9,15.7c0.2,3.3,1.6,4.8,4.3,4.7c3-0.2,6.2-3.5,9.8-10%0A%09%09%09%09c0.1-0.1,0.2-0.2,0.3-0.2c0.1,0.1,0.2,0.2,0.2,0.3c0,0.7,0,1.4,0.1,2.1c0.2,3.5,1.5,5.3,3.8,5.3h0.3c1.4-0.1,2.9-0.9,4.5-2.5%0A%09%09%09%09c0.7-0.7,1.4-1.4,2-2.2c0.9-1.3,1.4-1.9,2.6-4c-0.1,0.7-1.4,5.1-1.3,6.2c0.1,0,6.5-0.4,6.5-0.4l0.1-0.2c0.1-0.2,0.3-1.4,0.4-2.4%0A%09%09%09%09c0.3-1.4,0.5-2.8,0.8-4.1c0.3-1.3,0.7-2.9,1.1-4.8c0.4-1.7,1-3.4,1.6-5.1c0.6-1.5,1.3-2.9,2.1-4.4c0.6-1.3,1.5-2.4,2.6-3.3%0A%09%09%09%09c0.9-0.7,1.9-1.2,3.1-1.3c1-0.1,1.4,0.3,1.5,1.1c0,0.4,0,0.8-0.2,1.2c-2.6,9.1-3.7,15.2-3.5,18.2c0.2,3.1,1.6,4.6,4.2,4.4%0A%09%09%09%09c1.4-0.1,2.9-0.9,4.5-2.5c1.6-1.6,3-3.4,4.1-5.3c0.4-0.6,0.8-1.3,1.1-2c0.1-0.1,0.2-0.2,0.3-0.2c0.1,0.1,0.2,0.2,0.2,0.3%0A%09%09%09%09c0,0.4,0,0.7,0,1c0.1,1.9,0.5,3.4,1.3,4.4c0.8,1,1.8,1.5,3,1.4c1-0.1,2-0.3,2.9-0.6c0.8-0.3,1.9-1.2,3.3-2.7%0A%09%09%09%09c1.1-1.2,2.1-2.4,2.9-3.8c0.1-0.1,0.2-0.1,0.3-0.1c0.1,0.1,0.2,0.2,0.2,0.3l-2.2,7.2c0,0.1-0.1,0.1-0.2,0.2%0A%09%09%09%09c-39.1,5.7-5.8,28.2,6.2,0.9c0-0.1,0.1-0.1,0.1-0.2c0.2-0.1,0.4-0.2,0.6-0.3c3.3-1.6,5-2.8,9-6.5%0A%09%09%09%09C131.8,34.1,132.1,32.7,133.8,29.7z M40.4,25c-0.1,0.1-0.2,0.1-0.3,0.1c-0.1-0.1-0.2-0.2-0.2-0.3c1.6-5.5,3.2-10.5,4.9-14.9%0A%09%09%09%09c2.5-6.3,4.1-7.8,5-7.8l0.1,0c0.1,0,0.5,0,0.6,1c0.1,0.9-0.4,2.8-1.4,5.6C47.6,13,44.6,18.5,40.4,25z M99,53.4%0A%09%09%09%09c-1.2-2.7,10.9-5.8,11.9-6C108.6,52.5,100.4,56.4,99,53.4z"/>%0A%09%09%09<path class="st11" d="M69,16.2c1.5-0.1,3.4-0.6,3.9-2.9c0.2-1-0.4-2.2-0.8-2.5c-0.4-0.3-0.9-0.5-1.6-0.4%0A%09%09%09%09c-0.7,0.1-1.5,0.5-2.3,1.2c-1,1-1,2.4-0.7,3.3C67.8,15.7,68.4,16.2,69,16.2z"/>%0A%09%09%09<path class="st11" d="M6.5,54.2c1,0.1,16.2,3.4,20.4-11.5c1.6-6.3-6-14.7-6.6-15.5c0,0,0,0,0,0C11,17.7,15.8,8.3,22.2,9.4%0A%09%09%09%09c4.6,0.8,2.2,7.5,4.7,8.2h0.1c1.5,0.1,4.4-3.4,4.8-4.6c1.6-4.7-7.9-7.5-10.8-7.4c-5.8,0.4-9.7,3.5-12,8.7%0A%09%09%09%09c-4.3,9.6,3.7,16,8.6,22.6c3.7,5,3.5,9.4-1,13.7c-5,4.7-10-2-10.7-6.5c-0.6-4.2-1.3-6.9-4.8-1.6C-2.1,47.5,2.4,53.5,6.5,54.2z"/>%0A%09%09</g>%0A%09</g>%0A</g>%0A</svg>%0A';
 
 // src/assets/shiny-logo.svg
 var shiny_logo_default = 'data:image/svg+xml,<?xml version="1.0" encoding="utf-8"?>%0A<!-- Generator: Adobe Illustrator 27.7.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->%0A<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"%0A%09 viewBox="0 0 167.7 72.4" style="enable-background:new 0 0 167.7 72.4;" xml:space="preserve">%0A<style type="text/css">%0A%09.st0{fill:%23FFFFFF;}%0A</style>%0A<g>%0A%09<path class="st0" d="M167.7,37.2c-3.6,2.1-8.1,6.9-9,7.8c-2.6,2.6-5.6,4.9-8.9,6.9c-0.1,0.1-0.3,0.1-0.3,0.1%0A%09%09c-0.1-0.1-0.3-0.3-0.1-0.4c0.4-1.3,0.8-2.8,1.1-4.5c0.6-2.4,1-4,1.1-4.6c0.1-0.6,0.6-2.5,1.4-5.5c0.8-3,1.6-6.4,2.9-10%0A%09%09c1.4-4.3,2.9-7,4.3-8.1l0.1-0.1c0.1-0.1,0.3-0.3,0.1-0.4c-0.1-0.1-0.3-0.3-0.4-0.1l-3.3,0.3c-1.5,0.1-2.9,0.4-4.3,0.8%0A%09%09c-0.5,0.1-1,0.5-1.5,1c-0.4,0.4-0.8,0.8-1,1c0,0,0,0,0,0.1c-0.4,0.5-0.6,1-0.9,1.6c-0.3,0.8-0.5,1.4-0.6,1.8%0A%09%09c-0.1,0.4-0.4,1.1-0.6,2.3c-0.4,1.1-0.5,2-0.8,2.5c-1.4,4.5-3.4,8.8-5.9,12.7c-2.6,4.1-4.8,6.4-6.5,6.4h-0.1%0A%09%09c-0.8,0-1.1-0.9-1.3-2.5c-0.3-3.6,0.6-8.1,2.5-13.5s3.8-9.1,5.8-11.4c0.4-0.5,0.5-0.8,0.5-1.1c0,0,0,0,0-0.1c0-0.4-0.4-0.6-0.6-0.5%0A%09%09c-2.9,0.1-5,0.6-6.6,1.6c-1.6,0.9-3.1,2.6-4.4,5.4c-1.1,2.3-2.1,5.3-3,8.9c0,0,0,0,0,0.1c-0.1,0.3-0.4,0.6-0.5,1.1%0A%09%09c-0.6,1.3-1.4,2.9-2.3,4.5c-0.8,1.5-1.5,2.9-2.4,4.3c-0.8,1.3-1.8,2.4-2.8,3.4c-1.4,1.3-2.1,1.6-2.5,1.6h-0.1c-0.5,0-1-0.1-1.1-1.6%0A%09%09c-0.1-2.1,0.8-6.5,2.6-12.9c0.9-3,1.4-5,1.6-6c0.3-1,0.3-2,0.3-3c-0.1-3.1-1.9-4.6-5-4.5c-4,0.3-7.8,2.3-11.5,6.1%0A%09%09c-0.1,0.1-0.1,0.1-0.3,0.1s-0.3-0.1-0.3-0.4c0.1-0.8,0.3-1.5,0.3-2.1c0-0.8-0.4-1.4-1-1.8c-0.6-0.4-1.9-0.5-3.8-0.4l-3.8,0%0A%09%09c-0.1,0-0.1,0-0.1,0.1c-0.1,0.1-0.1,0.3-0.1,0.4c0.1,0.4,0.3,0.8,0.3,1.1c0.1,2.3-0.5,6.4-2,12.3l-0.4,0.8c-0.1,0.1-0.5,0.6-1.1,2%0A%09%09c-0.6,1.3-1.4,2.9-2.3,4.6c-0.9,1.8-1.6,3.3-2.4,4.4c-0.8,1.3-1.6,2.3-2.8,3.3c-1.4,1.3-2.1,1.6-2.6,1.6h-0.1c-0.3,0-1.1,0-1.3-2.1%0A%09%09c-0.1-1.6,0.1-3.8,0.9-6.4c0.6-2.6,1.4-4.8,1.9-6.4c0.5-1.5,1.4-3.8,2.6-7c1.1-3,2.1-4.9,2.9-5.6c0.1-0.1,0.1-0.1,0.1-0.3%0A%09%09c0-0.1-0.1-0.3-0.4-0.3l-4.8,0.3c-2.4,0.1-4.4,2.1-6,5.8c-1.4,3.1-2.5,6.4-3.5,9.8c0,0.1,0,0.1-0.1,0.1c-4,10-7.5,15.3-10.5,15.4%0A%09%09H63c-0.3,0-1,0-1.1-1.8c-0.1-1.4,0.1-3.3,0.6-5.8c0.1-1,0.5-2.1,0.9-3.5c0.4-1.4,0.6-2.5,0.9-3.3s0.5-1.9,0.9-3.1s0.8-2.4,1-3.4%0A%09%09c0.4-1.1,0.5-2.3,0.4-3.3c-0.3-3-1.9-4.5-5-4.3c-1.6,0.1-3.3,0.6-4.8,1.4c-1,0.5-2,1.1-2.9,1.8c-0.1,0.1-0.4,0.1-0.5,0%0A%09%09c-0.1-0.1-0.1-0.4,0-0.5c5.1-7.4,8.8-14.2,11-19.8c1.3-3.3,1.8-5.8,1.6-7.8c0.4-3.1-1.1-4.5-3.9-4.4c-2.6,0.1-5.1,1.5-7.4,4%0A%09%09c-2.4,2.6-4.3,5.8-5.6,9c-1.9,4.1-3.4,8.5-4.8,12.9c-1.5,5-3.4,12-5.5,20.8C36.7,55.5,35.2,62,33.9,66v0.1c0,0.1,0.1,0.3,0.4,0.3%0A%09%09l7.8-0.5l0.1-0.3c0.4-1.8,0.8-3.4,1.1-4.8c0.4-1.4,0.8-3.3,1.1-5.4c0.4-2.1,0.9-4,1.4-5.5c0.5-1.5,1.1-3.3,1.9-5.4%0A%09%09c0.8-2,1.8-3.9,3-5.5c1.1-1.5,2.4-2.6,4-3.6c1.8-1.1,2.6-1.4,3-1.4h0.1c0.5,0,1,0.1,1.1,1.4c0.1,0.8-0.3,2.3-0.8,4.3%0A%09%09c-2.8,8.5-4,15.2-3.6,19.7c0.3,4.1,2,6,5.4,5.9c3.8-0.3,7.8-4.4,12.3-12.5c0.1-0.1,0.3-0.3,0.4-0.3c0.1,0.1,0.3,0.3,0.3,0.4%0A%09%09c0,0.9,0,1.8,0.1,2.6c0.3,4.4,1.9,6.6,4.8,6.6h0.4c1.8-0.1,3.6-1.1,5.6-3.1c0.9-0.9,1.8-1.8,2.5-2.8c1.1-1.6,1.8-2.4,3.3-5%0A%09%09c-0.1,0.9-1.8,6.4-1.6,7.8c0.1,0,8.1-0.5,8.1-0.5l0.1-0.3c0.1-0.3,0.4-1.8,0.5-3c0.4-1.8,0.6-3.5,1-5.1c0.4-1.6,0.9-3.6,1.4-6%0A%09%09c0.5-2.1,1.3-4.3,2-6.4c0.8-1.9,1.6-3.6,2.6-5.5c0.8-1.6,1.9-3,3.3-4.1c1.1-0.9,2.4-1.5,3.9-1.6c1.3-0.1,1.8,0.4,1.9,1.4%0A%09%09c0,0.5,0,1-0.3,1.5c-3.3,11.4-4.6,19-4.4,22.8c0.3,3.9,2,5.8,5.3,5.5c1.8-0.1,3.6-1.1,5.6-3.1c2-2,3.8-4.3,5.1-6.6%0A%09%09c0.5-0.8,1-1.6,1.4-2.5c0.1-0.1,0.3-0.3,0.4-0.3c0.1,0.1,0.3,0.3,0.3,0.4c0,0.5,0,0.9,0,1.3c0.1,2.4,0.6,4.3,1.6,5.5%0A%09%09s2.3,1.9,3.8,1.8c1.3-0.1,2.5-0.4,3.6-0.8c1-0.4,2.4-1.5,4.1-3.4c1.4-1.5,2.6-3,3.6-4.8c0.1-0.1,0.3-0.1,0.4-0.1%0A%09%09c0.1,0.1,0.3,0.3,0.3,0.4l-2.8,9c0,0.1-0.1,0.1-0.3,0.3c-49,7.1-7.3,35.3,7.8,1.1c0-0.1,0.1-0.1,0.1-0.3c0.3-0.1,0.5-0.3,0.8-0.4%0A%09%09c4.1-2,6.3-3.5,11.3-8.1C165.1,42.7,165.5,41,167.7,37.2z M50.6,31.3c-0.1,0.1-0.3,0.1-0.4,0.1c-0.1-0.1-0.3-0.3-0.3-0.4%0A%09%09c2-6.9,4-13.2,6.1-18.7c3.1-7.9,5.1-9.8,6.3-9.8h0.1c0.1,0,0.6,0,0.8,1.3c0.1,1.1-0.5,3.5-1.8,7C59.6,16.3,55.9,23.2,50.6,31.3z%0A%09%09 M124,66.9c-1.5-3.4,13.7-7.3,14.9-7.5C136.1,65.8,125.8,70.7,124,66.9z"/>%0A%09<path class="st0" d="M86.4,20.3c1.9-0.1,4.3-0.8,4.9-3.6c0.3-1.3-0.5-2.8-1-3.1c-0.5-0.4-1.1-0.6-2-0.5s-1.9,0.6-2.9,1.5%0A%09%09c-1.3,1.3-1.3,3-0.9,4.1C84.9,19.7,85.7,20.3,86.4,20.3z"/>%0A%09<path class="st0" d="M8.1,67.9c1.3,0.1,20.3,4.3,25.6-14.4c2-7.9-7.5-18.4-8.3-19.4l0,0c-11.7-11.9-5.6-23.7,2.4-22.3%0A%09%09c5.8,1,2.8,9.4,5.9,10.3h0.1c1.9,0.1,5.5-4.3,6-5.8c2-5.9-9.9-9.4-13.5-9.3c-7.3,0.5-12.2,4.4-15,10.9C5.9,30,15.9,38,22,46.2%0A%09%09c4.6,6.3,4.4,11.8-1.3,17.2c-6.3,5.9-12.5-2.5-13.4-8.1c-0.8-5.3-1.6-8.6-6-2C-2.6,59.5,3,67.1,8.1,67.9z"/>%0A</g>%0A</svg>%0A';
@@ -34055,32 +34495,42 @@ function HeaderBar({
     python: "https://shiny.posit.co/py/",
     r: "https://shiny.posit.co/"
   };
-  const shinyLogo = engineSwitch(appEngine, shiny_logo_default, shiny_for_python_default);
-  return /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { className: "HeaderBar", children: [
-    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("a", { className: "page-title", href: mainUrl[appEngine], children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("img", { className: "shiny-logo", src: shinyLogo, alt: "Shiny" }) }),
-    /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { children: [
-      loadButton,
-      saveButton,
-      downloadButton,
-      openEditorButton,
-      openEditorFromViewerButton,
-      shareButton
-    ] })
-  ] });
+  return /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", {
+    className: "HeaderBar",
+    // eslint-disable-next-line react/jsx-no-target-blank
+    children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("a", { className: "page-title", href: mainUrl[appEngine], target: "_blank", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("img", { className: "shiny-logo", src: shiny_logo_default, alt: "Shiny" }),
+        /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("span", { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("span", { style: { fontSize: "0.65em", marginLeft: "-2px" }, children: "for" }),
+          " ",
+          engineSwitch(appEngine, "R", "Python")
+        ] })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { children: [
+        loadButton,
+        saveButton,
+        downloadButton,
+        openEditorButton,
+        openEditorFromViewerButton,
+        shareButton
+      ] })
+    ]
+  });
 }
 
 // src/Components/OutputCell.tsx
-var React4 = __toESM(require_react());
+var React5 = __toESM(require_react());
 var import_jsx_runtime3 = __toESM(require_jsx_runtime());
 function OutputCell({
   proxyHandle,
   setTerminalMethods
 }) {
-  const [content, setContent] = React4.useState({
+  const [content, setContent] = React5.useState({
     type: "text",
     value: ""
   });
-  React4.useEffect(() => {
+  React5.useEffect(() => {
     if (!proxyHandle.ready)
       return;
     if (proxyHandle.engine !== "pyodide")
@@ -34101,7 +34551,7 @@ function OutputCell({
       runCodeInTerminal
     });
   }, [setTerminalMethods, proxyHandle]);
-  React4.useEffect(() => {
+  React5.useEffect(() => {
     if (!proxyHandle.ready)
       return;
     if (proxyHandle.engine !== "webr")
@@ -34140,7 +34590,7 @@ function OutputCell({
 }
 
 // src/Components/ResizableGrid/ResizableGrid.tsx
-var React6 = __toESM(require_react());
+var React7 = __toESM(require_react());
 
 // src/Components/ResizableGrid/DragToResizeHelpers.ts
 function getDragInfo(beforeUnit, afterUnit) {
@@ -34344,13 +34794,13 @@ function getHasAutoUnits(tractSizes) {
 }
 
 // src/Components/ResizableGrid/useDragToResizeGrid.tsx
-var import_react3 = __toESM(require_react());
+var import_react4 = __toESM(require_react());
 function useDragToResizeGrid({
   containerRef,
   onDragEnd
 }) {
-  const dragStateRef = import_react3.default.useRef(null);
-  const startDrag = import_react3.default.useCallback(
+  const dragStateRef = import_react4.default.useRef(null);
+  const startDrag = import_react4.default.useCallback(
     ({
       e,
       dir,
@@ -34376,7 +34826,7 @@ function useDragToResizeGrid({
     },
     [containerRef]
   );
-  const onMouseMove = import_react3.default.useCallback(
+  const onMouseMove = import_react4.default.useCallback(
     (e) => {
       const container = containerRef.current;
       if (!container) {
@@ -34397,7 +34847,7 @@ function useDragToResizeGrid({
     },
     [containerRef, dragStateRef]
   );
-  const finishDrag = import_react3.default.useCallback(() => {
+  const finishDrag = import_react4.default.useCallback(() => {
     if (!dragStateRef.current) {
       console.error("Mouse up detected without any current drag state.");
       return;
@@ -34415,8 +34865,8 @@ function useDragToResizeGrid({
     }
     dragStateRef.current = null;
   }, []);
-  const dragWatcherDivRef = import_react3.default.useRef(null);
-  const startListeningForMouseMove = import_react3.default.useCallback(() => {
+  const dragWatcherDivRef = import_react4.default.useRef(null);
+  const startListeningForMouseMove = import_react4.default.useCallback(() => {
     const container = containerRef.current;
     if (!container) {
       console.error("How are you dragging on an element without a container?");
@@ -34434,7 +34884,7 @@ function useDragToResizeGrid({
     dragWatcherDiv.addEventListener("mouseup", finishDrag);
     dragWatcherDiv.addEventListener("mouseleave", finishDrag);
   }, [onMouseMove]);
-  const stopListeningForMouseMove = import_react3.default.useCallback(() => {
+  const stopListeningForMouseMove = import_react4.default.useCallback(() => {
     const container = containerRef.current;
     if (!container) {
       console.error("How are you dragging on an element without a container?");
@@ -34462,11 +34912,12 @@ function ResizableGrid({
   children,
   areas,
   rowSizes,
-  colSizes
+  colSizes,
+  style = {}
 }) {
-  const containerRef = React6.useRef(null);
-  const styles = {
-    gridTemplateAreas: areas.map((x2) => `"${x2.join(" ")}"`).join(" \n "),
+  const containerRef = React7.useRef(null);
+  const styleGrid = {
+    gridTemplateAreas: areas.map((x3) => `"${x3.join(" ")}"`).join(" \n "),
     gridTemplateRows: rowSizes.join(" "),
     gridTemplateColumns: colSizes.join(" ")
   };
@@ -34479,40 +34930,48 @@ function ResizableGrid({
   const classes = ["ResizableGrid"];
   if (className)
     classes.push(className);
-  return /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: classes.join(" "), ref: containerRef, style: styles, children: [
-    columnSizers.map((gap_index) => /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
-      "div",
-      {
-        className: "ResizableGrid--col-sizer",
-        onMouseDown: (e) => startDrag({ e, dir: "columns", index: gap_index }),
-        style: {
-          gridColumn: gap_index
-        }
-      },
-      "col" + gap_index
-    )),
-    rowSizers.map((gap_index) => /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
-      "div",
-      {
-        onMouseDown: (e) => startDrag({ e, dir: "rows", index: gap_index }),
-        className: "ResizableGrid--row-sizer",
-        style: {
-          gridRow: gap_index
-        }
-      },
-      "row" + gap_index
-    )),
-    children
-  ] });
+  return /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(
+    "div",
+    {
+      className: classes.join(" "),
+      ref: containerRef,
+      style: { ...style, ...styleGrid },
+      children: [
+        columnSizers.map((gap_index) => /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
+          "div",
+          {
+            className: "ResizableGrid--col-sizer",
+            onMouseDown: (e) => startDrag({ e, dir: "columns", index: gap_index }),
+            style: {
+              gridColumn: gap_index
+            }
+          },
+          "col" + gap_index
+        )),
+        rowSizers.map((gap_index) => /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
+          "div",
+          {
+            onMouseDown: (e) => startDrag({ e, dir: "rows", index: gap_index }),
+            className: "ResizableGrid--row-sizer",
+            style: {
+              gridRow: gap_index
+            }
+          },
+          "row" + gap_index
+        )),
+        children
+      ]
+    }
+  );
 }
-function buildRange(from, to2) {
-  const numEls = Math.abs(to2 - from) + 1;
-  const step = from < to2 ? 1 : -1;
-  return Array.from({ length: numEls }, (_2, i2) => from + i2 * step);
+function buildRange(from, to) {
+  const numEls = Math.abs(to - from) + 1;
+  const step = from < to ? 1 : -1;
+  return Array.from({ length: numEls }, (_2, i) => from + i * step);
 }
 
 // src/Components/Terminal.tsx
-var React7 = __toESM(require_react());
+var React8 = __toESM(require_react());
 var import_xterm = __toESM(require_xterm());
 var import_xterm_addon_fit = __toESM(require_xterm_addon_fit());
 var import_xterm_readline = __toESM(require_readline());
@@ -34522,32 +34981,32 @@ function Terminal({
   setTerminalMethods,
   terminalInterface: terminalInterface2
 }) {
-  const containerRef = React7.useRef(null);
-  const xTermRef = React7.useRef(null);
-  const [xTermReadline, setXTermReadline] = React7.useState();
-  const runCodeRef = React7.useRef(
+  const containerRef = React8.useRef(null);
+  const xTermRef = React8.useRef(null);
+  const [xTermReadline, setXTermReadline] = React8.useState();
+  const runCodeRef = React8.useRef(
     async (command) => ""
   );
-  React7.useEffect(() => {
+  React8.useEffect(() => {
     runCodeRef.current = async (command) => {
       if (!proxyHandle.ready)
         return "";
       return await proxyHandle.runCode(command) ?? ">>> ";
     };
   }, [proxyHandle]);
-  const tabCompleteRef = React7.useRef(
+  const tabCompleteRef = React8.useRef(
     async (command) => {
       return [];
     }
   );
-  React7.useEffect(() => {
+  React8.useEffect(() => {
     tabCompleteRef.current = async (command) => {
       if (!proxyHandle.ready)
         return [];
       return await proxyHandle.tabComplete(command);
     };
   }, [proxyHandle]);
-  React7.useEffect(() => {
+  React8.useEffect(() => {
     if (!containerRef.current)
       return;
     if (xTermRef.current)
@@ -34576,7 +35035,7 @@ function Terminal({
     xTermRef.current = term;
     containerRef.current.xterm = term;
   }, []);
-  React7.useEffect(() => {
+  React8.useEffect(() => {
     const xTermRefCurrent = xTermRef.current;
     if (!xTermRefCurrent)
       return;
@@ -34603,7 +35062,7 @@ function Terminal({
       runCodeInTerminal
     });
   }, [xTermReadline, terminalInterface2, setTerminalMethods]);
-  React7.useEffect(() => {
+  React8.useEffect(() => {
     if (!proxyHandle.ready)
       return;
     if (!xTermRef.current)
@@ -34640,7 +35099,7 @@ function Terminal({
 }
 
 // src/Components/Viewer.tsx
-var React8 = __toESM(require_react());
+var React9 = __toESM(require_react());
 
 // src/Components/LoadingAnimation.tsx
 var import_jsx_runtime6 = __toESM(require_jsx_runtime());
@@ -34729,15 +35188,43 @@ async function resetRAppFrame(webRProxy, appName, appFrame) {
 }
 function Viewer({
   proxyHandle,
-  setViewerMethods
+  setViewerMethods,
+  devMode = false,
+  setWindowTitle = false
 }) {
-  const viewerFrameRef = React8.useRef(null);
-  const [appRunningState, setAppRunningState] = React8.useState("loading");
-  const shinyIntervalRef = React8.useRef(0);
-  const [lastErrorMessage, setLastErrorMessage] = React8.useState(
+  const viewerFrameRef = React9.useRef(null);
+  const [appRunningState, setAppRunningState] = React9.useState("loading");
+  const shinyIntervalRef = React9.useRef(0);
+  const [lastErrorMessage, setLastErrorMessage] = React9.useState(
     null
   );
-  React8.useEffect(() => {
+  React9.useEffect(() => {
+    if (!setWindowTitle || !viewerFrameRef.current)
+      return;
+    const iframe = viewerFrameRef.current;
+    const observer = new MutationObserver(() => {
+      if (iframe.contentDocument?.title) {
+        document.title = setWindowTitle.prefix + iframe.contentDocument.title;
+      } else {
+        document.title = setWindowTitle.defaultTitle;
+      }
+    });
+    const onLoad = () => {
+      if (iframe.contentDocument) {
+        observer.observe(iframe.contentDocument, {
+          subtree: true,
+          childList: true,
+          characterData: true
+        });
+      }
+    };
+    iframe.addEventListener("load", onLoad);
+    return () => {
+      observer.disconnect();
+      iframe.removeEventListener("load", onLoad);
+    };
+  }, [setWindowTitle]);
+  React9.useEffect(() => {
     if (!proxyHandle.shinyReady)
       return;
     if (proxyHandle.engine !== "webr")
@@ -34763,9 +35250,14 @@ function Viewer({
         const shelter = await new webRProxy.webR.Shelter();
         const files = await new shelter.RList(
           Object.fromEntries(
-            appCode.map((file) => {
-              return [file.name, file.content];
-            })
+            await Promise.all(
+              appCode.map(async (f2) => {
+                if (f2.type === "text") {
+                  return [f2.name, await new shelter.RCharacter(f2.content)];
+                }
+                return [f2.name, await new shelter.RRaw(Array.from(f2.content))];
+              })
+            )
           )
         );
         try {
@@ -34773,8 +35265,8 @@ function Viewer({
             env: { files, appDir },
             captureStreams: false
           });
-          await webRProxy.runRAsync(".start_app(appName, appDir)", {
-            env: { appName, appDir },
+          await webRProxy.runRAsync(".start_app(appName, appDir, devMode)", {
+            env: { appName, appDir, devMode },
             captureConditions: false,
             captureStreams: false
           });
@@ -34812,7 +35304,7 @@ function Viewer({
       stopApp
     });
   }, [proxyHandle.shinyReady]);
-  React8.useEffect(() => {
+  React9.useEffect(() => {
     if (!proxyHandle.shinyReady)
       return;
     if (proxyHandle.engine !== "pyodide")
@@ -34840,7 +35332,8 @@ function Viewer({
         });
         await pyodideproxy.callPyAsync({
           fnName: ["_start_app"],
-          args: [appName]
+          args: [appName],
+          kwargs: { dev_mode: devMode }
         });
         viewerFrameRef.current.src = appInfo.urlPath;
         setAppRunningState("running");
@@ -34929,19 +35422,51 @@ async function gistApiResponseToFileContents(gist) {
   return result;
 }
 
+// src/Components/utils.ts
+function asCssLengthUnit(value) {
+  if (value === void 0) {
+    return void 0;
+  }
+  if (typeof value === "string") {
+    return value;
+  }
+  if (typeof value !== "number") {
+    return void 0;
+  }
+  return `${value}px`;
+}
+function minCssLengthUnit(x3, y2, ignoreAuto = true) {
+  x3 = asCssLengthUnit(x3);
+  y2 = asCssLengthUnit(y2);
+  if (ignoreAuto) {
+    x3 = x3 === "auto" ? void 0 : x3;
+    y2 = y2 === "auto" ? void 0 : y2;
+  }
+  if (x3 === void 0 && y2 === void 0) {
+    return void 0;
+  }
+  if (x3 && !y2) {
+    return x3;
+  }
+  if (!x3 && y2) {
+    return y2;
+  }
+  return `min(${x3}, ${y2})`;
+}
+
 // src/Components/App.tsx
 var import_jsx_runtime8 = __toESM(require_jsx_runtime());
-var Editor = React9.lazy(() => import("./Editor.js"));
+var Editor = React10.lazy(() => import("./Editor.js"));
 var terminalInterface = (() => {
-  let _exec = async (x2) => console.log("preload exec:" + x2);
-  let _echo = async (x2) => console.log("preload echo:" + x2);
-  let _error = async (x2) => console.error("preload error:" + x2);
+  let _exec = async (x3) => console.log("preload exec:" + x3);
+  let _echo = async (x3) => console.log("preload echo:" + x3);
+  let _error = async (x3) => console.error("preload error:" + x3);
   let _clear = () => {
   };
   return {
-    exec: async (x2) => _exec(x2),
-    echo: async (x2) => _echo(x2),
-    error: async (x2) => _error(x2),
+    exec: async (x3) => _exec(x3),
+    echo: async (x3) => _echo(x3),
+    error: async (x3) => _error(x3),
     clear: () => _clear(),
     set_exec_fn: (fn) => {
       _exec = fn;
@@ -34958,6 +35483,14 @@ var terminalInterface = (() => {
   };
 })();
 var pyodideProxyType = new URLSearchParams(window.location.search).get("webworker") === "0" ? "normal" : "webworker";
+var AppModes = [
+  "examples-editor-terminal-viewer",
+  "editor-terminal-viewer",
+  "editor-terminal",
+  "editor-viewer",
+  "editor-cell",
+  "viewer"
+];
 var pyodideProxyHandlePromise = null;
 var webRProxyHandlePromise = null;
 function ensurePyodideProxyHandlePromise({
@@ -35059,23 +35592,26 @@ function App({
       throw new Error(`Unrecognised Wasm engine: "${appEngine}".`);
   }
   const proxyHandle = useWasmEngine();
-  const [viewerMethods, setViewerMethods] = React9.useState({
+  const [editorMethods, setEditorMethods] = React10.useState({
+    getActiveFileContents: null
+  });
+  const [viewerMethods, setViewerMethods] = React10.useState({
     ready: false
   });
-  const [terminalMethods, setTerminalMethods] = React9.useState(
+  const [terminalMethods, setTerminalMethods] = React10.useState(
     {
       ready: false
     }
   );
-  const [currentFiles, setCurrentFiles] = React9.useState(startFiles);
-  const [filesHaveChanged, setFilesHaveChanged] = React9.useState(false);
-  const [headerBarCallbacks, setHeaderBarCallbacks] = React9.useState({});
-  React9.useEffect(() => {
+  const [currentFiles, setCurrentFiles] = React10.useState(startFiles);
+  const [filesHaveChanged, setFilesHaveChanged] = React10.useState(false);
+  const [headerBarCallbacks, setHeaderBarCallbacks] = React10.useState({});
+  React10.useEffect(() => {
     if (appMode === "viewer" && viewerMethods.ready) {
       viewerMethods.runApp(currentFiles);
     }
   }, [appMode, currentFiles, viewerMethods]);
-  React9.useEffect(() => {
+  React10.useEffect(() => {
     (async () => {
       if (!proxyHandle.ready)
         return;
@@ -35093,12 +35629,37 @@ function App({
       });
     })();
   }, [proxyHandle.ready, currentFiles]);
-  const [utilityMethods, setUtilityMethods] = React9.useState({
+  React10.useEffect(() => {
+    const listener = (event) => {
+      if (event.source !== window.parent) {
+        return;
+      }
+      if (event.data.type === "setFiles" && event.data.files) {
+        setCurrentFiles(event.data.files);
+      } else if (event.data.type === "getFiles") {
+        let files = [];
+        if (editorMethods.getActiveFileContents) {
+          files = editorMethods.getActiveFileContents();
+        }
+        event.ports[0].postMessage({ files });
+      }
+    };
+    window.addEventListener("message", listener);
+    return () => {
+      window.removeEventListener("message", listener);
+    };
+  }, [setCurrentFiles, editorMethods]);
+  useRunOnceOnMount(() => {
+    if (window.parent === window)
+      return;
+    window.parent.postMessage({ type: "shinyliveReady" }, "*");
+  });
+  const [utilityMethods, setUtilityMethods] = React10.useState({
     formatCode: async (code) => {
       return code;
     }
   });
-  React9.useEffect(() => {
+  React10.useEffect(() => {
     if (!proxyHandle.ready)
       return;
     if (proxyHandle.engine !== "pyodide")
@@ -35116,7 +35677,7 @@ function App({
     if (currentFiles.some((file) => file.name === "app.py"))
       return;
   }, [proxyHandle.ready, currentFiles]);
-  React9.useEffect(() => {
+  React10.useEffect(() => {
     if (appMode !== "viewer")
       return;
     setHeaderBarCallbacks({
@@ -35146,7 +35707,7 @@ function App({
             ["exampleselector", "terminal", "viewer"]
           ],
           rowSizes: ["2fr", "1fr"],
-          colSizes: ["180px", "1.5fr", "1fr"],
+          colSizes: ["180px", "1fr", "1fr"],
           children: [
             /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(
               ExampleSelector,
@@ -35157,19 +35718,19 @@ function App({
                 appEngine
               }
             ),
-            /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(React9.Suspense, { fallback: /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("div", { children: "Loading..." }), children: /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(
+            /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(React10.Suspense, { fallback: /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("div", { children: "Loading..." }), children: /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(
               Editor,
               {
                 currentFilesFromApp: currentFiles,
                 setCurrentFiles,
                 setFilesHaveChanged,
                 setHeaderBarCallbacks,
+                setEditorMethods,
                 terminalMethods,
                 viewerMethods,
                 utilityMethods,
-                runOnLoad: currentFiles.some(
-                  (file) => file.name === "app.py" || file.name === "app.R" || file.name === "server.R"
-                ),
+                runOnLoad: isRunnableApp(currentFiles),
+                updateUrlHashOnRerun: appOptions.updateUrlHashOnRerun,
                 appEngine
               }
             ) }),
@@ -35185,7 +35746,9 @@ function App({
               Viewer,
               {
                 proxyHandle,
-                setViewerMethods
+                setViewerMethods,
+                devMode: true,
+                setWindowTitle: appOptions.setWindowTitle
               }
             )
           ]
@@ -35205,26 +35768,32 @@ function App({
         ResizableGrid,
         {
           className: "shinylive-container",
+          style: {
+            height: minCssLengthUnit(
+              appOptions.editorHeight,
+              appOptions.viewerHeight
+            )
+          },
           areas: [
             ["editor", "viewer"],
             ["terminal", "viewer"]
           ],
           rowSizes: ["2fr", "1fr"],
-          colSizes: ["1.5fr", "1fr"],
+          colSizes: ["1fr", "1fr"],
           children: [
-            /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(React9.Suspense, { fallback: /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("div", { children: "Loading..." }), children: /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(
+            /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(React10.Suspense, { fallback: /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("div", { children: "Loading..." }), children: /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(
               Editor,
               {
                 currentFilesFromApp: currentFiles,
                 setCurrentFiles,
                 setFilesHaveChanged,
                 setHeaderBarCallbacks,
+                setEditorMethods,
                 terminalMethods,
                 viewerMethods,
                 utilityMethods,
-                runOnLoad: currentFiles.some(
-                  (file) => file.name === "app.py" || file.name === "app.R" || file.name === "server.R"
-                ),
+                runOnLoad: isRunnableApp(currentFiles),
+                updateUrlHashOnRerun: appOptions.updateUrlHashOnRerun,
                 appEngine
               }
             ) }),
@@ -35240,7 +35809,9 @@ function App({
               Viewer,
               {
                 proxyHandle,
-                setViewerMethods
+                setViewerMethods,
+                devMode: true,
+                setWindowTitle: appOptions.setWindowTitle
               }
             )
           ]
@@ -35253,19 +35824,21 @@ function App({
       {
         className: "shinylive-container",
         areas: [["editor", "terminal"]],
-        rowSizes: ["1fr"],
+        rowSizes: [asCssLengthUnit(appOptions.editorHeight) || "1fr"],
         colSizes: ["1fr", "1fr"],
         children: [
-          /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(React9.Suspense, { fallback: /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("div", { children: "Loading..." }), children: /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(
+          /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(React10.Suspense, { fallback: /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("div", { children: "Loading..." }), children: /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(
             Editor,
             {
               currentFilesFromApp: currentFiles,
               setCurrentFiles,
               setFilesHaveChanged,
               setHeaderBarCallbacks,
+              setEditorMethods,
               terminalMethods,
               utilityMethods,
               runOnLoad: false,
+              updateUrlHashOnRerun: appOptions.updateUrlHashOnRerun,
               appEngine
             }
           ) }),
@@ -35282,20 +35855,23 @@ function App({
     );
   } else if (appMode === "editor-cell") {
     return /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { className: "shinylive-container editor-cell", children: [
-      /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(React9.Suspense, { fallback: /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("div", { children: "Loading..." }), children: /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(
+      /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(React10.Suspense, { fallback: /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("div", { children: "Loading..." }), children: /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(
         Editor,
         {
           currentFilesFromApp: currentFiles,
           setCurrentFiles,
           setFilesHaveChanged,
           setHeaderBarCallbacks,
+          setEditorMethods,
           terminalMethods,
           utilityMethods,
           showFileTabs: false,
           lineNumbers: false,
           showHeaderBar: false,
           floatingButtons: true,
-          appEngine
+          updateUrlHashOnRerun: appOptions.updateUrlHashOnRerun,
+          appEngine,
+          style: { height: asCssLengthUnit(appOptions.editorHeight) }
         }
       ) }),
       /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(
@@ -35308,32 +35884,55 @@ function App({
     ] });
   } else if (appMode === "editor-viewer") {
     const layout = appOptions.layout ?? "horizontal";
-    const viewerHeight = Number(appOptions.viewerHeight ?? 200);
-    const gridDef = layout === "horizontal" ? {
-      areas: [["editor", "viewer"]],
-      rowSizes: ["1fr"],
-      colSizes: ["1fr", "1fr"]
-    } : {
-      areas: [["editor"], ["viewer"]],
-      rowSizes: ["auto", `${viewerHeight}px`],
-      colSizes: ["1fr"]
-    };
-    return /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)(ResizableGrid, { className: "shinylive-container editor-viewer", ...gridDef, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(React9.Suspense, { fallback: /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("div", { children: "Loading..." }), children: /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(
-        Editor,
-        {
-          currentFilesFromApp: currentFiles,
-          setCurrentFiles,
-          setFilesHaveChanged,
-          setHeaderBarCallbacks,
-          terminalMethods,
-          utilityMethods,
-          viewerMethods,
-          appEngine
-        }
-      ) }),
-      /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(Viewer, { proxyHandle, setViewerMethods })
-    ] });
+    const viewerHeight = asCssLengthUnit(appOptions.viewerHeight);
+    const editorHeight = asCssLengthUnit(appOptions.editorHeight);
+    let gridDef;
+    if (layout === "vertical") {
+      gridDef = {
+        areas: [["editor"], ["viewer"]],
+        rowSizes: [editorHeight || "auto", viewerHeight || "200px"],
+        colSizes: ["1fr"]
+      };
+    } else {
+      gridDef = {
+        areas: [["editor", "viewer"]],
+        rowSizes: [minCssLengthUnit(editorHeight, viewerHeight) || "1fr"],
+        colSizes: ["1fr", "1fr"]
+      };
+    }
+    return /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)(
+      ResizableGrid,
+      {
+        className: `shinylive-container editor-viewer layout-${layout}`,
+        ...gridDef,
+        children: [
+          /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(React10.Suspense, { fallback: /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("div", { children: "Loading..." }), children: /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(
+            Editor,
+            {
+              currentFilesFromApp: currentFiles,
+              setCurrentFiles,
+              setFilesHaveChanged,
+              setHeaderBarCallbacks,
+              setEditorMethods,
+              terminalMethods,
+              utilityMethods,
+              viewerMethods,
+              updateUrlHashOnRerun: appOptions.updateUrlHashOnRerun,
+              appEngine
+            }
+          ) }),
+          /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(
+            Viewer,
+            {
+              proxyHandle,
+              setViewerMethods,
+              devMode: true,
+              setWindowTitle: appOptions.setWindowTitle
+            }
+          )
+        ]
+      }
+    );
   } else if (appMode === "viewer") {
     return /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)(import_jsx_runtime8.Fragment, { children: [
       appOptions.showHeaderBar ? /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(
@@ -35348,13 +35947,15 @@ function App({
         {
           className: "shinylive-container viewer",
           style: {
-            height: appOptions.viewerHeight ? `${appOptions.viewerHeight}px` : void 0
+            height: asCssLengthUnit(appOptions.viewerHeight)
           },
           children: /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(
             Viewer,
             {
               proxyHandle,
-              setViewerMethods
+              setViewerMethods,
+              devMode: false,
+              setWindowTitle: appOptions.setWindowTitle
             }
           )
         }
@@ -35363,6 +35964,28 @@ function App({
   } else {
     throw new Error("Have yet to setup this view mode");
   }
+}
+async function runExportedApp({
+  id,
+  appEngine,
+  relPath = ""
+}) {
+  const response = await fetch("./app.json");
+  if (!response.ok) {
+    throw new Error("HTTP error loading app.json: " + response.status);
+  }
+  const appFiles = await response.json();
+  const appRoot = document.getElementById(id);
+  if (!appRoot) {
+    throw new Error(`Could not find app root element with id "${id}"`);
+  }
+  const urlParams = new URLSearchParams(window.location.search);
+  let appMode = urlParams.get("_shinylive-mode") ?? "viewer";
+  if (!AppModes.includes(appMode)) {
+    console.warn(`[shinylive] Unrecognized app mode: ${appMode}`);
+    appMode = "viewer";
+  }
+  runApp(appRoot, appMode, { startFiles: appFiles }, appEngine);
 }
 function runApp(domTarget, mode, opts = {}, appEngine) {
   const optsDefaults = {
@@ -35435,7 +36058,7 @@ function runApp(domTarget, mode, opts = {}, appEngine) {
     }
     const root = (0, import_client.createRoot)(domTarget);
     root.render(
-      /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(React9.StrictMode, { children: /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(
+      /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(React10.StrictMode, { children: /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(
         App,
         {
           appMode: mode,
@@ -35450,6 +36073,11 @@ function runApp(domTarget, mode, opts = {}, appEngine) {
 var propertyOfAppOptions = function(name) {
   return name;
 };
+function isRunnableApp(files) {
+  return files.some(
+    (file) => (file.name === "app.py" || file.name === "app.R" || file.name === "server.R") && file.content !== ""
+  );
+}
 var shinyAppTemplate = `# Basic Shiny app template
 from shiny import App, render, ui
 
@@ -35459,7 +36087,6 @@ app_ui = ui.page_fluid(
 )
 
 def server(input, output, session):
-  @output
   @render.text
   def txt():
       return f"n*2 is {input.n() * 2}"
@@ -35477,7 +36104,8 @@ add(1, 2)
 `;
 export {
   App,
-  runApp
+  runApp,
+  runExportedApp
 };
 /*! Bundled license information:
 

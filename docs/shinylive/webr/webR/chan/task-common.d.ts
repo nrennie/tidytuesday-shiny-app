@@ -6,8 +6,8 @@ export interface Endpoint extends EventSource {
     start?: () => void;
 }
 export interface EventSource {
-    addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: {}): void;
-    removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: {}): void;
+    addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: object): void;
+    removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: object): void;
 }
 export declare function toWireValue(value: any): [any, Transferable[]];
 export declare function transfer<T>(obj: T, transfers: Transferable[]): T;

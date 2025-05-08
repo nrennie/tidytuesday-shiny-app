@@ -1,5 +1,5 @@
-/* Shinylive 0.2.3
-// Copyright 2023 RStudio, PBC */
+/* Shinylive 0.9.1
+// Copyright 2024 Posit, PBC */
 /* node_modules/balloon-css/balloon.min.css */
 :root {
   --balloon-border-radius: 2px;
@@ -238,7 +238,7 @@ button[aria-label][data-balloon-pos] {
   grid-template-areas: "header" "editor";
   position: relative;
 }
-.ResizableGrid.editor-viewer:not(.been-dragged) > .shinylive-editor {
+.ResizableGrid.editor-viewer.layout-vertical:not(.been-dragged) > .shinylive-editor {
   max-height: 800px;
 }
 .editor-header {
