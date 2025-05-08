@@ -11,6 +11,7 @@ load(url("https://raw.githubusercontent.com/nrennie/tidytuesday/main/data/all_we
 all_titles <- all_weeks$title
 long_pkgs <- all_weeks |>
   dplyr::select(code_type, pkgs) |>
+  dplyr::mutate(code_type = factor(code_type, levels = c("JavaScript", "Python", "R"))) |>
   tidyr::separate_longer_delim(pkgs, ", ") |>
   dplyr::distinct() |>
   dplyr::arrange(code_type, stringr::str_to_lower(pkgs))
@@ -21,16 +22,15 @@ ui <- fluidPage(
 
   theme = shinytheme("darkly"),
 
-  titlePanel("#TidyTuesday"),
+  titlePanel("TidyTuesday"),
 
   sidebarLayout(
 
     sidebarPanel(
-      markdown("[Nicola Rennie](https://github.com/nrennie)
+      markdown("
+TidyTuesday is a weekly data challenge where each week a new dataset is posted alongside a chart or article related to that dataset, and participants are asked to explore the data. You can access the data and find out more on [GitHub](https://github.com/rfordatascience/tidytuesday/blob/master/README.md).
 
-#TidyTuesday is a weekly data challenge where each week a new dataset is posted alongside a chart or article related to that dataset, and participants are asked to explore the data. You can access the data and find out more on [GitHub](https://github.com/rfordatascience/tidytuesday/blob/master/README.md).
-
-My contributions can be found on [GitHub](https://github.com/nrennie/tidytuesday), and you can use this Shiny app to explore my visualisations with links to code for each individual plot. You can also follow my attempts on Mastodon at [fosstodon.org/@nrennie](https://fosstodon.org/@nrennie).
+My contributions can be found on [GitHub](https://github.com/nrennie/tidytuesday), and you can use this Shiny app to explore my visualisations with links to code for each individual plot.
 "),
 htmltools::hr(),
 shinyWidgets::pickerInput(
@@ -98,7 +98,7 @@ server <- function(input, output) {
   ### List of packages
   output$pkgs_used <- shiny::renderText({
     glue::glue(
-      "This plot uses the following packages: {week_data()$pkgs}"
+      "This plot uses the following packages or libraries: {week_data()$pkgs}"
     )
   })
 
@@ -130,7 +130,7 @@ server <- function(input, output) {
   })
 
   output$r4ds_link <- shiny::renderText({
-    glue::glue('<b>R4DS GitHub link</b>: <a href="{r4ds_path()}"  target="_blank">{r4ds_path()}</a>.')
+    glue::glue('<b>DSLC data source</b>: <a href="{r4ds_path()}"  target="_blank">{r4ds_path()}</a>.')
   })
 }
 
